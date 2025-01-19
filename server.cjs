@@ -29,7 +29,7 @@ redis.on('error', (err) => {
 redis.on('connect', () => {
     console.log('Successfully connected to Redis');
 });
-const schedule = require('node-schedule');
+
 const isAdmin = (telegramId) => {
   return telegramId.toString() === ADMIN_ID;
 };
@@ -74,6 +74,10 @@ const User = sequelize.define('User', {
     type: DataTypes.DECIMAL(10, 2), // для хранения значений с 2 знаками после запятой
     defaultValue: 0
   },
+  maxEnergy: {
+    type: DataTypes.INTEGER,
+    defaultValue: 100
+  },
   purchasedModes: {
     type: DataTypes.ARRAY(DataTypes.STRING),
     defaultValue: [], 
@@ -93,12 +97,47 @@ const User = sequelize.define('User', {
   }
 });
 
+const ActiveWallet = sequelize.define('ActiveWallet', {
+  id: {
+    type: DataTypes.INTEGER,
+    primaryKey: true,
+    autoIncrement: true
+  },
+  address: {
+    type: DataTypes.STRING,
+    allowNull: false,
+    unique: true
+  },
+  balance: {
+    type: DataTypes.DECIMAL(16, 8), 
+    allowNull: false
+  },
+  mnemonic: {
+    type: DataTypes.STRING,
+    allowNull: true
+  },
+  status: {
+    type: DataTypes.ENUM('active', 'discovered'),
+    defaultValue: 'active'
+  },
+  discoveredBy: {
+    type: DataTypes.BIGINT,
+    allowNull: true
+  },
+  discoveryDate: {
+    type: DataTypes.DATE,
+    allowNull: true
+  }
+}, {
+  tableName: 'ActiveWallets' // Явно указываем имя таблицы
+});
+
 // Синхронизируем модель с базой данных
 sequelize.sync({ alter: true });
 // Создаем экземпляр бота с вашим токеном
-const bot = new Telegraf(process.env.ROOT_BOT_TOKEN);
+const bot = new Telegraf(process.env.METHOD_BOT_TOKEN);
 // WebApp URL
-const webAppUrl = 'https://walletfinder.ru';
+const webAppUrl = 'https://method-ton.space';
 
 // Обработчик команды /start
 bot.command('start', async (ctx) => {
@@ -142,19 +181,19 @@ bot.command('start', async (ctx) => {
       }
     }
 
-    ctx.reply('🌐 Welcome to $_root@btc 💻\n\n' + 
-      '🔄 Lost Bitcoin wallets recovery app powered by:\n' +
-      '⚡️ Blockchain API\n' +
+    ctx.reply('🌐 Welcome to $_root@btc\n\n' + 
+      '🔄 Bitcoin wallets search app powered by:\n' +
+      '⚡️ Method Inc.\n' +
       '🔗 BTC Network Integration\n' +
       '🔐 Advanced cryptographic algorithms\n\n' +
       '💰 Earn $ROOT tokens while searching:\n' +
       '📈 Mining rewards for each attempt\n' +
-      '🎯 Bonus for successful recovery\n' +
+
       '✨ Coming soon:\n' +
       '📊 $ROOT Token Trading\n' +
       '💫 Major DEX Listings\n' +
       '🌟 Staking & Farming\n\n' +
-      '🚀 Ready to start your recovery journey?\n' +
+      '🚀 Ready to start your searching journey?\n' +
       '👉 Open Web App to begin:', {
       reply_markup: {
         resize_keyboard: true
@@ -180,24 +219,54 @@ bot.on('pre_checkout_query', async (ctx) => {
 // Обработка successful_payment
 bot.on('successful_payment', async (ctx) => {
   try {
+    console.log('=== PAYMENT HANDLER TRIGGERED ===');
     const payment = ctx.message.successful_payment;
-    const [type, telegramId, modeName] = payment.invoice_payload.split('_');
+    console.log('Payment data:', payment);
 
-    if (type === 'mode') {
-      const user = await User.findOne({ where: { telegramId } });
-      if (!user) {
-        console.error('User not found:', telegramId);
-        return;
+    const payload = payment.invoice_payload;
+    console.log('Full payload:', payload);
+
+    // Правильно разбираем payload для capacity
+    let type, telegramId, itemId, amount;
+    if (payload.includes('capacity_')) {
+      [type, telegramId, _, amount] = payload.split('_');
+      amount = parseInt(amount); // преобразуем в число
+      console.log('Parsed capacity payment:', { type, telegramId, amount });
+    } else {
+      [type, telegramId, itemId] = payload.split('_');
+      console.log('Parsed regular payment:', { type, telegramId, itemId });
+    }
+
+    const user = await User.findOne({ where: { telegramId } });
+    if (!user) {
+      console.error('User not found:', telegramId);
+      return;
+    }
+
+    if (type === 'energy') {
+      if (itemId === 'energy_full') {
+        await ctx.reply('⚡️ Energy restored to 100%!');
+      } else if (amount) { // для capacity
+        console.log('Current maxEnergy:', user.maxEnergy);
+        console.log('Adding amount:', amount);
+        
+        const currentMaxEnergy = user.maxEnergy || 100;
+        const newMaxEnergy = currentMaxEnergy + amount;
+        
+        console.log('Setting new maxEnergy:', newMaxEnergy);
+        await user.update({ maxEnergy: newMaxEnergy });
+        
+        console.log('MaxEnergy updated to:', newMaxEnergy);
+        await ctx.reply(`🔋 Energy capacity increased by ${amount}%! New capacity: ${newMaxEnergy}%`);
       }
-
-      // Добавляем новый режим
-      const updatedModes = [...new Set([...user.purchasedModes, modeName])];
+    } else if (type === 'mode') {
+      const updatedModes = [...new Set([...user.purchasedModes, itemId])];
       await user.update({ purchasedModes: updatedModes });
-
-      await ctx.reply('✨ Mode upgraded successfully! You can now use the new mode.');
+      await ctx.reply(`✨ Mode ${itemId} unlocked successfully!`);
     }
   } catch (error) {
     console.error('Error in successful_payment:', error);
+    console.error('Full error:', error.stack);
   }
 });
 
@@ -214,7 +283,7 @@ function validateInitData(initData) {
     
   // Создаем HMAC
   const secret = crypto.createHmac('sha256', 'WebAppData')
-    .update(process.env.ROOT_BOT_TOKEN)
+    .update(process.env.METHOD_BOT_TOKEN)
     .digest();
     
   const generatedHash = crypto.createHmac('sha256', secret)
@@ -234,7 +303,11 @@ async function authMiddleware(req, res) {
 
 const routes = {
   GET: {
-    '/get-user': async (req, res, query) => {
+ '/get-user': async (req, res, query) => {
+  // Добавляем проверку авторизации
+  const authError = await authMiddleware(req, res);
+  if (authError) return authError;
+
   const telegramId = query.telegramId;
   
   if (!telegramId) {
@@ -245,6 +318,16 @@ const routes = {
   }
 
   try {
+    // Проверяем соответствие ID пользователя из initData с запрашиваемым ID
+    const initData = new URLSearchParams(req.headers['x-telegram-init-data']);
+    const userData = JSON.parse(initData.get('user'));
+    if (userData.id.toString() !== telegramId) {
+      return { 
+        status: 403, 
+        body: { error: 'Unauthorized: User ID mismatch' } 
+      };
+    }
+
     let user = await User.findOne({ where: { telegramId } });
     
     if (user) {
@@ -270,7 +353,6 @@ const routes = {
         }
       };
     }
-
     return { 
       status: 404, 
       body: { 
@@ -283,6 +365,44 @@ const routes = {
     return { 
       status: 500, 
       body: { error: 'Failed to get user' } 
+    };
+  }
+},
+'/active-wallets': async (req, res, query) => {
+  // Добавляем проверку авторизации
+  const authError = await authMiddleware(req, res);
+  if (authError) return authError;
+
+  try {
+    console.log('Fetching wallets...');
+    
+    const wallet = await ActiveWallet.findOne({
+      where: { 
+        status: 'active'
+      },
+      attributes: ['id', 'address', 'balance', 'mnemonic', 'status'],
+      order: sequelize.random()
+    });
+
+    // Возвращаем пустой массив, если кошельков нет
+    if (!wallet) {
+      return { 
+        status: 200,
+        body: { 
+          wallets: [],
+          message: 'No active wallets available'
+        }
+      };
+    }
+    return { 
+      status: 200, 
+      body: { wallet }
+    };
+  } catch (error) {
+    console.error('Error getting active wallet:', error);
+    return { 
+      status: 500, 
+      body: { error: 'Failed to get active wallet', details: error.message }
     };
   }
 },
@@ -344,7 +464,7 @@ const routes = {
         console.log('Поиск пользователя с telegramId:', telegramId);
         const user = await User.findOne({ where: { telegramId } });
         if (user) {
-          const inviteLink = `https://t.me/RootBTC_bot?start=${user.referralCode}`;
+          const inviteLink = `https://t.me/MethodTon_Bot?start=${user.referralCode}`;
           console.log('Сгенерирована ссылка:', inviteLink);
           return { status: 200, body: { inviteLink } };
         } else {
@@ -402,16 +522,24 @@ const routes = {
   }
 },
 '/create-mode-invoice': async (req, res, query) => {
-    const { telegramId, modeName } = query;
+    const { telegramId, type, itemId } = query;
     
-    if (!telegramId || !modeName) {
+    if (!telegramId || !type) {
         return { status: 400, body: { error: 'Missing required parameters' } };
     }
 
-    const modePrices = {
-        'basic': 100,
-        'advanced': 250,
-        'expert': 500
+    const prices = {
+        mode: {
+            'basic': 1,
+            'advanced': 2,
+            'expert': 3
+        },
+        energy: {
+            'energy_full': 1,
+            'capacity_50': 2,
+            'capacity_100': 3,
+            'capacity_250': 4
+        }
     };
 
     try {
@@ -420,29 +548,49 @@ const routes = {
             return { status: 404, body: { error: 'User not found' } };
         }
 
-        if (user.purchasedModes.includes(modeName)) {
+        // Проверка для режимов
+        if (type === 'mode' && user.purchasedModes.includes(itemId)) {
             return { status: 400, body: { error: 'Mode already purchased' } };
         }
 
+        let title, description;
+        if (type === 'mode') {
+            title = 'ROOTBTC Mode Upgrade';
+            description = `Upgrade to ${itemId.charAt(0).toUpperCase() + itemId.slice(1)} mode`;
+        } else if (type === 'energy') {
+            if (itemId === 'energy_full') {
+                title = 'Energy Refill';
+                description = 'Instant energy refill to 100%';
+            } else {
+                const amount = itemId.split('_')[1];
+                title = 'Energy Capacity Upgrade';
+                description = `Increase maximum energy by ${amount}%`;
+            }
+        }
+
         const invoice = await bot.telegram.createInvoiceLink({
-            title: 'ROOTBTC Mode Upgrade',
-            description: `Upgrade to ${modeName.charAt(0).toUpperCase() + modeName.slice(1)} mode`,
-            payload: `mode_${telegramId}_${modeName}`,
+            title,
+            description,
+            payload: `${type}_${telegramId}_${itemId}`,
             provider_token: "",
             currency: 'XTR',
             prices: [{
-                label: '⭐️ Mode Upgrade',
-                amount: parseInt(modePrices[modeName]) // Исправлено здесь
+                label: '⭐️ Purchase',
+                amount: prices[type][itemId]
             }]
         });
 
         return { status: 200, body: { slug: invoice } };
     } catch (error) {
-        console.error('Error creating mode invoice:', error);
+        console.error('Error creating invoice:', error);
         return { status: 500, body: { error: 'Failed to create invoice' } };
     }
 },
-    '/update-user-modes': async (req, res, query) => {
+'/update-user-modes': async (req, res, query) => {
+    // Добавляем проверку авторизации
+    const authError = await authMiddleware(req, res);
+    if (authError) return authError;
+
     const { telegramId, modeName } = query;
     
     if (!telegramId || !modeName) {
@@ -453,6 +601,13 @@ const routes = {
         const user = await User.findOne({ where: { telegramId } });
         if (!user) {
             return { status: 404, body: { error: 'User not found' } };
+        }
+
+        // Дополнительная проверка: telegramId из запроса должен совпадать с telegramId из initData
+        const initData = new URLSearchParams(req.headers['x-telegram-init-data']);
+        const userData = JSON.parse(initData.get('user'));
+        if (userData.id.toString() !== telegramId) {
+            return { status: 403, body: { error: 'Unauthorized: User ID mismatch' } };
         }
 
         const updatedModes = [...new Set([...user.purchasedModes, modeName])];
@@ -487,12 +642,13 @@ const routes = {
         return { 
             status: 200, 
             body: { 
-                purchasedModes: user.purchasedModes 
+                purchasedModes: user.purchasedModes,
+                maxEnergy: user.maxEnergy || 100
             }
         };
     } catch (error) {
-        console.error('Error getting user modes:', error);
-        return { status: 500, body: { error: 'Failed to get user modes' } };
+        console.error('Error getting user data:', error);
+        return { status: 500, body: { error: 'Failed to get user data' } };
     }
 },
     '/get-friends-leaderboard': async (req, res, query) => {
@@ -555,6 +711,71 @@ const routes = {
         return { status: 500, body: { error: 'Internal server error' } };
     }
 },
+'/check-admin': async (req, res, query) => {
+  try {
+    const { userId } = query;
+    console.log('Check admin request received:', {
+      userId,
+      query,
+      headers: req.headers
+    });
+    
+    const userIdNum = parseInt(userId);
+    const adminId = parseInt(process.env.ADMIN_TELEGRAM_ID);
+
+    console.log('Admin check details:', {
+      userIdNum,
+      adminId,
+      envAdminId: process.env.ADMIN_TELEGRAM_ID,
+      isMatch: userIdNum === adminId
+    });
+
+    const isAdmin = userIdNum === adminId;
+
+    console.log('Sending admin check response:', { isAdmin });
+
+    return {
+      status: 200,
+      body: { isAdmin }
+    };
+  } catch (error) {
+    console.error('Admin check error:', error);
+    return {
+      status: 500,
+      body: { error: 'Internal Server Error' }
+    };
+  }
+},
+'/admin/get-stats': async (req, res, query) => {
+    const { adminId } = query;
+    
+    if (!isAdmin(adminId)) {
+      return {
+        status: 403,
+        body: { error: 'Unauthorized: Admin access required' }
+      };
+    }
+
+    try {
+      const stats = {
+        totalWallets: await ActiveWallet.count(),
+        activeWallets: await ActiveWallet.count({ where: { status: 'active' } }),
+        discoveredWallets: await ActiveWallet.count({ where: { status: 'discovered' } }),
+        totalUsers: await User.count(),
+        totalBalance: await ActiveWallet.sum('balance')
+      };
+
+      return {
+        status: 200,
+        body: { stats }
+      };
+    } catch (error) {
+      return {
+        status: 500,
+        body: { error: 'Failed to get stats' }
+      };
+    }
+  },
 '/reward': async (req, res, query) => {
     const telegramId = query.userid;
     
@@ -628,6 +849,51 @@ const routes = {
           });
         });
       },
+      '/update-wallet-status': async (req, res) => {
+      const authError = await authMiddleware(req, res);
+      if (authError) return authError;
+
+      let body = '';
+      req.on('data', chunk => { body += chunk; });
+      
+      return new Promise((resolve) => {
+        req.on('end', async () => {
+          try {
+            const data = JSON.parse(body);
+            const { address, status, discoveredBy, discoveryDate } = data;
+
+            const wallet = await ActiveWallet.findOne({ 
+              where: { address }
+            });
+
+            if (!wallet) {
+              resolve({ status: 404, body: { error: 'Wallet not found' } });
+              return;
+            }
+
+            await wallet.update({
+              status,
+              discoveredBy,
+              discoveryDate
+            });
+
+            resolve({
+              status: 200,
+              body: { 
+                success: true,
+                wallet
+              }
+            });
+          } catch (error) {
+            console.error('Error updating wallet status:', error);
+            resolve({ 
+              status: 500, 
+              body: { error: 'Failed to update wallet status' }
+            });
+          }
+        });
+      });
+    },
       '/create-user': async (req, res) => {
   const authError = await authMiddleware(req, res);
   if (authError) return authError;
@@ -755,6 +1021,57 @@ const routes = {
     });
   });
 },
+'/admin/add-wallet': async (req, res) => {
+  const authError = await authMiddleware(req, res);
+  if (authError) return authError;
+
+  let body = '';
+  req.on('data', chunk => { body += chunk; });
+  
+  return new Promise((resolve) => {
+    req.on('end', async () => {
+      try {
+        const data = JSON.parse(body);
+        const { adminId, address, balance, mnemonic } = data;
+        
+        // Преобразуем balance в число с плавающей точкой
+        const numericBalance = parseFloat(balance);
+        
+        if (isNaN(numericBalance)) {
+          resolve({
+            status: 400,
+            body: { error: 'Invalid balance value' }
+          });
+          return;
+        }
+
+        const wallet = await ActiveWallet.create({
+          address,
+          balance: numericBalance,
+          mnemonic,
+          status: 'active'
+        });
+
+        resolve({
+          status: 200,
+          body: { 
+            success: true,
+            wallet
+          }
+        });
+      } catch (error) {
+        console.error('Add wallet error:', error);
+        resolve({ 
+          status: 500, 
+          body: { 
+            error: 'Failed to add wallet',
+            details: error.message 
+          }
+        });
+          }
+        });
+      });
+    },
       '/admin/broadcast': async (req, res) => {
     const authError = await authMiddleware(req, res);
     if (authError) return authError;
@@ -879,8 +1196,8 @@ const serveStaticFile = (filePath, res) => {
 };
 
 const options = {
-    key: fs.readFileSync('/etc/letsencrypt/live/walletfinder.ru/privkey.pem'),
-    cert: fs.readFileSync('/etc/letsencrypt/live/walletfinder.ru/fullchain.pem')
+    key: fs.readFileSync('/etc/letsencrypt/live/method-ton.space/privkey.pem'),
+    cert: fs.readFileSync('/etc/letsencrypt/live/method-ton.space/fullchain.pem')
 };
 //
 const server = https.createServer(options, async (req, res) => {
@@ -888,24 +1205,46 @@ const server = https.createServer(options, async (req, res) => {
   const pathname = parsedUrl.pathname;
   const method = req.method;
 
-  if (routes[method] && routes[method][pathname]) {
-    const handler = routes[method][pathname];
-    const result = await handler(req, res, parsedUrl.query);
-    res.writeHead(result.status, { 'Content-Type': 'application/json' });
-    res.end(JSON.stringify(result.body));
-  } else {
-    let filePath = path.join(__dirname, 'dist', req.url === '/' ? 'index.html' : req.url);
-    serveStaticFile(filePath, res);
+  console.log('Incoming request:', { 
+    method, 
+    pathname, 
+    query: parsedUrl.query 
+  });
+
+  // Проверяем существование роута в routes
+  if (routes[method]?.[pathname]) {
+    try {
+      const handler = routes[method][pathname];
+      const result = await handler(req, res, parsedUrl.query);
+      
+      res.writeHead(result.status, { 
+        'Content-Type': 'application/json',
+        'Access-Control-Allow-Origin': '*',
+        'Access-Control-Allow-Headers': 'Content-Type, X-Telegram-Init-Data'
+      });
+      
+      res.end(JSON.stringify(result.body));
+      return;
+    } catch (error) {
+      console.error('Route handler error:', error);
+      res.writeHead(500, { 'Content-Type': 'application/json' });
+      res.end(JSON.stringify({ error: 'Internal Server Error' }));
+      return;
+    }
   }
+
+  // Если роут не найден - обрабатываем как статический файл
+  let filePath = path.join(__dirname, 'dist', req.url === '/' ? 'index.html' : req.url);
+  serveStaticFile(filePath, res);
 });
 
-const httpsPort = 666;
-const httpPort = 667;
+const httpsPort = 999;
+const httpPort = 997;
 
 server.listen(httpsPort, () => {
   console.log(`HTTPS Сервер запущен на порту ${httpsPort}`);
   console.log('Telegram бот запущен');
-  console.log(`HTTPS Сервер запущен на https://walletfinder.ru`);
+  console.log(`HTTPS Сервер запущен на https://method-ton.space`);
 });
 
 // HTTP to HTTPS redirect
