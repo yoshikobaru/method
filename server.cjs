@@ -477,50 +477,74 @@ const routes = {
       }
     },
     '/get-referral-count': async (req, res, query) => {
-  const telegramId = query.telegramId;
-  
-  if (!telegramId) {
-    return { 
-      status: 400, 
-      body: { error: 'Telegram ID is required' } 
-    };
-  }
+      const authError = await authMiddleware(req, res);
+      if (authError) return authError;
 
-  try {
-    const user = await User.findOne({ where: { telegramId } });
-    if (!user) {
-      return { 
-        status: 404, 
-        body: { error: 'User not found' } 
-      };
-    }
+      console.log('Request query:', query);
+      console.log('Request URL:', req.url);
+      
+      const telegramId = query?.telegramId;
+      
+      if (!telegramId) {
+        console.error('No telegramId provided in request');
+        return { 
+          status: 400, 
+          body: { 
+            success: false, 
+            error: 'Telegram ID is required' 
+          } 
+        };
+      }
 
-    // Получаем количество рефералов
-    const referralCount = await User.count({
-      where: { referredBy: user.referralCode }
-    });
+      try {
+        const user = await User.findOne({ where: { telegramId } });
+        console.log('Found user:', user);
 
-    // Вычисляем статистику для фронтенда
-    const rewardsEarned = Math.floor(referralCount / 3);
-    const nextRewardAt = (rewardsEarned + 1) * 3;
+        if (!user) {
+          return { 
+            status: 404, 
+            body: { 
+              success: false, 
+              error: 'User not found' 
+            } 
+          };
+        }
 
-    return { 
-      status: 200, 
-      body: { 
-        success: true,
-        count: referralCount,
-        rewardsEarned,
-        nextRewardAt
-      } 
-    };
-  } catch (error) {
-    console.error('Error getting referral count:', error);
-    return { 
-      status: 500, 
-      body: { error: 'Failed to get referral count' } 
-    };
-  }
-},
+        // Получаем список рефералов
+        const referrals = await User.findAll({
+          where: { referredBy: user.referralCode },
+          attributes: ['telegramId', 'username', 'createdAt'],
+          raw: true
+        });
+
+        console.log('Found referrals:', referrals);
+
+        // Форматируем данные для фронтенда
+        const formattedReferrals = referrals.map(ref => ({
+          id: ref.telegramId,
+          username: ref.username || `User_${ref.telegramId}`,
+          joinDate: ref.createdAt
+        }));
+
+        return {
+          status: 200,
+          body: {
+            success: true,
+            count: referrals.length,
+            referrals: formattedReferrals
+          }
+        };
+      } catch (error) {
+        console.error('Error in get-referral-count:', error);
+        return { 
+          status: 500, 
+          body: { 
+            success: false, 
+            error: 'Server error' 
+          } 
+        };
+      }
+    },
 '/create-mode-invoice': async (req, res, query) => {
     const { telegramId, type, itemId } = query;
     
@@ -805,49 +829,6 @@ const routes = {
     }
     }
   },
-'/get-friends-list': async (req, res, query) => {
-  const telegramId = query.telegramId;
-  
-  if (!telegramId) {
-    return { 
-      status: 400, 
-      body: { error: 'Missing telegramId parameter' } 
-    };
-  }
-
-  try {
-    const user = await User.findOne({ where: { telegramId } });
-    if (!user) {
-      return { 
-        status: 404, 
-        body: { error: 'User not found' } 
-      };
-    }
-
-    // Получаем список рефералов пользователя
-    const referrals = await User.findAll({
-      where: { referredBy: user.referralCode },
-      attributes: ['telegramId', 'username']
-    });
-
-    return { 
-      status: 200, 
-      body: { 
-        success: true,
-        friends: referrals.map(ref => ({
-          id: ref.telegramId,
-          username: ref.username
-        }))
-      } 
-    };
-  } catch (error) {
-    console.error('Error getting friends list:', error);
-    return { 
-      status: 500, 
-      body: { error: 'Failed to get friends list' } 
-    };
-  }
-},
     POST: {
       '/update-root-balance': async (req, res) => {
         const authError = await authMiddleware(req, res);
