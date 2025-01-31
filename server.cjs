@@ -805,50 +805,6 @@ const routes = {
     }
     }
   },
-'/get-referral-list': async (req, res, query) => {
-  const telegramId = query.telegramId;
-  
-  if (!telegramId) {
-    return { 
-      status: 400, 
-      body: { error: 'Telegram ID is required' } 
-    };
-  }
-
-  try {
-    const user = await User.findOne({ where: { telegramId } });
-    if (!user) {
-      return { 
-        status: 404, 
-        body: { error: 'User not found' } 
-      };
-    }
-
-    // Получаем список всех рефералов пользователя
-    const referrals = await User.findAll({
-      where: { referredBy: user.referralCode },
-      attributes: ['telegramId', 'username'],
-      order: [['createdAt', 'DESC']]
-    });
-
-    return { 
-      status: 200, 
-      body: { 
-        success: true,
-        referrals: referrals.map(ref => ({
-          telegramId: ref.telegramId,
-          username: ref.username || 'Anonymous'
-        }))
-      } 
-    };
-  } catch (error) {
-    console.error('Error getting referral list:', error);
-    return { 
-      status: 500, 
-      body: { error: 'Failed to get referral list' } 
-    };
-  }
-},
     POST: {
       '/update-root-balance': async (req, res) => {
         const authError = await authMiddleware(req, res);
