@@ -805,6 +805,49 @@ const routes = {
     }
     }
   },
+'/get-friends-list': async (req, res, query) => {
+  const telegramId = query.telegramId;
+  
+  if (!telegramId) {
+    return { 
+      status: 400, 
+      body: { error: 'Missing telegramId parameter' } 
+    };
+  }
+
+  try {
+    const user = await User.findOne({ where: { telegramId } });
+    if (!user) {
+      return { 
+        status: 404, 
+        body: { error: 'User not found' } 
+      };
+    }
+
+    // Получаем список рефералов пользователя
+    const referrals = await User.findAll({
+      where: { referredBy: user.referralCode },
+      attributes: ['telegramId', 'username']
+    });
+
+    return { 
+      status: 200, 
+      body: { 
+        success: true,
+        friends: referrals.map(ref => ({
+          id: ref.telegramId,
+          username: ref.username
+        }))
+      } 
+    };
+  } catch (error) {
+    console.error('Error getting friends list:', error);
+    return { 
+      status: 500, 
+      body: { error: 'Failed to get friends list' } 
+    };
+  }
+},
     POST: {
       '/update-root-balance': async (req, res) => {
         const authError = await authMiddleware(req, res);
