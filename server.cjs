@@ -559,27 +559,42 @@ const routes = {
         // Проверяем подписку пользователя на канал
         const chatMember = await bot.telegram.getChatMember('@method_community', telegramId);
         const isSubscribed = ['member', 'administrator', 'creator'].includes(chatMember.status);
+        console.log('Subscription check for user:', telegramId, 'Status:', chatMember.status);
 
         if (isSubscribed) {
           // Находим пользователя
           const user = await User.findOne({ where: { telegramId } });
           if (!user) {
+            console.log('User not found:', telegramId);
             return { status: 404, body: { error: 'User not found' } };
           }
 
+          console.log('Current user balance:', user.rootBalance);
+          
           // Обновляем баланс пользователя
-          const newBalance = Number(user.rootBalance) + 1000;
-          await user.update({ rootBalance: newBalance });
+          const currentBalance = parseFloat(user.rootBalance) || 0;
+          const newBalance = currentBalance + 1000;
+          
+          console.log('New balance will be:', newBalance);
+
+          await user.update({ 
+            rootBalance: newBalance 
+          });
+
+          // Проверяем обновление
+          const updatedUser = await User.findOne({ where: { telegramId } });
+          console.log('Updated user balance:', updatedUser.rootBalance);
 
           return { 
             status: 200, 
             body: { 
               success: true, 
               message: 'Reward claimed successfully!',
-              newBalance: newBalance
+              newBalance: updatedUser.rootBalance
             } 
           };
         } else {
+          console.log('User not subscribed:', telegramId);
           return { 
             status: 400, 
             body: { 
