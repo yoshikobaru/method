@@ -545,6 +545,57 @@ const routes = {
         };
       }
     },
+    '/check-channel-subscription': async (req, res, query) => {
+      const { telegramId } = query;
+      
+      if (!telegramId) {
+        return { 
+          status: 400, 
+          body: { error: 'Missing telegramId parameter' } 
+        };
+      }
+
+      try {
+        // Проверяем подписку пользователя на канал
+        const chatMember = await bot.telegram.getChatMember('@method_community', telegramId);
+        const isSubscribed = ['member', 'administrator', 'creator'].includes(chatMember.status);
+
+        if (isSubscribed) {
+          // Находим пользователя
+          const user = await User.findOne({ where: { telegramId } });
+          if (!user) {
+            return { status: 404, body: { error: 'User not found' } };
+          }
+
+          // Обновляем баланс пользователя
+          const newBalance = Number(user.rootBalance) + 1000;
+          await user.update({ rootBalance: newBalance });
+
+          return { 
+            status: 200, 
+            body: { 
+              success: true, 
+              message: 'Reward claimed successfully!',
+              newBalance: newBalance
+            } 
+          };
+        } else {
+          return { 
+            status: 400, 
+            body: { 
+              success: false, 
+              error: 'You are not subscribed to the channel' 
+            } 
+          };
+        }
+      } catch (error) {
+        console.error('Error checking subscription:', error);
+        return { 
+          status: 500, 
+          body: { error: 'Failed to check subscription' } 
+        };
+      }
+    },
 '/create-mode-invoice': async (req, res, query) => {
     const { telegramId, type, itemId } = query;
     
