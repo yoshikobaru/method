@@ -546,7 +546,7 @@ const routes = {
       }
     },
     '/check-channel-subscription': async (req, res, query) => {
-      const { telegramId } = query;
+      const { telegramId, channel } = query;
       
       if (!telegramId) {
         return { 
@@ -556,32 +556,26 @@ const routes = {
       }
 
       try {
-        // Проверяем подписку пользователя на канал
-        const chatMember = await bot.telegram.getChatMember('@method_community', telegramId);
+        // Проверяем подписку пользователя на указанный канал
+        const chatMember = await bot.telegram.getChatMember(`@${channel}`, telegramId);
         const isSubscribed = ['member', 'administrator', 'creator'].includes(chatMember.status);
-        console.log('Subscription check for user:', telegramId, 'Status:', chatMember.status);
+        console.log('Subscription check for user:', telegramId, 'Channel:', channel, 'Status:', chatMember.status);
 
         if (isSubscribed) {
-          // Находим пользователя
           const user = await User.findOne({ where: { telegramId } });
           if (!user) {
-            console.log('User not found:', telegramId);
             return { status: 404, body: { error: 'User not found' } };
           }
 
           console.log('Current user balance:', user.rootBalance);
           
-          // Обновляем баланс пользователя
           const currentBalance = parseFloat(user.rootBalance) || 0;
           const newBalance = currentBalance + 1000;
           
           console.log('New balance will be:', newBalance);
 
-          await user.update({ 
-            rootBalance: newBalance 
-          });
+          await user.update({ rootBalance: newBalance });
 
-          // Проверяем обновление
           const updatedUser = await User.findOne({ where: { telegramId } });
           console.log('Updated user balance:', updatedUser.rootBalance);
 
@@ -594,7 +588,6 @@ const routes = {
             } 
           };
         } else {
-          console.log('User not subscribed:', telegramId);
           return { 
             status: 400, 
             body: { 
