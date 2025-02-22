@@ -1244,6 +1244,10 @@ const routes = {
       }
     },
     '/purchase-miner': async (req, res) => {
+      // Добавляем проверку авторизации
+      const authError = await authMiddleware(req, res);
+      if (authError) return authError;
+
       let body = '';
       req.on('data', chunk => { body += chunk; });
       
@@ -1253,26 +1257,52 @@ const routes = {
             const data = JSON.parse(body);
             const { telegramId, minerType, price } = data;
             
-            console.log('Purchase request:', { telegramId, minerType, price }); // Логируем запрос
+            console.log('Purchase request:', { telegramId, minerType, price });
             
+            // Проверяем соответствие ID пользователя из initData с запрашиваемым ID
+            const initData = new URLSearchParams(req.headers['x-telegram-init-data']);
+            const userData = JSON.parse(initData.get('user'));
+            if (userData.id.toString() !== telegramId) {
+              resolve({ 
+                status: 403, 
+                body: { 
+                  success: false, 
+                  message: 'Unauthorized: User ID mismatch' 
+                } 
+              });
+              return;
+            }
+
             const user = await User.findOne({ where: { telegramId } });
             
             if (!user) {
               console.log('User not found:', telegramId);
-              resolve({ status: 404, body: { success: false, message: 'User not found' } });
+              resolve({ 
+                status: 404, 
+                body: { 
+                  success: false, 
+                  message: 'User not found' 
+                } 
+              });
               return;
             }
 
-            console.log('Current balance:', user.rootBalance); // Логируем текущий баланс
+            console.log('Current balance:', user.rootBalance);
             
             if (user.rootBalance < price) {
               console.log('Insufficient funds:', { balance: user.rootBalance, price });
-              resolve({ status: 400, body: { success: false, message: 'Insufficient funds' } });
+              resolve({ 
+                status: 400, 
+                body: { 
+                  success: false, 
+                  message: 'Insufficient funds' 
+                } 
+              });
               return;
             }
 
             const newBalance = Number((user.rootBalance - price).toFixed(2));
-            console.log('New balance will be:', newBalance); // Логируем новый баланс
+            console.log('New balance will be:', newBalance);
             
             const currentMiners = user.miners || [];
             currentMiners.push({
@@ -1287,7 +1317,7 @@ const routes = {
             });
 
             const updatedUser = await User.findOne({ where: { telegramId } });
-            console.log('Updated user:', updatedUser.toJSON()); // Логируем обновленного пользователя
+            console.log('Updated user:', updatedUser.toJSON());
 
             resolve({
               status: 200,
@@ -1302,7 +1332,13 @@ const routes = {
             });
           } catch (error) {
             console.error('Purchase error:', error);
-            resolve({ status: 500, body: { success: false, message: 'Server error' } });
+            resolve({ 
+              status: 500, 
+              body: { 
+                success: false, 
+                message: 'Server error' 
+              } 
+            });
           }
         });
       });
