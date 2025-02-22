@@ -94,6 +94,11 @@ const User = sequelize.define('User', {
   lastAdWatchTime: {
     type: DataTypes.DATE,
     allowNull: true
+  },
+  miners: {
+    type: DataTypes.ARRAY(DataTypes.JSON),
+    defaultValue: [],
+    allowNull: false
   }
 });
 
@@ -1237,6 +1242,71 @@ const routes = {
               });
           });
       }
+    },
+    '/purchase-miner': async (req, res) => {
+      const authError = await authMiddleware(req, res);
+      if (authError) return authError;
+
+      let body = '';
+      req.on('data', chunk => { body += chunk; });
+      
+      return new Promise((resolve) => {
+        req.on('end', async () => {
+          try {
+            const data = JSON.parse(body);
+            const { telegramId, minerType, price } = data;
+            
+            // Находим пользователя
+            const user = await User.findOne({ where: { telegramId } });
+            
+            if (!user) {
+              resolve({ status: 404, body: { success: false, message: 'User not found' } });
+              return;
+            }
+
+            // Проверяем баланс
+            if (user.rootBalance < price) {
+              resolve({ status: 400, body: { success: false, message: 'Insufficient funds' } });
+              return;
+            }
+
+            // Обновляем баланс пользователя
+            const newBalance = Number((user.rootBalance - price).toFixed(2));
+            
+            // Добавляем майнер в массив miners
+            const currentMiners = user.miners || [];
+            currentMiners.push({
+              type: minerType,
+              purchaseDate: new Date(),
+              image: minerType === 'basic' ? '/assets/block2.jpg' : '/assets/block1.jpg'
+            });
+
+            // Обновляем пользователя
+            await user.update({
+              rootBalance: newBalance,
+              miners: currentMiners
+            });
+
+            // Получаем обновленного пользователя
+            const updatedUser = await User.findOne({ where: { telegramId } });
+
+            resolve({
+              status: 200,
+              body: {
+                success: true,
+                user: {
+                  telegramId: updatedUser.telegramId,
+                  rootBalance: updatedUser.rootBalance,
+                  miners: updatedUser.miners
+                }
+              }
+            });
+          } catch (error) {
+            console.error('Purchase error:', error);
+            resolve({ status: 500, body: { success: false, message: 'Server error' } });
+          }
+        });
+      });
     }
   };
 
