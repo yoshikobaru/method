@@ -1244,9 +1244,6 @@ const routes = {
       }
     },
     '/purchase-miner': async (req, res) => {
-      const authError = await authMiddleware(req, res);
-      if (authError) return authError;
-
       let body = '';
       req.on('data', chunk => { body += chunk; });
       
@@ -1256,24 +1253,27 @@ const routes = {
             const data = JSON.parse(body);
             const { telegramId, minerType, price } = data;
             
-            // Находим пользователя
+            console.log('Purchase request:', { telegramId, minerType, price }); // Логируем запрос
+            
             const user = await User.findOne({ where: { telegramId } });
             
             if (!user) {
+              console.log('User not found:', telegramId);
               resolve({ status: 404, body: { success: false, message: 'User not found' } });
               return;
             }
 
-            // Проверяем баланс
+            console.log('Current balance:', user.rootBalance); // Логируем текущий баланс
+            
             if (user.rootBalance < price) {
+              console.log('Insufficient funds:', { balance: user.rootBalance, price });
               resolve({ status: 400, body: { success: false, message: 'Insufficient funds' } });
               return;
             }
 
-            // Обновляем баланс пользователя
             const newBalance = Number((user.rootBalance - price).toFixed(2));
+            console.log('New balance will be:', newBalance); // Логируем новый баланс
             
-            // Добавляем майнер в массив miners
             const currentMiners = user.miners || [];
             currentMiners.push({
               type: minerType,
@@ -1281,14 +1281,13 @@ const routes = {
               image: minerType === 'basic' ? '/assets/block2.jpg' : '/assets/block1.jpg'
             });
 
-            // Обновляем пользователя
             await user.update({
               rootBalance: newBalance,
               miners: currentMiners
             });
 
-            // Получаем обновленного пользователя
             const updatedUser = await User.findOne({ where: { telegramId } });
+            console.log('Updated user:', updatedUser.toJSON()); // Логируем обновленного пользователя
 
             resolve({
               status: 200,
