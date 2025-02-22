@@ -1288,11 +1288,14 @@ const server = https.createServer(options, async (req, res) => {
   const pathname = parsedUrl.pathname;
   const method = req.method;
 
-  console.log('Incoming request:', { 
-    method, 
-    pathname, 
-    query: parsedUrl.query 
-  });
+  // Логируем только не-статические запросы
+  if (!pathname.startsWith('/assets/') && !pathname.includes('.jpg')) {
+    console.log('Incoming request:', { 
+      method, 
+      pathname,
+      query: parsedUrl.query 
+    });
+  }
 
   // Проверяем существование роута в routes
   if (routes[method]?.[pathname]) {
