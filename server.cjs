@@ -94,6 +94,11 @@ const User = sequelize.define('User', {
   lastAdWatchTime: {
     type: DataTypes.DATE,
     allowNull: true
+  },
+  miners: {
+    type: DataTypes.JSONB, // Используем JSONB для хранения массива майнеров
+    defaultValue: [],
+    allowNull: false
   }
 });
 
@@ -1237,8 +1242,74 @@ const routes = {
               });
           });
       }
+    },
+'/update-miners': async (req, res) => {
+  const authError = await authMiddleware(req, res);
+  if (authError) return authError;
+
+  let body = '';
+  req.on('data', chunk => { body += chunk; });
+  
+  return new Promise((resolve) => {
+    req.on('end', async () => {
+      try {
+        const data = JSON.parse(body);
+        const { telegramId, miners } = data;
+
+        const user = await User.findOne({ where: { telegramId } });
+        if (!user) {
+          resolve({ status: 404, body: { error: 'User not found' } });
+          return;
+        }
+
+        await user.update({ miners });
+
+        resolve({
+          status: 200,
+          body: { 
+            success: true,
+            miners: user.miners
+          }
+        });
+      } catch (error) {
+        console.error('Error updating miners:', error);
+        resolve({ 
+          status: 500, 
+          body: { error: 'Failed to update miners' } 
+        });
+      }
+    });
+  });
+},
+'/get-miners': async (req, res, query) => {
+  const authError = await authMiddleware(req, res);
+  if (authError) return authError;
+
+  const { telegramId } = query;
+  
+  if (!telegramId) {
+    return { status: 400, body: { error: 'Missing telegramId parameter' } };
+  }
+
+  try {
+    const user = await User.findOne({ where: { telegramId } });
+    if (!user) {
+      return { status: 404, body: { error: 'User not found' } };
     }
-  };
+
+    return { 
+      status: 200, 
+      body: { 
+        success: true,
+        miners: user.miners || []
+      }
+    };
+  } catch (error) {
+    console.error('Error getting miners:', error);
+    return { status: 500, body: { error: 'Failed to get miners' } };
+  }
+}
+};
 
 // Функция для обработки статических файлов
 const serveStaticFile = (filePath, res) => {
