@@ -94,6 +94,11 @@ const User = sequelize.define('User', {
   lastAdWatchTime: {
     type: DataTypes.DATE,
     allowNull: true
+  },
+  miners: {
+    type: DataTypes.JSONB, // Используем JSONB для хранения массива майнеров
+    defaultValue: [],
+    allowNull: false
   }
 });
 
@@ -476,6 +481,7 @@ const routes = {
         return { status: 500, body: { error: 'Internal server error' } };
       }
     },
+    
     '/get-referral-count': async (req, res, query) => {
       const authError = await authMiddleware(req, res);
       if (authError) return authError;
@@ -545,6 +551,7 @@ const routes = {
         };
       }
     },
+    
     '/check-channel-subscription': async (req, res, query) => {
       const { telegramId, channel } = query;
       
@@ -829,6 +836,43 @@ const routes = {
     };
   }
 },
+'/get-user-miners': async (req, res, query) => {
+  const authError = await authMiddleware(req, res);
+  if (authError) return authError;
+
+  const { telegramId } = query;
+  
+  if (!telegramId) {
+    return { 
+      status: 400, 
+      body: { error: 'Telegram ID is required' } 
+    };
+  }
+
+  try {
+    const user = await User.findOne({ where: { telegramId } });
+    if (!user) {
+      return { 
+        status: 404, 
+        body: { error: 'User not found' } 
+      };
+    }
+
+    return { 
+      status: 200, 
+      body: { 
+        success: true,
+        miners: user.miners || []
+      } 
+    };
+  } catch (error) {
+    console.error('Error getting miners:', error);
+    return { 
+      status: 500, 
+      body: { error: 'Failed to get miners' } 
+    };
+  }
+},
 '/admin/get-stats': async (req, res, query) => {
     const { adminId } = query;
     
@@ -859,6 +903,7 @@ const routes = {
       };
     }
   },
+  
 '/reward': async (req, res, query) => {
     const telegramId = query.userid;
     
@@ -888,6 +933,7 @@ const routes = {
     }
     }
   },
+  
     POST: {
       '/update-root-balance': async (req, res) => {
         const authError = await authMiddleware(req, res);
@@ -1104,6 +1150,55 @@ const routes = {
     });
   });
 },
+'/update-user-miners': async (req, res) => {
+    const authError = await authMiddleware(req, res);
+    if (authError) return authError;
+
+    let body = '';
+    req.on('data', chunk => { body += chunk; });
+    
+    return new Promise((resolve) => {
+      req.on('end', async () => {
+        try {
+          const data = JSON.parse(body);
+          const { telegramId, miners } = data;
+
+          if (!telegramId || !Array.isArray(miners)) {
+            resolve({ 
+              status: 400, 
+              body: { error: 'Invalid request data' } 
+            });
+            return;
+          }
+
+          const user = await User.findOne({ where: { telegramId } });
+          if (!user) {
+            resolve({ 
+              status: 404, 
+              body: { error: 'User not found' } 
+            });
+            return;
+          }
+
+          await user.update({ miners });
+
+          resolve({
+            status: 200,
+            body: { 
+              success: true,
+              miners: user.miners
+            }
+          });
+        } catch (error) {
+          console.error('Error updating miners:', error);
+          resolve({ 
+            status: 500, 
+            body: { error: 'Failed to update miners' } 
+          });
+        }
+      });
+    });
+  },
 '/admin/add-wallet': async (req, res) => {
   const authError = await authMiddleware(req, res);
   if (authError) return authError;
