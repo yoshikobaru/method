@@ -841,8 +841,10 @@ const routes = {
   if (authError) return authError;
 
   const { telegramId } = query;
+  console.log(`Getting miners for user ${telegramId}`);
   
   if (!telegramId) {
+    console.log('No telegramId provided');
     return { 
       status: 400, 
       body: { error: 'Telegram ID is required' } 
@@ -852,17 +854,31 @@ const routes = {
   try {
     const user = await User.findOne({ where: { telegramId } });
     if (!user) {
+      console.log(`User ${telegramId} not found`);
       return { 
         status: 404, 
         body: { error: 'User not found' } 
       };
     }
 
+    // Подсчитываем количество каждого типа майнеров
+    const minerCounts = (user.miners || []).reduce((acc, miner) => {
+      acc[miner.type] = (acc[miner.type] || 0) + 1;
+      return acc;
+    }, {});
+
+    console.log('Miners in bag:', {
+      totalMiners: user.miners?.length || 0,
+      minerTypes: minerCounts,
+      details: user.miners
+    });
+
     return { 
       status: 200, 
       body: { 
         success: true,
-        miners: user.miners || []
+        miners: user.miners || [],
+        minerCounts: minerCounts
       } 
     };
   } catch (error) {
