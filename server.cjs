@@ -102,7 +102,8 @@ const User = sequelize.define('User', {
   },
   maxSlots: {
     type: DataTypes.INTEGER,
-    defaultValue: 5
+    defaultValue: 5,  // Начальное значение - 5 слотов
+    allowNull: false
   }
 });
 
@@ -954,121 +955,6 @@ const routes = {
     }
   },
   
-    '/get-user-slots': async (req, res, query) => {
-      const authError = await authMiddleware(req, res);
-      if (authError) return authError;
-
-      const { telegramId } = query;
-      
-      if (!telegramId) {
-        return { 
-          status: 400, 
-          body: { error: 'Telegram ID is required' } 
-        };
-      }
-
-      try {
-        const user = await User.findOne({ where: { telegramId } });
-        if (!user) {
-          return { 
-            status: 404, 
-            body: { error: 'User not found' } 
-          };
-        }
-
-        return { 
-          status: 200, 
-          body: { 
-            success: true,
-            maxSlots: user.maxSlots || 5 
-          } 
-        };
-      } catch (error) {
-        console.error('Error getting slots:', error);
-        return { 
-          status: 500, 
-          body: { error: 'Failed to get slots' } 
-        };
-      }
-    },
-    '/update-user-slots': async (req, res) => {
-      let body = '';
-      req.on('data', chunk => { body += chunk; });
-      
-      return new Promise((resolve) => {
-        req.on('end', async () => {
-          try {
-            const data = JSON.parse(body);
-            const { telegramId } = data;
-            
-            console.log('Processing slot update for:', telegramId);
-
-            // Находим пользователя
-            const user = await User.findOne({ 
-              where: { telegramId: telegramId.toString() } 
-            });
-
-            if (!user) {
-              resolve({
-                status: 404,
-                body: { 
-                  success: false, 
-                  error: 'Пользователь не найден' 
-                }
-              });
-              return;
-            }
-
-            // Проверяем баланс
-            if (user.rootBalance < 1000) {
-              resolve({
-                status: 400,
-                body: { 
-                  success: false, 
-                  error: 'Недостаточно средств' 
-                }
-              });
-              return;
-            }
-
-            // Обновляем данные пользователя
-            const newBalance = Number(user.rootBalance) - 1000;
-            const newMaxSlots = Number(user.maxSlots || 5) + 1;
-
-            await user.update({
-              rootBalance: newBalance,
-              maxSlots: newMaxSlots
-            });
-
-            console.log('Successfully updated user:', {
-              telegramId,
-              newBalance,
-              newMaxSlots
-            });
-
-            resolve({
-              status: 200,
-              body: {
-                success: true,
-                rootBalance: newBalance,
-                maxSlots: newMaxSlots
-              }
-            });
-
-          } catch (error) {
-            console.error('Error in update-user-slots:', error);
-            resolve({
-              status: 500,
-              body: {
-                success: false,
-                error: 'Внутренняя ошибка сервера'
-              }
-            });
-          }
-        });
-      });
-    },
-
     POST: {
       '/update-root-balance': async (req, res) => {
         const authError = await authMiddleware(req, res);
@@ -1311,7 +1197,7 @@ const routes = {
       status: 200, 
       body: { 
         success: true,
-        maxSlots: user.maxSlots || 5 
+        maxSlots: user.maxSlots 
       } 
     };
   } catch (error) {
@@ -1506,50 +1392,53 @@ const routes = {
           });
       }
     },
-    '/api/buy-slot': async (req, res) => {
+    '/update-user-slots': async (req, res) => {
+      const authError = await authMiddleware(req, res);
+      if (authError) return authError;
+
       let body = '';
       req.on('data', chunk => { body += chunk; });
       
       return new Promise((resolve) => {
         req.on('end', async () => {
           try {
-            const { telegramId } = JSON.parse(body);
-            
-            const user = await User.findOne({ 
-              where: { telegramId: telegramId.toString() } 
-            });
+            const data = JSON.parse(body);
+            const { telegramId } = data;
 
+            if (!telegramId) {
+              resolve({ 
+                status: 400, 
+                body: { error: 'Telegram ID is required' } 
+              });
+              return;
+            }
+
+            const user = await User.findOne({ where: { telegramId } });
             if (!user) {
-              resolve({
-                status: 404,
-                body: { success: false, error: 'Пользователь не найден' }
+              resolve({ 
+                status: 404, 
+                body: { error: 'User not found' } 
               });
               return;
             }
 
-            if (user.rootBalance < 1000) {
-              resolve({
-                status: 400,
-                body: { success: false, error: 'Недостаточно средств' }
-              });
-              return;
-            }
-
-            await user.update({
-              rootBalance: user.rootBalance - 1000,
-              maxSlots: (user.maxSlots || 5) + 1
+            // Увеличиваем количество слотов на 1
+            await user.update({ 
+              maxSlots: user.maxSlots + 1 
             });
 
             resolve({
               status: 200,
-              body: { success: true }
+              body: { 
+                success: true,
+                maxSlots: user.maxSlots
+              }
             });
-
           } catch (error) {
-            console.error('Error buying slot:', error);
-            resolve({
-              status: 500,
-              body: { success: false, error: 'Ошибка сервера' }
+            console.error('Error updating slots:', error);
+            resolve({ 
+              status: 500, 
+              body: { error: 'Failed to update slots' } 
             });
           }
         });
