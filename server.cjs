@@ -1308,63 +1308,7 @@ const routes = {
         });
       });
     },
-    '/update-user-slots': async (req, res) => {
-  const authError = await authMiddleware(req, res);
-  if (authError) return authError;
-
-  let body = '';
-  req.on('data', chunk => { body += chunk; });
-  
-  return new Promise((resolve) => {
-    req.on('end', async () => {
-      try {
-        const data = JSON.parse(body);
-        const { telegramId, maxSlots } = data;
-
-        if (!telegramId || maxSlots === undefined) {
-          resolve({ 
-            status: 400, 
-            body: { error: 'Invalid request data' } 
-          });
-          return;
-        }
-
-        // Находим и обновляем пользователя
-        const user = await User.findOne({ where: { telegramId } });
-        if (!user) {
-          resolve({ 
-            status: 404, 
-            body: { error: 'User not found' } 
-          });
-          return;
-        }
-
-        // Выполняем UPDATE запрос
-        await User.update(
-          { maxSlots: maxSlots },
-          { where: { telegramId: telegramId } }
-        );
-
-        // Получаем обновленного пользователя
-        const updatedUser = await User.findOne({ where: { telegramId } });
-
-        resolve({
-          status: 200,
-          body: { 
-            success: true,
-            maxSlots: updatedUser.maxSlots
-          }
-        });
-      } catch (error) {
-        console.error('Error updating slots:', error);
-        resolve({ 
-          status: 500, 
-          body: { error: 'Failed to update slots' } 
-        });
-      }
-    });
-  });
-},
+    
       '/admin/broadcast': async (req, res) => {
     const authError = await authMiddleware(req, res);
     if (authError) return authError;
