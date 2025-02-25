@@ -992,37 +992,29 @@ const routes = {
       }
     },
     '/update-user-slots': async (req, res) => {
-      try {
-        const authError = await authMiddleware(req, res);
-        if (authError) {
-          res.writeHead(authError.status, { 
-            'Content-Type': 'application/json',
-            'Access-Control-Allow-Origin': '*',
-            'Access-Control-Allow-Headers': 'Content-Type, X-Telegram-Init-Data'
-          });
-          res.end(JSON.stringify(authError.body));
-          return;
-        }
+      const authError = await authMiddleware(req, res);
+      if (authError) return authError;
 
-        let body = '';
-        req.on('data', chunk => { body += chunk; });
-        
+      let body = '';
+      req.on('data', chunk => { body += chunk; });
+      
+      return new Promise((resolve) => {
         req.on('end', async () => {
           try {
-            console.log('Received raw body:', body); // Логируем сырые данные
-
+            console.log('Received raw body:', body);
             const data = JSON.parse(body);
             console.log('Parsed request data:', data);
 
             const { telegramId } = data;
 
             if (!telegramId) {
-              console.log('Missing telegramId');
-              res.writeHead(400, { 'Content-Type': 'application/json' });
-              res.end(JSON.stringify({ 
-                success: false, 
-                error: 'Missing telegramId' 
-              }));
+              resolve({ 
+                status: 400, 
+                body: { 
+                  success: false, 
+                  error: 'Missing telegramId' 
+                } 
+              });
               return;
             }
 
@@ -1030,20 +1022,24 @@ const routes = {
             console.log('Found user:', user ? user.toJSON() : null);
 
             if (!user) {
-              res.writeHead(404, { 'Content-Type': 'application/json' });
-              res.end(JSON.stringify({ 
-                success: false, 
-                error: 'User not found' 
-              }));
+              resolve({ 
+                status: 404, 
+                body: { 
+                  success: false, 
+                  error: 'User not found' 
+                } 
+              });
               return;
             }
 
             if (user.rootBalance < 1000) {
-              res.writeHead(400, { 'Content-Type': 'application/json' });
-              res.end(JSON.stringify({ 
-                success: false, 
-                error: 'Insufficient funds' 
-              }));
+              resolve({ 
+                status: 400, 
+                body: { 
+                  success: false, 
+                  error: 'Insufficient funds' 
+                } 
+              });
               return;
             }
 
@@ -1065,35 +1061,28 @@ const routes = {
             const updatedUser = await User.findOne({ where: { telegramId } });
             console.log('Updated user:', updatedUser.toJSON());
 
-            res.writeHead(200, { 
-              'Content-Type': 'application/json',
-              'Access-Control-Allow-Origin': '*',
-              'Access-Control-Allow-Headers': 'Content-Type, X-Telegram-Init-Data'
+            resolve({
+              status: 200,
+              body: {
+                success: true,
+                rootBalance: updatedUser.rootBalance,
+                maxSlots: updatedUser.maxSlots
+              }
             });
-            res.end(JSON.stringify({
-              success: true,
-              rootBalance: updatedUser.rootBalance,
-              maxSlots: updatedUser.maxSlots
-            }));
 
           } catch (error) {
             console.error('Error processing request:', error);
-            res.writeHead(500, { 'Content-Type': 'application/json' });
-            res.end(JSON.stringify({ 
-              success: false, 
-              error: 'Internal server error',
-              details: error.message 
-            }));
+            resolve({ 
+              status: 500, 
+              body: { 
+                success: false, 
+                error: 'Internal server error',
+                details: error.message 
+              } 
+            });
           }
         });
-      } catch (error) {
-        console.error('Error in route handler:', error);
-        res.writeHead(500, { 'Content-Type': 'application/json' });
-        res.end(JSON.stringify({ 
-          success: false, 
-          error: 'Internal server error' 
-        }));
-      }
+      });
     },
 
     POST: {
