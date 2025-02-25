@@ -99,6 +99,11 @@ const User = sequelize.define('User', {
     type: DataTypes.JSONB, // Используем JSONB для хранения массива майнеров
     defaultValue: [],
     allowNull: false
+  },
+  maxSlots: {
+    type: DataTypes.INTEGER,
+    defaultValue: 5,  // Начальное значение - 5 слотов
+    allowNull: false
   }
 });
 
@@ -1166,6 +1171,43 @@ const routes = {
     });
   });
 },
+'/get-user-slots': async (req, res, query) => {
+  const authError = await authMiddleware(req, res);
+  if (authError) return authError;
+
+  const { telegramId } = query;
+  
+  if (!telegramId) {
+    return { 
+      status: 400, 
+      body: { error: 'Telegram ID is required' } 
+    };
+  }
+
+  try {
+    const user = await User.findOne({ where: { telegramId } });
+    if (!user) {
+      return { 
+        status: 404, 
+        body: { error: 'User not found' } 
+      };
+    }
+
+    return { 
+      status: 200, 
+      body: { 
+        success: true,
+        maxSlots: user.maxSlots 
+      } 
+    };
+  } catch (error) {
+    console.error('Error getting slots:', error);
+    return { 
+      status: 500, 
+      body: { error: 'Failed to get slots' } 
+    };
+  }
+},
 '/update-user-miners': async (req, res) => {
     const authError = await authMiddleware(req, res);
     if (authError) return authError;
@@ -1266,6 +1308,55 @@ const routes = {
         });
       });
     },
+    '/update-user-slots': async (req, res) => {
+  const authError = await authMiddleware(req, res);
+  if (authError) return authError;
+
+  let body = '';
+  req.on('data', chunk => { body += chunk; });
+  
+  return new Promise((resolve) => {
+    req.on('end', async () => {
+      try {
+        const data = JSON.parse(body);
+        const { telegramId, maxSlots } = data;
+
+        if (!telegramId || !maxSlots) {
+          resolve({ 
+            status: 400, 
+            body: { error: 'Invalid request data' } 
+          });
+          return;
+        }
+
+        const user = await User.findOne({ where: { telegramId } });
+        if (!user) {
+          resolve({ 
+            status: 404, 
+            body: { error: 'User not found' } 
+          });
+          return;
+        }
+
+        await user.update({ maxSlots });
+
+        resolve({
+          status: 200,
+          body: { 
+            success: true,
+            maxSlots: user.maxSlots
+          }
+        });
+      } catch (error) {
+        console.error('Error updating slots:', error);
+        resolve({ 
+          status: 500, 
+          body: { error: 'Failed to update slots' } 
+        });
+      }
+    });
+  });
+},
       '/admin/broadcast': async (req, res) => {
     const authError = await authMiddleware(req, res);
     if (authError) return authError;
