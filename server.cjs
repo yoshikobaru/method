@@ -1002,9 +1002,13 @@ const routes = {
         req.on('end', async () => {
           try {
             const data = JSON.parse(body);
+            console.log('Received data:', data); // Логируем полученные данные
+
             const { telegramId, rootBalance, maxSlots } = data;
+            console.log('Parsed values:', { telegramId, rootBalance, maxSlots }); // Логируем распаршенные значения
 
             if (!telegramId || rootBalance === undefined || !maxSlots) {
+              console.log('Missing parameters:', { telegramId, rootBalance, maxSlots }); // Логируем отсутствующие параметры
               resolve({ 
                 status: 400, 
                 body: { error: 'Missing required parameters' } 
@@ -1013,6 +1017,8 @@ const routes = {
             }
 
             const user = await User.findOne({ where: { telegramId } });
+            console.log('Found user:', user ? user.toJSON() : null); // Логируем найденного пользователя
+
             if (!user) {
               resolve({ 
                 status: 404, 
@@ -1022,6 +1028,7 @@ const routes = {
             }
 
             // Проверяем, достаточно ли средств
+            console.log('Current balance:', user.rootBalance); // Логируем текущий баланс
             if (user.rootBalance < 1000) {
               resolve({
                 status: 400,
@@ -1031,24 +1038,26 @@ const routes = {
             }
 
             // Обновляем баланс и количество слотов
-            await user.update({ 
-              rootBalance,
-              maxSlots
+            const updatedUser = await user.update({ 
+              rootBalance: user.rootBalance - 1000, // Вычитаем 1000 из текущего баланса
+              maxSlots: user.maxSlots + 1 // Увеличиваем текущее количество слотов на 1
             });
+            console.log('Updated user:', updatedUser.toJSON()); // Логируем обновленного пользователя
 
             resolve({
               status: 200,
               body: { 
                 success: true,
-                rootBalance: user.rootBalance,
-                maxSlots: user.maxSlots
+                rootBalance: updatedUser.rootBalance,
+                maxSlots: updatedUser.maxSlots
               }
             });
           } catch (error) {
             console.error('Error updating slots:', error);
+            console.error('Full error stack:', error.stack); // Логируем полный стек ошибки
             resolve({ 
               status: 500, 
-              body: { error: 'Failed to update slots' } 
+              body: { error: 'Failed to update slots', details: error.message } 
             });
           }
         });
