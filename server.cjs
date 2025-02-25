@@ -99,10 +99,6 @@ const User = sequelize.define('User', {
     type: DataTypes.JSONB, // Используем JSONB для хранения массива майнеров
     defaultValue: [],
     allowNull: false
-  },
-  maxSlots: {
-    type: DataTypes.INTEGER,
-    defaultValue: 5  // Начальное количество слотов
   }
 });
 
@@ -1352,69 +1348,6 @@ const routes = {
               });
           });
       }
-    },
-    '/update-user-slots': async (req, res) => {
-      console.log('Processing slots update request');
-      const authError = await authMiddleware(req, res);
-      if (authError) return authError;
-
-      let body = '';
-      req.on('data', chunk => { body += chunk; });
-      
-      return new Promise((resolve) => {
-        req.on('end', async () => {
-          try {
-            const data = JSON.parse(body);
-            console.log('Slots update data:', data);
-
-            const { telegramId, slotsToAdd } = data;
-            console.log('Updating slots for user:', telegramId, 'adding:', slotsToAdd);
-
-            const user = await User.findOne({ where: { telegramId } });
-            if (!user) {
-              console.log('User not found:', telegramId);
-              resolve({ 
-                status: 404, 
-                body: { error: 'User not found' } 
-              });
-              return;
-            }
-
-            console.log('Current maxSlots:', user.maxSlots);
-            const newMaxSlots = user.maxSlots + slotsToAdd;
-            console.log('New maxSlots:', newMaxSlots);
-
-            // Обновляем слоты
-            await User.update(
-              { maxSlots: newMaxSlots },
-              { where: { telegramId: telegramId.toString() } }
-            );
-            
-            console.log('Slots updated successfully');
-
-            // Получаем обновленного пользователя
-            const updatedUser = await User.findOne({ where: { telegramId } });
-            console.log('Updated user maxSlots:', updatedUser.maxSlots);
-
-            resolve({
-              status: 200,
-              body: { 
-                success: true,
-                maxSlots: updatedUser.maxSlots
-              }
-            });
-          } catch (error) {
-            console.error('Error updating slots:', error);
-            resolve({ 
-              status: 500, 
-              body: { 
-                success: false,
-                error: 'Failed to update slots: ' + error.message 
-              } 
-            });
-          }
-        });
-      });
     }
   };
 
@@ -1466,12 +1399,20 @@ const server = https.createServer(options, async (req, res) => {
   const pathname = parsedUrl.pathname;
   const method = req.method;
 
-  console.log('Request received:', method, pathname);
+  // Логируем только не-статические запросы
+  if (!pathname.startsWith('/assets/') && !pathname.includes('.jpg')) {
+    console.log('Incoming request:', { 
+      method, 
+      pathname,
+      query: parsedUrl.query 
+    });
+  }
 
-  // Проверяем существование маршрута
+  // Проверяем существование роута в routes
   if (routes[method]?.[pathname]) {
     try {
-      const result = await routes[method][pathname](req, res);
+      const handler = routes[method][pathname];
+      const result = await handler(req, res, parsedUrl.query);
       
       res.writeHead(result.status, { 
         'Content-Type': 'application/json',
@@ -1480,12 +1421,13 @@ const server = https.createServer(options, async (req, res) => {
       });
       
       res.end(JSON.stringify(result.body));
+      return;
     } catch (error) {
       console.error('Route handler error:', error);
       res.writeHead(500, { 'Content-Type': 'application/json' });
       res.end(JSON.stringify({ error: 'Internal Server Error' }));
+      return;
     }
-    return;
   }
 
   // Если роут не найден - обрабатываем как статический файл
