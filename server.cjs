@@ -1321,7 +1321,7 @@ const routes = {
         const data = JSON.parse(body);
         const { telegramId, maxSlots } = data;
 
-        if (!telegramId || !maxSlots) {
+        if (!telegramId || maxSlots === undefined) {
           resolve({ 
             status: 400, 
             body: { error: 'Invalid request data' } 
@@ -1329,6 +1329,7 @@ const routes = {
           return;
         }
 
+        // Находим и обновляем пользователя
         const user = await User.findOne({ where: { telegramId } });
         if (!user) {
           resolve({ 
@@ -1338,13 +1339,20 @@ const routes = {
           return;
         }
 
-        await user.update({ maxSlots });
+        // Выполняем UPDATE запрос
+        await User.update(
+          { maxSlots: maxSlots },
+          { where: { telegramId: telegramId } }
+        );
+
+        // Получаем обновленного пользователя
+        const updatedUser = await User.findOne({ where: { telegramId } });
 
         resolve({
           status: 200,
           body: { 
             success: true,
-            maxSlots: user.maxSlots
+            maxSlots: updatedUser.maxSlots
           }
         });
       } catch (error) {
