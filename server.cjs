@@ -99,6 +99,10 @@ const User = sequelize.define('User', {
     type: DataTypes.JSONB, // Используем JSONB для хранения массива майнеров
     defaultValue: [],
     allowNull: false
+  },
+  maxSlots: {
+    type: DataTypes.INTEGER,
+    defaultValue: 5  // Начальное количество слотов
   }
 });
 
@@ -1348,6 +1352,48 @@ const routes = {
               });
           });
       }
+    },
+    '/update-user-slots': async (req, res) => {
+      const authError = await authMiddleware(req, res);
+      if (authError) return authError;
+
+      let body = '';
+      req.on('data', chunk => { body += chunk; });
+      
+      return new Promise((resolve) => {
+        req.on('end', async () => {
+          try {
+            const data = JSON.parse(body);
+            const { telegramId, slotsToAdd } = data;
+
+            const user = await User.findOne({ where: { telegramId } });
+            if (!user) {
+              resolve({ 
+                status: 404, 
+                body: { error: 'User not found' } 
+              });
+              return;
+            }
+
+            const newMaxSlots = user.maxSlots + slotsToAdd;
+            await user.update({ maxSlots: newMaxSlots });
+
+            resolve({
+              status: 200,
+              body: { 
+                success: true,
+                maxSlots: newMaxSlots
+              }
+            });
+          } catch (error) {
+            console.error('Error updating slots:', error);
+            resolve({ 
+              status: 500, 
+              body: { error: 'Failed to update slots' } 
+            });
+          }
+        });
+      });
     }
   };
 
