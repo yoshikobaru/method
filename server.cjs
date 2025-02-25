@@ -358,7 +358,8 @@ const routes = {
             username: user.username,
             referralCode: user.referralCode,
             rootBalance: user.rootBalance,
-            referredBy: user.referredBy
+            referredBy: user.referredBy,
+            maxSlots: user.maxSlots
           }
         }
       };
