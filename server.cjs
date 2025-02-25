@@ -102,8 +102,7 @@ const User = sequelize.define('User', {
   },
   maxSlots: {
     type: DataTypes.INTEGER,
-    defaultValue: 5,  // Начальное значение - 5 слотов
-    allowNull: false
+    defaultValue: 5
   }
 });
 
@@ -955,6 +954,107 @@ const routes = {
     }
   },
   
+    '/get-user-slots': async (req, res, query) => {
+      const authError = await authMiddleware(req, res);
+      if (authError) return authError;
+
+      const { telegramId } = query;
+      
+      if (!telegramId) {
+        return { 
+          status: 400, 
+          body: { error: 'Telegram ID is required' } 
+        };
+      }
+
+      try {
+        const user = await User.findOne({ where: { telegramId } });
+        if (!user) {
+          return { 
+            status: 404, 
+            body: { error: 'User not found' } 
+          };
+        }
+
+        return { 
+          status: 200, 
+          body: { 
+            success: true,
+            maxSlots: user.maxSlots || 5 
+          } 
+        };
+      } catch (error) {
+        console.error('Error getting slots:', error);
+        return { 
+          status: 500, 
+          body: { error: 'Failed to get slots' } 
+        };
+      }
+    },
+    '/update-user-slots': async (req, res) => {
+      const authError = await authMiddleware(req, res);
+      if (authError) return authError;
+
+      let body = '';
+      req.on('data', chunk => { body += chunk; });
+      
+      return new Promise((resolve) => {
+        req.on('end', async () => {
+          try {
+            const data = JSON.parse(body);
+            const { telegramId, rootBalance, maxSlots } = data;
+
+            if (!telegramId || rootBalance === undefined || !maxSlots) {
+              resolve({ 
+                status: 400, 
+                body: { error: 'Missing required parameters' } 
+              });
+              return;
+            }
+
+            const user = await User.findOne({ where: { telegramId } });
+            if (!user) {
+              resolve({ 
+                status: 404, 
+                body: { error: 'User not found' } 
+              });
+              return;
+            }
+
+            // Проверяем, достаточно ли средств
+            if (user.rootBalance < 1000) {
+              resolve({
+                status: 400,
+                body: { error: 'Insufficient funds' }
+              });
+              return;
+            }
+
+            // Обновляем баланс и количество слотов
+            await user.update({ 
+              rootBalance,
+              maxSlots
+            });
+
+            resolve({
+              status: 200,
+              body: { 
+                success: true,
+                rootBalance: user.rootBalance,
+                maxSlots: user.maxSlots
+              }
+            });
+          } catch (error) {
+            console.error('Error updating slots:', error);
+            resolve({ 
+              status: 500, 
+              body: { error: 'Failed to update slots' } 
+            });
+          }
+        });
+      });
+    },
+
     POST: {
       '/update-root-balance': async (req, res) => {
         const authError = await authMiddleware(req, res);
@@ -1197,7 +1297,7 @@ const routes = {
       status: 200, 
       body: { 
         success: true,
-        maxSlots: user.maxSlots 
+        maxSlots: user.maxSlots || 5 
       } 
     };
   } catch (error) {
