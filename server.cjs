@@ -1505,6 +1505,55 @@ const routes = {
               });
           });
       }
+    },
+    '/api/buy-slot': async (req, res) => {
+      let body = '';
+      req.on('data', chunk => { body += chunk; });
+      
+      return new Promise((resolve) => {
+        req.on('end', async () => {
+          try {
+            const { telegramId } = JSON.parse(body);
+            
+            const user = await User.findOne({ 
+              where: { telegramId: telegramId.toString() } 
+            });
+
+            if (!user) {
+              resolve({
+                status: 404,
+                body: { success: false, error: 'Пользователь не найден' }
+              });
+              return;
+            }
+
+            if (user.rootBalance < 1000) {
+              resolve({
+                status: 400,
+                body: { success: false, error: 'Недостаточно средств' }
+              });
+              return;
+            }
+
+            await user.update({
+              rootBalance: user.rootBalance - 1000,
+              maxSlots: (user.maxSlots || 5) + 1
+            });
+
+            resolve({
+              status: 200,
+              body: { success: true }
+            });
+
+          } catch (error) {
+            console.error('Error buying slot:', error);
+            resolve({
+              status: 500,
+              body: { success: false, error: 'Ошибка сервера' }
+            });
+          }
+        });
+      });
     }
   };
 
