@@ -1369,6 +1369,9 @@ const routes = {
 
             const { telegramId, slotsToAdd } = data;
 
+            // Добавляем логирование SQL запроса
+            console.log('Executing slots update for telegramId:', telegramId);
+            
             const user = await User.findOne({ where: { telegramId } });
             if (!user) {
               console.log('User not found:', telegramId);
@@ -1383,21 +1386,30 @@ const routes = {
             const newMaxSlots = user.maxSlots + slotsToAdd;
             console.log('New maxSlots:', newMaxSlots);
 
-            await user.update({ maxSlots: newMaxSlots });
+            // Явно указываем обновление maxSlots
+            await User.update(
+              { maxSlots: newMaxSlots },
+              { where: { telegramId: telegramId } }
+            );
+            
             console.log('Slots updated successfully');
+
+            // Получаем обновленного пользователя для проверки
+            const updatedUser = await User.findOne({ where: { telegramId } });
+            console.log('Updated user maxSlots:', updatedUser.maxSlots);
 
             resolve({
               status: 200,
               body: { 
                 success: true,
-                maxSlots: newMaxSlots
+                maxSlots: updatedUser.maxSlots
               }
             });
           } catch (error) {
             console.error('Error updating slots:', error);
             resolve({ 
               status: 500, 
-              body: { error: 'Failed to update slots' } 
+              body: { error: 'Failed to update slots: ' + error.message } 
             });
           }
         });
