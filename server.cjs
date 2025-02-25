@@ -992,93 +992,77 @@ const routes = {
       }
     },
     '/update-user-slots': async (req, res) => {
-      const authError = await authMiddleware(req, res);
-      if (authError) return authError;
-
       let body = '';
       req.on('data', chunk => { body += chunk; });
       
       return new Promise((resolve) => {
         req.on('end', async () => {
           try {
-            console.log('Received raw body:', body);
             const data = JSON.parse(body);
-            console.log('Parsed request data:', data);
-
             const { telegramId } = data;
+            
+            console.log('Processing slot update for:', telegramId);
 
-            if (!telegramId) {
-              resolve({ 
-                status: 400, 
-                body: { 
-                  success: false, 
-                  error: 'Missing telegramId' 
-                } 
-              });
-              return;
-            }
-
-            const user = await User.findOne({ where: { telegramId } });
-            console.log('Found user:', user ? user.toJSON() : null);
+            // Находим пользователя
+            const user = await User.findOne({ 
+              where: { telegramId: telegramId.toString() } 
+            });
 
             if (!user) {
-              resolve({ 
-                status: 404, 
+              resolve({
+                status: 404,
                 body: { 
                   success: false, 
-                  error: 'User not found' 
-                } 
+                  error: 'Пользователь не найден' 
+                }
               });
               return;
             }
 
+            // Проверяем баланс
             if (user.rootBalance < 1000) {
-              resolve({ 
-                status: 400, 
+              resolve({
+                status: 400,
                 body: { 
                   success: false, 
-                  error: 'Insufficient funds' 
-                } 
+                  error: 'Недостаточно средств' 
+                }
               });
               return;
             }
 
-            // Обновляем пользователя
-            const newBalance = parseFloat(user.rootBalance) - 1000;
-            const newMaxSlots = (user.maxSlots || 5) + 1;
-
-            console.log('Updating user with:', {
-              newBalance,
-              newMaxSlots
-            });
+            // Обновляем данные пользователя
+            const newBalance = Number(user.rootBalance) - 1000;
+            const newMaxSlots = Number(user.maxSlots || 5) + 1;
 
             await user.update({
               rootBalance: newBalance,
               maxSlots: newMaxSlots
             });
 
-            // Получаем обновленные данные
-            const updatedUser = await User.findOne({ where: { telegramId } });
-            console.log('Updated user:', updatedUser.toJSON());
+            console.log('Successfully updated user:', {
+              telegramId,
+              newBalance,
+              newMaxSlots
+            });
 
             resolve({
               status: 200,
               body: {
                 success: true,
-                rootBalance: updatedUser.rootBalance,
-                maxSlots: updatedUser.maxSlots
+                rootBalance: newBalance,
+                maxSlots: newMaxSlots
               }
             });
 
           } catch (error) {
-            console.error('Error processing request:', error);
-            resolve({ 
-              status: 500, 
-              body: { 
-                success: false, 
-                error: 'Internal server error',
-                details: error.message 
-              } 
+            console.error('Error in update-user-slots:', error);
+            resolve({
+              status: 500,
+              body: {
+                success: false,
+                error: 'Внутренняя ошибка сервера'
+              }
             });
           }
         });
