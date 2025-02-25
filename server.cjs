@@ -1368,10 +1368,8 @@ const routes = {
             console.log('Slots update data:', data);
 
             const { telegramId, slotsToAdd } = data;
+            console.log('Updating slots for user:', telegramId, 'adding:', slotsToAdd);
 
-            // Добавляем логирование SQL запроса
-            console.log('Executing slots update for telegramId:', telegramId);
-            
             const user = await User.findOne({ where: { telegramId } });
             if (!user) {
               console.log('User not found:', telegramId);
@@ -1386,15 +1384,15 @@ const routes = {
             const newMaxSlots = user.maxSlots + slotsToAdd;
             console.log('New maxSlots:', newMaxSlots);
 
-            // Явно указываем обновление maxSlots
+            // Обновляем слоты
             await User.update(
               { maxSlots: newMaxSlots },
-              { where: { telegramId: telegramId } }
+              { where: { telegramId: telegramId.toString() } }
             );
             
             console.log('Slots updated successfully');
 
-            // Получаем обновленного пользователя для проверки
+            // Получаем обновленного пользователя
             const updatedUser = await User.findOne({ where: { telegramId } });
             console.log('Updated user maxSlots:', updatedUser.maxSlots);
 
@@ -1409,7 +1407,10 @@ const routes = {
             console.error('Error updating slots:', error);
             resolve({ 
               status: 500, 
-              body: { error: 'Failed to update slots: ' + error.message } 
+              body: { 
+                success: false,
+                error: 'Failed to update slots: ' + error.message 
+              } 
             });
           }
         });
@@ -1465,20 +1466,12 @@ const server = https.createServer(options, async (req, res) => {
   const pathname = parsedUrl.pathname;
   const method = req.method;
 
-  // Логируем только не-статические запросы
-  if (!pathname.startsWith('/assets/') && !pathname.includes('.jpg')) {
-    console.log('Incoming request:', { 
-      method, 
-      pathname,
-      query: parsedUrl.query 
-    });
-  }
+  console.log('Request received:', method, pathname);
 
-  // Проверяем существование роута в routes
+  // Проверяем существование маршрута
   if (routes[method]?.[pathname]) {
     try {
-      const handler = routes[method][pathname];
-      const result = await handler(req, res, parsedUrl.query);
+      const result = await routes[method][pathname](req, res);
       
       res.writeHead(result.status, { 
         'Content-Type': 'application/json',
@@ -1487,13 +1480,12 @@ const server = https.createServer(options, async (req, res) => {
       });
       
       res.end(JSON.stringify(result.body));
-      return;
     } catch (error) {
       console.error('Route handler error:', error);
       res.writeHead(500, { 'Content-Type': 'application/json' });
       res.end(JSON.stringify({ error: 'Internal Server Error' }));
-      return;
     }
+    return;
   }
 
   // Если роут не найден - обрабатываем как статический файл
