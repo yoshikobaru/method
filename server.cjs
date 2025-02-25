@@ -1354,6 +1354,7 @@ const routes = {
       }
     },
     '/update-user-slots': async (req, res) => {
+      console.log('Processing slots update request');
       const authError = await authMiddleware(req, res);
       if (authError) return authError;
 
@@ -1364,10 +1365,13 @@ const routes = {
         req.on('end', async () => {
           try {
             const data = JSON.parse(body);
+            console.log('Slots update data:', data);
+
             const { telegramId, slotsToAdd } = data;
 
             const user = await User.findOne({ where: { telegramId } });
             if (!user) {
+              console.log('User not found:', telegramId);
               resolve({ 
                 status: 404, 
                 body: { error: 'User not found' } 
@@ -1375,8 +1379,12 @@ const routes = {
               return;
             }
 
+            console.log('Current maxSlots:', user.maxSlots);
             const newMaxSlots = user.maxSlots + slotsToAdd;
+            console.log('New maxSlots:', newMaxSlots);
+
             await user.update({ maxSlots: newMaxSlots });
+            console.log('Slots updated successfully');
 
             resolve({
               status: 200,
