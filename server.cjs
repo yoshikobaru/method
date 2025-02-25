@@ -992,76 +992,108 @@ const routes = {
       }
     },
     '/update-user-slots': async (req, res) => {
-      const authError = await authMiddleware(req, res);
-      if (authError) return authError;
+      try {
+        const authError = await authMiddleware(req, res);
+        if (authError) {
+          res.writeHead(authError.status, { 
+            'Content-Type': 'application/json',
+            'Access-Control-Allow-Origin': '*',
+            'Access-Control-Allow-Headers': 'Content-Type, X-Telegram-Init-Data'
+          });
+          res.end(JSON.stringify(authError.body));
+          return;
+        }
 
-      let body = '';
-      req.on('data', chunk => { body += chunk; });
-      
-      return new Promise((resolve) => {
+        let body = '';
+        req.on('data', chunk => { body += chunk; });
+        
         req.on('end', async () => {
           try {
+            console.log('Received raw body:', body); // Логируем сырые данные
+
             const data = JSON.parse(body);
-            console.log('Received data:', data); // Логируем полученные данные
+            console.log('Parsed request data:', data);
 
-            const { telegramId, rootBalance, maxSlots } = data;
-            console.log('Parsed values:', { telegramId, rootBalance, maxSlots }); // Логируем распаршенные значения
+            const { telegramId } = data;
 
-            if (!telegramId || rootBalance === undefined || !maxSlots) {
-              console.log('Missing parameters:', { telegramId, rootBalance, maxSlots }); // Логируем отсутствующие параметры
-              resolve({ 
-                status: 400, 
-                body: { error: 'Missing required parameters' } 
-              });
+            if (!telegramId) {
+              console.log('Missing telegramId');
+              res.writeHead(400, { 'Content-Type': 'application/json' });
+              res.end(JSON.stringify({ 
+                success: false, 
+                error: 'Missing telegramId' 
+              }));
               return;
             }
 
             const user = await User.findOne({ where: { telegramId } });
-            console.log('Found user:', user ? user.toJSON() : null); // Логируем найденного пользователя
+            console.log('Found user:', user ? user.toJSON() : null);
 
             if (!user) {
-              resolve({ 
-                status: 404, 
-                body: { error: 'User not found' } 
-              });
+              res.writeHead(404, { 'Content-Type': 'application/json' });
+              res.end(JSON.stringify({ 
+                success: false, 
+                error: 'User not found' 
+              }));
               return;
             }
 
-            // Проверяем, достаточно ли средств
-            console.log('Current balance:', user.rootBalance); // Логируем текущий баланс
             if (user.rootBalance < 1000) {
-              resolve({
-                status: 400,
-                body: { error: 'Insufficient funds' }
-              });
+              res.writeHead(400, { 'Content-Type': 'application/json' });
+              res.end(JSON.stringify({ 
+                success: false, 
+                error: 'Insufficient funds' 
+              }));
               return;
             }
 
-            // Обновляем баланс и количество слотов
-            const updatedUser = await user.update({ 
-              rootBalance: user.rootBalance - 1000, // Вычитаем 1000 из текущего баланса
-              maxSlots: user.maxSlots + 1 // Увеличиваем текущее количество слотов на 1
-            });
-            console.log('Updated user:', updatedUser.toJSON()); // Логируем обновленного пользователя
+            // Обновляем пользователя
+            const newBalance = parseFloat(user.rootBalance) - 1000;
+            const newMaxSlots = (user.maxSlots || 5) + 1;
 
-            resolve({
-              status: 200,
-              body: { 
-                success: true,
-                rootBalance: updatedUser.rootBalance,
-                maxSlots: updatedUser.maxSlots
-              }
+            console.log('Updating user with:', {
+              newBalance,
+              newMaxSlots
             });
+
+            await user.update({
+              rootBalance: newBalance,
+              maxSlots: newMaxSlots
+            });
+
+            // Получаем обновленные данные
+            const updatedUser = await User.findOne({ where: { telegramId } });
+            console.log('Updated user:', updatedUser.toJSON());
+
+            res.writeHead(200, { 
+              'Content-Type': 'application/json',
+              'Access-Control-Allow-Origin': '*',
+              'Access-Control-Allow-Headers': 'Content-Type, X-Telegram-Init-Data'
+            });
+            res.end(JSON.stringify({
+              success: true,
+              rootBalance: updatedUser.rootBalance,
+              maxSlots: updatedUser.maxSlots
+            }));
+
           } catch (error) {
-            console.error('Error updating slots:', error);
-            console.error('Full error stack:', error.stack); // Логируем полный стек ошибки
-            resolve({ 
-              status: 500, 
-              body: { error: 'Failed to update slots', details: error.message } 
-            });
+            console.error('Error processing request:', error);
+            res.writeHead(500, { 'Content-Type': 'application/json' });
+            res.end(JSON.stringify({ 
+              success: false, 
+              error: 'Internal server error',
+              details: error.message 
+            }));
           }
         });
-      });
+      } catch (error) {
+        console.error('Error in route handler:', error);
+        res.writeHead(500, { 'Content-Type': 'application/json' });
+        res.end(JSON.stringify({ 
+          success: false, 
+          error: 'Internal server error' 
+        }));
+      }
     },
 
     POST: {
