@@ -11167,7 +11167,7 @@ Please change the parent <Route path="${d}"> to <Route path="${d === "/" ? "*" :
                               className: "text-center relative z-20",
                               children: s.jsx("button", {
                                 type: "button",
-                                onClick: () => h("basic", 4e3),
+                                onClick: () => h("basic", 4),
                                 className: `inline-block py-1 px-4 text-blue-400 text-xs font-mono rounded 
                                   border-2 border-blue-400/50 hover:border-blue-400
                                   bg-[#0A0F1C]/80 backdrop-blur-sm
