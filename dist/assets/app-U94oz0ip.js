@@ -10239,7 +10239,7 @@ Please change the parent <Route path="${d}"> to <Route path="${d === "/" ? "*" :
                             },
                             children: [
                               "+",
-                              1e3 * i.filter((h) => h.type === "basic").length,
+                              500 * i.filter((h) => h.type === "basic").length,
                               " POKO/min"
                             ]
                           })
@@ -10269,9 +10269,9 @@ Please change the parent <Route path="${d}"> to <Route path="${d === "/" ? "*" :
                                 fontFamily: "Polonium"
                               },
                               children: [
-                                a.basic,
+                                Math.min(a.basic, 1e3),
                                 "/",
-                                500 * i.filter((h) => h.type === "basic").length,
+                                1e3,
                                 " POKO"
                               ]
                             }),
