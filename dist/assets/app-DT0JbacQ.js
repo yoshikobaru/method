@@ -9915,7 +9915,7 @@ Please change the parent <Route path="${d}"> to <Route path="${d === "/" ? "*" :
         });
       };
       p();
-      const N = setInterval(p, 100);
+      const N = setInterval(p, 1e4);
       return () => clearInterval(N);
     }, [
       i
