@@ -372,8 +372,8 @@
       var P = L.length;
       L.push(_);
       e: for (; 0 < P; ) {
-        var T = P - 1 >>> 1, O = L[T];
-        if (0 < l(O, _)) L[T] = _, L[P] = O, P = T;
+        var R = P - 1 >>> 1, T = L[R];
+        if (0 < l(T, _)) L[R] = _, L[P] = T, P = R;
         else break e;
       }
     }
@@ -385,10 +385,10 @@
       var _ = L[0], P = L.pop();
       if (P !== _) {
         L[0] = P;
-        e: for (var T = 0, O = L.length, Y = O >>> 1; T < Y; ) {
-          var Z = 2 * (T + 1) - 1, Ot = L[Z], Me = Z + 1, ze = L[Me];
-          if (0 > l(Ot, P)) Me < O && 0 > l(ze, Ot) ? (L[T] = ze, L[Me] = P, T = Me) : (L[T] = Ot, L[Z] = P, T = Z);
-          else if (Me < O && 0 > l(ze, P)) L[T] = ze, L[Me] = P, T = Me;
+        e: for (var R = 0, T = L.length, Y = T >>> 1; R < Y; ) {
+          var Z = 2 * (R + 1) - 1, Ot = L[Z], Me = Z + 1, ze = L[Me];
+          if (0 > l(Ot, P)) Me < T && 0 > l(ze, Ot) ? (L[R] = ze, L[Me] = P, R = Me) : (L[R] = Ot, L[Z] = P, R = Z);
+          else if (Me < T && 0 > l(ze, P)) L[R] = ze, L[Me] = P, R = Me;
           else break e;
         }
       }
@@ -419,11 +419,11 @@
         _ = n(c);
       }
     }
-    function x(L) {
+    function w(L) {
       if (p = false, f(L), !k) if (n(a) !== null) k = true, dt(j);
       else {
         var _ = n(c);
-        _ !== null && Tn(x, _.startTime - L);
+        _ !== null && Tn(w, _.startTime - L);
       }
     }
     function j(L, _) {
@@ -431,37 +431,37 @@
       var P = v;
       try {
         for (f(_), g = n(a); g !== null && (!(g.expirationTime > _) || L && !G()); ) {
-          var T = g.callback;
-          if (typeof T == "function") {
+          var R = g.callback;
+          if (typeof R == "function") {
             g.callback = null, v = g.priorityLevel;
-            var O = T(g.expirationTime <= _);
-            _ = e.unstable_now(), typeof O == "function" ? g.callback = O : g === n(a) && r(a), f(_);
+            var T = R(g.expirationTime <= _);
+            _ = e.unstable_now(), typeof T == "function" ? g.callback = T : g === n(a) && r(a), f(_);
           } else r(a);
           g = n(a);
         }
         if (g !== null) var Y = true;
         else {
           var Z = n(c);
-          Z !== null && Tn(x, Z.startTime - _), Y = false;
+          Z !== null && Tn(w, Z.startTime - _), Y = false;
         }
         return Y;
       } finally {
         g = null, v = P, b = false;
       }
     }
-    var S = false, w = null, C = -1, R = 5, M = -1;
+    var S = false, x = null, C = -1, O = 5, M = -1;
     function G() {
-      return !(e.unstable_now() - M < R);
+      return !(e.unstable_now() - M < O);
     }
     function be() {
-      if (w !== null) {
+      if (x !== null) {
         var L = e.unstable_now();
         M = L;
         var _ = true;
         try {
-          _ = w(true, L);
+          _ = x(true, L);
         } finally {
-          _ ? Pe() : (S = false, w = null);
+          _ ? Pe() : (S = false, x = null);
         }
       } else S = false;
     }
@@ -478,7 +478,7 @@
       N(be, 0);
     };
     function dt(L) {
-      w = L, S || (S = true, Pe());
+      x = L, S || (S = true, Pe());
     }
     function Tn(L, _) {
       C = N(function() {
@@ -490,7 +490,7 @@
     }, e.unstable_continueExecution = function() {
       k || b || (k = true, dt(j));
     }, e.unstable_forceFrameRate = function(L) {
-      0 > L || 125 < L ? console.error("forceFrameRate takes a positive int between 0 and 125, forcing frame rates higher than 125 fps is not supported") : R = 0 < L ? Math.floor(1e3 / L) : 5;
+      0 > L || 125 < L ? console.error("forceFrameRate takes a positive int between 0 and 125, forcing frame rates higher than 125 fps is not supported") : O = 0 < L ? Math.floor(1e3 / L) : 5;
     }, e.unstable_getCurrentPriorityLevel = function() {
       return v;
     }, e.unstable_getFirstCallbackNode = function() {
@@ -533,31 +533,31 @@
         v = P;
       }
     }, e.unstable_scheduleCallback = function(L, _, P) {
-      var T = e.unstable_now();
-      switch (typeof P == "object" && P !== null ? (P = P.delay, P = typeof P == "number" && 0 < P ? T + P : T) : P = T, L) {
+      var R = e.unstable_now();
+      switch (typeof P == "object" && P !== null ? (P = P.delay, P = typeof P == "number" && 0 < P ? R + P : R) : P = R, L) {
         case 1:
-          var O = -1;
+          var T = -1;
           break;
         case 2:
-          O = 250;
+          T = 250;
           break;
         case 5:
-          O = 1073741823;
+          T = 1073741823;
           break;
         case 4:
-          O = 1e4;
+          T = 1e4;
           break;
         default:
-          O = 5e3;
+          T = 5e3;
       }
-      return O = P + O, L = {
+      return T = P + T, L = {
         id: h++,
         callback: _,
         priorityLevel: L,
         startTime: P,
-        expirationTime: O,
+        expirationTime: T,
         sortIndex: -1
-      }, P > T ? (L.sortIndex = P, t(c, L), n(a) === null && L === n(c) && (p ? (m(C), C = -1) : p = true, Tn(x, P - T))) : (L.sortIndex = O, t(a, L), k || b || (k = true, dt(j))), L;
+      }, P > R ? (L.sortIndex = P, t(c, L), n(a) === null && L === n(c) && (p ? (m(C), C = -1) : p = true, Tn(w, P - R))) : (L.sortIndex = T, t(a, L), k || b || (k = true, dt(j))), L;
     }, e.unstable_shouldYield = G, e.unstable_wrapCallback = function(L) {
       var _ = v;
       return function() {
@@ -2473,8 +2473,8 @@
           p = [];
           for (var d = c, f; d !== null; ) {
             f = d;
-            var x = f.stateNode;
-            if (f.tag === 5 && x !== null && (f = x, m !== null && (x = lr(d, m), x != null && p.push(dr(d, x, f)))), N) break;
+            var w = f.stateNode;
+            if (f.tag === 5 && w !== null && (f = w, m !== null && (w = lr(d, m), w != null && p.push(dr(d, w, f)))), N) break;
             d = d.return;
           }
           0 < p.length && (v = new b(v, k, null, n, h), g.push({
@@ -2487,9 +2487,9 @@
         e: {
           if (v = e === "mouseover" || e === "pointerover", b = e === "mouseout" || e === "pointerout", v && n !== Wo && (k = n.relatedTarget || n.fromElement) && (It(k) || k[it])) break e;
           if ((b || v) && (v = h.window === h ? h : (v = h.ownerDocument) ? v.defaultView || v.parentWindow : window, b ? (k = n.relatedTarget || n.toElement, b = c, k = k ? It(k) : null, k !== null && (N = Yt(k), k !== N || k.tag !== 5 && k.tag !== 6) && (k = null)) : (b = null, k = c), b !== k)) {
-            if (p = Hs, x = "onMouseLeave", m = "onMouseEnter", d = "mouse", (e === "pointerout" || e === "pointerover") && (p = Ks, x = "onPointerLeave", m = "onPointerEnter", d = "pointer"), N = b == null ? v : on(b), f = k == null ? v : on(k), v = new p(x, d + "leave", b, n, h), v.target = N, v.relatedTarget = f, x = null, It(h) === c && (p = new p(m, d + "enter", k, n, h), p.target = f, p.relatedTarget = N, x = p), N = x, b && k) t: {
+            if (p = Hs, w = "onMouseLeave", m = "onMouseEnter", d = "mouse", (e === "pointerout" || e === "pointerover") && (p = Ks, w = "onPointerLeave", m = "onPointerEnter", d = "pointer"), N = b == null ? v : on(b), f = k == null ? v : on(k), v = new p(w, d + "leave", b, n, h), v.target = N, v.relatedTarget = f, w = null, It(h) === c && (p = new p(m, d + "enter", k, n, h), p.target = f, p.relatedTarget = N, w = p), N = w, b && k) t: {
               for (p = b, m = k, d = 0, f = p; f; f = Zt(f)) d++;
-              for (f = 0, x = m; x; x = Zt(x)) f++;
+              for (f = 0, w = m; w; w = Zt(w)) f++;
               for (; 0 < d - f; ) p = Zt(p), d--;
               for (; 0 < f - d; ) m = Zt(m), f--;
               for (; d--; ) {
@@ -2537,7 +2537,7 @@
           case "keyup":
             ea(g, n, h);
         }
-        var w;
+        var x;
         if (Wi) e: {
           switch (e) {
             case "compositionstart":
@@ -2553,13 +2553,13 @@
           C = void 0;
         }
         else nn ? Bu(e, n) && (C = "onCompositionEnd") : e === "keydown" && n.keyCode === 229 && (C = "onCompositionStart");
-        C && ($u && n.locale !== "ko" && (nn || C !== "onCompositionStart" ? C === "onCompositionEnd" && nn && (w = Du()) : (yt = h, $i = "value" in yt ? yt.value : yt.textContent, nn = true)), S = hl(c, C), 0 < S.length && (C = new Vs(C, e, null, n, h), g.push({
+        C && ($u && n.locale !== "ko" && (nn || C !== "onCompositionStart" ? C === "onCompositionEnd" && nn && (x = Du()) : (yt = h, $i = "value" in yt ? yt.value : yt.textContent, nn = true)), S = hl(c, C), 0 < S.length && (C = new Vs(C, e, null, n, h), g.push({
           event: C,
           listeners: S
-        }), w ? C.data = w : (w = Uu(n), w !== null && (C.data = w)))), (w = Kf ? Qf(e, n) : Gf(e, n)) && (c = hl(c, "onBeforeInput"), 0 < c.length && (h = new Vs("onBeforeInput", "beforeinput", null, n, h), g.push({
+        }), x ? C.data = x : (x = Uu(n), x !== null && (C.data = x)))), (x = Kf ? Qf(e, n) : Gf(e, n)) && (c = hl(c, "onBeforeInput"), 0 < c.length && (h = new Vs("onBeforeInput", "beforeinput", null, n, h), g.push({
           event: h,
           listeners: c
-        }), h.data = w));
+        }), h.data = x));
       }
       ec(g, t);
     });
@@ -2929,18 +2929,18 @@
     function i(m) {
       return e && m.alternate === null && (m.flags |= 2), m;
     }
-    function u(m, d, f, x) {
-      return d === null || d.tag !== 6 ? (d = No(f, m.mode, x), d.return = m, d) : (d = l(d, f), d.return = m, d);
+    function u(m, d, f, w) {
+      return d === null || d.tag !== 6 ? (d = No(f, m.mode, w), d.return = m, d) : (d = l(d, f), d.return = m, d);
     }
-    function a(m, d, f, x) {
+    function a(m, d, f, w) {
       var j = f.type;
-      return j === tn ? h(m, d, f.props.children, x, f.key) : d !== null && (d.elementType === j || typeof j == "object" && j !== null && j.$$typeof === pt && da(j) === d.type) ? (x = l(d, f.props), x.ref = Dn(m, d, f), x.return = m, x) : (x = ol(f.type, f.key, f.props, null, m.mode, x), x.ref = Dn(m, d, f), x.return = m, x);
+      return j === tn ? h(m, d, f.props.children, w, f.key) : d !== null && (d.elementType === j || typeof j == "object" && j !== null && j.$$typeof === pt && da(j) === d.type) ? (w = l(d, f.props), w.ref = Dn(m, d, f), w.return = m, w) : (w = ol(f.type, f.key, f.props, null, m.mode, w), w.ref = Dn(m, d, f), w.return = m, w);
     }
-    function c(m, d, f, x) {
-      return d === null || d.tag !== 4 || d.stateNode.containerInfo !== f.containerInfo || d.stateNode.implementation !== f.implementation ? (d = So(f, m.mode, x), d.return = m, d) : (d = l(d, f.children || []), d.return = m, d);
+    function c(m, d, f, w) {
+      return d === null || d.tag !== 4 || d.stateNode.containerInfo !== f.containerInfo || d.stateNode.implementation !== f.implementation ? (d = So(f, m.mode, w), d.return = m, d) : (d = l(d, f.children || []), d.return = m, d);
     }
-    function h(m, d, f, x, j) {
-      return d === null || d.tag !== 7 ? (d = Ut(f, m.mode, x, j), d.return = m, d) : (d = l(d, f), d.return = m, d);
+    function h(m, d, f, w, j) {
+      return d === null || d.tag !== 7 ? (d = Ut(f, m.mode, w, j), d.return = m, d) : (d = l(d, f), d.return = m, d);
     }
     function g(m, d, f) {
       if (typeof d == "string" && d !== "" || typeof d == "number") return d = No("" + d, m.mode, f), d.return = m, d;
@@ -2951,92 +2951,92 @@
           case en:
             return d = So(d, m.mode, f), d.return = m, d;
           case pt:
-            var x = d._init;
-            return g(m, x(d._payload), f);
+            var w = d._init;
+            return g(m, w(d._payload), f);
         }
         if (Hn(d) || On(d)) return d = Ut(d, m.mode, f, null), d.return = m, d;
         Ur(m, d);
       }
       return null;
     }
-    function v(m, d, f, x) {
+    function v(m, d, f, w) {
       var j = d !== null ? d.key : null;
-      if (typeof f == "string" && f !== "" || typeof f == "number") return j !== null ? null : u(m, d, "" + f, x);
+      if (typeof f == "string" && f !== "" || typeof f == "number") return j !== null ? null : u(m, d, "" + f, w);
       if (typeof f == "object" && f !== null) {
         switch (f.$$typeof) {
           case Fr:
-            return f.key === j ? a(m, d, f, x) : null;
+            return f.key === j ? a(m, d, f, w) : null;
           case en:
-            return f.key === j ? c(m, d, f, x) : null;
+            return f.key === j ? c(m, d, f, w) : null;
           case pt:
-            return j = f._init, v(m, d, j(f._payload), x);
+            return j = f._init, v(m, d, j(f._payload), w);
         }
-        if (Hn(f) || On(f)) return j !== null ? null : h(m, d, f, x, null);
+        if (Hn(f) || On(f)) return j !== null ? null : h(m, d, f, w, null);
         Ur(m, f);
       }
       return null;
     }
-    function b(m, d, f, x, j) {
-      if (typeof x == "string" && x !== "" || typeof x == "number") return m = m.get(f) || null, u(d, m, "" + x, j);
-      if (typeof x == "object" && x !== null) {
-        switch (x.$$typeof) {
+    function b(m, d, f, w, j) {
+      if (typeof w == "string" && w !== "" || typeof w == "number") return m = m.get(f) || null, u(d, m, "" + w, j);
+      if (typeof w == "object" && w !== null) {
+        switch (w.$$typeof) {
           case Fr:
-            return m = m.get(x.key === null ? f : x.key) || null, a(d, m, x, j);
+            return m = m.get(w.key === null ? f : w.key) || null, a(d, m, w, j);
           case en:
-            return m = m.get(x.key === null ? f : x.key) || null, c(d, m, x, j);
+            return m = m.get(w.key === null ? f : w.key) || null, c(d, m, w, j);
           case pt:
-            var S = x._init;
-            return b(m, d, f, S(x._payload), j);
+            var S = w._init;
+            return b(m, d, f, S(w._payload), j);
         }
-        if (Hn(x) || On(x)) return m = m.get(f) || null, h(d, m, x, j, null);
-        Ur(d, x);
+        if (Hn(w) || On(w)) return m = m.get(f) || null, h(d, m, w, j, null);
+        Ur(d, w);
       }
       return null;
     }
-    function k(m, d, f, x) {
-      for (var j = null, S = null, w = d, C = d = 0, R = null; w !== null && C < f.length; C++) {
-        w.index > C ? (R = w, w = null) : R = w.sibling;
-        var M = v(m, w, f[C], x);
+    function k(m, d, f, w) {
+      for (var j = null, S = null, x = d, C = d = 0, O = null; x !== null && C < f.length; C++) {
+        x.index > C ? (O = x, x = null) : O = x.sibling;
+        var M = v(m, x, f[C], w);
         if (M === null) {
-          w === null && (w = R);
+          x === null && (x = O);
           break;
         }
-        e && w && M.alternate === null && t(m, w), d = o(M, d, C), S === null ? j = M : S.sibling = M, S = M, w = R;
+        e && x && M.alternate === null && t(m, x), d = o(M, d, C), S === null ? j = M : S.sibling = M, S = M, x = O;
       }
-      if (C === f.length) return n(m, w), W && zt(m, C), j;
-      if (w === null) {
-        for (; C < f.length; C++) w = g(m, f[C], x), w !== null && (d = o(w, d, C), S === null ? j = w : S.sibling = w, S = w);
+      if (C === f.length) return n(m, x), W && zt(m, C), j;
+      if (x === null) {
+        for (; C < f.length; C++) x = g(m, f[C], w), x !== null && (d = o(x, d, C), S === null ? j = x : S.sibling = x, S = x);
         return W && zt(m, C), j;
       }
-      for (w = r(m, w); C < f.length; C++) R = b(w, m, C, f[C], x), R !== null && (e && R.alternate !== null && w.delete(R.key === null ? C : R.key), d = o(R, d, C), S === null ? j = R : S.sibling = R, S = R);
-      return e && w.forEach(function(G) {
+      for (x = r(m, x); C < f.length; C++) O = b(x, m, C, f[C], w), O !== null && (e && O.alternate !== null && x.delete(O.key === null ? C : O.key), d = o(O, d, C), S === null ? j = O : S.sibling = O, S = O);
+      return e && x.forEach(function(G) {
         return t(m, G);
       }), W && zt(m, C), j;
     }
-    function p(m, d, f, x) {
+    function p(m, d, f, w) {
       var j = On(f);
       if (typeof j != "function") throw Error(E(150));
       if (f = j.call(f), f == null) throw Error(E(151));
-      for (var S = j = null, w = d, C = d = 0, R = null, M = f.next(); w !== null && !M.done; C++, M = f.next()) {
-        w.index > C ? (R = w, w = null) : R = w.sibling;
-        var G = v(m, w, M.value, x);
+      for (var S = j = null, x = d, C = d = 0, O = null, M = f.next(); x !== null && !M.done; C++, M = f.next()) {
+        x.index > C ? (O = x, x = null) : O = x.sibling;
+        var G = v(m, x, M.value, w);
         if (G === null) {
-          w === null && (w = R);
+          x === null && (x = O);
           break;
         }
-        e && w && G.alternate === null && t(m, w), d = o(G, d, C), S === null ? j = G : S.sibling = G, S = G, w = R;
+        e && x && G.alternate === null && t(m, x), d = o(G, d, C), S === null ? j = G : S.sibling = G, S = G, x = O;
       }
-      if (M.done) return n(m, w), W && zt(m, C), j;
-      if (w === null) {
-        for (; !M.done; C++, M = f.next()) M = g(m, M.value, x), M !== null && (d = o(M, d, C), S === null ? j = M : S.sibling = M, S = M);
+      if (M.done) return n(m, x), W && zt(m, C), j;
+      if (x === null) {
+        for (; !M.done; C++, M = f.next()) M = g(m, M.value, w), M !== null && (d = o(M, d, C), S === null ? j = M : S.sibling = M, S = M);
         return W && zt(m, C), j;
       }
-      for (w = r(m, w); !M.done; C++, M = f.next()) M = b(w, m, C, M.value, x), M !== null && (e && M.alternate !== null && w.delete(M.key === null ? C : M.key), d = o(M, d, C), S === null ? j = M : S.sibling = M, S = M);
-      return e && w.forEach(function(be) {
+      for (x = r(m, x); !M.done; C++, M = f.next()) M = b(x, m, C, M.value, w), M !== null && (e && M.alternate !== null && x.delete(M.key === null ? C : M.key), d = o(M, d, C), S === null ? j = M : S.sibling = M, S = M);
+      return e && x.forEach(function(be) {
         return t(m, be);
       }), W && zt(m, C), j;
     }
-    function N(m, d, f, x) {
+    function N(m, d, f, w) {
       if (typeof f == "object" && f !== null && f.type === tn && f.key === null && (f = f.props.children), typeof f == "object" && f !== null) {
         switch (f.$$typeof) {
           case Fr:
@@ -3057,7 +3057,7 @@
                 } else t(m, S);
                 S = S.sibling;
               }
-              f.type === tn ? (d = Ut(f.props.children, m.mode, x, f.key), d.return = m, m = d) : (x = ol(f.type, f.key, f.props, null, m.mode, x), x.ref = Dn(m, d, f), x.return = m, m = x);
+              f.type === tn ? (d = Ut(f.props.children, m.mode, w, f.key), d.return = m, m = d) : (w = ol(f.type, f.key, f.props, null, m.mode, w), w.ref = Dn(m, d, f), w.return = m, m = w);
             }
             return i(m);
           case en:
@@ -3073,17 +3073,17 @@
                 else t(m, d);
                 d = d.sibling;
               }
-              d = So(f, m.mode, x), d.return = m, m = d;
+              d = So(f, m.mode, w), d.return = m, m = d;
             }
             return i(m);
           case pt:
-            return S = f._init, N(m, d, S(f._payload), x);
+            return S = f._init, N(m, d, S(f._payload), w);
         }
-        if (Hn(f)) return k(m, d, f, x);
-        if (On(f)) return p(m, d, f, x);
+        if (Hn(f)) return k(m, d, f, w);
+        if (On(f)) return p(m, d, f, w);
         Ur(m, f);
       }
-      return typeof f == "string" && f !== "" || typeof f == "number" ? (f = "" + f, d !== null && d.tag === 6 ? (n(m, d.sibling), d = l(d, f), d.return = m, m = d) : (n(m, d), d = No(f, m.mode, x), d.return = m, m = d), i(m)) : n(m, d);
+      return typeof f == "string" && f !== "" || typeof f == "number" ? (f = "" + f, d !== null && d.tag === 6 ? (n(m, d.sibling), d = l(d, f), d.return = m, m = d) : (n(m, d), d = No(f, m.mode, w), d.return = m, m = d), i(m)) : n(m, d);
     }
     return N;
   }
@@ -4733,8 +4733,8 @@ Error generating stack: ` + o.message + `
           default:
             throw Error(E(163));
         }
-      } catch (x) {
-        X(t, t.return, x);
+      } catch (w) {
+        X(t, t.return, w);
       }
       if (e = t.sibling, e !== null) {
         e.return = t.return, F = e;
@@ -5582,8 +5582,8 @@ Error generating stack: ` + o.message + `
                 var d = o.type, f = o.stateNode;
                 if (!(o.flags & 128) && (typeof d.getDerivedStateFromError == "function" || f !== null && typeof f.componentDidCatch == "function" && (St === null || !St.has(f)))) {
                   o.flags |= 65536, t &= -t, o.lanes |= t;
-                  var x = Tc(o, u, t);
-                  fa(o, x);
+                  var w = Tc(o, u, t);
+                  fa(o, w);
                   break e;
                 }
             }
@@ -5783,9 +5783,9 @@ Error generating stack: ` + o.message + `
                 F = null;
                 break e;
               }
-              var x = u.sibling;
-              if (x !== null) {
-                x.return = u.return, F = x;
+              var w = u.sibling;
+              if (w !== null) {
+                w.return = u.return, F = w;
                 break e;
               }
               F = u.return;
@@ -6627,12 +6627,12 @@ Error generating stack: ` + o.message + `
       u = "PUSH";
       let d = ji(p.location, N, m);
       c = h() + 1;
-      let f = $a(d, c), x = p.createHref(d);
+      let f = $a(d, c), w = p.createHref(d);
       try {
-        i.pushState(f, "", x);
+        i.pushState(f, "", w);
       } catch (j) {
         if (j instanceof DOMException && j.name === "DataCloneError") throw j;
-        l.location.assign(x);
+        l.location.assign(w);
       }
       o && a && a({
         action: u,
@@ -6644,8 +6644,8 @@ Error generating stack: ` + o.message + `
       u = "REPLACE";
       let d = ji(p.location, N, m);
       c = h();
-      let f = $a(d, c), x = p.createHref(d);
-      i.replaceState(f, "", x), o && a && a({
+      let f = $a(d, c), w = p.createHref(d);
+      i.replaceState(f, "", w), o && a && a({
         action: u,
         location: p.location,
         delta: 0
@@ -7648,14 +7648,14 @@ Please change the parent <Route path="${d}"> to <Route path="${d === "/" ? "*" :
   var vd = /^(?:[a-z][a-z0-9+.-]*:|\/\/)/i, yd = y.forwardRef(function({ onClick: t, discover: n = "render", prefetch: r = "none", relative: l, reloadDocument: o, replace: i, state: u, target: a, to: c, preventScrollReset: h, viewTransition: g, ...v }, b) {
     let { basename: k } = y.useContext(Ve), p = typeof c == "string" && vd.test(c), N, m = false;
     if (typeof c == "string" && p && (N = c, gd)) try {
-      let R = new URL(window.location.href), M = c.startsWith("//") ? new URL(R.protocol + c) : new URL(c), G = Lt(M.pathname, k);
-      M.origin === R.origin && G != null ? c = G + M.search + M.hash : m = true;
+      let O = new URL(window.location.href), M = c.startsWith("//") ? new URL(O.protocol + c) : new URL(c), G = Lt(M.pathname, k);
+      M.origin === O.origin && G != null ? c = G + M.search + M.hash : m = true;
     } catch {
       He(false, `<Link to="${c}"> contains an invalid URL which will probably break when clicked - please update to a valid URL path.`);
     }
     let d = Rp(c, {
       relative: l
-    }), [f, x, j] = p0(r, v), S = j0(c, {
+    }), [f, w, j] = p0(r, v), S = j0(c, {
       replace: i,
       state: u,
       target: a,
@@ -7663,15 +7663,15 @@ Please change the parent <Route path="${d}"> to <Route path="${d === "/" ? "*" :
       relative: l,
       viewTransition: g
     });
-    function w(R) {
-      t && t(R), R.defaultPrevented || S(R);
+    function x(O) {
+      t && t(O), O.defaultPrevented || S(O);
     }
     let C = y.createElement("a", {
       ...v,
       ...j,
       href: N || d,
-      onClick: m || o ? t : w,
-      ref: y0(b, x),
+      onClick: m || o ? t : x,
+      ref: y0(b, w),
       target: a,
       "data-discover": !p && n === "render" ? "true" : void 0
     });
@@ -7685,28 +7685,28 @@ Please change the parent <Route path="${d}"> to <Route path="${d === "/" ? "*" :
       relative: c.relative
     }), v = ct(), b = y.useContext(Yl), { navigator: k, basename: p } = y.useContext(Ve), N = b != null && P0(g) && u === true, m = k.encodeLocation ? k.encodeLocation(g).pathname : g.pathname, d = v.pathname, f = b && b.navigation && b.navigation.location ? b.navigation.location.pathname : null;
     n || (d = d.toLowerCase(), f = f ? f.toLowerCase() : null, m = m.toLowerCase()), f && p && (f = Lt(f, p) || f);
-    const x = m !== "/" && m.endsWith("/") ? m.length - 1 : m.length;
-    let j = d === m || !l && d.startsWith(m) && d.charAt(x) === "/", S = f != null && (f === m || !l && f.startsWith(m) && f.charAt(m.length) === "/"), w = {
+    const w = m !== "/" && m.endsWith("/") ? m.length - 1 : m.length;
+    let j = d === m || !l && d.startsWith(m) && d.charAt(w) === "/", S = f != null && (f === m || !l && f.startsWith(m) && f.charAt(m.length) === "/"), x = {
       isActive: j,
       isPending: S,
       isTransitioning: N
-    }, C = j ? t : void 0, R;
-    typeof r == "function" ? R = r(w) : R = [
+    }, C = j ? t : void 0, O;
+    typeof r == "function" ? O = r(x) : O = [
       r,
       j ? "active" : null,
       S ? "pending" : null,
       N ? "transitioning" : null
     ].filter(Boolean).join(" ");
-    let M = typeof o == "function" ? o(w) : o;
+    let M = typeof o == "function" ? o(x) : o;
     return y.createElement(yd, {
       ...c,
       "aria-current": C,
-      className: R,
+      className: O,
       ref: h,
       style: M,
       to: i,
       viewTransition: u
-    }, typeof a == "function" ? a(w) : a);
+    }, typeof a == "function" ? a(x) : a);
   });
   w0.displayName = "NavLink";
   var b0 = y.forwardRef(({ discover: e = "render", fetcherKey: t, navigate: n, reloadDocument: r, replace: l, state: o, method: i = il, action: u, onSubmit: a, relative: c, preventScrollReset: h, viewTransition: g, ...v }, b) => {
@@ -7715,8 +7715,8 @@ Please change the parent <Route path="${d}"> to <Route path="${d === "/" ? "*" :
     }), N = i.toLowerCase() === "get" ? "get" : "post", m = typeof u == "string" && vd.test(u), d = (f) => {
       if (a && a(f), f.defaultPrevented) return;
       f.preventDefault();
-      let x = f.nativeEvent.submitter, j = (x == null ? void 0 : x.getAttribute("formmethod")) || i;
-      k(x || f.currentTarget, {
+      let w = f.nativeEvent.submitter, j = (w == null ? void 0 : w.getAttribute("formmethod")) || i;
+      k(w || f.currentTarget, {
         fetcherKey: t,
         method: j,
         navigate: n,
@@ -8005,10 +8005,10 @@ Please change the parent <Route path="${d}"> to <Route path="${d === "/" ? "*" :
         probability: 0.05
       }
     }, N = () => {
-      const x = Math.random();
+      const w = Math.random();
       let j, S = 0;
-      for (const w in p) if (S += p[w].probability, x <= S) {
-        j = p[w];
+      for (const x in p) if (S += p[x].probability, w <= S) {
+        j = p[x];
         break;
       }
       return {
@@ -8020,46 +8020,46 @@ Please change the parent <Route path="${d}"> to <Route path="${d === "/" ? "*" :
         caught: false,
         processed: false
       };
-    }, m = (x, j) => {
-      const S = k.current, w = 90, C = 95, R = 4, M = 4, G = Math.abs(x - S), be = Math.abs(j - w);
-      return G < R && be < M && j < C && j > w - M;
+    }, m = (w, j) => {
+      const S = k.current, x = 90, C = 95, O = 4, M = 4, G = Math.abs(w - S), be = Math.abs(j - x);
+      return G < O && be < M && j < C && j > x - M;
     }, d = () => {
-      const x = Date.now(), j = x - v.current;
-      v.current = x, x - b.current > 1e3 && (c((S) => [
+      const w = Date.now(), j = w - v.current;
+      v.current = w, w - b.current > 1e3 && (c((S) => [
         ...S,
         N()
-      ]), b.current = x), c((S) => S.map((w) => {
-        if (w.caught) return w;
-        const C = w.y + w.speed * j;
-        return C > w.y && m(w.x, C) ? (w.type.points === "mth" ? o((R) => R + 1) : r((R) => R + w.type.points), {
-          ...w,
+      ]), b.current = w), c((S) => S.map((x) => {
+        if (x.caught) return x;
+        const C = x.y + x.speed * j;
+        return C > x.y && m(x.x, C) ? (x.type.points === "mth" ? o((O) => O + 1) : r((O) => O + x.type.points), {
+          ...x,
           caught: true
         }) : C > 100 ? {
-          ...w,
+          ...x,
           outOfBounds: true
         } : {
-          ...w,
+          ...x,
           y: C
         };
-      }).filter((w) => !w.outOfBounds && !w.caught)), requestAnimationFrame(d);
-    }, f = (x) => {
-      x.preventDefault();
+      }).filter((x) => !x.outOfBounds && !x.caught)), requestAnimationFrame(d);
+    }, f = (w) => {
+      w.preventDefault();
     };
     return y.useEffect(() => {
       document.body.style.overflow = "hidden", document.addEventListener("touchmove", f, {
         passive: false
       });
-      const x = requestAnimationFrame(d), j = (S) => {
+      const w = requestAnimationFrame(d), j = (S) => {
         if (S.key === "ArrowLeft") {
-          const w = Math.max(5, k.current - 5);
-          u(w), k.current = w;
+          const x = Math.max(5, k.current - 5);
+          u(x), k.current = x;
         } else if (S.key === "ArrowRight") {
-          const w = Math.min(95, k.current + 5);
-          u(w), k.current = w;
+          const x = Math.min(95, k.current + 5);
+          u(x), k.current = x;
         } else S.key === "Escape" && e();
       };
       return window.addEventListener("keydown", j), () => {
-        window.removeEventListener("keydown", j), cancelAnimationFrame(x), document.body.style.overflow = "auto", document.removeEventListener("touchmove", f);
+        window.removeEventListener("keydown", j), cancelAnimationFrame(w), document.body.style.overflow = "auto", document.removeEventListener("touchmove", f);
       };
     }, [
       e
@@ -8067,8 +8067,8 @@ Please change the parent <Route path="${d}"> to <Route path="${d === "/" ? "*" :
       k.current = i;
     }, []), y.useEffect(() => {
       if (t !== void 0) {
-        const x = Math.max(5, Math.min(95, i + t));
-        u(x), k.current = x;
+        const w = Math.max(5, Math.min(95, i + t));
+        u(w), k.current = w;
       }
     }, [
       t
@@ -8163,20 +8163,20 @@ Please change the parent <Route path="${d}"> to <Route path="${d === "/" ? "*" :
                   })
                 ]
               }),
-              a.map((x) => s.jsx("div", {
+              a.map((w) => s.jsx("div", {
                 className: "absolute w-8 h-8 rounded-full flex items-center justify-center transition-opacity duration-200",
                 style: {
-                  left: `${x.x}%`,
-                  top: `${x.y}%`,
-                  backgroundColor: x.type.color,
-                  boxShadow: `0 0 20px ${x.type.color}80`,
+                  left: `${w.x}%`,
+                  top: `${w.y}%`,
+                  backgroundColor: w.type.color,
+                  boxShadow: `0 0 20px ${w.type.color}80`,
                   transform: "translate(-50%, -50%)",
-                  opacity: x.caught ? 0 : 1
+                  opacity: w.caught ? 0 : 1
                 },
                 children: s.jsx("div", {
                   className: "w-1 h-1 rounded-full bg-white/50"
                 })
-              }, x.id))
+              }, w.id))
             ]
           }),
           s.jsxs("div", {
@@ -8525,14 +8525,14 @@ Please change the parent <Route path="${d}"> to <Route path="${d === "/" ? "*" :
       }
     }, h = (v) => {
       if (!n || !u.current || !i.current) return;
-      const b = u.current.getBoundingClientRect(), k = i.current.getBoundingClientRect(), p = 0.5, N = 1, m = 0.2, d = -1e3, f = v.gamma, x = v.beta;
+      const b = u.current.getBoundingClientRect(), k = i.current.getBoundingClientRect(), p = 0.5, N = 1, m = 0.2, d = -1e3, f = v.gamma, w = v.beta;
       t((j) => {
         let S = j.x + f * p;
-        const w = x > 0 ? m : N;
-        let C = j.y + x * w;
+        const x = w > 0 ? m : N;
+        let C = j.y + w * x;
         S = Math.max(0, Math.min(S, b.width - k.width));
-        const R = b.height - k.height;
-        return C >= R && (C = R, C += d), C = Math.max(0, C), {
+        const O = b.height - k.height;
+        return C >= O && (C = O, C += d), C = Math.max(0, C), {
           x: S,
           y: C
         };
@@ -8882,9 +8882,9 @@ Please change the parent <Route path="${d}"> to <Route path="${d === "/" ? "*" :
   }, bd = ({ setGameActive: e }) => {
     const { user: t, setUser: n } = Ze(), r = (_) => {
       const P = [];
-      for (let T = 0; T < he; T++) for (let O = 0; O < he; O++) _[T][O] !== D.WALL && Math.abs(O - 1) + Math.abs(T - 1) > 5 && P.push({
-        x: O,
-        y: T
+      for (let R = 0; R < he; R++) for (let T = 0; T < he; T++) _[R][T] !== D.WALL && Math.abs(T - 1) + Math.abs(R - 1) > 5 && P.push({
+        x: T,
+        y: R
       });
       return P[Math.floor(Math.random() * P.length)];
     }, [l, o] = y.useState(() => Qa()), [i, u] = y.useState({
@@ -8905,15 +8905,15 @@ Please change the parent <Route path="${d}"> to <Route path="${d === "/" ? "*" :
       }, 200);
       return () => clearInterval(_);
     }, []);
-    const [d, f] = y.useState("ArrowRight"), [x, j] = y.useState(false), [S, w] = y.useState(0), [C, R] = y.useState(/* @__PURE__ */ new Set()), M = () => {
-      b(true), w(1e4);
+    const [d, f] = y.useState("ArrowRight"), [w, j] = y.useState(false), [S, x] = y.useState(0), [C, O] = y.useState(/* @__PURE__ */ new Set()), M = () => {
+      b(true), x(1e4);
       const _ = setInterval(() => {
-        w((P) => P <= 1e3 ? (clearInterval(_), b(false), 0) : P - 1e3);
+        x((P) => P <= 1e3 ? (clearInterval(_), b(false), 0) : P - 1e3);
       }, 1e3);
     }, G = y.useCallback(() => {
       a.forEach((_, P) => {
-        _.x === i.x && _.y === i.y && !C.has(P) && (v ? (g((T) => T + 200), R((T) => /* @__PURE__ */ new Set([
-          ...T,
+        _.x === i.x && _.y === i.y && !C.has(P) && (v ? (g((R) => R + 200), O((R) => /* @__PURE__ */ new Set([
+          ...R,
           P
         ]))) : p(true));
       });
@@ -8927,66 +8927,66 @@ Please change the parent <Route path="${d}"> to <Route path="${d === "/" ? "*" :
       o(_), u({
         x: 1,
         y: 1
-      }), c((P) => P.map((T) => ({
+      }), c((P) => P.map((R) => ({
         ...r(_),
-        color: T.color
-      }))), g(0), b(false), p(false), R(/* @__PURE__ */ new Set());
+        color: R.color
+      }))), g(0), b(false), p(false), O(/* @__PURE__ */ new Set());
     }, Pe = y.useCallback((_) => {
-      _.some((T) => T.some((O) => O === D.DOT || O === D.POWER_PELLET)) || (j(true), dt(h));
+      _.some((R) => R.some((T) => T === D.DOT || T === D.POWER_PELLET)) || (j(true), dt(h));
     }, [
       h
     ]), Xt = y.useCallback((_) => {
-      k || x || (f(_), u((P) => {
+      k || w || (f(_), u((P) => {
         var _a2, _b, _c2, _d2;
-        const T = {
+        const R = {
           ...P
         };
         switch (_) {
           case "ArrowUp":
-            ((_a2 = l[P.y - 1]) == null ? void 0 : _a2[P.x]) !== D.WALL && (T.y -= 1);
+            ((_a2 = l[P.y - 1]) == null ? void 0 : _a2[P.x]) !== D.WALL && (R.y -= 1);
             break;
           case "ArrowDown":
-            ((_b = l[P.y + 1]) == null ? void 0 : _b[P.x]) !== D.WALL && (T.y += 1);
+            ((_b = l[P.y + 1]) == null ? void 0 : _b[P.x]) !== D.WALL && (R.y += 1);
             break;
           case "ArrowLeft":
-            ((_c2 = l[P.y]) == null ? void 0 : _c2[P.x - 1]) !== D.WALL && (T.x -= 1);
+            ((_c2 = l[P.y]) == null ? void 0 : _c2[P.x - 1]) !== D.WALL && (R.x -= 1);
             break;
           case "ArrowRight":
-            ((_d2 = l[P.y]) == null ? void 0 : _d2[P.x + 1]) !== D.WALL && (T.x += 1);
+            ((_d2 = l[P.y]) == null ? void 0 : _d2[P.x + 1]) !== D.WALL && (R.x += 1);
             break;
         }
-        const O = l[T.y][T.x];
-        if (O === D.DOT) {
+        const T = l[R.y][R.x];
+        if (T === D.DOT) {
           g((Z) => Z + 10);
           const Y = [
             ...l
           ];
-          Y[T.y][T.x] = D.EMPTY, o(Y), Pe(Y);
-        } else if (O === D.POWER_PELLET) {
+          Y[R.y][R.x] = D.EMPTY, o(Y), Pe(Y);
+        } else if (T === D.POWER_PELLET) {
           g((Z) => Z + 50), M();
           const Y = [
             ...l
           ];
-          Y[T.y][T.x] = D.EMPTY, o(Y), Pe(Y);
+          Y[R.y][R.x] = D.EMPTY, o(Y), Pe(Y);
         }
-        return T;
+        return R;
       }));
     }, [
       l,
       k,
-      x,
+      w,
       Pe
     ]);
     y.useEffect(() => {
       if (k) return;
       const P = setInterval(() => {
-        c((T) => T.map((O) => {
+        c((R) => R.map((T) => {
           var _a2, _b;
-          const Y = O.collisionCount || 0;
-          if (((_a2 = l[O.y]) == null ? void 0 : _a2[O.x]) === D.WALL) {
+          const Y = T.collisionCount || 0;
+          if (((_a2 = l[T.y]) == null ? void 0 : _a2[T.x]) === D.WALL) {
             const ze = r(l);
             return {
-              ...O,
+              ...T,
               ...ze,
               direction: null,
               collisionCount: 0
@@ -9014,30 +9014,30 @@ Please change the parent <Route path="${d}"> to <Route path="${d === "/" ? "*" :
               dir: "left"
             }
           ];
-          if (O.direction && Y < 2) {
-            const ze = Z.find((Zl) => Zl.dir === O.direction), Pr = O.x + ze.dx, _r = O.y + ze.dy;
+          if (T.direction && Y < 2) {
+            const ze = Z.find((Zl) => Zl.dir === T.direction), Pr = T.x + ze.dx, _r = T.y + ze.dy;
             return ((_b = l[_r]) == null ? void 0 : _b[Pr]) !== D.WALL ? {
-              ...O,
+              ...T,
               x: Pr,
               y: _r,
               collisionCount: 0
             } : {
-              ...O,
+              ...T,
               collisionCount: Y + 1,
               direction: null
             };
           }
           const Ot = Z.filter(({ dx: ze, dy: Pr }) => {
             var _a3;
-            const _r = O.x + ze, Zl = O.y + Pr;
+            const _r = T.x + ze, Zl = T.y + Pr;
             return ((_a3 = l[Zl]) == null ? void 0 : _a3[_r]) !== D.WALL;
           });
-          if (Ot.length === 0) return O;
+          if (Ot.length === 0) return T;
           const Me = Ot[Math.floor(Math.random() * Ot.length)];
           return {
-            ...O,
-            x: O.x + Me.dx,
-            y: O.y + Me.dy,
+            ...T,
+            x: T.x + Me.dx,
+            y: T.y + Me.dy,
             direction: Me.dir,
             collisionCount: 0
           };
@@ -9067,7 +9067,7 @@ Please change the parent <Route path="${d}"> to <Route path="${d === "/" ? "*" :
       try {
         const P = (_d2 = (_c2 = (_b = (_a2 = window.Telegram) == null ? void 0 : _a2.WebApp) == null ? void 0 : _b.initDataUnsafe) == null ? void 0 : _c2.user) == null ? void 0 : _d2.id;
         if (!P) return;
-        const O = parseFloat((t == null ? void 0 : t.rootBalance) || 0) + _, Z = await (await fetch("/update-root-balance", {
+        const T = parseFloat((t == null ? void 0 : t.rootBalance) || 0) + _, Z = await (await fetch("/update-root-balance", {
           method: "POST",
           headers: {
             "Content-Type": "application/json",
@@ -9075,7 +9075,7 @@ Please change the parent <Route path="${d}"> to <Route path="${d === "/" ? "*" :
           },
           body: JSON.stringify({
             telegramId: P,
-            rootBalance: O
+            rootBalance: T
           })
         })).json();
         Z.success && n({
@@ -9131,7 +9131,7 @@ Please change the parent <Route path="${d}"> to <Route path="${d === "/" ? "*" :
             })
           ]
         }),
-        x && s.jsxs("div", {
+        w && s.jsxs("div", {
           className: "absolute inset-0 bg-black/80 flex flex-col items-center justify-center z-10",
           children: [
             s.jsx("div", {
@@ -9193,21 +9193,21 @@ Please change the parent <Route path="${d}"> to <Route path="${d === "/" ? "*" :
             padding: "4px",
             borderRadius: "8px"
           },
-          children: l.map((_, P) => _.map((T, O) => s.jsxs("div", {
+          children: l.map((_, P) => _.map((R, T) => s.jsxs("div", {
             style: {
               width: `${Po}px`,
               height: `${Po}px`,
               position: "relative",
-              backgroundColor: T === D.WALL ? "#2563eb" : "#000"
+              backgroundColor: R === D.WALL ? "#2563eb" : "#000"
             },
             children: [
-              T === D.DOT && s.jsx("div", {
+              R === D.DOT && s.jsx("div", {
                 className: "absolute inset-0 m-auto w-1 h-1 bg-yellow-200 rounded-full"
               }),
-              T === D.POWER_PELLET && s.jsx("div", {
+              R === D.POWER_PELLET && s.jsx("div", {
                 className: "absolute inset-0 m-auto w-3 h-3 bg-yellow-400 rounded-full"
               }),
-              i.x === O && i.y === P && s.jsx("div", {
+              i.x === T && i.y === P && s.jsx("div", {
                 className: "absolute inset-0",
                 style: {
                   transform: L(),
@@ -9235,7 +9235,7 @@ Please change the parent <Route path="${d}"> to <Route path="${d === "/" ? "*" :
                   ]
                 })
               }),
-              a.map((Y, Z) => !C.has(Z) && Y.x === O && Y.y === P && s.jsx("div", {
+              a.map((Y, Z) => !C.has(Z) && Y.x === T && Y.y === P && s.jsx("div", {
                 className: "absolute inset-0 flex items-center justify-center",
                 children: s.jsxs("div", {
                   className: `w-full h-full relative ${v ? "animate-pulse" : ""}`,
@@ -9292,7 +9292,7 @@ Please change the parent <Route path="${d}"> to <Route path="${d === "/" ? "*" :
                 })
               }, Z))
             ]
-          }, `${O}-${P}`)))
+          }, `${T}-${P}`)))
         }),
         s.jsxs("div", {
           className: "mt-4 relative h-32 max-w-[180px] mx-auto",
@@ -9455,15 +9455,15 @@ Please change the parent <Route path="${d}"> to <Route path="${d === "/" ? "*" :
     y.useEffect(() => {
       var _a3, _b;
       ((_b = (_a3 = window.Telegram) == null ? void 0 : _a3.WebApp) == null ? void 0 : _b.CloudStorage) && (k.Social.forEach((f) => {
-        window.Telegram.WebApp.CloudStorage.getItem(`task_${f.id}`, (x, j) => {
-          !x && j && v((S) => ({
+        window.Telegram.WebApp.CloudStorage.getItem(`task_${f.id}`, (w, j) => {
+          !w && j && v((S) => ({
             ...S,
             [f.id]: j === "true"
           }));
         });
       }), k.Media.forEach((f) => {
-        window.Telegram.WebApp.CloudStorage.getItem(`task_${f.id}`, (x, j) => {
-          !x && j && v((S) => ({
+        window.Telegram.WebApp.CloudStorage.getItem(`task_${f.id}`, (w, j) => {
+          !w && j && v((S) => ({
             ...S,
             [f.id]: j === "true"
           }));
@@ -9476,12 +9476,12 @@ Please change the parent <Route path="${d}"> to <Route path="${d === "/" ? "*" :
         return;
       }
       r(n === f ? null : f);
-    }, N = (f, x) => {
+    }, N = (f, w) => {
       var _a3;
-      console.log("Join channel clicked:", f), x.stopPropagation(), ((_a3 = window.Telegram) == null ? void 0 : _a3.WebApp) ? window.Telegram.WebApp.openTelegramLink(`https://t.me/${f}`) : window.open(`https://t.me/${f}`, "_blank");
-    }, m = async (f, x) => {
+      console.log("Join channel clicked:", f), w.stopPropagation(), ((_a3 = window.Telegram) == null ? void 0 : _a3.WebApp) ? window.Telegram.WebApp.openTelegramLink(`https://t.me/${f}`) : window.open(`https://t.me/${f}`, "_blank");
+    }, m = async (f, w) => {
       var _a3;
-      if (x.stopPropagation(), !(i == null ? void 0 : i.telegramId) || l || g[f.id]) {
+      if (w.stopPropagation(), !(i == null ? void 0 : i.telegramId) || l || g[f.id]) {
         g[f.id] && a.showAlert("\u274C You have already claimed the reward!", {
           style: {
             fontFamily: "Polonium"
@@ -9503,8 +9503,8 @@ Please change the parent <Route path="${d}"> to <Route path="${d === "/" ? "*" :
             telegramId: i.telegramId,
             rootBalance: S
           })
-        })).json()).success) window.Telegram.WebApp.CloudStorage.setItem(`task_${f.id}`, "true", (R) => {
-          R || (v((M) => ({
+        })).json()).success) window.Telegram.WebApp.CloudStorage.setItem(`task_${f.id}`, "true", (O) => {
+          O || (v((M) => ({
             ...M,
             [f.id]: true
           })), u({
@@ -9526,16 +9526,16 @@ Please change the parent <Route path="${d}"> to <Route path="${d === "/" ? "*" :
       } finally {
         o(false);
       }
-    }, d = async (f, x) => {
-      x.stopPropagation();
+    }, d = async (f, w) => {
+      w.stopPropagation();
       try {
         const S = await (await fetch(`/check-channel-subscription?telegramId=${i.telegramId}&channel=${f.channelUsername}`, {
           headers: {
             "x-telegram-init-data": a.initData
           }
         })).json();
-        S.success ? window.Telegram.WebApp.CloudStorage.setItem(`task_${f.id}`, "true", (w) => {
-          w || (v((C) => ({
+        S.success ? window.Telegram.WebApp.CloudStorage.setItem(`task_${f.id}`, "true", (x) => {
+          x || (v((C) => ({
             ...C,
             [f.id]: true
           })), u({
@@ -9643,7 +9643,7 @@ Please change the parent <Route path="${d}"> to <Route path="${d === "/" ? "*" :
                       s.jsx("div", {
                         className: "space-y-2",
                         children: f.type === "bot" ? s.jsxs("button", {
-                          onClick: (x) => m(f, x),
+                          onClick: (w) => m(f, w),
                           disabled: l || g[f.id],
                           className: `w-full bg-[#0F172A]/80 hover:bg-[#0F172A] text-blue-400 py-2 rounded-lg 
                                   text-sm transition-all duration-200
@@ -9699,7 +9699,7 @@ Please change the parent <Route path="${d}"> to <Route path="${d === "/" ? "*" :
                         }) : s.jsxs(s.Fragment, {
                           children: [
                             s.jsxs("button", {
-                              onClick: (x) => N(f.channelUsername, x),
+                              onClick: (w) => N(f.channelUsername, w),
                               className: `w-full bg-[#0F172A]/80 hover:bg-[#0F172A] text-blue-400 py-2 rounded-lg 
                                     text-sm transition-all duration-200
                                     border-2 border-blue-400/50 hover:border-blue-400
@@ -9726,7 +9726,7 @@ Please change the parent <Route path="${d}"> to <Route path="${d === "/" ? "*" :
                               ]
                             }),
                             s.jsx("button", {
-                              onClick: (x) => d(f, x),
+                              onClick: (w) => d(f, w),
                               disabled: g[f.id],
                               className: `w-full bg-[#0F172A]/80 hover:bg-[#0F172A] text-blue-400 py-2 rounded-lg 
                                     text-sm transition-all duration-200
@@ -9886,8 +9886,8 @@ Please change the parent <Route path="${d}"> to <Route path="${d === "/" ? "*" :
           return;
         }
         const f = JSON.parse(d);
-        let x = false;
-        f.cube1 || (f.cube1 = Date.now(), x = true), f.cube2 || (f.cube2 = Date.now(), x = true), f.cube3 || (f.cube3 = Date.now(), x = true), f.cube4 || (f.cube4 = Date.now(), x = true), x && window.Telegram.WebApp.CloudStorage.setItem("lastCollection", JSON.stringify(f));
+        let w = false;
+        f.cube1 || (f.cube1 = Date.now(), w = true), f.cube2 || (f.cube2 = Date.now(), w = true), f.cube3 || (f.cube3 = Date.now(), w = true), f.cube4 || (f.cube4 = Date.now(), w = true), w && window.Telegram.WebApp.CloudStorage.setItem("lastCollection", JSON.stringify(f));
       });
       const p = () => {
         window.Telegram.WebApp.CloudStorage.getItem("lastCollection", (m, d) => {
@@ -9895,24 +9895,24 @@ Please change the parent <Route path="${d}"> to <Route path="${d === "/" ? "*" :
             console.error("Error getting lastCollection:", m);
             return;
           }
-          const f = JSON.parse(d || "{}"), x = Date.now(), j = {
+          const f = JSON.parse(d || "{}"), w = Date.now(), j = {
             ...a
-          }, S = i.reduce((w, C) => (w[C.type] = (w[C.type] || 0) + 1, w), {});
-          Object.entries(S).forEach(([w, C]) => {
-            if (!f[w]) {
-              f[w] = Date.now(), window.Telegram.WebApp.CloudStorage.setItem("lastCollection", JSON.stringify(f));
+          }, S = i.reduce((x, C) => (x[C.type] = (x[C.type] || 0) + 1, x), {});
+          Object.entries(S).forEach(([x, C]) => {
+            if (!f[x]) {
+              f[x] = Date.now(), window.Telegram.WebApp.CloudStorage.setItem("lastCollection", JSON.stringify(f));
               return;
             }
-            const R = (x - f[w]) / 1e3, G = (w === "basic" ? 100 / 60 : w === "minion" ? 2e3 / 60 : w === "cube1" ? 5e3 / 60 : w === "cube2" ? 6e3 / 60 : w === "cube3" ? 7e3 / 60 : 8e3 / 60) * C, be = w === "basic" ? 1e3 * C : w === "minion" ? 4e4 * C : w === "cube1" ? 8e3 * C : w === "cube2" ? 12e3 * C : w === "cube3" ? 16e3 * C : 2e4 * C, Pe = Math.min(be, Math.floor(R * G));
-            console.log(`Mining calculation for ${w}:`, {
+            const O = (w - f[x]) / 1e3, G = (x === "basic" ? 100 / 60 : x === "minion" ? 2e3 / 60 : x === "cube1" ? 5e3 / 60 : x === "cube2" ? 6e3 / 60 : x === "cube3" ? 7e3 / 60 : 8e3 / 60) * C, be = x === "basic" ? 1e3 * C : x === "minion" ? 4e4 * C : x === "cube1" ? 8e3 * C : x === "cube2" ? 12e3 * C : x === "cube3" ? 16e3 * C : 2e4 * C, Pe = Math.min(be, Math.floor(O * G));
+            console.log(`Mining calculation for ${x}:`, {
               count: C,
-              timeDiff: R,
+              timeDiff: O,
               secondRate: G,
               mined: Pe,
               maxCapacity: be,
-              lastCollection: f[w],
-              currentTime: x
-            }), j[w] = Pe;
+              lastCollection: f[x],
+              currentTime: w
+            }), j[x] = Pe;
           }), c(j);
         });
       };
@@ -9967,8 +9967,8 @@ Please change the parent <Route path="${d}"> to <Route path="${d === "/" ? "*" :
             console.error("Error getting lastCollection:", j);
             return;
           }
-          const w = JSON.parse(S || "{}");
-          w[p] = Date.now(), window.Telegram.WebApp.CloudStorage.setItem("lastCollection", JSON.stringify(w), (C) => {
+          const x = JSON.parse(S || "{}");
+          x[p] = Date.now(), window.Telegram.WebApp.CloudStorage.setItem("lastCollection", JSON.stringify(x), (C) => {
             if (C) {
               console.error("Error saving lastCollection:", C);
               return;
@@ -9976,8 +9976,8 @@ Please change the parent <Route path="${d}"> to <Route path="${d === "/" ? "*" :
             t({
               ...e,
               rootBalance: d
-            }), c((R) => ({
-              ...R,
+            }), c((O) => ({
+              ...O,
               [p]: 0
             }));
           });
@@ -10064,7 +10064,7 @@ Please change the parent <Route path="${d}"> to <Route path="${d === "/" ? "*" :
                 s.jsx("div", {
                   className: "grid grid-cols-5 gap-3",
                   children: (() => {
-                    const p = i.filter((w) => w.type === "basic"), N = i.filter((w) => w.type === "minion"), m = i.filter((w) => w.type === "cube1"), d = i.filter((w) => w.type === "cube2"), f = i.filter((w) => w.type === "cube3"), x = i.filter((w) => w.type === "cube4"), j = [];
+                    const p = i.filter((x) => x.type === "basic"), N = i.filter((x) => x.type === "minion"), m = i.filter((x) => x.type === "cube1"), d = i.filter((x) => x.type === "cube2"), f = i.filter((x) => x.type === "cube3"), w = i.filter((x) => x.type === "cube4"), j = [];
                     p.length > 0 && j.push(s.jsx("div", {
                       className: "relative",
                       children: s.jsxs("div", {
@@ -10115,7 +10115,7 @@ Please change the parent <Route path="${d}"> to <Route path="${d === "/" ? "*" :
                           })
                         ]
                       })
-                    }, "minion")), m.forEach((w) => {
+                    }, "minion")), m.forEach((x) => {
                       j.push(s.jsx("div", {
                         className: "relative",
                         children: s.jsxs("div", {
@@ -10128,7 +10128,7 @@ Please change the parent <Route path="${d}"> to <Route path="${d === "/" ? "*" :
                             }),
                             s.jsx("button", {
                               type: "button",
-                              onClick: () => v("cube1", w.id),
+                              onClick: () => v("cube1", x.id),
                               className: "absolute -top-2.5 -right-2.5 w-6 h-6 bg-blue-500 text-white border-2 border-blue-600 rounded-full flex items-center justify-center text-lg font-bold cursor-pointer z-50 shadow-lg hover:bg-blue-600 active:bg-blue-700",
                               children: "\xD7"
                             }),
@@ -10138,8 +10138,8 @@ Please change the parent <Route path="${d}"> to <Route path="${d === "/" ? "*" :
                             })
                           ]
                         })
-                      }, w.id));
-                    }), d.forEach((w) => {
+                      }, x.id));
+                    }), d.forEach((x) => {
                       j.push(s.jsx("div", {
                         className: "relative",
                         children: s.jsxs("div", {
@@ -10152,7 +10152,7 @@ Please change the parent <Route path="${d}"> to <Route path="${d === "/" ? "*" :
                             }),
                             s.jsx("button", {
                               type: "button",
-                              onClick: () => v("cube2", w.id),
+                              onClick: () => v("cube2", x.id),
                               className: "absolute -top-2.5 -right-2.5 w-6 h-6 bg-blue-500 text-white border-2 border-blue-600 rounded-full flex items-center justify-center text-lg font-bold cursor-pointer z-50 shadow-lg hover:bg-blue-600 active:bg-blue-700",
                               children: "\xD7"
                             }),
@@ -10162,8 +10162,8 @@ Please change the parent <Route path="${d}"> to <Route path="${d === "/" ? "*" :
                             })
                           ]
                         })
-                      }, w.id));
-                    }), f.forEach((w) => {
+                      }, x.id));
+                    }), f.forEach((x) => {
                       j.push(s.jsx("div", {
                         className: "relative",
                         children: s.jsxs("div", {
@@ -10176,7 +10176,7 @@ Please change the parent <Route path="${d}"> to <Route path="${d === "/" ? "*" :
                             }),
                             s.jsx("button", {
                               type: "button",
-                              onClick: () => v("cube3", w.id),
+                              onClick: () => v("cube3", x.id),
                               className: "absolute -top-2.5 -right-2.5 w-6 h-6 bg-blue-500 text-white border-2 border-blue-600 rounded-full flex items-center justify-center text-lg font-bold cursor-pointer z-50 shadow-lg hover:bg-blue-600 active:bg-blue-700",
                               children: "\xD7"
                             }),
@@ -10186,8 +10186,8 @@ Please change the parent <Route path="${d}"> to <Route path="${d === "/" ? "*" :
                             })
                           ]
                         })
-                      }, w.id));
-                    }), x.forEach((w) => {
+                      }, x.id));
+                    }), w.forEach((x) => {
                       j.push(s.jsx("div", {
                         className: "relative",
                         children: s.jsxs("div", {
@@ -10200,7 +10200,7 @@ Please change the parent <Route path="${d}"> to <Route path="${d === "/" ? "*" :
                             }),
                             s.jsx("button", {
                               type: "button",
-                              onClick: () => v("cube4", w.id),
+                              onClick: () => v("cube4", x.id),
                               className: "absolute -top-2.5 -right-2.5 w-6 h-6 bg-blue-500 text-white border-2 border-blue-600 rounded-full flex items-center justify-center text-lg font-bold cursor-pointer z-50 shadow-lg hover:bg-blue-600 active:bg-blue-700",
                               children: "\xD7"
                             }),
@@ -10210,12 +10210,12 @@ Please change the parent <Route path="${d}"> to <Route path="${d === "/" ? "*" :
                             })
                           ]
                         })
-                      }, w.id));
+                      }, x.id));
                     });
                     const S = Math.max(0, ((e == null ? void 0 : e.maxSlots) || 5) - j.length);
-                    for (let w = 0; w < S; w++) j.push(s.jsx("div", {
+                    for (let x = 0; x < S; x++) j.push(s.jsx("div", {
                       className: "aspect-square bg-[#1E293B]/50 rounded-xl border border-blue-400/10"
-                    }, `empty-${w}`));
+                    }, `empty-${x}`));
                     return j;
                   })()
                 }),
@@ -10928,7 +10928,7 @@ Please change the parent <Route path="${d}"> to <Route path="${d === "/" ? "*" :
           headers: {
             "X-Telegram-Init-Data": window.Telegram.WebApp.initData
           }
-        })).json(), p = k.success ? k.miners : [], N = p.filter((w) => w.type === "basic").length, m = p.filter((w) => w.type === "minion").length;
+        })).json(), p = k.success ? k.miners : [], N = p.filter((x) => x.type === "basic").length, m = p.filter((x) => x.type === "minion").length;
         if (g === "basic" && N >= 5) {
           r("\u0414\u043E\u0441\u0442\u0438\u0433\u043D\u0443\u0442 \u043C\u0430\u043A\u0441\u0438\u043C\u0443\u043C Basic \u043C\u0430\u0439\u043D\u0435\u0440\u043E\u0432 (5)");
           return;
@@ -10937,15 +10937,15 @@ Please change the parent <Route path="${d}"> to <Route path="${d === "/" ? "*" :
           return;
         }
         const d = /* @__PURE__ */ new Set();
-        p.forEach((w) => {
-          w.type === "basic" ? d.add("basic-slot") : w.type === "minion" ? d.add("minion-slot") : w.type.startsWith("cube") && d.add(`${w.type}-${w.id}`);
+        p.forEach((x) => {
+          x.type === "basic" ? d.add("basic-slot") : x.type === "minion" ? d.add("minion-slot") : x.type.startsWith("cube") && d.add(`${x.type}-${x.id}`);
         });
         let f = false;
-        if ((g.startsWith("cube") || g === "basic" && !p.some((w) => w.type === "basic") || g === "minion" && !p.some((w) => w.type === "minion")) && (f = true), f && d.size >= ((e == null ? void 0 : e.maxSlots) || 5)) {
+        if ((g.startsWith("cube") || g === "basic" && !p.some((x) => x.type === "basic") || g === "minion" && !p.some((x) => x.type === "minion")) && (f = true), f && d.size >= ((e == null ? void 0 : e.maxSlots) || 5)) {
           r(`\u0412\u0441\u0435 \u0441\u043B\u043E\u0442\u044B \u0437\u0430\u043D\u044F\u0442\u044B! \u0423 \u0432\u0430\u0441 ${d.size} \u0438\u0437 ${(e == null ? void 0 : e.maxSlots) || 5} \u0441\u043B\u043E\u0442\u043E\u0432`);
           return;
         }
-        const x = [
+        const w = [
           {
             type: g,
             image: Mt[g],
@@ -10953,7 +10953,12 @@ Please change the parent <Route path="${d}"> to <Route path="${d === "/" ? "*" :
             id: Date.now()
           },
           ...p
-        ], S = await (await fetch("/update-root-balance", {
+        ];
+        c((x) => ({
+          ...x,
+          [g]: x[g] + 1
+        }));
+        const S = await (await fetch("/update-root-balance", {
           method: "POST",
           headers: {
             "Content-Type": "application/json",
@@ -10972,16 +10977,13 @@ Please change the parent <Route path="${d}"> to <Route path="${d === "/" ? "*" :
           },
           body: JSON.stringify({
             telegramId: e.telegramId,
-            miners: x
+            miners: w
           })
         })).json()).success ? (t({
           ...e,
           rootBalance: S.rootBalance,
-          miners: x
-        }), r(null), c((R) => ({
-          ...R,
-          [g]: R[g] + 1
-        }))) : r("\u041E\u0448\u0438\u0431\u043A\u0430 \u043F\u0440\u0438 \u0441\u043E\u0445\u0440\u0430\u043D\u0435\u043D\u0438\u0438 \u043C\u0430\u0439\u043D\u0435\u0440\u0430") : r(S.message || "\u041E\u0448\u0438\u0431\u043A\u0430 \u043F\u0440\u0438 \u043F\u043E\u043A\u0443\u043F\u043A\u0435");
+          miners: w
+        }), r(null)) : r("\u041E\u0448\u0438\u0431\u043A\u0430 \u043F\u0440\u0438 \u0441\u043E\u0445\u0440\u0430\u043D\u0435\u043D\u0438\u0438 \u043C\u0430\u0439\u043D\u0435\u0440\u0430") : r(S.message || "\u041E\u0448\u0438\u0431\u043A\u0430 \u043F\u0440\u0438 \u043F\u043E\u043A\u0443\u043F\u043A\u0435");
       } catch (b) {
         console.error("Purchase error:", b), r("\u041E\u0448\u0438\u0431\u043A\u0430 \u043F\u0440\u0438 \u043F\u043E\u043A\u0443\u043F\u043A\u0435");
       }
