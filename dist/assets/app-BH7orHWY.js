@@ -9865,14 +9865,15 @@ Please change the parent <Route path="${d}"> to <Route path="${d === "/" ? "*" :
               details: m.miners
             });
             let d = m.miners || [];
-            if (d.filter((x) => x.type === "minion").length > 10) {
+            const f = d.filter((x) => x.type === "minion").length;
+            if (f > 10) {
               d = d.filter((x) => x.type !== "minion");
               for (let x = 0; x < 10; x++) d.push({
                 type: "minion",
                 id: `minion-${x}`
               });
             }
-            u(d), console.log("Miners after fetch:", d);
+            console.log("Current minion count:", f), u(d), console.log("Miners after fetch:", d);
           }
         } catch (N) {
           console.error("Error fetching miners:", N), r("\u041E\u0448\u0438\u0431\u043A\u0430 \u043F\u0440\u0438 \u0437\u0430\u0433\u0440\u0443\u0437\u043A\u0435 \u043C\u0430\u0439\u043D\u0435\u0440\u043E\u0432");
