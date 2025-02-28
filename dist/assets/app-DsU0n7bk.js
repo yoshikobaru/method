@@ -10988,11 +10988,7 @@ Please change the parent <Route path="${d}"> to <Route path="${d === "/" ? "*" :
         console.error("Purchase error:", b), r("\u041E\u0448\u0438\u0431\u043A\u0430 \u043F\u0440\u0438 \u043F\u043E\u043A\u0443\u043F\u043A\u0435");
       }
     };
-    return y.useEffect(() => {
-      fetchMiners();
-    }, [
-      e == null ? void 0 : e.telegramId
-    ]), s.jsxs(s.Fragment, {
+    return s.jsxs(s.Fragment, {
       children: [
         s.jsx("div", {
           className: "min-h-screen bg-[#0A0F1C] relative",
