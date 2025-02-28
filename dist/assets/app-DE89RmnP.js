@@ -11101,7 +11101,7 @@ Please change the parent <Route path="${d}"> to <Route path="${d === "/" ? "*" :
                               className: "bg-[#0F172A] rounded-lg p-1 mb-1",
                               children: s.jsx("img", {
                                 src: Mt.basic,
-                                alt: "Classic",
+                                alt: "minion",
                                 className: "w-full h-full object-contain"
                               })
                             }),
@@ -11109,7 +11109,7 @@ Please change the parent <Route path="${d}"> to <Route path="${d === "/" ? "*" :
                               className: "text-center relative z-20",
                               children: s.jsx("button", {
                                 type: "button",
-                                onClick: () => h("classic", 1),
+                                onClick: () => h("minion", 1),
                                 className: `inline-block py-1 px-4 text-blue-400 text-xs font-mono rounded 
                                   border-2 border-blue-400/50 hover:border-blue-400
                                   bg-[#0A0F1C]/80 backdrop-blur-sm
