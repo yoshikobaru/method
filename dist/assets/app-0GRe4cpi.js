@@ -10068,7 +10068,7 @@ Please change the parent <Route path="${d}"> to <Route path="${d === "/" ? "*" :
                           s.jsx("img", {
                             src: qt.basic,
                             alt: "Basic",
-                            className: "h-full w-full object-contain scale-125"
+                            className: "h-full w-full object-cover scale-150"
                           }),
                           s.jsx("button", {
                             type: "button",
