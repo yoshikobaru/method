@@ -9990,7 +9990,7 @@ Please change the parent <Route path="${d}"> to <Route path="${d === "/" ? "*" :
       };
       return i.reduce((N, m) => {
         const d = v[m.type] || 0;
-        return N + d * 1440;
+        return N + d;
       }, 0);
     };
     return l ? s.jsx("div", {
