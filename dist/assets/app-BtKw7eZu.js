@@ -10063,12 +10063,12 @@ Please change the parent <Route path="${d}"> to <Route path="${d === "/" ? "*" :
                     v.length > 0 && j.push(s.jsx("div", {
                       className: "relative",
                       children: s.jsxs("div", {
-                        className: "bg-[#1E293B]/80 backdrop-blur-sm p-2 rounded-lg border border-blue-400/20",
+                        className: "bg-[#1E293B]/80 backdrop-blur-sm p-2 rounded-lg border border-blue-400/20 shadow-lg",
                         children: [
                           s.jsx("img", {
                             src: qt.basic,
                             alt: "Basic",
-                            className: "h-full w-full object-contain scale-125 border-2 border-blue-500"
+                            className: "h-full w-full object-contain scale-125 border-2 border-blue-500 rounded"
                           }),
                           s.jsx("button", {
                             type: "button",
