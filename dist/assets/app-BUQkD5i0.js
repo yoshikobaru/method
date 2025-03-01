@@ -10061,14 +10061,14 @@ Please change the parent <Route path="${d}"> to <Route path="${d === "/" ? "*" :
                   children: (() => {
                     const v = i.filter((w) => w.type === "basic"), N = i.filter((w) => w.type === "minion"), m = i.filter((w) => w.type === "cube1"), d = i.filter((w) => w.type === "cube2"), f = i.filter((w) => w.type === "cube3"), x = i.filter((w) => w.type === "cube4"), j = [];
                     v.length > 0 && j.push(s.jsx("div", {
-                      className: "relative h-24 w-24",
+                      className: "relative",
                       children: s.jsxs("div", {
                         className: "bg-[#1E293B]/80 backdrop-blur-sm p-2 rounded-lg border border-blue-400/20",
                         children: [
                           s.jsx("img", {
                             src: qt.basic,
                             alt: "Basic",
-                            className: "h-full w-full object-contain"
+                            className: "h-full w-full object-contain scale-125"
                           }),
                           s.jsx("button", {
                             type: "button",
@@ -10086,7 +10086,7 @@ Please change the parent <Route path="${d}"> to <Route path="${d === "/" ? "*" :
                         ]
                       })
                     }, "basic")), N.length > 0 && j.push(s.jsx("div", {
-                      className: "relative h-24 w-24",
+                      className: "relative",
                       children: s.jsxs("div", {
                         className: "bg-[#1E293B]/80 backdrop-blur-sm p-2 rounded-lg border border-blue-400/20",
                         children: [
@@ -10112,7 +10112,7 @@ Please change the parent <Route path="${d}"> to <Route path="${d === "/" ? "*" :
                       })
                     }, "minion")), m.forEach((w) => {
                       j.push(s.jsx("div", {
-                        className: "relative h-24 w-24",
+                        className: "relative",
                         children: s.jsxs("div", {
                           className: "bg-[#1E293B]/80 backdrop-blur-sm p-2 rounded-lg border border-blue-400/20",
                           children: [
@@ -10136,7 +10136,7 @@ Please change the parent <Route path="${d}"> to <Route path="${d === "/" ? "*" :
                       }, w.id));
                     }), d.forEach((w) => {
                       j.push(s.jsx("div", {
-                        className: "relative h-24 w-24",
+                        className: "relative",
                         children: s.jsxs("div", {
                           className: "bg-[#1E293B]/80 backdrop-blur-sm p-2 rounded-lg border border-blue-400/20",
                           children: [
@@ -10160,7 +10160,7 @@ Please change the parent <Route path="${d}"> to <Route path="${d === "/" ? "*" :
                       }, w.id));
                     }), f.forEach((w) => {
                       j.push(s.jsx("div", {
-                        className: "relative h-24 w-24",
+                        className: "relative",
                         children: s.jsxs("div", {
                           className: "bg-[#1E293B]/80 backdrop-blur-sm p-2 rounded-lg border border-blue-400/20",
                           children: [
@@ -10184,7 +10184,7 @@ Please change the parent <Route path="${d}"> to <Route path="${d === "/" ? "*" :
                       }, w.id));
                     }), x.forEach((w) => {
                       j.push(s.jsx("div", {
-                        className: "relative h-24 w-24",
+                        className: "relative",
                         children: s.jsxs("div", {
                           className: "bg-[#1E293B]/80 backdrop-blur-sm p-2 rounded-lg border border-blue-400/20",
                           children: [
