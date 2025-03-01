@@ -10808,11 +10808,11 @@ Please change the parent <Route path="${d}"> to <Route path="${d === "/" ? "*" :
                 children: [
                   s.jsx("p", {
                     className: "text-blue-400/70 font-mono text-sm",
-                    children: "Roko is simple: the more ROKO points you have, the more respect and rewards from Roko you receive."
+                    children: "Poko is simple: the more POKO points you have, the more respect and rewards from Poko you receive."
                   }),
                   s.jsx("p", {
                     className: "text-blue-400/70 font-mono text-sm",
-                    children: "You can get ROKO via quests, mining nodes, raids, mentioning Roko in chats across Telegram, and using Roko reactions around Telegram"
+                    children: "You can get POKO via quests, mining nodes, raids, mentioning Poko in chats across Telegram, and using Roko reactions around Telegram"
                   })
                 ]
               }),
