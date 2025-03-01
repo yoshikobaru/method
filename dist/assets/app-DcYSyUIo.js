@@ -10042,16 +10042,17 @@ Please change the parent <Route path="${d}"> to <Route path="${d === "/" ? "*" :
                     fontFamily: "Polonium"
                   },
                   children: [
-                    s.jsxs("h2", {
+                    s.jsx("h2", {
+                      className: "text-xl text-blue-400/70",
+                      children: "POKO mining:"
+                    }),
+                    s.jsxs("span", {
                       className: "text-sm text-blue-400/70",
                       children: [
-                        "POKO mining: +",
+                        " +",
                         k(),
                         " POKO/day"
                       ]
-                    }),
-                    s.jsx("div", {
-                      className: "text-blue-400/70 text-sm font-mono"
                     })
                   ]
                 }),
