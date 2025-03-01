@@ -10239,8 +10239,8 @@ Please change the parent <Route path="${d}"> to <Route path="${d === "/" ? "*" :
                             },
                             children: [
                               "+",
-                              500 * i.filter((h) => h.type === "basic").length,
-                              " POKO/min"
+                              (500 * i.filter((h) => h.type === "basic").length).toFixed(2),
+                              " POKO/day"
                             ]
                           })
                         })
@@ -10253,8 +10253,8 @@ Please change the parent <Route path="${d}"> to <Route path="${d === "/" ? "*" :
                       },
                       children: [
                         "Total mining: ",
-                        500 * i.filter((h) => h.type === "basic").length,
-                        " POKO/min"
+                        (500 * i.filter((h) => h.type === "basic").length).toFixed(2),
+                        " POKO/day"
                       ]
                     }),
                     s.jsxs("div", {
