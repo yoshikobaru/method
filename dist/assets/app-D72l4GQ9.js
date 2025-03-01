@@ -409,7 +409,7 @@
         return i.now() - u;
       };
     }
-    var a = [], c = [], p = 1, g = null, v = 3, b = false, k = false, h = false, N = typeof setTimeout == "function" ? setTimeout : null, m = typeof clearTimeout == "function" ? clearTimeout : null, d = typeof setImmediate < "u" ? setImmediate : null;
+    var a = [], c = [], p = 1, h = null, g = 3, b = false, k = false, v = false, N = typeof setTimeout == "function" ? setTimeout : null, m = typeof clearTimeout == "function" ? clearTimeout : null, d = typeof setImmediate < "u" ? setImmediate : null;
     typeof navigator < "u" && navigator.scheduling !== void 0 && navigator.scheduling.isInputPending !== void 0 && navigator.scheduling.isInputPending.bind(navigator.scheduling);
     function f(L) {
       for (var _ = n(c); _ !== null; ) {
@@ -420,33 +420,33 @@
       }
     }
     function x(L) {
-      if (h = false, f(L), !k) if (n(a) !== null) k = true, dt(j);
+      if (v = false, f(L), !k) if (n(a) !== null) k = true, dt(j);
       else {
         var _ = n(c);
         _ !== null && Tn(x, _.startTime - L);
       }
     }
     function j(L, _) {
-      k = false, h && (h = false, m(E), E = -1), b = true;
-      var P = v;
+      k = false, v && (v = false, m(E), E = -1), b = true;
+      var P = g;
       try {
-        for (f(_), g = n(a); g !== null && (!(g.expirationTime > _) || L && !X()); ) {
-          var R = g.callback;
+        for (f(_), h = n(a); h !== null && (!(h.expirationTime > _) || L && !X()); ) {
+          var R = h.callback;
           if (typeof R == "function") {
-            g.callback = null, v = g.priorityLevel;
-            var T = R(g.expirationTime <= _);
-            _ = e.unstable_now(), typeof T == "function" ? g.callback = T : g === n(a) && r(a), f(_);
+            h.callback = null, g = h.priorityLevel;
+            var T = R(h.expirationTime <= _);
+            _ = e.unstable_now(), typeof T == "function" ? h.callback = T : h === n(a) && r(a), f(_);
           } else r(a);
-          g = n(a);
+          h = n(a);
         }
-        if (g !== null) var G = true;
+        if (h !== null) var G = true;
         else {
           var Z = n(c);
           Z !== null && Tn(x, Z.startTime - _), G = false;
         }
         return G;
       } finally {
-        g = null, v = P, b = false;
+        h = null, g = P, b = false;
       }
     }
     var S = false, w = null, E = -1, O = 5, M = -1;
@@ -492,25 +492,25 @@
     }, e.unstable_forceFrameRate = function(L) {
       0 > L || 125 < L ? console.error("forceFrameRate takes a positive int between 0 and 125, forcing frame rates higher than 125 fps is not supported") : O = 0 < L ? Math.floor(1e3 / L) : 5;
     }, e.unstable_getCurrentPriorityLevel = function() {
-      return v;
+      return g;
     }, e.unstable_getFirstCallbackNode = function() {
       return n(a);
     }, e.unstable_next = function(L) {
-      switch (v) {
+      switch (g) {
         case 1:
         case 2:
         case 3:
           var _ = 3;
           break;
         default:
-          _ = v;
+          _ = g;
       }
-      var P = v;
-      v = _;
+      var P = g;
+      g = _;
       try {
         return L();
       } finally {
-        v = P;
+        g = P;
       }
     }, e.unstable_pauseExecution = function() {
     }, e.unstable_requestPaint = function() {
@@ -525,12 +525,12 @@
         default:
           L = 3;
       }
-      var P = v;
-      v = L;
+      var P = g;
+      g = L;
       try {
         return _();
       } finally {
-        v = P;
+        g = P;
       }
     }, e.unstable_scheduleCallback = function(L, _, P) {
       var R = e.unstable_now();
@@ -557,16 +557,16 @@
         startTime: P,
         expirationTime: T,
         sortIndex: -1
-      }, P > R ? (L.sortIndex = P, t(c, L), n(a) === null && L === n(c) && (h ? (m(E), E = -1) : h = true, Tn(x, P - R))) : (L.sortIndex = T, t(a, L), k || b || (k = true, dt(j))), L;
+      }, P > R ? (L.sortIndex = P, t(c, L), n(a) === null && L === n(c) && (v ? (m(E), E = -1) : v = true, Tn(x, P - R))) : (L.sortIndex = T, t(a, L), k || b || (k = true, dt(j))), L;
     }, e.unstable_shouldYield = X, e.unstable_wrapCallback = function(L) {
-      var _ = v;
+      var _ = g;
       return function() {
-        var P = v;
-        v = _;
+        var P = g;
+        g = _;
         try {
           return L.apply(this, arguments);
         } finally {
-          v = P;
+          g = P;
         }
       };
     };
@@ -2390,10 +2390,10 @@
       r = r.return;
     }
     Nu(function() {
-      var c = o, p = Mi(n), g = [];
+      var c = o, p = Mi(n), h = [];
       e: {
-        var v = qu.get(e);
-        if (v !== void 0) {
+        var g = qu.get(e);
+        if (g !== void 0) {
           var b = Bi, k = e;
           switch (e) {
             case "keypress":
@@ -2469,52 +2469,52 @@
             case "pointerup":
               b = Ks;
           }
-          var h = (t & 4) !== 0, N = !h && e === "scroll", m = h ? v !== null ? v + "Capture" : null : v;
-          h = [];
+          var v = (t & 4) !== 0, N = !v && e === "scroll", m = v ? g !== null ? g + "Capture" : null : g;
+          v = [];
           for (var d = c, f; d !== null; ) {
             f = d;
             var x = f.stateNode;
-            if (f.tag === 5 && x !== null && (f = x, m !== null && (x = lr(d, m), x != null && h.push(dr(d, x, f)))), N) break;
+            if (f.tag === 5 && x !== null && (f = x, m !== null && (x = lr(d, m), x != null && v.push(dr(d, x, f)))), N) break;
             d = d.return;
           }
-          0 < h.length && (v = new b(v, k, null, n, p), g.push({
-            event: v,
-            listeners: h
+          0 < v.length && (g = new b(g, k, null, n, p), h.push({
+            event: g,
+            listeners: v
           }));
         }
       }
       if (!(t & 7)) {
         e: {
-          if (v = e === "mouseover" || e === "pointerover", b = e === "mouseout" || e === "pointerout", v && n !== Wo && (k = n.relatedTarget || n.fromElement) && (It(k) || k[it])) break e;
-          if ((b || v) && (v = p.window === p ? p : (v = p.ownerDocument) ? v.defaultView || v.parentWindow : window, b ? (k = n.relatedTarget || n.toElement, b = c, k = k ? It(k) : null, k !== null && (N = Yt(k), k !== N || k.tag !== 5 && k.tag !== 6) && (k = null)) : (b = null, k = c), b !== k)) {
-            if (h = Hs, x = "onMouseLeave", m = "onMouseEnter", d = "mouse", (e === "pointerout" || e === "pointerover") && (h = Ks, x = "onPointerLeave", m = "onPointerEnter", d = "pointer"), N = b == null ? v : on(b), f = k == null ? v : on(k), v = new h(x, d + "leave", b, n, p), v.target = N, v.relatedTarget = f, x = null, It(p) === c && (h = new h(m, d + "enter", k, n, p), h.target = f, h.relatedTarget = N, x = h), N = x, b && k) t: {
-              for (h = b, m = k, d = 0, f = h; f; f = Zt(f)) d++;
+          if (g = e === "mouseover" || e === "pointerover", b = e === "mouseout" || e === "pointerout", g && n !== Wo && (k = n.relatedTarget || n.fromElement) && (It(k) || k[it])) break e;
+          if ((b || g) && (g = p.window === p ? p : (g = p.ownerDocument) ? g.defaultView || g.parentWindow : window, b ? (k = n.relatedTarget || n.toElement, b = c, k = k ? It(k) : null, k !== null && (N = Yt(k), k !== N || k.tag !== 5 && k.tag !== 6) && (k = null)) : (b = null, k = c), b !== k)) {
+            if (v = Hs, x = "onMouseLeave", m = "onMouseEnter", d = "mouse", (e === "pointerout" || e === "pointerover") && (v = Ks, x = "onPointerLeave", m = "onPointerEnter", d = "pointer"), N = b == null ? g : on(b), f = k == null ? g : on(k), g = new v(x, d + "leave", b, n, p), g.target = N, g.relatedTarget = f, x = null, It(p) === c && (v = new v(m, d + "enter", k, n, p), v.target = f, v.relatedTarget = N, x = v), N = x, b && k) t: {
+              for (v = b, m = k, d = 0, f = v; f; f = Zt(f)) d++;
               for (f = 0, x = m; x; x = Zt(x)) f++;
-              for (; 0 < d - f; ) h = Zt(h), d--;
+              for (; 0 < d - f; ) v = Zt(v), d--;
               for (; 0 < f - d; ) m = Zt(m), f--;
               for (; d--; ) {
-                if (h === m || m !== null && h === m.alternate) break t;
-                h = Zt(h), m = Zt(m);
+                if (v === m || m !== null && v === m.alternate) break t;
+                v = Zt(v), m = Zt(m);
               }
-              h = null;
+              v = null;
             }
-            else h = null;
-            b !== null && ra(g, v, b, h, false), k !== null && N !== null && ra(g, N, k, h, true);
+            else v = null;
+            b !== null && ra(h, g, b, v, false), k !== null && N !== null && ra(h, N, k, v, true);
           }
         }
         e: {
-          if (v = c ? on(c) : window, b = v.nodeName && v.nodeName.toLowerCase(), b === "select" || b === "input" && v.type === "file") var j = Jf;
-          else if (Ys(v)) if (Hu) j = tm;
+          if (g = c ? on(c) : window, b = g.nodeName && g.nodeName.toLowerCase(), b === "select" || b === "input" && g.type === "file") var j = Jf;
+          else if (Ys(g)) if (Hu) j = tm;
           else {
             j = qf;
             var S = Zf;
           }
-          else (b = v.nodeName) && b.toLowerCase() === "input" && (v.type === "checkbox" || v.type === "radio") && (j = em);
+          else (b = g.nodeName) && b.toLowerCase() === "input" && (g.type === "checkbox" || g.type === "radio") && (j = em);
           if (j && (j = j(e, c))) {
-            Wu(g, j, n, p);
+            Wu(h, j, n, p);
             break e;
           }
-          S && S(e, v, c), e === "focusout" && (S = v._wrapperState) && S.controlled && v.type === "number" && Io(v, "number", v.value);
+          S && S(e, g, c), e === "focusout" && (S = g._wrapperState) && S.controlled && g.type === "number" && Io(g, "number", g.value);
         }
         switch (S = c ? on(c) : window, e) {
           case "focusin":
@@ -2529,13 +2529,13 @@
           case "contextmenu":
           case "mouseup":
           case "dragend":
-            Jo = false, ea(g, n, p);
+            Jo = false, ea(h, n, p);
             break;
           case "selectionchange":
             if (lm) break;
           case "keydown":
           case "keyup":
-            ea(g, n, p);
+            ea(h, n, p);
         }
         var w;
         if (Wi) e: {
@@ -2553,15 +2553,15 @@
           E = void 0;
         }
         else nn ? Bu(e, n) && (E = "onCompositionEnd") : e === "keydown" && n.keyCode === 229 && (E = "onCompositionStart");
-        E && ($u && n.locale !== "ko" && (nn || E !== "onCompositionStart" ? E === "onCompositionEnd" && nn && (w = Du()) : (yt = p, $i = "value" in yt ? yt.value : yt.textContent, nn = true)), S = hl(c, E), 0 < S.length && (E = new Vs(E, e, null, n, p), g.push({
+        E && ($u && n.locale !== "ko" && (nn || E !== "onCompositionStart" ? E === "onCompositionEnd" && nn && (w = Du()) : (yt = p, $i = "value" in yt ? yt.value : yt.textContent, nn = true)), S = hl(c, E), 0 < S.length && (E = new Vs(E, e, null, n, p), h.push({
           event: E,
           listeners: S
-        }), w ? E.data = w : (w = Uu(n), w !== null && (E.data = w)))), (w = Kf ? Qf(e, n) : Gf(e, n)) && (c = hl(c, "onBeforeInput"), 0 < c.length && (p = new Vs("onBeforeInput", "beforeinput", null, n, p), g.push({
+        }), w ? E.data = w : (w = Uu(n), w !== null && (E.data = w)))), (w = Kf ? Qf(e, n) : Gf(e, n)) && (c = hl(c, "onBeforeInput"), 0 < c.length && (p = new Vs("onBeforeInput", "beforeinput", null, n, p), h.push({
           event: p,
           listeners: c
         }), p.data = w));
       }
-      ec(g, t);
+      ec(h, t);
     });
   }
   function dr(e, t, n) {
@@ -2942,7 +2942,7 @@
     function p(m, d, f, x, j) {
       return d === null || d.tag !== 7 ? (d = Ut(f, m.mode, x, j), d.return = m, d) : (d = l(d, f), d.return = m, d);
     }
-    function g(m, d, f) {
+    function h(m, d, f) {
       if (typeof d == "string" && d !== "" || typeof d == "number") return d = No("" + d, m.mode, f), d.return = m, d;
       if (typeof d == "object" && d !== null) {
         switch (d.$$typeof) {
@@ -2952,14 +2952,14 @@
             return d = So(d, m.mode, f), d.return = m, d;
           case pt:
             var x = d._init;
-            return g(m, x(d._payload), f);
+            return h(m, x(d._payload), f);
         }
         if (Hn(d) || On(d)) return d = Ut(d, m.mode, f, null), d.return = m, d;
         Ur(m, d);
       }
       return null;
     }
-    function v(m, d, f, x) {
+    function g(m, d, f, x) {
       var j = d !== null ? d.key : null;
       if (typeof f == "string" && f !== "" || typeof f == "number") return j !== null ? null : u(m, d, "" + f, x);
       if (typeof f == "object" && f !== null) {
@@ -2969,7 +2969,7 @@
           case en:
             return f.key === j ? c(m, d, f, x) : null;
           case pt:
-            return j = f._init, v(m, d, j(f._payload), x);
+            return j = f._init, g(m, d, j(f._payload), x);
         }
         if (Hn(f) || On(f)) return j !== null ? null : p(m, d, f, x, null);
         Ur(m, f);
@@ -2996,7 +2996,7 @@
     function k(m, d, f, x) {
       for (var j = null, S = null, w = d, E = d = 0, O = null; w !== null && E < f.length; E++) {
         w.index > E ? (O = w, w = null) : O = w.sibling;
-        var M = v(m, w, f[E], x);
+        var M = g(m, w, f[E], x);
         if (M === null) {
           w === null && (w = O);
           break;
@@ -3005,7 +3005,7 @@
       }
       if (E === f.length) return n(m, w), W && zt(m, E), j;
       if (w === null) {
-        for (; E < f.length; E++) w = g(m, f[E], x), w !== null && (d = o(w, d, E), S === null ? j = w : S.sibling = w, S = w);
+        for (; E < f.length; E++) w = h(m, f[E], x), w !== null && (d = o(w, d, E), S === null ? j = w : S.sibling = w, S = w);
         return W && zt(m, E), j;
       }
       for (w = r(m, w); E < f.length; E++) O = b(w, m, E, f[E], x), O !== null && (e && O.alternate !== null && w.delete(O.key === null ? E : O.key), d = o(O, d, E), S === null ? j = O : S.sibling = O, S = O);
@@ -3013,13 +3013,13 @@
         return t(m, X);
       }), W && zt(m, E), j;
     }
-    function h(m, d, f, x) {
+    function v(m, d, f, x) {
       var j = On(f);
       if (typeof j != "function") throw Error(C(150));
       if (f = j.call(f), f == null) throw Error(C(151));
       for (var S = j = null, w = d, E = d = 0, O = null, M = f.next(); w !== null && !M.done; E++, M = f.next()) {
         w.index > E ? (O = w, w = null) : O = w.sibling;
-        var X = v(m, w, M.value, x);
+        var X = g(m, w, M.value, x);
         if (X === null) {
           w === null && (w = O);
           break;
@@ -3028,7 +3028,7 @@
       }
       if (M.done) return n(m, w), W && zt(m, E), j;
       if (w === null) {
-        for (; !M.done; E++, M = f.next()) M = g(m, M.value, x), M !== null && (d = o(M, d, E), S === null ? j = M : S.sibling = M, S = M);
+        for (; !M.done; E++, M = f.next()) M = h(m, M.value, x), M !== null && (d = o(M, d, E), S === null ? j = M : S.sibling = M, S = M);
         return W && zt(m, E), j;
       }
       for (w = r(m, w); !M.done; E++, M = f.next()) M = b(w, m, E, M.value, x), M !== null && (e && M.alternate !== null && w.delete(M.key === null ? E : M.key), d = o(M, d, E), S === null ? j = M : S.sibling = M, S = M);
@@ -3080,7 +3080,7 @@
             return S = f._init, N(m, d, S(f._payload), x);
         }
         if (Hn(f)) return k(m, d, f, x);
-        if (On(f)) return h(m, d, f, x);
+        if (On(f)) return v(m, d, f, x);
         Ur(m, f);
       }
       return typeof f == "string" && f !== "" || typeof f == "number" ? (f = "" + f, d !== null && d.tag === 6 ? (n(m, d.sibling), d = l(d, f), d.return = m, m = d) : (n(m, d), d = No(f, m.mode, x), d.return = m, m = d), i(m)) : n(m, d);
@@ -3225,11 +3225,11 @@
       p !== null && (p = p.updateQueue, u = p.lastBaseUpdate, u !== i && (u === null ? p.firstBaseUpdate = c : u.next = c, p.lastBaseUpdate = a));
     }
     if (o !== null) {
-      var g = l.baseState;
+      var h = l.baseState;
       i = 0, p = c = a = null, u = o;
       do {
-        var v = u.lane, b = u.eventTime;
-        if ((r & v) === v) {
+        var g = u.lane, b = u.eventTime;
+        if ((r & g) === g) {
           p !== null && (p = p.next = {
             eventTime: b,
             lane: 0,
@@ -3239,48 +3239,48 @@
             next: null
           });
           e: {
-            var k = e, h = u;
-            switch (v = t, b = n, h.tag) {
+            var k = e, v = u;
+            switch (g = t, b = n, v.tag) {
               case 1:
-                if (k = h.payload, typeof k == "function") {
-                  g = k.call(b, g, v);
+                if (k = v.payload, typeof k == "function") {
+                  h = k.call(b, h, g);
                   break e;
                 }
-                g = k;
+                h = k;
                 break e;
               case 3:
                 k.flags = k.flags & -65537 | 128;
               case 0:
-                if (k = h.payload, v = typeof k == "function" ? k.call(b, g, v) : k, v == null) break e;
-                g = Q({}, g, v);
+                if (k = v.payload, g = typeof k == "function" ? k.call(b, h, g) : k, g == null) break e;
+                h = Q({}, h, g);
                 break e;
               case 2:
                 ht = true;
             }
           }
-          u.callback !== null && u.lane !== 0 && (e.flags |= 64, v = l.effects, v === null ? l.effects = [
+          u.callback !== null && u.lane !== 0 && (e.flags |= 64, g = l.effects, g === null ? l.effects = [
             u
-          ] : v.push(u));
+          ] : g.push(u));
         } else b = {
           eventTime: b,
-          lane: v,
+          lane: g,
           tag: u.tag,
           payload: u.payload,
           callback: u.callback,
           next: null
-        }, p === null ? (c = p = b, a = g) : p = p.next = b, i |= v;
+        }, p === null ? (c = p = b, a = h) : p = p.next = b, i |= g;
         if (u = u.next, u === null) {
           if (u = l.shared.pending, u === null) break;
-          v = u, u = v.next, v.next = null, l.lastBaseUpdate = v, l.shared.pending = null;
+          g = u, u = g.next, g.next = null, l.lastBaseUpdate = g, l.shared.pending = null;
         }
       } while (true);
-      if (p === null && (a = g), l.baseState = a, l.firstBaseUpdate = c, l.lastBaseUpdate = p, t = l.shared.interleaved, t !== null) {
+      if (p === null && (a = h), l.baseState = a, l.firstBaseUpdate = c, l.lastBaseUpdate = p, t = l.shared.interleaved, t !== null) {
         l = t;
         do
           i |= l.lane, l = l.next;
         while (l !== t);
       } else o === null && (l.shared.lanes = 0);
-      Kt |= i, e.lanes = i, e.memoizedState = g;
+      Kt |= i, e.lanes = i, e.memoizedState = h;
     }
   }
   function ma(e, t, n) {
@@ -3426,14 +3426,14 @@
           next: null
         }), r = c.hasEagerState ? c.eagerState : e(r, c.action);
         else {
-          var g = {
+          var h = {
             lane: p,
             action: c.action,
             hasEagerState: c.hasEagerState,
             eagerState: c.eagerState,
             next: null
           };
-          a === null ? (u = a = g, i = r) : a = a.next = g, K.lanes |= p, Kt |= p;
+          a === null ? (u = a = h, i = r) : a = a.next = h, K.lanes |= p, Kt |= p;
         }
         c = c.next;
       } while (c !== null && c !== o);
@@ -4049,16 +4049,16 @@ Error generating stack: ` + o.message + `
       i.props = u;
       var a = i.context, c = n.contextType;
       typeof c == "object" && c !== null ? c = Re(c) : (c = xe(n) ? Wt : ce.current, c = wn(t, c));
-      var p = n.getDerivedStateFromProps, g = typeof p == "function" || typeof i.getSnapshotBeforeUpdate == "function";
-      g || typeof i.UNSAFE_componentWillReceiveProps != "function" && typeof i.componentWillReceiveProps != "function" || (u !== r || a !== c) && va(t, i, r, c), ht = false;
-      var v = t.memoizedState;
-      i.state = v, jl(t, r, i, l), a = t.memoizedState, u !== r || v !== a || ye.current || ht ? (typeof p == "function" && (si(t, n, p, r), a = t.memoizedState), (u = ht || ga(t, n, u, r, v, a, c)) ? (g || typeof i.UNSAFE_componentWillMount != "function" && typeof i.componentWillMount != "function" || (typeof i.componentWillMount == "function" && i.componentWillMount(), typeof i.UNSAFE_componentWillMount == "function" && i.UNSAFE_componentWillMount()), typeof i.componentDidMount == "function" && (t.flags |= 4194308)) : (typeof i.componentDidMount == "function" && (t.flags |= 4194308), t.memoizedProps = r, t.memoizedState = a), i.props = r, i.state = a, i.context = c, r = u) : (typeof i.componentDidMount == "function" && (t.flags |= 4194308), r = false);
+      var p = n.getDerivedStateFromProps, h = typeof p == "function" || typeof i.getSnapshotBeforeUpdate == "function";
+      h || typeof i.UNSAFE_componentWillReceiveProps != "function" && typeof i.componentWillReceiveProps != "function" || (u !== r || a !== c) && va(t, i, r, c), ht = false;
+      var g = t.memoizedState;
+      i.state = g, jl(t, r, i, l), a = t.memoizedState, u !== r || g !== a || ye.current || ht ? (typeof p == "function" && (si(t, n, p, r), a = t.memoizedState), (u = ht || ga(t, n, u, r, g, a, c)) ? (h || typeof i.UNSAFE_componentWillMount != "function" && typeof i.componentWillMount != "function" || (typeof i.componentWillMount == "function" && i.componentWillMount(), typeof i.UNSAFE_componentWillMount == "function" && i.UNSAFE_componentWillMount()), typeof i.componentDidMount == "function" && (t.flags |= 4194308)) : (typeof i.componentDidMount == "function" && (t.flags |= 4194308), t.memoizedProps = r, t.memoizedState = a), i.props = r, i.state = a, i.context = c, r = u) : (typeof i.componentDidMount == "function" && (t.flags |= 4194308), r = false);
     } else {
-      i = t.stateNode, cc(e, t), u = t.memoizedProps, c = t.type === t.elementType ? u : Ae(t.type, u), i.props = c, g = t.pendingProps, v = i.context, a = n.contextType, typeof a == "object" && a !== null ? a = Re(a) : (a = xe(n) ? Wt : ce.current, a = wn(t, a));
+      i = t.stateNode, cc(e, t), u = t.memoizedProps, c = t.type === t.elementType ? u : Ae(t.type, u), i.props = c, h = t.pendingProps, g = i.context, a = n.contextType, typeof a == "object" && a !== null ? a = Re(a) : (a = xe(n) ? Wt : ce.current, a = wn(t, a));
       var b = n.getDerivedStateFromProps;
-      (p = typeof b == "function" || typeof i.getSnapshotBeforeUpdate == "function") || typeof i.UNSAFE_componentWillReceiveProps != "function" && typeof i.componentWillReceiveProps != "function" || (u !== g || v !== a) && va(t, i, r, a), ht = false, v = t.memoizedState, i.state = v, jl(t, r, i, l);
+      (p = typeof b == "function" || typeof i.getSnapshotBeforeUpdate == "function") || typeof i.UNSAFE_componentWillReceiveProps != "function" && typeof i.componentWillReceiveProps != "function" || (u !== h || g !== a) && va(t, i, r, a), ht = false, g = t.memoizedState, i.state = g, jl(t, r, i, l);
       var k = t.memoizedState;
-      u !== g || v !== k || ye.current || ht ? (typeof b == "function" && (si(t, n, b, r), k = t.memoizedState), (c = ht || ga(t, n, c, r, v, k, a) || false) ? (p || typeof i.UNSAFE_componentWillUpdate != "function" && typeof i.componentWillUpdate != "function" || (typeof i.componentWillUpdate == "function" && i.componentWillUpdate(r, k, a), typeof i.UNSAFE_componentWillUpdate == "function" && i.UNSAFE_componentWillUpdate(r, k, a)), typeof i.componentDidUpdate == "function" && (t.flags |= 4), typeof i.getSnapshotBeforeUpdate == "function" && (t.flags |= 1024)) : (typeof i.componentDidUpdate != "function" || u === e.memoizedProps && v === e.memoizedState || (t.flags |= 4), typeof i.getSnapshotBeforeUpdate != "function" || u === e.memoizedProps && v === e.memoizedState || (t.flags |= 1024), t.memoizedProps = r, t.memoizedState = k), i.props = r, i.state = k, i.context = a, r = c) : (typeof i.componentDidUpdate != "function" || u === e.memoizedProps && v === e.memoizedState || (t.flags |= 4), typeof i.getSnapshotBeforeUpdate != "function" || u === e.memoizedProps && v === e.memoizedState || (t.flags |= 1024), r = false);
+      u !== h || g !== k || ye.current || ht ? (typeof b == "function" && (si(t, n, b, r), k = t.memoizedState), (c = ht || ga(t, n, c, r, g, k, a) || false) ? (p || typeof i.UNSAFE_componentWillUpdate != "function" && typeof i.componentWillUpdate != "function" || (typeof i.componentWillUpdate == "function" && i.componentWillUpdate(r, k, a), typeof i.UNSAFE_componentWillUpdate == "function" && i.UNSAFE_componentWillUpdate(r, k, a)), typeof i.componentDidUpdate == "function" && (t.flags |= 4), typeof i.getSnapshotBeforeUpdate == "function" && (t.flags |= 1024)) : (typeof i.componentDidUpdate != "function" || u === e.memoizedProps && g === e.memoizedState || (t.flags |= 4), typeof i.getSnapshotBeforeUpdate != "function" || u === e.memoizedProps && g === e.memoizedState || (t.flags |= 1024), t.memoizedProps = r, t.memoizedState = k), i.props = r, i.state = k, i.context = a, r = c) : (typeof i.componentDidUpdate != "function" || u === e.memoizedProps && g === e.memoizedState || (t.flags |= 4), typeof i.getSnapshotBeforeUpdate != "function" || u === e.memoizedProps && g === e.memoizedState || (t.flags |= 1024), r = false);
     }
     return di(e, t, n, r, o, l);
   }
@@ -4681,15 +4681,15 @@ Error generating stack: ` + o.message + `
             n = null;
             break e;
           }
-          var i = 0, u = -1, a = -1, c = 0, p = 0, g = e, v = null;
+          var i = 0, u = -1, a = -1, c = 0, p = 0, h = e, g = null;
           t: for (; ; ) {
-            for (var b; g !== n || l !== 0 && g.nodeType !== 3 || (u = i + l), g !== o || r !== 0 && g.nodeType !== 3 || (a = i + r), g.nodeType === 3 && (i += g.nodeValue.length), (b = g.firstChild) !== null; ) v = g, g = b;
+            for (var b; h !== n || l !== 0 && h.nodeType !== 3 || (u = i + l), h !== o || r !== 0 && h.nodeType !== 3 || (a = i + r), h.nodeType === 3 && (i += h.nodeValue.length), (b = h.firstChild) !== null; ) g = h, h = b;
             for (; ; ) {
-              if (g === e) break t;
-              if (v === n && ++c === l && (u = i), v === o && ++p === r && (a = i), (b = g.nextSibling) !== null) break;
-              g = v, v = g.parentNode;
+              if (h === e) break t;
+              if (g === n && ++c === l && (u = i), g === o && ++p === r && (a = i), (b = h.nextSibling) !== null) break;
+              h = g, g = h.parentNode;
             }
-            g = b;
+            h = b;
           }
           n = u === -1 || a === -1 ? null : {
             start: u,
@@ -4717,7 +4717,7 @@ Error generating stack: ` + o.message + `
             break;
           case 1:
             if (k !== null) {
-              var h = k.memoizedProps, N = k.memoizedState, m = t.stateNode, d = m.getSnapshotBeforeUpdate(t.elementType === t.type ? h : Ae(t.type, h), N);
+              var v = k.memoizedProps, N = k.memoizedState, m = t.stateNode, d = m.getSnapshotBeforeUpdate(t.elementType === t.type ? v : Ae(t.type, v), N);
               m.__reactInternalSnapshotBeforeUpdate = d;
             }
             break;
@@ -4917,13 +4917,13 @@ Error generating stack: ` + o.message + `
         if (ze(t, e), Ve(e), r & 4) {
           try {
             qn(3, e, e.return), Ul(3, e);
-          } catch (h) {
-            Y(e, e.return, h);
+          } catch (v) {
+            Y(e, e.return, v);
           }
           try {
             qn(5, e, e.return);
-          } catch (h) {
-            Y(e, e.return, h);
+          } catch (v) {
+            Y(e, e.return, v);
           }
         }
         break;
@@ -4935,8 +4935,8 @@ Error generating stack: ` + o.message + `
           var l = e.stateNode;
           try {
             rr(l, "");
-          } catch (h) {
-            Y(e, e.return, h);
+          } catch (v) {
+            Y(e, e.return, v);
           }
         }
         if (r & 4 && (l = e.stateNode, l != null)) {
@@ -4945,8 +4945,8 @@ Error generating stack: ` + o.message + `
             u === "input" && o.type === "radio" && o.name != null && pu(l, o), Uo(u, i);
             var c = Uo(u, o);
             for (i = 0; i < a.length; i += 2) {
-              var p = a[i], g = a[i + 1];
-              p === "style" ? xu(l, g) : p === "dangerouslySetInnerHTML" ? vu(l, g) : p === "children" ? rr(l, g) : Fi(l, p, g, c);
+              var p = a[i], h = a[i + 1];
+              p === "style" ? xu(l, h) : p === "dangerouslySetInnerHTML" ? vu(l, h) : p === "children" ? rr(l, h) : Fi(l, p, h, c);
             }
             switch (u) {
               case "input":
@@ -4956,14 +4956,14 @@ Error generating stack: ` + o.message + `
                 hu(l, o);
                 break;
               case "select":
-                var v = l._wrapperState.wasMultiple;
+                var g = l._wrapperState.wasMultiple;
                 l._wrapperState.wasMultiple = !!o.multiple;
                 var b = o.value;
-                b != null ? mn(l, !!o.multiple, b, false) : v !== !!o.multiple && (o.defaultValue != null ? mn(l, !!o.multiple, o.defaultValue, true) : mn(l, !!o.multiple, o.multiple ? [] : "", false));
+                b != null ? mn(l, !!o.multiple, b, false) : g !== !!o.multiple && (o.defaultValue != null ? mn(l, !!o.multiple, o.defaultValue, true) : mn(l, !!o.multiple, o.multiple ? [] : "", false));
             }
             l[fr] = o;
-          } catch (h) {
-            Y(e, e.return, h);
+          } catch (v) {
+            Y(e, e.return, v);
           }
         }
         break;
@@ -4973,16 +4973,16 @@ Error generating stack: ` + o.message + `
           l = e.stateNode, o = e.memoizedProps;
           try {
             l.nodeValue = o;
-          } catch (h) {
-            Y(e, e.return, h);
+          } catch (v) {
+            Y(e, e.return, v);
           }
         }
         break;
       case 3:
         if (ze(t, e), Ve(e), r & 4 && n !== null && n.memoizedState.isDehydrated) try {
           sr(t.containerInfo);
-        } catch (h) {
-          Y(e, e.return, h);
+        } catch (v) {
+          Y(e, e.return, v);
         }
         break;
       case 4:
@@ -4994,65 +4994,65 @@ Error generating stack: ` + o.message + `
       case 22:
         if (p = n !== null && n.memoizedState !== null, e.mode & 1 ? (ue = (c = ue) || p, ze(t, e), ue = c) : ze(t, e), Ve(e), r & 8192) {
           if (c = e.memoizedState !== null, (e.stateNode.isHidden = c) && !p && e.mode & 1) for (F = e, p = e.child; p !== null; ) {
-            for (g = F = p; F !== null; ) {
-              switch (v = F, b = v.child, v.tag) {
+            for (h = F = p; F !== null; ) {
+              switch (g = F, b = g.child, g.tag) {
                 case 0:
                 case 11:
                 case 14:
                 case 15:
-                  qn(4, v, v.return);
+                  qn(4, g, g.return);
                   break;
                 case 1:
-                  dn(v, v.return);
-                  var k = v.stateNode;
+                  dn(g, g.return);
+                  var k = g.stateNode;
                   if (typeof k.componentWillUnmount == "function") {
-                    r = v, n = v.return;
+                    r = g, n = g.return;
                     try {
                       t = r, k.props = t.memoizedProps, k.state = t.memoizedState, k.componentWillUnmount();
-                    } catch (h) {
-                      Y(r, n, h);
+                    } catch (v) {
+                      Y(r, n, v);
                     }
                   }
                   break;
                 case 5:
-                  dn(v, v.return);
+                  dn(g, g.return);
                   break;
                 case 22:
-                  if (v.memoizedState !== null) {
-                    La(g);
+                  if (g.memoizedState !== null) {
+                    La(h);
                     continue;
                   }
               }
-              b !== null ? (b.return = v, F = b) : La(g);
+              b !== null ? (b.return = g, F = b) : La(h);
             }
             p = p.sibling;
           }
-          e: for (p = null, g = e; ; ) {
-            if (g.tag === 5) {
+          e: for (p = null, h = e; ; ) {
+            if (h.tag === 5) {
               if (p === null) {
-                p = g;
+                p = h;
                 try {
-                  l = g.stateNode, c ? (o = l.style, typeof o.setProperty == "function" ? o.setProperty("display", "none", "important") : o.display = "none") : (u = g.stateNode, a = g.memoizedProps.style, i = a != null && a.hasOwnProperty("display") ? a.display : null, u.style.display = yu("display", i));
-                } catch (h) {
-                  Y(e, e.return, h);
+                  l = h.stateNode, c ? (o = l.style, typeof o.setProperty == "function" ? o.setProperty("display", "none", "important") : o.display = "none") : (u = h.stateNode, a = h.memoizedProps.style, i = a != null && a.hasOwnProperty("display") ? a.display : null, u.style.display = yu("display", i));
+                } catch (v) {
+                  Y(e, e.return, v);
                 }
               }
-            } else if (g.tag === 6) {
+            } else if (h.tag === 6) {
               if (p === null) try {
-                g.stateNode.nodeValue = c ? "" : g.memoizedProps;
-              } catch (h) {
-                Y(e, e.return, h);
+                h.stateNode.nodeValue = c ? "" : h.memoizedProps;
+              } catch (v) {
+                Y(e, e.return, v);
               }
-            } else if ((g.tag !== 22 && g.tag !== 23 || g.memoizedState === null || g === e) && g.child !== null) {
-              g.child.return = g, g = g.child;
+            } else if ((h.tag !== 22 && h.tag !== 23 || h.memoizedState === null || h === e) && h.child !== null) {
+              h.child.return = h, h = h.child;
               continue;
             }
-            if (g === e) break e;
-            for (; g.sibling === null; ) {
-              if (g.return === null || g.return === e) break e;
-              p === g && (p = null), g = g.return;
+            if (h === e) break e;
+            for (; h.sibling === null; ) {
+              if (h.return === null || h.return === e) break e;
+              p === h && (p = null), h = h.return;
             }
-            p === g && (p = null), g.sibling.return = g.return, g = g.sibling;
+            p === h && (p = null), h.sibling.return = h.return, h = h.sibling;
           }
         }
         break;
@@ -5185,8 +5185,8 @@ Error generating stack: ` + o.message + `
                 if (c !== null) {
                   var p = c.memoizedState;
                   if (p !== null) {
-                    var g = p.dehydrated;
-                    g !== null && sr(g);
+                    var h = p.dehydrated;
+                    h !== null && sr(h);
                   }
                 }
               }
@@ -5202,8 +5202,8 @@ Error generating stack: ` + o.message + `
               throw Error(C(163));
           }
           ue || t.flags & 512 && gi(t);
-        } catch (v) {
-          Y(t, t.return, v);
+        } catch (g) {
+          Y(t, t.return, g);
         }
       }
       if (t === e) {
@@ -5539,18 +5539,18 @@ Error generating stack: ` + o.message + `
         e: {
           var o = e, i = n.return, u = n, a = t;
           if (t = oe, u.flags |= 32768, a !== null && typeof a == "object" && typeof a.then == "function") {
-            var c = a, p = u, g = p.tag;
-            if (!(p.mode & 1) && (g === 0 || g === 11 || g === 15)) {
-              var v = p.alternate;
-              v ? (p.updateQueue = v.updateQueue, p.memoizedState = v.memoizedState, p.lanes = v.lanes) : (p.updateQueue = null, p.memoizedState = null);
+            var c = a, p = u, h = p.tag;
+            if (!(p.mode & 1) && (h === 0 || h === 11 || h === 15)) {
+              var g = p.alternate;
+              g ? (p.updateQueue = g.updateQueue, p.memoizedState = g.memoizedState, p.lanes = g.lanes) : (p.updateQueue = null, p.memoizedState = null);
             }
             var b = xa(i);
             if (b !== null) {
               b.flags &= -257, wa(b, i, u, o, t), b.mode & 1 && ya(o, c, t), t = b, a = c;
               var k = t.updateQueue;
               if (k === null) {
-                var h = /* @__PURE__ */ new Set();
-                h.add(a), t.updateQueue = h;
+                var v = /* @__PURE__ */ new Set();
+                v.add(a), t.updateQueue = v;
               } else k.add(a);
               break e;
             } else {
@@ -5716,17 +5716,17 @@ Error generating stack: ` + o.message + `
                       case 15:
                         qn(8, p, o);
                     }
-                    var g = p.child;
-                    if (g !== null) g.return = p, F = g;
+                    var h = p.child;
+                    if (h !== null) h.return = p, F = h;
                     else for (; F !== null; ) {
                       p = F;
-                      var v = p.sibling, b = p.return;
+                      var g = p.sibling, b = p.return;
                       if (Wc(p), p === c) {
                         F = null;
                         break;
                       }
-                      if (v !== null) {
-                        v.return = b, F = v;
+                      if (g !== null) {
+                        g.return = b, F = g;
                         break;
                       }
                       F = b;
@@ -5735,13 +5735,13 @@ Error generating stack: ` + o.message + `
                 }
                 var k = o.alternate;
                 if (k !== null) {
-                  var h = k.child;
-                  if (h !== null) {
+                  var v = k.child;
+                  if (v !== null) {
                     k.child = null;
                     do {
-                      var N = h.sibling;
-                      h.sibling = null, h = N;
-                    } while (h !== null);
+                      var N = v.sibling;
+                      v.sibling = null, v = N;
+                    } while (v !== null);
                   }
                 }
                 F = o;
@@ -6456,11 +6456,11 @@ Error generating stack: ` + o.message + `
         o = e.lastIndexOf(";", i - 1) + 1;
         continue;
       }
-      const c = Aa(e, o, i), p = Ia(e, i, c), g = e.slice(c, p);
-      if (n[g] === void 0) {
-        let v = Aa(e, i + 1, a), b = Ia(e, a, v);
-        const k = l(e.slice(v, b));
-        n[g] = k;
+      const c = Aa(e, o, i), p = Ia(e, i, c), h = e.slice(c, p);
+      if (n[h] === void 0) {
+        let g = Aa(e, i + 1, a), b = Ia(e, a, g);
+        const k = l(e.slice(g, b));
+        n[h] = k;
       }
       o = a + 1;
     } while (o < r);
@@ -6614,20 +6614,20 @@ Error generating stack: ` + o.message + `
         idx: null
       }).idx;
     }
-    function g() {
+    function h() {
       u = "POP";
       let N = p(), m = N == null ? null : N - c;
       c = N, a && a({
         action: u,
-        location: h.location,
+        location: v.location,
         delta: m
       });
     }
-    function v(N, m) {
+    function g(N, m) {
       u = "PUSH";
-      let d = ji(h.location, N, m);
+      let d = ji(v.location, N, m);
       c = p() + 1;
-      let f = $a(d, c), x = h.createHref(d);
+      let f = $a(d, c), x = v.createHref(d);
       try {
         i.pushState(f, "", x);
       } catch (j) {
@@ -6636,18 +6636,18 @@ Error generating stack: ` + o.message + `
       }
       o && a && a({
         action: u,
-        location: h.location,
+        location: v.location,
         delta: 1
       });
     }
     function b(N, m) {
       u = "REPLACE";
-      let d = ji(h.location, N, m);
+      let d = ji(v.location, N, m);
       c = p();
-      let f = $a(d, c), x = h.createHref(d);
+      let f = $a(d, c), x = v.createHref(d);
       i.replaceState(f, "", x), o && a && a({
         action: u,
-        location: h.location,
+        location: v.location,
         delta: 0
       });
     }
@@ -6655,7 +6655,7 @@ Error generating stack: ` + o.message + `
       let m = l.location.origin !== "null" ? l.location.origin : l.location.href, d = typeof N == "string" ? N : xr(N);
       return d = d.replace(/ $/, "%20"), H(m, `No window.location.(origin|href) available to create URL for href: ${d}`), new URL(d, m);
     }
-    let h = {
+    let v = {
       get action() {
         return u;
       },
@@ -6664,8 +6664,8 @@ Error generating stack: ` + o.message + `
       },
       listen(N) {
         if (a) throw new Error("A history only accepts one active listener");
-        return l.addEventListener(Da, g), a = N, () => {
-          l.removeEventListener(Da, g), a = null;
+        return l.addEventListener(Da, h), a = N, () => {
+          l.removeEventListener(Da, h), a = null;
         };
       },
       createHref(N) {
@@ -6680,13 +6680,13 @@ Error generating stack: ` + o.message + `
           hash: m.hash
         };
       },
-      push: v,
+      push: g,
       replace: b,
       go(N) {
         return i.go(N);
       }
     };
-    return h;
+    return v;
   }
   function id(e, t, n = "/") {
     return up(e, t, n, false);
@@ -6758,30 +6758,30 @@ Error generating stack: ` + o.message + `
   function xp(e, t, n = false) {
     let { routesMeta: r } = e, l = {}, o = "/", i = [];
     for (let u = 0; u < r.length; ++u) {
-      let a = r[u], c = u === r.length - 1, p = o === "/" ? t : t.slice(o.length) || "/", g = Rl({
+      let a = r[u], c = u === r.length - 1, p = o === "/" ? t : t.slice(o.length) || "/", h = Rl({
         path: a.relativePath,
         caseSensitive: a.caseSensitive,
         end: c
-      }, p), v = a.route;
-      if (!g && c && n && !r[r.length - 1].route.index && (g = Rl({
+      }, p), g = a.route;
+      if (!h && c && n && !r[r.length - 1].route.index && (h = Rl({
         path: a.relativePath,
         caseSensitive: a.caseSensitive,
         end: false
-      }, p)), !g) return null;
-      Object.assign(l, g.params), i.push({
+      }, p)), !h) return null;
+      Object.assign(l, h.params), i.push({
         params: l,
         pathname: lt([
           o,
-          g.pathname
+          h.pathname
         ]),
         pathnameBase: Sp(lt([
           o,
-          g.pathnameBase
+          h.pathnameBase
         ])),
-        route: v
-      }), g.pathnameBase !== "/" && (o = lt([
+        route: g
+      }), h.pathnameBase !== "/" && (o = lt([
         o,
-        g.pathnameBase
+        h.pathnameBase
       ]));
     }
     return i;
@@ -6796,13 +6796,13 @@ Error generating stack: ` + o.message + `
     if (!l) return null;
     let o = l[0], i = o.replace(/(.)\/+$/, "$1"), u = l.slice(1);
     return {
-      params: r.reduce((c, { paramName: p, isOptional: g }, v) => {
+      params: r.reduce((c, { paramName: p, isOptional: h }, g) => {
         if (p === "*") {
-          let k = u[v] || "";
+          let k = u[g] || "";
           i = o.slice(0, o.length - k.length).replace(/(.)\/+$/, "$1");
         }
-        const b = u[v];
-        return g && !b ? c[p] = void 0 : c[p] = (b || "").replace(/%2F/g, "/"), c;
+        const b = u[g];
+        return h && !b ? c[p] = void 0 : c[p] = (b || "").replace(/%2F/g, "/"), c;
       }, {}),
       pathname: o,
       pathnameBase: i,
@@ -6867,13 +6867,13 @@ Error generating stack: ` + o.message + `
     let o = e === "" || l.pathname === "", i = o ? "/" : l.pathname, u;
     if (i == null) u = n;
     else {
-      let g = t.length - 1;
+      let h = t.length - 1;
       if (!r && i.startsWith("..")) {
-        let v = i.split("/");
-        for (; v[0] === ".."; ) v.shift(), g -= 1;
-        l.pathname = v.join("/");
+        let g = i.split("/");
+        for (; g[0] === ".."; ) g.shift(), h -= 1;
+        l.pathname = g.join("/");
       }
-      u = g >= 0 ? t[g] : "/";
+      u = h >= 0 ? t[h] : "/";
     }
     let a = kp(l, u), c = i && i !== "/" && i.endsWith("/"), p = (o || i === ".") && n.endsWith("/");
     return !a.pathname.endsWith("/") && (c || p) && (a.pathname += "/"), a;
@@ -6986,27 +6986,27 @@ Error generating stack: ` + o.message + `
   function md(e, t, n, r) {
     var _a2;
     H(Fn(), "useRoutes() may be used only in the context of a <Router> component.");
-    let { navigator: l, static: o } = y.useContext(He), { matches: i } = y.useContext(Xe), u = i[i.length - 1], a = u ? u.params : {}, c = u ? u.pathname : "/", p = u ? u.pathnameBase : "/", g = u && u.route;
+    let { navigator: l, static: o } = y.useContext(He), { matches: i } = y.useContext(Xe), u = i[i.length - 1], a = u ? u.params : {}, c = u ? u.pathname : "/", p = u ? u.pathnameBase : "/", h = u && u.route;
     {
-      let d = g && g.path || "";
-      pd(c, !g || d.endsWith("*") || d.endsWith("*?"), `You rendered descendant <Routes> (or called \`useRoutes()\`) at "${c}" (under <Route path="${d}">) but the parent route path has no trailing "*". This means if you navigate deeper, the parent won't match anymore and therefore the child routes will never render.
+      let d = h && h.path || "";
+      pd(c, !h || d.endsWith("*") || d.endsWith("*?"), `You rendered descendant <Routes> (or called \`useRoutes()\`) at "${c}" (under <Route path="${d}">) but the parent route path has no trailing "*". This means if you navigate deeper, the parent won't match anymore and therefore the child routes will never render.
 
 Please change the parent <Route path="${d}"> to <Route path="${d === "/" ? "*" : `${d}/*`}">.`);
     }
-    let v = ct(), b;
+    let g = ct(), b;
     if (t) {
       let d = typeof t == "string" ? _n(t) : t;
       H(p === "/" || ((_a2 = d.pathname) == null ? void 0 : _a2.startsWith(p)), `When overriding the location using \`<Routes location>\` or \`useRoutes(routes, location)\`, the location pathname must begin with the portion of the URL pathname that was matched by all parent routes. The current pathname base is "${p}" but pathname "${d.pathname}" was given in the \`location\` prop.`), b = d;
-    } else b = v;
-    let k = b.pathname || "/", h = k;
+    } else b = g;
+    let k = b.pathname || "/", v = k;
     if (p !== "/") {
       let d = p.replace(/^\//, "").split("/");
-      h = "/" + k.replace(/^\//, "").split("/").slice(d.length).join("/");
+      v = "/" + k.replace(/^\//, "").split("/").slice(d.length).join("/");
     }
     let N = !o && n && n.matches && n.matches.length > 0 ? n.matches : id(e, {
-      pathname: h
+      pathname: v
     });
-    We(g || N != null, `No routes matched location "${b.pathname}${b.search}${b.hash}" `), We(N == null || N[N.length - 1].route.element !== void 0 || N[N.length - 1].route.Component !== void 0 || N[N.length - 1].route.lazy !== void 0, `Matched leaf route at location "${b.pathname}${b.search}${b.hash}" does not have an element or Component. This means it will render an <Outlet /> with a null value by default resulting in an "empty" page.`);
+    We(h || N != null, `No routes matched location "${b.pathname}${b.search}${b.hash}" `), We(N == null || N[N.length - 1].route.element !== void 0 || N[N.length - 1].route.Component !== void 0 || N[N.length - 1].route.lazy !== void 0, `Matched leaf route at location "${b.pathname}${b.search}${b.hash}" does not have an element or Component. This means it will render an <Outlet /> with a null value by default resulting in an "empty" page.`);
     let m = Dp(N && N.map((d) => Object.assign({}, d, {
       params: Object.assign({}, a, d.params),
       pathname: lt([
@@ -7110,8 +7110,8 @@ Please change the parent <Route path="${d}"> to <Route path="${d === "/" ? "*" :
     if (n) for (let a = 0; a < l.length; a++) {
       let c = l[a];
       if ((c.route.HydrateFallback || c.route.hydrateFallbackElement) && (u = a), c.route.id) {
-        let { loaderData: p, errors: g } = n, v = c.route.loader && !p.hasOwnProperty(c.route.id) && (!g || g[c.route.id] === void 0);
-        if (c.route.lazy || v) {
+        let { loaderData: p, errors: h } = n, g = c.route.loader && !p.hasOwnProperty(c.route.id) && (!h || h[c.route.id] === void 0);
+        if (c.route.lazy || g) {
           i = true, u >= 0 ? l = l.slice(0, u + 1) : l = [
             l[0]
           ];
@@ -7120,15 +7120,15 @@ Please change the parent <Route path="${d}"> to <Route path="${d === "/" ? "*" :
       }
     }
     return l.reduceRight((a, c, p) => {
-      let g, v = false, b = null, k = null;
-      n && (g = o && c.route.id ? o[c.route.id] : void 0, b = c.route.errorElement || zp, i && (u < 0 && p === 0 ? (pd("route-fallback", false, "No `HydrateFallback` element provided to render during initial hydration"), v = true, k = null) : u === p && (v = true, k = c.route.hydrateFallbackElement || null)));
-      let h = t.concat(l.slice(0, p + 1)), N = () => {
+      let h, g = false, b = null, k = null;
+      n && (h = o && c.route.id ? o[c.route.id] : void 0, b = c.route.errorElement || zp, i && (u < 0 && p === 0 ? (pd("route-fallback", false, "No `HydrateFallback` element provided to render during initial hydration"), g = true, k = null) : u === p && (g = true, k = c.route.hydrateFallbackElement || null)));
+      let v = t.concat(l.slice(0, p + 1)), N = () => {
         let m;
-        return g ? m = b : v ? m = k : c.route.Component ? m = y.createElement(c.route.Component, null) : c.route.element ? m = c.route.element : m = a, y.createElement(Ip, {
+        return h ? m = b : g ? m = k : c.route.Component ? m = y.createElement(c.route.Component, null) : c.route.element ? m = c.route.element : m = a, y.createElement(Ip, {
           match: c,
           routeContext: {
             outlet: a,
-            matches: h,
+            matches: v,
             isDataRoute: n != null
           },
           children: m
@@ -7138,11 +7138,11 @@ Please change the parent <Route path="${d}"> to <Route path="${d === "/" ? "*" :
         location: n.location,
         revalidation: n.revalidation,
         component: b,
-        error: g,
+        error: h,
         children: N(),
         routeContext: {
           outlet: null,
-          matches: h,
+          matches: v,
           isDataRoute: true
         }
       }) : N();
@@ -7232,15 +7232,15 @@ Please change the parent <Route path="${d}"> to <Route path="${d === "/" ? "*" :
       o
     ]);
     typeof n == "string" && (n = _n(n));
-    let { pathname: a = "/", search: c = "", hash: p = "", state: g = null, key: v = "default" } = n, b = y.useMemo(() => {
+    let { pathname: a = "/", search: c = "", hash: p = "", state: h = null, key: g = "default" } = n, b = y.useMemo(() => {
       let k = Lt(a, i);
       return k == null ? null : {
         location: {
           pathname: k,
           search: c,
           hash: p,
-          state: g,
-          key: v
+          state: h,
+          key: g
         },
         navigationType: r
       };
@@ -7249,8 +7249,8 @@ Please change the parent <Route path="${d}"> to <Route path="${d === "/" ? "*" :
       a,
       c,
       p,
+      h,
       g,
-      v,
       r
     ]);
     return We(b != null, `<Router basename="${i}"> is not able to match the URL "${a}${c}${p}" because it does not start with the basename, so the <Router> won't render anything.`), b == null ? null : y.createElement(He.Provider, {
@@ -7343,11 +7343,11 @@ Please change the parent <Route path="${d}"> to <Route path="${d === "/" ? "*" :
       if (u == null) throw new Error('Cannot submit a <button> or <input type="submit"> without a <form>');
       let a = e.getAttribute("formaction") || u.getAttribute("action");
       if (r = a ? Lt(a, t) : null, n = e.getAttribute("formmethod") || u.getAttribute("method") || il, l = Eo(e.getAttribute("formenctype")) || Eo(u.getAttribute("enctype")) || sl, o = new FormData(u, e), !t0()) {
-        let { name: c, type: p, value: g } = e;
+        let { name: c, type: p, value: h } = e;
         if (p === "image") {
-          let v = c ? `${c}.` : "";
-          o.append(`${v}x`, "0"), o.append(`${v}y`, "0");
-        } else c && o.append(c, g);
+          let g = c ? `${c}.` : "";
+          o.append(`${g}x`, "0"), o.append(`${g}y`, "0");
+        } else c && o.append(c, h);
       }
     } else {
       if (Jl(e)) throw new Error('Cannot submit element that is not <form>, <button>, or <input type="submit|image">');
@@ -7409,14 +7409,14 @@ Please change the parent <Route path="${d}"> to <Route path="${d === "/" ? "*" :
       if (!p || !p.hasLoader) return false;
       if (i(a, c) || u(a, c)) return true;
       if (a.route.shouldRevalidate) {
-        let g = a.route.shouldRevalidate({
+        let h = a.route.shouldRevalidate({
           currentUrl: new URL(l.pathname + l.search + l.hash, window.origin),
           currentParams: ((_a2 = n[0]) == null ? void 0 : _a2.params) || {},
           nextUrl: new URL(e, window.origin),
           nextParams: a.params,
           defaultShouldRevalidate: true
         });
-        if (typeof g == "boolean") return g;
+        if (typeof h == "boolean") return h;
       }
       return true;
     }) : [];
@@ -7470,17 +7470,17 @@ Please change the parent <Route path="${d}"> to <Route path="${d === "/" ? "*" :
     return Ss(e, "You must render this element inside a <HydratedRouter> element"), e;
   }
   function p0(e, t) {
-    let n = y.useContext(Cs), [r, l] = y.useState(false), [o, i] = y.useState(false), { onFocus: u, onBlur: a, onMouseEnter: c, onMouseLeave: p, onTouchStart: g } = t, v = y.useRef(null);
+    let n = y.useContext(Cs), [r, l] = y.useState(false), [o, i] = y.useState(false), { onFocus: u, onBlur: a, onMouseEnter: c, onMouseLeave: p, onTouchStart: h } = t, g = y.useRef(null);
     y.useEffect(() => {
       if (e === "render" && i(true), e === "viewport") {
-        let h = (m) => {
+        let v = (m) => {
           m.forEach((d) => {
             i(d.isIntersecting);
           });
-        }, N = new IntersectionObserver(h, {
+        }, N = new IntersectionObserver(v, {
           threshold: 0.5
         });
-        return v.current && N.observe(v.current), () => {
+        return g.current && N.observe(g.current), () => {
           N.disconnect();
         };
       }
@@ -7488,11 +7488,11 @@ Please change the parent <Route path="${d}"> to <Route path="${d === "/" ? "*" :
       e
     ]), y.useEffect(() => {
       if (r) {
-        let h = setTimeout(() => {
+        let v = setTimeout(() => {
           i(true);
         }, 100);
         return () => {
-          clearTimeout(h);
+          clearTimeout(v);
         };
       }
     }, [
@@ -7505,21 +7505,21 @@ Please change the parent <Route path="${d}"> to <Route path="${d === "/" ? "*" :
     };
     return n ? e !== "intent" ? [
       o,
-      v,
+      g,
       {}
     ] : [
       o,
-      v,
+      g,
       {
         onFocus: Un(u, b),
         onBlur: Un(a, k),
         onMouseEnter: Un(c, b),
         onMouseLeave: Un(p, k),
-        onTouchStart: Un(g, b)
+        onTouchStart: Un(h, b)
       }
     ] : [
       false,
-      v,
+      g,
       {}
     ];
   }
@@ -7576,9 +7576,9 @@ Please change the parent <Route path="${d}"> to <Route path="${d === "/" ? "*" :
         let m = l.routes[N.route.id];
         !m || !m.hasLoader || (!a.some((d) => d.route.id === N.route.id) && N.route.id in i && ((_a2 = o[N.route.id]) == null ? void 0 : _a2.shouldRevalidate) || m.hasClientLoader ? k = true : b.add(N.route.id));
       }), b.size === 0) return [];
-      let h = d0(e);
-      return k && b.size > 0 && h.searchParams.set("_routes", t.filter((N) => b.has(N.route.id)).map((N) => N.route.id).join(",")), [
-        h.pathname + h.search
+      let v = d0(e);
+      return k && b.size > 0 && v.searchParams.set("_routes", t.filter((N) => b.has(N.route.id)).map((N) => N.route.id).join(",")), [
+        v.pathname + v.search
       ];
     }, [
       i,
@@ -7588,22 +7588,22 @@ Please change the parent <Route path="${d}"> to <Route path="${d === "/" ? "*" :
       t,
       e,
       o
-    ]), g = y.useMemo(() => s0(c, l), [
+    ]), h = y.useMemo(() => s0(c, l), [
       c,
       l
-    ]), v = g0(c);
+    ]), g = g0(c);
     return y.createElement(y.Fragment, null, p.map((b) => y.createElement("link", {
       key: b,
       rel: "prefetch",
       as: "fetch",
       href: b,
       ...n
-    })), g.map((b) => y.createElement("link", {
+    })), h.map((b) => y.createElement("link", {
       key: b,
       rel: "modulepreload",
       href: b,
       ...n
-    })), v.map(({ key: b, link: k }) => y.createElement("link", {
+    })), g.map(({ key: b, link: k }) => y.createElement("link", {
       key: b,
       ...k
     })));
@@ -7645,9 +7645,9 @@ Please change the parent <Route path="${d}"> to <Route path="${d === "/" ? "*" :
       navigator: l
     });
   }
-  var vd = /^(?:[a-z][a-z0-9+.-]*:|\/\/)/i, yd = y.forwardRef(function({ onClick: t, discover: n = "render", prefetch: r = "none", relative: l, reloadDocument: o, replace: i, state: u, target: a, to: c, preventScrollReset: p, viewTransition: g, ...v }, b) {
-    let { basename: k } = y.useContext(He), h = typeof c == "string" && vd.test(c), N, m = false;
-    if (typeof c == "string" && h && (N = c, gd)) try {
+  var vd = /^(?:[a-z][a-z0-9+.-]*:|\/\/)/i, yd = y.forwardRef(function({ onClick: t, discover: n = "render", prefetch: r = "none", relative: l, reloadDocument: o, replace: i, state: u, target: a, to: c, preventScrollReset: p, viewTransition: h, ...g }, b) {
+    let { basename: k } = y.useContext(He), v = typeof c == "string" && vd.test(c), N, m = false;
+    if (typeof c == "string" && v && (N = c, gd)) try {
       let O = new URL(window.location.href), M = c.startsWith("//") ? new URL(O.protocol + c) : new URL(c), X = Lt(M.pathname, k);
       M.origin === O.origin && X != null ? c = X + M.search + M.hash : m = true;
     } catch {
@@ -7655,36 +7655,36 @@ Please change the parent <Route path="${d}"> to <Route path="${d === "/" ? "*" :
     }
     let d = Rp(c, {
       relative: l
-    }), [f, x, j] = p0(r, v), S = j0(c, {
+    }), [f, x, j] = p0(r, g), S = j0(c, {
       replace: i,
       state: u,
       target: a,
       preventScrollReset: p,
       relative: l,
-      viewTransition: g
+      viewTransition: h
     });
     function w(O) {
       t && t(O), O.defaultPrevented || S(O);
     }
     let E = y.createElement("a", {
-      ...v,
+      ...g,
       ...j,
       href: N || d,
       onClick: m || o ? t : w,
       ref: y0(b, x),
       target: a,
-      "data-discover": !h && n === "render" ? "true" : void 0
+      "data-discover": !v && n === "render" ? "true" : void 0
     });
-    return f && !h ? y.createElement(y.Fragment, null, E, y.createElement(h0, {
+    return f && !v ? y.createElement(y.Fragment, null, E, y.createElement(h0, {
       page: d
     })) : E;
   });
   yd.displayName = "Link";
   var w0 = y.forwardRef(function({ "aria-current": t = "page", caseSensitive: n = false, className: r = "", end: l = false, style: o, to: i, viewTransition: u, children: a, ...c }, p) {
-    let g = Er(i, {
+    let h = Er(i, {
       relative: c.relative
-    }), v = ct(), b = y.useContext(Yl), { navigator: k, basename: h } = y.useContext(He), N = b != null && P0(g) && u === true, m = k.encodeLocation ? k.encodeLocation(g).pathname : g.pathname, d = v.pathname, f = b && b.navigation && b.navigation.location ? b.navigation.location.pathname : null;
-    n || (d = d.toLowerCase(), f = f ? f.toLowerCase() : null, m = m.toLowerCase()), f && h && (f = Lt(f, h) || f);
+    }), g = ct(), b = y.useContext(Yl), { navigator: k, basename: v } = y.useContext(He), N = b != null && P0(h) && u === true, m = k.encodeLocation ? k.encodeLocation(h).pathname : h.pathname, d = g.pathname, f = b && b.navigation && b.navigation.location ? b.navigation.location.pathname : null;
+    n || (d = d.toLowerCase(), f = f ? f.toLowerCase() : null, m = m.toLowerCase()), f && v && (f = Lt(f, v) || f);
     const x = m !== "/" && m.endsWith("/") ? m.length - 1 : m.length;
     let j = d === m || !l && d.startsWith(m) && d.charAt(x) === "/", S = f != null && (f === m || !l && f.startsWith(m) && f.charAt(m.length) === "/"), w = {
       isActive: j,
@@ -7709,8 +7709,8 @@ Please change the parent <Route path="${d}"> to <Route path="${d === "/" ? "*" :
     }, typeof a == "function" ? a(w) : a);
   });
   w0.displayName = "NavLink";
-  var b0 = y.forwardRef(({ discover: e = "render", fetcherKey: t, navigate: n, reloadDocument: r, replace: l, state: o, method: i = il, action: u, onSubmit: a, relative: c, preventScrollReset: p, viewTransition: g, ...v }, b) => {
-    let k = C0(), h = E0(u, {
+  var b0 = y.forwardRef(({ discover: e = "render", fetcherKey: t, navigate: n, reloadDocument: r, replace: l, state: o, method: i = il, action: u, onSubmit: a, relative: c, preventScrollReset: p, viewTransition: h, ...g }, b) => {
+    let k = C0(), v = E0(u, {
       relative: c
     }), N = i.toLowerCase() === "get" ? "get" : "post", m = typeof u == "string" && vd.test(u), d = (f) => {
       if (a && a(f), f.defaultPrevented) return;
@@ -7724,15 +7724,15 @@ Please change the parent <Route path="${d}"> to <Route path="${d === "/" ? "*" :
         state: o,
         relative: c,
         preventScrollReset: p,
-        viewTransition: g
+        viewTransition: h
       });
     };
     return y.createElement("form", {
       ref: b,
       method: N,
-      action: h,
+      action: v,
       onSubmit: r ? a : d,
-      ...v,
+      ...g,
       "data-discover": !m && e === "render" ? "true" : void 0
     });
   });
@@ -7751,9 +7751,9 @@ Please change the parent <Route path="${d}"> to <Route path="${d === "/" ? "*" :
     return y.useCallback((p) => {
       if (e0(p, t)) {
         p.preventDefault();
-        let g = n !== void 0 ? n : xr(a) === xr(c);
+        let h = n !== void 0 ? n : xr(a) === xr(c);
         u(e, {
-          replace: g,
+          replace: h,
           state: r,
           preventScrollReset: l,
           relative: o,
@@ -7818,7 +7818,7 @@ Please change the parent <Route path="${d}"> to <Route path="${d === "/" ? "*" :
       o.search = i.search;
       let u = new URLSearchParams(o.search), a = u.getAll("index");
       if (a.some((p) => p === "")) {
-        u.delete("index"), a.filter((g) => g).forEach((g) => u.append("index", g));
+        u.delete("index"), a.filter((h) => h).forEach((h) => u.append("index", h));
         let p = u.toString();
         o.search = p ? `?${p}` : "";
       }
@@ -7842,10 +7842,10 @@ Please change the parent <Route path="${d}"> to <Route path="${d === "/" ? "*" :
   const Ha = (e) => {
     let t;
     const n = /* @__PURE__ */ new Set(), r = (c, p) => {
-      const g = typeof c == "function" ? c(t) : c;
-      if (!Object.is(g, t)) {
-        const v = t;
-        t = p ?? (typeof g != "object" || g === null) ? g : Object.assign({}, t, g), n.forEach((b) => b(t, v));
+      const h = typeof c == "function" ? c(t) : c;
+      if (!Object.is(h, t)) {
+        const g = t;
+        t = p ?? (typeof h != "object" || h === null) ? h : Object.assign({}, t, h), n.forEach((b) => b(t, g));
       }
     }, l = () => t, u = {
       setState: r,
@@ -7885,19 +7885,19 @@ Please change the parent <Route path="${d}"> to <Route path="${d === "/" ? "*" :
           }), u = await i.json();
           if (i.ok && u.success) {
             console.log("Existing user found:", u);
-            const g = (_e2 = window.Telegram) == null ? void 0 : _e2.WebApp;
-            if (g == null ? void 0 : g.CloudStorage) try {
-              g.CloudStorage.getItem("miners", (v, b) => {
-                if (v) {
-                  console.error("Error loading miners from CloudStorage:", v);
+            const h = (_e2 = window.Telegram) == null ? void 0 : _e2.WebApp;
+            if (h == null ? void 0 : h.CloudStorage) try {
+              h.CloudStorage.getItem("miners", (g, b) => {
+                if (g) {
+                  console.error("Error loading miners from CloudStorage:", g);
                   return;
                 }
                 try {
-                  const k = b ? JSON.parse(b) : [], h = u.user.rootBalance;
-                  u.user.miners = Array.isArray(k) ? k : [], u.user.rootBalance = h, e({
+                  const k = b ? JSON.parse(b) : [], v = u.user.rootBalance;
+                  u.user.miners = Array.isArray(k) ? k : [], u.user.rootBalance = v, e({
                     user: {
                       ...u.user,
-                      rootBalance: h
+                      rootBalance: v
                     },
                     isAuthenticated: true,
                     isLoading: false,
@@ -7905,13 +7905,13 @@ Please change the parent <Route path="${d}"> to <Route path="${d === "/" ? "*" :
                   });
                 } catch (k) {
                   console.error("Error parsing miners:", k);
-                  const h = u.user.rootBalance;
-                  g.CloudStorage.setItem("miners", "[]", (N) => {
+                  const v = u.user.rootBalance;
+                  h.CloudStorage.setItem("miners", "[]", (N) => {
                     N && console.error("Error resetting miners:", N);
-                  }), u.user.miners = [], u.user.rootBalance = h, e({
+                  }), u.user.miners = [], u.user.rootBalance = v, e({
                     user: {
                       ...u.user,
-                      rootBalance: h
+                      rootBalance: v
                     },
                     isAuthenticated: true,
                     isLoading: false,
@@ -7919,8 +7919,8 @@ Please change the parent <Route path="${d}"> to <Route path="${d === "/" ? "*" :
                   });
                 }
               });
-            } catch (v) {
-              console.error("CloudStorage error:", v);
+            } catch (g) {
+              console.error("CloudStorage error:", g);
             }
             return e({
               user: u.user,
@@ -7983,7 +7983,7 @@ Please change the parent <Route path="${d}"> to <Route path="${d === "/" ? "*" :
     })
   }));
   function T0({ onClose: e, gyroscopeMovement: t }) {
-    const [n, r] = y.useState(0), [l, o] = y.useState(0), [i, u] = y.useState(50), [a, c] = y.useState([]), p = y.useRef(null), { user: g } = Je(), v = y.useRef(Date.now()), b = y.useRef(Date.now()), k = y.useRef(50), h = {
+    const [n, r] = y.useState(0), [l, o] = y.useState(0), [i, u] = y.useState(50), [a, c] = y.useState([]), p = y.useRef(null), { user: h } = Je(), g = y.useRef(Date.now()), b = y.useRef(Date.now()), k = y.useRef(50), v = {
       WHITE: {
         color: "#FFFFFF",
         points: 10,
@@ -8007,8 +8007,8 @@ Please change the parent <Route path="${d}"> to <Route path="${d === "/" ? "*" :
     }, N = () => {
       const x = Math.random();
       let j, S = 0;
-      for (const w in h) if (S += h[w].probability, x <= S) {
-        j = h[w];
+      for (const w in v) if (S += v[w].probability, x <= S) {
+        j = v[w];
         break;
       }
       return {
@@ -8024,8 +8024,8 @@ Please change the parent <Route path="${d}"> to <Route path="${d === "/" ? "*" :
       const S = k.current, w = 90, E = 95, O = 4, M = 4, X = Math.abs(x - S), Ee = Math.abs(j - w);
       return X < O && Ee < M && j < E && j > w - M;
     }, d = () => {
-      const x = Date.now(), j = x - v.current;
-      v.current = x, x - b.current > 1e3 && (c((S) => [
+      const x = Date.now(), j = x - g.current;
+      g.current = x, x - b.current > 1e3 && (c((S) => [
         ...S,
         N()
       ]), b.current = x), c((S) => S.map((w) => {
@@ -8227,8 +8227,8 @@ Please change the parent <Route path="${d}"> to <Route path="${d === "/" ? "*" :
   function O0() {
     const [e, t] = y.useState(false), [n, r] = y.useState(0), [l, o] = y.useState(false), i = (a) => {
       if (!e || !l) return;
-      const c = 2, p = a.gamma, v = Math.max(-45, Math.min(45, p)) / 45 * c;
-      r(v);
+      const c = 2, p = a.gamma, g = Math.max(-45, Math.min(45, p)) / 45 * c;
+      r(g);
     }, u = async () => {
       try {
         typeof DeviceOrientationEvent.requestPermission == "function" ? await DeviceOrientationEvent.requestPermission() === "granted" ? (o(true), t(true)) : alert("\u0414\u043B\u044F \u0438\u0433\u0440\u044B \u043D\u0435\u043E\u0431\u0445\u043E\u0434\u0438\u043C \u0434\u043E\u0441\u0442\u0443\u043F \u043A \u0433\u0438\u0440\u043E\u0441\u043A\u043E\u043F\u0443") : (o(true), t(true), window.addEventListener("deviceorientation", i));
@@ -8520,14 +8520,14 @@ Please change the parent <Route path="${d}"> to <Route path="${d === "/" ? "*" :
     }), [n, r] = y.useState(false), [l, o] = y.useState(false), i = y.useRef(null), u = y.useRef(null), a = 80, c = async () => {
       try {
         "DeviceOrientationEvent" in window ? (console.log("DeviceOrientation \u043F\u043E\u0434\u0434\u0435\u0440\u0436\u0438\u0432\u0430\u0435\u0442\u0441\u044F"), typeof DeviceOrientationEvent.requestPermission == "function" ? await DeviceOrientationEvent.requestPermission() === "granted" ? (o(true), alert("\u0414\u043E\u0441\u0442\u0443\u043F \u043A \u0433\u0438\u0440\u043E\u0441\u043A\u043E\u043F\u0443 \u043F\u043E\u043B\u0443\u0447\u0435\u043D! \u041D\u0430\u043A\u043B\u043E\u043D\u0438\u0442\u0435 \u0443\u0441\u0442\u0440\u043E\u0439\u0441\u0442\u0432\u043E.")) : alert("\u0414\u043E\u0441\u0442\u0443\u043F \u043A \u0433\u0438\u0440\u043E\u0441\u043A\u043E\u043F\u0443 \u043D\u0435 \u043F\u043E\u043B\u0443\u0447\u0435\u043D") : (o(true), alert("\u0414\u043E\u0441\u0442\u0443\u043F \u043A \u0433\u0438\u0440\u043E\u0441\u043A\u043E\u043F\u0443 \u043F\u043E\u043B\u0443\u0447\u0435\u043D! \u041D\u0430\u043A\u043B\u043E\u043D\u0438\u0442\u0435 \u0443\u0441\u0442\u0440\u043E\u0439\u0441\u0442\u0432\u043E."))) : alert("\u0412\u0430\u0448\u0435 \u0443\u0441\u0442\u0440\u043E\u0439\u0441\u0442\u0432\u043E \u043D\u0435 \u043F\u043E\u0434\u0434\u0435\u0440\u0436\u0438\u0432\u0430\u0435\u0442 \u0433\u0438\u0440\u043E\u0441\u043A\u043E\u043F");
-      } catch (v) {
-        console.error("\u041E\u0448\u0438\u0431\u043A\u0430 \u043F\u0440\u0438 \u0437\u0430\u043F\u0440\u043E\u0441\u0435 \u0433\u0438\u0440\u043E\u0441\u043A\u043E\u043F\u0430:", v), alert("\u041F\u0440\u043E\u0438\u0437\u043E\u0448\u043B\u0430 \u043E\u0448\u0438\u0431\u043A\u0430 \u043F\u0440\u0438 \u0437\u0430\u043F\u0440\u043E\u0441\u0435 \u0433\u0438\u0440\u043E\u0441\u043A\u043E\u043F\u0430");
+      } catch (g) {
+        console.error("\u041E\u0448\u0438\u0431\u043A\u0430 \u043F\u0440\u0438 \u0437\u0430\u043F\u0440\u043E\u0441\u0435 \u0433\u0438\u0440\u043E\u0441\u043A\u043E\u043F\u0430:", g), alert("\u041F\u0440\u043E\u0438\u0437\u043E\u0448\u043B\u0430 \u043E\u0448\u0438\u0431\u043A\u0430 \u043F\u0440\u0438 \u0437\u0430\u043F\u0440\u043E\u0441\u0435 \u0433\u0438\u0440\u043E\u0441\u043A\u043E\u043F\u0430");
       }
-    }, p = (v) => {
+    }, p = (g) => {
       if (!n || !u.current || !i.current) return;
-      const b = u.current.getBoundingClientRect(), k = i.current.getBoundingClientRect(), h = 0.5, N = 1, m = 0.2, d = -1e3, f = v.gamma, x = v.beta;
+      const b = u.current.getBoundingClientRect(), k = i.current.getBoundingClientRect(), v = 0.5, N = 1, m = 0.2, d = -1e3, f = g.gamma, x = g.beta;
       t((j) => {
-        let S = j.x + f * h;
+        let S = j.x + f * v;
         const w = x > 0 ? m : N;
         let E = j.y + x * w;
         S = Math.max(0, Math.min(S, b.width - k.width));
@@ -8537,8 +8537,8 @@ Please change the parent <Route path="${d}"> to <Route path="${d === "/" ? "*" :
           y: E
         };
       });
-    }, g = async () => {
-      l ? r((v) => !v) : await c();
+    }, h = async () => {
+      l ? r((g) => !g) : await c();
     };
     return y.useEffect(() => (l && n && window.addEventListener("deviceorientation", p), () => {
       window.removeEventListener("deviceorientation", p);
@@ -8554,7 +8554,7 @@ Please change the parent <Route path="${d}"> to <Route path="${d === "/" ? "*" :
       },
       children: s.jsxs("div", {
         ref: i,
-        onClick: g,
+        onClick: h,
         style: {
           transform: `translate(${e.x}px, ${e.y}px)`,
           transition: "transform 0.1s linear",
@@ -8638,7 +8638,7 @@ Please change the parent <Route path="${d}"> to <Route path="${d === "/" ? "*" :
           }
         })).json();
         if (c.inviteLink) {
-          const g = `https://t.me/share/url?text=${encodeURIComponent(`\u{1F680} Join Method!
+          const h = `https://t.me/share/url?text=${encodeURIComponent(`\u{1F680} Join Method!
 
 \u{1F48E} Complete tasks
 \u{1F4B0} Get rewards
@@ -8646,7 +8646,7 @@ Please change the parent <Route path="${d}"> to <Route path="${d === "/" ? "*" :
 \u{1F465} Invite friends
 
 \u{1F525} Join now!`)}&url=${encodeURIComponent(c.inviteLink)}`;
-          ((_a2 = window.Telegram) == null ? void 0 : _a2.WebApp) ? window.Telegram.WebApp.openTelegramLink(g) : window.open(g, "_blank");
+          ((_a2 = window.Telegram) == null ? void 0 : _a2.WebApp) ? window.Telegram.WebApp.openTelegramLink(h) : window.open(h, "_blank");
         }
       } catch (a) {
         console.error("Error getting invite link:", a);
@@ -8898,7 +8898,7 @@ Please change the parent <Route path="${d}"> to <Route path="${d === "/" ? "*" :
     ].map((P) => ({
       ...r(l),
       color: P
-    }))), [p, g] = y.useState(0), [v, b] = y.useState(false), [k, h] = y.useState(false), [N, m] = y.useState(true);
+    }))), [p, h] = y.useState(0), [g, b] = y.useState(false), [k, v] = y.useState(false), [N, m] = y.useState(true);
     y.useEffect(() => {
       const _ = setInterval(() => {
         m((P) => !P);
@@ -8912,15 +8912,15 @@ Please change the parent <Route path="${d}"> to <Route path="${d === "/" ? "*" :
       }, 1e3);
     }, X = y.useCallback(() => {
       a.forEach((_, P) => {
-        _.x === i.x && _.y === i.y && !E.has(P) && (v ? (g((R) => R + 200), O((R) => /* @__PURE__ */ new Set([
+        _.x === i.x && _.y === i.y && !E.has(P) && (g ? (h((R) => R + 200), O((R) => /* @__PURE__ */ new Set([
           ...R,
           P
-        ]))) : h(true));
+        ]))) : v(true));
       });
     }, [
       i,
       a,
-      v,
+      g,
       E
     ]), Ee = () => {
       const _ = Qa();
@@ -8930,7 +8930,7 @@ Please change the parent <Route path="${d}"> to <Route path="${d === "/" ? "*" :
       }), c((P) => P.map((R) => ({
         ...r(_),
         color: R.color
-      }))), g(0), b(false), h(false), O(/* @__PURE__ */ new Set());
+      }))), h(0), b(false), v(false), O(/* @__PURE__ */ new Set());
     }, Ze = y.useCallback((_) => {
       _.some((R) => R.some((T) => T === D.DOT || T === D.POWER_PELLET)) || (j(true), dt(p));
     }, [
@@ -8957,13 +8957,13 @@ Please change the parent <Route path="${d}"> to <Route path="${d === "/" ? "*" :
         }
         const T = l[R.y][R.x];
         if (T === D.DOT) {
-          g((Z) => Z + 10);
+          h((Z) => Z + 10);
           const G = [
             ...l
           ];
           G[R.y][R.x] = D.EMPTY, o(G), Ze(G);
         } else if (T === D.POWER_PELLET) {
-          g((Z) => Z + 50), M();
+          h((Z) => Z + 50), M();
           const G = [
             ...l
           ];
@@ -9121,7 +9121,7 @@ Please change the parent <Route path="${d}"> to <Route path="${d === "/" ? "*" :
                 p
               ]
             }),
-            v && s.jsxs("div", {
+            g && s.jsxs("div", {
               className: "text-blue-400 animate-pulse",
               children: [
                 "Power Mode: ",
@@ -9238,11 +9238,11 @@ Please change the parent <Route path="${d}"> to <Route path="${d === "/" ? "*" :
               a.map((G, Z) => !E.has(Z) && G.x === T && G.y === P && s.jsx("div", {
                 className: "absolute inset-0 flex items-center justify-center",
                 children: s.jsxs("div", {
-                  className: `w-full h-full relative ${v ? "animate-pulse" : ""}`,
+                  className: `w-full h-full relative ${g ? "animate-pulse" : ""}`,
                   style: {
-                    backgroundColor: v ? "#2563eb" : G.color,
+                    backgroundColor: g ? "#2563eb" : G.color,
                     borderRadius: "50% 50% 0 0",
-                    opacity: v ? "0.7" : "1"
+                    opacity: g ? "0.7" : "1"
                   },
                   children: [
                     s.jsxs("div", {
@@ -9284,7 +9284,7 @@ Please change the parent <Route path="${d}"> to <Route path="${d === "/" ? "*" :
                       className: "absolute bottom-0 w-full",
                       style: {
                         height: "25%",
-                        backgroundColor: v ? "#2563eb" : G.color,
+                        backgroundColor: g ? "#2563eb" : G.color,
                         clipPath: "polygon(0 0, 25% 0, 25% 100%, 50% 0, 75% 0, 75% 100%, 100% 0, 100% 100%, 0 100%)"
                       }
                     })
@@ -9377,7 +9377,7 @@ Please change the parent <Route path="${d}"> to <Route path="${d === "/" ? "*" :
   };
   function I0() {
     var _a2;
-    const [e, t] = y.useState("Social"), [n, r] = y.useState(null), [l, o] = y.useState(false), { user: i, updateUser: u } = Je(), { tg: a } = wr(), [c, p] = y.useState(false), [g, v] = y.useState({}), b = [
+    const [e, t] = y.useState("Social"), [n, r] = y.useState(null), [l, o] = y.useState(false), { user: i, updateUser: u } = Je(), { tg: a } = wr(), [c, p] = y.useState(false), [h, g] = y.useState({}), b = [
       "Social",
       "Media",
       "Daily"
@@ -9456,21 +9456,21 @@ Please change the parent <Route path="${d}"> to <Route path="${d === "/" ? "*" :
       var _a3, _b;
       ((_b = (_a3 = window.Telegram) == null ? void 0 : _a3.WebApp) == null ? void 0 : _b.CloudStorage) && (k.Social.forEach((f) => {
         window.Telegram.WebApp.CloudStorage.getItem(`task_${f.id}`, (x, j) => {
-          !x && j && v((S) => ({
+          !x && j && g((S) => ({
             ...S,
             [f.id]: j === "true"
           }));
         });
       }), k.Media.forEach((f) => {
         window.Telegram.WebApp.CloudStorage.getItem(`task_${f.id}`, (x, j) => {
-          !x && j && v((S) => ({
+          !x && j && g((S) => ({
             ...S,
             [f.id]: j === "true"
           }));
         });
       }));
     }, []);
-    const h = (f) => {
+    const v = (f) => {
       if (f === 8) {
         p(true);
         return;
@@ -9481,8 +9481,8 @@ Please change the parent <Route path="${d}"> to <Route path="${d === "/" ? "*" :
       console.log("Join channel clicked:", f), x.stopPropagation(), ((_a3 = window.Telegram) == null ? void 0 : _a3.WebApp) ? window.Telegram.WebApp.openTelegramLink(`https://t.me/${f}`) : window.open(`https://t.me/${f}`, "_blank");
     }, m = async (f, x) => {
       var _a3;
-      if (x.stopPropagation(), !(i == null ? void 0 : i.telegramId) || l || g[f.id]) {
-        g[f.id] && a.showAlert("\u274C You have already claimed the reward!", {
+      if (x.stopPropagation(), !(i == null ? void 0 : i.telegramId) || l || h[f.id]) {
+        h[f.id] && a.showAlert("\u274C You have already claimed the reward!", {
           style: {
             fontFamily: "Polonium"
           }
@@ -9504,7 +9504,7 @@ Please change the parent <Route path="${d}"> to <Route path="${d === "/" ? "*" :
             rootBalance: S
           })
         })).json()).success) window.Telegram.WebApp.CloudStorage.setItem(`task_${f.id}`, "true", (O) => {
-          O || (v((M) => ({
+          O || (g((M) => ({
             ...M,
             [f.id]: true
           })), u({
@@ -9535,7 +9535,7 @@ Please change the parent <Route path="${d}"> to <Route path="${d === "/" ? "*" :
           }
         })).json();
         S.success ? window.Telegram.WebApp.CloudStorage.setItem(`task_${f.id}`, "true", (w) => {
-          w || (v((E) => ({
+          w || (g((E) => ({
             ...E,
             [f.id]: true
           })), u({
@@ -9579,7 +9579,7 @@ Please change the parent <Route path="${d}"> to <Route path="${d === "/" ? "*" :
             s.jsx("div", {
               className: "space-y-3",
               children: (_a2 = k[e]) == null ? void 0 : _a2.map((f) => s.jsxs("div", {
-                onClick: () => h(f.id),
+                onClick: () => v(f.id),
                 className: `bg-gradient-to-br from-[#1E293B]/95 via-[#0F172A]/90 to-[#020617]/95
                         backdrop-blur-md rounded-lg
                         border border-blue-400/20
@@ -9644,14 +9644,14 @@ Please change the parent <Route path="${d}"> to <Route path="${d === "/" ? "*" :
                         className: "space-y-2",
                         children: f.type === "bot" ? s.jsxs("button", {
                           onClick: (x) => m(f, x),
-                          disabled: l || g[f.id],
+                          disabled: l || h[f.id],
                           className: `w-full bg-[#0F172A]/80 hover:bg-[#0F172A] text-blue-400 py-2 rounded-lg 
                                   text-sm transition-all duration-200
                                   border-2 border-blue-400/50 hover:border-blue-400
                                   shadow-[0_0_10px_rgba(96,165,250,0.2)]
                                   hover:shadow-[0_0_15px_rgba(96,165,250,0.4)]
                                   flex items-center justify-center gap-2
-                                  ${l || g[f.id] ? "opacity-50 cursor-not-allowed" : ""}`,
+                                  ${l || h[f.id] ? "opacity-50 cursor-not-allowed" : ""}`,
                           style: {
                             fontFamily: "Polonium"
                           },
@@ -9668,7 +9668,7 @@ Please change the parent <Route path="${d}"> to <Route path="${d === "/" ? "*" :
                                 d: "M13 10V3L4 14h7v7l9-11h-7z"
                               })
                             }),
-                            g[f.id] ? "Reward Claimed" : "Play Game"
+                            h[f.id] ? "Reward Claimed" : "Play Game"
                           ]
                         }) : f.type === "game" ? s.jsxs("button", {
                           onClick: () => p(true),
@@ -9727,18 +9727,18 @@ Please change the parent <Route path="${d}"> to <Route path="${d === "/" ? "*" :
                             }),
                             s.jsx("button", {
                               onClick: (x) => d(f, x),
-                              disabled: g[f.id],
+                              disabled: h[f.id],
                               className: `w-full bg-[#0F172A]/80 hover:bg-[#0F172A] text-blue-400 py-2 rounded-lg 
                                     text-sm transition-all duration-200
                                     border-2 border-blue-400/50 hover:border-blue-400
                                     shadow-[0_0_10px_rgba(96,165,250,0.2)]
                                     hover:shadow-[0_0_15px_rgba(96,165,250,0.4)]
                                     flex items-center justify-center gap-2
-                                    ${g[f.id] ? "opacity-50 cursor-not-allowed" : ""}`,
+                                    ${h[f.id] ? "opacity-50 cursor-not-allowed" : ""}`,
                               style: {
                                 fontFamily: "Polonium"
                               },
-                              children: g[f.id] ? "Reward Claimed" : "Claim Reward"
+                              children: h[f.id] ? "Reward Claimed" : "Claim Reward"
                             })
                           ]
                         })
@@ -9845,7 +9845,7 @@ Please change the parent <Route path="${d}"> to <Route path="${d === "/" ? "*" :
       cube2: 0,
       cube3: 0,
       cube4: 0
-    }), [p, g] = y.useState(false);
+    }), [p, h] = y.useState(false);
     y.useEffect(() => {
       (async () => {
         if (!(e == null ? void 0 : e.telegramId)) {
@@ -9895,7 +9895,7 @@ Please change the parent <Route path="${d}"> to <Route path="${d === "/" ? "*" :
         let x = false;
         f.cube1 || (f.cube1 = Date.now(), x = true), f.cube2 || (f.cube2 = Date.now(), x = true), f.cube3 || (f.cube3 = Date.now(), x = true), f.cube4 || (f.cube4 = Date.now(), x = true), x && window.Telegram.WebApp.CloudStorage.setItem("lastCollection", JSON.stringify(f));
       });
-      const h = () => {
+      const v = () => {
         window.Telegram.WebApp.CloudStorage.getItem("lastCollection", (m, d) => {
           if (m) {
             console.error("Error getting lastCollection:", m);
@@ -9905,22 +9905,22 @@ Please change the parent <Route path="${d}"> to <Route path="${d === "/" ? "*" :
             ...a
           }, S = i.reduce((w, E) => (w[E.type] = (w[E.type] || 0) + 1, w), {});
           Object.entries(S).forEach(([w, E]) => {
-            const O = w === "basic" ? 0.005787037037037037 : w === "minion" ? 33.333333333333336 : w === "cube1" ? 83.33333333333333 : w === "cube2" ? 100 : w === "cube3" ? 116.66666666666667 : 133.33333333333334, M = (x - (f[w] || x)) / 1e3, X = O * E, Ee = Math.min(1e3, Math.floor(M * X));
+            const O = w === "basic" ? 0.005787037037037037 : w === "minion" ? 0.11574074074074074 : w === "cube1" ? 83.33333333333333 : w === "cube2" ? 100 : w === "cube3" ? 116.66666666666667 : 133.33333333333334, M = (x - (f[w] || x)) / 1e3, X = O * E, Ee = Math.min(w === "minion" ? 4e4 : 1e3, Math.floor(M * X));
             j[w] = Ee;
           }), c(j);
         });
       };
-      h();
-      const N = setInterval(h, 1e5);
+      v();
+      const N = setInterval(v, 1e5);
       return () => clearInterval(N);
     }, [
       i
     ]);
-    const v = async (h, N) => {
+    const g = async (v, N) => {
       try {
         const m = [
           ...i
-        ], d = m.findIndex((j) => j.type === h && j.id === N);
+        ], d = m.findIndex((j) => j.type === v && j.id === N);
         if (d === -1) return;
         m.splice(d, 1), (await (await fetch("/update-user-miners", {
           method: "POST",
@@ -9936,10 +9936,10 @@ Please change the parent <Route path="${d}"> to <Route path="${d === "/" ? "*" :
       } catch (m) {
         console.error("Error deleting miner:", m), r("\u041E\u0448\u0438\u0431\u043A\u0430 \u043F\u0440\u0438 \u0443\u0434\u0430\u043B\u0435\u043D\u0438\u0438");
       }
-    }, b = async (h) => {
+    }, b = async (v) => {
       try {
         if (!(e == null ? void 0 : e.telegramId)) return;
-        const N = Math.min(a[h], 1e3);
+        const N = Math.min(a[v], 1e3);
         if (N <= 0) return;
         const m = parseInt(e.rootBalance || 0), d = m + N;
         console.log("Collecting MTH:", {
@@ -9962,7 +9962,7 @@ Please change the parent <Route path="${d}"> to <Route path="${d === "/" ? "*" :
             return;
           }
           const w = JSON.parse(S || "{}");
-          w[h] = Date.now(), window.Telegram.WebApp.CloudStorage.setItem("lastCollection", JSON.stringify(w), (E) => {
+          w[v] = Date.now(), window.Telegram.WebApp.CloudStorage.setItem("lastCollection", JSON.stringify(w), (E) => {
             if (E) {
               console.error("Error saving lastCollection:", E);
               return;
@@ -9972,7 +9972,7 @@ Please change the parent <Route path="${d}"> to <Route path="${d === "/" ? "*" :
               rootBalance: d
             }), c((O) => ({
               ...O,
-              [h]: 0
+              [v]: 0
             }));
           });
         });
@@ -9980,7 +9980,7 @@ Please change the parent <Route path="${d}"> to <Route path="${d === "/" ? "*" :
         console.error("Error collecting MTH:", N), r("\u041E\u0448\u0438\u0431\u043A\u0430 \u043F\u0440\u0438 \u0441\u0431\u043E\u0440\u0435 MTH");
       }
     }, k = () => {
-      const h = {
+      const v = {
         basic: 500,
         minion: 1e4,
         cube1: 750,
@@ -9989,7 +9989,7 @@ Please change the parent <Route path="${d}"> to <Route path="${d === "/" ? "*" :
         cube4: 16e3
       };
       return i.reduce((N, m) => {
-        const d = h[m.type] || 0;
+        const d = v[m.type] || 0;
         return N + d * 1440;
       }, 0);
     };
@@ -10027,7 +10027,7 @@ Please change the parent <Route path="${d}"> to <Route path="${d === "/" ? "*" :
                       children: "Bag"
                     }),
                     s.jsx("button", {
-                      onClick: () => g(true),
+                      onClick: () => h(true),
                       className: "w-5 h-5 rounded-full bg-blue-400/20 text-blue-400 flex items-center justify-center text-sm hover:bg-blue-400/30 mb-2",
                       style: {
                         fontFamily: "Polonium"
@@ -10058,8 +10058,8 @@ Please change the parent <Route path="${d}"> to <Route path="${d === "/" ? "*" :
                 s.jsx("div", {
                   className: "grid grid-cols-5 gap-3",
                   children: (() => {
-                    const h = i.filter((w) => w.type === "basic"), N = i.filter((w) => w.type === "minion"), m = i.filter((w) => w.type === "cube1"), d = i.filter((w) => w.type === "cube2"), f = i.filter((w) => w.type === "cube3"), x = i.filter((w) => w.type === "cube4"), j = [];
-                    h.length > 0 && j.push(s.jsx("div", {
+                    const v = i.filter((w) => w.type === "basic"), N = i.filter((w) => w.type === "minion"), m = i.filter((w) => w.type === "cube1"), d = i.filter((w) => w.type === "cube2"), f = i.filter((w) => w.type === "cube3"), x = i.filter((w) => w.type === "cube4"), j = [];
+                    v.length > 0 && j.push(s.jsx("div", {
                       className: "relative",
                       children: s.jsxs("div", {
                         className: "bg-[#1E293B]/80 backdrop-blur-sm p-2 rounded-lg border border-blue-400/20",
@@ -10071,14 +10071,14 @@ Please change the parent <Route path="${d}"> to <Route path="${d === "/" ? "*" :
                           }),
                           s.jsx("button", {
                             type: "button",
-                            onClick: () => v("basic", h[0].id),
+                            onClick: () => g("basic", v[0].id),
                             className: "absolute -top-2.5 -right-2.5 w-6 h-6 bg-blue-500 text-white border-2 border-blue-600 rounded-full flex items-center justify-center text-lg font-bold cursor-pointer z-50 shadow-lg hover:bg-blue-600 active:bg-blue-700",
                             children: "\xD7"
                           }),
                           s.jsxs("div", {
                             className: "absolute bottom-1 right-1 bg-blue-400/20 px-2 py-1 rounded text-xs text-blue-400",
                             children: [
-                              h.length,
+                              v.length,
                               "/5"
                             ]
                           })
@@ -10096,7 +10096,7 @@ Please change the parent <Route path="${d}"> to <Route path="${d === "/" ? "*" :
                           }),
                           s.jsx("button", {
                             type: "button",
-                            onClick: () => v("minion", N[0].id),
+                            onClick: () => g("minion", N[0].id),
                             className: "absolute -top-2.5 -right-2.5 w-6 h-6 bg-blue-500 text-white border-2 border-blue-600 rounded-full flex items-center justify-center text-lg font-bold cursor-pointer z-50 shadow-lg hover:bg-blue-600 active:bg-blue-700",
                             children: "\xD7"
                           }),
@@ -10122,7 +10122,7 @@ Please change the parent <Route path="${d}"> to <Route path="${d === "/" ? "*" :
                             }),
                             s.jsx("button", {
                               type: "button",
-                              onClick: () => v("cube1", w.id),
+                              onClick: () => g("cube1", w.id),
                               className: "absolute -top-2.5 -right-2.5 w-6 h-6 bg-blue-500 text-white border-2 border-blue-600 rounded-full flex items-center justify-center text-lg font-bold cursor-pointer z-50 shadow-lg hover:bg-blue-600 active:bg-blue-700",
                               children: "\xD7"
                             }),
@@ -10146,7 +10146,7 @@ Please change the parent <Route path="${d}"> to <Route path="${d === "/" ? "*" :
                             }),
                             s.jsx("button", {
                               type: "button",
-                              onClick: () => v("cube2", w.id),
+                              onClick: () => g("cube2", w.id),
                               className: "absolute -top-2.5 -right-2.5 w-6 h-6 bg-blue-500 text-white border-2 border-blue-600 rounded-full flex items-center justify-center text-lg font-bold cursor-pointer z-50 shadow-lg hover:bg-blue-600 active:bg-blue-700",
                               children: "\xD7"
                             }),
@@ -10170,7 +10170,7 @@ Please change the parent <Route path="${d}"> to <Route path="${d === "/" ? "*" :
                             }),
                             s.jsx("button", {
                               type: "button",
-                              onClick: () => v("cube3", w.id),
+                              onClick: () => g("cube3", w.id),
                               className: "absolute -top-2.5 -right-2.5 w-6 h-6 bg-blue-500 text-white border-2 border-blue-600 rounded-full flex items-center justify-center text-lg font-bold cursor-pointer z-50 shadow-lg hover:bg-blue-600 active:bg-blue-700",
                               children: "\xD7"
                             }),
@@ -10194,7 +10194,7 @@ Please change the parent <Route path="${d}"> to <Route path="${d === "/" ? "*" :
                             }),
                             s.jsx("button", {
                               type: "button",
-                              onClick: () => v("cube4", w.id),
+                              onClick: () => g("cube4", w.id),
                               className: "absolute -top-2.5 -right-2.5 w-6 h-6 bg-blue-500 text-white border-2 border-blue-600 rounded-full flex items-center justify-center text-lg font-bold cursor-pointer z-50 shadow-lg hover:bg-blue-600 active:bg-blue-700",
                               children: "\xD7"
                             }),
@@ -10213,7 +10213,7 @@ Please change the parent <Route path="${d}"> to <Route path="${d === "/" ? "*" :
                     return j;
                   })()
                 }),
-                i.some((h) => h.type === "basic") && s.jsxs("div", {
+                i.some((v) => v.type === "basic") && s.jsxs("div", {
                   className: "mt-3 bg-[#1E293B]/80 backdrop-blur-sm rounded-lg p-2.5 border border-blue-400/20",
                   children: [
                     s.jsxs("div", {
@@ -10235,7 +10235,7 @@ Please change the parent <Route path="${d}"> to <Route path="${d === "/" ? "*" :
                             },
                             children: [
                               "+",
-                              500 * i.filter((h) => h.type === "basic").length,
+                              500 * i.filter((v) => v.type === "basic").length,
                               " POKO/day"
                             ]
                           })
@@ -10249,7 +10249,7 @@ Please change the parent <Route path="${d}"> to <Route path="${d === "/" ? "*" :
                       },
                       children: [
                         "Total mining: ",
-                        500 * i.filter((h) => h.type === "basic").length,
+                        500 * i.filter((v) => v.type === "basic").length,
                         " POKO/day"
                       ]
                     }),
@@ -10309,7 +10309,7 @@ Please change the parent <Route path="${d}"> to <Route path="${d === "/" ? "*" :
                     })
                   ]
                 }),
-                i.some((h) => h.type === "minion") && s.jsxs("div", {
+                i.some((v) => v.type === "minion") && s.jsxs("div", {
                   className: "mt-3 bg-[#1E293B]/80 backdrop-blur-sm rounded-lg p-2.5 border border-blue-400/20",
                   children: [
                     s.jsxs("div", {
@@ -10331,8 +10331,8 @@ Please change the parent <Route path="${d}"> to <Route path="${d === "/" ? "*" :
                             },
                             children: [
                               "+",
-                              2e3 * i.filter((h) => h.type === "minion").length,
-                              " POKO/min"
+                              1e4 * i.filter((v) => v.type === "minion").length,
+                              " POKO/day"
                             ]
                           })
                         })
@@ -10345,8 +10345,8 @@ Please change the parent <Route path="${d}"> to <Route path="${d === "/" ? "*" :
                       },
                       children: [
                         "Total mining: ",
-                        2e3 * i.filter((h) => h.type === "minion").length,
-                        " POKO/min"
+                        1e4 * i.filter((v) => v.type === "minion").length,
+                        " POKO/day"
                       ]
                     }),
                     s.jsxs("div", {
@@ -10362,9 +10362,7 @@ Please change the parent <Route path="${d}"> to <Route path="${d === "/" ? "*" :
                               },
                               children: [
                                 a.minion,
-                                "/",
-                                4e4 * i.filter((h) => h.type === "minion").length,
-                                " POKO"
+                                "/40000 POKO"
                               ]
                             }),
                             s.jsxs("span", {
@@ -10373,7 +10371,7 @@ Please change the parent <Route path="${d}"> to <Route path="${d === "/" ? "*" :
                                 fontFamily: "Polonium"
                               },
                               children: [
-                                Math.floor(a.minion / (4e4 * i.filter((h) => h.type === "minion").length) * 100),
+                                Math.floor(a.minion / 4e4 * 100),
                                 "%"
                               ]
                             })
@@ -10384,7 +10382,7 @@ Please change the parent <Route path="${d}"> to <Route path="${d === "/" ? "*" :
                           children: s.jsx("div", {
                             className: "h-full bg-blue-400 transition-all duration-500",
                             style: {
-                              width: `${a.minion / (4e4 * i.filter((h) => h.type === "minion").length) * 100}%`
+                              width: `${a.minion / 4e4 * 100}%`
                             }
                           })
                         }),
@@ -10405,7 +10403,7 @@ Please change the parent <Route path="${d}"> to <Route path="${d === "/" ? "*" :
                     })
                   ]
                 }),
-                i.some((h) => h.type === "cube1") && s.jsxs("div", {
+                i.some((v) => v.type === "cube1") && s.jsxs("div", {
                   className: "mt-3 bg-[#1E293B]/80 backdrop-blur-sm rounded-lg p-2.5 border border-blue-400/20",
                   children: [
                     s.jsxs("div", {
@@ -10427,7 +10425,7 @@ Please change the parent <Route path="${d}"> to <Route path="${d === "/" ? "*" :
                             },
                             children: [
                               "+",
-                              5e3 * i.filter((h) => h.type === "cube1").length,
+                              5e3 * i.filter((v) => v.type === "cube1").length,
                               " POKO/min"
                             ]
                           })
@@ -10441,7 +10439,7 @@ Please change the parent <Route path="${d}"> to <Route path="${d === "/" ? "*" :
                       },
                       children: [
                         "Total mining: ",
-                        5e3 * i.filter((h) => h.type === "cube1").length,
+                        5e3 * i.filter((v) => v.type === "cube1").length,
                         " POKO/min"
                       ]
                     }),
@@ -10459,7 +10457,7 @@ Please change the parent <Route path="${d}"> to <Route path="${d === "/" ? "*" :
                               children: [
                                 a.cube1,
                                 "/",
-                                8e3 * i.filter((h) => h.type === "cube1").length,
+                                8e3 * i.filter((v) => v.type === "cube1").length,
                                 " POKO"
                               ]
                             }),
@@ -10469,7 +10467,7 @@ Please change the parent <Route path="${d}"> to <Route path="${d === "/" ? "*" :
                                 fontFamily: "Polonium"
                               },
                               children: [
-                                Math.floor(a.cube1 / (8e3 * i.filter((h) => h.type === "cube1").length) * 100),
+                                Math.floor(a.cube1 / (8e3 * i.filter((v) => v.type === "cube1").length) * 100),
                                 "%"
                               ]
                             })
@@ -10480,7 +10478,7 @@ Please change the parent <Route path="${d}"> to <Route path="${d === "/" ? "*" :
                           children: s.jsx("div", {
                             className: "h-full bg-blue-400 transition-all duration-500",
                             style: {
-                              width: `${a.cube1 / (8e3 * i.filter((h) => h.type === "cube1").length) * 100}%`
+                              width: `${a.cube1 / (8e3 * i.filter((v) => v.type === "cube1").length) * 100}%`
                             }
                           })
                         }),
@@ -10501,7 +10499,7 @@ Please change the parent <Route path="${d}"> to <Route path="${d === "/" ? "*" :
                     })
                   ]
                 }),
-                i.some((h) => h.type === "cube2") && s.jsxs("div", {
+                i.some((v) => v.type === "cube2") && s.jsxs("div", {
                   className: "mt-3 bg-[#1E293B]/80 backdrop-blur-sm rounded-lg p-2.5 border border-blue-400/20",
                   children: [
                     s.jsxs("div", {
@@ -10523,7 +10521,7 @@ Please change the parent <Route path="${d}"> to <Route path="${d === "/" ? "*" :
                             },
                             children: [
                               "+",
-                              6e3 * i.filter((h) => h.type === "cube2").length,
+                              6e3 * i.filter((v) => v.type === "cube2").length,
                               " POKO/min"
                             ]
                           })
@@ -10537,7 +10535,7 @@ Please change the parent <Route path="${d}"> to <Route path="${d === "/" ? "*" :
                       },
                       children: [
                         "Total mining: ",
-                        6e3 * i.filter((h) => h.type === "cube2").length,
+                        6e3 * i.filter((v) => v.type === "cube2").length,
                         " POKO/min"
                       ]
                     }),
@@ -10555,7 +10553,7 @@ Please change the parent <Route path="${d}"> to <Route path="${d === "/" ? "*" :
                               children: [
                                 a.cube2,
                                 "/",
-                                12e3 * i.filter((h) => h.type === "cube2").length,
+                                12e3 * i.filter((v) => v.type === "cube2").length,
                                 " POKO"
                               ]
                             }),
@@ -10565,7 +10563,7 @@ Please change the parent <Route path="${d}"> to <Route path="${d === "/" ? "*" :
                                 fontFamily: "Polonium"
                               },
                               children: [
-                                Math.floor(a.cube2 / (12e3 * i.filter((h) => h.type === "cube2").length) * 100),
+                                Math.floor(a.cube2 / (12e3 * i.filter((v) => v.type === "cube2").length) * 100),
                                 "%"
                               ]
                             })
@@ -10576,7 +10574,7 @@ Please change the parent <Route path="${d}"> to <Route path="${d === "/" ? "*" :
                           children: s.jsx("div", {
                             className: "h-full bg-blue-400 transition-all duration-500",
                             style: {
-                              width: `${a.cube2 / (12e3 * i.filter((h) => h.type === "cube2").length) * 100}%`
+                              width: `${a.cube2 / (12e3 * i.filter((v) => v.type === "cube2").length) * 100}%`
                             }
                           })
                         }),
@@ -10597,7 +10595,7 @@ Please change the parent <Route path="${d}"> to <Route path="${d === "/" ? "*" :
                     })
                   ]
                 }),
-                i.some((h) => h.type === "cube3") && s.jsxs("div", {
+                i.some((v) => v.type === "cube3") && s.jsxs("div", {
                   className: "mt-3 bg-[#1E293B]/80 backdrop-blur-sm rounded-lg p-2.5 border border-blue-400/20",
                   children: [
                     s.jsxs("div", {
@@ -10619,7 +10617,7 @@ Please change the parent <Route path="${d}"> to <Route path="${d === "/" ? "*" :
                             },
                             children: [
                               "+",
-                              7e3 * i.filter((h) => h.type === "cube3").length,
+                              7e3 * i.filter((v) => v.type === "cube3").length,
                               " POKO/min"
                             ]
                           })
@@ -10633,7 +10631,7 @@ Please change the parent <Route path="${d}"> to <Route path="${d === "/" ? "*" :
                       },
                       children: [
                         "Total mining: ",
-                        7e3 * i.filter((h) => h.type === "cube3").length,
+                        7e3 * i.filter((v) => v.type === "cube3").length,
                         " POKO/min"
                       ]
                     }),
@@ -10651,7 +10649,7 @@ Please change the parent <Route path="${d}"> to <Route path="${d === "/" ? "*" :
                               children: [
                                 a.cube3,
                                 "/",
-                                16e3 * i.filter((h) => h.type === "cube3").length,
+                                16e3 * i.filter((v) => v.type === "cube3").length,
                                 " POKO"
                               ]
                             }),
@@ -10661,7 +10659,7 @@ Please change the parent <Route path="${d}"> to <Route path="${d === "/" ? "*" :
                                 fontFamily: "Polonium"
                               },
                               children: [
-                                Math.floor(a.cube3 / (16e3 * i.filter((h) => h.type === "cube3").length) * 100),
+                                Math.floor(a.cube3 / (16e3 * i.filter((v) => v.type === "cube3").length) * 100),
                                 "%"
                               ]
                             })
@@ -10672,7 +10670,7 @@ Please change the parent <Route path="${d}"> to <Route path="${d === "/" ? "*" :
                           children: s.jsx("div", {
                             className: "h-full bg-blue-400 transition-all duration-500",
                             style: {
-                              width: `${a.cube3 / (16e3 * i.filter((h) => h.type === "cube3").length) * 100}%`
+                              width: `${a.cube3 / (16e3 * i.filter((v) => v.type === "cube3").length) * 100}%`
                             }
                           })
                         }),
@@ -10693,7 +10691,7 @@ Please change the parent <Route path="${d}"> to <Route path="${d === "/" ? "*" :
                     })
                   ]
                 }),
-                i.some((h) => h.type === "cube4") && s.jsxs("div", {
+                i.some((v) => v.type === "cube4") && s.jsxs("div", {
                   className: "mt-3 bg-[#1E293B]/80 backdrop-blur-sm rounded-lg p-2.5 border border-blue-400/20",
                   children: [
                     s.jsxs("div", {
@@ -10715,7 +10713,7 @@ Please change the parent <Route path="${d}"> to <Route path="${d === "/" ? "*" :
                             },
                             children: [
                               "+",
-                              8e3 * i.filter((h) => h.type === "cube4").length,
+                              8e3 * i.filter((v) => v.type === "cube4").length,
                               " POKO/min"
                             ]
                           })
@@ -10729,7 +10727,7 @@ Please change the parent <Route path="${d}"> to <Route path="${d === "/" ? "*" :
                       },
                       children: [
                         "Total mining: ",
-                        8e3 * i.filter((h) => h.type === "cube4").length,
+                        8e3 * i.filter((v) => v.type === "cube4").length,
                         " POKO/min"
                       ]
                     }),
@@ -10747,7 +10745,7 @@ Please change the parent <Route path="${d}"> to <Route path="${d === "/" ? "*" :
                               children: [
                                 a.cube4,
                                 "/",
-                                2e4 * i.filter((h) => h.type === "cube4").length,
+                                2e4 * i.filter((v) => v.type === "cube4").length,
                                 " POKO"
                               ]
                             }),
@@ -10757,7 +10755,7 @@ Please change the parent <Route path="${d}"> to <Route path="${d === "/" ? "*" :
                                 fontFamily: "Polonium"
                               },
                               children: [
-                                Math.floor(a.cube4 / (2e4 * i.filter((h) => h.type === "cube4").length) * 100),
+                                Math.floor(a.cube4 / (2e4 * i.filter((v) => v.type === "cube4").length) * 100),
                                 "%"
                               ]
                             })
@@ -10768,7 +10766,7 @@ Please change the parent <Route path="${d}"> to <Route path="${d === "/" ? "*" :
                           children: s.jsx("div", {
                             className: "h-full bg-blue-400 transition-all duration-500",
                             style: {
-                              width: `${a.cube4 / (2e4 * i.filter((h) => h.type === "cube4").length) * 100}%`
+                              width: `${a.cube4 / (2e4 * i.filter((v) => v.type === "cube4").length) * 100}%`
                             }
                           })
                         }),
@@ -10806,7 +10804,7 @@ Please change the parent <Route path="${d}"> to <Route path="${d === "/" ? "*" :
                     children: "About POKO"
                   }),
                   s.jsx("button", {
-                    onClick: () => g(false),
+                    onClick: () => h(false),
                     className: "text-blue-400 hover:text-blue-300",
                     children: "\xD7"
                   })
@@ -10828,7 +10826,7 @@ Please change the parent <Route path="${d}"> to <Route path="${d === "/" ? "*" :
               s.jsx("div", {
                 className: "flex justify-center",
                 children: s.jsx("button", {
-                  onClick: () => g(false),
+                  onClick: () => h(false),
                   className: "px-6 py-2 bg-blue-400/20 text-blue-400 rounded-md font-mono text-sm hover:bg-blue-400/30",
                   children: "I understand"
                 })
@@ -10893,28 +10891,28 @@ Please change the parent <Route path="${d}"> to <Route path="${d === "/" ? "*" :
           if (b.success) {
             const k = b.miners || [];
             c({
-              basic: k.filter((h) => h.type === "basic").length,
-              minion: k.filter((h) => h.type === "minion").length,
-              cube1: k.filter((h) => h.type === "cube1").length,
-              cube2: k.filter((h) => h.type === "cube2").length,
-              cube3: k.filter((h) => h.type === "cube3").length,
-              cube4: k.filter((h) => h.type === "cube4").length
+              basic: k.filter((v) => v.type === "basic").length,
+              minion: k.filter((v) => v.type === "minion").length,
+              cube1: k.filter((v) => v.type === "cube1").length,
+              cube2: k.filter((v) => v.type === "cube2").length,
+              cube3: k.filter((v) => v.type === "cube3").length,
+              cube4: k.filter((v) => v.type === "cube4").length
             });
           }
-        } catch (v) {
-          console.error("Error fetching miner counts:", v);
+        } catch (g) {
+          console.error("Error fetching miner counts:", g);
         }
       })();
     }, [
       e == null ? void 0 : e.telegramId
     ]);
-    const p = async (g, v) => {
+    const p = async (h, g) => {
       try {
         if (!(e == null ? void 0 : e.telegramId)) {
           r("\u041E\u0448\u0438\u0431\u043A\u0430 \u0430\u0432\u0442\u043E\u0440\u0438\u0437\u0430\u0446\u0438\u0438");
           return;
         }
-        if (e.rootBalance < v) {
+        if (e.rootBalance < g) {
           r("\u041D\u0435\u0434\u043E\u0441\u0442\u0430\u0442\u043E\u0447\u043D\u043E \u0441\u0440\u0435\u0434\u0441\u0442\u0432");
           return;
         }
@@ -10922,35 +10920,35 @@ Please change the parent <Route path="${d}"> to <Route path="${d === "/" ? "*" :
           headers: {
             "X-Telegram-Init-Data": window.Telegram.WebApp.initData
           }
-        })).json(), h = k.success ? k.miners : [], N = h.filter((w) => w.type === "basic").length, m = h.filter((w) => w.type === "minion").length;
-        if (g === "basic" && N >= 5) {
+        })).json(), v = k.success ? k.miners : [], N = v.filter((w) => w.type === "basic").length, m = v.filter((w) => w.type === "minion").length;
+        if (h === "basic" && N >= 5) {
           r("\u0414\u043E\u0441\u0442\u0438\u0433\u043D\u0443\u0442 \u043C\u0430\u043A\u0441\u0438\u043C\u0443\u043C Basic \u043C\u0430\u0439\u043D\u0435\u0440\u043E\u0432 (5)");
           return;
-        } else if (g === "minion" && m >= 10) {
+        } else if (h === "minion" && m >= 10) {
           r("\u0414\u043E\u0441\u0442\u0438\u0433\u043D\u0443\u0442 \u043C\u0430\u043A\u0441\u0438\u043C\u0443\u043C Minion \u043C\u0430\u0439\u043D\u0435\u0440\u043E\u0432 (10)");
           return;
         }
         const d = /* @__PURE__ */ new Set();
-        h.forEach((w) => {
+        v.forEach((w) => {
           w.type === "basic" ? d.add("basic-slot") : w.type === "minion" ? d.add("minion-slot") : w.type.startsWith("cube") && d.add(`${w.type}-${w.id}`);
         });
         let f = false;
-        if ((g.startsWith("cube") || g === "basic" && !h.some((w) => w.type === "basic") || g === "minion" && !h.some((w) => w.type === "minion")) && (f = true), f && d.size >= ((e == null ? void 0 : e.maxSlots) || 5)) {
+        if ((h.startsWith("cube") || h === "basic" && !v.some((w) => w.type === "basic") || h === "minion" && !v.some((w) => w.type === "minion")) && (f = true), f && d.size >= ((e == null ? void 0 : e.maxSlots) || 5)) {
           r(`\u0412\u0441\u0435 \u0441\u043B\u043E\u0442\u044B \u0437\u0430\u043D\u044F\u0442\u044B! \u0423 \u0432\u0430\u0441 ${d.size} \u0438\u0437 ${(e == null ? void 0 : e.maxSlots) || 5} \u0441\u043B\u043E\u0442\u043E\u0432`);
           return;
         }
         const x = [
           {
-            type: g,
-            image: Mt[g],
+            type: h,
+            image: Mt[h],
             purchaseDate: /* @__PURE__ */ new Date(),
             id: Date.now()
           },
-          ...h
+          ...v
         ];
         c((w) => ({
           ...w,
-          [g]: w[g] + 1
+          [h]: w[h] + 1
         }));
         const S = await (await fetch("/update-root-balance", {
           method: "POST",
@@ -10960,7 +10958,7 @@ Please change the parent <Route path="${d}"> to <Route path="${d === "/" ? "*" :
           },
           body: JSON.stringify({
             telegramId: e.telegramId,
-            rootBalance: e.rootBalance - v
+            rootBalance: e.rootBalance - g
           })
         })).json();
         S.success ? (await (await fetch("/update-user-miners", {
@@ -11543,7 +11541,7 @@ Please change the parent <Route path="${d}"> to <Route path="${d === "/" ? "*" :
                           children: s.jsx("button", {
                             onClick: async () => {
                               try {
-                                const v = await (await fetch("/update-max-slots", {
+                                const g = await (await fetch("/update-max-slots", {
                                   method: "POST",
                                   headers: {
                                     "Content-Type": "application/json",
@@ -11554,12 +11552,12 @@ Please change the parent <Route path="${d}"> to <Route path="${d === "/" ? "*" :
                                     newMaxSlots: ((e == null ? void 0 : e.maxSlots) || 5) + 1
                                   })
                                 })).json();
-                                v.success ? t({
+                                g.success ? t({
                                   ...e,
-                                  maxSlots: v.maxSlots
+                                  maxSlots: g.maxSlots
                                 }) : r("\u041E\u0448\u0438\u0431\u043A\u0430 \u043F\u0440\u0438 \u043F\u043E\u043A\u0443\u043F\u043A\u0435 \u0441\u043B\u043E\u0442\u0430");
-                              } catch (g) {
-                                console.error("Error purchasing slot:", g), r("\u041E\u0448\u0438\u0431\u043A\u0430 \u043F\u0440\u0438 \u043F\u043E\u043A\u0443\u043F\u043A\u0435 \u0441\u043B\u043E\u0442\u0430");
+                              } catch (h) {
+                                console.error("Error purchasing slot:", h), r("\u041E\u0448\u0438\u0431\u043A\u0430 \u043F\u0440\u0438 \u043F\u043E\u043A\u0443\u043F\u043A\u0435 \u0441\u043B\u043E\u0442\u0430");
                               }
                             },
                             className: `inline-block py-2 px-6 text-blue-400 text-sm font-mono rounded-lg
