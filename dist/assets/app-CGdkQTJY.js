@@ -10093,7 +10093,7 @@ Please change the parent <Route path="${d}"> to <Route path="${d === "/" ? "*" :
                           s.jsx("img", {
                             src: qt.minion,
                             alt: "Minion",
-                            className: "h-full w-full object-cover scale-125 rounded-lg border-4 border-blue-500 shadow-md"
+                            className: "h-full w-full object-cover scale-125 border-2 border-blue-500 rounded"
                           }),
                           s.jsx("button", {
                             type: "button",
@@ -10119,7 +10119,7 @@ Please change the parent <Route path="${d}"> to <Route path="${d === "/" ? "*" :
                             s.jsx("img", {
                               src: qt.cube1,
                               alt: "Cube 1",
-                              className: "h-full w-full object-cover scale-125 rounded-lg border-4 border-blue-500 shadow-md"
+                              className: "h-full w-full object-cover scale-125 border-2 border-blue-500 rounded"
                             }),
                             s.jsx("button", {
                               type: "button",
@@ -10143,7 +10143,7 @@ Please change the parent <Route path="${d}"> to <Route path="${d === "/" ? "*" :
                             s.jsx("img", {
                               src: qt.cube2,
                               alt: "Cube 2",
-                              className: "h-full w-full object-cover scale-125 rounded-lg border-4 border-blue-500 shadow-md"
+                              className: "h-full w-full object-cover scale-125 border-2 border-blue-500 rounded"
                             }),
                             s.jsx("button", {
                               type: "button",
@@ -10167,7 +10167,7 @@ Please change the parent <Route path="${d}"> to <Route path="${d === "/" ? "*" :
                             s.jsx("img", {
                               src: qt.cube3,
                               alt: "Cube 3",
-                              className: "h-full w-full object-cover scale-125 rounded-lg border-4 border-blue-500 shadow-md"
+                              className: "h-full w-full object-cover scale-125 border-2 border-blue-500 rounded"
                             }),
                             s.jsx("button", {
                               type: "button",
@@ -10191,7 +10191,7 @@ Please change the parent <Route path="${d}"> to <Route path="${d === "/" ? "*" :
                             s.jsx("img", {
                               src: qt.cube4,
                               alt: "Cube 4",
-                              className: "h-full w-full object-cover scale-125 rounded-lg border-4 border-blue-500 shadow-md"
+                              className: "h-full w-full object-cover scale-125 border-2 border-blue-500 rounded"
                             }),
                             s.jsx("button", {
                               type: "button",
@@ -11221,7 +11221,7 @@ Please change the parent <Route path="${d}"> to <Route path="${d === "/" ? "*" :
                                     style: {
                                       fontFamily: "Polonium"
                                     },
-                                    children: "+2000 POKO/day"
+                                    children: "+750 POKO/day"
                                   })
                                 }),
                                 s.jsx("div", {
@@ -11229,7 +11229,7 @@ Please change the parent <Route path="${d}"> to <Route path="${d === "/" ? "*" :
                                   style: {
                                     fontFamily: "Polonium"
                                   },
-                                  children: "Capacity: 8000 POKO"
+                                  children: "Capacity: 3750 POKO"
                                 }),
                                 s.jsx("div", {
                                   className: "bg-[#0F172A] rounded-lg p-1 mb-1",
@@ -11293,7 +11293,7 @@ Please change the parent <Route path="${d}"> to <Route path="${d === "/" ? "*" :
                                     style: {
                                       fontFamily: "Polonium"
                                     },
-                                    children: "+3000 POKO/day"
+                                    children: "+2000 POKO/day"
                                   })
                                 }),
                                 s.jsx("div", {
@@ -11301,7 +11301,7 @@ Please change the parent <Route path="${d}"> to <Route path="${d === "/" ? "*" :
                                   style: {
                                     fontFamily: "Polonium"
                                   },
-                                  children: "Capacity: 12000 POKO"
+                                  children: "Capacity: 22000 POKO"
                                 }),
                                 s.jsx("div", {
                                   className: "bg-[#0F172A] rounded-lg p-1 mb-1",
@@ -11368,7 +11368,7 @@ Please change the parent <Route path="${d}"> to <Route path="${d === "/" ? "*" :
                                     style: {
                                       fontFamily: "Polonium"
                                     },
-                                    children: "+4000 POKO/day"
+                                    children: "+12000 POKO/day"
                                   })
                                 }),
                                 s.jsx("div", {
@@ -11376,7 +11376,7 @@ Please change the parent <Route path="${d}"> to <Route path="${d === "/" ? "*" :
                                   style: {
                                     fontFamily: "Polonium"
                                   },
-                                  children: "Capacity: 16000 POKO"
+                                  children: "Capacity: 228000 POKO"
                                 }),
                                 s.jsx("div", {
                                   className: "bg-[#0F172A] rounded-lg p-1 mb-1",
@@ -11443,7 +11443,7 @@ Please change the parent <Route path="${d}"> to <Route path="${d === "/" ? "*" :
                                     style: {
                                       fontFamily: "Polonium"
                                     },
-                                    children: "+5000 POKO/day"
+                                    children: "+160000 POKO/day"
                                   })
                                 }),
                                 s.jsx("div", {
@@ -11451,7 +11451,7 @@ Please change the parent <Route path="${d}"> to <Route path="${d === "/" ? "*" :
                                   style: {
                                     fontFamily: "Polonium"
                                   },
-                                  children: "Capacity: 20000 POKO"
+                                  children: "Capacity: Unlimited POKO"
                                 }),
                                 s.jsx("div", {
                                   className: "bg-[#0F172A] rounded-lg p-1 mb-1",
@@ -11498,7 +11498,7 @@ Please change the parent <Route path="${d}"> to <Route path="${d === "/" ? "*" :
                           style: {
                             fontFamily: "Polonium"
                           },
-                          children: "\u041D\u043E\u0432\u044B\u0435 \u043C\u0430\u0439\u043D\u0435\u0440\u044B \u0441\u043A\u043E\u0440\u043E \u0431\u0443\u0434\u0443\u0442 \u0434\u043E\u0441\u0442\u0443\u043F\u043D\u044B"
+                          children: "New miners will be available soon"
                         })
                       ]
                     }),
