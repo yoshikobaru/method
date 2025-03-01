@@ -9831,11 +9831,11 @@ Please change the parent <Route path="${d}"> to <Route path="${d === "/" ? "*" :
   }
   const qt = {
     basic: "/assets/power.webp",
-    minion: "/assets/powir.webp",
-    cube1: "/assets/poowerr.webp",
-    cube2: "/assets/por.webp",
-    cube3: "/assets/red2.webp",
-    cube4: "/assets/red1.webp"
+    minion: "/assets/poowerr.webp",
+    cube1: "/assets/purpule1.webp",
+    cube2: "/assets/puroule2.webp",
+    cube3: "/assets/red1.webp",
+    cube4: "/assets/red2.webp"
   };
   function $p() {
     const { user: e, updateUser: t } = Je(), [n, r] = y.useState(null), [l, o] = y.useState(true), [i, u] = y.useState([]), [a, c] = y.useState({
@@ -10068,7 +10068,7 @@ Please change the parent <Route path="${d}"> to <Route path="${d === "/" ? "*" :
                           s.jsx("img", {
                             src: qt.basic,
                             alt: "Basic",
-                            className: "h-full w-full object-contain scale-125 border-2 border-blue-500 rounded"
+                            className: "h-full w-full object-contain scale-125 border-4 border-gradient-to-r from-blue-400 to-blue-600 rounded-lg shadow-lg"
                           }),
                           s.jsx("button", {
                             type: "button",
@@ -10093,7 +10093,7 @@ Please change the parent <Route path="${d}"> to <Route path="${d === "/" ? "*" :
                           s.jsx("img", {
                             src: qt.minion,
                             alt: "Minion",
-                            className: "h-full w-full object-cover scale-125 border-2 border-blue-500 rounded"
+                            className: "h-full w-full object-cover scale-125 border-4 border-gradient-to-r from-blue-400 to-blue-600 rounded-lg shadow-lg"
                           }),
                           s.jsx("button", {
                             type: "button",
@@ -10119,7 +10119,7 @@ Please change the parent <Route path="${d}"> to <Route path="${d === "/" ? "*" :
                             s.jsx("img", {
                               src: qt.cube1,
                               alt: "Cube 1",
-                              className: "h-full w-full object-cover scale-125 border-2 border-blue-500 rounded"
+                              className: "h-full w-full object-cover scale-125 border-4 border-gradient-to-r from-blue-400 to-blue-600 rounded-lg shadow-lg"
                             }),
                             s.jsx("button", {
                               type: "button",
@@ -10143,7 +10143,7 @@ Please change the parent <Route path="${d}"> to <Route path="${d === "/" ? "*" :
                             s.jsx("img", {
                               src: qt.cube2,
                               alt: "Cube 2",
-                              className: "h-full w-full object-cover scale-125 border-2 border-blue-500 rounded"
+                              className: "h-full w-full object-cover scale-125 border-4 border-gradient-to-r from-blue-400 to-blue-600 rounded-lg shadow-lg"
                             }),
                             s.jsx("button", {
                               type: "button",
@@ -10167,7 +10167,7 @@ Please change the parent <Route path="${d}"> to <Route path="${d === "/" ? "*" :
                             s.jsx("img", {
                               src: qt.cube3,
                               alt: "Cube 3",
-                              className: "h-full w-full object-cover scale-125 border-2 border-blue-500 rounded"
+                              className: "h-full w-full object-cover scale-125 border-4 border-gradient-to-r from-blue-400 to-blue-600 rounded-lg shadow-lg"
                             }),
                             s.jsx("button", {
                               type: "button",
@@ -10191,7 +10191,7 @@ Please change the parent <Route path="${d}"> to <Route path="${d === "/" ? "*" :
                             s.jsx("img", {
                               src: qt.cube4,
                               alt: "Cube 4",
-                              className: "h-full w-full object-cover scale-125 border-2 border-blue-500 rounded"
+                              className: "h-full w-full object-cover scale-125 border-4 border-gradient-to-r from-blue-400 to-blue-600 rounded-lg shadow-lg"
                             }),
                             s.jsx("button", {
                               type: "button",
@@ -10853,11 +10853,11 @@ Please change the parent <Route path="${d}"> to <Route path="${d === "/" ? "*" :
   }
   const Mt = {
     basic: "/assets/power.webp",
-    minion: "/assets/powir.webp",
-    cube1: "/assets/poowerr.webp",
-    cube2: "/assets/por.webp",
-    cube3: "/assets/red2.webp",
-    cube4: "/assets/red1.webp"
+    minion: "/assets/poowerr.webp",
+    cube1: "/assets/purpule1.webp",
+    cube2: "/assets/purpule2.webp",
+    cube3: "/assets/red1.webp",
+    cube4: "/assets/red2.webp"
   };
   function Bp() {
     const { user: e, updateUser: t } = Je(), [n, r] = y.useState(null), [l, o] = y.useState("auto"), [i, u] = y.useState("nodes"), [a, c] = y.useState({
@@ -11073,7 +11073,7 @@ Please change the parent <Route path="${d}"> to <Route path="${d === "/" ? "*" :
                             s.jsx("div", {
                               className: "bg-[#0F172A] rounded-lg p-1 mb-1",
                               children: s.jsx("img", {
-                                src: Mt.basic,
+                                src: Mt.minion,
                                 alt: "minion",
                                 className: "w-full h-full object-contain"
                               })
