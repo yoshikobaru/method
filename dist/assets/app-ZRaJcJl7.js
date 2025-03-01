@@ -10239,7 +10239,7 @@ Please change the parent <Route path="${d}"> to <Route path="${d === "/" ? "*" :
                             },
                             children: [
                               "+",
-                              500 * Math.min(i.filter((h) => h.type === "basic").length, 2),
+                              500 * i.filter((h) => h.type === "basic").length,
                               " POKO/day"
                             ]
                           })
@@ -10253,7 +10253,7 @@ Please change the parent <Route path="${d}"> to <Route path="${d === "/" ? "*" :
                       },
                       children: [
                         "Total mining: ",
-                        500 * Math.min(i.filter((h) => h.type === "basic").length, 2),
+                        500 * i.filter((h) => h.type === "basic").length,
                         " POKO/day"
                       ]
                     }),
