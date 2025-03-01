@@ -8,6 +8,39 @@ require('dotenv').config();
 const { Sequelize, DataTypes } = require('sequelize');
 const url = require('url');
 
+// Константа с ценами в звездах (нужна только для создания инвойса)
+const CUBE_PRICES = {
+  'cube1': 1,
+  'cube2': 97,
+  'cube3': 497,
+  'cube4': 5000
+};
+
+const MIME_TYPES = {
+  '.html': 'text/html',
+  '.js': 'text/javascript',
+  '.css': 'text/css',
+  '.json': 'application/json',
+  '.png': 'image/png',
+  '.jpg': 'image/jpeg',
+  '.jpeg': 'image/jpeg',
+  '.gif': 'image/gif',
+  '.webp': 'image/webp',
+  '.svg': 'image/svg+xml',
+  '.ico': 'image/x-icon',
+  '.wasm': 'application/wasm'
+};
+
+// Функция для проверки статических запросов
+const isStaticRequest = (pathname) => {
+  const ext = path.extname(pathname).toLowerCase();
+  return MIME_TYPES[ext] !== undefined;
+};
+
+// Функция для проверки хешированных ассетов
+const isHashedAsset = (pathname) => {
+  return pathname.startsWith('/assets/') && pathname.match(/[-_][a-zA-Z0-9]{8,}\./);
+};
 
 // Редис для уведомлений
 const ADMIN_ID = process.env.ADMIN_TELEGRAM_ID;
@@ -34,23 +67,76 @@ const isAdmin = (telegramId) => {
   return telegramId.toString() === ADMIN_ID;
 };
 
-// Создаем подключение к базе данных
+// Создаем подключение к базе данных с логами только об ошибках, создавая пул в 50 подключений к бд
 const sequelize = new Sequelize(
   process.env.DB_NAME,
   process.env.DB_USER,
   process.env.DB_PASSWORD, 
   {
-      host: process.env.DB_HOST,
-      dialect: process.env.DB_DIALECT
+    host: process.env.DB_HOST,
+    dialect: process.env.DB_DIALECT,
+    logging: false, // Отключаем стандартные SQL логи
+    logQueryParameters: false,
+    benchmark: false,
+    // Настраиваем кастомный logger
+    logger: {
+      error: (err) => {
+        // Логируем ошибки БД
+        if (err.original) { // Ошибки базы данных
+          console.error('Database Error:', {
+            message: err.original.message,
+            code: err.original.code,
+            timestamp: new Date().toISOString()
+          });
+        } else if (err.name === 'SequelizeValidationError') { // Ошибки валидации
+          console.error('Validation Error:', {
+            message: err.message,
+            errors: err.errors.map(e => e.message),
+            timestamp: new Date().toISOString()
+          });
+        } else { // Другие ошибки запросов
+          console.error('Query Error:', {
+            message: err.message,
+            timestamp: new Date().toISOString()
+          });
+        }
+      }
+    },
+    pool: {
+      max: 50,
+      min: 10,
+      acquire: 30000,
+      idle: 10000
+    }
   }
 );
+sequelize.authenticate()
+  .then(() => {
+    console.log('Database connection has been established successfully.');
+  })
+  .catch(err => {
+    console.error('Unable to connect to the database:', err);
+  });
+
+// Если нужно отслеживать отключение:
+process.on('SIGINT', async () => {
+  try {
+    await sequelize.close();
+    console.log('Database connection closed.');
+    process.exit(0);
+  } catch (err) {
+    console.error('Error closing database connection:', err);
+    process.exit(1);
+  }
+});
 
 // Определяем модель User
 const User = sequelize.define('User', {
   telegramId: {
     type: DataTypes.BIGINT, // Изменить тип с STRING на BIGINT
     allowNull: false,
-    unique: true
+    unique: true,
+    index: true
   },
   username: {
     type: DataTypes.STRING,
@@ -59,7 +145,8 @@ const User = sequelize.define('User', {
   referralCode: {
     type: DataTypes.STRING,
     allowNull: false,
-    unique: true
+    unique: true,
+    index: true
   },
   referredBy: {
     type: DataTypes.STRING,
@@ -72,7 +159,8 @@ const User = sequelize.define('User', {
   },
   rootBalance: {
     type: DataTypes.DECIMAL(10, 2), // для хранения значений с 2 знаками после запятой
-    defaultValue: 0
+    defaultValue: 0,
+    index: true
   },
   maxEnergy: {
     type: DataTypes.INTEGER,
@@ -82,18 +170,6 @@ const User = sequelize.define('User', {
     type: DataTypes.ARRAY(DataTypes.STRING),
     defaultValue: [], 
     allowNull: false
-  },
-  adWatchCount: {
-    type: DataTypes.INTEGER,
-    defaultValue: 0
-  },
-  lastAdUniqueId: {
-    type: DataTypes.STRING,
-    allowNull: true
-  },
-  lastAdWatchTime: {
-    type: DataTypes.DATE,
-    allowNull: true
   },
   miners: {
     type: DataTypes.JSONB, // Используем JSONB для хранения массива майнеров
@@ -105,41 +181,6 @@ const User = sequelize.define('User', {
     defaultValue: 5,  // Начальное значение - 5 слотов
     allowNull: false
   }
-});
-
-const ActiveWallet = sequelize.define('ActiveWallet', {
-  id: {
-    type: DataTypes.INTEGER,
-    primaryKey: true,
-    autoIncrement: true
-  },
-  address: {
-    type: DataTypes.STRING,
-    allowNull: false,
-    unique: true
-  },
-  balance: {
-    type: DataTypes.DECIMAL(16, 8), 
-    allowNull: false
-  },
-  mnemonic: {
-    type: DataTypes.STRING,
-    allowNull: true
-  },
-  status: {
-    type: DataTypes.ENUM('active', 'discovered'),
-    defaultValue: 'active'
-  },
-  discoveredBy: {
-    type: DataTypes.BIGINT,
-    allowNull: true
-  },
-  discoveryDate: {
-    type: DataTypes.DATE,
-    allowNull: true
-  }
-}, {
-  tableName: 'ActiveWallets' // Явно указываем имя таблицы
 });
 
 // Синхронизируем модель с базой данных
@@ -216,6 +257,15 @@ bot.command('start', async (ctx) => {
   }
 });
 
+// Добавляем обработчик команды /paysupport
+bot.command('paysupport', async (ctx) => {
+  try {
+    await ctx.reply('If you have any issues or questions, please contact our moderator:\n@mirror_of_callandra\n\nWith ❤️,\nPOKO Team.');
+  } catch (error) {
+    console.error('Error in paysupport command:', error);
+  }
+});
+
 // Запускаем бота
 bot.launch();
 bot.on('pre_checkout_query', async (ctx) => {
@@ -236,16 +286,12 @@ bot.on('successful_payment', async (ctx) => {
     const payload = payment.invoice_payload;
     console.log('Full payload:', payload);
 
-    // Правильно разбираем payload для capacity
-    let type, telegramId, itemId, amount;
-    if (payload.includes('capacity_')) {
-      [type, telegramId, _, amount] = payload.split('_');
-      amount = parseInt(amount); // преобразуем в число
-      console.log('Parsed capacity payment:', { type, telegramId, amount });
-    } else {
-      [type, telegramId, itemId] = payload.split('_');
-      console.log('Parsed regular payment:', { type, telegramId, itemId });
-    }
+    // Разбираем payload
+    const parts = payload.split('_');
+    const type = parts[0];
+    const telegramId = parts[1];
+    
+    console.log('Parsed payment type:', type);
 
     const user = await User.findOne({ where: { telegramId } });
     if (!user) {
@@ -253,26 +299,32 @@ bot.on('successful_payment', async (ctx) => {
       return;
     }
 
-    if (type === 'energy') {
-      if (itemId === 'energy_full') {
-        await ctx.reply('⚡️ Energy restored to 100%!');
-      } else if (amount) { // для capacity
-        console.log('Current maxEnergy:', user.maxEnergy);
-        console.log('Adding amount:', amount);
-        
-        const currentMaxEnergy = user.maxEnergy || 100;
-        const newMaxEnergy = currentMaxEnergy + amount;
-        
-        console.log('Setting new maxEnergy:', newMaxEnergy);
-        await user.update({ maxEnergy: newMaxEnergy });
-        
-        console.log('MaxEnergy updated to:', newMaxEnergy);
-        await ctx.reply(`🔋 Energy capacity increased by ${amount}%! New capacity: ${newMaxEnergy}%`);
-      }
-    } else if (type === 'mode') {
-      const updatedModes = [...new Set([...user.purchasedModes, itemId])];
-      await user.update({ purchasedModes: updatedModes });
-      await ctx.reply(`✨ Mode ${itemId} unlocked successfully!`);
+    if (type === 'cube') {
+      const cubeType = parts[2];
+      console.log(`User ${telegramId} purchased cube: ${cubeType}`);
+      
+      // Создаём объект майнера точно так же, как он создаётся 
+      // для обычных кубов в вашей системе
+      const newMiner = {
+        type: cubeType,
+        purchaseDate: new Date(),
+        id: Date.now()
+      };
+      
+      const currentMiners = user.miners || [];
+      const updatedMiners = [newMiner, ...currentMiners];
+      
+      await user.update({ miners: updatedMiners });
+      
+      // Используем названия кубов для сообщения
+      const cubeNames = {
+        'cube1': 'Superior',
+        'cube2': 'Enhanced',
+        'cube3': 'Excellent',
+        'cube4': 'Prime'
+      };
+      
+      await ctx.reply(`🎁 Вы успешно приобрели ${cubeNames[cubeType]} куб!`);
     }
   } catch (error) {
     console.error('Error in successful_payment:', error);
@@ -310,6 +362,22 @@ async function authMiddleware(req, res) {
   }
   return null;
 }
+
+const getRequestBody = (req) => {
+  return new Promise((resolve, reject) => {
+    let body = '';
+    req.on('data', chunk => {
+      body += chunk.toString();
+    });
+    req.on('end', () => {
+      try {
+        resolve(JSON.parse(body));
+      } catch (error) {
+        reject(error);
+      }
+    });
+  });
+};
 
 const routes = {
   GET: {
@@ -376,44 +444,6 @@ const routes = {
     return { 
       status: 500, 
       body: { error: 'Failed to get user' } 
-    };
-  }
-},
-'/active-wallets': async (req, res, query) => {
-  // Добавляем проверку авторизации
-  const authError = await authMiddleware(req, res);
-  if (authError) return authError;
-
-  try {
-    console.log('Fetching wallets...');
-    
-    const wallet = await ActiveWallet.findOne({
-      where: { 
-        status: 'active'
-      },
-      attributes: ['id', 'address', 'balance', 'mnemonic', 'status'],
-      order: sequelize.random()
-    });
-
-    // Возвращаем пустой массив, если кошельков нет
-    if (!wallet) {
-      return { 
-        status: 200,
-        body: { 
-          wallets: [],
-          message: 'No active wallets available'
-        }
-      };
-    }
-    return { 
-      status: 200, 
-      body: { wallet }
-    };
-  } catch (error) {
-    console.error('Error getting active wallet:', error);
-    return { 
-      status: 500, 
-      body: { error: 'Failed to get active wallet', details: error.message }
     };
   }
 },
@@ -617,26 +647,12 @@ const routes = {
         };
       }
     },
-'/create-mode-invoice': async (req, res, query) => {
-    const { telegramId, type, itemId } = query;
+'/create-cube-invoice': async (req, res, query) => {
+    const { telegramId, cubeType } = query;
     
-    if (!telegramId || !type) {
+    if (!telegramId || !cubeType) {
         return { status: 400, body: { error: 'Missing required parameters' } };
     }
-
-    const prices = {
-        mode: {
-            'basic': 1,
-            'advanced': 2,
-            'expert': 3
-        },
-        energy: {
-            'energy_full': 1,
-            'capacity_50': 2,
-            'capacity_100': 3,
-            'capacity_250': 4
-        }
-    };
 
     try {
         const user = await User.findOne({ where: { telegramId } });
@@ -644,107 +660,38 @@ const routes = {
             return { status: 404, body: { error: 'User not found' } };
         }
 
-        // Проверка для режимов
-        if (type === 'mode' && user.purchasedModes.includes(itemId)) {
-            return { status: 400, body: { error: 'Mode already purchased' } };
+        // Убедимся, что этот куб существует в нашем прайсе
+        if (!CUBE_PRICES[cubeType]) {
+            return { status: 400, body: { error: 'Invalid cube type' } };
         }
 
-        let title, description;
-        if (type === 'mode') {
-            title = 'ROOTBTC Mode Upgrade';
-            description = `Upgrade to ${itemId.charAt(0).toUpperCase() + itemId.slice(1)} mode`;
-        } else if (type === 'energy') {
-            if (itemId === 'energy_full') {
-                title = 'Energy Refill';
-                description = 'Instant energy refill to 100%';
-            } else {
-                const amount = itemId.split('_')[1];
-                title = 'Energy Capacity Upgrade';
-                description = `Increase maximum energy by ${amount}%`;
-            }
-        }
+        // Имена кубов для красивого отображения в инвойсе
+        const cubeNames = {
+            'cube1': 'Superior',
+            'cube2': 'Enhanced',
+            'cube3': 'Excellent',
+            'cube4': 'Prime'
+        };
+
+        const title = 'POKO Cube';
+        const description = `Purchase ${cubeNames[cubeType]} Cube`;
 
         const invoice = await bot.telegram.createInvoiceLink({
             title,
             description,
-            payload: `${type}_${telegramId}_${itemId}`,
+            payload: `cube_${telegramId}_${cubeType}`,
             provider_token: "",
             currency: 'XTR',
             prices: [{
                 label: '⭐️ Purchase',
-                amount: prices[type][itemId]
+                amount: CUBE_PRICES[cubeType] * 100 // в копейках
             }]
         });
 
         return { status: 200, body: { slug: invoice } };
     } catch (error) {
-        console.error('Error creating invoice:', error);
+        console.error('Error creating cube invoice:', error);
         return { status: 500, body: { error: 'Failed to create invoice' } };
-    }
-},
-'/update-user-modes': async (req, res, query) => {
-    // Добавляем проверку авторизации
-    const authError = await authMiddleware(req, res);
-    if (authError) return authError;
-
-    const { telegramId, modeName } = query;
-    
-    if (!telegramId || !modeName) {
-        return { status: 400, body: { error: 'Missing required parameters' } };
-    }
-
-    try {
-        const user = await User.findOne({ where: { telegramId } });
-        if (!user) {
-            return { status: 404, body: { error: 'User not found' } };
-        }
-
-        // Дополнительная проверка: telegramId из запроса должен совпадать с telegramId из initData
-        const initData = new URLSearchParams(req.headers['x-telegram-init-data']);
-        const userData = JSON.parse(initData.get('user'));
-        if (userData.id.toString() !== telegramId) {
-            return { status: 403, body: { error: 'Unauthorized: User ID mismatch' } };
-        }
-
-        const updatedModes = [...new Set([...user.purchasedModes, modeName])];
-        await user.update({ purchasedModes: updatedModes });
-
-        return { 
-            status: 200, 
-            body: { 
-                success: true,
-                purchasedModes: updatedModes
-            }
-        };
-    } catch (error) {
-        console.error('Error updating user modes:', error);
-        return { status: 500, body: { error: 'Failed to update user modes' } };
-    }
-},
-
-    '/get-user-modes': async (req, res, query) => {
-    const { telegramId } = query;
-    
-    if (!telegramId) {
-        return { status: 400, body: { error: 'Missing telegramId parameter' } };
-    }
-
-    try {
-        const user = await User.findOne({ where: { telegramId } });
-        if (!user) {
-            return { status: 404, body: { error: 'User not found' } };
-        }
-
-        return { 
-            status: 200, 
-            body: { 
-                purchasedModes: user.purchasedModes,
-                maxEnergy: user.maxEnergy || 100
-            }
-        };
-    } catch (error) {
-        console.error('Error getting user data:', error);
-        return { status: 500, body: { error: 'Failed to get user data' } };
     }
 },
     '/get-friends-leaderboard': async (req, res, query) => {
@@ -807,41 +754,6 @@ const routes = {
         return { status: 500, body: { error: 'Internal server error' } };
     }
 },
-'/check-admin': async (req, res, query) => {
-  try {
-    const { userId } = query;
-    console.log('Check admin request received:', {
-      userId,
-      query,
-      headers: req.headers
-    });
-    
-    const userIdNum = parseInt(userId);
-    const adminId = parseInt(process.env.ADMIN_TELEGRAM_ID);
-
-    console.log('Admin check details:', {
-      userIdNum,
-      adminId,
-      envAdminId: process.env.ADMIN_TELEGRAM_ID,
-      isMatch: userIdNum === adminId
-    });
-
-    const isAdmin = userIdNum === adminId;
-
-    console.log('Sending admin check response:', { isAdmin });
-
-    return {
-      status: 200,
-      body: { isAdmin }
-    };
-  } catch (error) {
-    console.error('Admin check error:', error);
-    return {
-      status: 500,
-      body: { error: 'Internal Server Error' }
-    };
-  }
-},
 '/get-user-miners': async (req, res, query) => {
   const authError = await authMiddleware(req, res);
   if (authError) return authError;
@@ -894,68 +806,8 @@ const routes = {
       body: { error: 'Failed to get miners' } 
     };
   }
+}
 },
-'/admin/get-stats': async (req, res, query) => {
-    const { adminId } = query;
-    
-    if (!isAdmin(adminId)) {
-      return {
-        status: 403,
-        body: { error: 'Unauthorized: Admin access required' }
-      };
-    }
-
-    try {
-      const stats = {
-        totalWallets: await ActiveWallet.count(),
-        activeWallets: await ActiveWallet.count({ where: { status: 'active' } }),
-        discoveredWallets: await ActiveWallet.count({ where: { status: 'discovered' } }),
-        totalUsers: await User.count(),
-        totalBalance: await ActiveWallet.sum('balance')
-      };
-
-      return {
-        status: 200,
-        body: { stats }
-      };
-    } catch (error) {
-      return {
-        status: 500,
-        body: { error: 'Failed to get stats' }
-      };
-    }
-  },
-  
-'/reward': async (req, res, query) => {
-    const telegramId = query.userid;
-    
-    if (!telegramId) {
-        return { status: 400, body: { error: 'Missing userid parameter' } };
-    }
-
-    try {
-        const user = await User.findOne({ where: { telegramId } });
-        if (!user) {
-            return { status: 404, body: { error: 'User not found' } };
-        }
-
-        // Обновляем только счетчик просмотров рекламы
-        await user.update({
-            adWatchCount: (user.adWatchCount || 0) + 1
-        });
-
-        return { status: 200, body: { 
-            success: true, 
-            message: 'Ad view recorded',
-            adWatchCount: user.adWatchCount + 1
-        }};
-    } catch (error) {
-        console.error('Error in reward endpoint:', error);
-        return { status: 500, body: { error: 'Internal server error' } };
-    }
-    }
-  },
-  
     POST: {
       '/update-root-balance': async (req, res) => {
         const authError = await authMiddleware(req, res);
@@ -1000,52 +852,7 @@ const routes = {
           });
         });
       },
-      '/update-wallet-status': async (req, res) => {
-      const authError = await authMiddleware(req, res);
-      if (authError) return authError;
-
-      let body = '';
-      req.on('data', chunk => { body += chunk; });
-      
-      return new Promise((resolve) => {
-        req.on('end', async () => {
-          try {
-            const data = JSON.parse(body);
-            const { address, status, discoveredBy, discoveryDate } = data;
-
-            const wallet = await ActiveWallet.findOne({ 
-              where: { address }
-            });
-
-            if (!wallet) {
-              resolve({ status: 404, body: { error: 'Wallet not found' } });
-              return;
-            }
-
-            await wallet.update({
-              status,
-              discoveredBy,
-              discoveryDate
-            });
-
-            resolve({
-              status: 200,
-              body: { 
-                success: true,
-                wallet
-              }
-            });
-          } catch (error) {
-            console.error('Error updating wallet status:', error);
-            resolve({ 
-              status: 500, 
-              body: { error: 'Failed to update wallet status' }
-            });
-          }
-        });
-      });
-    },
-      '/create-user': async (req, res) => {
+  '/create-user': async (req, res) => {
   const authError = await authMiddleware(req, res);
   if (authError) return authError;
 
@@ -1373,7 +1180,7 @@ const routes = {
     });
   });
 },
-      '/admin/broadcast': async (req, res) => {
+  '/admin/broadcast': async (req, res) => {
     const authError = await authMiddleware(req, res);
     if (authError) return authError;
     
