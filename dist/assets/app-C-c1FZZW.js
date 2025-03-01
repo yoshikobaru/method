@@ -10037,7 +10037,7 @@ Please change the parent <Route path="${d}"> to <Route path="${d === "/" ? "*" :
                   ]
                 }),
                 s.jsxs("div", {
-                  className: "flex items-center gap-2",
+                  className: "flex items-center gap-2 mb-6",
                   style: {
                     fontFamily: "Polonium"
                   },
