@@ -9833,7 +9833,7 @@ Please change the parent <Route path="${d}"> to <Route path="${d === "/" ? "*" :
     basic: "/assets/power.webp",
     minion: "/assets/poowerr.webp",
     cube1: "/assets/purpule1.webp",
-    cube2: "/assets/puroule2.webp",
+    cube2: "/assets/purpule2.webp",
     cube3: "/assets/red1.webp",
     cube4: "/assets/red2.webp"
   };
