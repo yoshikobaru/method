@@ -684,7 +684,7 @@ const routes = {
             currency: 'XTR',
             prices: [{
                 label: '⭐️ Purchase',
-                amount: CUBE_PRICES[cubeType] * 100 // в копейках
+                amount: CUBE_PRICES[cubeType] // в копейках
             }]
         });
 
