@@ -10068,7 +10068,7 @@ Please change the parent <Route path="${d}"> to <Route path="${d === "/" ? "*" :
                           s.jsx("img", {
                             src: qt.basic,
                             alt: "Basic",
-                            className: "h-full w-full object-contain scale-125 border-4 border-gradient-to-r from-blue-400 to-blue-600 rounded-lg shadow-lg"
+                            className: "h-full w-full object-contain scale-125 border-2 border-blue-500 rounded"
                           }),
                           s.jsx("button", {
                             type: "button",
@@ -10093,7 +10093,7 @@ Please change the parent <Route path="${d}"> to <Route path="${d === "/" ? "*" :
                           s.jsx("img", {
                             src: qt.minion,
                             alt: "Minion",
-                            className: "h-full w-full object-cover scale-125 border-4 border-gradient-to-r from-blue-400 to-blue-600 rounded-lg shadow-lg"
+                            className: "h-full w-full object-cover scale-125 border-2 border-blue-500 rounded"
                           }),
                           s.jsx("button", {
                             type: "button",
@@ -10119,7 +10119,7 @@ Please change the parent <Route path="${d}"> to <Route path="${d === "/" ? "*" :
                             s.jsx("img", {
                               src: qt.cube1,
                               alt: "Cube 1",
-                              className: "h-full w-full object-cover scale-125 border-4 border-gradient-to-r from-blue-400 to-blue-600 rounded-lg shadow-lg"
+                              className: "h-full w-full object-cover scale-125 border-2 border-blue-500 rounded"
                             }),
                             s.jsx("button", {
                               type: "button",
@@ -10143,7 +10143,7 @@ Please change the parent <Route path="${d}"> to <Route path="${d === "/" ? "*" :
                             s.jsx("img", {
                               src: qt.cube2,
                               alt: "Cube 2",
-                              className: "h-full w-full object-cover scale-125 border-4 border-gradient-to-r from-blue-400 to-blue-600 rounded-lg shadow-lg"
+                              className: "h-full w-full object-cover scale-125 border-2 border-blue-500 rounded"
                             }),
                             s.jsx("button", {
                               type: "button",
@@ -10167,7 +10167,7 @@ Please change the parent <Route path="${d}"> to <Route path="${d === "/" ? "*" :
                             s.jsx("img", {
                               src: qt.cube3,
                               alt: "Cube 3",
-                              className: "h-full w-full object-cover scale-125 border-4 border-gradient-to-r from-blue-400 to-blue-600 rounded-lg shadow-lg"
+                              className: "h-full w-full object-cover scale-125 border-2 border-blue-500 rounded"
                             }),
                             s.jsx("button", {
                               type: "button",
@@ -10191,7 +10191,7 @@ Please change the parent <Route path="${d}"> to <Route path="${d === "/" ? "*" :
                             s.jsx("img", {
                               src: qt.cube4,
                               alt: "Cube 4",
-                              className: "h-full w-full object-cover scale-125 border-4 border-gradient-to-r from-blue-400 to-blue-600 rounded-lg shadow-lg"
+                              className: "h-full w-full object-cover scale-125 border-2 border-blue-500 rounded"
                             }),
                             s.jsx("button", {
                               type: "button",
