@@ -9943,7 +9943,7 @@ Please change the parent <Route path="${d}"> to <Route path="${d === "/" ? "*" :
     }, b = async (h) => {
       try {
         if (!(e == null ? void 0 : e.telegramId)) return;
-        const N = a[h];
+        const N = Math.min(a[h], 1e3);
         if (N <= 0) return;
         const m = parseInt(e.rootBalance || 0), d = m + N;
         console.log("Collecting MTH:", {
