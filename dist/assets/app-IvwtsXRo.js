@@ -10043,7 +10043,7 @@ Please change the parent <Route path="${d}"> to <Route path="${d === "/" ? "*" :
                   },
                   children: [
                     s.jsxs("h2", {
-                      className: "text-xl text-blue-400/70",
+                      className: "text-sm text-blue-400/70",
                       children: [
                         "POKO mining: +",
                         k(),
