@@ -9986,7 +9986,7 @@ Please change the parent <Route path="${d}"> to <Route path="${d === "/" ? "*" :
         cube1: 750,
         cube2: 2e3,
         cube3: 12e3,
-        cube4: 16e3
+        cube4: 16e4
       };
       return i.reduce((N, m) => {
         const d = v[m.type] || 0;
