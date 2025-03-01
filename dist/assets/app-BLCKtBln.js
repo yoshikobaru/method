@@ -10028,7 +10028,7 @@ Please change the parent <Route path="${d}"> to <Route path="${d === "/" ? "*" :
                     }),
                     s.jsx("button", {
                       onClick: () => h(true),
-                      className: "w-5 h-5 rounded-full bg-blue-400/20 text-blue-400 flex items-center justify-center text-sm hover:bg-blue-400/30 mb-2",
+                      className: "w-5 h-5 rounded-full bg-blue-400/20 text-blue-400 flex items-center justify-center text-sm hover:bg-blue-400/30",
                       style: {
                         fontFamily: "Polonium"
                       },
