@@ -186,9 +186,9 @@ const User = sequelize.define('User', {
 // Синхронизируем модель с базой данных
 sequelize.sync({ alter: true });
 // Создаем экземпляр бота с вашим токеном
-const bot = new Telegraf(process.env.METHOD_BOT_TOKEN);
+const bot = new Telegraf(process.env.POKO_BOT_TOKEN);
 // WebApp URL
-const webAppUrl = 'https://method-ton.space';
+const webAppUrl = 'https://pokoapp.space';
 
 // Обработчик команды /start
 bot.command('start', async (ctx) => {
@@ -232,30 +232,32 @@ bot.command('start', async (ctx) => {
       }
     }
 
-    ctx.reply('🌐 Welcome to $_root@btc\n\n' + 
-      '🔄 Bitcoin wallets search app powered by:\n' +
-      '⚡️ Method Inc.\n' +
-      '🔗 BTC Network Integration\n' +
-      '🔐 Advanced cryptographic algorithms\n\n' +
-      '💰 Earn $ROOT tokens while searching:\n' +
-      '📈 Mining rewards for each attempt\n' +
-
-      '✨ Coming soon:\n' +
-      '📊 $ROOT Token Trading\n' +
-      '💫 Major DEX Listings\n' +
-      '🌟 Staking & Farming\n\n' +
-      '🚀 Ready to start your searching journey?\n' +
-      '👉 Open Web App to begin:', {
-      reply_markup: {
-        resize_keyboard: true
-      }
-    });
-
-  } catch (error) {
-    console.error('Error in start command:', error);
-    ctx.reply('An error occurred. Please try again later.');
-  }
-});
+     // First message with fire emoji
+     await ctx.reply('I see you\'ve located me. I\'ve had my eye on you.');
+    
+     // Wait 2 seconds
+     await new Promise(resolve => setTimeout(resolve, 2000));
+     
+     // Second message
+     await ctx.reply('I sense great power within you. Allegiance to my vision will bring you prosperity.');
+     
+     // Wait 2 seconds
+     await new Promise(resolve => setTimeout(resolve, 2000));
+     
+     // Third message with fire emoji and webApp button
+     await ctx.reply('Will you venture further into the unknown??', {
+       reply_markup: {
+         inline_keyboard: [
+           [{ text: 'Join Poko 👁', web_app: { url: webAppUrl } }]
+         ]
+       }
+     });
+ 
+   } catch (error) {
+     console.error('Error in start command:', error);
+     ctx.reply('An error occurred. Please try again later.');
+   }
+ });
 
 // Добавляем обработчик команды /paysupport
 bot.command('paysupport', async (ctx) => {
@@ -345,7 +347,7 @@ function validateInitData(initData) {
     
   // Создаем HMAC
   const secret = crypto.createHmac('sha256', 'WebAppData')
-    .update(process.env.METHOD_BOT_TOKEN)
+    .update(process.env.POKO_BOT_TOKEN)
     .digest();
     
   const generatedHash = crypto.createHmac('sha256', secret)
@@ -505,7 +507,7 @@ const routes = {
         console.log('Поиск пользователя с telegramId:', telegramId);
         const user = await User.findOne({ where: { telegramId } });
         if (user) {
-          const inviteLink = `https://t.me/MethodTon_Bot?start=${user.referralCode}`;
+          const inviteLink = `https://t.me/ThePokoBot?start=${user.referralCode}`;
           console.log('Сгенерирована ссылка:', inviteLink);
           return { status: 200, body: { inviteLink } };
         } else {
@@ -979,6 +981,103 @@ const routes = {
     });
   });
 },
+'/purchase-with-ton': async (req, res) => {
+  const authError = await authMiddleware(req, res);
+  if (authError) return authError;
+
+  let body = '';
+  req.on('data', chunk => { body += chunk; });
+  
+  return new Promise((resolve) => {
+    req.on('end', async () => {
+      try {
+        const data = JSON.parse(body);
+        console.log('Получены данные о покупке за TON:', data);
+
+        const { telegramId, cubeType, transactionBoc, userAddress } = data;
+
+        if (!telegramId || !cubeType || !transactionBoc) {
+          resolve({ status: 400, body: { error: 'Отсутствуют обязательные параметры' } });
+          return;
+        }
+
+        // Проверяем валидность cubeType
+        const validCubeTypes = ['cube1', 'cube2', 'cube3', 'cube4'];
+        if (!validCubeTypes.includes(cubeType)) {
+          console.error(`Неверный формат куба:`, cubeType);
+          resolve({ 
+            status: 400, 
+            body: { error: `Неверный формат куба: ${cubeType}` } 
+          });
+          return;
+        }
+
+        const user = await User.findOne({ where: { telegramId } });
+        if (!user) {
+          resolve({ status: 404, body: { error: 'Пользователь не найден' } });
+          return;
+        }
+
+        console.log('Обработка покупки куба для пользователя:', {
+          telegramId,
+          cubeType,
+          userAddress
+        });
+
+        // Создаём объект майнера
+        const newMiner = {
+          type: cubeType,
+          purchaseDate: new Date(),
+          id: Date.now()
+        };
+        
+        const currentMiners = user.miners || [];
+        const updatedMiners = [newMiner, ...currentMiners];
+        
+        await user.update({ miners: updatedMiners });
+        
+        // Имена кубов для сообщения
+        const cubeNames = {
+          'cube1': 'Superior',
+          'cube2': 'Enhanced',
+          'cube3': 'Excellent',
+          'cube4': 'Prime'
+        };
+        
+        console.log('Покупка куба за TON успешна:', {
+          telegramId,
+          cubeType,
+          cubeName: cubeNames[cubeType],
+          userAddress
+        });
+
+        resolve({
+          status: 200,
+          body: { 
+            success: true,
+            message: `Куб ${cubeNames[cubeType]} успешно приобретен`,
+            user: {
+              miners: updatedMiners,
+              telegramId: user.telegramId,
+              userAddress
+            }
+          }
+        });
+        return;
+
+      } catch (error) {
+        console.error('Ошибка обработки покупки за TON:', error);
+        resolve({ 
+          status: 500, 
+          body: { 
+            error: 'Не удалось обработать покупку',
+            details: error.message 
+          }
+        });
+      }
+    });
+  });
+},
 '/get-user-slots': async (req, res, query) => {
   const authError = await authMiddleware(req, res);
   if (authError) return authError;
@@ -1304,8 +1403,8 @@ const serveStaticFile = (filePath, res) => {
 };
 
 const options = {
-    key: fs.readFileSync('/etc/letsencrypt/live/method-ton.space/privkey.pem'),
-    cert: fs.readFileSync('/etc/letsencrypt/live/method-ton.space/fullchain.pem')
+    key: fs.readFileSync('/etc/letsencrypt/live/pokoapp.space/privkey.pem'),
+    cert: fs.readFileSync('/etc/letsencrypt/live/pokoapp.space/fullchain.pem')
 };
 //
 const server = https.createServer(options, async (req, res) => {
@@ -1355,7 +1454,7 @@ const httpPort = 997;
 server.listen(httpsPort, () => {
   console.log(`HTTPS Сервер запущен на порту ${httpsPort}`);
   console.log('Telegram бот запущен');
-  console.log(`HTTPS Сервер запущен на https://method-ton.space`);
+  console.log(`HTTPS Сервер запущен на https://pokoapp.space`);
 });
 
 // HTTP to HTTPS redirect
