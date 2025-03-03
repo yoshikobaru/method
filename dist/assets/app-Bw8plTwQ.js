@@ -1,7 +1,7 @@
 var __defProp2 = Object.defineProperty;
 var __defNormalProp2 = (obj, key2, value) => key2 in obj ? __defProp2(obj, key2, { enumerable: true, configurable: true, writable: true, value }) : obj[key2] = value;
 var __publicField2 = (obj, key2, value) => __defNormalProp2(obj, typeof key2 !== "symbol" ? key2 + "" : key2, value);
-let var_6cd39f56_532c_5c7b_b16b_2a03d4e7ab27;
+let var_1876789f_1ae5_5ac0_8b1c_ed34bd57324e;
 let __tla = (async () => {
   var Jn = (d, b) => () => (b || d((b = {
     exports: {}
@@ -84824,11 +84824,18 @@ Values:
       };
       return jsxRuntimeExports.jsxs(jsxRuntimeExports.Fragment, {
         children: [
-          At && jsxRuntimeExports.jsx("div", {
+          At && jsxRuntimeExports.jsxs("div", {
             className: "popup",
-            children: jsxRuntimeExports.jsx("p", {
-              children: $t
-            })
+            children: [
+              jsxRuntimeExports.jsx("h2", {
+                className: "popup-title",
+                children: "Congratulations on your purchase!"
+              }),
+              jsxRuntimeExports.jsx("p", {
+                className: "popup-message",
+                children: "The more nodes you buy, the more you earn!"
+              })
+            ]
           }),
           jsxRuntimeExports.jsx("div", {
             className: "min-h-screen bg-[#0A0F1C] relative",
@@ -85009,7 +85016,7 @@ Values:
                                 className: "text-center relative z-20",
                                 children: jsxRuntimeExports.jsx("button", {
                                   type: "button",
-                                  onClick: () => Vt("basic", 4),
+                                  onClick: () => Vt("basic", 4e3),
                                   className: `inline-block py-1 px-4 text-blue-400 text-xs font-mono rounded 
                                   border-2 border-blue-400/50 hover:border-blue-400
                                   bg-[#0A0F1C]/80 backdrop-blur-sm
@@ -85964,9 +85971,9 @@ Values:
       children: jsxRuntimeExports.jsx(App, {})
     }));
   });
-  var_6cd39f56_532c_5c7b_b16b_2a03d4e7ab27 = _i();
+  var_1876789f_1ae5_5ac0_8b1c_ed34bd57324e = _i();
 })();
 export {
   __tla,
-  var_6cd39f56_532c_5c7b_b16b_2a03d4e7ab27 as default
+  var_1876789f_1ae5_5ac0_8b1c_ed34bd57324e as default
 };
