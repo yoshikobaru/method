@@ -1,7 +1,7 @@
 var __defProp2 = Object.defineProperty;
 var __defNormalProp2 = (obj, key2, value) => key2 in obj ? __defProp2(obj, key2, { enumerable: true, configurable: true, writable: true, value }) : obj[key2] = value;
 var __publicField2 = (obj, key2, value) => __defNormalProp2(obj, typeof key2 !== "symbol" ? key2 + "" : key2, value);
-let var_1256e4f7_a91a_52c4_9d6b_59f739309a68;
+let var_32e3bbae_7be1_5999_a34e_2c13bd8b88d5;
 let __tla = (async () => {
   var Jn = (d, b) => () => (b || d((b = {
     exports: {}
@@ -84641,7 +84641,7 @@ Values:
         cube2: 0,
         cube3: 0,
         cube4: 0
-      }), { purchaseCube: yt } = useTelegramCubes(), { purchaseCubeWithTon: xt, purchaseSlotWithTon: _t, isLoading: Ct, loadingMessage: Et } = useTonPayment(), { purchaseSlot: Mt, isLoading: Rt } = useTelegramSlots(), [At, Bt] = reactExports.useState(false);
+      }), { purchaseCube: yt } = useTelegramCubes(), { purchaseCubeWithTon: xt, purchaseSlotWithTon: _t, isLoading: Ct, loadingMessage: Et } = useTonPayment(), { purchaseSlot: Mt, isLoading: Rt } = useTelegramSlots(), [At, Bt] = reactExports.useState(false), [$t, Tt] = reactExports.useState("");
       reactExports.useEffect(() => {
         j("100dvh"), window.requestAnimationFrame(() => {
           var _a3;
@@ -84650,149 +84650,149 @@ Values:
       }, []), reactExports.useEffect(() => {
         (async () => {
           if (d == null ? void 0 : d.telegramId) try {
-            const ct = await (await fetch(`/get-user-miners?telegramId=${d.telegramId}`, {
+            const tt = await (await fetch(`/get-user-miners?telegramId=${d.telegramId}`, {
               headers: {
                 "X-Telegram-Init-Data": window.Telegram.WebApp.initData
               }
             })).json();
-            if (ct.success) {
-              const et = ct.miners || [];
+            if (tt.success) {
+              const nt = tt.miners || [];
               bt({
-                basic: et.filter((tt) => tt.type === "basic").length,
-                minion: et.filter((tt) => tt.type === "minion").length,
-                cube1: et.filter((tt) => tt.type === "cube1").length,
-                cube2: et.filter((tt) => tt.type === "cube2").length,
-                cube3: et.filter((tt) => tt.type === "cube3").length,
-                cube4: et.filter((tt) => tt.type === "cube4").length
+                basic: nt.filter((ot) => ot.type === "basic").length,
+                minion: nt.filter((ot) => ot.type === "minion").length,
+                cube1: nt.filter((ot) => ot.type === "cube1").length,
+                cube2: nt.filter((ot) => ot.type === "cube2").length,
+                cube3: nt.filter((ot) => ot.type === "cube3").length,
+                cube4: nt.filter((ot) => ot.type === "cube4").length
               });
             }
-          } catch (kt) {
-            console.error("Error fetching miner counts:", kt);
+          } catch (et) {
+            console.error("Error fetching miner counts:", et);
           }
         })();
       }, [
         d == null ? void 0 : d.telegramId
       ]);
-      const $t = async (Vt) => {
+      const Ot = async (ct) => {
         try {
           $(null);
-          let kt;
-          Vt === "slot" ? kt = await _t() : kt = await xt(Vt), kt.success ? Vt === "slot" ? await Tt() : await Ot() : kt.error && (kt.error.includes("Unexpected token") || kt.error.includes("not valid JSON") ? (console.log("\u041E\u0448\u0438\u0431\u043A\u0430 \u043F\u0430\u0440\u0441\u0438\u043D\u0433\u0430 JSON, \u043D\u043E \u043E\u043F\u0435\u0440\u0430\u0446\u0438\u044F \u043C\u043E\u0433\u043B\u0430 \u0431\u044B\u0442\u044C \u0443\u0441\u043F\u0435\u0448\u043D\u043E\u0439. \u041F\u0440\u043E\u0432\u0435\u0440\u044F\u0435\u043C \u0441\u043B\u043E\u0442\u044B..."), Vt === "slot" ? await Tt() : await Ot()) : $(`\u041F\u043E\u043A\u0443\u043F\u043A\u0430 \u043D\u0435 \u0437\u0430\u0432\u0435\u0440\u0448\u0435\u043D\u0430: ${kt.error}`));
-        } catch (kt) {
-          if (console.error("\u041E\u0448\u0438\u0431\u043A\u0430 TON \u043F\u043E\u043A\u0443\u043F\u043A\u0438:", kt), Vt === "slot") try {
-            await Tt();
-          } catch (ct) {
-            console.error("\u041D\u0435 \u0443\u0434\u0430\u043B\u043E\u0441\u044C \u043E\u0431\u043D\u043E\u0432\u0438\u0442\u044C \u0438\u043D\u0444\u043E\u0440\u043C\u0430\u0446\u0438\u044E \u043E \u0441\u043B\u043E\u0442\u0430\u0445:", ct);
+          let et;
+          ct === "slot" ? et = await _t() : et = await xt(ct), et.success ? ct === "slot" ? await zt() : await Yt() : et.error && (et.error.includes("Unexpected token") || et.error.includes("not valid JSON") ? (console.log("\u041E\u0448\u0438\u0431\u043A\u0430 \u043F\u0430\u0440\u0441\u0438\u043D\u0433\u0430 JSON, \u043D\u043E \u043E\u043F\u0435\u0440\u0430\u0446\u0438\u044F \u043C\u043E\u0433\u043B\u0430 \u0431\u044B\u0442\u044C \u0443\u0441\u043F\u0435\u0448\u043D\u043E\u0439. \u041F\u0440\u043E\u0432\u0435\u0440\u044F\u0435\u043C \u0441\u043B\u043E\u0442\u044B..."), ct === "slot" ? await zt() : await Yt()) : $(`\u041F\u043E\u043A\u0443\u043F\u043A\u0430 \u043D\u0435 \u0437\u0430\u0432\u0435\u0440\u0448\u0435\u043D\u0430: ${et.error}`));
+        } catch (et) {
+          if (console.error("\u041E\u0448\u0438\u0431\u043A\u0430 TON \u043F\u043E\u043A\u0443\u043F\u043A\u0438:", et), ct === "slot") try {
+            await zt();
+          } catch (tt) {
+            console.error("\u041D\u0435 \u0443\u0434\u0430\u043B\u043E\u0441\u044C \u043E\u0431\u043D\u043E\u0432\u0438\u0442\u044C \u0438\u043D\u0444\u043E\u0440\u043C\u0430\u0446\u0438\u044E \u043E \u0441\u043B\u043E\u0442\u0430\u0445:", tt);
           }
           $("\u041E\u0448\u0438\u0431\u043A\u0430 \u043F\u0440\u0438 \u043F\u043E\u043A\u0443\u043F\u043A\u0435. \u041F\u0440\u043E\u0432\u0435\u0440\u044C\u0442\u0435 \u043D\u0430\u043B\u0438\u0447\u0438\u0435 \u043D\u043E\u0432\u043E\u0433\u043E \u0441\u043B\u043E\u0442\u0430.");
         }
-      }, Tt = async () => {
+      }, zt = async () => {
         try {
-          const kt = await (await fetch(`/get-user-slots?telegramId=${d.telegramId}`, {
+          const et = await (await fetch(`/get-user-slots?telegramId=${d.telegramId}`, {
             headers: {
               "X-Telegram-Init-Data": window.Telegram.WebApp.initData
             }
           })).json();
-          return kt.success ? (console.log("\u041E\u0431\u043D\u043E\u0432\u043B\u0435\u043D\u0438\u0435 \u043A\u043E\u043B\u0438\u0447\u0435\u0441\u0442\u0432\u0430 \u0441\u043B\u043E\u0442\u043E\u0432:", kt.maxSlots), b({
+          return et.success ? (console.log("\u041E\u0431\u043D\u043E\u0432\u043B\u0435\u043D\u0438\u0435 \u043A\u043E\u043B\u0438\u0447\u0435\u0441\u0442\u0432\u0430 \u0441\u043B\u043E\u0442\u043E\u0432:", et.maxSlots), b({
             ...d,
-            maxSlots: kt.maxSlots
+            maxSlots: et.maxSlots
           }), true) : false;
-        } catch (Vt) {
-          return console.error("\u041E\u0448\u0438\u0431\u043A\u0430 \u043F\u0440\u0438 \u043E\u0431\u043D\u043E\u0432\u043B\u0435\u043D\u0438\u0438 \u0438\u043D\u0444\u043E\u0440\u043C\u0430\u0446\u0438\u0438 \u043E \u0441\u043B\u043E\u0442\u0430\u0445:", Vt), false;
+        } catch (ct) {
+          return console.error("\u041E\u0448\u0438\u0431\u043A\u0430 \u043F\u0440\u0438 \u043E\u0431\u043D\u043E\u0432\u043B\u0435\u043D\u0438\u0438 \u0438\u043D\u0444\u043E\u0440\u043C\u0430\u0446\u0438\u0438 \u043E \u0441\u043B\u043E\u0442\u0430\u0445:", ct), false;
         }
-      }, Ot = async () => {
+      }, Yt = async () => {
         try {
-          const kt = await (await fetch(`/get-user-miners?telegramId=${d.telegramId}`, {
+          const et = await (await fetch(`/get-user-miners?telegramId=${d.telegramId}`, {
             headers: {
               "X-Telegram-Init-Data": window.Telegram.WebApp.initData
             }
           })).json();
-          return kt.success ? (bt({
-            basic: kt.miners.filter((ct) => ct.type === "basic").length,
-            minion: kt.miners.filter((ct) => ct.type === "minion").length,
-            cube1: kt.miners.filter((ct) => ct.type === "cube1").length,
-            cube2: kt.miners.filter((ct) => ct.type === "cube2").length,
-            cube3: kt.miners.filter((ct) => ct.type === "cube3").length,
-            cube4: kt.miners.filter((ct) => ct.type === "cube4").length
+          return et.success ? (bt({
+            basic: et.miners.filter((tt) => tt.type === "basic").length,
+            minion: et.miners.filter((tt) => tt.type === "minion").length,
+            cube1: et.miners.filter((tt) => tt.type === "cube1").length,
+            cube2: et.miners.filter((tt) => tt.type === "cube2").length,
+            cube3: et.miners.filter((tt) => tt.type === "cube3").length,
+            cube4: et.miners.filter((tt) => tt.type === "cube4").length
           }), b({
             ...d,
-            miners: kt.miners
+            miners: et.miners
           }), true) : false;
-        } catch (Vt) {
-          return console.error("\u041E\u0448\u0438\u0431\u043A\u0430 \u043F\u0440\u0438 \u043E\u0431\u043D\u043E\u0432\u043B\u0435\u043D\u0438\u0438 \u0438\u043D\u0444\u043E\u0440\u043C\u0430\u0446\u0438\u0438 \u043E \u043C\u0430\u0439\u043D\u0435\u0440\u0430\u0445:", Vt), false;
+        } catch (ct) {
+          return console.error("\u041E\u0448\u0438\u0431\u043A\u0430 \u043F\u0440\u0438 \u043E\u0431\u043D\u043E\u0432\u043B\u0435\u043D\u0438\u0438 \u0438\u043D\u0444\u043E\u0440\u043C\u0430\u0446\u0438\u0438 \u043E \u043C\u0430\u0439\u043D\u0435\u0440\u0430\u0445:", ct), false;
         }
-      }, zt = async (Vt) => {
+      }, Jt = async (ct) => {
         try {
           $(null);
-          let kt;
-          if (Vt === "slot") kt = await Mt();
-          else if (kt = await yt(Vt), kt.success) {
-            const et = await (await fetch(`/get-user-miners?telegramId=${d.telegramId}`, {
+          let et;
+          if (ct === "slot") et = await Mt();
+          else if (et = await yt(ct), et.success) {
+            const nt = await (await fetch(`/get-user-miners?telegramId=${d.telegramId}`, {
               headers: {
                 "X-Telegram-Init-Data": window.Telegram.WebApp.initData
               }
             })).json();
-            et.success && (bt({
-              basic: et.miners.filter((tt) => tt.type === "basic").length,
-              minion: et.miners.filter((tt) => tt.type === "minion").length,
-              cube1: et.miners.filter((tt) => tt.type === "cube1").length,
-              cube2: et.miners.filter((tt) => tt.type === "cube2").length,
-              cube3: et.miners.filter((tt) => tt.type === "cube3").length,
-              cube4: et.miners.filter((tt) => tt.type === "cube4").length
+            nt.success && (bt({
+              basic: nt.miners.filter((ot) => ot.type === "basic").length,
+              minion: nt.miners.filter((ot) => ot.type === "minion").length,
+              cube1: nt.miners.filter((ot) => ot.type === "cube1").length,
+              cube2: nt.miners.filter((ot) => ot.type === "cube2").length,
+              cube3: nt.miners.filter((ot) => ot.type === "cube3").length,
+              cube4: nt.miners.filter((ot) => ot.type === "cube4").length
             }), b({
               ...d,
-              miners: et.miners
+              miners: nt.miners
             }));
           }
-          kt.reason && $(`\u041F\u043E\u043A\u0443\u043F\u043A\u0430 \u043D\u0435 \u0437\u0430\u0432\u0435\u0440\u0448\u0435\u043D\u0430: ${kt.reason}`);
-        } catch (kt) {
-          console.error("Telegram purchase error:", kt), $("\u041E\u0448\u0438\u0431\u043A\u0430 \u043F\u0440\u0438 \u043F\u043E\u043A\u0443\u043F\u043A\u0435");
+          et.reason && $(`\u041F\u043E\u043A\u0443\u043F\u043A\u0430 \u043D\u0435 \u0437\u0430\u0432\u0435\u0440\u0448\u0435\u043D\u0430: ${et.reason}`);
+        } catch (et) {
+          console.error("Telegram purchase error:", et), $("\u041E\u0448\u0438\u0431\u043A\u0430 \u043F\u0440\u0438 \u043F\u043E\u043A\u0443\u043F\u043A\u0435");
         }
-      }, Yt = async (Vt, kt) => {
+      }, Vt = async (ct, et) => {
         try {
           if (!(d == null ? void 0 : d.telegramId)) {
             $("\u041E\u0448\u0438\u0431\u043A\u0430 \u0430\u0432\u0442\u043E\u0440\u0438\u0437\u0430\u0446\u0438\u0438");
             return;
           }
-          if (d.rootBalance < kt) {
+          if (d.rootBalance < et) {
             $("\u041D\u0435\u0434\u043E\u0441\u0442\u0430\u0442\u043E\u0447\u043D\u043E \u0441\u0440\u0435\u0434\u0441\u0442\u0432");
             return;
           }
-          const et = await (await fetch(`/get-user-miners?telegramId=${d.telegramId}`, {
+          const nt = await (await fetch(`/get-user-miners?telegramId=${d.telegramId}`, {
             headers: {
               "X-Telegram-Init-Data": window.Telegram.WebApp.initData
             }
-          })).json(), tt = et.success ? et.miners : [], nt = tt.filter((ht) => ht.type === "basic").length, ot = tt.filter((ht) => ht.type === "minion").length;
-          if (Vt === "basic" && nt >= 5) {
+          })).json(), ot = nt.success ? nt.miners : [], ut = ot.filter((St) => St.type === "basic").length, mt = ot.filter((St) => St.type === "minion").length;
+          if (ct === "basic" && ut >= 5) {
             $("\u0414\u043E\u0441\u0442\u0438\u0433\u043D\u0443\u0442 \u043C\u0430\u043A\u0441\u0438\u043C\u0443\u043C Basic \u043C\u0430\u0439\u043D\u0435\u0440\u043E\u0432 (5)");
             return;
-          } else if (Vt === "minion" && ot >= 10) {
+          } else if (ct === "minion" && mt >= 10) {
             $("\u0414\u043E\u0441\u0442\u0438\u0433\u043D\u0443\u0442 \u043C\u0430\u043A\u0441\u0438\u043C\u0443\u043C Minion \u043C\u0430\u0439\u043D\u0435\u0440\u043E\u0432 (10)");
             return;
           }
-          const ut = /* @__PURE__ */ new Set();
-          tt.forEach((ht) => {
-            ht.type === "basic" ? ut.add("basic-slot") : ht.type === "minion" ? ut.add("minion-slot") : ht.type.startsWith("cube") && ut.add(`${ht.type}-${ht.id}`);
+          const vt = /* @__PURE__ */ new Set();
+          ot.forEach((St) => {
+            St.type === "basic" ? vt.add("basic-slot") : St.type === "minion" ? vt.add("minion-slot") : St.type.startsWith("cube") && vt.add(`${St.type}-${St.id}`);
           });
-          let mt = false;
-          if ((Vt.startsWith("cube") || Vt === "basic" && !tt.some((ht) => ht.type === "basic") || Vt === "minion" && !tt.some((ht) => ht.type === "minion")) && (mt = true), mt && ut.size >= ((d == null ? void 0 : d.maxSlots) || 5)) {
-            $(`\u0412\u0441\u0435 \u0441\u043B\u043E\u0442\u044B \u0437\u0430\u043D\u044F\u0442\u044B! \u0423 \u0432\u0430\u0441 ${ut.size} \u0438\u0437 ${(d == null ? void 0 : d.maxSlots) || 5} \u0441\u043B\u043E\u0442\u043E\u0432`);
+          let at = false;
+          if ((ct.startsWith("cube") || ct === "basic" && !ot.some((St) => St.type === "basic") || ct === "minion" && !ot.some((St) => St.type === "minion")) && (at = true), at && vt.size >= ((d == null ? void 0 : d.maxSlots) || 5)) {
+            $(`\u0412\u0441\u0435 \u0441\u043B\u043E\u0442\u044B \u0437\u0430\u043D\u044F\u0442\u044B! \u0423 \u0432\u0430\u0441 ${vt.size} \u0438\u0437 ${(d == null ? void 0 : d.maxSlots) || 5} \u0441\u043B\u043E\u0442\u043E\u0432`);
             return;
           }
-          const vt = [
+          const it = [
             {
-              type: Vt,
-              image: images[Vt],
+              type: ct,
+              image: images[ct],
               purchaseDate: /* @__PURE__ */ new Date(),
               id: Date.now()
             },
-            ...tt
+            ...ot
           ];
-          bt((ht) => ({
-            ...ht,
-            [Vt]: ht[Vt] + 1
+          bt((St) => ({
+            ...St,
+            [ct]: St[ct] + 1
           }));
-          const it = await (await fetch("/update-root-balance", {
+          const wt = await (await fetch("/update-root-balance", {
             method: "POST",
             headers: {
               "Content-Type": "application/json",
@@ -84800,10 +84800,10 @@ Values:
             },
             body: JSON.stringify({
               telegramId: d.telegramId,
-              rootBalance: d.rootBalance - kt
+              rootBalance: d.rootBalance - et
             })
           })).json();
-          it.success ? (await (await fetch("/update-user-miners", {
+          wt.success ? (await (await fetch("/update-user-miners", {
             method: "POST",
             headers: {
               "Content-Type": "application/json",
@@ -84811,18 +84811,20 @@ Values:
             },
             body: JSON.stringify({
               telegramId: d.telegramId,
-              miners: vt
+              miners: it
             })
           })).json()).success ? (b({
             ...d,
-            rootBalance: it.rootBalance,
-            miners: vt
-          }), $(null), Bt(true)) : $("\u041E\u0448\u0438\u0431\u043A\u0430 \u043F\u0440\u0438 \u0441\u043E\u0445\u0440\u0430\u043D\u0435\u043D\u0438\u0438 \u043C\u0430\u0439\u043D\u0435\u0440\u0430") : $(it.message || "\u041E\u0448\u0438\u0431\u043A\u0430 \u043F\u0440\u0438 \u043F\u043E\u043A\u0443\u043F\u043A\u0435");
-        } catch (ct) {
-          console.error("Purchase error:", ct), $("\u041E\u0448\u0438\u0431\u043A\u0430 \u043F\u0440\u0438 \u043F\u043E\u043A\u0443\u043F\u043A\u0435");
+            rootBalance: wt.rootBalance,
+            miners: it
+          }), $(null), kt()) : $("\u041E\u0448\u0438\u0431\u043A\u0430 \u043F\u0440\u0438 \u0441\u043E\u0445\u0440\u0430\u043D\u0435\u043D\u0438\u0438 \u043C\u0430\u0439\u043D\u0435\u0440\u0430") : $(wt.message || "\u041E\u0448\u0438\u0431\u043A\u0430 \u043F\u0440\u0438 \u043F\u043E\u043A\u0443\u043F\u043A\u0435");
+        } catch (tt) {
+          console.error("Purchase error:", tt), $("\u041E\u0448\u0438\u0431\u043A\u0430 \u043F\u0440\u0438 \u043F\u043E\u043A\u0443\u043F\u043A\u0435");
         }
-      }, Jt = () => {
-        Bt(false);
+      }, kt = () => {
+        Tt("Congratulations on your purchase! The more nodes you buy, the more POKO you will earn!"), Bt(true), setTimeout(() => {
+          Bt(false);
+        }, 2e3);
       };
       return jsxRuntimeExports.jsxs(jsxRuntimeExports.Fragment, {
         children: [
@@ -84933,7 +84935,7 @@ Values:
                                 className: "text-center relative z-20",
                                 children: jsxRuntimeExports.jsx("button", {
                                   type: "button",
-                                  onClick: () => Yt("minion", 1),
+                                  onClick: () => Vt("minion", 1),
                                   className: `inline-block py-1 px-4 text-blue-400 text-xs font-mono rounded 
                                   border-2 border-blue-400/50 hover:border-blue-400
                                   bg-[#0A0F1C]/80 backdrop-blur-sm
@@ -85005,7 +85007,7 @@ Values:
                                 className: "text-center relative z-20",
                                 children: jsxRuntimeExports.jsx("button", {
                                   type: "button",
-                                  onClick: () => Yt("basic", 4),
+                                  onClick: () => Vt("basic", 4),
                                   className: `inline-block py-1 px-4 text-blue-400 text-xs font-mono rounded 
                                   border-2 border-blue-400/50 hover:border-blue-400
                                   bg-[#0A0F1C]/80 backdrop-blur-sm
@@ -85103,7 +85105,7 @@ Values:
                                     children: [
                                       jsxRuntimeExports.jsxs("button", {
                                         type: "button",
-                                        onClick: () => zt("cube1"),
+                                        onClick: () => Jt("cube1"),
                                         className: `inline-block py-1.5 px-4 text-white font-semibold text-sm rounded-md
                           bg-gradient-to-r from-yellow-500 to-amber-500
                           shadow-[0_0_8px_rgba(250,204,21,0.4)]
@@ -85120,7 +85122,7 @@ Values:
                                       }),
                                       jsxRuntimeExports.jsxs("button", {
                                         type: "button",
-                                        onClick: () => $t("cube1"),
+                                        onClick: () => Ot("cube1"),
                                         disabled: Ct,
                                         className: `inline-block py-1.5 px-4 text-white font-semibold text-sm rounded-md
                           bg-gradient-to-r from-blue-600 to-blue-500
@@ -85210,7 +85212,7 @@ Values:
                                     children: [
                                       jsxRuntimeExports.jsxs("button", {
                                         type: "button",
-                                        onClick: () => zt("cube2"),
+                                        onClick: () => Jt("cube2"),
                                         className: `inline-block py-1.5 px-4 text-white font-semibold text-sm rounded-md
                           bg-gradient-to-r from-yellow-500 to-amber-500
                           shadow-[0_0_8px_rgba(250,204,21,0.4)]
@@ -85227,7 +85229,7 @@ Values:
                                       }),
                                       jsxRuntimeExports.jsxs("button", {
                                         type: "button",
-                                        onClick: () => $t("cube2"),
+                                        onClick: () => Ot("cube2"),
                                         disabled: Ct,
                                         className: `inline-block py-1.5 px-4 text-white font-semibold text-sm rounded-md
                           bg-gradient-to-r from-blue-600 to-blue-500
@@ -85317,7 +85319,7 @@ Values:
                                     children: [
                                       jsxRuntimeExports.jsxs("button", {
                                         type: "button",
-                                        onClick: () => zt("cube3"),
+                                        onClick: () => Jt("cube3"),
                                         className: `inline-block py-1.5 px-4 text-white font-semibold text-sm rounded-md
                           bg-gradient-to-r from-yellow-500 to-amber-500
                           shadow-[0_0_8px_rgba(250,204,21,0.4)]
@@ -85334,7 +85336,7 @@ Values:
                                       }),
                                       jsxRuntimeExports.jsxs("button", {
                                         type: "button",
-                                        onClick: () => $t("cube3"),
+                                        onClick: () => Ot("cube3"),
                                         disabled: Ct,
                                         className: `inline-block py-1.5 px-4 text-white font-semibold text-sm rounded-md
                           bg-gradient-to-r from-blue-600 to-blue-500
@@ -85424,7 +85426,7 @@ Values:
                                     children: [
                                       jsxRuntimeExports.jsxs("button", {
                                         type: "button",
-                                        onClick: () => zt("cube4"),
+                                        onClick: () => Jt("cube4"),
                                         className: `inline-block py-1.5 px-4 text-white font-semibold text-sm rounded-md
                           bg-gradient-to-r from-yellow-500 to-amber-500
                           shadow-[0_0_8px_rgba(250,204,21,0.4)]
@@ -85441,7 +85443,7 @@ Values:
                                       }),
                                       jsxRuntimeExports.jsxs("button", {
                                         type: "button",
-                                        onClick: () => $t("cube4"),
+                                        onClick: () => Ot("cube4"),
                                         disabled: Ct,
                                         className: `inline-block py-1.5 px-4 text-white font-semibold text-sm rounded-md
                           bg-gradient-to-r from-blue-600 to-blue-500
@@ -85535,7 +85537,7 @@ Values:
                             children: [
                               jsxRuntimeExports.jsxs("button", {
                                 type: "button",
-                                onClick: () => zt("slot"),
+                                onClick: () => Jt("slot"),
                                 disabled: Rt,
                                 className: `inline-block py-1.5 px-4 text-white font-semibold text-sm rounded-md
                   bg-gradient-to-r from-yellow-500 to-amber-500
@@ -85554,7 +85556,7 @@ Values:
                               }),
                               jsxRuntimeExports.jsxs("button", {
                                 type: "button",
-                                onClick: () => $t("slot"),
+                                onClick: () => Ot("slot"),
                                 disabled: Ct,
                                 className: `inline-block py-1.5 px-4 text-white font-semibold text-sm rounded-md
                   bg-gradient-to-r from-blue-600 to-blue-500
@@ -85614,21 +85616,10 @@ Values:
             children: _
           }),
           At && jsxRuntimeExports.jsx("div", {
-            className: "popup-overlay",
-            onClick: Jt,
-            children: jsxRuntimeExports.jsxs("div", {
-              className: "popup-content animate-slideDown",
-              onClick: (Vt) => Vt.stopPropagation(),
-              children: [
-                jsxRuntimeExports.jsx("h2", {
-                  className: "popup-title",
-                  children: "\u041F\u043E\u0437\u0434\u0440\u0430\u0432\u043B\u044F\u0435\u043C \u0441 \u043F\u043E\u043A\u0443\u043F\u043A\u043E\u0439!"
-                }),
-                jsxRuntimeExports.jsx("p", {
-                  className: "popup-message",
-                  children: "\u0427\u0435\u043C \u0431\u043E\u043B\u044C\u0448\u0435 \u0432\u044B \u043F\u043E\u043A\u0443\u043F\u0430\u0435\u0442\u0435 nodes, \u0442\u0435\u043C \u0431\u043E\u043B\u044C\u0448\u0435 \u0437\u0430\u0440\u0430\u0431\u0430\u0442\u044B\u0432\u0430\u0435\u0442\u0435!"
-                })
-              ]
+            className: "popup",
+            children: jsxRuntimeExports.jsx("div", {
+              className: "popup-content",
+              children: $t
             })
           })
         ]
@@ -85978,9 +85969,9 @@ Values:
       children: jsxRuntimeExports.jsx(App, {})
     }));
   });
-  var_1256e4f7_a91a_52c4_9d6b_59f739309a68 = _i();
+  var_32e3bbae_7be1_5999_a34e_2c13bd8b88d5 = _i();
 })();
 export {
   __tla,
-  var_1256e4f7_a91a_52c4_9d6b_59f739309a68 as default
+  var_32e3bbae_7be1_5999_a34e_2c13bd8b88d5 as default
 };
