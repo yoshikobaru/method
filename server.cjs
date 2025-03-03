@@ -822,6 +822,43 @@ const routes = {
         return { status: 500, body: { error: 'Internal server error' } };
     }
 },
+'/get-user-slots': async (req, res, query) => {
+  const authError = await authMiddleware(req, res);
+  if (authError) return authError;
+
+  const { telegramId } = query;
+  
+  if (!telegramId) {
+    return { 
+      status: 400, 
+      body: { error: 'Telegram ID is required' } 
+    };
+  }
+
+  try {
+    const user = await User.findOne({ where: { telegramId } });
+    if (!user) {
+      return { 
+        status: 404, 
+        body: { error: 'User not found' } 
+      };
+    }
+
+    return { 
+      status: 200, 
+      body: { 
+        success: true,
+        maxSlots: user.maxSlots 
+      } 
+    };
+  } catch (error) {
+    console.error('Error getting slots:', error);
+    return { 
+      status: 500, 
+      body: { error: 'Failed to get slots' } 
+    };
+  }
+},
 '/get-user-miners': async (req, res, query) => {
   const authError = await authMiddleware(req, res);
   if (authError) return authError;
@@ -1213,43 +1250,6 @@ const routes = {
       }
     });
   });
-},
-'/get-user-slots': async (req, res, query) => {
-  const authError = await authMiddleware(req, res);
-  if (authError) return authError;
-
-  const { telegramId } = query;
-  
-  if (!telegramId) {
-    return { 
-      status: 400, 
-      body: { error: 'Telegram ID is required' } 
-    };
-  }
-
-  try {
-    const user = await User.findOne({ where: { telegramId } });
-    if (!user) {
-      return { 
-        status: 404, 
-        body: { error: 'User not found' } 
-      };
-    }
-
-    return { 
-      status: 200, 
-      body: { 
-        success: true,
-        maxSlots: user.maxSlots 
-      } 
-    };
-  } catch (error) {
-    console.error('Error getting slots:', error);
-    return { 
-      status: 500, 
-      body: { error: 'Failed to get slots' } 
-    };
-  }
 },
 '/update-user-miners': async (req, res) => {
     const authError = await authMiddleware(req, res);

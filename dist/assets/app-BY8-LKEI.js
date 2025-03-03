@@ -1,7 +1,7 @@
 var __defProp2 = Object.defineProperty;
 var __defNormalProp2 = (obj, key2, value) => key2 in obj ? __defProp2(obj, key2, { enumerable: true, configurable: true, writable: true, value }) : obj[key2] = value;
 var __publicField2 = (obj, key2, value) => __defNormalProp2(obj, typeof key2 !== "symbol" ? key2 + "" : key2, value);
-let var_0869777d_7ab9_5573_8790_e1cdbd1a569c;
+let var_440161a7_50c5_5d00_a281_a12853b9f780;
 let __tla = (async () => {
   var Jn = (d, b) => () => (b || d((b = {
     exports: {}
@@ -83567,61 +83567,33 @@ Values:
             const $ = window.Telegram.WebApp.initDataUnsafe.user.id, tt = await fetch(`/create-slot-invoice?telegramId=${$}`), j = await tt.json();
             if (!tt.ok) throw new Error(j.error || "Failed to create invoice");
             if (j.slug) return new Promise((ot, ut) => {
-              console.log("Opening invoice with slug:", j.slug);
-              const ht = (d == null ? void 0 : d.maxSlots) || 5;
-              console.log("Initial slots:", ht);
-              const bt = (mt) => {
-                if (mt.data && typeof mt.data == "string") try {
-                  const wt = JSON.parse(mt.data);
-                  console.log("Received event:", wt), wt.eventType === "invoice_closed" && wt.eventData && wt.eventData.slug === j.slug && (console.log("Invoice closed with status:", wt.eventData.status), wt.eventData.status === "paid" ? (console.log("Payment successful! Updating user data..."), window.removeEventListener("message", bt), fetch(`/get-user-slots?telegramId=${$}`, {
-                    headers: {
-                      "X-Telegram-Init-Data": window.Telegram.WebApp.initData
-                    }
-                  }).then((xt) => xt.json()).then((xt) => {
-                    xt.success && (console.log("Received new slots data:", xt), b({
+              window.Telegram.WebApp.openInvoice(j.slug, {
+                callback: async (ht) => {
+                  if (ht === "paid") try {
+                    const mt = await (await fetch(`/get-user-slots?telegramId=${$}`, {
+                      headers: {
+                        "X-Telegram-Init-Data": window.Telegram.WebApp.initData
+                      }
+                    })).json();
+                    mt.success && b({
                       ...d,
-                      maxSlots: xt.maxSlots
-                    }), console.log("User data updated to maxSlots:", xt.maxSlots), setTimeout(() => {
-                      window.location.reload();
-                    }, 1e3)), ot({
+                      maxSlots: mt.maxSlots
+                    }), ot({
                       success: true,
-                      maxSlots: xt.maxSlots
+                      maxSlots: mt.maxSlots
                     });
-                  }).catch((xt) => {
-                    console.error("Failed to update user data:", xt), ut(new Error("Failed to update user data"));
-                  })) : (window.removeEventListener("message", bt), wt.eventData.status === "cancelled" ? ot({
+                  } catch (bt) {
+                    console.error("Failed to update user data:", bt), ut(new Error("Failed to update user data"));
+                  }
+                  else ht === "cancelled" ? ot({
                     success: false,
                     reason: "cancelled"
-                  }) : wt.eventData.status === "failed" && ot({
+                  }) : ht === "failed" && ot({
                     success: false,
                     reason: "failed"
-                  })));
-                } catch (wt) {
-                  console.error("Error parsing event data:", wt);
+                  });
                 }
-              };
-              window.addEventListener("message", bt), window.Telegram.WebApp.openInvoice(j.slug, {
-                callback: (mt) => {
-                  console.log("Invoice callback called with status:", mt);
-                }
-              }), setTimeout(async () => {
-                try {
-                  const wt = await (await fetch(`/get-user-slots?telegramId=${$}`, {
-                    headers: {
-                      "X-Telegram-Init-Data": window.Telegram.WebApp.initData
-                    }
-                  })).json();
-                  wt.success && wt.maxSlots > ht && (console.log("Slot count increased! From", ht, "to", wt.maxSlots), window.removeEventListener("message", bt), b({
-                    ...d,
-                    maxSlots: wt.maxSlots
-                  }), ot({
-                    success: true,
-                    maxSlots: wt.maxSlots
-                  }));
-                } catch (mt) {
-                  console.error("Error in backup check:", mt);
-                }
-              }, 5e3);
+              });
             });
           } catch ($) {
             throw console.error("Error purchasing slot:", $), new Error("Failed to purchase slot");
@@ -84961,9 +84933,9 @@ Values:
       children: jsxRuntimeExports.jsx(App, {})
     }));
   });
-  var_0869777d_7ab9_5573_8790_e1cdbd1a569c = _i();
+  var_440161a7_50c5_5d00_a281_a12853b9f780 = _i();
 })();
 export {
   __tla,
-  var_0869777d_7ab9_5573_8790_e1cdbd1a569c as default
+  var_440161a7_50c5_5d00_a281_a12853b9f780 as default
 };
