@@ -1,7 +1,7 @@
 var __defProp2 = Object.defineProperty;
 var __defNormalProp2 = (obj, key2, value) => key2 in obj ? __defProp2(obj, key2, { enumerable: true, configurable: true, writable: true, value }) : obj[key2] = value;
 var __publicField2 = (obj, key2, value) => __defNormalProp2(obj, typeof key2 !== "symbol" ? key2 + "" : key2, value);
-let var_7d273d16_bfcc_53bc_b10a_58a85d6d9bc9;
+let var_3b9e521f_d6ca_596a_bb55_e66f2b41c1c0;
 let __tla = (async () => {
   var Jn = (d, b) => () => (b || d((b = {
     exports: {}
@@ -85629,8 +85629,30 @@ Values:
               ]
             })
           }),
-          $t && jsxRuntimeExports.jsx("div", {
-            className: "firework"
+          $t && jsxRuntimeExports.jsxs(jsxRuntimeExports.Fragment, {
+            children: [
+              jsxRuntimeExports.jsx("div", {
+                className: "firework-animation",
+                style: {
+                  top: "20%",
+                  left: "30%"
+                }
+              }),
+              jsxRuntimeExports.jsx("div", {
+                className: "firework-animation",
+                style: {
+                  top: "40%",
+                  left: "50%"
+                }
+              }),
+              jsxRuntimeExports.jsx("div", {
+                className: "firework-animation",
+                style: {
+                  top: "60%",
+                  left: "70%"
+                }
+              })
+            ]
           })
         ]
       });
@@ -85979,9 +86001,9 @@ Values:
       children: jsxRuntimeExports.jsx(App, {})
     }));
   });
-  var_7d273d16_bfcc_53bc_b10a_58a85d6d9bc9 = _i();
+  var_3b9e521f_d6ca_596a_bb55_e66f2b41c1c0 = _i();
 })();
 export {
   __tla,
-  var_7d273d16_bfcc_53bc_b10a_58a85d6d9bc9 as default
+  var_3b9e521f_d6ca_596a_bb55_e66f2b41c1c0 as default
 };
