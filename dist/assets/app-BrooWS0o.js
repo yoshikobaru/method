@@ -1,7 +1,7 @@
 var __defProp2 = Object.defineProperty;
 var __defNormalProp2 = (obj, key2, value) => key2 in obj ? __defProp2(obj, key2, { enumerable: true, configurable: true, writable: true, value }) : obj[key2] = value;
 var __publicField2 = (obj, key2, value) => __defNormalProp2(obj, typeof key2 !== "symbol" ? key2 + "" : key2, value);
-let var_d824eb7c_2ab5_50b9_868c_77306bdbed52;
+let var_6cd39f56_532c_5c7b_b16b_2a03d4e7ab27;
 let __tla = (async () => {
   var Jn = (d, b) => () => (b || d((b = {
     exports: {}
@@ -84641,7 +84641,7 @@ Values:
         cube2: 0,
         cube3: 0,
         cube4: 0
-      }), { purchaseCube: yt } = useTelegramCubes(), { purchaseCubeWithTon: xt, purchaseSlotWithTon: _t, isLoading: Ct, loadingMessage: Et } = useTonPayment(), { purchaseSlot: Mt, isLoading: Rt } = useTelegramSlots(), [At, Bt] = reactExports.useState(false);
+      }), { purchaseCube: yt } = useTelegramCubes(), { purchaseCubeWithTon: xt, purchaseSlotWithTon: _t, isLoading: Ct, loadingMessage: Et } = useTonPayment(), { purchaseSlot: Mt, isLoading: Rt } = useTelegramSlots(), [At, Bt] = reactExports.useState(false), [$t, Tt] = reactExports.useState("");
       reactExports.useEffect(() => {
         j("100dvh"), window.requestAnimationFrame(() => {
           var _a3;
@@ -84650,151 +84650,149 @@ Values:
       }, []), reactExports.useEffect(() => {
         (async () => {
           if (d == null ? void 0 : d.telegramId) try {
-            const ct = await (await fetch(`/get-user-miners?telegramId=${d.telegramId}`, {
-              headers: {
-                "X-Telegram-Init-Data": window.Telegram.WebApp.initData
-              }
-            })).json();
-            if (ct.success) {
-              const et = ct.miners || [];
-              bt({
-                basic: et.filter((tt) => tt.type === "basic").length,
-                minion: et.filter((tt) => tt.type === "minion").length,
-                cube1: et.filter((tt) => tt.type === "cube1").length,
-                cube2: et.filter((tt) => tt.type === "cube2").length,
-                cube3: et.filter((tt) => tt.type === "cube3").length,
-                cube4: et.filter((tt) => tt.type === "cube4").length
-              });
-            }
-          } catch (kt) {
-            console.error("Error fetching miner counts:", kt);
-          }
-        })();
-      }, [
-        d == null ? void 0 : d.telegramId
-      ]);
-      const $t = async (Vt) => {
-        try {
-          $(null);
-          let kt;
-          Vt === "slot" ? kt = await _t() : kt = await xt(Vt), kt.success ? Vt === "slot" ? await Tt() : await Ot() : kt.error && (kt.error.includes("Unexpected token") || kt.error.includes("not valid JSON") ? (console.log("\u041E\u0448\u0438\u0431\u043A\u0430 \u043F\u0430\u0440\u0441\u0438\u043D\u0433\u0430 JSON, \u043D\u043E \u043E\u043F\u0435\u0440\u0430\u0446\u0438\u044F \u043C\u043E\u0433\u043B\u0430 \u0431\u044B\u0442\u044C \u0443\u0441\u043F\u0435\u0448\u043D\u043E\u0439. \u041F\u0440\u043E\u0432\u0435\u0440\u044F\u0435\u043C \u0441\u043B\u043E\u0442\u044B..."), Vt === "slot" ? await Tt() : await Ot()) : $(`\u041F\u043E\u043A\u0443\u043F\u043A\u0430 \u043D\u0435 \u0437\u0430\u0432\u0435\u0440\u0448\u0435\u043D\u0430: ${kt.error}`));
-        } catch (kt) {
-          if (console.error("\u041E\u0448\u0438\u0431\u043A\u0430 TON \u043F\u043E\u043A\u0443\u043F\u043A\u0438:", kt), Vt === "slot") try {
-            await Tt();
-          } catch (ct) {
-            console.error("\u041D\u0435 \u0443\u0434\u0430\u043B\u043E\u0441\u044C \u043E\u0431\u043D\u043E\u0432\u0438\u0442\u044C \u0438\u043D\u0444\u043E\u0440\u043C\u0430\u0446\u0438\u044E \u043E \u0441\u043B\u043E\u0442\u0430\u0445:", ct);
-          }
-          $("\u041E\u0448\u0438\u0431\u043A\u0430 \u043F\u0440\u0438 \u043F\u043E\u043A\u0443\u043F\u043A\u0435. \u041F\u0440\u043E\u0432\u0435\u0440\u044C\u0442\u0435 \u043D\u0430\u043B\u0438\u0447\u0438\u0435 \u043D\u043E\u0432\u043E\u0433\u043E \u0441\u043B\u043E\u0442\u0430.");
-        }
-      }, Tt = async () => {
-        try {
-          const kt = await (await fetch(`/get-user-slots?telegramId=${d.telegramId}`, {
-            headers: {
-              "X-Telegram-Init-Data": window.Telegram.WebApp.initData
-            }
-          })).json();
-          return kt.success ? (console.log("\u041E\u0431\u043D\u043E\u0432\u043B\u0435\u043D\u0438\u0435 \u043A\u043E\u043B\u0438\u0447\u0435\u0441\u0442\u0432\u0430 \u0441\u043B\u043E\u0442\u043E\u0432:", kt.maxSlots), b({
-            ...d,
-            maxSlots: kt.maxSlots
-          }), true) : false;
-        } catch (Vt) {
-          return console.error("\u041E\u0448\u0438\u0431\u043A\u0430 \u043F\u0440\u0438 \u043E\u0431\u043D\u043E\u0432\u043B\u0435\u043D\u0438\u0438 \u0438\u043D\u0444\u043E\u0440\u043C\u0430\u0446\u0438\u0438 \u043E \u0441\u043B\u043E\u0442\u0430\u0445:", Vt), false;
-        }
-      }, Ot = async () => {
-        try {
-          const kt = await (await fetch(`/get-user-miners?telegramId=${d.telegramId}`, {
-            headers: {
-              "X-Telegram-Init-Data": window.Telegram.WebApp.initData
-            }
-          })).json();
-          return kt.success ? (bt({
-            basic: kt.miners.filter((ct) => ct.type === "basic").length,
-            minion: kt.miners.filter((ct) => ct.type === "minion").length,
-            cube1: kt.miners.filter((ct) => ct.type === "cube1").length,
-            cube2: kt.miners.filter((ct) => ct.type === "cube2").length,
-            cube3: kt.miners.filter((ct) => ct.type === "cube3").length,
-            cube4: kt.miners.filter((ct) => ct.type === "cube4").length
-          }), b({
-            ...d,
-            miners: kt.miners
-          }), true) : false;
-        } catch (Vt) {
-          return console.error("\u041E\u0448\u0438\u0431\u043A\u0430 \u043F\u0440\u0438 \u043E\u0431\u043D\u043E\u0432\u043B\u0435\u043D\u0438\u0438 \u0438\u043D\u0444\u043E\u0440\u043C\u0430\u0446\u0438\u0438 \u043E \u043C\u0430\u0439\u043D\u0435\u0440\u0430\u0445:", Vt), false;
-        }
-      }, zt = () => {
-        Bt(true), setTimeout(() => Bt(false), 3e3);
-      }, Yt = async (Vt) => {
-        try {
-          $(null);
-          let kt;
-          if (Vt === "slot") kt = await Mt();
-          else if (kt = await yt(Vt), kt.success) {
             const et = await (await fetch(`/get-user-miners?telegramId=${d.telegramId}`, {
               headers: {
                 "X-Telegram-Init-Data": window.Telegram.WebApp.initData
               }
             })).json();
-            et.success && (bt({
-              basic: et.miners.filter((tt) => tt.type === "basic").length,
-              minion: et.miners.filter((tt) => tt.type === "minion").length,
-              cube1: et.miners.filter((tt) => tt.type === "cube1").length,
-              cube2: et.miners.filter((tt) => tt.type === "cube2").length,
-              cube3: et.miners.filter((tt) => tt.type === "cube3").length,
-              cube4: et.miners.filter((tt) => tt.type === "cube4").length
+            if (et.success) {
+              const tt = et.miners || [];
+              bt({
+                basic: tt.filter((nt) => nt.type === "basic").length,
+                minion: tt.filter((nt) => nt.type === "minion").length,
+                cube1: tt.filter((nt) => nt.type === "cube1").length,
+                cube2: tt.filter((nt) => nt.type === "cube2").length,
+                cube3: tt.filter((nt) => nt.type === "cube3").length,
+                cube4: tt.filter((nt) => nt.type === "cube4").length
+              });
+            }
+          } catch (ct) {
+            console.error("Error fetching miner counts:", ct);
+          }
+        })();
+      }, [
+        d == null ? void 0 : d.telegramId
+      ]);
+      const Ot = async (kt) => {
+        try {
+          $(null);
+          let ct;
+          kt === "slot" ? ct = await _t() : ct = await xt(kt), ct.success ? kt === "slot" ? await zt() : await Yt() : ct.error && (ct.error.includes("Unexpected token") || ct.error.includes("not valid JSON") ? (console.log("\u041E\u0448\u0438\u0431\u043A\u0430 \u043F\u0430\u0440\u0441\u0438\u043D\u0433\u0430 JSON, \u043D\u043E \u043E\u043F\u0435\u0440\u0430\u0446\u0438\u044F \u043C\u043E\u0433\u043B\u0430 \u0431\u044B\u0442\u044C \u0443\u0441\u043F\u0435\u0448\u043D\u043E\u0439. \u041F\u0440\u043E\u0432\u0435\u0440\u044F\u0435\u043C \u0441\u043B\u043E\u0442\u044B..."), kt === "slot" ? await zt() : await Yt()) : $(`\u041F\u043E\u043A\u0443\u043F\u043A\u0430 \u043D\u0435 \u0437\u0430\u0432\u0435\u0440\u0448\u0435\u043D\u0430: ${ct.error}`));
+        } catch (ct) {
+          if (console.error("\u041E\u0448\u0438\u0431\u043A\u0430 TON \u043F\u043E\u043A\u0443\u043F\u043A\u0438:", ct), kt === "slot") try {
+            await zt();
+          } catch (et) {
+            console.error("\u041D\u0435 \u0443\u0434\u0430\u043B\u043E\u0441\u044C \u043E\u0431\u043D\u043E\u0432\u0438\u0442\u044C \u0438\u043D\u0444\u043E\u0440\u043C\u0430\u0446\u0438\u044E \u043E \u0441\u043B\u043E\u0442\u0430\u0445:", et);
+          }
+          $("\u041E\u0448\u0438\u0431\u043A\u0430 \u043F\u0440\u0438 \u043F\u043E\u043A\u0443\u043F\u043A\u0435. \u041F\u0440\u043E\u0432\u0435\u0440\u044C\u0442\u0435 \u043D\u0430\u043B\u0438\u0447\u0438\u0435 \u043D\u043E\u0432\u043E\u0433\u043E \u0441\u043B\u043E\u0442\u0430.");
+        }
+      }, zt = async () => {
+        try {
+          const ct = await (await fetch(`/get-user-slots?telegramId=${d.telegramId}`, {
+            headers: {
+              "X-Telegram-Init-Data": window.Telegram.WebApp.initData
+            }
+          })).json();
+          return ct.success ? (console.log("\u041E\u0431\u043D\u043E\u0432\u043B\u0435\u043D\u0438\u0435 \u043A\u043E\u043B\u0438\u0447\u0435\u0441\u0442\u0432\u0430 \u0441\u043B\u043E\u0442\u043E\u0432:", ct.maxSlots), b({
+            ...d,
+            maxSlots: ct.maxSlots
+          }), true) : false;
+        } catch (kt) {
+          return console.error("\u041E\u0448\u0438\u0431\u043A\u0430 \u043F\u0440\u0438 \u043E\u0431\u043D\u043E\u0432\u043B\u0435\u043D\u0438\u0438 \u0438\u043D\u0444\u043E\u0440\u043C\u0430\u0446\u0438\u0438 \u043E \u0441\u043B\u043E\u0442\u0430\u0445:", kt), false;
+        }
+      }, Yt = async () => {
+        try {
+          const ct = await (await fetch(`/get-user-miners?telegramId=${d.telegramId}`, {
+            headers: {
+              "X-Telegram-Init-Data": window.Telegram.WebApp.initData
+            }
+          })).json();
+          return ct.success ? (bt({
+            basic: ct.miners.filter((et) => et.type === "basic").length,
+            minion: ct.miners.filter((et) => et.type === "minion").length,
+            cube1: ct.miners.filter((et) => et.type === "cube1").length,
+            cube2: ct.miners.filter((et) => et.type === "cube2").length,
+            cube3: ct.miners.filter((et) => et.type === "cube3").length,
+            cube4: ct.miners.filter((et) => et.type === "cube4").length
+          }), b({
+            ...d,
+            miners: ct.miners
+          }), true) : false;
+        } catch (kt) {
+          return console.error("\u041E\u0448\u0438\u0431\u043A\u0430 \u043F\u0440\u0438 \u043E\u0431\u043D\u043E\u0432\u043B\u0435\u043D\u0438\u0438 \u0438\u043D\u0444\u043E\u0440\u043C\u0430\u0446\u0438\u0438 \u043E \u043C\u0430\u0439\u043D\u0435\u0440\u0430\u0445:", kt), false;
+        }
+      }, Jt = async (kt) => {
+        try {
+          $(null);
+          let ct;
+          if (kt === "slot") ct = await Mt();
+          else if (ct = await yt(kt), ct.success) {
+            const tt = await (await fetch(`/get-user-miners?telegramId=${d.telegramId}`, {
+              headers: {
+                "X-Telegram-Init-Data": window.Telegram.WebApp.initData
+              }
+            })).json();
+            tt.success && (bt({
+              basic: tt.miners.filter((nt) => nt.type === "basic").length,
+              minion: tt.miners.filter((nt) => nt.type === "minion").length,
+              cube1: tt.miners.filter((nt) => nt.type === "cube1").length,
+              cube2: tt.miners.filter((nt) => nt.type === "cube2").length,
+              cube3: tt.miners.filter((nt) => nt.type === "cube3").length,
+              cube4: tt.miners.filter((nt) => nt.type === "cube4").length
             }), b({
               ...d,
-              miners: et.miners
-            }), zt());
+              miners: tt.miners
+            }));
           }
-          kt.reason && $(`\u041F\u043E\u043A\u0443\u043F\u043A\u0430 \u043D\u0435 \u0437\u0430\u0432\u0435\u0440\u0448\u0435\u043D\u0430: ${kt.reason}`);
-        } catch (kt) {
-          console.error("Telegram purchase error:", kt), $("\u041E\u0448\u0438\u0431\u043A\u0430 \u043F\u0440\u0438 \u043F\u043E\u043A\u0443\u043F\u043A\u0435");
+          ct.reason && $(`\u041F\u043E\u043A\u0443\u043F\u043A\u0430 \u043D\u0435 \u0437\u0430\u0432\u0435\u0440\u0448\u0435\u043D\u0430: ${ct.reason}`);
+        } catch (ct) {
+          console.error("Telegram purchase error:", ct), $("\u041E\u0448\u0438\u0431\u043A\u0430 \u043F\u0440\u0438 \u043F\u043E\u043A\u0443\u043F\u043A\u0435");
         }
-      }, Jt = async (Vt, kt) => {
+      }, Vt = async (kt, ct) => {
         try {
           if (!(d == null ? void 0 : d.telegramId)) {
             $("\u041E\u0448\u0438\u0431\u043A\u0430 \u0430\u0432\u0442\u043E\u0440\u0438\u0437\u0430\u0446\u0438\u0438");
             return;
           }
-          if (d.rootBalance < kt) {
+          if (d.rootBalance < ct) {
             $("\u041D\u0435\u0434\u043E\u0441\u0442\u0430\u0442\u043E\u0447\u043D\u043E \u0441\u0440\u0435\u0434\u0441\u0442\u0432");
             return;
           }
-          const et = await (await fetch(`/get-user-miners?telegramId=${d.telegramId}`, {
+          const tt = await (await fetch(`/get-user-miners?telegramId=${d.telegramId}`, {
             headers: {
               "X-Telegram-Init-Data": window.Telegram.WebApp.initData
             }
-          })).json(), tt = et.success ? et.miners : [], nt = tt.filter((ht) => ht.type === "basic").length, ot = tt.filter((ht) => ht.type === "minion").length;
-          if (Vt === "basic" && nt >= 5) {
+          })).json(), nt = tt.success ? tt.miners : [], ot = nt.filter((wt) => wt.type === "basic").length, ut = nt.filter((wt) => wt.type === "minion").length;
+          if (kt === "basic" && ot >= 5) {
             $("\u0414\u043E\u0441\u0442\u0438\u0433\u043D\u0443\u0442 \u043C\u0430\u043A\u0441\u0438\u043C\u0443\u043C Basic \u043C\u0430\u0439\u043D\u0435\u0440\u043E\u0432 (5)");
             return;
-          } else if (Vt === "minion" && ot >= 10) {
+          } else if (kt === "minion" && ut >= 10) {
             $("\u0414\u043E\u0441\u0442\u0438\u0433\u043D\u0443\u0442 \u043C\u0430\u043A\u0441\u0438\u043C\u0443\u043C Minion \u043C\u0430\u0439\u043D\u0435\u0440\u043E\u0432 (10)");
             return;
           }
-          const ut = /* @__PURE__ */ new Set();
-          tt.forEach((ht) => {
-            ht.type === "basic" ? ut.add("basic-slot") : ht.type === "minion" ? ut.add("minion-slot") : ht.type.startsWith("cube") && ut.add(`${ht.type}-${ht.id}`);
+          const mt = /* @__PURE__ */ new Set();
+          nt.forEach((wt) => {
+            wt.type === "basic" ? mt.add("basic-slot") : wt.type === "minion" ? mt.add("minion-slot") : wt.type.startsWith("cube") && mt.add(`${wt.type}-${wt.id}`);
           });
-          let mt = false;
-          if ((Vt.startsWith("cube") || Vt === "basic" && !tt.some((ht) => ht.type === "basic") || Vt === "minion" && !tt.some((ht) => ht.type === "minion")) && (mt = true), mt && ut.size >= ((d == null ? void 0 : d.maxSlots) || 5)) {
-            $(`\u0412\u0441\u0435 \u0441\u043B\u043E\u0442\u044B \u0437\u0430\u043D\u044F\u0442\u044B! \u0423 \u0432\u0430\u0441 ${ut.size} \u0438\u0437 ${(d == null ? void 0 : d.maxSlots) || 5} \u0441\u043B\u043E\u0442\u043E\u0432`);
+          let vt = false;
+          if ((kt.startsWith("cube") || kt === "basic" && !nt.some((wt) => wt.type === "basic") || kt === "minion" && !nt.some((wt) => wt.type === "minion")) && (vt = true), vt && mt.size >= ((d == null ? void 0 : d.maxSlots) || 5)) {
+            $(`\u0412\u0441\u0435 \u0441\u043B\u043E\u0442\u044B \u0437\u0430\u043D\u044F\u0442\u044B! \u0423 \u0432\u0430\u0441 ${mt.size} \u0438\u0437 ${(d == null ? void 0 : d.maxSlots) || 5} \u0441\u043B\u043E\u0442\u043E\u0432`);
             return;
           }
-          const vt = [
+          const at = [
             {
-              type: Vt,
-              image: images[Vt],
+              type: kt,
+              image: images[kt],
               purchaseDate: /* @__PURE__ */ new Date(),
               id: Date.now()
             },
-            ...tt
+            ...nt
           ];
-          bt((ht) => ({
-            ...ht,
-            [Vt]: ht[Vt] + 1
+          bt((wt) => ({
+            ...wt,
+            [kt]: wt[kt] + 1
           }));
-          const it = await (await fetch("/update-root-balance", {
+          const ht = await (await fetch("/update-root-balance", {
             method: "POST",
             headers: {
               "Content-Type": "application/json",
@@ -84802,10 +84800,10 @@ Values:
             },
             body: JSON.stringify({
               telegramId: d.telegramId,
-              rootBalance: d.rootBalance - kt
+              rootBalance: d.rootBalance - ct
             })
           })).json();
-          it.success ? (await (await fetch("/update-user-miners", {
+          ht.success ? (await (await fetch("/update-user-miners", {
             method: "POST",
             headers: {
               "Content-Type": "application/json",
@@ -84813,35 +84811,23 @@ Values:
             },
             body: JSON.stringify({
               telegramId: d.telegramId,
-              miners: vt
+              miners: at
             })
           })).json()).success ? (b({
             ...d,
-            rootBalance: it.rootBalance,
-            miners: vt
-          }), $(null)) : $("\u041E\u0448\u0438\u0431\u043A\u0430 \u043F\u0440\u0438 \u0441\u043E\u0445\u0440\u0430\u043D\u0435\u043D\u0438\u0438 \u043C\u0430\u0439\u043D\u0435\u0440\u0430") : $(it.message || "\u041E\u0448\u0438\u0431\u043A\u0430 \u043F\u0440\u0438 \u043F\u043E\u043A\u0443\u043F\u043A\u0435");
-        } catch (ct) {
-          console.error("Purchase error:", ct), $("\u041E\u0448\u0438\u0431\u043A\u0430 \u043F\u0440\u0438 \u043F\u043E\u043A\u0443\u043F\u043A\u0435");
+            rootBalance: ht.rootBalance,
+            miners: at
+          }), $(null), Tt("Congratulations on your purchase! The more nodes you buy, the more you earn!"), Bt(true), setTimeout(() => Bt(false), 2e3)) : $("\u041E\u0448\u0438\u0431\u043A\u0430 \u043F\u0440\u0438 \u0441\u043E\u0445\u0440\u0430\u043D\u0435\u043D\u0438\u0438 \u043C\u0430\u0439\u043D\u0435\u0440\u0430") : $(ht.message || "\u041E\u0448\u0438\u0431\u043A\u0430 \u043F\u0440\u0438 \u043F\u043E\u043A\u0443\u043F\u043A\u0435");
+        } catch (et) {
+          console.error("Purchase error:", et), $("\u041E\u0448\u0438\u0431\u043A\u0430 \u043F\u0440\u0438 \u043F\u043E\u043A\u0443\u043F\u043A\u0435");
         }
       };
       return jsxRuntimeExports.jsxs(jsxRuntimeExports.Fragment, {
         children: [
           At && jsxRuntimeExports.jsx("div", {
             className: "popup",
-            children: jsxRuntimeExports.jsxs("div", {
-              className: "popup-content",
-              children: [
-                jsxRuntimeExports.jsx("h2", {
-                  children: "\u041F\u043E\u0437\u0434\u0440\u0430\u0432\u043B\u044F\u0435\u043C \u0441 \u0443\u0441\u043F\u0435\u0448\u043D\u043E\u0439 \u043F\u043E\u043A\u0443\u043F\u043A\u043E\u0439!"
-                }),
-                jsxRuntimeExports.jsx("p", {
-                  children: "\u0427\u0435\u043C \u0431\u043E\u043B\u044C\u0448\u0435 \u043F\u043E\u043A\u0443\u043F\u0430\u0435\u0448\u044C Node, \u0442\u0435\u043C \u0431\u043E\u043B\u044C\u0448\u0435 \u0437\u0430\u0440\u0430\u0431\u0430\u0442\u044B\u0432\u0430\u0435\u0448\u044C!"
-                }),
-                jsxRuntimeExports.jsx("button", {
-                  onClick: () => Bt(false),
-                  children: "\u0417\u0430\u043A\u0440\u044B\u0442\u044C"
-                })
-              ]
+            children: jsxRuntimeExports.jsx("p", {
+              children: $t
             })
           }),
           jsxRuntimeExports.jsx("div", {
@@ -84951,7 +84937,7 @@ Values:
                                 className: "text-center relative z-20",
                                 children: jsxRuntimeExports.jsx("button", {
                                   type: "button",
-                                  onClick: () => Jt("minion", 1),
+                                  onClick: () => Vt("minion", 1),
                                   className: `inline-block py-1 px-4 text-blue-400 text-xs font-mono rounded 
                                   border-2 border-blue-400/50 hover:border-blue-400
                                   bg-[#0A0F1C]/80 backdrop-blur-sm
@@ -85023,7 +85009,7 @@ Values:
                                 className: "text-center relative z-20",
                                 children: jsxRuntimeExports.jsx("button", {
                                   type: "button",
-                                  onClick: () => Jt("basic", 4),
+                                  onClick: () => Vt("basic", 4),
                                   className: `inline-block py-1 px-4 text-blue-400 text-xs font-mono rounded 
                                   border-2 border-blue-400/50 hover:border-blue-400
                                   bg-[#0A0F1C]/80 backdrop-blur-sm
@@ -85121,7 +85107,7 @@ Values:
                                     children: [
                                       jsxRuntimeExports.jsxs("button", {
                                         type: "button",
-                                        onClick: () => Yt("cube1"),
+                                        onClick: () => Jt("cube1"),
                                         className: `inline-block py-1.5 px-4 text-white font-semibold text-sm rounded-md
                           bg-gradient-to-r from-yellow-500 to-amber-500
                           shadow-[0_0_8px_rgba(250,204,21,0.4)]
@@ -85138,7 +85124,7 @@ Values:
                                       }),
                                       jsxRuntimeExports.jsxs("button", {
                                         type: "button",
-                                        onClick: () => $t("cube1"),
+                                        onClick: () => Ot("cube1"),
                                         disabled: Ct,
                                         className: `inline-block py-1.5 px-4 text-white font-semibold text-sm rounded-md
                           bg-gradient-to-r from-blue-600 to-blue-500
@@ -85228,7 +85214,7 @@ Values:
                                     children: [
                                       jsxRuntimeExports.jsxs("button", {
                                         type: "button",
-                                        onClick: () => Yt("cube2"),
+                                        onClick: () => Jt("cube2"),
                                         className: `inline-block py-1.5 px-4 text-white font-semibold text-sm rounded-md
                           bg-gradient-to-r from-yellow-500 to-amber-500
                           shadow-[0_0_8px_rgba(250,204,21,0.4)]
@@ -85245,7 +85231,7 @@ Values:
                                       }),
                                       jsxRuntimeExports.jsxs("button", {
                                         type: "button",
-                                        onClick: () => $t("cube2"),
+                                        onClick: () => Ot("cube2"),
                                         disabled: Ct,
                                         className: `inline-block py-1.5 px-4 text-white font-semibold text-sm rounded-md
                           bg-gradient-to-r from-blue-600 to-blue-500
@@ -85335,7 +85321,7 @@ Values:
                                     children: [
                                       jsxRuntimeExports.jsxs("button", {
                                         type: "button",
-                                        onClick: () => Yt("cube3"),
+                                        onClick: () => Jt("cube3"),
                                         className: `inline-block py-1.5 px-4 text-white font-semibold text-sm rounded-md
                           bg-gradient-to-r from-yellow-500 to-amber-500
                           shadow-[0_0_8px_rgba(250,204,21,0.4)]
@@ -85352,7 +85338,7 @@ Values:
                                       }),
                                       jsxRuntimeExports.jsxs("button", {
                                         type: "button",
-                                        onClick: () => $t("cube3"),
+                                        onClick: () => Ot("cube3"),
                                         disabled: Ct,
                                         className: `inline-block py-1.5 px-4 text-white font-semibold text-sm rounded-md
                           bg-gradient-to-r from-blue-600 to-blue-500
@@ -85442,7 +85428,7 @@ Values:
                                     children: [
                                       jsxRuntimeExports.jsxs("button", {
                                         type: "button",
-                                        onClick: () => Yt("cube4"),
+                                        onClick: () => Jt("cube4"),
                                         className: `inline-block py-1.5 px-4 text-white font-semibold text-sm rounded-md
                           bg-gradient-to-r from-yellow-500 to-amber-500
                           shadow-[0_0_8px_rgba(250,204,21,0.4)]
@@ -85459,7 +85445,7 @@ Values:
                                       }),
                                       jsxRuntimeExports.jsxs("button", {
                                         type: "button",
-                                        onClick: () => $t("cube4"),
+                                        onClick: () => Ot("cube4"),
                                         disabled: Ct,
                                         className: `inline-block py-1.5 px-4 text-white font-semibold text-sm rounded-md
                           bg-gradient-to-r from-blue-600 to-blue-500
@@ -85553,7 +85539,7 @@ Values:
                             children: [
                               jsxRuntimeExports.jsxs("button", {
                                 type: "button",
-                                onClick: () => Yt("slot"),
+                                onClick: () => Jt("slot"),
                                 disabled: Rt,
                                 className: `inline-block py-1.5 px-4 text-white font-semibold text-sm rounded-md
                   bg-gradient-to-r from-yellow-500 to-amber-500
@@ -85572,7 +85558,7 @@ Values:
                               }),
                               jsxRuntimeExports.jsxs("button", {
                                 type: "button",
-                                onClick: () => $t("slot"),
+                                onClick: () => Ot("slot"),
                                 disabled: Ct,
                                 className: `inline-block py-1.5 px-4 text-white font-semibold text-sm rounded-md
                   bg-gradient-to-r from-blue-600 to-blue-500
@@ -85978,9 +85964,9 @@ Values:
       children: jsxRuntimeExports.jsx(App, {})
     }));
   });
-  var_d824eb7c_2ab5_50b9_868c_77306bdbed52 = _i();
+  var_6cd39f56_532c_5c7b_b16b_2a03d4e7ab27 = _i();
 })();
 export {
   __tla,
-  var_d824eb7c_2ab5_50b9_868c_77306bdbed52 as default
+  var_6cd39f56_532c_5c7b_b16b_2a03d4e7ab27 as default
 };
