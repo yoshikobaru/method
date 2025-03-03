@@ -1,7 +1,7 @@
 var __defProp2 = Object.defineProperty;
 var __defNormalProp2 = (obj, key2, value) => key2 in obj ? __defProp2(obj, key2, { enumerable: true, configurable: true, writable: true, value }) : obj[key2] = value;
 var __publicField2 = (obj, key2, value) => __defNormalProp2(obj, typeof key2 !== "symbol" ? key2 + "" : key2, value);
-let var_baaac0fb_e0e1_5a4b_b9a3_2652aa1c5ba1;
+let var_175d739e_ab3b_5027_b33a_226c808593f2;
 let __tla = (async () => {
   var Jn = (d, b) => () => (b || d((b = {
     exports: {}
@@ -83509,23 +83509,29 @@ Values:
     }, SLOT_PRICES = PRICES.SLOTS, useTelegramSlots = () => ({
       purchaseSlot: async () => {
         try {
-          const b = window.Telegram.WebApp.initDataUnsafe.user.id, _ = await fetch(`/create-slot-invoice?telegramId=${b}`), $ = await _.json();
-          if (!_.ok) throw new Error($.error || "Failed to create invoice");
-          if ($.slug) return new Promise((tt, j) => {
-            window.Telegram.WebApp.openInvoice($.slug, {
-              callback: async (ot) => {
-                if (ot === "paid") try {
-                  tt({
+          const b = window.Telegram.WebApp.initDataUnsafe.user.id;
+          if (!(await fetch(`/create-slot-invoice?telegramId=${b}`, {
+            method: "GET",
+            headers: {
+              "X-Telegram-Init-Data": window.Telegram.WebApp.initData,
+              Accept: "application/json"
+            }
+          })).ok) throw new Error(data.error || "Failed to create invoice");
+          if (data.slug) return new Promise(($, tt) => {
+            window.Telegram.WebApp.openInvoice(data.slug, {
+              callback: async (j) => {
+                if (j === "paid") try {
+                  $({
                     success: true,
                     type: "slot"
                   });
                 } catch {
-                  j(new Error("Failed to update user data"));
+                  tt(new Error("Failed to update user data"));
                 }
-                else ot === "cancelled" ? tt({
+                else j === "cancelled" ? $({
                   success: false,
                   reason: "cancelled"
-                }) : ot === "failed" && tt({
+                }) : j === "failed" && $({
                   success: false,
                   reason: "failed"
                 });
@@ -83587,8 +83593,18 @@ Values:
       const Bt = async (Rt) => {
         try {
           $(null);
-          const Tt = await wt(Rt);
-          if (Tt.success) {
+          let Tt;
+          if (Rt === "slot" ? Tt = await purchaseSlotWithTon() : Tt = await wt(Rt), Tt.success) if (Rt === "slot") {
+            const jt = await (await fetch(`/get-user-slots?telegramId=${d.telegramId}`, {
+              headers: {
+                "X-Telegram-Init-Data": window.Telegram.WebApp.initData
+              }
+            })).json();
+            jt.success && b({
+              ...d,
+              maxSlots: jt.maxSlots
+            });
+          } else {
             const jt = await (await fetch(`/get-user-miners?telegramId=${d.telegramId}`, {
               headers: {
                 "X-Telegram-Init-Data": window.Telegram.WebApp.initData
@@ -83605,7 +83621,8 @@ Values:
               ...d,
               miners: jt.miners
             }));
-          } else Tt.reason && $(`\u041F\u043E\u043A\u0443\u043F\u043A\u0430 \u043D\u0435 \u0437\u0430\u0432\u0435\u0440\u0448\u0435\u043D\u0430: ${Tt.reason}`);
+          }
+          else Tt.error && $(`\u041F\u043E\u043A\u0443\u043F\u043A\u0430 \u043D\u0435 \u0437\u0430\u0432\u0435\u0440\u0448\u0435\u043D\u0430: ${Tt.error}`);
         } catch (Tt) {
           console.error("\u041E\u0448\u0438\u0431\u043A\u0430 TON \u043F\u043E\u043A\u0443\u043F\u043A\u0438:", Tt), $("\u041E\u0448\u0438\u0431\u043A\u0430 \u043F\u0440\u0438 \u043F\u043E\u043A\u0443\u043F\u043A\u0435");
         }
@@ -84852,9 +84869,9 @@ Values:
       children: jsxRuntimeExports.jsx(App, {})
     }));
   });
-  var_baaac0fb_e0e1_5a4b_b9a3_2652aa1c5ba1 = _i();
+  var_175d739e_ab3b_5027_b33a_226c808593f2 = _i();
 })();
 export {
   __tla,
-  var_baaac0fb_e0e1_5a4b_b9a3_2652aa1c5ba1 as default
+  var_175d739e_ab3b_5027_b33a_226c808593f2 as default
 };

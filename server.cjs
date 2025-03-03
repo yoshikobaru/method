@@ -713,7 +713,7 @@ const routes = {
             currency: 'XTR',
             prices: [{
                 label: '⭐️ Purchase',
-                amount: CUBE_PRICES[cubeType] // в копейках
+                amount: CUBE_PRICES[cubeType]
             }]
         });
 
@@ -722,6 +722,45 @@ const routes = {
         console.error('Error creating cube invoice:', error);
         return { status: 500, body: { error: 'Failed to create invoice' } };
     }
+},
+'/create-slot-invoice': async (req, res, query) => {
+  console.log('Запрос на создание инвойса для слота:', query);
+  const { telegramId } = query;
+  
+  if (!telegramId) {
+    console.error('Отсутствует telegramId');
+    return { status: 400, body: { error: 'Missing telegramId parameter' } };
+  }
+
+  try {
+    const user = await User.findOne({ where: { telegramId } });
+    if (!user) {
+      console.error('Пользователь не найден:', telegramId);
+      return { status: 404, body: { error: 'User not found' } };
+    }
+
+    const title = 'POKO Slot';
+    const description = 'Purchase Additional Slot';
+
+    
+    const invoice = await bot.telegram.createInvoiceLink({
+      title,
+      description,
+      payload: `slot_${telegramId}`,
+      provider_token: "",
+      currency: 'XTR',
+      prices: [{
+        label: '⭐️ Additional Slot',
+        amount: SLOT_PRICES.stars
+      }]
+    });
+
+    console.log('Создан инвойс для слота:', invoice);
+    return { status: 200, body: { slug: invoice } };
+  } catch (error) {
+    console.error('Error creating slot invoice:', error);
+    return { status: 500, body: { error: 'Failed to create invoice: ' + error.message } };
+  }
 },
     '/get-friends-leaderboard': async (req, res, query) => {
     const telegramId = query.telegramId;
@@ -1008,41 +1047,7 @@ const routes = {
     });
   });
 },
-// Создание инвойса для покупки слота за звезды
-'/create-slot-invoice': async (req, res, query) => {
-  const { telegramId } = query;
-  
-  if (!telegramId) {
-    return { status: 400, body: { error: 'Missing telegramId parameter' } };
-  }
 
-  try {
-    const user = await User.findOne({ where: { telegramId } });
-    if (!user) {
-      return { status: 404, body: { error: 'User not found' } };
-    }
-
-    const title = 'POKO Slot';
-    const description = 'Purchase Additional Slot';
-
-    const invoice = await bot.telegram.createInvoiceLink({
-      title,
-      description,
-      payload: `slot_${telegramId}`,
-      provider_token: "",
-      currency: 'XTR',
-      prices: [{
-        label: '⭐️ Additional Slot',
-        amount: SLOT_PRICES.stars
-      }]
-    });
-
-    return { status: 200, body: { slug: invoice } };
-  } catch (error) {
-    console.error('Error creating slot invoice:', error);
-    return { status: 500, body: { error: 'Failed to create invoice' } };
-  }
-},
 
 // Покупка слота за TON
 '/purchase-slot-ton': async (req, res) => {
