@@ -1,7 +1,7 @@
 var __defProp2 = Object.defineProperty;
 var __defNormalProp2 = (obj, key2, value) => key2 in obj ? __defProp2(obj, key2, { enumerable: true, configurable: true, writable: true, value }) : obj[key2] = value;
 var __publicField2 = (obj, key2, value) => __defNormalProp2(obj, typeof key2 !== "symbol" ? key2 + "" : key2, value);
-let var_625e54b7_620e_5d21_aa6c_dfd2a11867e2;
+let var_440161a7_50c5_5d00_a281_a12853b9f780;
 let __tla = (async () => {
   var Jn = (d, b) => () => (b || d((b = {
     exports: {}
@@ -8010,9 +8010,14 @@ Please change the parent <Route path="${At}"> to <Route path="${At === "/" ? "*"
       setUser: (_) => d({
         user: _
       }),
-      updateUser: (_) => d({
-        user: _
-      })
+      updateUser: (_) => {
+        var _a3;
+        console.log("\u041E\u0431\u043D\u043E\u0432\u043B\u0435\u043D\u0438\u0435 \u043F\u043E\u043B\u044C\u0437\u043E\u0432\u0430\u0442\u0435\u043B\u044F:", _);
+        const $ = (_a3 = b().user) == null ? void 0 : _a3.maxSlots;
+        console.log(`maxSlots: ${$} -> ${_.maxSlots}`), d({
+          user: _
+        });
+      }
     }));
     function BallCatcher({ onClose: d, gyroscopeMovement: b }) {
       const [_, $] = reactExports.useState(0), [tt, j] = reactExports.useState(0), [ot, ut] = reactExports.useState(50), [ht, bt] = reactExports.useState([]), mt = reactExports.useRef(null), { user: wt } = useAuthStore(), xt = reactExports.useRef(Date.now()), _t = reactExports.useRef(Date.now()), Mt = reactExports.useRef(50), Ct = {
@@ -84864,11 +84869,16 @@ Values:
       const { initializeUser: d } = useAuthStore();
       return reactExports.useEffect(() => {
         const b = window.Telegram.WebApp;
-        b && (b.expand(), b.enableClosingConfirmation()), d();
+        b && (b.expand(), b.BackButton.isVisible = true, b.BackButton.onClick(() => {
+          window.history.length > 1 ? window.history.back() : confirm("Close app?") && b.close();
+        })), d();
       }, [
         d
       ]), jsxRuntimeExports.jsx(TonConnectUIProvider$1, {
         manifestUrl: "https://pokoapp.space/tonconnect-manifest.json",
+        actionsConfiguration: {
+          twaReturnUrl: window.location.origin + window.location.pathname
+        },
         children: jsxRuntimeExports.jsx(BrowserRouter, {
           children: jsxRuntimeExports.jsxs("div", {
             className: "glow-background",
@@ -84923,9 +84933,9 @@ Values:
       children: jsxRuntimeExports.jsx(App, {})
     }));
   });
-  var_625e54b7_620e_5d21_aa6c_dfd2a11867e2 = _i();
+  var_440161a7_50c5_5d00_a281_a12853b9f780 = _i();
 })();
 export {
   __tla,
-  var_625e54b7_620e_5d21_aa6c_dfd2a11867e2 as default
+  var_440161a7_50c5_5d00_a281_a12853b9f780 as default
 };
