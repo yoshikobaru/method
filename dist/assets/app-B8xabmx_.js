@@ -1,7 +1,7 @@
 var __defProp2 = Object.defineProperty;
 var __defNormalProp2 = (obj, key2, value) => key2 in obj ? __defProp2(obj, key2, { enumerable: true, configurable: true, writable: true, value }) : obj[key2] = value;
 var __publicField2 = (obj, key2, value) => __defNormalProp2(obj, typeof key2 !== "symbol" ? key2 + "" : key2, value);
-let var_c1ecf821_114d_56ac_96b9_e3ab4dfdc5b6;
+let var_c715b024_a644_5a45_b91d_d9518756ff47;
 let __tla = (async () => {
   var Jn = (d, b) => () => (b || d((b = {
     exports: {}
@@ -84779,10 +84779,6 @@ Values:
             $(`\u0412\u0441\u0435 \u0441\u043B\u043E\u0442\u044B \u0437\u0430\u043D\u044F\u0442\u044B! \u0423 \u0432\u0430\u0441 ${mt.size} \u0438\u0437 ${(d == null ? void 0 : d.maxSlots) || 5} \u0441\u043B\u043E\u0442\u043E\u0432`);
             return;
           }
-          (kt === "basic" || kt === "minion") && bt((wt) => ({
-            ...wt,
-            [kt]: wt[kt] + 1
-          }));
           const at = [
             {
               type: kt,
@@ -85975,9 +85971,9 @@ Values:
       children: jsxRuntimeExports.jsx(App, {})
     }));
   });
-  var_c1ecf821_114d_56ac_96b9_e3ab4dfdc5b6 = _i();
+  var_c715b024_a644_5a45_b91d_d9518756ff47 = _i();
 })();
 export {
   __tla,
-  var_c1ecf821_114d_56ac_96b9_e3ab4dfdc5b6 as default
+  var_c715b024_a644_5a45_b91d_d9518756ff47 as default
 };
