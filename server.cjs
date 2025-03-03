@@ -15,6 +15,11 @@ const CUBE_PRICES = {
   'cube3': 497,
   'cube4': 5000
 };
+// slot price
+const SLOT_PRICES = {
+  stars: 1,
+  ton: 0.001
+};
 
 const MIME_TYPES = {
   '.html': 'text/html',
@@ -327,10 +332,32 @@ bot.on('successful_payment', async (ctx) => {
       };
       
       await ctx.reply(`🎁 Вы успешно приобрели ${cubeNames[cubeType]} куб!`);
+    } else if (type === 'slot') {
+      console.log(`User ${telegramId} purchased additional slot`);
+      
+      // Получаем текущее количество слотов и увеличиваем на 1
+      const currentSlots = user.maxSlots || 5;
+      const newMaxSlots = currentSlots + 1;
+      
+      // Обновляем количество слотов в базе данных
+      await user.update({ maxSlots: newMaxSlots });
+      
+      // Отправляем сообщение об успешной покупке
+      await ctx.reply(`🎯 Вы успешно приобрели дополнительный слот!\nТеперь у вас ${newMaxSlots} слотов.`);
+      
+      console.log(`Updated slots for user ${telegramId}: ${newMaxSlots}`);
+    } else {
+      console.error('Unknown payment type:', type);
+      await ctx.reply('❌ Произошла ошибка при обработке платежа. Пожалуйста, обратитесь в поддержку.');
     }
   } catch (error) {
     console.error('Error in successful_payment:', error);
     console.error('Full error:', error.stack);
+    try {
+      await ctx.reply('❌ Произошла ошибка при обработке платежа. Пожалуйста, обратитесь в поддержку.');
+    } catch (replyError) {
+      console.error('Error sending error message:', replyError);
+    }
   }
 });
 
@@ -976,6 +1003,110 @@ const routes = {
         resolve({ 
           status: 500, 
           body: { error: 'Failed to create user' } 
+        });
+      }
+    });
+  });
+},
+// Создание инвойса для покупки слота за звезды
+'/create-slot-invoice': async (req, res, query) => {
+  const { telegramId } = query;
+  
+  if (!telegramId) {
+    return { status: 400, body: { error: 'Missing telegramId parameter' } };
+  }
+
+  try {
+    const user = await User.findOne({ where: { telegramId } });
+    if (!user) {
+      return { status: 404, body: { error: 'User not found' } };
+    }
+
+    const title = 'POKO Slot';
+    const description = 'Purchase Additional Slot';
+
+    const invoice = await bot.telegram.createInvoiceLink({
+      title,
+      description,
+      payload: `slot_${telegramId}`,
+      provider_token: "",
+      currency: 'XTR',
+      prices: [{
+        label: '⭐️ Additional Slot',
+        amount: SLOT_PRICES.stars
+      }]
+    });
+
+    return { status: 200, body: { slug: invoice } };
+  } catch (error) {
+    console.error('Error creating slot invoice:', error);
+    return { status: 500, body: { error: 'Failed to create invoice' } };
+  }
+},
+
+// Покупка слота за TON
+'/purchase-slot-ton': async (req, res) => {
+  const authError = await authMiddleware(req, res);
+  if (authError) return authError;
+
+  let body = '';
+  req.on('data', chunk => { body += chunk; });
+  
+  return new Promise((resolve) => {
+    req.on('end', async () => {
+      try {
+        const data = JSON.parse(body);
+        console.log('Получены данные о покупке слота за TON:', data);
+
+        const { telegramId, transactionBoc, userAddress } = data;
+
+        if (!telegramId || !transactionBoc) {
+          resolve({ status: 400, body: { error: 'Отсутствуют обязательные параметры' } });
+          return;
+        }
+
+        const user = await User.findOne({ where: { telegramId } });
+        if (!user) {
+          resolve({ status: 404, body: { error: 'Пользователь не найден' } });
+          return;
+        }
+
+        console.log('Обработка покупки слота для пользователя:', {
+          telegramId,
+          userAddress
+        });
+
+        // Увеличиваем количество слотов
+        const newMaxSlots = (user.maxSlots || 5) + 1;
+        await user.update({ maxSlots: newMaxSlots });
+        
+        console.log('Покупка слота за TON успешна:', {
+          telegramId,
+          newMaxSlots,
+          userAddress
+        });
+
+        resolve({
+          status: 200,
+          body: { 
+            success: true,
+            message: 'Дополнительный слот успешно приобретен',
+            user: {
+              maxSlots: newMaxSlots,
+              telegramId: user.telegramId,
+              userAddress
+            }
+          }
+        });
+
+      } catch (error) {
+        console.error('Ошибка обработки покупки слота за TON:', error);
+        resolve({ 
+          status: 500, 
+          body: { 
+            error: 'Не удалось обработать покупку',
+            details: error.message 
+          }
         });
       }
     });
