@@ -1,7 +1,7 @@
 var __defProp2 = Object.defineProperty;
 var __defNormalProp2 = (obj, key2, value) => key2 in obj ? __defProp2(obj, key2, { enumerable: true, configurable: true, writable: true, value }) : obj[key2] = value;
 var __publicField2 = (obj, key2, value) => __defNormalProp2(obj, typeof key2 !== "symbol" ? key2 + "" : key2, value);
-let var_1bbb2859_21e6_55dc_b16c_4fad5097affc;
+let var_4d80feb0_eac8_5da1_bc01_1bd37c8ab259;
 let __tla = (async () => {
   var Jn = (d, b) => () => (b || d((b = {
     exports: {}
@@ -85614,18 +85614,19 @@ Values:
           At && jsxRuntimeExports.jsx("div", {
             className: "fixed inset-0 flex items-center justify-center bg-black/50 backdrop-blur-sm z-[100]",
             children: jsxRuntimeExports.jsxs("div", {
-              className: "bg-white p-6 rounded-lg shadow-lg",
+              className: "bg-[#1A1F35] p-6 rounded-lg shadow-lg border border-blue-500",
               children: [
                 jsxRuntimeExports.jsx("h2", {
-                  className: "text-lg font-bold",
+                  className: "text-lg font-bold text-white",
                   children: "Congratulations on your successful purchase!"
                 }),
                 jsxRuntimeExports.jsx("p", {
-                  children: `You have purchased a ${$t}. The more you buy, the more you earn!`
+                  className: "text-blue-300",
+                  children: "You have purchased a node. The more you buy, the more you earn!"
                 }),
                 jsxRuntimeExports.jsx("button", {
                   onClick: () => Bt(false),
-                  className: "mt-4 px-4 py-2 bg-blue-500 text-white rounded",
+                  className: "mt-4 px-4 py-2 bg-blue-500 text-white rounded hover:bg-blue-600 transition",
                   children: "Close"
                 })
               ]
@@ -85978,9 +85979,9 @@ Values:
       children: jsxRuntimeExports.jsx(App, {})
     }));
   });
-  var_1bbb2859_21e6_55dc_b16c_4fad5097affc = _i();
+  var_4d80feb0_eac8_5da1_bc01_1bd37c8ab259 = _i();
 })();
 export {
   __tla,
-  var_1bbb2859_21e6_55dc_b16c_4fad5097affc as default
+  var_4d80feb0_eac8_5da1_bc01_1bd37c8ab259 as default
 };
