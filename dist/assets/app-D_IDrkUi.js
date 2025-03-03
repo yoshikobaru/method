@@ -1,7 +1,7 @@
 var __defProp2 = Object.defineProperty;
 var __defNormalProp2 = (obj, key2, value) => key2 in obj ? __defProp2(obj, key2, { enumerable: true, configurable: true, writable: true, value }) : obj[key2] = value;
 var __publicField2 = (obj, key2, value) => __defNormalProp2(obj, typeof key2 !== "symbol" ? key2 + "" : key2, value);
-let var_afe2b573_c49f_5bbd_9eea_be33e3680569;
+let var_625e54b7_620e_5d21_aa6c_dfd2a11867e2;
 let __tla = (async () => {
   var Jn = (d, b) => () => (b || d((b = {
     exports: {}
@@ -83554,45 +83554,48 @@ Values:
         loadingMessage: $,
         LoadingOverlay
       };
-    }, SLOT_PRICES = PRICES.SLOTS, useTelegramSlots = (d, b) => ({
-      purchaseSlot: async () => {
-        try {
-          const $ = window.Telegram.WebApp.initDataUnsafe.user.id, tt = await fetch(`/create-slot-invoice?telegramId=${$}`), j = await tt.json();
-          if (!tt.ok) throw new Error(j.error || "Failed to create invoice");
-          if (j.slug) return new Promise((ot, ut) => {
-            window.Telegram.WebApp.openInvoice(j.slug, {
-              callback: async (ht) => {
-                if (ht === "paid") try {
-                  const mt = await (await fetch(`/get-user-slots?telegramId=${$}`, {
-                    headers: {
-                      "X-Telegram-Init-Data": window.Telegram.WebApp.initData
-                    }
-                  })).json();
-                  mt.success && d({
-                    ...b,
-                    maxSlots: mt.maxSlots
-                  }), ot({
-                    success: true,
-                    maxSlots: mt.maxSlots
+    }, SLOT_PRICES = PRICES.SLOTS, useTelegramSlots = () => {
+      const { user: d, updateUser: b } = useAuthStore();
+      return {
+        purchaseSlot: async () => {
+          try {
+            const $ = window.Telegram.WebApp.initDataUnsafe.user.id, tt = await fetch(`/create-slot-invoice?telegramId=${$}`), j = await tt.json();
+            if (!tt.ok) throw new Error(j.error || "Failed to create invoice");
+            if (j.slug) return new Promise((ot, ut) => {
+              window.Telegram.WebApp.openInvoice(j.slug, {
+                callback: async (ht) => {
+                  if (ht === "paid") try {
+                    const mt = await (await fetch(`/get-user-slots?telegramId=${$}`, {
+                      headers: {
+                        "X-Telegram-Init-Data": window.Telegram.WebApp.initData
+                      }
+                    })).json();
+                    mt.success && b({
+                      ...d,
+                      maxSlots: mt.maxSlots
+                    }), ot({
+                      success: true,
+                      maxSlots: mt.maxSlots
+                    });
+                  } catch (bt) {
+                    console.error("Failed to update user data:", bt), ut(new Error("Failed to update user data"));
+                  }
+                  else ht === "cancelled" ? ot({
+                    success: false,
+                    reason: "cancelled"
+                  }) : ht === "failed" && ot({
+                    success: false,
+                    reason: "failed"
                   });
-                } catch (bt) {
-                  console.error("Failed to update user data:", bt), ut(new Error("Failed to update user data"));
                 }
-                else ht === "cancelled" ? ot({
-                  success: false,
-                  reason: "cancelled"
-                }) : ht === "failed" && ot({
-                  success: false,
-                  reason: "failed"
-                });
-              }
+              });
             });
-          });
-        } catch ($) {
-          throw console.error("Error purchasing slot:", $), new Error("Failed to purchase slot");
+          } catch ($) {
+            throw console.error("Error purchasing slot:", $), new Error("Failed to purchase slot");
+          }
         }
-      }
-    }), images = {
+      };
+    }, images = {
       basic: "/assets/power.webp",
       minion: "/assets/poowerr.webp",
       cube1: "/assets/purpule1.webp",
@@ -84920,9 +84923,9 @@ Values:
       children: jsxRuntimeExports.jsx(App, {})
     }));
   });
-  var_afe2b573_c49f_5bbd_9eea_be33e3680569 = _i();
+  var_625e54b7_620e_5d21_aa6c_dfd2a11867e2 = _i();
 })();
 export {
   __tla,
-  var_afe2b573_c49f_5bbd_9eea_be33e3680569 as default
+  var_625e54b7_620e_5d21_aa6c_dfd2a11867e2 as default
 };
