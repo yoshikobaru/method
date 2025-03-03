@@ -1,7 +1,7 @@
 var __defProp2 = Object.defineProperty;
 var __defNormalProp2 = (obj, key2, value) => key2 in obj ? __defProp2(obj, key2, { enumerable: true, configurable: true, writable: true, value }) : obj[key2] = value;
 var __publicField2 = (obj, key2, value) => __defNormalProp2(obj, typeof key2 !== "symbol" ? key2 + "" : key2, value);
-let var_1e862cdb_2968_56dd_b4dd_3befe66b2fbf;
+let var_ed198901_c3b4_5429_83da_a406a7e76ff9;
 let __tla = (async () => {
   var Jn = (d, b) => () => (b || d((b = {
     exports: {}
@@ -84819,7 +84819,7 @@ Values:
             miners: at
           }), Tt(kt), Bt(true), $(null), setTimeout(() => {
             Bt(false);
-          }, 1500)) : $("\u041E\u0448\u0438\u0431\u043A\u0430 \u043F\u0440\u0438 \u0441\u043E\u0445\u0440\u0430\u043D\u0435\u043D\u0438\u0438 \u043C\u0430\u0439\u043D\u0435\u0440\u0430") : $(ht.message || "\u041E\u0448\u0438\u0431\u043A\u0430 \u043F\u0440\u0438 \u043F\u043E\u043A\u0443\u043F\u043A\u0435");
+          }, 2e3)) : $("\u041E\u0448\u0438\u0431\u043A\u0430 \u043F\u0440\u0438 \u0441\u043E\u0445\u0440\u0430\u043D\u0435\u043D\u0438\u0438 \u043C\u0430\u0439\u043D\u0435\u0440\u0430") : $(ht.message || "\u041E\u0448\u0438\u0431\u043A\u0430 \u043F\u0440\u0438 \u043F\u043E\u043A\u0443\u043F\u043A\u0435");
         } catch (et) {
           console.error("Purchase error:", et), $("\u041E\u0448\u0438\u0431\u043A\u0430 \u043F\u0440\u0438 \u043F\u043E\u043A\u0443\u043F\u043A\u0435");
         }
@@ -85981,9 +85981,9 @@ Values:
       children: jsxRuntimeExports.jsx(App, {})
     }));
   });
-  var_1e862cdb_2968_56dd_b4dd_3befe66b2fbf = _i();
+  var_ed198901_c3b4_5429_83da_a406a7e76ff9 = _i();
 })();
 export {
   __tla,
-  var_1e862cdb_2968_56dd_b4dd_3befe66b2fbf as default
+  var_ed198901_c3b4_5429_83da_a406a7e76ff9 as default
 };
