@@ -1,7 +1,7 @@
 var __defProp2 = Object.defineProperty;
 var __defNormalProp2 = (obj, key2, value) => key2 in obj ? __defProp2(obj, key2, { enumerable: true, configurable: true, writable: true, value }) : obj[key2] = value;
 var __publicField2 = (obj, key2, value) => __defNormalProp2(obj, typeof key2 !== "symbol" ? key2 + "" : key2, value);
-let var_cd0e6ab5_9576_504d_a916_da59e24d2054;
+let var_357d9ee5_0190_5054_afa2_cc3a83bb444a;
 let __tla = (async () => {
   var Jn = (d, b) => () => (b || d((b = {
     exports: {}
@@ -83467,28 +83467,76 @@ Values:
             });
             const Rt = await d.sendTransaction(At);
             if (console.log("\u0420\u0435\u0437\u0443\u043B\u044C\u0442\u0430\u0442 \u0442\u0440\u0430\u043D\u0437\u0430\u043A\u0446\u0438\u0438:", Rt), !(Rt == null ? void 0 : Rt.boc)) throw new Error("\u0422\u0440\u0430\u043D\u0437\u0430\u043A\u0446\u0438\u044F \u043D\u0435 \u0431\u044B\u043B\u0430 \u0437\u0430\u0432\u0435\u0440\u0448\u0435\u043D\u0430");
-            for (let Ht = 0; Ht < 5; Ht++) await new Promise((Yt) => setTimeout(Yt, 2e3)), j();
+            for (let Ot = 0; Ot < 5; Ot++) await new Promise((qt) => setTimeout(qt, 2e3)), j();
             if (!await ot(Rt.boc, _t)) throw new Error("\u041F\u0440\u043E\u0432\u0435\u0440\u043A\u0430 \u0442\u0440\u0430\u043D\u0437\u0430\u043A\u0446\u0438\u0438 \u043D\u0435 \u0443\u0434\u0430\u043B\u0430\u0441\u044C");
             console.log("\u041E\u0431\u0440\u0430\u0431\u043E\u0442\u043A\u0430 \u043F\u043E\u043A\u0443\u043F\u043A\u0438 \u0441\u043B\u043E\u0442\u0430 \u0437\u0430 TON");
-            const qt = await (await fetch("/purchase-slot-ton", {
-              method: "POST",
-              headers: {
-                "Content-Type": "application/json",
-                "X-Telegram-Init-Data": window.Telegram.WebApp.initData
-              },
-              body: JSON.stringify({
-                telegramId: window.Telegram.WebApp.initDataUnsafe.user.id,
-                transactionBoc: Rt.boc,
-                userAddress: xt
-              })
-            })).json();
-            if (!qt.success) throw new Error(qt.error || "\u041D\u0435 \u0443\u0434\u0430\u043B\u043E\u0441\u044C \u043E\u0431\u0440\u0430\u0431\u043E\u0442\u0430\u0442\u044C \u043F\u043E\u043A\u0443\u043F\u043A\u0443");
-            return {
-              success: true,
-              boc: Rt.boc,
-              userAddress: xt,
-              ...qt
-            };
+            try {
+              const Ot = await fetch("/purchase-slot-ton", {
+                method: "POST",
+                headers: {
+                  "Content-Type": "application/json",
+                  "X-Telegram-Init-Data": window.Telegram.WebApp.initData
+                },
+                body: JSON.stringify({
+                  telegramId: window.Telegram.WebApp.initDataUnsafe.user.id,
+                  transactionBoc: Rt.boc,
+                  userAddress: xt
+                })
+              }), qt = await Ot.text();
+              let Ht;
+              try {
+                Ht = JSON.parse(qt);
+              } catch {
+                if (Ot.ok) {
+                  console.log("\u0421\u0435\u0440\u0432\u0435\u0440 \u0432\u0435\u0440\u043D\u0443\u043B \u043D\u0435 JSON, \u043D\u043E \u0441\u0442\u0430\u0442\u0443\u0441 OK - \u0441\u043B\u043E\u0442 \u0434\u043E\u0431\u0430\u0432\u043B\u0435\u043D");
+                  try {
+                    return {
+                      success: true,
+                      message: "\u0414\u043E\u043F\u043E\u043B\u043D\u0438\u0442\u0435\u043B\u044C\u043D\u044B\u0439 \u0441\u043B\u043E\u0442 \u0443\u0441\u043F\u0435\u0448\u043D\u043E \u043F\u0440\u0438\u043E\u0431\u0440\u0435\u0442\u0435\u043D",
+                      user: {
+                        maxSlots: (await (await fetch(`/get-user-slots?telegramId=${window.Telegram.WebApp.initDataUnsafe.user.id}`)).json()).maxSlots,
+                        telegramId: window.Telegram.WebApp.initDataUnsafe.user.id,
+                        userAddress: xt
+                      }
+                    };
+                  } catch {
+                    return {
+                      success: true,
+                      message: "\u0414\u043E\u043F\u043E\u043B\u043D\u0438\u0442\u0435\u043B\u044C\u043D\u044B\u0439 \u0441\u043B\u043E\u0442 \u0443\u0441\u043F\u0435\u0448\u043D\u043E \u043F\u0440\u0438\u043E\u0431\u0440\u0435\u0442\u0435\u043D",
+                      user: {
+                        telegramId: window.Telegram.WebApp.initDataUnsafe.user.id,
+                        userAddress: xt
+                      }
+                    };
+                  }
+                } else throw new Error(`\u041E\u0448\u0438\u0431\u043A\u0430 \u0441\u0435\u0440\u0432\u0435\u0440\u0430: ${Ot.status}`);
+              }
+              if (!Ht.success) throw new Error(Ht.error || "\u041D\u0435 \u0443\u0434\u0430\u043B\u043E\u0441\u044C \u043E\u0431\u0440\u0430\u0431\u043E\u0442\u0430\u0442\u044C \u043F\u043E\u043A\u0443\u043F\u043A\u0443");
+              return {
+                success: true,
+                boc: Rt.boc,
+                userAddress: xt,
+                ...Ht
+              };
+            } catch (Ot) {
+              if (Ot.message.includes("Unexpected token")) {
+                console.log("\u041F\u043E\u043B\u0443\u0447\u0435\u043D HTML \u0432\u043C\u0435\u0441\u0442\u043E JSON, \u043D\u043E \u0441\u043B\u043E\u0442 \u043C\u043E\u0433 \u0431\u044B\u0442\u044C \u0434\u043E\u0431\u0430\u0432\u043B\u0435\u043D");
+                try {
+                  return {
+                    success: true,
+                    message: "\u0414\u043E\u043F\u043E\u043B\u043D\u0438\u0442\u0435\u043B\u044C\u043D\u044B\u0439 \u0441\u043B\u043E\u0442 \u0443\u0441\u043F\u0435\u0448\u043D\u043E \u043F\u0440\u0438\u043E\u0431\u0440\u0435\u0442\u0435\u043D",
+                    user: {
+                      maxSlots: (await (await fetch(`/get-user-slots?telegramId=${window.Telegram.WebApp.initDataUnsafe.user.id}`)).json()).maxSlots,
+                      telegramId: window.Telegram.WebApp.initDataUnsafe.user.id,
+                      userAddress: xt
+                    }
+                  };
+                } catch (qt) {
+                  console.error("\u041D\u0435 \u0443\u0434\u0430\u043B\u043E\u0441\u044C \u043F\u043E\u043B\u0443\u0447\u0438\u0442\u044C \u0438\u043D\u0444\u043E\u0440\u043C\u0430\u0446\u0438\u044E \u043E \u0441\u043B\u043E\u0442\u0430\u0445", qt);
+                }
+              }
+              throw Ot;
+            }
           } catch (wt) {
             return console.error("\u041E\u0448\u0438\u0431\u043A\u0430 \u043E\u043F\u043B\u0430\u0442\u044B TON:", wt), {
               success: false,
@@ -84862,9 +84910,9 @@ Values:
       children: jsxRuntimeExports.jsx(App, {})
     }));
   });
-  var_cd0e6ab5_9576_504d_a916_da59e24d2054 = _i();
+  var_357d9ee5_0190_5054_afa2_cc3a83bb444a = _i();
 })();
 export {
   __tla,
-  var_cd0e6ab5_9576_504d_a916_da59e24d2054 as default
+  var_357d9ee5_0190_5054_afa2_cc3a83bb444a as default
 };
