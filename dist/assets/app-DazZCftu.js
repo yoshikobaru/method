@@ -1,7 +1,7 @@
 var __defProp2 = Object.defineProperty;
 var __defNormalProp2 = (obj, key2, value) => key2 in obj ? __defProp2(obj, key2, { enumerable: true, configurable: true, writable: true, value }) : obj[key2] = value;
 var __publicField2 = (obj, key2, value) => __defNormalProp2(obj, typeof key2 !== "symbol" ? key2 + "" : key2, value);
-let var_c715b024_a644_5a45_b91d_d9518756ff47;
+let var_cec5fafe_29da_5bb6_9860_26d2b281f48e;
 let __tla = (async () => {
   var Jn = (d, b) => () => (b || d((b = {
     exports: {}
@@ -84972,18 +84972,21 @@ Values:
                                 className: "flex justify-between items-center mb-1",
                                 children: [
                                   jsxRuntimeExports.jsx("span", {
-                                    className: "text-white/90 text-base font-mono",
+                                    className: "text-white/90 text-base",
                                     style: {
                                       fontFamily: "Polonium"
                                     },
                                     children: "Basic"
                                   }),
-                                  jsxRuntimeExports.jsx("span", {
+                                  jsxRuntimeExports.jsxs("span", {
                                     className: "text-blue-400/60 text-xs font-mono",
                                     style: {
                                       fontFamily: "Polonium"
                                     },
-                                    children: "0/5"
+                                    children: [
+                                      pt.basic,
+                                      "/5"
+                                    ]
                                   })
                                 ]
                               }),
@@ -85971,9 +85974,9 @@ Values:
       children: jsxRuntimeExports.jsx(App, {})
     }));
   });
-  var_c715b024_a644_5a45_b91d_d9518756ff47 = _i();
+  var_cec5fafe_29da_5bb6_9860_26d2b281f48e = _i();
 })();
 export {
   __tla,
-  var_c715b024_a644_5a45_b91d_d9518756ff47 as default
+  var_cec5fafe_29da_5bb6_9860_26d2b281f48e as default
 };
