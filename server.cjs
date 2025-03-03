@@ -1047,8 +1047,6 @@ const routes = {
     });
   });
 },
-
-
 // Покупка слота за TON
 '/purchase-slot-ton': async (req, res) => {
   const authError = await authMiddleware(req, res);
@@ -1103,6 +1101,7 @@ const routes = {
             }
           }
         });
+        return;
 
       } catch (error) {
         console.error('Ошибка обработки покупки слота за TON:', error);
@@ -1113,6 +1112,7 @@ const routes = {
             details: error.message 
           }
         });
+        return;
       }
     });
   });
