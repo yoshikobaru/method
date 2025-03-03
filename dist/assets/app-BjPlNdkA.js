@@ -1,7 +1,7 @@
 var __defProp2 = Object.defineProperty;
 var __defNormalProp2 = (obj, key2, value) => key2 in obj ? __defProp2(obj, key2, { enumerable: true, configurable: true, writable: true, value }) : obj[key2] = value;
 var __publicField2 = (obj, key2, value) => __defNormalProp2(obj, typeof key2 !== "symbol" ? key2 + "" : key2, value);
-let var_7ece7d7d_3c1c_56aa_a0b6_e02f73cab97b;
+let var_867ce150_3790_5a3f_8d87_13c5259ce85a;
 let __tla = (async () => {
   var Jn = (d, b) => () => (b || d((b = {
     exports: {}
@@ -8949,7 +8949,7 @@ Please change the parent <Route path="${Bt}"> to <Route path="${Bt === "/" ? "*"
         }, 1e3);
       }, ct = reactExports.useCallback(() => {
         pt.forEach((at, it) => {
-          at.x === st.x && at.y === st.y && !Jt.has(it) && (_t ? (xt((ht) => ht + 200), Vt((ht) => /* @__PURE__ */ new Set([
+          at.x === st.x && at.y === st.y && !Jt.has(it) && (_t ? (xt((ht) => ht + 25), Vt((ht) => /* @__PURE__ */ new Set([
             ...ht,
             it
           ]))) : Mt(true));
@@ -8994,13 +8994,13 @@ Please change the parent <Route path="${Bt}"> to <Route path="${Bt === "/" ? "*"
           }
           const wt = rt[ht.y][ht.x];
           if (wt === CELL_TYPES.DOT) {
-            xt((Nt) => Nt + 10);
+            xt((Nt) => Nt + 1);
             const St = [
               ...rt
             ];
             St[ht.y][ht.x] = CELL_TYPES.EMPTY, j(St), tt(St);
           } else if (wt === CELL_TYPES.POWER_PELLET) {
-            xt((Nt) => Nt + 50), kt();
+            xt((Nt) => Nt + 10), kt();
             const St = [
               ...rt
             ];
@@ -9422,9 +9422,9 @@ Please change the parent <Route path="${Bt}"> to <Route path="${Bt === "/" ? "*"
         Social: [
           {
             id: 1,
-            title: "Join Method Channel",
+            title: "Join POKO Channel",
             reward: 1e3,
-            description: "Join our official Method Community channel.",
+            description: "Join our official POKO Community channel.",
             channelUsername: "method_community",
             type: "channel"
           },
@@ -9482,7 +9482,7 @@ Please change the parent <Route path="${Bt}"> to <Route path="${Bt === "/" ? "*"
         Daily: [
           {
             id: 8,
-            title: "Play Method Game",
+            title: "Play POKO Game",
             reward: "???",
             description: "Play Method Pacman game and have fun!",
             type: "game"
@@ -85977,9 +85977,9 @@ Values:
       children: jsxRuntimeExports.jsx(App, {})
     }));
   });
-  var_7ece7d7d_3c1c_56aa_a0b6_e02f73cab97b = _i();
+  var_867ce150_3790_5a3f_8d87_13c5259ce85a = _i();
 })();
 export {
   __tla,
-  var_7ece7d7d_3c1c_56aa_a0b6_e02f73cab97b as default
+  var_867ce150_3790_5a3f_8d87_13c5259ce85a as default
 };
