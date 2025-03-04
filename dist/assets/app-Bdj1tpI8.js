@@ -1,7 +1,7 @@
 var __defProp2 = Object.defineProperty;
 var __defNormalProp2 = (obj, key2, value) => key2 in obj ? __defProp2(obj, key2, { enumerable: true, configurable: true, writable: true, value }) : obj[key2] = value;
 var __publicField2 = (obj, key2, value) => __defNormalProp2(obj, typeof key2 !== "symbol" ? key2 + "" : key2, value);
-let var_f22fda26_8f0d_5555_bc55_e240cbe1d301;
+let var_767b9ed7_364b_594f_b1bb_115b80d86eba;
 let __tla = (async () => {
   var Jn = (d, b) => () => (b || d((b = {
     exports: {}
@@ -10005,15 +10005,7 @@ Please change the parent <Route path="${Bt}"> to <Route path="${Bt === "/" ? "*"
           }), bt((Ut) => ({
             ...Ut,
             [Mt]: 0
-          })), bt((Ut) => ({
-            ...Ut,
-            basic: Ut.basic,
-            minion: Ut.minion,
-            cube1: Ut.cube1,
-            cube2: Ut.cube2,
-            cube3: Ut.cube3,
-            cube4: Ut.cube4
-          }))) : $("\u041E\u0448\u0438\u0431\u043A\u0430 \u043F\u0440\u0438 \u0441\u0431\u043E\u0440\u0435");
+          })), fetchMiners()) : $("\u041E\u0448\u0438\u0431\u043A\u0430 \u043F\u0440\u0438 \u0441\u0431\u043E\u0440\u0435");
         } catch (Rt) {
           console.error("Error collecting MTH:", Rt), $("\u041E\u0448\u0438\u0431\u043A\u0430 \u043F\u0440\u0438 \u0441\u0431\u043E\u0440\u0435");
         }
@@ -85995,9 +85987,9 @@ Values:
       children: jsxRuntimeExports.jsx(App, {})
     }));
   });
-  var_f22fda26_8f0d_5555_bc55_e240cbe1d301 = _i();
+  var_767b9ed7_364b_594f_b1bb_115b80d86eba = _i();
 })();
 export {
   __tla,
-  var_f22fda26_8f0d_5555_bc55_e240cbe1d301 as default
+  var_767b9ed7_364b_594f_b1bb_115b80d86eba as default
 };
