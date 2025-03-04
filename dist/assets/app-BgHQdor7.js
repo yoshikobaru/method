@@ -1,7 +1,7 @@
 var __defProp2 = Object.defineProperty;
 var __defNormalProp2 = (obj, key2, value) => key2 in obj ? __defProp2(obj, key2, { enumerable: true, configurable: true, writable: true, value }) : obj[key2] = value;
 var __publicField2 = (obj, key2, value) => __defNormalProp2(obj, typeof key2 !== "symbol" ? key2 + "" : key2, value);
-let var_a6bdbaac_b6f3_5a97_9b87_c44dc66e30e7;
+let var_dc9b7e3a_6f7c_5327_a70d_5420d766dde1;
 let __tla = (async () => {
   var Jn = (d, b) => () => (b || d((b = {
     exports: {}
@@ -84821,6 +84821,10 @@ Values:
       };
       return jsxRuntimeExports.jsxs(jsxRuntimeExports.Fragment, {
         children: [
+          At && jsxRuntimeExports.jsx("div", {
+            className: "blur-background",
+            onClick: nt
+          }),
           At && jsxRuntimeExports.jsxs("div", {
             className: "popup",
             onClick: nt,
@@ -85983,9 +85987,9 @@ Values:
       children: jsxRuntimeExports.jsx(App, {})
     }));
   });
-  var_a6bdbaac_b6f3_5a97_9b87_c44dc66e30e7 = _i();
+  var_dc9b7e3a_6f7c_5327_a70d_5420d766dde1 = _i();
 })();
 export {
   __tla,
-  var_a6bdbaac_b6f3_5a97_9b87_c44dc66e30e7 as default
+  var_dc9b7e3a_6f7c_5327_a70d_5420d766dde1 as default
 };
