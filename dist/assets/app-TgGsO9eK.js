@@ -1,7 +1,7 @@
 var __defProp2 = Object.defineProperty;
 var __defNormalProp2 = (obj, key2, value) => key2 in obj ? __defProp2(obj, key2, { enumerable: true, configurable: true, writable: true, value }) : obj[key2] = value;
 var __publicField2 = (obj, key2, value) => __defNormalProp2(obj, typeof key2 !== "symbol" ? key2 + "" : key2, value);
-let var_767b9ed7_364b_594f_b1bb_115b80d86eba;
+let var_97044804_dc34_5f87_9d2d_204cdb34fefc;
 let __tla = (async () => {
   var Jn = (d, b) => () => (b || d((b = {
     exports: {}
@@ -9975,15 +9975,22 @@ Please change the parent <Route path="${Bt}"> to <Route path="${Bt === "/" ? "*"
         }
       }, Ct = async (Mt) => {
         try {
-          if (!(d == null ? void 0 : d.telegramId)) return;
+          if (!(d == null ? void 0 : d.telegramId)) {
+            console.error("User telegramId is not available");
+            return;
+          }
           const Rt = pt[Mt];
-          if (Rt <= 0) return;
+          if (Rt <= 0) {
+            console.warn(`No amount to collect for miner type: ${Mt}`);
+            return;
+          }
           const At = parseInt(d.rootBalance || 0), Bt = At + Rt;
           console.log("Collecting MTH:", {
             currentBalance: At,
             amountToAdd: Rt,
             newBalance: Bt
-          }), (await (await fetch("/update-root-balance", {
+          });
+          const $t = await fetch("/update-root-balance", {
             method: "POST",
             headers: {
               "Content-Type": "application/json",
@@ -9993,7 +10000,13 @@ Please change the parent <Route path="${Bt}"> to <Route path="${Bt === "/" ? "*"
               telegramId: d.telegramId,
               rootBalance: Bt
             })
-          })).json()).success ? (window.Telegram.WebApp.CloudStorage.getItem("lastCollection", (Ut, zt) => {
+          });
+          if (!$t.ok) {
+            console.error("Failed to update root balance:", $t.statusText), $("\u041E\u0448\u0438\u0431\u043A\u0430 \u043F\u0440\u0438 \u043E\u0431\u043D\u043E\u0432\u043B\u0435\u043D\u0438\u0438 \u0431\u0430\u043B\u0430\u043D\u0441\u0430");
+            return;
+          }
+          const Tt = await $t.json();
+          Tt.success ? (window.Telegram.WebApp.CloudStorage.getItem("lastCollection", (Ut, zt) => {
             if (Ut) {
               console.error("Error getting lastCollection:", Ut);
               return;
@@ -10005,7 +10018,7 @@ Please change the parent <Route path="${Bt}"> to <Route path="${Bt === "/" ? "*"
           }), bt((Ut) => ({
             ...Ut,
             [Mt]: 0
-          })), fetchMiners()) : $("\u041E\u0448\u0438\u0431\u043A\u0430 \u043F\u0440\u0438 \u0441\u0431\u043E\u0440\u0435");
+          }))) : (console.error("Error in response data:", Tt), $("\u041E\u0448\u0438\u0431\u043A\u0430 \u043F\u0440\u0438 \u0441\u0431\u043E\u0440\u0435"));
         } catch (Rt) {
           console.error("Error collecting MTH:", Rt), $("\u041E\u0448\u0438\u0431\u043A\u0430 \u043F\u0440\u0438 \u0441\u0431\u043E\u0440\u0435");
         }
@@ -85987,9 +86000,9 @@ Values:
       children: jsxRuntimeExports.jsx(App, {})
     }));
   });
-  var_767b9ed7_364b_594f_b1bb_115b80d86eba = _i();
+  var_97044804_dc34_5f87_9d2d_204cdb34fefc = _i();
 })();
 export {
   __tla,
-  var_767b9ed7_364b_594f_b1bb_115b80d86eba as default
+  var_97044804_dc34_5f87_9d2d_204cdb34fefc as default
 };
