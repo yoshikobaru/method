@@ -1,7 +1,7 @@
 var __defProp2 = Object.defineProperty;
 var __defNormalProp2 = (obj, key2, value) => key2 in obj ? __defProp2(obj, key2, { enumerable: true, configurable: true, writable: true, value }) : obj[key2] = value;
 var __publicField2 = (obj, key2, value) => __defNormalProp2(obj, typeof key2 !== "symbol" ? key2 + "" : key2, value);
-let var_991ae9e1_6f84_5090_896b_bbbb443eb300;
+let var_e51f8247_8a06_5eef_9c9d_134e1e3585d0;
 let __tla = (async () => {
   var Jn = (d, b) => () => (b || d((b = {
     exports: {}
@@ -84827,11 +84827,16 @@ Values:
                 className: "popup-title",
                 children: "Congratulations on your purchase!"
               }),
-              jsxRuntimeExports.jsx("div", {
+              jsxRuntimeExports.jsxs("div", {
                 className: "loading-animation",
-                children: jsxRuntimeExports.jsx("div", {
-                  className: "loader"
-                })
+                children: [
+                  jsxRuntimeExports.jsx("div", {
+                    className: "loader"
+                  }),
+                  jsxRuntimeExports.jsx("div", {
+                    className: "checkmark"
+                  })
+                ]
               }),
               jsxRuntimeExports.jsx("p", {
                 className: "popup-message",
@@ -85979,9 +85984,9 @@ Values:
       children: jsxRuntimeExports.jsx(App, {})
     }));
   });
-  var_991ae9e1_6f84_5090_896b_bbbb443eb300 = _i();
+  var_e51f8247_8a06_5eef_9c9d_134e1e3585d0 = _i();
 })();
 export {
   __tla,
-  var_991ae9e1_6f84_5090_896b_bbbb443eb300 as default
+  var_e51f8247_8a06_5eef_9c9d_134e1e3585d0 as default
 };
