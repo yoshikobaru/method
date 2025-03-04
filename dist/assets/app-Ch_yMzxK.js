@@ -1,7 +1,7 @@
 var __defProp2 = Object.defineProperty;
 var __defNormalProp2 = (obj, key2, value) => key2 in obj ? __defProp2(obj, key2, { enumerable: true, configurable: true, writable: true, value }) : obj[key2] = value;
 var __publicField2 = (obj, key2, value) => __defNormalProp2(obj, typeof key2 !== "symbol" ? key2 + "" : key2, value);
-let var_13f261ed_ccd1_5bb1_b935_f2a04c6fd83e;
+let var_8249531b_b401_529a_bf7f_aa158ec07784;
 let __tla = (async () => {
   var Jn = (d, b) => () => (b || d((b = {
     exports: {}
@@ -9980,12 +9980,8 @@ Please change the parent <Route path="${Bt}"> to <Route path="${Bt === "/" ? "*"
             if (!(d == null ? void 0 : d.telegramId)) return;
             const Bt = pt[At];
             if (Bt <= 0) return;
-            const $t = parseInt(d.rootBalance || 0), Tt = $t + Bt;
-            console.log("Collecting MTH:", {
-              currentBalance: $t,
-              amountToAdd: Bt,
-              newBalance: Tt
-            }), (await (await fetch("/update-root-balance", {
+            const Tt = parseInt(d.rootBalance || 0) + Bt;
+            if ((await (await fetch("/update-root-balance", {
               method: "POST",
               headers: {
                 "Content-Type": "application/json",
@@ -9995,19 +9991,23 @@ Please change the parent <Route path="${Bt}"> to <Route path="${Bt === "/" ? "*"
                 telegramId: d.telegramId,
                 rootBalance: Tt
               })
-            })).json()).success ? (window.Telegram.WebApp.CloudStorage.getItem("lastCollection", (Xt, Jt) => {
-              if (Xt) {
-                console.error("Error getting lastCollection:", Xt);
-                return;
-              }
-              const Wt = JSON.parse(Jt || "{}");
-              Wt[At] = Date.now(), window.Telegram.WebApp.CloudStorage.setItem("lastCollection", JSON.stringify(Wt));
-            }), b({
-              rootBalance: Tt
-            }), bt((Xt) => ({
-              ...Xt,
-              [At]: 0
-            }))) : $("\u041E\u0448\u0438\u0431\u043A\u0430 \u043F\u0440\u0438 \u0441\u0431\u043E\u0440\u0435");
+            })).json()).success) {
+              window.Telegram.WebApp.CloudStorage.getItem("lastCollection", (Jt, Wt) => {
+                if (Jt) {
+                  console.error("Error getting lastCollection:", Jt);
+                  return;
+                }
+                const kt = JSON.parse(Wt || "{}");
+                kt[At] = Date.now(), window.Telegram.WebApp.CloudStorage.setItem("lastCollection", JSON.stringify(kt));
+              }), b({
+                rootBalance: Tt
+              }), bt((Jt) => ({
+                ...Jt,
+                [At]: 0
+              }));
+              const Xt = await fetchMiners();
+              dt(Xt);
+            } else $("\u041E\u0448\u0438\u0431\u043A\u0430 \u043F\u0440\u0438 \u0441\u0431\u043E\u0440\u0435");
           } catch (Bt) {
             console.error("Error collecting MTH:", Bt), $("\u041E\u0448\u0438\u0431\u043A\u0430 \u043F\u0440\u0438 \u0441\u0431\u043E\u0440\u0435");
           } finally {
@@ -85992,9 +85992,9 @@ Values:
       children: jsxRuntimeExports.jsx(App, {})
     }));
   });
-  var_13f261ed_ccd1_5bb1_b935_f2a04c6fd83e = _i();
+  var_8249531b_b401_529a_bf7f_aa158ec07784 = _i();
 })();
 export {
   __tla,
-  var_13f261ed_ccd1_5bb1_b935_f2a04c6fd83e as default
+  var_8249531b_b401_529a_bf7f_aa158ec07784 as default
 };
