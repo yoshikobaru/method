@@ -1,7 +1,7 @@
 var __defProp2 = Object.defineProperty;
 var __defNormalProp2 = (obj, key2, value) => key2 in obj ? __defProp2(obj, key2, { enumerable: true, configurable: true, writable: true, value }) : obj[key2] = value;
 var __publicField2 = (obj, key2, value) => __defNormalProp2(obj, typeof key2 !== "symbol" ? key2 + "" : key2, value);
-let var_55735733_0d13_5981_b458_c7f5e6de931c;
+let var_333770b2_66df_5f0a_841f_287d4f74e95b;
 let __tla = (async () => {
   var Jn = (d, b) => () => (b || d((b = {
     exports: {}
@@ -85682,37 +85682,70 @@ Values:
     }
     function MethodPage() {
       const d = useNavigate(), { user: b } = useAuthStore(), { user: _ } = useTelegram(), { tg: $ } = useTelegram(), [rt, j] = reactExports.useState(false), [st, dt] = reactExports.useState(false), [pt, bt] = reactExports.useState(false);
-      console.log("Telegram User:", _), (_ == null ? void 0 : _.username) || (_ == null ? void 0 : _.first_name) || (b == null ? void 0 : b.username), parseInt((b == null ? void 0 : b.rootBalance) || 0);
-      const yt = () => {
+      console.log("Telegram User:", _), (_ == null ? void 0 : _.username) || (_ == null ? void 0 : _.first_name) || (b == null ? void 0 : b.username);
+      const yt = parseInt((b == null ? void 0 : b.rootBalance) || 0), xt = () => {
         var _a3, _b2;
-        const Et = ((_a3 = _ == null ? void 0 : _.first_name) == null ? void 0 : _a3.trim().toLowerCase()) || "", Mt = ((_b2 = _ == null ? void 0 : _.last_name) == null ? void 0 : _b2.trim().toLowerCase()) || "";
-        console.log("First Name:", Et), console.log("Last Name:", Mt);
-        const Rt = Et.includes("poko"), At = Mt.includes("poko");
-        return Rt || At;
-      }, xt = () => {
-        console.log("Claim Reward button clicked"), yt() ? alert("\u0418\u043C\u044F \u043E\u0431\u043D\u043E\u0432\u043B\u0435\u043D\u043E! \u0412\u044B \u043C\u043E\u0436\u0435\u0442\u0435 \u043F\u043E\u043B\u0443\u0447\u0438\u0442\u044C \u043D\u0430\u0433\u0440\u0430\u0434\u0443.") : alert("\u041F\u043E\u0436\u0430\u043B\u0443\u0439\u0441\u0442\u0430, \u043E\u0431\u043D\u043E\u0432\u0438\u0442\u0435 \u0432\u0430\u0448\u0435 \u0438\u043C\u044F \u0432 Telegram, \u0434\u043E\u0431\u0430\u0432\u0438\u0432 \u0442\u0435\u0433 POKO.");
-      }, _t = async () => {
+        const Mt = ((_a3 = _ == null ? void 0 : _.first_name) == null ? void 0 : _a3.trim().toLowerCase()) || "", Rt = ((_b2 = _ == null ? void 0 : _.last_name) == null ? void 0 : _b2.trim().toLowerCase()) || "";
+        console.log("First Name:", Mt), console.log("Last Name:", Rt);
+        const At = Mt.includes("poko"), Bt = Rt.includes("poko");
+        return At || Bt;
+      }, _t = () => {
+        console.log("Claim Reward button clicked"), $.getItem("rewardClaimed", (Mt, Rt) => {
+          if (Mt) {
+            console.error("\u041E\u0448\u0438\u0431\u043A\u0430 \u043F\u0440\u0438 \u043F\u043E\u043B\u0443\u0447\u0435\u043D\u0438\u0438 \u0441\u043E\u0441\u0442\u043E\u044F\u043D\u0438\u044F \u043D\u0430\u0433\u0440\u0430\u0434\u044B:", Mt);
+            return;
+          }
+          if (Rt === "true") {
+            alert("\u0412\u044B \u0443\u0436\u0435 \u043F\u043E\u043B\u0443\u0447\u0438\u043B\u0438 \u043D\u0430\u0433\u0440\u0430\u0434\u0443.");
+            return;
+          }
+          if (xt()) {
+            alert("\u0418\u043C\u044F \u043E\u0431\u043D\u043E\u0432\u043B\u0435\u043D\u043E! \u0412\u044B \u043C\u043E\u0436\u0435\u0442\u0435 \u043F\u043E\u043B\u0443\u0447\u0438\u0442\u044C \u043D\u0430\u0433\u0440\u0430\u0434\u0443.");
+            const Bt = yt + 2500;
+            fetch("/update-root-balance", {
+              method: "POST",
+              headers: {
+                "Content-Type": "application/json",
+                "X-Telegram-Init-Data": $.initData
+              },
+              body: JSON.stringify({
+                telegramId: b.telegramId,
+                rootBalance: Bt
+              })
+            }).then(($t) => $t.json()).then(($t) => {
+              if ($t.success) $.setItem("rootBalance", Bt.toString(), (Tt) => {
+                Tt ? console.error("\u041E\u0448\u0438\u0431\u043A\u0430 \u043F\u0440\u0438 \u0441\u043E\u0445\u0440\u0430\u043D\u0435\u043D\u0438\u0438 \u0431\u0430\u043B\u0430\u043D\u0441\u0430:", Tt) : $.setItem("rewardClaimed", "true", (Ot) => {
+                  Ot ? console.error("\u041E\u0448\u0438\u0431\u043A\u0430 \u043F\u0440\u0438 \u0441\u043E\u0445\u0440\u0430\u043D\u0435\u043D\u0438\u0438 \u0441\u043E\u0441\u0442\u043E\u044F\u043D\u0438\u044F \u043D\u0430\u0433\u0440\u0430\u0434\u044B:", Ot) : alert("\u041D\u0430\u0433\u0440\u0430\u0434\u0430 \u0443\u0441\u043F\u0435\u0448\u043D\u043E \u043F\u043E\u043B\u0443\u0447\u0435\u043D\u0430!");
+                });
+              });
+              else throw new Error("\u041D\u0435 \u0443\u0434\u0430\u043B\u043E\u0441\u044C \u043E\u0431\u043D\u043E\u0432\u0438\u0442\u044C \u0431\u0430\u043B\u0430\u043D\u0441 \u043D\u0430 \u0441\u0435\u0440\u0432\u0435\u0440\u0435");
+            }).catch(($t) => {
+              console.error("\u041E\u0448\u0438\u0431\u043A\u0430 \u043F\u0440\u0438 \u043E\u0431\u043D\u043E\u0432\u043B\u0435\u043D\u0438\u0438 \u0431\u0430\u043B\u0430\u043D\u0441\u0430:", $t), alert("\u041F\u0440\u043E\u0438\u0437\u043E\u0448\u043B\u0430 \u043E\u0448\u0438\u0431\u043A\u0430 \u043F\u0440\u0438 \u043F\u043E\u043B\u0443\u0447\u0435\u043D\u0438\u0438 \u043D\u0430\u0433\u0440\u0430\u0434\u044B. \u041F\u043E\u0436\u0430\u043B\u0443\u0439\u0441\u0442\u0430, \u043F\u043E\u043F\u0440\u043E\u0431\u0443\u0439\u0442\u0435 \u0435\u0449\u0435 \u0440\u0430\u0437.");
+            });
+          } else alert("\u041F\u043E\u0436\u0430\u043B\u0443\u0439\u0441\u0442\u0430, \u043E\u0431\u043D\u043E\u0432\u0438\u0442\u0435 \u0432\u0430\u0448\u0435 \u0438\u043C\u044F \u0432 Telegram, \u0434\u043E\u0431\u0430\u0432\u0438\u0432 \u0442\u0435\u0433 POKO.");
+        });
+      }, Ct = async () => {
         var _a3;
         if (b == null ? void 0 : b.telegramId) try {
-          const Mt = await (await fetch(`/get-referral-link?telegramId=${b.telegramId}`, {
+          const Rt = await (await fetch(`/get-referral-link?telegramId=${b.telegramId}`, {
             headers: {
               "x-telegram-init-data": $.initData
             }
           })).json();
-          if (Mt.inviteLink) {
-            const At = `https://t.me/share/url?text=${encodeURIComponent(`\u{1F680} Join Method!
+          if (Rt.inviteLink) {
+            const Bt = `https://t.me/share/url?text=${encodeURIComponent(`\u{1F680} Join Method!
 
 \u{1F48E} Complete tasks
 \u{1F4B0} Get rewards
 \u{1F3AE} Play games
 \u{1F465} Invite friends
 
-\u{1F525} Join now!`)}&url=${encodeURIComponent(Mt.inviteLink)}`;
-            ((_a3 = window.Telegram) == null ? void 0 : _a3.WebApp) ? window.Telegram.WebApp.openTelegramLink(At) : window.open(At, "_blank");
+\u{1F525} Join now!`)}&url=${encodeURIComponent(Rt.inviteLink)}`;
+            ((_a3 = window.Telegram) == null ? void 0 : _a3.WebApp) ? window.Telegram.WebApp.openTelegramLink(Bt) : window.open(Bt, "_blank");
           }
         } catch {
         }
-      }, Ct = () => {
+      }, Et = () => {
         bt(true);
       };
       return jsxRuntimeExports.jsxs("div", {
@@ -85816,7 +85849,7 @@ Values:
                           })
                         }),
                         jsxRuntimeExports.jsx("button", {
-                          onClick: _t,
+                          onClick: Ct,
                           className: `bg-gradient-to-br from-[#1E293B]/95 via-[#0F172A]/90 to-[#020617]/95
                           backdrop-blur-md rounded-xl p-3
                           border border-blue-500/30 hover:border-blue-400/50
@@ -85936,7 +85969,7 @@ Values:
                                 className: "flex flex-col space-y-2",
                                 children: [
                                   jsxRuntimeExports.jsxs("button", {
-                                    onClick: xt,
+                                    onClick: _t,
                                     className: "border border-blue-400 text-blue-400 rounded w-full h-12 flex items-center justify-center hover:bg-blue-500 hover:text-white transition duration-200",
                                     children: [
                                       jsxRuntimeExports.jsx("span", {
@@ -85947,7 +85980,7 @@ Values:
                                     ]
                                   }),
                                   jsxRuntimeExports.jsxs("button", {
-                                    onClick: Ct,
+                                    onClick: Et,
                                     className: "border border-blue-400 text-blue-400 rounded w-full h-12 flex items-center justify-center hover:bg-blue-500 hover:text-white transition duration-200",
                                     children: [
                                       jsxRuntimeExports.jsx("span", {
@@ -86130,9 +86163,9 @@ Values:
       children: jsxRuntimeExports.jsx(App, {})
     }));
   });
-  var_55735733_0d13_5981_b458_c7f5e6de931c = _i();
+  var_333770b2_66df_5f0a_841f_287d4f74e95b = _i();
 })();
 export {
   __tla,
-  var_55735733_0d13_5981_b458_c7f5e6de931c as default
+  var_333770b2_66df_5f0a_841f_287d4f74e95b as default
 };
