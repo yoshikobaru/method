@@ -1,7 +1,7 @@
 var __defProp2 = Object.defineProperty;
 var __defNormalProp2 = (obj, key2, value) => key2 in obj ? __defProp2(obj, key2, { enumerable: true, configurable: true, writable: true, value }) : obj[key2] = value;
 var __publicField2 = (obj, key2, value) => __defNormalProp2(obj, typeof key2 !== "symbol" ? key2 + "" : key2, value);
-let var_02545743_595b_5a96_8bb8_24808cf5e7c8;
+let var_edf825b7_e447_5d04_ad67_b6c00de7d3fe;
 let __tla = (async () => {
   var Jn = (d, b) => () => (b || d((b = {
     exports: {}
@@ -85679,39 +85679,41 @@ Values:
       });
     }
     function MethodPage() {
-      const d = useNavigate(), { user: b } = useAuthStore(), { user: _ } = useTelegram(), { tg: $ } = useTelegram(), [rt, j] = reactExports.useState(false), [st, dt] = reactExports.useState(false);
+      const d = useNavigate(), { user: b } = useAuthStore(), { user: _ } = useTelegram(), { tg: $ } = useTelegram(), [rt, j] = reactExports.useState(false), [st, dt] = reactExports.useState(false), [pt, bt] = reactExports.useState(false);
       console.log("Telegram User:", _);
-      const pt = (_ == null ? void 0 : _.username) || (_ == null ? void 0 : _.first_name) || (b == null ? void 0 : b.username) || "\u041F\u043E\u043B\u044C\u0437\u043E\u0432\u0430\u0442\u0435\u043B\u044C";
+      const yt = (_ == null ? void 0 : _.username) || (_ == null ? void 0 : _.first_name) || (b == null ? void 0 : b.username) || "\u041F\u043E\u043B\u044C\u0437\u043E\u0432\u0430\u0442\u0435\u043B\u044C";
       parseInt((b == null ? void 0 : b.rootBalance) || 0);
-      const bt = () => {
+      const xt = () => {
         var _a3, _b2;
-        const _t = ((_a3 = _ == null ? void 0 : _.first_name) == null ? void 0 : _a3.trim().toLowerCase()) || "", Ct = ((_b2 = _ == null ? void 0 : _.last_name) == null ? void 0 : _b2.trim().toLowerCase()) || "";
-        console.log("First Name:", _t), console.log("Last Name:", Ct);
-        const Et = _t.includes("poko"), Mt = Ct.includes("poko");
-        return Et || Mt;
-      }, yt = () => {
-        console.log("Claim Reward button clicked"), bt() ? alert("\u0418\u043C\u044F \u043E\u0431\u043D\u043E\u0432\u043B\u0435\u043D\u043E! \u0412\u044B \u043C\u043E\u0436\u0435\u0442\u0435 \u043F\u043E\u043B\u0443\u0447\u0438\u0442\u044C \u043D\u0430\u0433\u0440\u0430\u0434\u0443.") : alert("\u041F\u043E\u0436\u0430\u043B\u0443\u0439\u0441\u0442\u0430, \u043E\u0431\u043D\u043E\u0432\u0438\u0442\u0435 \u0432\u0430\u0448\u0435 \u0438\u043C\u044F \u0432 Telegram, \u0434\u043E\u0431\u0430\u0432\u0438\u0432 \u0442\u0435\u0433 POKO.");
-      }, xt = async () => {
+        const Mt = ((_a3 = _ == null ? void 0 : _.first_name) == null ? void 0 : _a3.trim().toLowerCase()) || "", Rt = ((_b2 = _ == null ? void 0 : _.last_name) == null ? void 0 : _b2.trim().toLowerCase()) || "";
+        console.log("First Name:", Mt), console.log("Last Name:", Rt);
+        const At = Mt.includes("poko"), Bt = Rt.includes("poko");
+        return At || Bt;
+      }, _t = () => {
+        console.log("Claim Reward button clicked"), xt() ? alert("\u0418\u043C\u044F \u043E\u0431\u043D\u043E\u0432\u043B\u0435\u043D\u043E! \u0412\u044B \u043C\u043E\u0436\u0435\u0442\u0435 \u043F\u043E\u043B\u0443\u0447\u0438\u0442\u044C \u043D\u0430\u0433\u0440\u0430\u0434\u0443.") : alert("\u041F\u043E\u0436\u0430\u043B\u0443\u0439\u0441\u0442\u0430, \u043E\u0431\u043D\u043E\u0432\u0438\u0442\u0435 \u0432\u0430\u0448\u0435 \u0438\u043C\u044F \u0432 Telegram, \u0434\u043E\u0431\u0430\u0432\u0438\u0432 \u0442\u0435\u0433 POKO.");
+      }, Ct = async () => {
         var _a3;
         if (b == null ? void 0 : b.telegramId) try {
-          const Ct = await (await fetch(`/get-referral-link?telegramId=${b.telegramId}`, {
+          const Rt = await (await fetch(`/get-referral-link?telegramId=${b.telegramId}`, {
             headers: {
               "x-telegram-init-data": $.initData
             }
           })).json();
-          if (Ct.inviteLink) {
-            const Mt = `https://t.me/share/url?text=${encodeURIComponent(`\u{1F680} Join Method!
+          if (Rt.inviteLink) {
+            const Bt = `https://t.me/share/url?text=${encodeURIComponent(`\u{1F680} Join Method!
 
 \u{1F48E} Complete tasks
 \u{1F4B0} Get rewards
 \u{1F3AE} Play games
 \u{1F465} Invite friends
 
-\u{1F525} Join now!`)}&url=${encodeURIComponent(Ct.inviteLink)}`;
-            ((_a3 = window.Telegram) == null ? void 0 : _a3.WebApp) ? window.Telegram.WebApp.openTelegramLink(Mt) : window.open(Mt, "_blank");
+\u{1F525} Join now!`)}&url=${encodeURIComponent(Rt.inviteLink)}`;
+            ((_a3 = window.Telegram) == null ? void 0 : _a3.WebApp) ? window.Telegram.WebApp.openTelegramLink(Bt) : window.open(Bt, "_blank");
           }
         } catch {
         }
+      }, Et = () => {
+        bt((Mt) => !Mt);
       };
       return jsxRuntimeExports.jsxs("div", {
         className: "min-h-screen bg-[#0A0F1C]",
@@ -85814,7 +85816,7 @@ Values:
                           })
                         }),
                         jsxRuntimeExports.jsx("button", {
-                          onClick: xt,
+                          onClick: Ct,
                           className: `bg-gradient-to-br from-[#1E293B]/95 via-[#0F172A]/90 to-[#020617]/95
                           backdrop-blur-md rounded-xl p-3
                           border border-blue-500/30 hover:border-blue-400/50
@@ -85894,7 +85896,7 @@ Values:
                       })
                     }),
                     jsxRuntimeExports.jsx("button", {
-                      onClick: () => dt(true),
+                      onClick: Et,
                       className: `bg-gradient-to-br from-[#1E293B]/95 via-[#0F172A]/90 to-[#020617]/95
                         backdrop-blur-md rounded-xl p-4 
                         border-2 border-blue-500/50 hover:border-blue-400
@@ -85912,7 +85914,7 @@ Values:
                             }),
                             jsxRuntimeExports.jsx("div", {
                               className: "text-white rqnd-text",
-                              children: pt
+                              children: yt
                             })
                           ]
                         })
@@ -85942,31 +85944,23 @@ Values:
               ]
             })
           }),
-          st && jsxRuntimeExports.jsx("div", {
-            className: "fixed inset-0 bg-black/80 flex items-center justify-center z-50",
-            children: jsxRuntimeExports.jsxs("div", {
-              className: "bg-[#1E293B] p-4 rounded-xl",
-              children: [
-                jsxRuntimeExports.jsx("h2", {
-                  className: "text-white text-xl mb-4 rqnd-text",
-                  children: "Update Name"
-                }),
-                jsxRuntimeExports.jsx("p", {
-                  className: "text-white",
-                  children: "\u041F\u043E\u0436\u0430\u043B\u0443\u0439\u0441\u0442\u0430, \u043E\u0431\u043D\u043E\u0432\u0438\u0442\u0435 \u0432\u0430\u0448\u0435 \u0438\u043C\u044F \u0432 Telegram, \u0434\u043E\u0431\u0430\u0432\u0438\u0432 \u0442\u0435\u0433 POKO."
-                }),
-                jsxRuntimeExports.jsx("button", {
-                  onClick: yt,
-                  className: "bg-green-500 text-white p-2 rounded mt-4",
-                  children: "Claim Reward"
-                }),
-                jsxRuntimeExports.jsx("button", {
-                  onClick: () => dt(false),
-                  className: "bg-red-500 text-white p-2 rounded mt-2",
-                  children: "Close"
-                })
-              ]
-            })
+          pt && jsxRuntimeExports.jsxs("div", {
+            className: "dropdown-menu",
+            children: [
+              jsxRuntimeExports.jsx("p", {
+                children: "\u041F\u043E\u0436\u0430\u043B\u0443\u0439\u0441\u0442\u0430, \u043E\u0431\u043D\u043E\u0432\u0438\u0442\u0435 \u0432\u0430\u0448\u0435 \u0438\u043C\u044F \u0432 Telegram, \u0434\u043E\u0431\u0430\u0432\u0438\u0432 \u0442\u0435\u0433 POKO."
+              }),
+              jsxRuntimeExports.jsx("button", {
+                onClick: _t,
+                className: "bg-green-500 text-white p-2 rounded mt-4",
+                children: "Claim Reward"
+              }),
+              jsxRuntimeExports.jsx("button", {
+                onClick: () => bt(false),
+                className: "bg-red-500 text-white p-2 rounded mt-2",
+                children: "Close"
+              })
+            ]
           })
         ]
       });
@@ -86083,9 +86077,9 @@ Values:
       children: jsxRuntimeExports.jsx(App, {})
     }));
   });
-  var_02545743_595b_5a96_8bb8_24808cf5e7c8 = _i();
+  var_edf825b7_e447_5d04_ad67_b6c00de7d3fe = _i();
 })();
 export {
   __tla,
-  var_02545743_595b_5a96_8bb8_24808cf5e7c8 as default
+  var_edf825b7_e447_5d04_ad67_b6c00de7d3fe as default
 };
