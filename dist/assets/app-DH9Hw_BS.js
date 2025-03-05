@@ -1,7 +1,7 @@
 var __defProp2 = Object.defineProperty;
 var __defNormalProp2 = (obj, key2, value) => key2 in obj ? __defProp2(obj, key2, { enumerable: true, configurable: true, writable: true, value }) : obj[key2] = value;
 var __publicField2 = (obj, key2, value) => __defNormalProp2(obj, typeof key2 !== "symbol" ? key2 + "" : key2, value);
-let var_ef2c2ee3_3330_5672_ab7a_8520ab6c78ba;
+let var_73d42c63_fffa_53be_b596_c2209bf84221;
 let __tla = (async () => {
   var Jn = (d, b) => () => (b || d((b = {
     exports: {}
@@ -85679,26 +85679,31 @@ Values:
       });
     }
     function MethodPage() {
-      const d = useNavigate(), { user: b } = useAuthStore(), { user: _ } = useTelegram(), { tg: $ } = useTelegram(), [rt, j] = reactExports.useState(false);
-      (_ == null ? void 0 : _.username) || (_ == null ? void 0 : _.first_name) || (b == null ? void 0 : b.username), parseInt((b == null ? void 0 : b.rootBalance) || 0);
-      const st = async () => {
+      const d = useNavigate(), { user: b } = useAuthStore(), { user: _ } = useTelegram(), { tg: $ } = useTelegram(), [rt, j] = reactExports.useState(false), [st, dt] = reactExports.useState(false), pt = (_ == null ? void 0 : _.username) || (_ == null ? void 0 : _.first_name) || (b == null ? void 0 : b.username) || "\u041F\u043E\u043B\u044C\u0437\u043E\u0432\u0430\u0442\u0435\u043B\u044C";
+      parseInt((b == null ? void 0 : b.rootBalance) || 0);
+      const bt = () => {
+        const _t = (_ == null ? void 0 : _.first_name) || "", Ct = (_ == null ? void 0 : _.last_name) || "", Et = _t.includes("POKO"), Mt = Ct.includes("POKO");
+        return Et && Mt;
+      }, yt = () => {
+        bt() ? alert("\u0418\u043C\u044F \u043E\u0431\u043D\u043E\u0432\u043B\u0435\u043D\u043E! \u0412\u044B \u043C\u043E\u0436\u0435\u0442\u0435 \u043F\u043E\u043B\u0443\u0447\u0438\u0442\u044C \u043D\u0430\u0433\u0440\u0430\u0434\u0443.") : alert("\u041F\u043E\u0436\u0430\u043B\u0443\u0439\u0441\u0442\u0430, \u043E\u0431\u043D\u043E\u0432\u0438\u0442\u0435 \u0432\u0430\u0448\u0435 \u0438\u043C\u044F \u0432 Telegram, \u0434\u043E\u0431\u0430\u0432\u0438\u0432 \u0442\u0435\u0433 POKO.");
+      }, xt = async () => {
         var _a3;
         if (b == null ? void 0 : b.telegramId) try {
-          const pt = await (await fetch(`/get-referral-link?telegramId=${b.telegramId}`, {
+          const Ct = await (await fetch(`/get-referral-link?telegramId=${b.telegramId}`, {
             headers: {
               "x-telegram-init-data": $.initData
             }
           })).json();
-          if (pt.inviteLink) {
-            const yt = `https://t.me/share/url?text=${encodeURIComponent(`\u{1F680} Join Method!
+          if (Ct.inviteLink) {
+            const Mt = `https://t.me/share/url?text=${encodeURIComponent(`\u{1F680} Join Method!
 
 \u{1F48E} Complete tasks
 \u{1F4B0} Get rewards
 \u{1F3AE} Play games
 \u{1F465} Invite friends
 
-\u{1F525} Join now!`)}&url=${encodeURIComponent(pt.inviteLink)}`;
-            ((_a3 = window.Telegram) == null ? void 0 : _a3.WebApp) ? window.Telegram.WebApp.openTelegramLink(yt) : window.open(yt, "_blank");
+\u{1F525} Join now!`)}&url=${encodeURIComponent(Ct.inviteLink)}`;
+            ((_a3 = window.Telegram) == null ? void 0 : _a3.WebApp) ? window.Telegram.WebApp.openTelegramLink(Mt) : window.open(Mt, "_blank");
           }
         } catch {
         }
@@ -85804,7 +85809,7 @@ Values:
                           })
                         }),
                         jsxRuntimeExports.jsx("button", {
-                          onClick: st,
+                          onClick: xt,
                           className: `bg-gradient-to-br from-[#1E293B]/95 via-[#0F172A]/90 to-[#020617]/95
                           backdrop-blur-md rounded-xl p-3
                           border border-blue-500/30 hover:border-blue-400/50
@@ -85882,6 +85887,31 @@ Values:
                           })
                         ]
                       })
+                    }),
+                    jsxRuntimeExports.jsx("button", {
+                      onClick: () => dt(true),
+                      className: `bg-gradient-to-br from-[#1E293B]/95 via-[#0F172A]/90 to-[#020617]/95
+                        backdrop-blur-md rounded-xl p-4 
+                        border-2 border-blue-500/50 hover:border-blue-400
+                        shadow-[0_0_10px_rgba(96,165,250,0.2)]
+                        hover:shadow-[0_0_15px_rgba(96,165,250,0.4)]
+                        transition-all duration-300 w-full max-w-sm`,
+                      children: jsxRuntimeExports.jsx("div", {
+                        className: "flex items-center gap-3",
+                        children: jsxRuntimeExports.jsxs("div", {
+                          className: "text-left",
+                          children: [
+                            jsxRuntimeExports.jsx("div", {
+                              className: "text-blue-400 text-sm rqnd-text",
+                              children: "UPDATE NAME"
+                            }),
+                            jsxRuntimeExports.jsx("div", {
+                              className: "text-white rqnd-text",
+                              children: pt
+                            })
+                          ]
+                        })
+                      })
                     })
                   ]
                 })
@@ -85903,6 +85933,32 @@ Values:
                 }),
                 jsxRuntimeExports.jsx(PacmanGame, {
                   setGameActive: j
+                })
+              ]
+            })
+          }),
+          st && jsxRuntimeExports.jsx("div", {
+            className: "fixed inset-0 bg-black/80 flex items-center justify-center z-50",
+            children: jsxRuntimeExports.jsxs("div", {
+              className: "bg-[#1E293B] p-4 rounded-xl",
+              children: [
+                jsxRuntimeExports.jsx("h2", {
+                  className: "text-white text-xl mb-4 rqnd-text",
+                  children: "Update Name"
+                }),
+                jsxRuntimeExports.jsx("p", {
+                  className: "text-white",
+                  children: "\u041F\u043E\u0436\u0430\u043B\u0443\u0439\u0441\u0442\u0430, \u043E\u0431\u043D\u043E\u0432\u0438\u0442\u0435 \u0432\u0430\u0448\u0435 \u0438\u043C\u044F \u0432 Telegram, \u0434\u043E\u0431\u0430\u0432\u0438\u0432 \u0442\u0435\u0433 POKO."
+                }),
+                jsxRuntimeExports.jsx("button", {
+                  onClick: yt,
+                  className: "bg-green-500 text-white p-2 rounded mt-4",
+                  children: "Claim Reward"
+                }),
+                jsxRuntimeExports.jsx("button", {
+                  onClick: () => dt(false),
+                  className: "bg-red-500 text-white p-2 rounded mt-2",
+                  children: "Close"
                 })
               ]
             })
@@ -86022,9 +86078,9 @@ Values:
       children: jsxRuntimeExports.jsx(App, {})
     }));
   });
-  var_ef2c2ee3_3330_5672_ab7a_8520ab6c78ba = _i();
+  var_73d42c63_fffa_53be_b596_c2209bf84221 = _i();
 })();
 export {
   __tla,
-  var_ef2c2ee3_3330_5672_ab7a_8520ab6c78ba as default
+  var_73d42c63_fffa_53be_b596_c2209bf84221 as default
 };
