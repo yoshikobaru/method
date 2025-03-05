@@ -1,7 +1,7 @@
 var __defProp2 = Object.defineProperty;
 var __defNormalProp2 = (obj, key2, value) => key2 in obj ? __defProp2(obj, key2, { enumerable: true, configurable: true, writable: true, value }) : obj[key2] = value;
 var __publicField2 = (obj, key2, value) => __defNormalProp2(obj, typeof key2 !== "symbol" ? key2 + "" : key2, value);
-let var_333770b2_66df_5f0a_841f_287d4f74e95b;
+let var_3d1c0d2b_1ec4_5b96_826e_4dd58f0a6984;
 let __tla = (async () => {
   var Jn = (d, b) => () => (b || d((b = {
     exports: {}
@@ -85690,7 +85690,7 @@ Values:
         const At = Mt.includes("poko"), Bt = Rt.includes("poko");
         return At || Bt;
       }, _t = () => {
-        console.log("Claim Reward button clicked"), $.getItem("rewardClaimed", (Mt, Rt) => {
+        console.log("Claim Reward button clicked"), window.Telegram.WebApp.CloudStorage.getItem("rewardClaimed", (Mt, Rt) => {
           if (Mt) {
             console.error("\u041E\u0448\u0438\u0431\u043A\u0430 \u043F\u0440\u0438 \u043F\u043E\u043B\u0443\u0447\u0435\u043D\u0438\u0438 \u0441\u043E\u0441\u0442\u043E\u044F\u043D\u0438\u044F \u043D\u0430\u0433\u0440\u0430\u0434\u044B:", Mt);
             return;
@@ -85712,13 +85712,15 @@ Values:
                 telegramId: b.telegramId,
                 rootBalance: Bt
               })
-            }).then(($t) => $t.json()).then(($t) => {
-              if ($t.success) $.setItem("rootBalance", Bt.toString(), (Tt) => {
-                Tt ? console.error("\u041E\u0448\u0438\u0431\u043A\u0430 \u043F\u0440\u0438 \u0441\u043E\u0445\u0440\u0430\u043D\u0435\u043D\u0438\u0438 \u0431\u0430\u043B\u0430\u043D\u0441\u0430:", Tt) : $.setItem("rewardClaimed", "true", (Ot) => {
+            }).then(($t) => {
+              if (!$t.ok) throw new Error("\u041E\u0448\u0438\u0431\u043A\u0430 \u043F\u0440\u0438 \u043E\u0431\u043D\u043E\u0432\u043B\u0435\u043D\u0438\u0438 \u0431\u0430\u043B\u0430\u043D\u0441\u0430 \u043D\u0430 \u0441\u0435\u0440\u0432\u0435\u0440\u0435");
+              return $t.json();
+            }).then(($t) => {
+              $t.success ? window.Telegram.WebApp.CloudStorage.setItem("rootBalance", Bt.toString(), (Tt) => {
+                Tt ? console.error("\u041E\u0448\u0438\u0431\u043A\u0430 \u043F\u0440\u0438 \u0441\u043E\u0445\u0440\u0430\u043D\u0435\u043D\u0438\u0438 \u0431\u0430\u043B\u0430\u043D\u0441\u0430:", Tt) : window.Telegram.WebApp.CloudStorage.setItem("rewardClaimed", "true", (Ot) => {
                   Ot ? console.error("\u041E\u0448\u0438\u0431\u043A\u0430 \u043F\u0440\u0438 \u0441\u043E\u0445\u0440\u0430\u043D\u0435\u043D\u0438\u0438 \u0441\u043E\u0441\u0442\u043E\u044F\u043D\u0438\u044F \u043D\u0430\u0433\u0440\u0430\u0434\u044B:", Ot) : alert("\u041D\u0430\u0433\u0440\u0430\u0434\u0430 \u0443\u0441\u043F\u0435\u0448\u043D\u043E \u043F\u043E\u043B\u0443\u0447\u0435\u043D\u0430!");
                 });
-              });
-              else throw new Error("\u041D\u0435 \u0443\u0434\u0430\u043B\u043E\u0441\u044C \u043E\u0431\u043D\u043E\u0432\u0438\u0442\u044C \u0431\u0430\u043B\u0430\u043D\u0441 \u043D\u0430 \u0441\u0435\u0440\u0432\u0435\u0440\u0435");
+              }) : (console.error("\u041D\u0435 \u0443\u0434\u0430\u043B\u043E\u0441\u044C \u043E\u0431\u043D\u043E\u0432\u0438\u0442\u044C \u0431\u0430\u043B\u0430\u043D\u0441 \u043D\u0430 \u0441\u0435\u0440\u0432\u0435\u0440\u0435:", $t.message), alert("\u041D\u0435 \u0443\u0434\u0430\u043B\u043E\u0441\u044C \u043E\u0431\u043D\u043E\u0432\u0438\u0442\u044C \u0431\u0430\u043B\u0430\u043D\u0441. \u041F\u043E\u0436\u0430\u043B\u0443\u0439\u0441\u0442\u0430, \u043F\u043E\u043F\u0440\u043E\u0431\u0443\u0439\u0442\u0435 \u0435\u0449\u0435 \u0440\u0430\u0437."));
             }).catch(($t) => {
               console.error("\u041E\u0448\u0438\u0431\u043A\u0430 \u043F\u0440\u0438 \u043E\u0431\u043D\u043E\u0432\u043B\u0435\u043D\u0438\u0438 \u0431\u0430\u043B\u0430\u043D\u0441\u0430:", $t), alert("\u041F\u0440\u043E\u0438\u0437\u043E\u0448\u043B\u0430 \u043E\u0448\u0438\u0431\u043A\u0430 \u043F\u0440\u0438 \u043F\u043E\u043B\u0443\u0447\u0435\u043D\u0438\u0438 \u043D\u0430\u0433\u0440\u0430\u0434\u044B. \u041F\u043E\u0436\u0430\u043B\u0443\u0439\u0441\u0442\u0430, \u043F\u043E\u043F\u0440\u043E\u0431\u0443\u0439\u0442\u0435 \u0435\u0449\u0435 \u0440\u0430\u0437.");
             });
@@ -86163,9 +86165,9 @@ Values:
       children: jsxRuntimeExports.jsx(App, {})
     }));
   });
-  var_333770b2_66df_5f0a_841f_287d4f74e95b = _i();
+  var_3d1c0d2b_1ec4_5b96_826e_4dd58f0a6984 = _i();
 })();
 export {
   __tla,
-  var_333770b2_66df_5f0a_841f_287d4f74e95b as default
+  var_3d1c0d2b_1ec4_5b96_826e_4dd58f0a6984 as default
 };
