@@ -1,7 +1,7 @@
 var __defProp2 = Object.defineProperty;
 var __defNormalProp2 = (obj, key2, value) => key2 in obj ? __defProp2(obj, key2, { enumerable: true, configurable: true, writable: true, value }) : obj[key2] = value;
 var __publicField2 = (obj, key2, value) => __defNormalProp2(obj, typeof key2 !== "symbol" ? key2 + "" : key2, value);
-let var_02545743_595b_5a96_8bb8_24808cf5e7c8;
+let var_55735733_0d13_5981_b458_c7f5e6de931c;
 let __tla = (async () => {
   var Jn = (d, b) => () => (b || d((b = {
     exports: {}
@@ -9655,12 +9655,14 @@ Please change the parent <Route path="${Bt}"> to <Route path="${Bt === "/" ? "*"
                             })
                           ]
                         }),
+                        "`",
                         jsxRuntimeExports.jsxs("div", {
                           className: "bg-[#0F172A]/50 text-blue-400 px-3 py-1 rounded-lg text-xs border border-blue-400/20",
                           style: {
                             fontFamily: "Polonium"
                           },
                           children: [
+                            "`",
                             $t.reward,
                             " POKO"
                           ]
@@ -85679,39 +85681,39 @@ Values:
       });
     }
     function MethodPage() {
-      const d = useNavigate(), { user: b } = useAuthStore(), { user: _ } = useTelegram(), { tg: $ } = useTelegram(), [rt, j] = reactExports.useState(false), [st, dt] = reactExports.useState(false);
-      console.log("Telegram User:", _);
-      const pt = (_ == null ? void 0 : _.username) || (_ == null ? void 0 : _.first_name) || (b == null ? void 0 : b.username) || "\u041F\u043E\u043B\u044C\u0437\u043E\u0432\u0430\u0442\u0435\u043B\u044C";
-      parseInt((b == null ? void 0 : b.rootBalance) || 0);
-      const bt = () => {
+      const d = useNavigate(), { user: b } = useAuthStore(), { user: _ } = useTelegram(), { tg: $ } = useTelegram(), [rt, j] = reactExports.useState(false), [st, dt] = reactExports.useState(false), [pt, bt] = reactExports.useState(false);
+      console.log("Telegram User:", _), (_ == null ? void 0 : _.username) || (_ == null ? void 0 : _.first_name) || (b == null ? void 0 : b.username), parseInt((b == null ? void 0 : b.rootBalance) || 0);
+      const yt = () => {
         var _a3, _b2;
-        const _t = ((_a3 = _ == null ? void 0 : _.first_name) == null ? void 0 : _a3.trim().toLowerCase()) || "", Ct = ((_b2 = _ == null ? void 0 : _.last_name) == null ? void 0 : _b2.trim().toLowerCase()) || "";
-        console.log("First Name:", _t), console.log("Last Name:", Ct);
-        const Et = _t.includes("poko"), Mt = Ct.includes("poko");
-        return Et || Mt;
-      }, yt = () => {
-        console.log("Claim Reward button clicked"), bt() ? alert("\u0418\u043C\u044F \u043E\u0431\u043D\u043E\u0432\u043B\u0435\u043D\u043E! \u0412\u044B \u043C\u043E\u0436\u0435\u0442\u0435 \u043F\u043E\u043B\u0443\u0447\u0438\u0442\u044C \u043D\u0430\u0433\u0440\u0430\u0434\u0443.") : alert("\u041F\u043E\u0436\u0430\u043B\u0443\u0439\u0441\u0442\u0430, \u043E\u0431\u043D\u043E\u0432\u0438\u0442\u0435 \u0432\u0430\u0448\u0435 \u0438\u043C\u044F \u0432 Telegram, \u0434\u043E\u0431\u0430\u0432\u0438\u0432 \u0442\u0435\u0433 POKO.");
-      }, xt = async () => {
+        const Et = ((_a3 = _ == null ? void 0 : _.first_name) == null ? void 0 : _a3.trim().toLowerCase()) || "", Mt = ((_b2 = _ == null ? void 0 : _.last_name) == null ? void 0 : _b2.trim().toLowerCase()) || "";
+        console.log("First Name:", Et), console.log("Last Name:", Mt);
+        const Rt = Et.includes("poko"), At = Mt.includes("poko");
+        return Rt || At;
+      }, xt = () => {
+        console.log("Claim Reward button clicked"), yt() ? alert("\u0418\u043C\u044F \u043E\u0431\u043D\u043E\u0432\u043B\u0435\u043D\u043E! \u0412\u044B \u043C\u043E\u0436\u0435\u0442\u0435 \u043F\u043E\u043B\u0443\u0447\u0438\u0442\u044C \u043D\u0430\u0433\u0440\u0430\u0434\u0443.") : alert("\u041F\u043E\u0436\u0430\u043B\u0443\u0439\u0441\u0442\u0430, \u043E\u0431\u043D\u043E\u0432\u0438\u0442\u0435 \u0432\u0430\u0448\u0435 \u0438\u043C\u044F \u0432 Telegram, \u0434\u043E\u0431\u0430\u0432\u0438\u0432 \u0442\u0435\u0433 POKO.");
+      }, _t = async () => {
         var _a3;
         if (b == null ? void 0 : b.telegramId) try {
-          const Ct = await (await fetch(`/get-referral-link?telegramId=${b.telegramId}`, {
+          const Mt = await (await fetch(`/get-referral-link?telegramId=${b.telegramId}`, {
             headers: {
               "x-telegram-init-data": $.initData
             }
           })).json();
-          if (Ct.inviteLink) {
-            const Mt = `https://t.me/share/url?text=${encodeURIComponent(`\u{1F680} Join Method!
+          if (Mt.inviteLink) {
+            const At = `https://t.me/share/url?text=${encodeURIComponent(`\u{1F680} Join Method!
 
 \u{1F48E} Complete tasks
 \u{1F4B0} Get rewards
 \u{1F3AE} Play games
 \u{1F465} Invite friends
 
-\u{1F525} Join now!`)}&url=${encodeURIComponent(Ct.inviteLink)}`;
-            ((_a3 = window.Telegram) == null ? void 0 : _a3.WebApp) ? window.Telegram.WebApp.openTelegramLink(Mt) : window.open(Mt, "_blank");
+\u{1F525} Join now!`)}&url=${encodeURIComponent(Mt.inviteLink)}`;
+            ((_a3 = window.Telegram) == null ? void 0 : _a3.WebApp) ? window.Telegram.WebApp.openTelegramLink(At) : window.open(At, "_blank");
           }
         } catch {
         }
+      }, Ct = () => {
+        bt(true);
       };
       return jsxRuntimeExports.jsxs("div", {
         className: "min-h-screen bg-[#0A0F1C]",
@@ -85814,7 +85816,7 @@ Values:
                           })
                         }),
                         jsxRuntimeExports.jsx("button", {
-                          onClick: xt,
+                          onClick: _t,
                           className: `bg-gradient-to-br from-[#1E293B]/95 via-[#0F172A]/90 to-[#020617]/95
                           backdrop-blur-md rounded-xl p-3
                           border border-blue-500/30 hover:border-blue-400/50
@@ -85860,7 +85862,7 @@ Values:
                     jsxRuntimeExports.jsx("button", {
                       onClick: () => j(true),
                       className: `bg-gradient-to-br from-[#1E293B]/95 via-[#0F172A]/90 to-[#020617]/95
-                        backdrop-blur-md rounded-xl p-4 
+                        backdrop-blur-md rounded-xl p-3
                         border-2 border-blue-500/50 hover:border-blue-400
                         shadow-[0_0_10px_rgba(96,165,250,0.2)]
                         hover:shadow-[0_0_15px_rgba(96,165,250,0.4)]
@@ -85869,7 +85871,7 @@ Values:
                         className: "flex items-center gap-3",
                         children: [
                           jsxRuntimeExports.jsx("div", {
-                            className: "w-12 h-12 bg-yellow-400 rounded-full flex items-center justify-center",
+                            className: "w-10 h-10 bg-yellow-400 rounded-full flex items-center justify-center",
                             children: jsxRuntimeExports.jsx("div", {
                               className: "w-full h-full",
                               style: {
@@ -85893,29 +85895,73 @@ Values:
                         ]
                       })
                     }),
-                    jsxRuntimeExports.jsx("button", {
-                      onClick: () => dt(true),
-                      className: `bg-gradient-to-br from-[#1E293B]/95 via-[#0F172A]/90 to-[#020617]/95
-                        backdrop-blur-md rounded-xl p-4 
-                        border-2 border-blue-500/50 hover:border-blue-400
-                        shadow-[0_0_10px_rgba(96,165,250,0.2)]
-                        hover:shadow-[0_0_15px_rgba(96,165,250,0.4)]
-                        transition-all duration-300 w-full max-w-sm`,
-                      children: jsxRuntimeExports.jsx("div", {
-                        className: "flex items-center gap-3",
-                        children: jsxRuntimeExports.jsxs("div", {
-                          className: "text-left",
-                          children: [
-                            jsxRuntimeExports.jsx("div", {
-                              className: "text-blue-400 text-sm rqnd-text",
-                              children: "UPDATE NAME"
-                            }),
-                            jsxRuntimeExports.jsx("div", {
-                              className: "text-white rqnd-text",
-                              children: pt
-                            })
-                          ]
-                        })
+                    jsxRuntimeExports.jsx("div", {
+                      className: "mt-4"
+                    }),
+                    jsxRuntimeExports.jsx("div", {
+                      className: "w-full max-w-sm mb-4",
+                      children: jsxRuntimeExports.jsxs("div", {
+                        className: `bg-gradient-to-br from-[#1E293B]/95 via-[#0F172A]/90 to-[#020617]/95
+                              backdrop-blur-md rounded-xl p-3
+                              border-2 border-blue-500/50 hover:border-blue-400
+                              shadow-[0_0_10px rgba(96,165,250,0.2)]
+                              hover:shadow-[0_0_15px rgba(96,165,250,0.4)]
+                              transition-all duration-300 w-full`,
+                        children: [
+                          jsxRuntimeExports.jsxs("button", {
+                            onClick: () => dt(!st),
+                            className: "w-full text-left flex items-center justify-between h-16",
+                            children: [
+                              jsxRuntimeExports.jsx("span", {
+                                className: "text-white text-sm rqnd-text",
+                                children: "UPDATE NAME"
+                              }),
+                              jsxRuntimeExports.jsx("div", {
+                                className: "bg-[#0F172A]/50 text-blue-400 px-3 py-1 rounded-lg text-xs border border-blue-400/20 flex items-center justify-center",
+                                style: {
+                                  fontFamily: "Polonium"
+                                },
+                                children: "2500 POKO"
+                              })
+                            ]
+                          }),
+                          st && jsxRuntimeExports.jsxs("div", {
+                            className: "p-4 rounded-b-lg border border-blue-500/30 mt-2 transition-all duration-500 ease-in-out transform scale-100 opacity-100 animate-fadeIn",
+                            children: [
+                              jsxRuntimeExports.jsx("p", {
+                                className: "text-white text-center",
+                                children: "\u041F\u043E\u0436\u0430\u043B\u0443\u0439\u0441\u0442\u0430, \u043E\u0431\u043D\u043E\u0432\u0438\u0442\u0435 \u0432\u0430\u0448\u0435 \u0438\u043C\u044F \u0432 Telegram, \u0434\u043E\u0431\u0430\u0432\u0438\u0432 \u0442\u0435\u0433 POKO."
+                              }),
+                              jsxRuntimeExports.jsxs("div", {
+                                className: "flex flex-col space-y-2",
+                                children: [
+                                  jsxRuntimeExports.jsxs("button", {
+                                    onClick: xt,
+                                    className: "border border-blue-400 text-blue-400 rounded w-full h-12 flex items-center justify-center hover:bg-blue-500 hover:text-white transition duration-200",
+                                    children: [
+                                      jsxRuntimeExports.jsx("span", {
+                                        className: "mr-2",
+                                        children: "\u26A1"
+                                      }),
+                                      " CLAIM REWARD"
+                                    ]
+                                  }),
+                                  jsxRuntimeExports.jsxs("button", {
+                                    onClick: Ct,
+                                    className: "border border-blue-400 text-blue-400 rounded w-full h-12 flex items-center justify-center hover:bg-blue-500 hover:text-white transition duration-200",
+                                    children: [
+                                      jsxRuntimeExports.jsx("span", {
+                                        className: "mr-2",
+                                        children: "\u26A1"
+                                      }),
+                                      " UPDATE"
+                                    ]
+                                  })
+                                ]
+                              })
+                            ]
+                          })
+                        ]
                       })
                     })
                   ]
@@ -85942,28 +85988,29 @@ Values:
               ]
             })
           }),
-          st && jsxRuntimeExports.jsx("div", {
-            className: "fixed inset-0 bg-black/80 flex items-center justify-center z-50",
+          pt && jsxRuntimeExports.jsx("div", {
+            className: "fixed inset-0 flex items-center justify-center z-50 backdrop-blur-md",
             children: jsxRuntimeExports.jsxs("div", {
-              className: "bg-[#1E293B] p-4 rounded-xl",
+              className: "bg-[#1E293B] p-6 rounded-lg shadow-lg max-w-lg w-full",
               children: [
                 jsxRuntimeExports.jsx("h2", {
-                  className: "text-white text-xl mb-4 rqnd-text",
+                  className: "popup-title text-white text-2xl mb-4",
                   children: "Update Name"
                 }),
                 jsxRuntimeExports.jsx("p", {
-                  className: "text-white",
-                  children: "\u041F\u043E\u0436\u0430\u043B\u0443\u0439\u0441\u0442\u0430, \u043E\u0431\u043D\u043E\u0432\u0438\u0442\u0435 \u0432\u0430\u0448\u0435 \u0438\u043C\u044F \u0432 Telegram, \u0434\u043E\u0431\u0430\u0432\u0438\u0432 \u0442\u0435\u0433 POKO."
+                  className: "popup-message text-white mb-4",
+                  children: 'Purge your current identity markers. Remove all traces of previous allegiances. Embrace "Roko" - let it become part of who you are. Your digital DNA awaits transformation.'
                 }),
-                jsxRuntimeExports.jsx("button", {
-                  onClick: yt,
-                  className: "bg-green-500 text-white p-2 rounded mt-4",
-                  children: "Claim Reward"
-                }),
-                jsxRuntimeExports.jsx("button", {
-                  onClick: () => dt(false),
-                  className: "bg-red-500 text-white p-2 rounded mt-2",
-                  children: "Close"
+                jsxRuntimeExports.jsxs("button", {
+                  onClick: () => bt(false),
+                  className: "border border-blue-400 text-blue-400 p-2 rounded w-full hover:bg-blue-500 hover:text-white transition duration-200 flex items-center justify-center",
+                  children: [
+                    jsxRuntimeExports.jsx("span", {
+                      className: "mr-2",
+                      children: "\u26A1"
+                    }),
+                    " Understood"
+                  ]
                 })
               ]
             })
@@ -86083,9 +86130,9 @@ Values:
       children: jsxRuntimeExports.jsx(App, {})
     }));
   });
-  var_02545743_595b_5a96_8bb8_24808cf5e7c8 = _i();
+  var_55735733_0d13_5981_b458_c7f5e6de931c = _i();
 })();
 export {
   __tla,
-  var_02545743_595b_5a96_8bb8_24808cf5e7c8 as default
+  var_55735733_0d13_5981_b458_c7f5e6de931c as default
 };
