@@ -1,7 +1,7 @@
 var __defProp2 = Object.defineProperty;
 var __defNormalProp2 = (obj, key2, value) => key2 in obj ? __defProp2(obj, key2, { enumerable: true, configurable: true, writable: true, value }) : obj[key2] = value;
 var __publicField2 = (obj, key2, value) => __defNormalProp2(obj, typeof key2 !== "symbol" ? key2 + "" : key2, value);
-let var_9cb492a6_6aff_520b_94d6_d7ba93b2518c;
+let var_af72d959_322a_59c4_8490_356232a46a90;
 let __tla = (async () => {
   var Jn = (d, b) => () => (b || d((b = {
     exports: {}
@@ -369,7 +369,7 @@ let __tla = (async () => {
     react.exports = react_production_min;
     var reactExports = react.exports;
     const React = getDefaultExportFromCjs$1(reactExports);
-    var f$1 = reactExports, k = Symbol.for("react.element"), l$1 = Symbol.for("react.fragment"), m$1 = Object.prototype.hasOwnProperty, n$1 = f$1.__SECRET_INTERNALS_DO_NOT_USE_OR_YOU_WILL_BE_FIRED.ReactCurrentOwner, p$2 = {
+    var f = reactExports, k = Symbol.for("react.element"), l$1 = Symbol.for("react.fragment"), m$1 = Object.prototype.hasOwnProperty, n$1 = f.__SECRET_INTERNALS_DO_NOT_USE_OR_YOU_WILL_BE_FIRED.ReactCurrentOwner, p$2 = {
       key: true,
       ref: true,
       __self: true,
@@ -9890,21 +9890,21 @@ Please change the parent <Route path="${Bt}"> to <Route path="${Bt === "/" ? "*"
             return;
           }
           try {
-            const Ot = await (await fetch(`/get-user-miners?telegramId=${d.telegramId}`, {
+            const zt = await (await fetch(`/get-user-miners?telegramId=${d.telegramId}`, {
               headers: {
                 "X-Telegram-Init-Data": window.Telegram.WebApp.initData
               }
             })).json();
-            if (Ot.success) {
-              let zt = Ot.miners || [];
-              if (zt.filter((Qt) => Qt.type === "minion").length > 10) {
-                zt = zt.filter((Qt) => Qt.type !== "minion");
-                for (let Qt = 0; Qt < 10; Qt++) zt.push({
+            if (zt.success) {
+              let Xt = zt.miners || [];
+              if (Xt.filter((Vt) => Vt.type === "minion").length > 10) {
+                Xt = Xt.filter((Vt) => Vt.type !== "minion");
+                for (let Vt = 0; Vt < 10; Vt++) Xt.push({
                   type: "minion",
-                  id: `minion-${Qt}`
+                  id: `minion-${Vt}`
                 });
               }
-              dt(zt);
+              dt(Xt);
             }
           } catch {
             $("\u041E\u0448\u0438\u0431\u043A\u0430 \u043F\u0440\u0438 \u0437\u0430\u0433\u0440\u0443\u0437\u043A\u0435 \u043C\u0430\u0439\u043D\u0435\u0440\u043E\u0432");
@@ -9915,9 +9915,9 @@ Please change the parent <Route path="${Bt}"> to <Route path="${Bt === "/" ? "*"
       }, [
         d == null ? void 0 : d.telegramId
       ]), reactExports.useEffect(() => {
-        window.Telegram.WebApp.CloudStorage.getItem("lastCollection", (Ot, zt) => {
-          if (Ot || !zt) {
-            const Vt = {
+        window.Telegram.WebApp.CloudStorage.getItem("lastCollection", (zt, Xt) => {
+          if (zt || !Xt) {
+            const kt = {
               basic: Date.now(),
               minion: Date.now(),
               cube1: Date.now(),
@@ -9925,41 +9925,41 @@ Please change the parent <Route path="${Bt}"> to <Route path="${Bt === "/" ? "*"
               cube3: Date.now(),
               cube4: Date.now()
             };
-            window.Telegram.WebApp.CloudStorage.setItem("lastCollection", JSON.stringify(Vt));
+            window.Telegram.WebApp.CloudStorage.setItem("lastCollection", JSON.stringify(kt));
             return;
           }
-          const Xt = JSON.parse(zt);
-          let Qt = false;
-          Xt.cube1 || (Xt.cube1 = Date.now(), Qt = true), Xt.cube2 || (Xt.cube2 = Date.now(), Qt = true), Xt.cube3 || (Xt.cube3 = Date.now(), Qt = true), Xt.cube4 || (Xt.cube4 = Date.now(), Qt = true), Qt && window.Telegram.WebApp.CloudStorage.setItem("lastCollection", JSON.stringify(Xt));
+          const Qt = JSON.parse(Xt);
+          let Vt = false;
+          Qt.cube1 || (Qt.cube1 = Date.now(), Vt = true), Qt.cube2 || (Qt.cube2 = Date.now(), Vt = true), Qt.cube3 || (Qt.cube3 = Date.now(), Vt = true), Qt.cube4 || (Qt.cube4 = Date.now(), Vt = true), Vt && window.Telegram.WebApp.CloudStorage.setItem("lastCollection", JSON.stringify(Qt));
         });
-        const $t = () => {
-          window.Telegram.WebApp.CloudStorage.getItem("lastCollection", (Ot, zt) => {
-            if (Ot) {
-              console.error("Error getting lastCollection:", Ot);
+        const Tt = () => {
+          window.Telegram.WebApp.CloudStorage.getItem("lastCollection", (zt, Xt) => {
+            if (zt) {
+              console.error("Error getting lastCollection:", zt);
               return;
             }
-            const Xt = JSON.parse(zt || "{}"), Qt = Date.now(), Vt = {
+            const Qt = JSON.parse(Xt || "{}"), Vt = Date.now(), kt = {
               ...pt
-            }, kt = st.reduce((ct, et) => (ct[et.type] = (ct[et.type] || 0) + 1, ct), {});
-            Object.entries(kt).forEach(([ct, et]) => {
-              const tt = ct === "basic" ? 0.005787037037037037 : ct === "minion" ? 0.11574074074074074 : ct === "cube1" ? 0.008680555555555556 : ct === "cube2" ? 0.023148148148148147 : ct === "cube3" ? 0.1388888888888889 : 1.8518518518518519, nt = (Qt - (Xt[ct] || Qt)) / 1e3, ot = tt * et, ut = Math.min(ct === "cube1" ? 3750 : ct === "minion" ? 4e4 : ct === "cube2" ? 22e3 : ct === "cube3" ? 288e3 : ct === "basic" ? 1e3 : 1 / 0, Math.floor(nt * ot));
-              Vt[ct] = ut;
-            }), bt(Vt);
+            }, ct = st.reduce((et, tt) => (et[tt.type] = (et[tt.type] || 0) + 1, et), {});
+            Object.entries(ct).forEach(([et, tt]) => {
+              const nt = et === "basic" ? 0.005787037037037037 : et === "minion" ? 0.11574074074074074 : et === "cube1" ? 0.008680555555555556 : et === "cube2" ? 0.023148148148148147 : et === "cube3" ? 0.1388888888888889 : 1.8518518518518519, ot = (Vt - (Qt[et] || Vt)) / 1e3, ut = nt * tt, mt = Math.min(et === "cube1" ? 3750 : et === "minion" ? 4e4 : et === "cube2" ? 22e3 : et === "cube3" ? 288e3 : et === "basic" ? 1e3 : 1 / 0, Math.floor(ot * ut));
+              kt[et] = mt;
+            }), bt(kt);
           });
         };
-        $t();
-        const Tt = setInterval($t, 1e5);
-        return () => clearInterval(Tt);
+        Tt();
+        const Ot = setInterval(Tt, 1e5);
+        return () => clearInterval(Ot);
       }, [
         st
       ]);
-      const Rt = async ($t, Tt) => {
+      const Rt = (Tt) => st.filter((Ot) => Ot.type === Tt).length, At = async (Tt, Ot) => {
         try {
-          const Ot = [
+          const zt = [
             ...st
-          ], zt = Ot.findIndex((Vt) => Vt.type === $t && Vt.id === Tt);
-          if (zt === -1) return;
-          Ot.splice(zt, 1), (await (await fetch("/update-user-miners", {
+          ], Xt = zt.findIndex((kt) => kt.type === Tt && kt.id === Ot);
+          if (Xt === -1) return;
+          zt.splice(Xt, 1), (await (await fetch("/update-user-miners", {
             method: "POST",
             headers: {
               "Content-Type": "application/json",
@@ -9967,22 +9967,22 @@ Please change the parent <Route path="${Bt}"> to <Route path="${Bt === "/" ? "*"
             },
             body: JSON.stringify({
               telegramId: d.telegramId,
-              miners: Ot
+              miners: zt
             })
-          })).json()).success ? dt(Ot) : $("\u041E\u0448\u0438\u0431\u043A\u0430 \u043F\u0440\u0438 \u0443\u0434\u0430\u043B\u0435\u043D\u0438\u0438");
-        } catch (Ot) {
-          console.error("Error deleting miner:", Ot), $("\u041E\u0448\u0438\u0431\u043A\u0430 \u043F\u0440\u0438 \u0443\u0434\u0430\u043B\u0435\u043D\u0438\u0438");
+          })).json()).success ? dt(zt) : $("\u041E\u0448\u0438\u0431\u043A\u0430 \u043F\u0440\u0438 \u0443\u0434\u0430\u043B\u0435\u043D\u0438\u0438");
+        } catch (zt) {
+          console.error("Error deleting miner:", zt), $("\u041E\u0448\u0438\u0431\u043A\u0430 \u043F\u0440\u0438 \u0443\u0434\u0430\u043B\u0435\u043D\u0438\u0438");
         }
-      }, At = async ($t) => {
+      }, Bt = async (Tt) => {
         try {
           if (!(d == null ? void 0 : d.telegramId)) return;
-          const Tt = pt[$t];
-          if (Tt <= 0) return;
-          const Ot = parseInt(d.rootBalance || 0), zt = Ot + Tt;
+          const Ot = pt[Tt];
+          if (Ot <= 0) return;
+          const zt = parseInt(d.rootBalance || 0), Xt = zt + Ot;
           console.log("Collecting MTH:", {
-            currentBalance: Ot,
-            amountToAdd: Tt,
-            newBalance: zt
+            currentBalance: zt,
+            amountToAdd: Ot,
+            newBalance: Xt
           }), (await (await fetch("/update-root-balance", {
             method: "POST",
             headers: {
@@ -9991,33 +9991,33 @@ Please change the parent <Route path="${Bt}"> to <Route path="${Bt === "/" ? "*"
             },
             body: JSON.stringify({
               telegramId: d.telegramId,
-              rootBalance: zt
+              rootBalance: Xt
             })
-          })).json()).success && window.Telegram.WebApp.CloudStorage.getItem("lastCollection", (Vt, kt) => {
-            if (Vt) {
-              console.error("Error getting lastCollection:", Vt);
+          })).json()).success && window.Telegram.WebApp.CloudStorage.getItem("lastCollection", (kt, ct) => {
+            if (kt) {
+              console.error("Error getting lastCollection:", kt);
               return;
             }
-            const ct = JSON.parse(kt || "{}");
-            ct[$t] = Date.now(), window.Telegram.WebApp.CloudStorage.setItem("lastCollection", JSON.stringify(ct), (et) => {
-              if (et) {
-                console.error("Error saving lastCollection:", et);
+            const et = JSON.parse(ct || "{}");
+            et[Tt] = Date.now(), window.Telegram.WebApp.CloudStorage.setItem("lastCollection", JSON.stringify(et), (tt) => {
+              if (tt) {
+                console.error("Error saving lastCollection:", tt);
                 return;
               }
               b({
                 ...d,
-                rootBalance: zt
-              }), bt((tt) => ({
-                ...tt,
-                [$t]: 0
-              })), Ct(Tt), Mt(true), setTimeout(() => Mt(false), 2e3);
+                rootBalance: Xt
+              }), bt((nt) => ({
+                ...nt,
+                [Tt]: 0
+              })), Ct(Ot), Mt(true), setTimeout(() => Mt(false), 2e3);
             });
           });
-        } catch (Tt) {
-          console.error("Error collecting MTH:", Tt), $("\u041E\u0448\u0438\u0431\u043A\u0430 \u043F\u0440\u0438 \u0441\u0431\u043E\u0440\u0435 MTH");
+        } catch (Ot) {
+          console.error("Error collecting MTH:", Ot), $("\u041E\u0448\u0438\u0431\u043A\u0430 \u043F\u0440\u0438 \u0441\u0431\u043E\u0440\u0435 MTH");
         }
-      }, Bt = () => {
-        const $t = {
+      }, $t = () => {
+        const Tt = {
           basic: 500,
           minion: 1e4,
           cube1: 750,
@@ -10025,16 +10025,16 @@ Please change the parent <Route path="${Bt}"> to <Route path="${Bt === "/" ? "*"
           cube3: 12e3,
           cube4: 16e4
         };
-        return f, st.reduce((Tt, Ot) => {
-          const zt = $t[Ot.type] || 0;
-          return Tt + zt;
+        return st.reduce((Ot, zt) => {
+          const Xt = Tt[zt.type] || 0;
+          return Ot + Xt;
         }, 0);
       };
       return rt ? jsxRuntimeExports.jsx("div", {
         className: "min-h-screen bg-[#0A0F1C] flex items-center justify-center",
         children: jsxRuntimeExports.jsx("div", {
           className: "text-emerald-400",
-          children: "Loading.."
+          children: "Loading..."
         })
       }) : jsxRuntimeExports.jsxs("div", {
         className: "min-h-screen bg-[#0A0F1C]",
@@ -10087,7 +10087,7 @@ Please change the parent <Route path="${Bt}"> to <Route path="${Bt === "/" ? "*"
                         className: "text-sm text-blue-400/70",
                         children: [
                           " +",
-                          Bt(),
+                          $t(),
                           " POKO/day"
                         ]
                       })
@@ -10096,8 +10096,8 @@ Please change the parent <Route path="${Bt}"> to <Route path="${Bt === "/" ? "*"
                   jsxRuntimeExports.jsx("div", {
                     className: "grid grid-cols-5 gap-3",
                     children: (() => {
-                      const $t = st.filter((ct) => ct.type === "basic"), Tt = st.filter((ct) => ct.type === "minion"), Ot = st.filter((ct) => ct.type === "cube1"), zt = st.filter((ct) => ct.type === "cube2"), Xt = st.filter((ct) => ct.type === "cube3"), Qt = st.filter((ct) => ct.type === "cube4"), Vt = [];
-                      $t.length > 0 && Vt.push(jsxRuntimeExports.jsx("div", {
+                      const Tt = st.filter((et) => et.type === "basic"), Ot = st.filter((et) => et.type === "minion"), zt = st.filter((et) => et.type === "cube1"), Xt = st.filter((et) => et.type === "cube2"), Qt = st.filter((et) => et.type === "cube3"), Vt = st.filter((et) => et.type === "cube4"), kt = [];
+                      Tt.length > 0 && kt.push(jsxRuntimeExports.jsx("div", {
                         className: "relative",
                         children: jsxRuntimeExports.jsxs("div", {
                           className: "bg-[#1E293B]/80 backdrop-blur-sm p-2 rounded-lg border border-blue-400/20 shadow-lg",
@@ -10109,20 +10109,20 @@ Please change the parent <Route path="${Bt}"> to <Route path="${Bt === "/" ? "*"
                             }),
                             jsxRuntimeExports.jsx("button", {
                               type: "button",
-                              onClick: () => Rt("basic", $t[0].id),
+                              onClick: () => At("basic", Tt[0].id),
                               className: "absolute -top-2.5 -right-2.5 w-6 h-6 bg-blue-500 text-white border-2 border-blue-600 rounded-full flex items-center justify-center text-lg font-bold cursor-pointer z-50 shadow-lg hover:bg-blue-600 active:bg-blue-700",
                               children: "\xD7"
                             }),
                             jsxRuntimeExports.jsxs("div", {
                               className: "absolute bottom-1 right-1 bg-blue-400/20 px-2 py-1 rounded text-xs text-blue-400",
                               children: [
-                                $t.length,
+                                Tt.length,
                                 "/5"
                               ]
                             })
                           ]
                         })
-                      }, "basic")), Tt.length > 0 && Vt.push(jsxRuntimeExports.jsx("div", {
+                      }, "basic")), Ot.length > 0 && kt.push(jsxRuntimeExports.jsx("div", {
                         className: "relative",
                         children: jsxRuntimeExports.jsxs("div", {
                           className: "bg-[#1E293B]/80 backdrop-blur-sm p-2 rounded-lg border border-blue-400/20 shadow-lg",
@@ -10134,21 +10134,21 @@ Please change the parent <Route path="${Bt}"> to <Route path="${Bt === "/" ? "*"
                             }),
                             jsxRuntimeExports.jsx("button", {
                               type: "button",
-                              onClick: () => Rt("minion", Tt[0].id),
+                              onClick: () => At("minion", Ot[0].id),
                               className: "absolute -top-2.5 -right-2.5 w-6 h-6 bg-blue-500 text-white border-2 border-blue-600 rounded-full flex items-center justify-center text-lg font-bold cursor-pointer z-50 shadow-lg hover:bg-blue-600 active:bg-blue-700",
                               children: "\xD7"
                             }),
                             jsxRuntimeExports.jsxs("div", {
                               className: "absolute bottom-1 right-1 bg-blue-400/20 px-2 py-1 rounded text-xs text-blue-400",
                               children: [
-                                Tt.length,
+                                Ot.length,
                                 "/10"
                               ]
                             })
                           ]
                         })
-                      }, "minion")), Ot.forEach((ct) => {
-                        Vt.push(jsxRuntimeExports.jsx("div", {
+                      }, "minion")), zt.forEach((et) => {
+                        kt.push(jsxRuntimeExports.jsx("div", {
                           className: "relative",
                           children: jsxRuntimeExports.jsxs("div", {
                             className: "bg-[#1E293B]/80 backdrop-blur-sm p-2 rounded-lg border border-blue-400/20 shadow-lg",
@@ -10160,7 +10160,7 @@ Please change the parent <Route path="${Bt}"> to <Route path="${Bt === "/" ? "*"
                               }),
                               jsxRuntimeExports.jsx("button", {
                                 type: "button",
-                                onClick: () => Rt("cube1", ct.id),
+                                onClick: () => At("cube1", et.id),
                                 className: "absolute -top-2.5 -right-2.5 w-6 h-6 bg-blue-500 text-white border-2 border-blue-600 rounded-full flex items-center justify-center text-lg font-bold cursor-pointer z-50 shadow-lg hover:bg-blue-600 active:bg-blue-700",
                                 children: "\xD7"
                               }),
@@ -10170,9 +10170,9 @@ Please change the parent <Route path="${Bt}"> to <Route path="${Bt === "/" ? "*"
                               })
                             ]
                           })
-                        }, ct.id));
-                      }), zt.forEach((ct) => {
-                        Vt.push(jsxRuntimeExports.jsx("div", {
+                        }, et.id));
+                      }), Xt.forEach((et) => {
+                        kt.push(jsxRuntimeExports.jsx("div", {
                           className: "relative",
                           children: jsxRuntimeExports.jsxs("div", {
                             className: "bg-[#1E293B]/80 backdrop-blur-sm p-2 rounded-lg border border-blue-400/20 shadow-lg",
@@ -10184,7 +10184,7 @@ Please change the parent <Route path="${Bt}"> to <Route path="${Bt === "/" ? "*"
                               }),
                               jsxRuntimeExports.jsx("button", {
                                 type: "button",
-                                onClick: () => Rt("cube2", ct.id),
+                                onClick: () => At("cube2", et.id),
                                 className: "absolute -top-2.5 -right-2.5 w-6 h-6 bg-blue-500 text-white border-2 border-blue-600 rounded-full flex items-center justify-center text-lg font-bold cursor-pointer z-50 shadow-lg hover:bg-blue-600 active:bg-blue-700",
                                 children: "\xD7"
                               }),
@@ -10194,9 +10194,9 @@ Please change the parent <Route path="${Bt}"> to <Route path="${Bt === "/" ? "*"
                               })
                             ]
                           })
-                        }, ct.id));
-                      }), Xt.forEach((ct) => {
-                        Vt.push(jsxRuntimeExports.jsx("div", {
+                        }, et.id));
+                      }), Qt.forEach((et) => {
+                        kt.push(jsxRuntimeExports.jsx("div", {
                           className: "relative",
                           children: jsxRuntimeExports.jsxs("div", {
                             className: "bg-[#1E293B]/80 backdrop-blur-sm p-2 rounded-lg border border-blue-400/20 shadow-lg",
@@ -10208,7 +10208,7 @@ Please change the parent <Route path="${Bt}"> to <Route path="${Bt === "/" ? "*"
                               }),
                               jsxRuntimeExports.jsx("button", {
                                 type: "button",
-                                onClick: () => Rt("cube3", ct.id),
+                                onClick: () => At("cube3", et.id),
                                 className: "absolute -top-2.5 -right-2.5 w-6 h-6 bg-blue-500 text-white border-2 border-blue-600 rounded-full flex items-center justify-center text-lg font-bold cursor-pointer z-50 shadow-lg hover:bg-blue-600 active:bg-blue-700",
                                 children: "\xD7"
                               }),
@@ -10218,9 +10218,9 @@ Please change the parent <Route path="${Bt}"> to <Route path="${Bt === "/" ? "*"
                               })
                             ]
                           })
-                        }, ct.id));
-                      }), Qt.forEach((ct) => {
-                        Vt.push(jsxRuntimeExports.jsx("div", {
+                        }, et.id));
+                      }), Vt.forEach((et) => {
+                        kt.push(jsxRuntimeExports.jsx("div", {
                           className: "relative",
                           children: jsxRuntimeExports.jsxs("div", {
                             className: "bg-[#1E293B]/80 backdrop-blur-sm p-2 rounded-lg border border-blue-400/20 shadow-lg",
@@ -10232,7 +10232,7 @@ Please change the parent <Route path="${Bt}"> to <Route path="${Bt === "/" ? "*"
                               }),
                               jsxRuntimeExports.jsx("button", {
                                 type: "button",
-                                onClick: () => Rt("cube4", ct.id),
+                                onClick: () => At("cube4", et.id),
                                 className: "absolute -top-2.5 -right-2.5 w-6 h-6 bg-blue-500 text-white border-2 border-blue-600 rounded-full flex items-center justify-center text-lg font-bold cursor-pointer z-50 shadow-lg hover:bg-blue-600 active:bg-blue-700",
                                 children: "\xD7"
                               }),
@@ -10242,16 +10242,16 @@ Please change the parent <Route path="${Bt}"> to <Route path="${Bt === "/" ? "*"
                               })
                             ]
                           })
-                        }, ct.id));
+                        }, et.id));
                       });
-                      const kt = Math.max(0, ((d == null ? void 0 : d.maxSlots) || 5) - Vt.length);
-                      for (let ct = 0; ct < kt; ct++) Vt.push(jsxRuntimeExports.jsx("div", {
+                      const ct = Math.max(0, ((d == null ? void 0 : d.maxSlots) || 5) - kt.length);
+                      for (let et = 0; et < ct; et++) kt.push(jsxRuntimeExports.jsx("div", {
                         className: "aspect-square bg-[#1E293B]/50 rounded-xl border border-blue-400/10"
-                      }, `empty-${ct}`));
-                      return Vt;
+                      }, `empty-${et}`));
+                      return kt;
                     })()
                   }),
-                  st.some(($t) => $t.type === "basic") && jsxRuntimeExports.jsxs("div", {
+                  st.some((Tt) => Tt.type === "basic") && jsxRuntimeExports.jsxs("div", {
                     className: "mt-3 bg-[#1E293B]/80 backdrop-blur-sm rounded-lg p-2.5 border border-blue-400/20",
                     children: [
                       jsxRuntimeExports.jsxs("div", {
@@ -10273,7 +10273,7 @@ Please change the parent <Route path="${Bt}"> to <Route path="${Bt === "/" ? "*"
                               },
                               children: [
                                 "+",
-                                500 * st.filter(($t) => $t.type === "basic").length,
+                                500 * Rt("basic"),
                                 " POKO/day"
                               ]
                             })
@@ -10287,7 +10287,7 @@ Please change the parent <Route path="${Bt}"> to <Route path="${Bt === "/" ? "*"
                         },
                         children: [
                           "Total mining: ",
-                          500 * st.filter(($t) => $t.type === "basic").length,
+                          500 * Rt("basic"),
                           " POKO/day"
                         ]
                       }),
@@ -10333,7 +10333,7 @@ Please change the parent <Route path="${Bt}"> to <Route path="${Bt === "/" ? "*"
                           jsxRuntimeExports.jsx("div", {
                             className: "text-center",
                             children: jsxRuntimeExports.jsx("button", {
-                              onClick: () => At("basic"),
+                              onClick: () => Bt("basic"),
                               disabled: pt.basic <= 0,
                               className: `px-3 py-0.5 rounded text-xs
                                 ${pt.basic <= 0 ? "bg-blue-400/20 text-blue-400/40 cursor-not-allowed" : "bg-blue-400/20 text-blue-400 hover:bg-blue-400/30"}`,
@@ -10347,7 +10347,7 @@ Please change the parent <Route path="${Bt}"> to <Route path="${Bt === "/" ? "*"
                       })
                     ]
                   }),
-                  st.some(($t) => $t.type === "minion") && jsxRuntimeExports.jsxs("div", {
+                  st.some((Tt) => Tt.type === "minion") && jsxRuntimeExports.jsxs("div", {
                     className: "mt-3 bg-[#1E293B]/80 backdrop-blur-sm rounded-lg p-2.5 border border-blue-400/20",
                     children: [
                       jsxRuntimeExports.jsxs("div", {
@@ -10369,7 +10369,7 @@ Please change the parent <Route path="${Bt}"> to <Route path="${Bt === "/" ? "*"
                               },
                               children: [
                                 "+",
-                                1e4 * st.filter(($t) => $t.type === "minion").length,
+                                1e4 * st.filter((Tt) => Tt.type === "minion").length,
                                 " POKO/day"
                               ]
                             })
@@ -10383,7 +10383,7 @@ Please change the parent <Route path="${Bt}"> to <Route path="${Bt === "/" ? "*"
                         },
                         children: [
                           "Total mining: ",
-                          1e4 * st.filter(($t) => $t.type === "minion").length,
+                          1e4 * st.filter((Tt) => Tt.type === "minion").length,
                           " POKO/day"
                         ]
                       }),
@@ -10427,7 +10427,7 @@ Please change the parent <Route path="${Bt}"> to <Route path="${Bt === "/" ? "*"
                           jsxRuntimeExports.jsx("div", {
                             className: "text-center",
                             children: jsxRuntimeExports.jsx("button", {
-                              onClick: () => At("minion"),
+                              onClick: () => Bt("minion"),
                               disabled: pt.minion <= 0,
                               className: `px-3 py-0.5 rounded text-xs
                                 ${pt.minion <= 0 ? "bg-blue-400/20 text-blue-400/40 cursor-not-allowed" : "bg-blue-400/20 text-blue-400 hover:bg-blue-400/30"}`,
@@ -10441,7 +10441,7 @@ Please change the parent <Route path="${Bt}"> to <Route path="${Bt === "/" ? "*"
                       })
                     ]
                   }),
-                  st.some(($t) => $t.type === "cube1") && jsxRuntimeExports.jsxs("div", {
+                  st.some((Tt) => Tt.type === "cube1") && jsxRuntimeExports.jsxs("div", {
                     className: "mt-3 bg-[#1E293B]/80 backdrop-blur-sm rounded-lg p-2.5 border border-blue-400/20",
                     children: [
                       jsxRuntimeExports.jsxs("div", {
@@ -10463,7 +10463,7 @@ Please change the parent <Route path="${Bt}"> to <Route path="${Bt === "/" ? "*"
                               },
                               children: [
                                 "+",
-                                750 * st.filter(($t) => $t.type === "cube1").length,
+                                750 * st.filter((Tt) => Tt.type === "cube1").length,
                                 " POKO/day"
                               ]
                             })
@@ -10477,7 +10477,7 @@ Please change the parent <Route path="${Bt}"> to <Route path="${Bt === "/" ? "*"
                         },
                         children: [
                           "Total mining: ",
-                          750 * st.filter(($t) => $t.type === "cube1").length,
+                          750 * st.filter((Tt) => Tt.type === "cube1").length,
                           " POKO/day"
                         ]
                       }),
@@ -10521,7 +10521,7 @@ Please change the parent <Route path="${Bt}"> to <Route path="${Bt === "/" ? "*"
                           jsxRuntimeExports.jsx("div", {
                             className: "text-center",
                             children: jsxRuntimeExports.jsx("button", {
-                              onClick: () => At("cube1"),
+                              onClick: () => Bt("cube1"),
                               disabled: pt.cube1 <= 0,
                               className: `px-3 py-0.5 rounded text-xs
                                 ${pt.cube1 <= 0 ? "bg-blue-400/20 text-blue-400/40 cursor-not-allowed" : "bg-blue-400/20 text-blue-400 hover:bg-blue-400/30"}`,
@@ -10535,7 +10535,7 @@ Please change the parent <Route path="${Bt}"> to <Route path="${Bt === "/" ? "*"
                       })
                     ]
                   }),
-                  st.some(($t) => $t.type === "cube2") && jsxRuntimeExports.jsxs("div", {
+                  st.some((Tt) => Tt.type === "cube2") && jsxRuntimeExports.jsxs("div", {
                     className: "mt-3 bg-[#1E293B]/80 backdrop-blur-sm rounded-lg p-2.5 border border-blue-400/20",
                     children: [
                       jsxRuntimeExports.jsxs("div", {
@@ -10557,7 +10557,7 @@ Please change the parent <Route path="${Bt}"> to <Route path="${Bt === "/" ? "*"
                               },
                               children: [
                                 "+",
-                                2e3 * st.filter(($t) => $t.type === "cube2").length,
+                                2e3 * st.filter((Tt) => Tt.type === "cube2").length,
                                 " POKO/day"
                               ]
                             })
@@ -10571,7 +10571,7 @@ Please change the parent <Route path="${Bt}"> to <Route path="${Bt === "/" ? "*"
                         },
                         children: [
                           "Total mining: ",
-                          2e3 * st.filter(($t) => $t.type === "cube2").length,
+                          2e3 * st.filter((Tt) => Tt.type === "cube2").length,
                           " POKO/day"
                         ]
                       }),
@@ -10615,7 +10615,7 @@ Please change the parent <Route path="${Bt}"> to <Route path="${Bt === "/" ? "*"
                           jsxRuntimeExports.jsx("div", {
                             className: "text-center",
                             children: jsxRuntimeExports.jsx("button", {
-                              onClick: () => At("cube2"),
+                              onClick: () => Bt("cube2"),
                               disabled: pt.cube2 <= 0,
                               className: `px-3 py-0.5 rounded text-xs
                                 ${pt.cube2 <= 0 ? "bg-blue-400/20 text-blue-400/40 cursor-not-allowed" : "bg-blue-400/20 text-blue-400 hover:bg-blue-400/30"}`,
@@ -10629,7 +10629,7 @@ Please change the parent <Route path="${Bt}"> to <Route path="${Bt === "/" ? "*"
                       })
                     ]
                   }),
-                  st.some(($t) => $t.type === "cube3") && jsxRuntimeExports.jsxs("div", {
+                  st.some((Tt) => Tt.type === "cube3") && jsxRuntimeExports.jsxs("div", {
                     className: "mt-3 bg-[#1E293B]/80 backdrop-blur-sm rounded-lg p-2.5 border border-blue-400/20",
                     children: [
                       jsxRuntimeExports.jsxs("div", {
@@ -10651,7 +10651,7 @@ Please change the parent <Route path="${Bt}"> to <Route path="${Bt === "/" ? "*"
                               },
                               children: [
                                 "+",
-                                12e3 * st.filter(($t) => $t.type === "cube3").length,
+                                12e3 * st.filter((Tt) => Tt.type === "cube3").length,
                                 " POKO/day"
                               ]
                             })
@@ -10665,7 +10665,7 @@ Please change the parent <Route path="${Bt}"> to <Route path="${Bt === "/" ? "*"
                         },
                         children: [
                           "Total mining: ",
-                          12e3 * st.filter(($t) => $t.type === "cube3").length,
+                          12e3 * st.filter((Tt) => Tt.type === "cube3").length,
                           " POKO/day"
                         ]
                       }),
@@ -10709,7 +10709,7 @@ Please change the parent <Route path="${Bt}"> to <Route path="${Bt === "/" ? "*"
                           jsxRuntimeExports.jsx("div", {
                             className: "text-center",
                             children: jsxRuntimeExports.jsx("button", {
-                              onClick: () => At("cube3"),
+                              onClick: () => Bt("cube3"),
                               disabled: pt.cube3 <= 0,
                               className: `px-3 py-0.5 rounded text-xs
                                 ${pt.cube3 <= 0 ? "bg-blue-400/20 text-blue-400/40 cursor-not-allowed" : "bg-blue-400/20 text-blue-400 hover:bg-blue-400/30"}`,
@@ -10723,7 +10723,7 @@ Please change the parent <Route path="${Bt}"> to <Route path="${Bt === "/" ? "*"
                       })
                     ]
                   }),
-                  st.some(($t) => $t.type === "cube4") && jsxRuntimeExports.jsxs("div", {
+                  st.some((Tt) => Tt.type === "cube4") && jsxRuntimeExports.jsxs("div", {
                     className: "mt-3 bg-[#1E293B]/80 backdrop-blur-sm rounded-lg p-2.5 border border-blue-400/20",
                     children: [
                       jsxRuntimeExports.jsxs("div", {
@@ -10745,7 +10745,7 @@ Please change the parent <Route path="${Bt}"> to <Route path="${Bt === "/" ? "*"
                               },
                               children: [
                                 "+",
-                                16e4 * st.filter(($t) => $t.type === "cube4").length,
+                                16e4 * st.filter((Tt) => Tt.type === "cube4").length,
                                 " POKO/day"
                               ]
                             })
@@ -10759,7 +10759,7 @@ Please change the parent <Route path="${Bt}"> to <Route path="${Bt === "/" ? "*"
                         },
                         children: [
                           "Total mining: ",
-                          16e4 * st.filter(($t) => $t.type === "cube4").length,
+                          16e4 * st.filter((Tt) => Tt.type === "cube4").length,
                           " POKO/day"
                         ]
                       }),
@@ -10803,7 +10803,7 @@ Please change the parent <Route path="${Bt}"> to <Route path="${Bt === "/" ? "*"
                           jsxRuntimeExports.jsx("div", {
                             className: "text-center",
                             children: jsxRuntimeExports.jsx("button", {
-                              onClick: () => At("cube4"),
+                              onClick: () => Bt("cube4"),
                               disabled: pt.cube4 <= 0,
                               className: `px-3 py-0.5 rounded text-xs
                                 ${pt.cube4 <= 0 ? "bg-blue-400/20 text-blue-400/40 cursor-not-allowed" : "bg-blue-400/20 text-blue-400 hover:bg-blue-400/30"}`,
@@ -86022,9 +86022,9 @@ Values:
       children: jsxRuntimeExports.jsx(App, {})
     }));
   });
-  var_9cb492a6_6aff_520b_94d6_d7ba93b2518c = _i();
+  var_af72d959_322a_59c4_8490_356232a46a90 = _i();
 })();
 export {
   __tla,
-  var_9cb492a6_6aff_520b_94d6_d7ba93b2518c as default
+  var_af72d959_322a_59c4_8490_356232a46a90 as default
 };
