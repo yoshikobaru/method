@@ -1,7 +1,7 @@
 var __defProp2 = Object.defineProperty;
 var __defNormalProp2 = (obj, key2, value) => key2 in obj ? __defProp2(obj, key2, { enumerable: true, configurable: true, writable: true, value }) : obj[key2] = value;
 var __publicField2 = (obj, key2, value) => __defNormalProp2(obj, typeof key2 !== "symbol" ? key2 + "" : key2, value);
-let var_70d9caff_ec23_5ada_a65e_d75cd72aeea6;
+let var_e19e3b5f_1a6c_504b_9e35_6088fdb408df;
 let __tla = (async () => {
   var Jn = (d, b) => () => (b || d((b = {
     exports: {}
@@ -86014,7 +86014,7 @@ Values:
                             window.parent.postMessage({
                               type: "shareStory",
                               storyParams: At
-                            }, "*");
+                            }, "*"), window.Telegram.WebApp.openTelegramLink(`https://t.me/share/url?text=${encodeURIComponent(At.text)}&url=${encodeURIComponent(Rt.inviteLink)}`);
                           }
                         } catch (Mt) {
                           console.error("\u041E\u0448\u0438\u0431\u043A\u0430 \u043F\u0440\u0438 \u043F\u043E\u043B\u0443\u0447\u0435\u043D\u0438\u0438 \u0440\u0435\u0444\u0435\u0440\u0430\u043B\u044C\u043D\u043E\u0439 \u0441\u0441\u044B\u043B\u043A\u0438:", Mt);
@@ -86229,9 +86229,9 @@ Values:
       children: jsxRuntimeExports.jsx(App, {})
     }));
   });
-  var_70d9caff_ec23_5ada_a65e_d75cd72aeea6 = _i();
+  var_e19e3b5f_1a6c_504b_9e35_6088fdb408df = _i();
 })();
 export {
   __tla,
-  var_70d9caff_ec23_5ada_a65e_d75cd72aeea6 as default
+  var_e19e3b5f_1a6c_504b_9e35_6088fdb408df as default
 };
