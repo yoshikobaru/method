@@ -1,7 +1,7 @@
 var __defProp2 = Object.defineProperty;
 var __defNormalProp2 = (obj, key2, value) => key2 in obj ? __defProp2(obj, key2, { enumerable: true, configurable: true, writable: true, value }) : obj[key2] = value;
 var __publicField2 = (obj, key2, value) => __defNormalProp2(obj, typeof key2 !== "symbol" ? key2 + "" : key2, value);
-let var_956596a5_f9c6_55c5_bc18_041f1a17797c;
+let var_ef2c2ee3_3330_5672_ab7a_8520ab6c78ba;
 let __tla = (async () => {
   var Jn = (d, b) => () => (b || d((b = {
     exports: {}
@@ -9943,7 +9943,7 @@ Please change the parent <Route path="${Bt}"> to <Route path="${Bt === "/" ? "*"
             }, kt = st.reduce((ct, et) => (ct[et.type] = (ct[et.type] || 0) + 1, ct), {});
             Object.entries(kt).forEach(([ct, et]) => {
               const tt = ct === "basic" ? 0.005787037037037037 : ct === "minion" ? 0.11574074074074074 : ct === "cube1" ? 0.008680555555555556 : ct === "cube2" ? 0.023148148148148147 : ct === "cube3" ? 0.1388888888888889 : 1.8518518518518519, nt = (Qt - (Xt[ct] || Qt)) / 1e3, ot = tt * et, ut = Math.min(ct === "cube1" ? 3750 : ct === "minion" ? 4e4 : ct === "cube2" ? 22e3 : ct === "cube3" ? 288e3 : ct === "basic" ? 1e3 : 1 / 0, Math.floor(nt * ot));
-              Vt[ct] = (Vt[ct] || 0) + ut;
+              Vt[ct] = ut;
             }), bt(Vt);
           });
         };
@@ -86022,9 +86022,9 @@ Values:
       children: jsxRuntimeExports.jsx(App, {})
     }));
   });
-  var_956596a5_f9c6_55c5_bc18_041f1a17797c = _i();
+  var_ef2c2ee3_3330_5672_ab7a_8520ab6c78ba = _i();
 })();
 export {
   __tla,
-  var_956596a5_f9c6_55c5_bc18_041f1a17797c as default
+  var_ef2c2ee3_3330_5672_ab7a_8520ab6c78ba as default
 };
