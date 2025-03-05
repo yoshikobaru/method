@@ -1,7 +1,7 @@
 var __defProp2 = Object.defineProperty;
 var __defNormalProp2 = (obj, key2, value) => key2 in obj ? __defProp2(obj, key2, { enumerable: true, configurable: true, writable: true, value }) : obj[key2] = value;
 var __publicField2 = (obj, key2, value) => __defNormalProp2(obj, typeof key2 !== "symbol" ? key2 + "" : key2, value);
-let var_9d896f8b_507f_58ad_a8ab_606863961d64;
+let var_70d9caff_ec23_5ada_a65e_d75cd72aeea6;
 let __tla = (async () => {
   var Jn = (d, b) => () => (b || d((b = {
     exports: {}
@@ -85994,6 +85994,74 @@ Values:
                           })
                         ]
                       })
+                    }),
+                    jsxRuntimeExports.jsxs("button", {
+                      onClick: async () => {
+                        try {
+                          const Rt = await (await fetch(`/get-referral-link?telegramId=${b.telegramId}`, {
+                            headers: {
+                              "x-telegram-init-data": $.initData
+                            }
+                          })).json();
+                          if (Rt.inviteLink) {
+                            const At = {
+                              text: "\u0417\u0430\u0445\u043E\u0434\u0438 \u0432 \u043F\u0440\u0438\u043B\u043E\u0436\u0435\u043D\u0438\u0435 POKO",
+                              widget_link: {
+                                url: Rt.inviteLink,
+                                name: "\u041F\u0440\u0438\u0441\u043E\u0435\u0434\u0438\u043D\u044F\u0439\u0441\u044F \u043A POKO"
+                              }
+                            };
+                            window.parent.postMessage({
+                              type: "shareStory",
+                              storyParams: At
+                            }, "*");
+                          }
+                        } catch (Mt) {
+                          console.error("\u041E\u0448\u0438\u0431\u043A\u0430 \u043F\u0440\u0438 \u043F\u043E\u043B\u0443\u0447\u0435\u043D\u0438\u0438 \u0440\u0435\u0444\u0435\u0440\u0430\u043B\u044C\u043D\u043E\u0439 \u0441\u0441\u044B\u043B\u043A\u0438:", Mt);
+                        }
+                      },
+                      className: "border border-blue-400 text-blue-400 rounded w-full h-12 flex items-center justify-center hover:bg-blue-500 hover:text-white transition duration-200 mt-4",
+                      children: [
+                        jsxRuntimeExports.jsxs("svg", {
+                          width: "14",
+                          height: "14",
+                          viewBox: "0 0 16 16",
+                          fill: "none",
+                          xmlns: "http://www.w3.org/2000/svg",
+                          className: "mr-2",
+                          children: [
+                            jsxRuntimeExports.jsx("circle", {
+                              cx: "4",
+                              cy: "8",
+                              r: "2",
+                              stroke: "currentColor",
+                              strokeWidth: "1.5"
+                            }),
+                            jsxRuntimeExports.jsx("circle", {
+                              cx: "12",
+                              cy: "4",
+                              r: "2",
+                              stroke: "currentColor",
+                              strokeWidth: "1.5"
+                            }),
+                            jsxRuntimeExports.jsx("circle", {
+                              cx: "12",
+                              cy: "12",
+                              r: "2",
+                              stroke: "currentColor",
+                              strokeWidth: "1.5"
+                            }),
+                            jsxRuntimeExports.jsx("path", {
+                              d: "M6 7L10 5M6 9L10 11",
+                              stroke: "currentColor",
+                              strokeWidth: "1.5"
+                            })
+                          ]
+                        }),
+                        jsxRuntimeExports.jsx("span", {
+                          children: "Share Story"
+                        })
+                      ]
                     })
                   ]
                 })
@@ -86161,9 +86229,9 @@ Values:
       children: jsxRuntimeExports.jsx(App, {})
     }));
   });
-  var_9d896f8b_507f_58ad_a8ab_606863961d64 = _i();
+  var_70d9caff_ec23_5ada_a65e_d75cd72aeea6 = _i();
 })();
 export {
   __tla,
-  var_9d896f8b_507f_58ad_a8ab_606863961d64 as default
+  var_70d9caff_ec23_5ada_a65e_d75cd72aeea6 as default
 };
