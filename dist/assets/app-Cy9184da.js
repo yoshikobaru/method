@@ -1,7 +1,7 @@
 var __defProp2 = Object.defineProperty;
 var __defNormalProp2 = (obj, key2, value) => key2 in obj ? __defProp2(obj, key2, { enumerable: true, configurable: true, writable: true, value }) : obj[key2] = value;
 var __publicField2 = (obj, key2, value) => __defNormalProp2(obj, typeof key2 !== "symbol" ? key2 + "" : key2, value);
-let var_0a4036c4_d880_55f2_8e84_d4fe2fe1d460;
+let var_e8cb8675_da63_5c5a_888a_42e3cb884da2;
 let __tla = (async () => {
   var Jn = (d, b) => () => (b || d((b = {
     exports: {}
@@ -85987,39 +85987,6 @@ Values:
                                       }),
                                       " UPDATE"
                                     ]
-                                  }),
-                                  jsxRuntimeExports.jsxs("button", {
-                                    onClick: async () => {
-                                      try {
-                                        const Mt = window.Telegram.WebApp.initDataUnsafe.user.id, Rt = window.Telegram.WebApp.initDataUnsafe.user.username || "Player", Bt = await (await fetch(`https://dino-app.ru/get-referral-link?telegramId=${Mt}`)).json();
-                                        Bt.inviteLink && (window.Telegram.WebApp.shareToStory("https://dino-app.ru/assets/icon.png", {
-                                          text: `\u{1F996} ${Rt} scored in the game!
-
-\u{1F3AF} Can you beat this score?`,
-                                          widget_link: {
-                                            url: Bt.inviteLink,
-                                            name: "Play the Game"
-                                          }
-                                        }), window.Telegram.WebApp.HapticFeedback && window.Telegram.WebApp.HapticFeedback.impactOccurred("light"));
-                                      } catch (Mt) {
-                                        console.error("Error sharing story:", Mt), window.Telegram.WebApp.showPopup({
-                                          title: "Error",
-                                          message: "Failed to share story. Please try again.",
-                                          buttons: [
-                                            {
-                                              type: "close"
-                                            }
-                                          ]
-                                        });
-                                      }
-                                    },
-                                    className: "border border-blue-400 text-blue-400 rounded w-full h-12 flex items-center justify-center hover:bg-blue-500 hover:text-white transition duration-200",
-                                    children: [
-                                      jsxRuntimeExports.jsx("span", {
-                                        className: "mr-2"
-                                      }),
-                                      " SHARE STORY"
-                                    ]
                                   })
                                 ]
                               })
@@ -86027,6 +85994,41 @@ Values:
                           })
                         ]
                       })
+                    }),
+                    jsxRuntimeExports.jsxs("button", {
+                      onClick: async () => {
+                        try {
+                          const Mt = window.Telegram.WebApp.initDataUnsafe.user.id, Rt = window.Telegram.WebApp.initDataUnsafe.user.username || "Player", Bt = await (await fetch(`/get-referral-link?telegramId=${Mt}`, {
+                            headers: {
+                              "x-telegram-init-data": $.initData
+                            }
+                          })).json();
+                          Bt.inviteLink && (window.Telegram.WebApp.shareToStory("https://pokoapp.space/icon.svg", {
+                            text: `${Rt} invites you to join! Check out this link: ${Bt.inviteLink}`,
+                            widget_link: {
+                              url: Bt.inviteLink,
+                              name: "Join Now"
+                            }
+                          }), window.Telegram.WebApp.HapticFeedback && window.Telegram.WebApp.HapticFeedback.impactOccurred("light"));
+                        } catch (Mt) {
+                          console.error("Error sharing story:", Mt), window.Telegram.WebApp.showPopup({
+                            title: "Error",
+                            message: "Failed to share story. Please try again.",
+                            buttons: [
+                              {
+                                type: "close"
+                              }
+                            ]
+                          });
+                        }
+                      },
+                      className: "border border-blue-400 text-blue-400 rounded w-full h-12 flex items-center justify-center hover:bg-blue-500 hover:text-white transition duration-200",
+                      children: [
+                        jsxRuntimeExports.jsx("span", {
+                          className: "mr-2"
+                        }),
+                        " SHARE STORY"
+                      ]
                     })
                   ]
                 })
@@ -86194,9 +86196,9 @@ Values:
       children: jsxRuntimeExports.jsx(App, {})
     }));
   });
-  var_0a4036c4_d880_55f2_8e84_d4fe2fe1d460 = _i();
+  var_e8cb8675_da63_5c5a_888a_42e3cb884da2 = _i();
 })();
 export {
   __tla,
-  var_0a4036c4_d880_55f2_8e84_d4fe2fe1d460 as default
+  var_e8cb8675_da63_5c5a_888a_42e3cb884da2 as default
 };
