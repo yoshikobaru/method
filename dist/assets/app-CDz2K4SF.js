@@ -1,7 +1,7 @@
 var __defProp2 = Object.defineProperty;
 var __defNormalProp2 = (obj, key2, value) => key2 in obj ? __defProp2(obj, key2, { enumerable: true, configurable: true, writable: true, value }) : obj[key2] = value;
 var __publicField2 = (obj, key2, value) => __defNormalProp2(obj, typeof key2 !== "symbol" ? key2 + "" : key2, value);
-let var_7f6846e5_22a0_586e_bcae_86cc8ff13720;
+let var_0cd839f0_117d_5e25_a2a0_53cc8df4d829;
 let __tla = (async () => {
   var Jn = (d, b) => () => (b || d((b = {
     exports: {}
@@ -84645,6 +84645,7 @@ Values:
       cube4: "/assets/red2.webp"
     }, ErrorPopup = ({ message: d, onClose: b }) => jsxRuntimeExports.jsxs("div", {
       className: "error-popup",
+      onClick: b,
       children: [
         jsxRuntimeExports.jsx("h2", {
           className: "error-title",
@@ -84653,11 +84654,6 @@ Values:
         jsxRuntimeExports.jsx("p", {
           className: "error-message",
           children: d
-        }),
-        jsxRuntimeExports.jsx("button", {
-          className: "error-close-button",
-          onClick: b,
-          children: "Close"
         })
       ]
     });
@@ -86026,9 +86022,9 @@ Values:
       children: jsxRuntimeExports.jsx(App, {})
     }));
   });
-  var_7f6846e5_22a0_586e_bcae_86cc8ff13720 = _i();
+  var_0cd839f0_117d_5e25_a2a0_53cc8df4d829 = _i();
 })();
 export {
   __tla,
-  var_7f6846e5_22a0_586e_bcae_86cc8ff13720 as default
+  var_0cd839f0_117d_5e25_a2a0_53cc8df4d829 as default
 };
