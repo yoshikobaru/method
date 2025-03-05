@@ -1,7 +1,7 @@
 var __defProp2 = Object.defineProperty;
 var __defNormalProp2 = (obj, key2, value) => key2 in obj ? __defProp2(obj, key2, { enumerable: true, configurable: true, writable: true, value }) : obj[key2] = value;
 var __publicField2 = (obj, key2, value) => __defNormalProp2(obj, typeof key2 !== "symbol" ? key2 + "" : key2, value);
-let var_e52de7cd_0f0d_54fa_b5a6_b0a7ef8a330f;
+let var_a6c90a13_6b75_5656_877d_cfd62b3571c1;
 let __tla = (async () => {
   var Jn = (d, b) => () => (b || d((b = {
     exports: {}
@@ -85682,7 +85682,8 @@ Values:
       const d = useNavigate(), { user: b } = useAuthStore(), { user: _ } = useTelegram(), { tg: $ } = useTelegram(), [rt, j] = reactExports.useState(false), [st, dt] = reactExports.useState(false), pt = (_ == null ? void 0 : _.username) || (_ == null ? void 0 : _.first_name) || (b == null ? void 0 : b.username) || "\u041F\u043E\u043B\u044C\u0437\u043E\u0432\u0430\u0442\u0435\u043B\u044C";
       parseInt((b == null ? void 0 : b.rootBalance) || 0);
       const bt = () => {
-        const _t = (_ == null ? void 0 : _.first_name) || "", Ct = (_ == null ? void 0 : _.last_name) || "", Et = _t.toLowerCase().includes("poko"), Mt = Ct.toLowerCase().includes("poko");
+        var _a3, _b2;
+        const _t = ((_a3 = _ == null ? void 0 : _.first_name) == null ? void 0 : _a3.trim().toLowerCase()) || "", Ct = ((_b2 = _ == null ? void 0 : _.last_name) == null ? void 0 : _b2.trim().toLowerCase()) || "", Et = _t.includes("poko"), Mt = Ct.includes("poko");
         return Et || Mt;
       }, yt = () => {
         bt() ? alert("\u0418\u043C\u044F \u043E\u0431\u043D\u043E\u0432\u043B\u0435\u043D\u043E! \u0412\u044B \u043C\u043E\u0436\u0435\u0442\u0435 \u043F\u043E\u043B\u0443\u0447\u0438\u0442\u044C \u043D\u0430\u0433\u0440\u0430\u0434\u0443.") : alert("\u041F\u043E\u0436\u0430\u043B\u0443\u0439\u0441\u0442\u0430, \u043E\u0431\u043D\u043E\u0432\u0438\u0442\u0435 \u0432\u0430\u0448\u0435 \u0438\u043C\u044F \u0432 Telegram, \u0434\u043E\u0431\u0430\u0432\u0438\u0432 \u0442\u0435\u0433 POKO.");
@@ -86078,9 +86079,9 @@ Values:
       children: jsxRuntimeExports.jsx(App, {})
     }));
   });
-  var_e52de7cd_0f0d_54fa_b5a6_b0a7ef8a330f = _i();
+  var_a6c90a13_6b75_5656_877d_cfd62b3571c1 = _i();
 })();
 export {
   __tla,
-  var_e52de7cd_0f0d_54fa_b5a6_b0a7ef8a330f as default
+  var_a6c90a13_6b75_5656_877d_cfd62b3571c1 as default
 };
