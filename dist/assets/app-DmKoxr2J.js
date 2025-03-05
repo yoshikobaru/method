@@ -1,7 +1,7 @@
 var __defProp2 = Object.defineProperty;
 var __defNormalProp2 = (obj, key2, value) => key2 in obj ? __defProp2(obj, key2, { enumerable: true, configurable: true, writable: true, value }) : obj[key2] = value;
 var __publicField2 = (obj, key2, value) => __defNormalProp2(obj, typeof key2 !== "symbol" ? key2 + "" : key2, value);
-let var_e3ef55cc_e157_53fe_ad3d_91ff6af7eeaa;
+let var_1b88abdd_5d0c_5b01_8611_282ba9de1d14;
 let __tla = (async () => {
   var Jn = (d, b) => () => (b || d((b = {
     exports: {}
@@ -86007,7 +86007,7 @@ Values:
                             text: `${Rt} invites you to join! Check out this link: ${Bt.inviteLink}`,
                             widget_link: {
                               url: Bt.inviteLink,
-                              name: "Join Now"
+                              name: "Join now"
                             }
                           }), window.Telegram.WebApp.HapticFeedback && window.Telegram.WebApp.HapticFeedback.impactOccurred("light"));
                         } catch (Mt) {
@@ -86196,9 +86196,9 @@ Values:
       children: jsxRuntimeExports.jsx(App, {})
     }));
   });
-  var_e3ef55cc_e157_53fe_ad3d_91ff6af7eeaa = _i();
+  var_1b88abdd_5d0c_5b01_8611_282ba9de1d14 = _i();
 })();
 export {
   __tla,
-  var_e3ef55cc_e157_53fe_ad3d_91ff6af7eeaa as default
+  var_1b88abdd_5d0c_5b01_8611_282ba9de1d14 as default
 };
