@@ -1,7 +1,7 @@
 var __defProp2 = Object.defineProperty;
 var __defNormalProp2 = (obj, key2, value) => key2 in obj ? __defProp2(obj, key2, { enumerable: true, configurable: true, writable: true, value }) : obj[key2] = value;
 var __publicField2 = (obj, key2, value) => __defNormalProp2(obj, typeof key2 !== "symbol" ? key2 + "" : key2, value);
-let var_ef2c2ee3_3330_5672_ab7a_8520ab6c78ba;
+let var_9cb492a6_6aff_520b_94d6_d7ba93b2518c;
 let __tla = (async () => {
   var Jn = (d, b) => () => (b || d((b = {
     exports: {}
@@ -369,7 +369,7 @@ let __tla = (async () => {
     react.exports = react_production_min;
     var reactExports = react.exports;
     const React = getDefaultExportFromCjs$1(reactExports);
-    var f = reactExports, k = Symbol.for("react.element"), l$1 = Symbol.for("react.fragment"), m$1 = Object.prototype.hasOwnProperty, n$1 = f.__SECRET_INTERNALS_DO_NOT_USE_OR_YOU_WILL_BE_FIRED.ReactCurrentOwner, p$2 = {
+    var f$1 = reactExports, k = Symbol.for("react.element"), l$1 = Symbol.for("react.fragment"), m$1 = Object.prototype.hasOwnProperty, n$1 = f$1.__SECRET_INTERNALS_DO_NOT_USE_OR_YOU_WILL_BE_FIRED.ReactCurrentOwner, p$2 = {
       key: true,
       ref: true,
       __self: true,
@@ -10025,7 +10025,7 @@ Please change the parent <Route path="${Bt}"> to <Route path="${Bt === "/" ? "*"
           cube3: 12e3,
           cube4: 16e4
         };
-        return st.reduce((Tt, Ot) => {
+        return f, st.reduce((Tt, Ot) => {
           const zt = $t[Ot.type] || 0;
           return Tt + zt;
         }, 0);
@@ -10034,7 +10034,7 @@ Please change the parent <Route path="${Bt}"> to <Route path="${Bt === "/" ? "*"
         className: "min-h-screen bg-[#0A0F1C] flex items-center justify-center",
         children: jsxRuntimeExports.jsx("div", {
           className: "text-emerald-400",
-          children: "Loading..."
+          children: "Loading.."
         })
       }) : jsxRuntimeExports.jsxs("div", {
         className: "min-h-screen bg-[#0A0F1C]",
@@ -86022,9 +86022,9 @@ Values:
       children: jsxRuntimeExports.jsx(App, {})
     }));
   });
-  var_ef2c2ee3_3330_5672_ab7a_8520ab6c78ba = _i();
+  var_9cb492a6_6aff_520b_94d6_d7ba93b2518c = _i();
 })();
 export {
   __tla,
-  var_ef2c2ee3_3330_5672_ab7a_8520ab6c78ba as default
+  var_9cb492a6_6aff_520b_94d6_d7ba93b2518c as default
 };
