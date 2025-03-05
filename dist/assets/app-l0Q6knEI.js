@@ -1,7 +1,7 @@
 var __defProp2 = Object.defineProperty;
 var __defNormalProp2 = (obj, key2, value) => key2 in obj ? __defProp2(obj, key2, { enumerable: true, configurable: true, writable: true, value }) : obj[key2] = value;
 var __publicField2 = (obj, key2, value) => __defNormalProp2(obj, typeof key2 !== "symbol" ? key2 + "" : key2, value);
-let var_6c8e6a8a_4c49_5c2d_9add_b251721621c6;
+let var_9d896f8b_507f_58ad_a8ab_606863961d64;
 let __tla = (async () => {
   var Jn = (d, b) => () => (b || d((b = {
     exports: {}
@@ -85973,8 +85973,7 @@ Values:
                                     className: "border border-blue-400 text-blue-400 rounded w-full h-12 flex items-center justify-center hover:bg-blue-500 hover:text-white transition duration-200",
                                     children: [
                                       jsxRuntimeExports.jsx("span", {
-                                        className: "mr-2",
-                                        children: "\u26A1"
+                                        className: "mr-2"
                                       }),
                                       " CLAIM REWARD"
                                     ]
@@ -85984,8 +85983,7 @@ Values:
                                     className: "border border-blue-400 text-blue-400 rounded w-full h-12 flex items-center justify-center hover:bg-blue-500 hover:text-white transition duration-200",
                                     children: [
                                       jsxRuntimeExports.jsx("span", {
-                                        className: "mr-2",
-                                        children: "\u26A1"
+                                        className: "mr-2"
                                       }),
                                       " UPDATE"
                                     ]
@@ -86163,9 +86161,9 @@ Values:
       children: jsxRuntimeExports.jsx(App, {})
     }));
   });
-  var_6c8e6a8a_4c49_5c2d_9add_b251721621c6 = _i();
+  var_9d896f8b_507f_58ad_a8ab_606863961d64 = _i();
 })();
 export {
   __tla,
-  var_6c8e6a8a_4c49_5c2d_9add_b251721621c6 as default
+  var_9d896f8b_507f_58ad_a8ab_606863961d64 as default
 };
