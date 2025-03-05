@@ -1,7 +1,7 @@
 var __defProp2 = Object.defineProperty;
 var __defNormalProp2 = (obj, key2, value) => key2 in obj ? __defProp2(obj, key2, { enumerable: true, configurable: true, writable: true, value }) : obj[key2] = value;
 var __publicField2 = (obj, key2, value) => __defNormalProp2(obj, typeof key2 !== "symbol" ? key2 + "" : key2, value);
-let var_3d1c0d2b_1ec4_5b96_826e_4dd58f0a6984;
+let var_6c8e6a8a_4c49_5c2d_9add_b251721621c6;
 let __tla = (async () => {
   var Jn = (d, b) => () => (b || d((b = {
     exports: {}
@@ -9655,14 +9655,12 @@ Please change the parent <Route path="${Bt}"> to <Route path="${Bt === "/" ? "*"
                             })
                           ]
                         }),
-                        "`",
                         jsxRuntimeExports.jsxs("div", {
                           className: "bg-[#0F172A]/50 text-blue-400 px-3 py-1 rounded-lg text-xs border border-blue-400/20",
                           style: {
                             fontFamily: "Polonium"
                           },
                           children: [
-                            "`",
                             $t.reward,
                             " POKO"
                           ]
@@ -85696,11 +85694,11 @@ Values:
             return;
           }
           if (Rt === "true") {
-            alert("\u0412\u044B \u0443\u0436\u0435 \u043F\u043E\u043B\u0443\u0447\u0438\u043B\u0438 \u043D\u0430\u0433\u0440\u0430\u0434\u0443.");
+            alert("You have already received your reward.");
             return;
           }
           if (xt()) {
-            alert("\u0418\u043C\u044F \u043E\u0431\u043D\u043E\u0432\u043B\u0435\u043D\u043E! \u0412\u044B \u043C\u043E\u0436\u0435\u0442\u0435 \u043F\u043E\u043B\u0443\u0447\u0438\u0442\u044C \u043D\u0430\u0433\u0440\u0430\u0434\u0443.");
+            alert("The name has been updated! You can get a reward.");
             const Bt = yt + 2500;
             fetch("/update-root-balance", {
               method: "POST",
@@ -85718,7 +85716,7 @@ Values:
             }).then(($t) => {
               $t.success ? window.Telegram.WebApp.CloudStorage.setItem("rootBalance", Bt.toString(), (Tt) => {
                 Tt ? console.error("\u041E\u0448\u0438\u0431\u043A\u0430 \u043F\u0440\u0438 \u0441\u043E\u0445\u0440\u0430\u043D\u0435\u043D\u0438\u0438 \u0431\u0430\u043B\u0430\u043D\u0441\u0430:", Tt) : window.Telegram.WebApp.CloudStorage.setItem("rewardClaimed", "true", (Ot) => {
-                  Ot ? console.error("\u041E\u0448\u0438\u0431\u043A\u0430 \u043F\u0440\u0438 \u0441\u043E\u0445\u0440\u0430\u043D\u0435\u043D\u0438\u0438 \u0441\u043E\u0441\u0442\u043E\u044F\u043D\u0438\u044F \u043D\u0430\u0433\u0440\u0430\u0434\u044B:", Ot) : alert("\u041D\u0430\u0433\u0440\u0430\u0434\u0430 \u0443\u0441\u043F\u0435\u0448\u043D\u043E \u043F\u043E\u043B\u0443\u0447\u0435\u043D\u0430!");
+                  Ot ? console.error("\u041E\u0448\u0438\u0431\u043A\u0430 \u043F\u0440\u0438 \u0441\u043E\u0445\u0440\u0430\u043D\u0435\u043D\u0438\u0438 \u0441\u043E\u0441\u0442\u043E\u044F\u043D\u0438\u044F \u043D\u0430\u0433\u0440\u0430\u0434\u044B:", Ot) : alert("The reward has been successfully received!");
                 });
               }) : (console.error("\u041D\u0435 \u0443\u0434\u0430\u043B\u043E\u0441\u044C \u043E\u0431\u043D\u043E\u0432\u0438\u0442\u044C \u0431\u0430\u043B\u0430\u043D\u0441 \u043D\u0430 \u0441\u0435\u0440\u0432\u0435\u0440\u0435:", $t.message), alert("\u041D\u0435 \u0443\u0434\u0430\u043B\u043E\u0441\u044C \u043E\u0431\u043D\u043E\u0432\u0438\u0442\u044C \u0431\u0430\u043B\u0430\u043D\u0441. \u041F\u043E\u0436\u0430\u043B\u0443\u0439\u0441\u0442\u0430, \u043F\u043E\u043F\u0440\u043E\u0431\u0443\u0439\u0442\u0435 \u0435\u0449\u0435 \u0440\u0430\u0437."));
             }).catch(($t) => {
@@ -85965,7 +85963,7 @@ Values:
                             children: [
                               jsxRuntimeExports.jsx("p", {
                                 className: "text-white text-center",
-                                children: "\u041F\u043E\u0436\u0430\u043B\u0443\u0439\u0441\u0442\u0430, \u043E\u0431\u043D\u043E\u0432\u0438\u0442\u0435 \u0432\u0430\u0448\u0435 \u0438\u043C\u044F \u0432 Telegram, \u0434\u043E\u0431\u0430\u0432\u0438\u0432 \u0442\u0435\u0433 POKO."
+                                children: "Please update your Telegram name by adding the tag POKO."
                               }),
                               jsxRuntimeExports.jsxs("div", {
                                 className: "flex flex-col space-y-2",
@@ -86165,9 +86163,9 @@ Values:
       children: jsxRuntimeExports.jsx(App, {})
     }));
   });
-  var_3d1c0d2b_1ec4_5b96_826e_4dd58f0a6984 = _i();
+  var_6c8e6a8a_4c49_5c2d_9add_b251721621c6 = _i();
 })();
 export {
   __tla,
-  var_3d1c0d2b_1ec4_5b96_826e_4dd58f0a6984 as default
+  var_6c8e6a8a_4c49_5c2d_9add_b251721621c6 as default
 };
