@@ -1,7 +1,7 @@
 var __defProp2 = Object.defineProperty;
 var __defNormalProp2 = (obj, key2, value) => key2 in obj ? __defProp2(obj, key2, { enumerable: true, configurable: true, writable: true, value }) : obj[key2] = value;
 var __publicField2 = (obj, key2, value) => __defNormalProp2(obj, typeof key2 !== "symbol" ? key2 + "" : key2, value);
-let var_e8cb8675_da63_5c5a_888a_42e3cb884da2;
+let var_e3ef55cc_e157_53fe_ad3d_91ff6af7eeaa;
 let __tla = (async () => {
   var Jn = (d, b) => () => (b || d((b = {
     exports: {}
@@ -86003,7 +86003,7 @@ Values:
                               "x-telegram-init-data": $.initData
                             }
                           })).json();
-                          Bt.inviteLink && (window.Telegram.WebApp.shareToStory("https://pokoapp.space/icon.svg", {
+                          Bt.inviteLink && (window.Telegram.WebApp.shareToStory("https://pokoapp.space/poko.jpg", {
                             text: `${Rt} invites you to join! Check out this link: ${Bt.inviteLink}`,
                             widget_link: {
                               url: Bt.inviteLink,
@@ -86196,9 +86196,9 @@ Values:
       children: jsxRuntimeExports.jsx(App, {})
     }));
   });
-  var_e8cb8675_da63_5c5a_888a_42e3cb884da2 = _i();
+  var_e3ef55cc_e157_53fe_ad3d_91ff6af7eeaa = _i();
 })();
 export {
   __tla,
-  var_e8cb8675_da63_5c5a_888a_42e3cb884da2 as default
+  var_e3ef55cc_e157_53fe_ad3d_91ff6af7eeaa as default
 };
