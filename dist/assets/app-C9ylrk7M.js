@@ -1,7 +1,7 @@
 var __defProp2 = Object.defineProperty;
 var __defNormalProp2 = (obj, key2, value) => key2 in obj ? __defProp2(obj, key2, { enumerable: true, configurable: true, writable: true, value }) : obj[key2] = value;
 var __publicField2 = (obj, key2, value) => __defNormalProp2(obj, typeof key2 !== "symbol" ? key2 + "" : key2, value);
-let var_90ab8bc2_3873_533b_a0a6_4d3ff88447dd;
+let var_9024f4fe_5fb1_5d34_a4f2_e77f9f562219;
 let __tla = (async () => {
   var Jn = (d, b) => () => (b || d((b = {
     exports: {}
@@ -85681,7 +85681,7 @@ Values:
     function MethodPage() {
       const d = useNavigate(), { user: b } = useAuthStore(), { user: _ } = useTelegram(), { tg: $ } = useTelegram(), [rt, j] = reactExports.useState(false), [st, dt] = reactExports.useState(false), pt = (_ == null ? void 0 : _.username) || (_ == null ? void 0 : _.first_name) || (b == null ? void 0 : b.username) || "\u041F\u043E\u043B\u044C\u0437\u043E\u0432\u0430\u0442\u0435\u043B\u044C";
       parseInt((b == null ? void 0 : b.rootBalance) || 0);
-      const bt = () => ((_ == null ? void 0 : _.username) || "").includes("POKO"), yt = () => {
+      const bt = () => ((_ == null ? void 0 : _.username) || "").replace("@", "").includes("POKO"), yt = () => {
         bt() ? alert("\u0418\u043C\u044F \u043E\u0431\u043D\u043E\u0432\u043B\u0435\u043D\u043E! \u0412\u044B \u043C\u043E\u0436\u0435\u0442\u0435 \u043F\u043E\u043B\u0443\u0447\u0438\u0442\u044C \u043D\u0430\u0433\u0440\u0430\u0434\u0443.") : alert("\u041F\u043E\u0436\u0430\u043B\u0443\u0439\u0441\u0442\u0430, \u043E\u0431\u043D\u043E\u0432\u0438\u0442\u0435 \u0432\u0430\u0448\u0435 \u0438\u043C\u044F \u0432 Telegram, \u0434\u043E\u0431\u0430\u0432\u0438\u0432 \u0442\u0435\u0433 POKO \u0432 \u0432\u0430\u0448 username.");
       }, xt = async () => {
         var _a3;
@@ -86075,9 +86075,9 @@ Values:
       children: jsxRuntimeExports.jsx(App, {})
     }));
   });
-  var_90ab8bc2_3873_533b_a0a6_4d3ff88447dd = _i();
+  var_9024f4fe_5fb1_5d34_a4f2_e77f9f562219 = _i();
 })();
 export {
   __tla,
-  var_90ab8bc2_3873_533b_a0a6_4d3ff88447dd as default
+  var_9024f4fe_5fb1_5d34_a4f2_e77f9f562219 as default
 };
