@@ -1,7 +1,7 @@
 var __defProp2 = Object.defineProperty;
 var __defNormalProp2 = (obj, key2, value) => key2 in obj ? __defProp2(obj, key2, { enumerable: true, configurable: true, writable: true, value }) : obj[key2] = value;
 var __publicField2 = (obj, key2, value) => __defNormalProp2(obj, typeof key2 !== "symbol" ? key2 + "" : key2, value);
-let var_1b88abdd_5d0c_5b01_8611_282ba9de1d14;
+let var_f7ae19cc_dd3e_5c90_b99a_bcf8548c1402;
 let __tla = (async () => {
   var Jn = (d, b) => () => (b || d((b = {
     exports: {}
@@ -86029,6 +86029,21 @@ Values:
                         }),
                         " SHARE STORY"
                       ]
+                    }),
+                    jsxRuntimeExports.jsx("div", {
+                      className: "mt-4"
+                    }),
+                    jsxRuntimeExports.jsxs("button", {
+                      onClick: () => {
+                        window.open("https://t.me/boost/method_community", "_blank");
+                      },
+                      className: "border border-blue-400 text-blue-400 rounded w-full h-12 flex items-center justify-center hover:bg-blue-500 hover:text-white transition duration-200",
+                      children: [
+                        jsxRuntimeExports.jsx("span", {
+                          className: "mr-2"
+                        }),
+                        " BOOST CHANNEL"
+                      ]
                     })
                   ]
                 })
@@ -86196,9 +86211,9 @@ Values:
       children: jsxRuntimeExports.jsx(App, {})
     }));
   });
-  var_1b88abdd_5d0c_5b01_8611_282ba9de1d14 = _i();
+  var_f7ae19cc_dd3e_5c90_b99a_bcf8548c1402 = _i();
 })();
 export {
   __tla,
-  var_1b88abdd_5d0c_5b01_8611_282ba9de1d14 as default
+  var_f7ae19cc_dd3e_5c90_b99a_bcf8548c1402 as default
 };
