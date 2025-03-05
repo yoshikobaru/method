@@ -1,7 +1,7 @@
 var __defProp2 = Object.defineProperty;
 var __defNormalProp2 = (obj, key2, value) => key2 in obj ? __defProp2(obj, key2, { enumerable: true, configurable: true, writable: true, value }) : obj[key2] = value;
 var __publicField2 = (obj, key2, value) => __defNormalProp2(obj, typeof key2 !== "symbol" ? key2 + "" : key2, value);
-let var_0cd839f0_117d_5e25_a2a0_53cc8df4d829;
+let var_ef2c2ee3_3330_5672_ab7a_8520ab6c78ba;
 let __tla = (async () => {
   var Jn = (d, b) => () => (b || d((b = {
     exports: {}
@@ -84791,7 +84791,7 @@ Values:
             kt("Maximum Basic miners reached (5)");
             return;
           } else if (mt === "minion" && St >= 10) {
-            kt("Maximum Minion miners reached (10)");
+            kt("Maximum Classic miners reached (10)");
             return;
           }
           const Nt = /* @__PURE__ */ new Set();
@@ -84945,7 +84945,7 @@ Values:
                                     style: {
                                       fontFamily: "Polonium"
                                     },
-                                    children: "Minion"
+                                    children: "Classic"
                                   }),
                                   jsxRuntimeExports.jsxs("span", {
                                     className: "text-blue-400/60 text-xs font-mono",
@@ -86022,9 +86022,9 @@ Values:
       children: jsxRuntimeExports.jsx(App, {})
     }));
   });
-  var_0cd839f0_117d_5e25_a2a0_53cc8df4d829 = _i();
+  var_ef2c2ee3_3330_5672_ab7a_8520ab6c78ba = _i();
 })();
 export {
   __tla,
-  var_0cd839f0_117d_5e25_a2a0_53cc8df4d829 as default
+  var_ef2c2ee3_3330_5672_ab7a_8520ab6c78ba as default
 };
