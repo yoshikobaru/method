@@ -1,7 +1,7 @@
 var __defProp2 = Object.defineProperty;
 var __defNormalProp2 = (obj, key2, value) => key2 in obj ? __defProp2(obj, key2, { enumerable: true, configurable: true, writable: true, value }) : obj[key2] = value;
 var __publicField2 = (obj, key2, value) => __defNormalProp2(obj, typeof key2 !== "symbol" ? key2 + "" : key2, value);
-let var_485b8b3f_ccb2_5e44_baaf_b5546593c9d0;
+let var_cdf509fc_3921_55ed_beee_7bb3e414ddbb;
 let __tla = (async () => {
   var Jn = (d, b) => () => (b || d((b = {
     exports: {}
@@ -8942,12 +8942,7 @@ Please change the parent <Route path="${Bt}"> to <Route path="${Bt === "/" ? "*"
         }, 200);
         return () => clearInterval(at);
       }, []);
-      const [Bt, $t] = reactExports.useState("ArrowRight"), [Tt, Ot] = reactExports.useState(false), [zt, Xt] = reactExports.useState(0), [Qt, Vt] = reactExports.useState(/* @__PURE__ */ new Set()), kt = () => {
-        Ct(true), Xt(1e4);
-        const at = setInterval(() => {
-          Xt((it) => it <= 1e3 ? (clearInterval(at), Ct(false), 0) : it - 1e3);
-        }, 1e3);
-      }, ct = reactExports.useCallback(() => {
+      const [Bt, $t] = reactExports.useState("ArrowRight"), [Tt, Ot] = reactExports.useState(false), [zt, Xt] = reactExports.useState(0), [Qt, Vt] = reactExports.useState(/* @__PURE__ */ new Set()), kt = reactExports.useCallback(() => {
         pt.forEach((at, it) => {
           at.x === st.x && at.y === st.y && !Qt.has(it) && (_t ? (xt((ht) => ht + 25), Vt((ht) => /* @__PURE__ */ new Set([
             ...ht,
@@ -8959,7 +8954,7 @@ Please change the parent <Route path="${Bt}"> to <Route path="${Bt === "/" ? "*"
         pt,
         _t,
         Qt
-      ]), et = () => {
+      ]), ct = () => {
         const at = generateMaze();
         j(at), dt({
           x: 1,
@@ -8968,11 +8963,11 @@ Please change the parent <Route path="${Bt}"> to <Route path="${Bt === "/" ? "*"
           ...$(at),
           color: ht.color
         }))), xt(0), Ct(false), Mt(false), Vt(/* @__PURE__ */ new Set());
-      }, tt = reactExports.useCallback((at) => {
-        at.some((ht) => ht.some((wt) => wt === CELL_TYPES.DOT || wt === CELL_TYPES.POWER_PELLET)) || (Ot(true), ut(yt));
+      }, et = reactExports.useCallback((at) => {
+        at.some((ht) => ht.some((wt) => wt === CELL_TYPES.DOT || wt === CELL_TYPES.POWER_PELLET)) || (Ot(true), ot(yt));
       }, [
         yt
-      ]), nt = reactExports.useCallback((at) => {
+      ]), tt = reactExports.useCallback((at) => {
         Et || Tt || ($t(at), dt((it) => {
           var _a3, _b2, _c2, _d2;
           const ht = {
@@ -8998,13 +8993,13 @@ Please change the parent <Route path="${Bt}"> to <Route path="${Bt === "/" ? "*"
             const St = [
               ...rt
             ];
-            St[ht.y][ht.x] = CELL_TYPES.EMPTY, j(St), tt(St);
+            St[ht.y][ht.x] = CELL_TYPES.EMPTY, j(St), et(St);
           } else if (wt === CELL_TYPES.POWER_PELLET) {
-            xt((Nt) => Nt + 10), kt();
+            xt((Nt) => Nt + 10), vt();
             const St = [
               ...rt
             ];
-            St[ht.y][ht.x] = CELL_TYPES.EMPTY, j(St), tt(St);
+            St[ht.y][ht.x] = CELL_TYPES.EMPTY, j(St), et(St);
           }
           return ht;
         }));
@@ -9012,7 +9007,7 @@ Please change the parent <Route path="${Bt}"> to <Route path="${Bt === "/" ? "*"
         rt,
         Et,
         Tt,
-        tt
+        et
       ]);
       reactExports.useEffect(() => {
         if (Et) return;
@@ -9085,21 +9080,21 @@ Please change the parent <Route path="${Bt}"> to <Route path="${Bt === "/" ? "*"
         Et,
         rt
       ]), reactExports.useEffect(() => {
-        ct();
+        kt();
       }, [
         st,
-        ct
+        kt
       ]), reactExports.useEffect(() => {
         const at = (it) => {
-          nt(it.key);
+          tt(it.key);
         };
         return window.addEventListener("keydown", at), () => window.removeEventListener("keydown", at);
       }, [
-        nt
+        tt
       ]);
-      const ot = (at) => {
-        nt(at);
-      }, ut = async (at) => {
+      const nt = (at) => {
+        tt(at);
+      }, ot = async (at) => {
         var _a3, _b2, _c2, _d2, _e2, _f2;
         try {
           const it = (_d2 = (_c2 = (_b2 = (_a3 = window.Telegram) == null ? void 0 : _a3.WebApp) == null ? void 0 : _b2.initDataUnsafe) == null ? void 0 : _c2.user) == null ? void 0 : _d2.id;
@@ -9122,16 +9117,16 @@ Please change the parent <Route path="${Bt}"> to <Route path="${Bt === "/" ? "*"
         } catch (it) {
           console.error("Error updating balance:", it);
         }
-      }, mt = () => {
-        yt > 0 && ut(yt), et(), d(false);
+      }, ut = () => {
+        yt > 0 && ot(yt), ct(), d(false);
       };
       reactExports.useEffect(() => {
-        Et && yt > 0 && ut(yt);
+        Et && yt > 0 && ot(yt);
       }, [
         Et,
         yt
       ]);
-      const vt = () => {
+      const mt = () => {
         switch (Bt) {
           case "ArrowUp":
             return "rotate(-90deg)";
@@ -9144,48 +9139,77 @@ Please change the parent <Route path="${Bt}"> to <Route path="${Bt === "/" ? "*"
           default:
             return "rotate(0deg)";
         }
+      }, vt = () => {
+        _t && (clearTimeout(window.powerModeTimeout), clearInterval(window.powerModeInterval)), Ct(true), Xt(10), window.powerModeInterval = setInterval(() => {
+          Xt((at) => at - 1);
+        }, 1e3), window.powerModeTimeout = setTimeout(() => {
+          clearInterval(window.powerModeInterval), Ct(false), Xt(0);
+        }, 1e4);
       };
-      return jsxRuntimeExports.jsxs("div", {
-        className: "relative bg-black p-2 rounded-xl max-w-[300px] mx-auto",
+      return reactExports.useEffect(() => () => {
+        window.powerModeTimeout && clearTimeout(window.powerModeTimeout), window.powerModeInterval && clearInterval(window.powerModeInterval);
+      }, []), jsxRuntimeExports.jsxs("div", {
+        className: "relative bg-[#0A0F1C] p-4 rounded-xl max-w-[300px] mx-auto pacman-container",
         children: [
           jsxRuntimeExports.jsxs("div", {
-            className: "flex justify-between items-center mb-2",
+            className: "flex items-center justify-between mb-4 gap-2",
             children: [
               jsxRuntimeExports.jsxs("div", {
-                className: "text-white text-base",
+                className: "text-blue-400 text-base rqnd-text",
                 children: [
                   "Score: ",
                   yt
                 ]
               }),
               _t && jsxRuntimeExports.jsxs("div", {
-                className: "text-blue-400 animate-pulse",
+                className: "text-blue-400 animate-pulse rqnd-text whitespace-nowrap",
                 children: [
-                  "Power Mode: ",
-                  Math.ceil(zt / 1e3),
+                  "Power: ",
+                  zt,
                   "s"
                 ]
+              }),
+              jsxRuntimeExports.jsx("button", {
+                onClick: ut,
+                className: `bg-gradient-to-br from-[#1E293B]/95 via-[#0F172A]/90 to-[#020617]/95
+                    backdrop-blur-md rounded-lg p-2
+                    border border-red-500/50 hover:border-red-400
+                    shadow-[0_0_10px_rgba(239,68,68,0.2)]
+                    hover:shadow-[0_0_15px_rgba(239,68,68,0.4)]
+                    transition-all duration-300`,
+                children: jsxRuntimeExports.jsx("svg", {
+                  className: "w-5 h-5 text-red-500",
+                  fill: "none",
+                  stroke: "currentColor",
+                  viewBox: "0 0 24 24",
+                  children: jsxRuntimeExports.jsx("path", {
+                    strokeLinecap: "round",
+                    strokeLinejoin: "round",
+                    strokeWidth: "2",
+                    d: "M6 18L18 6M6 6l12 12"
+                  })
+                })
               })
             ]
           }),
           Tt && jsxRuntimeExports.jsxs("div", {
-            className: "absolute inset-0 bg-black/80 flex flex-col items-center justify-center z-10",
+            className: "absolute inset-0 bg-[#0A0F1C]/90 backdrop-blur-sm flex flex-col items-center justify-center z-10 rounded-xl",
             children: [
               jsxRuntimeExports.jsx("div", {
-                className: "text-emerald-400 text-2xl mb-2",
-                children: "\u{1F3C6}\u{1F3C6} Victory! \u{1F3C6}\u{1F3C6}"
+                className: "text-blue-400 text-2xl mb-2 rqnd-text",
+                children: "\u{1F3C6} Victory! \u{1F3C6}"
               }),
               jsxRuntimeExports.jsxs("div", {
                 className: "text-white mb-4",
                 children: [
                   jsxRuntimeExports.jsx("div", {
-                    className: "text-center mb-2",
+                    className: "text-center mb-2 rqnd-text",
                     children: "Congratulations!"
                   }),
                   jsxRuntimeExports.jsxs("div", {
-                    className: "text-center",
+                    className: "text-center text-blue-400 rqnd-text",
                     children: [
-                      "Your score: ",
+                      "Score: ",
                       yt
                     ]
                   })
@@ -9193,40 +9217,67 @@ Please change the parent <Route path="${Bt}"> to <Route path="${Bt === "/" ? "*"
               }),
               jsxRuntimeExports.jsx("button", {
                 onClick: () => {
-                  ut(yt), d(false);
+                  ot(yt), d(false);
                 },
-                className: "bg-emerald-600 hover:bg-emerald-700 text-white px-6 py-2 rounded text-sm",
+                className: `bg-gradient-to-br from-[#1E293B]/95 via-[#0F172A]/90 to-[#020617]/95
+                      backdrop-blur-md rounded-xl px-6 py-2
+                      border-2 border-blue-500/50 hover:border-blue-400
+                      shadow-[0_0_10px_rgba(96,165,250,0.2)]
+                      hover:shadow-[0_0_15px_rgba(96,165,250,0.4)]
+                      transition-all duration-300 text-blue-400 rqnd-text`,
                 children: "Close game"
               })
             ]
           }),
           Et && jsxRuntimeExports.jsxs("div", {
-            className: "absolute inset-0 bg-black/80 flex flex-col items-center justify-center z-10",
+            className: "absolute inset-0 bg-[#0A0F1C]/90 backdrop-blur-sm flex flex-col items-center justify-center z-10 rounded-xl",
             children: [
               jsxRuntimeExports.jsx("div", {
-                className: "text-red-500 text-lg mb-2",
+                className: "text-red-500 text-2xl mb-2 rqnd-text",
                 children: "Game Over!"
               }),
               jsxRuntimeExports.jsxs("div", {
-                className: "text-white mb-2",
+                className: "text-blue-400 mb-4 rqnd-text",
                 children: [
                   "Final Score: ",
                   yt
                 ]
               }),
-              jsxRuntimeExports.jsx("button", {
-                onClick: et,
-                className: "bg-emerald-600 hover:bg-emerald-700 text-white px-3 py-1 rounded text-sm",
-                children: "\u0418\u0433\u0440\u0430\u0442\u044C \u0441\u043D\u043E\u0432\u0430"
+              jsxRuntimeExports.jsxs("div", {
+                className: "flex flex-col gap-3",
+                children: [
+                  jsxRuntimeExports.jsx("button", {
+                    onClick: ct,
+                    className: `bg-gradient-to-br from-[#1E293B]/95 via-[#0F172A]/90 to-[#020617]/95
+                        backdrop-blur-md rounded-xl px-6 py-2
+                        border-2 border-blue-500/50 hover:border-blue-400
+                        shadow-[0_0_10px_rgba(96,165,250,0.2)]
+                        hover:shadow-[0_0_15px_rgba(96,165,250,0.4)]
+                        transition-all duration-300 text-blue-400 rqnd-text`,
+                    children: "Play Again"
+                  }),
+                  jsxRuntimeExports.jsx("button", {
+                    onClick: () => {
+                      ot(yt), d(false);
+                    },
+                    className: `bg-gradient-to-br from-[#1E293B]/95 via-[#0F172A]/90 to-[#020617]/95
+                        backdrop-blur-md rounded-xl px-6 py-2
+                        border-2 border-red-500/50 hover:border-red-400
+                        shadow-[0_0_10px_rgba(239,68,68,0.2)]
+                        hover:shadow-[0_0_15px_rgba(239,68,68,0.4)]
+                        transition-all duration-300 text-red-400 rqnd-text`,
+                    children: "Close Game"
+                  })
+                ]
               })
             ]
           }),
           jsxRuntimeExports.jsx("div", {
+            className: "pacman-game-grid",
             style: {
               display: "grid",
               gridTemplateColumns: `repeat(${GRID_SIZE}, ${CELL_SIZE}px)`,
               gap: "1px",
-              backgroundColor: "#1a1a1a",
               padding: "4px",
               borderRadius: "8px"
             },
@@ -9247,7 +9298,7 @@ Please change the parent <Route path="${Bt}"> to <Route path="${Bt === "/" ? "*"
                 st.x === wt && st.y === it && jsxRuntimeExports.jsx("div", {
                   className: "absolute inset-0",
                   style: {
-                    transform: vt(),
+                    transform: mt(),
                     transition: "transform 0.2s"
                   },
                   children: jsxRuntimeExports.jsxs("div", {
@@ -9332,13 +9383,19 @@ Please change the parent <Route path="${Bt}"> to <Route path="${Bt === "/" ? "*"
             }, `${wt}-${it}`)))
           }),
           jsxRuntimeExports.jsxs("div", {
-            className: "mt-4 relative h-32 max-w-[180px] mx-auto",
+            className: "mt-4 relative h-32 max-w-[180px] mx-auto pacman-controls",
             children: [
               jsxRuntimeExports.jsx("button", {
-                onClick: () => ot("ArrowUp"),
-                className: "absolute top-0 left-1/2 -translate-x-1/2 w-12 h-12 bg-emerald-600 rounded-lg flex items-center justify-center active:bg-emerald-700 focus:outline-none shadow-lg active:shadow-md transition-all border-2 border-emerald-500",
+                onClick: () => nt("ArrowUp"),
+                className: `absolute top-0 left-1/2 -translate-x-1/2 w-12 h-12 
+                    bg-gradient-to-br from-[#1E293B]/95 via-[#0F172A]/90 to-[#020617]/95
+                    backdrop-blur-md rounded-xl
+                    border-2 border-blue-500/50 hover:border-blue-400
+                    shadow-[0_0_10px_rgba(96,165,250,0.2)]
+                    hover:shadow-[0_0_15px_rgba(96,165,250,0.4)]
+                    transition-all duration-300 flex items-center justify-center`,
                 children: jsxRuntimeExports.jsx("svg", {
-                  className: "w-6 h-6 text-white",
+                  className: "w-6 h-6 text-blue-400",
                   fill: "none",
                   stroke: "currentColor",
                   viewBox: "0 0 24 24",
@@ -9351,10 +9408,16 @@ Please change the parent <Route path="${Bt}"> to <Route path="${Bt === "/" ? "*"
                 })
               }),
               jsxRuntimeExports.jsx("button", {
-                onClick: () => ot("ArrowLeft"),
-                className: "absolute left-0 top-1/2 -translate-y-1/2 w-12 h-12 bg-emerald-600 rounded-lg flex items-center justify-center active:bg-emerald-700 focus:outline-none shadow-lg active:shadow-md transition-all border-2 border-emerald-500",
+                onClick: () => nt("ArrowLeft"),
+                className: `absolute left-0 top-1/2 -translate-y-1/2 w-12 h-12 
+                    bg-gradient-to-br from-[#1E293B]/95 via-[#0F172A]/90 to-[#020617]/95
+                    backdrop-blur-md rounded-xl
+                    border-2 border-blue-500/50 hover:border-blue-400
+                    shadow-[0_0_10px_rgba(96,165,250,0.2)]
+                    hover:shadow-[0_0_15px_rgba(96,165,250,0.4)]
+                    transition-all duration-300 flex items-center justify-center`,
                 children: jsxRuntimeExports.jsx("svg", {
-                  className: "w-6 h-6 text-white",
+                  className: "w-6 h-6 text-blue-400",
                   fill: "none",
                   stroke: "currentColor",
                   viewBox: "0 0 24 24",
@@ -9367,10 +9430,16 @@ Please change the parent <Route path="${Bt}"> to <Route path="${Bt === "/" ? "*"
                 })
               }),
               jsxRuntimeExports.jsx("button", {
-                onClick: () => ot("ArrowRight"),
-                className: "absolute right-0 top-1/2 -translate-y-1/2 w-12 h-12 bg-emerald-600 rounded-lg flex items-center justify-center active:bg-emerald-700 focus:outline-none shadow-lg active:shadow-md transition-all border-2 border-emerald-500",
+                onClick: () => nt("ArrowRight"),
+                className: `absolute right-0 top-1/2 -translate-y-1/2 w-12 h-12 
+                    bg-gradient-to-br from-[#1E293B]/95 via-[#0F172A]/90 to-[#020617]/95
+                    backdrop-blur-md rounded-xl
+                    border-2 border-blue-500/50 hover:border-blue-400
+                    shadow-[0_0_10px_rgba(96,165,250,0.2)]
+                    hover:shadow-[0_0_15px_rgba(96,165,250,0.4)]
+                    transition-all duration-300 flex items-center justify-center`,
                 children: jsxRuntimeExports.jsx("svg", {
-                  className: "w-6 h-6 text-white",
+                  className: "w-6 h-6 text-blue-400",
                   fill: "none",
                   stroke: "currentColor",
                   viewBox: "0 0 24 24",
@@ -9383,10 +9452,16 @@ Please change the parent <Route path="${Bt}"> to <Route path="${Bt === "/" ? "*"
                 })
               }),
               jsxRuntimeExports.jsx("button", {
-                onClick: () => ot("ArrowDown"),
-                className: "absolute bottom-0 left-1/2 -translate-x-1/2 w-12 h-12 bg-emerald-600 rounded-lg flex items-center justify-center active:bg-emerald-700 focus:outline-none shadow-lg active:shadow-md transition-all border-2 border-emerald-500",
+                onClick: () => nt("ArrowDown"),
+                className: `absolute bottom-0 left-1/2 -translate-x-1/2 w-12 h-12 
+                    bg-gradient-to-br from-[#1E293B]/95 via-[#0F172A]/90 to-[#020617]/95
+                    backdrop-blur-md rounded-xl
+                    border-2 border-blue-500/50 hover:border-blue-400
+                    shadow-[0_0_10px_rgba(96,165,250,0.2)]
+                    hover:shadow-[0_0_15px_rgba(96,165,250,0.4)]
+                    transition-all duration-300 flex items-center justify-center`,
                 children: jsxRuntimeExports.jsx("svg", {
-                  className: "w-6 h-6 text-white",
+                  className: "w-6 h-6 text-blue-400",
                   fill: "none",
                   stroke: "currentColor",
                   viewBox: "0 0 24 24",
@@ -9399,15 +9474,6 @@ Please change the parent <Route path="${Bt}"> to <Route path="${Bt === "/" ? "*"
                 })
               })
             ]
-          }),
-          jsxRuntimeExports.jsx("div", {
-            className: "mt-3 text-center text-gray-400 text-xs",
-            children: "\u0418\u0441\u043F\u043E\u043B\u044C\u0437\u0443\u0439\u0442\u0435 \u043A\u043D\u043E\u043F\u043A\u0438 \u0434\u043B\u044F \u0443\u043F\u0440\u0430\u0432\u043B\u0435\u043D\u0438\u044F"
-          }),
-          jsxRuntimeExports.jsx("button", {
-            onClick: mt,
-            className: "mt-2 w-full bg-red-500 hover:bg-red-600 text-white py-1.5 rounded text-sm",
-            children: "\u0417\u0430\u043A\u0440\u044B\u0442\u044C \u0438\u0433\u0440\u0443"
           })
         ]
       });
@@ -85883,22 +85949,14 @@ Values:
                         hover:shadow-[0_0_15px_rgba(96,165,250,0.4)]
                         transition-all duration-300 w-full max-w-sm h-16`,
                       children: jsxRuntimeExports.jsxs("div", {
-                        className: "flex items-center justify-center",
+                        className: "flex items-center justify-between px-4",
                         children: [
-                          jsxRuntimeExports.jsxs("div", {
-                            className: "flex flex-col items-center",
-                            children: [
-                              jsxRuntimeExports.jsx("div", {
-                                className: "text-blue-400 text-sm rqnd-text"
-                              }),
-                              jsxRuntimeExports.jsx("div", {
-                                className: "text-white rqnd-text",
-                                children: "POKO PACMAN"
-                              })
-                            ]
+                          jsxRuntimeExports.jsx("span", {
+                            className: "text-white rqnd-text",
+                            children: "POKO PACMAN"
                           }),
                           jsxRuntimeExports.jsx("div", {
-                            className: "bg-[#0F172A]/50 text-blue-400 px-3 py-1 rounded-lg text-xs border border-blue-400/20 ml-4",
+                            className: "bg-[#0F172A]/50 text-blue-400 px-3 py-1 rounded-lg text-xs border border-blue-400/20",
                             children: "??? POKO"
                           })
                         ]
@@ -85917,19 +85975,22 @@ Values:
                               hover:shadow-[0_0_15px rgba(96,165,250,0.4)]
                               transition-all duration-300 w-full`,
                         children: [
-                          jsxRuntimeExports.jsxs("button", {
+                          jsxRuntimeExports.jsx("button", {
                             onClick: () => dt(!st),
-                            className: "w-full flex items-center justify-center h-16 p-3",
-                            children: [
-                              jsxRuntimeExports.jsx("span", {
-                                className: "text-white text-sm rqnd-text",
-                                children: "UPDATE NAME"
-                              }),
-                              jsxRuntimeExports.jsx("div", {
-                                className: "bg-[#0F172A]/50 text-blue-400 px-3 py-1 rounded-lg text-xs border border-blue-400/20 ml-4",
-                                children: "2500 POKO"
-                              })
-                            ]
+                            className: "w-full h-16 p-3",
+                            children: jsxRuntimeExports.jsxs("div", {
+                              className: "flex items-center justify-between px-4",
+                              children: [
+                                jsxRuntimeExports.jsx("span", {
+                                  className: "text-white rqnd-text",
+                                  children: "UPDATE NAME"
+                                }),
+                                jsxRuntimeExports.jsx("div", {
+                                  className: "bg-[#0F172A]/50 text-blue-400 px-3 py-1 rounded-lg text-xs border border-blue-400/20",
+                                  children: "2500 POKO"
+                                })
+                              ]
+                            })
                           }),
                           st && jsxRuntimeExports.jsxs("div", {
                             className: "border-t-2 border-blue-500/30 p-4",
@@ -85958,48 +86019,54 @@ Values:
                     }),
                     jsxRuntimeExports.jsx("div", {
                       className: "w-full max-w-sm mb-4",
-                      children: jsxRuntimeExports.jsxs("button", {
+                      children: jsxRuntimeExports.jsx("button", {
                         onClick: xt,
-                        className: `w-full flex items-center justify-center h-16 p-3
+                        className: `w-full h-16 p-3
                           bg-gradient-to-br from-[#1E293B]/95 via-[#0F172A]/90 to-[#020617]/95
                           backdrop-blur-md rounded-xl
                           border-2 border-blue-500/50 hover:border-blue-400
                           shadow-[0_0_10px rgba(96,165,250,0.2)]
                           hover:shadow-[0_0_15px rgba(96,165,250,0.4)]
                           transition-all duration-300`,
-                        children: [
-                          jsxRuntimeExports.jsx("span", {
-                            className: "text-white text-sm rqnd-text",
-                            children: "SHARE STORY"
-                          }),
-                          jsxRuntimeExports.jsx("div", {
-                            className: "bg-[#0F172A]/50 text-blue-400 px-3 py-1 rounded-lg text-xs border border-blue-400/20 ml-4",
-                            children: "??? POKO"
-                          })
-                        ]
+                        children: jsxRuntimeExports.jsxs("div", {
+                          className: "flex items-center justify-between px-4",
+                          children: [
+                            jsxRuntimeExports.jsx("span", {
+                              className: "text-white rqnd-text",
+                              children: "SHARE STORY"
+                            }),
+                            jsxRuntimeExports.jsx("div", {
+                              className: "bg-[#0F172A]/50 text-blue-400 px-3 py-1 rounded-lg text-xs border border-blue-400/20",
+                              children: "??? POKO"
+                            })
+                          ]
+                        })
                       })
                     }),
                     jsxRuntimeExports.jsx("div", {
                       className: "w-full max-w-sm mb-4",
-                      children: jsxRuntimeExports.jsxs("button", {
+                      children: jsxRuntimeExports.jsx("button", {
                         onClick: _t,
-                        className: `w-full flex items-center justify-center h-16 p-3
+                        className: `w-full h-16 p-3
                           bg-gradient-to-br from-[#1E293B]/95 via-[#0F172A]/90 to-[#020617]/95
                           backdrop-blur-md rounded-xl
                           border-2 border-blue-500/50 hover:border-blue-400
                           shadow-[0_0_10px rgba(96,165,250,0.2)]
                           hover:shadow-[0_0_15px rgba(96,165,250,0.4)]
                           transition-all duration-300`,
-                        children: [
-                          jsxRuntimeExports.jsx("span", {
-                            className: "text-white text-sm rqnd-text",
-                            children: "BOOST CHANNEL"
-                          }),
-                          jsxRuntimeExports.jsx("div", {
-                            className: "bg-[#0F172A]/50 text-blue-400 px-3 py-1 rounded-lg text-xs border border-blue-400/20 ml-4",
-                            children: "??? POKO"
-                          })
-                        ]
+                        children: jsxRuntimeExports.jsxs("div", {
+                          className: "flex items-center justify-between px-4",
+                          children: [
+                            jsxRuntimeExports.jsx("span", {
+                              className: "text-white rqnd-text",
+                              children: "BOOST CHANNEL"
+                            }),
+                            jsxRuntimeExports.jsx("div", {
+                              className: "bg-[#0F172A]/50 text-blue-400 px-3 py-1 rounded-lg text-xs border border-blue-400/20",
+                              children: "??? POKO"
+                            })
+                          ]
+                        })
                       })
                     })
                   ]
@@ -86168,9 +86235,9 @@ Values:
       children: jsxRuntimeExports.jsx(App, {})
     }));
   });
-  var_485b8b3f_ccb2_5e44_baaf_b5546593c9d0 = _i();
+  var_cdf509fc_3921_55ed_beee_7bb3e414ddbb = _i();
 })();
 export {
   __tla,
-  var_485b8b3f_ccb2_5e44_baaf_b5546593c9d0 as default
+  var_cdf509fc_3921_55ed_beee_7bb3e414ddbb as default
 };
