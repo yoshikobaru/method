@@ -620,6 +620,8 @@ const routes = {
     '/check-channel-subscription': async (req, res, query) => {
       const { telegramId, channel } = query;
       
+      console.log('Проверка подписки:', { telegramId, channel });
+      
       if (!telegramId) {
         return { 
           status: 400, 
@@ -630,8 +632,9 @@ const routes = {
       try {
         // Проверяем подписку пользователя на указанный канал
         const chatMember = await bot.telegram.getChatMember(`@${channel}`, telegramId);
+        console.log('Статус подписки:', chatMember.status);
+
         const isSubscribed = ['member', 'administrator', 'creator'].includes(chatMember.status);
-        console.log('Subscription check for user:', telegramId, 'Channel:', channel, 'Status:', chatMember.status);
 
         if (isSubscribed) {
           const user = await User.findOne({ where: { telegramId } });
@@ -639,17 +642,17 @@ const routes = {
             return { status: 404, body: { error: 'User not found' } };
           }
 
-          console.log('Current user balance:', user.rootBalance);
-          
           const currentBalance = parseFloat(user.rootBalance) || 0;
           const newBalance = currentBalance + 1000;
           
-          console.log('New balance will be:', newBalance);
-
           await user.update({ rootBalance: newBalance });
 
           const updatedUser = await User.findOne({ where: { telegramId } });
-          console.log('Updated user balance:', updatedUser.rootBalance);
+          
+          console.log('Баланс обновлен:', {
+            oldBalance: currentBalance,
+            newBalance: updatedUser.rootBalance
+          });
 
           return { 
             status: 200, 
@@ -660,19 +663,24 @@ const routes = {
             } 
           };
         } else {
+          console.log('Пользователь не подписан. Статус:', chatMember.status);
           return { 
             status: 400, 
             body: { 
               success: false, 
-              error: 'You are not subscribed to the channel' 
+              error: 'You are not subscribed to the channel',
+              status: chatMember.status
             } 
           };
         }
       } catch (error) {
-        console.error('Error checking subscription:', error);
+        console.error('Ошибка проверки подписки:', error);
         return { 
           status: 500, 
-          body: { error: 'Failed to check subscription' } 
+          body: { 
+            error: 'Failed to check subscription',
+            details: error.message 
+          } 
         };
       }
     },

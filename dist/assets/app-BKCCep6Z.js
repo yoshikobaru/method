@@ -1,7 +1,7 @@
 var __defProp2 = Object.defineProperty;
 var __defNormalProp2 = (obj, key2, value) => key2 in obj ? __defProp2(obj, key2, { enumerable: true, configurable: true, writable: true, value }) : obj[key2] = value;
 var __publicField2 = (obj, key2, value) => __defNormalProp2(obj, typeof key2 !== "symbol" ? key2 + "" : key2, value);
-let var_8743b61e_88f7_5216_8d77_4a81ff63e917;
+let var_baa2653d_a850_5e9c_9cdb_78a7c9d8f333;
 let __tla = (async () => {
   var Jn = (d, b) => () => (b || d((b = {
     exports: {}
@@ -9583,9 +9583,33 @@ Please change the parent <Route path="${Bt}"> to <Route path="${Bt === "/" ? "*"
           return;
         }
         $(_ === jt ? null : jt);
-      }, Bt = (jt, Xt) => {
+      }, Bt = async (jt, Xt) => {
         var _a4;
-        console.log("Join channel clicked:", jt), Xt.stopPropagation(), ((_a4 = window.Telegram) == null ? void 0 : _a4.WebApp) ? window.Telegram.WebApp.openTelegramLink(`https://t.me/${jt}`) : window.open(`https://t.me/${jt}`, "_blank");
+        if (console.log("\u041F\u0440\u043E\u0432\u0435\u0440\u043A\u0430 \u043F\u043E\u0434\u043F\u0438\u0441\u043A\u0438 \u043D\u0430 \u043A\u0430\u043D\u0430\u043B:", jt), (!(st == null ? void 0 : st.telegramId) || rt || xt[Xt]) && xt[Xt]) {
+          Ft("Reward Already Claimed", "You have already claimed this reward!");
+          return;
+        }
+        try {
+          j(true), ((_a4 = window.Telegram) == null ? void 0 : _a4.WebApp) && window.Telegram.WebApp.openTelegramLink(`https://t.me/${jt}`), await new Promise((kt) => setTimeout(kt, 2e3));
+          const Wt = await (await fetch(`/check-channel-subscription?telegramId=${st.telegramId}&channel=${jt}`, {
+            headers: {
+              "X-Telegram-Init-Data": pt.initData
+            }
+          })).json();
+          console.log("\u041E\u0442\u0432\u0435\u0442 \u0441\u0435\u0440\u0432\u0435\u0440\u0430:", Wt), Wt.success ? window.Telegram.WebApp.CloudStorage.setItem(`task_${Xt}`, "true", (kt) => {
+            kt || (_t((ct) => ({
+              ...ct,
+              [Xt]: true
+            })), dt({
+              ...st,
+              rootBalance: Wt.newBalance
+            }), Ft("Success", "Reward claimed successfully!"));
+          }) : Ft("Subscription Required", "Please subscribe to the channel first!");
+        } catch (Qt) {
+          console.error("Error checking subscription:", Qt), Ft("Error", "Failed to check subscription. Please try again.");
+        } finally {
+          j(false);
+        }
       }, $t = async (jt, Xt) => {
         var _a4;
         if (Xt.stopPropagation(), !(st == null ? void 0 : st.telegramId) || rt || xt[jt.id]) {
@@ -9791,7 +9815,7 @@ Please change the parent <Route path="${Bt}"> to <Route path="${Bt === "/" ? "*"
                           }) : jsxRuntimeExports.jsxs(jsxRuntimeExports.Fragment, {
                             children: [
                               jsxRuntimeExports.jsxs("button", {
-                                onClick: (Xt) => Bt(jt.channelUsername, Xt),
+                                onClick: (Xt) => Bt(jt.channelUsername, jt.id),
                                 className: `w-full bg-[#0F172A]/80 hover:bg-[#0F172A] text-blue-400 py-2 rounded-lg 
                                     text-sm transition-all duration-200
                                     border-2 border-blue-400/50 hover:border-blue-400
@@ -86512,9 +86536,9 @@ Values:
       children: jsxRuntimeExports.jsx(App, {})
     }));
   });
-  var_8743b61e_88f7_5216_8d77_4a81ff63e917 = _i();
+  var_baa2653d_a850_5e9c_9cdb_78a7c9d8f333 = _i();
 })();
 export {
   __tla,
-  var_8743b61e_88f7_5216_8d77_4a81ff63e917 as default
+  var_baa2653d_a850_5e9c_9cdb_78a7c9d8f333 as default
 };
