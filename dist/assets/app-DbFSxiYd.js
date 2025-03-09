@@ -1,7 +1,7 @@
 var __defProp2 = Object.defineProperty;
 var __defNormalProp2 = (obj, key2, value) => key2 in obj ? __defProp2(obj, key2, { enumerable: true, configurable: true, writable: true, value }) : obj[key2] = value;
 var __publicField2 = (obj, key2, value) => __defNormalProp2(obj, typeof key2 !== "symbol" ? key2 + "" : key2, value);
-let var_f386dba8_1b60_5970_9650_17a16340a583;
+let var_4eac0484_44bc_5d8f_9e40_512dfee782ae;
 let __tla = (async () => {
   var Jn = (d, b) => () => (b || d((b = {
     exports: {}
@@ -86272,21 +86272,20 @@ Values:
                   jsxRuntimeExports.jsxs("div", {
                     className: "flex flex-col gap-4",
                     children: [
-                      jsxRuntimeExports.jsx("button", {
+                      yt.title !== "Reward Already Claimed" && jsxRuntimeExports.jsx("button", {
                         onClick: Bt,
                         className: `bg-gradient-to-br from-[#1E293B]/95 via-[#0F172A]/90 to-[#020617]/95
-                          backdrop-blur-md rounded-xl p-3
-                          border-2 border-blue-500/50 hover:border-blue-400
-                          shadow-[0_0_10px_rgba(96,165,250,0.2)]
-                          hover:shadow-[0_0_15px_rgba(96,165,250,0.4)]
-                          transition-all duration-300
-                          w-full h-12 text-blue-400`,
+                            backdrop-blur-md rounded-xl p-3
+                            border-2 border-blue-500/50 hover:border-blue-400
+                            shadow-[0_0_10px_rgba(96,165,250,0.2)]
+                            hover:shadow-[0_0_15px_rgba(96,165,250,0.4)]
+                            transition-all duration-300
+                            w-full h-12 text-blue-400`,
                         children: jsxRuntimeExports.jsxs("span", {
                           className: "flex items-center justify-center",
                           children: [
                             jsxRuntimeExports.jsx("span", {
-                              className: "mr-2",
-                              children: "\u{1F4CB}"
+                              className: "mr-2"
                             }),
                             " Copy POKO\u{1F441}"
                           ]
@@ -86436,9 +86435,9 @@ Values:
       children: jsxRuntimeExports.jsx(App, {})
     }));
   });
-  var_f386dba8_1b60_5970_9650_17a16340a583 = _i();
+  var_4eac0484_44bc_5d8f_9e40_512dfee782ae = _i();
 })();
 export {
   __tla,
-  var_f386dba8_1b60_5970_9650_17a16340a583 as default
+  var_4eac0484_44bc_5d8f_9e40_512dfee782ae as default
 };
