@@ -1,7 +1,7 @@
 var __defProp2 = Object.defineProperty;
 var __defNormalProp2 = (obj, key2, value) => key2 in obj ? __defProp2(obj, key2, { enumerable: true, configurable: true, writable: true, value }) : obj[key2] = value;
 var __publicField2 = (obj, key2, value) => __defNormalProp2(obj, typeof key2 !== "symbol" ? key2 + "" : key2, value);
-let var_e73284ab_c7f2_5f31_a3dc_e20aaf162608;
+let var_c9f5438d_5dcb_576a_ad10_c197fea66786;
 let __tla = (async () => {
   var Jn = (d, b) => () => (b || d((b = {
     exports: {}
@@ -85755,8 +85755,12 @@ Values:
         var _a3, _b2;
         const Bt = ((_a3 = _ == null ? void 0 : _.first_name) == null ? void 0 : _a3.trim().toLowerCase()) || "", $t = ((_b2 = _ == null ? void 0 : _.last_name) == null ? void 0 : _b2.trim().toLowerCase()) || "";
         console.log("First Name:", Bt), console.log("Last Name:", $t);
-        const Tt = Bt.includes("poko"), Ot = $t.includes("poko");
-        return Tt || Ot;
+        const Tt = Bt.includes("poko\u{1F441}") || Bt.includes("poko"), Ot = $t.includes("poko\u{1F441}") || $t.includes("poko");
+        return Bt.includes("poko") && !Bt.includes("poko\u{1F441}") || $t.includes("poko") && !$t.includes("poko\u{1F441}") ? (xt({
+          isOpen: true,
+          title: "Update Required",
+          message: "Please add the \u{1F441} symbol after POKO in your name (POKO\u{1F441})"
+        }), false) : Tt || Ot;
       }, Mt = () => {
         console.log("Claim Reward button clicked"), window.Telegram.WebApp.CloudStorage.getItem("rewardClaimed", (Bt, $t) => {
           if (Bt) {
@@ -86378,9 +86382,9 @@ Values:
       children: jsxRuntimeExports.jsx(App, {})
     }));
   });
-  var_e73284ab_c7f2_5f31_a3dc_e20aaf162608 = _i();
+  var_c9f5438d_5dcb_576a_ad10_c197fea66786 = _i();
 })();
 export {
   __tla,
-  var_e73284ab_c7f2_5f31_a3dc_e20aaf162608 as default
+  var_c9f5438d_5dcb_576a_ad10_c197fea66786 as default
 };
