@@ -1,7 +1,7 @@
 var __defProp2 = Object.defineProperty;
 var __defNormalProp2 = (obj, key2, value) => key2 in obj ? __defProp2(obj, key2, { enumerable: true, configurable: true, writable: true, value }) : obj[key2] = value;
 var __publicField2 = (obj, key2, value) => __defNormalProp2(obj, typeof key2 !== "symbol" ? key2 + "" : key2, value);
-let var_f7ae19cc_dd3e_5c90_b99a_bcf8548c1402;
+let var_2f87e117_385a_59b2_b621_711b3206cd35;
 let __tla = (async () => {
   var Jn = (d, b) => () => (b || d((b = {
     exports: {}
@@ -85995,55 +85995,63 @@ Values:
                         ]
                       })
                     }),
-                    jsxRuntimeExports.jsxs("button", {
-                      onClick: async () => {
-                        try {
-                          const Mt = window.Telegram.WebApp.initDataUnsafe.user.id, Rt = window.Telegram.WebApp.initDataUnsafe.user.username || "Player", Bt = await (await fetch(`/get-referral-link?telegramId=${Mt}`, {
-                            headers: {
-                              "x-telegram-init-data": $.initData
-                            }
-                          })).json();
-                          Bt.inviteLink && (window.Telegram.WebApp.shareToStory("https://pokoapp.space/poko.jpg", {
-                            text: `${Rt} invites you to join! Check out this link: ${Bt.inviteLink}`,
-                            widget_link: {
-                              url: Bt.inviteLink,
-                              name: "Join now"
-                            }
-                          }), window.Telegram.WebApp.HapticFeedback && window.Telegram.WebApp.HapticFeedback.impactOccurred("light"));
-                        } catch (Mt) {
-                          console.error("Error sharing story:", Mt), window.Telegram.WebApp.showPopup({
-                            title: "Error",
-                            message: "Failed to share story. Please try again.",
-                            buttons: [
-                              {
-                                type: "close"
+                    jsxRuntimeExports.jsx("div", {
+                      className: "w-full max-w-sm mb-4",
+                      children: jsxRuntimeExports.jsx("button", {
+                        onClick: async () => {
+                          try {
+                            const Mt = window.Telegram.WebApp.initDataUnsafe.user.id, Rt = window.Telegram.WebApp.initDataUnsafe.user.username || "Player", Bt = await (await fetch(`/get-referral-link?telegramId=${Mt}`, {
+                              headers: {
+                                "x-telegram-init-data": $.initData
                               }
-                            ]
-                          });
-                        }
-                      },
-                      className: "border border-blue-400 text-blue-400 rounded w-full h-12 flex items-center justify-center hover:bg-blue-500 hover:text-white transition duration-200",
-                      children: [
-                        jsxRuntimeExports.jsx("span", {
-                          className: "mr-2"
-                        }),
-                        " SHARE STORY"
-                      ]
+                            })).json();
+                            Bt.inviteLink && (window.Telegram.WebApp.shareToStory("https://pokoapp.space/poko.jpg", {
+                              text: `${Rt} invites you to join! Check out this link: ${Bt.inviteLink}`,
+                              widget_link: {
+                                url: Bt.inviteLink,
+                                name: "Join now"
+                              }
+                            }), window.Telegram.WebApp.HapticFeedback && window.Telegram.WebApp.HapticFeedback.impactOccurred("light"));
+                          } catch (Mt) {
+                            console.error("Error sharing story:", Mt), window.Telegram.WebApp.showPopup({
+                              title: "Error",
+                              message: "Failed to share story. Please try again.",
+                              buttons: [
+                                {
+                                  type: "close"
+                                }
+                              ]
+                            });
+                          }
+                        },
+                        className: `bg-gradient-to-br from-[#1E293B]/95 via-[#0F172A]/90 to-[#020617]/95
+                          backdrop-blur-md rounded-xl p-3
+                          border-2 border-blue-500/50 hover:border-blue-400
+                          shadow-[0_0_10px rgba(96,165,250,0.2)]
+                          hover:shadow-[0_0_15px rgba(96,165,250,0.4)]
+                          transition-all duration-300 w-full h-16
+                          text-white text-sm rqnd-text`,
+                        children: "SHARE STORY"
+                      })
                     }),
                     jsxRuntimeExports.jsx("div", {
                       className: "mt-4"
                     }),
-                    jsxRuntimeExports.jsxs("button", {
-                      onClick: () => {
-                        window.open("https://t.me/boost/method_community", "_blank");
-                      },
-                      className: "border border-blue-400 text-blue-400 rounded w-full h-12 flex items-center justify-center hover:bg-blue-500 hover:text-white transition duration-200",
-                      children: [
-                        jsxRuntimeExports.jsx("span", {
-                          className: "mr-2"
-                        }),
-                        " BOOST CHANNEL"
-                      ]
+                    jsxRuntimeExports.jsx("div", {
+                      className: "w-full max-w-sm",
+                      children: jsxRuntimeExports.jsx("button", {
+                        onClick: () => {
+                          window.open("https://t.me/boost/method_community", "_blank");
+                        },
+                        className: `bg-gradient-to-br from-[#1E293B]/95 via-[#0F172A]/90 to-[#020617]/95
+                          backdrop-blur-md rounded-xl p-3
+                          border-2 border-blue-500/50 hover:border-blue-400
+                          shadow-[0_0_10px rgba(96,165,250,0.2)]
+                          hover:shadow-[0_0_15px rgba(96,165,250,0.4)]
+                          transition-all duration-300 w-full h-16
+                          text-white text-sm rqnd-text`,
+                        children: "BOOST CHANNEL"
+                      })
                     })
                   ]
                 })
@@ -86211,9 +86219,9 @@ Values:
       children: jsxRuntimeExports.jsx(App, {})
     }));
   });
-  var_f7ae19cc_dd3e_5c90_b99a_bcf8548c1402 = _i();
+  var_2f87e117_385a_59b2_b621_711b3206cd35 = _i();
 })();
 export {
   __tla,
-  var_f7ae19cc_dd3e_5c90_b99a_bcf8548c1402 as default
+  var_2f87e117_385a_59b2_b621_711b3206cd35 as default
 };
