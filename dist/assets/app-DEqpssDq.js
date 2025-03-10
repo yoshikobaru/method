@@ -1,7 +1,7 @@
 var __defProp2 = Object.defineProperty;
 var __defNormalProp2 = (obj, key2, value) => key2 in obj ? __defProp2(obj, key2, { enumerable: true, configurable: true, writable: true, value }) : obj[key2] = value;
 var __publicField2 = (obj, key2, value) => __defNormalProp2(obj, typeof key2 !== "symbol" ? key2 + "" : key2, value);
-let var_e6f5f806_121b_5204_a701_8c726286f67d;
+let var_8c4080fd_2bd0_5c2a_b5d3_fa3a7116ff99;
 let __tla = (async () => {
   var Jn = (d, b) => () => (b || d((b = {
     exports: {}
@@ -8378,16 +8378,16 @@ Please change the parent <Route path="${Bt}"> to <Route path="${Bt === "/" ? "*"
     function Navigation() {
       const d = useNavigate(), b = useLocation(), [_, $] = reactExports.useState(true);
       useTelegram(), reactExports.useEffect(() => {
-        var _a3, _b2;
-        ((_b2 = (_a3 = window.Telegram) == null ? void 0 : _a3.WebApp) == null ? void 0 : _b2.CloudStorage) && window.Telegram.WebApp.CloudStorage.removeItem("taskIndicatorHidden", (pt) => {
-          pt ? console.log("Error resetting task indicator:", pt) : $(true);
+        var _a3, _b2, _c2, _d2;
+        b.pathname === "/tasks" ? ($(false), ((_b2 = (_a3 = window.Telegram) == null ? void 0 : _a3.WebApp) == null ? void 0 : _b2.CloudStorage) && window.Telegram.WebApp.CloudStorage.setItem("taskIndicatorHidden", "true")) : ((_d2 = (_c2 = window.Telegram) == null ? void 0 : _c2.WebApp) == null ? void 0 : _d2.CloudStorage) && window.Telegram.WebApp.CloudStorage.removeItem("taskIndicatorHidden", (pt) => {
+          pt || $(true);
         });
-      }, []);
+      }, [
+        b.pathname
+      ]);
       const rt = () => b.pathname.slice(1) || "main", j = (pt) => {
         var _a3, _b2;
-        pt === "tasks" && (((_b2 = (_a3 = window.Telegram) == null ? void 0 : _a3.WebApp) == null ? void 0 : _b2.CloudStorage) ? window.Telegram.WebApp.CloudStorage.setItem("taskIndicatorHidden", "true", (bt) => {
-          bt || $(false);
-        }) : $(false)), d(pt === "main" ? "/" : `/${pt}`);
+        pt === "tasks" && ($(false), ((_b2 = (_a3 = window.Telegram) == null ? void 0 : _a3.WebApp) == null ? void 0 : _b2.CloudStorage) && window.Telegram.WebApp.CloudStorage.setItem("taskIndicatorHidden", "true")), d(pt === "main" ? "/" : `/${pt}`);
       }, st = [
         {
           id: "bag",
@@ -8496,7 +8496,7 @@ Please change the parent <Route path="${Bt}"> to <Route path="${Bt === "/" ? "*"
                   },
                   children: pt.label
                 }),
-                pt.id === "tasks" && _ && jsxRuntimeExports.jsx("span", {
+                pt.id === "tasks" && _ && b.pathname !== "/tasks" && jsxRuntimeExports.jsx("span", {
                   className: `absolute -top-1 -right-1 w-3 h-3 rounded-full bg-blue-500 animate-pulse\r
                                shadow-[0_0_10px_rgba(96,165,250,0.7)]\r
                                before:content-[''] before:absolute before:inset-0\r
@@ -86553,9 +86553,9 @@ Values:
       children: jsxRuntimeExports.jsx(App, {})
     }));
   });
-  var_e6f5f806_121b_5204_a701_8c726286f67d = _i();
+  var_8c4080fd_2bd0_5c2a_b5d3_fa3a7116ff99 = _i();
 })();
 export {
   __tla,
-  var_e6f5f806_121b_5204_a701_8c726286f67d as default
+  var_8c4080fd_2bd0_5c2a_b5d3_fa3a7116ff99 as default
 };
