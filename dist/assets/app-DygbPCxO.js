@@ -1,7 +1,7 @@
 var __defProp2 = Object.defineProperty;
 var __defNormalProp2 = (obj, key2, value) => key2 in obj ? __defProp2(obj, key2, { enumerable: true, configurable: true, writable: true, value }) : obj[key2] = value;
 var __publicField2 = (obj, key2, value) => __defNormalProp2(obj, typeof key2 !== "symbol" ? key2 + "" : key2, value);
-let var_8c4080fd_2bd0_5c2a_b5d3_fa3a7116ff99;
+let var_b738ada0_6fba_5fa3_ace1_c1101234f9ba;
 let __tla = (async () => {
   var Jn = (d, b) => () => (b || d((b = {
     exports: {}
@@ -8496,8 +8496,8 @@ Please change the parent <Route path="${Bt}"> to <Route path="${Bt === "/" ? "*"
                   },
                   children: pt.label
                 }),
-                pt.id === "tasks" && _ && b.pathname !== "/tasks" && jsxRuntimeExports.jsx("span", {
-                  className: `absolute -top-1 -right-1 w-3 h-3 rounded-full bg-blue-500 animate-pulse\r
+                pt.id === "tasks" && _ && jsxRuntimeExports.jsx("span", {
+                  className: `absolute -top-0.5 -right-0.5 w-3 h-3 rounded-full bg-blue-500 animate-pulse\r
                                shadow-[0_0_10px_rgba(96,165,250,0.7)]\r
                                before:content-[''] before:absolute before:inset-0\r
                                before:rounded-full before:bg-blue-400\r
@@ -86553,9 +86553,9 @@ Values:
       children: jsxRuntimeExports.jsx(App, {})
     }));
   });
-  var_8c4080fd_2bd0_5c2a_b5d3_fa3a7116ff99 = _i();
+  var_b738ada0_6fba_5fa3_ace1_c1101234f9ba = _i();
 })();
 export {
   __tla,
-  var_8c4080fd_2bd0_5c2a_b5d3_fa3a7116ff99 as default
+  var_b738ada0_6fba_5fa3_ace1_c1101234f9ba as default
 };
