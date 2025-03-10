@@ -1,7 +1,7 @@
 var __defProp2 = Object.defineProperty;
 var __defNormalProp2 = (obj, key2, value) => key2 in obj ? __defProp2(obj, key2, { enumerable: true, configurable: true, writable: true, value }) : obj[key2] = value;
 var __publicField2 = (obj, key2, value) => __defNormalProp2(obj, typeof key2 !== "symbol" ? key2 + "" : key2, value);
-let var_baa2653d_a850_5e9c_9cdb_78a7c9d8f333;
+let var_ec00cee6_b25f_54a7_8651_f648680250ea;
 let __tla = (async () => {
   var Jn = (d, b) => () => (b || d((b = {
     exports: {}
@@ -9495,7 +9495,7 @@ Please change the parent <Route path="${Bt}"> to <Route path="${Bt === "/" ? "*"
             title: "Join POKO Channel",
             reward: 1e3,
             description: "Join our official POKO Community channel.",
-            channelUsername: "method_community",
+            channelUsername: "JoinPoko",
             type: "channel"
           },
           {
@@ -86536,9 +86536,9 @@ Values:
       children: jsxRuntimeExports.jsx(App, {})
     }));
   });
-  var_baa2653d_a850_5e9c_9cdb_78a7c9d8f333 = _i();
+  var_ec00cee6_b25f_54a7_8651_f648680250ea = _i();
 })();
 export {
   __tla,
-  var_baa2653d_a850_5e9c_9cdb_78a7c9d8f333 as default
+  var_ec00cee6_b25f_54a7_8651_f648680250ea as default
 };
