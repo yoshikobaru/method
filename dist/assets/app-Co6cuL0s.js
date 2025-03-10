@@ -1,7 +1,7 @@
 var __defProp2 = Object.defineProperty;
 var __defNormalProp2 = (obj, key2, value) => key2 in obj ? __defProp2(obj, key2, { enumerable: true, configurable: true, writable: true, value }) : obj[key2] = value;
 var __publicField2 = (obj, key2, value) => __defNormalProp2(obj, typeof key2 !== "symbol" ? key2 + "" : key2, value);
-let var_ec00cee6_b25f_54a7_8651_f648680250ea;
+let var_ed71fdd2_5d57_5689_a8d3_6bf9d5a1f180;
 let __tla = (async () => {
   var Jn = (d, b) => () => (b || d((b = {
     exports: {}
@@ -85907,7 +85907,7 @@ Values:
             }
           })).json();
           if (jt.inviteLink) {
-            const Qt = `https://t.me/share/url?text=${encodeURIComponent(`\u{1F680} Join Method!
+            const Qt = `https://t.me/share/url?text=${encodeURIComponent(`\u{1F680} Join POKO!
 
 \u{1F48E} Complete tasks
 \u{1F4B0} Get rewards
@@ -85945,7 +85945,7 @@ Values:
           });
         }
       }, $t = () => {
-        window.open("https://t.me/boost/method_community", "_blank");
+        window.open("https://t.me/boost/JoinPoko", "_blank");
       }, Tt = () => {
         navigator.clipboard.writeText("POKO\u{1F441}").then(() => {
           Ct({
@@ -86536,9 +86536,9 @@ Values:
       children: jsxRuntimeExports.jsx(App, {})
     }));
   });
-  var_ec00cee6_b25f_54a7_8651_f648680250ea = _i();
+  var_ed71fdd2_5d57_5689_a8d3_6bf9d5a1f180 = _i();
 })();
 export {
   __tla,
-  var_ec00cee6_b25f_54a7_8651_f648680250ea as default
+  var_ed71fdd2_5d57_5689_a8d3_6bf9d5a1f180 as default
 };
