@@ -1,7 +1,7 @@
 var __defProp2 = Object.defineProperty;
 var __defNormalProp2 = (obj, key2, value) => key2 in obj ? __defProp2(obj, key2, { enumerable: true, configurable: true, writable: true, value }) : obj[key2] = value;
 var __publicField2 = (obj, key2, value) => __defNormalProp2(obj, typeof key2 !== "symbol" ? key2 + "" : key2, value);
-let var_167367e8_ad88_5f47_a8d6_cee0cc87b8b9;
+let var_e6f5f806_121b_5204_a701_8c726286f67d;
 let __tla = (async () => {
   var Jn = (d, b) => () => (b || d((b = {
     exports: {}
@@ -8358,9 +8358,36 @@ Please change the parent <Route path="${Bt}"> to <Route path="${Bt === "/" ? "*"
         ]
       });
     }
+    let isWebAppInitialized = false;
+    function useTelegram() {
+      var _a3, _b2;
+      const [d, b] = reactExports.useState(false), _ = (_a3 = window.Telegram) == null ? void 0 : _a3.WebApp;
+      return reactExports.useEffect(() => {
+        if (!_ || isWebAppInitialized) return;
+        (() => {
+          _.ready(), _.expand(), _.setHeaderColor("#0A0F1C"), isWebAppInitialized = true, b(true);
+        })();
+      }, [
+        _
+      ]), {
+        tg: _,
+        user: (_b2 = _ == null ? void 0 : _.initDataUnsafe) == null ? void 0 : _b2.user,
+        isReady: d
+      };
+    }
     function Navigation() {
-      const d = useNavigate(), b = useLocation(), [_, $] = reactExports.useState(true), rt = () => b.pathname.slice(1) || "main", j = (pt) => {
-        pt === "tasks" && $(false), d(pt === "main" ? "/" : `/${pt}`);
+      const d = useNavigate(), b = useLocation(), [_, $] = reactExports.useState(true);
+      useTelegram(), reactExports.useEffect(() => {
+        var _a3, _b2;
+        ((_b2 = (_a3 = window.Telegram) == null ? void 0 : _a3.WebApp) == null ? void 0 : _b2.CloudStorage) && window.Telegram.WebApp.CloudStorage.removeItem("taskIndicatorHidden", (pt) => {
+          pt ? console.log("Error resetting task indicator:", pt) : $(true);
+        });
+      }, []);
+      const rt = () => b.pathname.slice(1) || "main", j = (pt) => {
+        var _a3, _b2;
+        pt === "tasks" && (((_b2 = (_a3 = window.Telegram) == null ? void 0 : _a3.WebApp) == null ? void 0 : _b2.CloudStorage) ? window.Telegram.WebApp.CloudStorage.setItem("taskIndicatorHidden", "true", (bt) => {
+          bt || $(false);
+        }) : $(false)), d(pt === "main" ? "/" : `/${pt}`);
       }, st = [
         {
           id: "bag",
@@ -8481,23 +8508,6 @@ Please change the parent <Route path="${Bt}"> to <Route path="${Bt === "/" ? "*"
           })
         })
       });
-    }
-    let isWebAppInitialized = false;
-    function useTelegram() {
-      var _a3, _b2;
-      const [d, b] = reactExports.useState(false), _ = (_a3 = window.Telegram) == null ? void 0 : _a3.WebApp;
-      return reactExports.useEffect(() => {
-        if (!_ || isWebAppInitialized) return;
-        (() => {
-          _.ready(), _.expand(), _.setHeaderColor("#0A0F1C"), isWebAppInitialized = true, b(true);
-        })();
-      }, [
-        _
-      ]), {
-        tg: _,
-        user: (_b2 = _ == null ? void 0 : _.initDataUnsafe) == null ? void 0 : _b2.user,
-        isReady: d
-      };
     }
     function UserInfo() {
       const { user: d } = useAuthStore(), { user: b } = useTelegram(), _ = (b == null ? void 0 : b.username) || (b == null ? void 0 : b.first_name) || (d == null ? void 0 : d.username) || "User", $ = b == null ? void 0 : b.photo_url, rt = parseInt((d == null ? void 0 : d.rootBalance) || 0);
@@ -86543,9 +86553,9 @@ Values:
       children: jsxRuntimeExports.jsx(App, {})
     }));
   });
-  var_167367e8_ad88_5f47_a8d6_cee0cc87b8b9 = _i();
+  var_e6f5f806_121b_5204_a701_8c726286f67d = _i();
 })();
 export {
   __tla,
-  var_167367e8_ad88_5f47_a8d6_cee0cc87b8b9 as default
+  var_e6f5f806_121b_5204_a701_8c726286f67d as default
 };
