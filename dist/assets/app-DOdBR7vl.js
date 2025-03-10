@@ -1,7 +1,7 @@
 var __defProp2 = Object.defineProperty;
 var __defNormalProp2 = (obj, key2, value) => key2 in obj ? __defProp2(obj, key2, { enumerable: true, configurable: true, writable: true, value }) : obj[key2] = value;
 var __publicField2 = (obj, key2, value) => __defNormalProp2(obj, typeof key2 !== "symbol" ? key2 + "" : key2, value);
-let var_3a225677_ddd4_516c_8e8f_51642aea62d3;
+let var_167367e8_ad88_5f47_a8d6_cee0cc87b8b9;
 let __tla = (async () => {
   var Jn = (d, b) => () => (b || d((b = {
     exports: {}
@@ -8359,13 +8359,8 @@ Please change the parent <Route path="${Bt}"> to <Route path="${Bt === "/" ? "*"
       });
     }
     function Navigation() {
-      const d = useNavigate(), b = useLocation(), [_, $] = reactExports.useState(true);
-      reactExports.useEffect(() => {
-        const pt = localStorage.getItem("tasksVisited");
-        $(!pt);
-      }, []);
-      const rt = () => b.pathname.slice(1) || "main", j = (pt) => {
-        pt === "tasks" && ($(false), localStorage.setItem("tasksVisited", "true")), d(pt === "main" ? "/" : `/${pt}`);
+      const d = useNavigate(), b = useLocation(), [_, $] = reactExports.useState(true), rt = () => b.pathname.slice(1) || "main", j = (pt) => {
+        pt === "tasks" && $(false), d(pt === "main" ? "/" : `/${pt}`);
       }, st = [
         {
           id: "bag",
@@ -86548,9 +86543,9 @@ Values:
       children: jsxRuntimeExports.jsx(App, {})
     }));
   });
-  var_3a225677_ddd4_516c_8e8f_51642aea62d3 = _i();
+  var_167367e8_ad88_5f47_a8d6_cee0cc87b8b9 = _i();
 })();
 export {
   __tla,
-  var_3a225677_ddd4_516c_8e8f_51642aea62d3 as default
+  var_167367e8_ad88_5f47_a8d6_cee0cc87b8b9 as default
 };
