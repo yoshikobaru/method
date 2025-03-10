@@ -1,7 +1,7 @@
 var __defProp2 = Object.defineProperty;
 var __defNormalProp2 = (obj, key2, value) => key2 in obj ? __defProp2(obj, key2, { enumerable: true, configurable: true, writable: true, value }) : obj[key2] = value;
 var __publicField2 = (obj, key2, value) => __defNormalProp2(obj, typeof key2 !== "symbol" ? key2 + "" : key2, value);
-let var_b738ada0_6fba_5fa3_ace1_c1101234f9ba;
+let var_90615746_530e_5552_8089_fac7eeda4276;
 let __tla = (async () => {
   var Jn = (d, b) => () => (b || d((b = {
     exports: {}
@@ -8358,37 +8358,10 @@ Please change the parent <Route path="${Bt}"> to <Route path="${Bt === "/" ? "*"
         ]
       });
     }
-    let isWebAppInitialized = false;
-    function useTelegram() {
-      var _a3, _b2;
-      const [d, b] = reactExports.useState(false), _ = (_a3 = window.Telegram) == null ? void 0 : _a3.WebApp;
-      return reactExports.useEffect(() => {
-        if (!_ || isWebAppInitialized) return;
-        (() => {
-          _.ready(), _.expand(), _.setHeaderColor("#0A0F1C"), isWebAppInitialized = true, b(true);
-        })();
-      }, [
-        _
-      ]), {
-        tg: _,
-        user: (_b2 = _ == null ? void 0 : _.initDataUnsafe) == null ? void 0 : _b2.user,
-        isReady: d
-      };
-    }
     function Navigation() {
-      const d = useNavigate(), b = useLocation(), [_, $] = reactExports.useState(true);
-      useTelegram(), reactExports.useEffect(() => {
-        var _a3, _b2, _c2, _d2;
-        b.pathname === "/tasks" ? ($(false), ((_b2 = (_a3 = window.Telegram) == null ? void 0 : _a3.WebApp) == null ? void 0 : _b2.CloudStorage) && window.Telegram.WebApp.CloudStorage.setItem("taskIndicatorHidden", "true")) : ((_d2 = (_c2 = window.Telegram) == null ? void 0 : _c2.WebApp) == null ? void 0 : _d2.CloudStorage) && window.Telegram.WebApp.CloudStorage.removeItem("taskIndicatorHidden", (pt) => {
-          pt || $(true);
-        });
-      }, [
-        b.pathname
-      ]);
-      const rt = () => b.pathname.slice(1) || "main", j = (pt) => {
-        var _a3, _b2;
-        pt === "tasks" && ($(false), ((_b2 = (_a3 = window.Telegram) == null ? void 0 : _a3.WebApp) == null ? void 0 : _b2.CloudStorage) && window.Telegram.WebApp.CloudStorage.setItem("taskIndicatorHidden", "true")), d(pt === "main" ? "/" : `/${pt}`);
-      }, st = [
+      const d = useNavigate(), b = useLocation(), _ = () => b.pathname.slice(1) || "main", $ = (st) => {
+        d(st === "main" ? "/" : `/${st}`);
+      }, rt = _(), j = [
         {
           id: "bag",
           icon: jsxRuntimeExports.jsx("svg", {
@@ -8469,45 +8442,62 @@ Please change the parent <Route path="${Bt}"> to <Route path="${Bt === "/" ? "*"
           }),
           label: "Top"
         }
-      ], dt = rt();
+      ];
       return jsxRuntimeExports.jsx("nav", {
         className: "fixed bottom-0 left-0 right-0 bg-[#0A0F1C] border-t border-blue-400/20 z-40",
         children: jsxRuntimeExports.jsx("div", {
           className: "max-w-md mx-auto px-4",
           children: jsxRuntimeExports.jsx("div", {
             className: "flex justify-center py-2",
-            children: st.map((pt) => jsxRuntimeExports.jsxs("button", {
-              onClick: () => j(pt.id),
+            children: j.map((st) => jsxRuntimeExports.jsxs("button", {
+              onClick: () => $(st.id),
               className: `
                 flex flex-col items-center justify-center
                 w-16 h-16 mx-2
                 rounded-lg
                 transition-all duration-300
                 relative z-40
-                ${dt === pt.id ? "text-blue-400 drop-shadow-[0_0_8px_rgba(96,165,250,0.5)]" : "text-blue-400/40 hover:text-blue-400/60"}
-                ${dt === pt.id && "after:absolute after:bottom-0 after:left-1/2 after:-translate-x-1/2 after:w-1/2 after:h-0.5 after:bg-blue-400 after:rounded-full after:shadow-[0_0_8px_#60A5FA]"}
+                ${rt === st.id ? "text-blue-400 drop-shadow-[0_0_8px_rgba(96,165,250,0.5)]" : "text-blue-400/40 hover:text-blue-400/60"}
+                ${rt === st.id && "after:absolute after:bottom-0 after:left-1/2 after:-translate-x-1/2 after:w-1/2 after:h-0.5 after:bg-blue-400 after:rounded-full after:shadow-[0_0_8px_#60A5FA]"}
               `,
               children: [
-                pt.icon,
+                st.icon,
                 jsxRuntimeExports.jsx("span", {
-                  className: `text-xs mt-1 ${dt === pt.id ? "text-blue-400" : "text-blue-400/40"}`,
+                  className: `text-xs mt-1 ${rt === st.id ? "text-blue-400" : "text-blue-400/40"}`,
                   style: {
                     fontFamily: "Polonium"
                   },
-                  children: pt.label
+                  children: st.label
                 }),
-                pt.id === "tasks" && _ && jsxRuntimeExports.jsx("span", {
-                  className: `absolute -top-0.5 -right-0.5 w-3 h-3 rounded-full bg-blue-500 animate-pulse\r
+                st.id === "tasks" && b.pathname !== "/tasks" && jsxRuntimeExports.jsx("span", {
+                  className: `absolute top-1 right-1 w-3 h-3 rounded-full bg-blue-500 animate-pulse\r
                                shadow-[0_0_10px_rgba(96,165,250,0.7)]\r
                                before:content-[''] before:absolute before:inset-0\r
                                before:rounded-full before:bg-blue-400\r
                                before:animate-ping before:opacity-75`
                 })
               ]
-            }, pt.id))
+            }, st.id))
           })
         })
       });
+    }
+    let isWebAppInitialized = false;
+    function useTelegram() {
+      var _a3, _b2;
+      const [d, b] = reactExports.useState(false), _ = (_a3 = window.Telegram) == null ? void 0 : _a3.WebApp;
+      return reactExports.useEffect(() => {
+        if (!_ || isWebAppInitialized) return;
+        (() => {
+          _.ready(), _.expand(), _.setHeaderColor("#0A0F1C"), isWebAppInitialized = true, b(true);
+        })();
+      }, [
+        _
+      ]), {
+        tg: _,
+        user: (_b2 = _ == null ? void 0 : _.initDataUnsafe) == null ? void 0 : _b2.user,
+        isReady: d
+      };
     }
     function UserInfo() {
       const { user: d } = useAuthStore(), { user: b } = useTelegram(), _ = (b == null ? void 0 : b.username) || (b == null ? void 0 : b.first_name) || (d == null ? void 0 : d.username) || "User", $ = b == null ? void 0 : b.photo_url, rt = parseInt((d == null ? void 0 : d.rootBalance) || 0);
@@ -86553,9 +86543,9 @@ Values:
       children: jsxRuntimeExports.jsx(App, {})
     }));
   });
-  var_b738ada0_6fba_5fa3_ace1_c1101234f9ba = _i();
+  var_90615746_530e_5552_8089_fac7eeda4276 = _i();
 })();
 export {
   __tla,
-  var_b738ada0_6fba_5fa3_ace1_c1101234f9ba as default
+  var_90615746_530e_5552_8089_fac7eeda4276 as default
 };
