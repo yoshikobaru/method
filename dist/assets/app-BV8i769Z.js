@@ -1,7 +1,7 @@
 var __defProp2 = Object.defineProperty;
 var __defNormalProp2 = (obj, key2, value) => key2 in obj ? __defProp2(obj, key2, { enumerable: true, configurable: true, writable: true, value }) : obj[key2] = value;
 var __publicField2 = (obj, key2, value) => __defNormalProp2(obj, typeof key2 !== "symbol" ? key2 + "" : key2, value);
-let var_7823faab_6f00_571e_b16b_ec2989a749d1;
+let var_3a225677_ddd4_516c_8e8f_51642aea62d3;
 let __tla = (async () => {
   var Jn = (d, b) => () => (b || d((b = {
     exports: {}
@@ -8359,9 +8359,14 @@ Please change the parent <Route path="${Bt}"> to <Route path="${Bt === "/" ? "*"
       });
     }
     function Navigation() {
-      const d = useNavigate(), b = useLocation(), _ = () => b.pathname.slice(1) || "main", $ = (st) => {
-        d(st === "main" ? "/" : `/${st}`);
-      }, rt = [
+      const d = useNavigate(), b = useLocation(), [_, $] = reactExports.useState(true);
+      reactExports.useEffect(() => {
+        const pt = localStorage.getItem("tasksVisited");
+        $(!pt);
+      }, []);
+      const rt = () => b.pathname.slice(1) || "main", j = (pt) => {
+        pt === "tasks" && ($(false), localStorage.setItem("tasksVisited", "true")), d(pt === "main" ? "/" : `/${pt}`);
+      }, st = [
         {
           id: "bag",
           icon: jsxRuntimeExports.jsx("svg", {
@@ -8442,35 +8447,42 @@ Please change the parent <Route path="${Bt}"> to <Route path="${Bt === "/" ? "*"
           }),
           label: "Top"
         }
-      ], j = _();
+      ], dt = rt();
       return jsxRuntimeExports.jsx("nav", {
         className: "fixed bottom-0 left-0 right-0 bg-[#0A0F1C] border-t border-blue-400/20 z-40",
         children: jsxRuntimeExports.jsx("div", {
           className: "max-w-md mx-auto px-4",
           children: jsxRuntimeExports.jsx("div", {
             className: "flex justify-center py-2",
-            children: rt.map((st) => jsxRuntimeExports.jsxs("button", {
-              onClick: () => $(st.id),
+            children: st.map((pt) => jsxRuntimeExports.jsxs("button", {
+              onClick: () => j(pt.id),
               className: `
                 flex flex-col items-center justify-center
                 w-16 h-16 mx-2
                 rounded-lg
                 transition-all duration-300
                 relative z-40
-                ${j === st.id ? "text-blue-400 drop-shadow-[0_0_8px_rgba(96,165,250,0.5)]" : "text-blue-400/40 hover:text-blue-400/60"}
-                ${j === st.id && "after:absolute after:bottom-0 after:left-1/2 after:-translate-x-1/2 after:w-1/2 after:h-0.5 after:bg-blue-400 after:rounded-full after:shadow-[0_0_8px_#60A5FA]"}
+                ${dt === pt.id ? "text-blue-400 drop-shadow-[0_0_8px_rgba(96,165,250,0.5)]" : "text-blue-400/40 hover:text-blue-400/60"}
+                ${dt === pt.id && "after:absolute after:bottom-0 after:left-1/2 after:-translate-x-1/2 after:w-1/2 after:h-0.5 after:bg-blue-400 after:rounded-full after:shadow-[0_0_8px_#60A5FA]"}
               `,
               children: [
-                st.icon,
+                pt.icon,
                 jsxRuntimeExports.jsx("span", {
-                  className: `text-xs mt-1 ${j === st.id ? "text-blue-400" : "text-blue-400/40"}`,
+                  className: `text-xs mt-1 ${dt === pt.id ? "text-blue-400" : "text-blue-400/40"}`,
                   style: {
                     fontFamily: "Polonium"
                   },
-                  children: st.label
+                  children: pt.label
+                }),
+                pt.id === "tasks" && _ && jsxRuntimeExports.jsx("span", {
+                  className: `absolute -top-1 -right-1 w-3 h-3 rounded-full bg-blue-500 animate-pulse\r
+                               shadow-[0_0_10px_rgba(96,165,250,0.7)]\r
+                               before:content-[''] before:absolute before:inset-0\r
+                               before:rounded-full before:bg-blue-400\r
+                               before:animate-ping before:opacity-75`
                 })
               ]
-            }, st.id))
+            }, pt.id))
           })
         })
       });
@@ -86536,9 +86548,9 @@ Values:
       children: jsxRuntimeExports.jsx(App, {})
     }));
   });
-  var_7823faab_6f00_571e_b16b_ec2989a749d1 = _i();
+  var_3a225677_ddd4_516c_8e8f_51642aea62d3 = _i();
 })();
 export {
   __tla,
-  var_7823faab_6f00_571e_b16b_ec2989a749d1 as default
+  var_3a225677_ddd4_516c_8e8f_51642aea62d3 as default
 };
