@@ -1,7 +1,7 @@
 var __defProp2 = Object.defineProperty;
 var __defNormalProp2 = (obj, key2, value) => key2 in obj ? __defProp2(obj, key2, { enumerable: true, configurable: true, writable: true, value }) : obj[key2] = value;
 var __publicField2 = (obj, key2, value) => __defNormalProp2(obj, typeof key2 !== "symbol" ? key2 + "" : key2, value);
-let var_90615746_530e_5552_8089_fac7eeda4276;
+let var_059edaca_45a0_5fd8_89a6_753577d1efcb;
 let __tla = (async () => {
   var Jn = (d, b) => () => (b || d((b = {
     exports: {}
@@ -480,7 +480,7 @@ let __tla = (async () => {
           xt = null, _t = it, Ct = false;
         }
       }
-      var jt = false, Xt = null, Qt = -1, Wt = 5, kt = -1;
+      var Ot = false, Xt = null, Qt = -1, Wt = 5, kt = -1;
       function ct() {
         return !(d.unstable_now() - kt < Wt);
       }
@@ -492,9 +492,9 @@ let __tla = (async () => {
           try {
             at = Xt(true, vt);
           } finally {
-            at ? tt() : (jt = false, Xt = null);
+            at ? tt() : (Ot = false, Xt = null);
           }
-        } else jt = false;
+        } else Ot = false;
       }
       var tt;
       if (typeof Bt == "function") tt = function() {
@@ -509,7 +509,7 @@ let __tla = (async () => {
         Rt(et, 0);
       };
       function ut(vt) {
-        Xt = vt, jt || (jt = true, tt());
+        Xt = vt, Ot || (Ot = true, tt());
       }
       function mt(vt, at) {
         Qt = Rt(function() {
@@ -2538,18 +2538,18 @@ let __tla = (async () => {
             else if (me(_t)) if (we) Ft = Fe;
             else {
               Ft = De;
-              var jt = Ce;
+              var Ot = Ce;
             }
             else (Ct = _t.nodeName) && Ct.toLowerCase() === "input" && (_t.type === "checkbox" || _t.type === "radio") && (Ft = Ee);
             if (Ft && (Ft = Ft(d, bt))) {
               ne(xt, Ft, _, yt);
               break e;
             }
-            jt && jt(d, _t, bt), d === "focusout" && (jt = _t._wrapperState) && jt.controlled && _t.type === "number" && cb(_t, "number", _t.value);
+            Ot && Ot(d, _t, bt), d === "focusout" && (Ot = _t._wrapperState) && Ot.controlled && _t.type === "number" && cb(_t, "number", _t.value);
           }
-          switch (jt = bt ? ue(bt) : window, d) {
+          switch (Ot = bt ? ue(bt) : window, d) {
             case "focusin":
-              (me(jt) || jt.contentEditable === "true") && (Qe = jt, Re = bt, Se = null);
+              (me(Ot) || Ot.contentEditable === "true") && (Qe = Ot, Re = bt, Se = null);
               break;
             case "focusout":
               Se = Re = Qe = null;
@@ -2584,9 +2584,9 @@ let __tla = (async () => {
             Qt = void 0;
           }
           else ie ? ge(d, _) && (Qt = "onCompositionEnd") : d === "keydown" && _.keyCode === 229 && (Qt = "onCompositionStart");
-          Qt && (de && _.locale !== "ko" && (ie || Qt !== "onCompositionStart" ? Qt === "onCompositionEnd" && ie && (Xt = nd()) : (kd = yt, ld = "value" in kd ? kd.value : kd.textContent, ie = true)), jt = oe(bt, Qt), 0 < jt.length && (Qt = new Ld(Qt, d, null, _, yt), xt.push({
+          Qt && (de && _.locale !== "ko" && (ie || Qt !== "onCompositionStart" ? Qt === "onCompositionEnd" && ie && (Xt = nd()) : (kd = yt, ld = "value" in kd ? kd.value : kd.textContent, ie = true)), Ot = oe(bt, Qt), 0 < Ot.length && (Qt = new Ld(Qt, d, null, _, yt), xt.push({
             event: Qt,
-            listeners: jt
+            listeners: Ot
           }), Xt ? Qt.data = Xt : (Xt = he(_), Xt !== null && (Qt.data = Xt)))), (Xt = ce ? je(d, _) : ke(d, _)) && (bt = oe(bt, "onBeforeInput"), 0 < bt.length && (yt = new Ld("onBeforeInput", "beforeinput", null, _, yt), xt.push({
             event: yt,
             listeners: bt
@@ -3016,8 +3016,8 @@ let __tla = (async () => {
             case wa:
               return At = At.get(Tt.key === null ? $t : Tt.key) || null, bt(Bt, At, Tt, Ft);
             case Ha:
-              var jt = Tt._init;
-              return Ct(At, Bt, $t, jt(Tt._payload), Ft);
+              var Ot = Tt._init;
+              return Ct(At, Bt, $t, Ot(Tt._payload), Ft);
           }
           if (eb(Tt) || Ka(Tt)) return At = At.get($t) || null, yt(Bt, At, Tt, Ft, null);
           Mg(Bt, Tt);
@@ -3025,21 +3025,21 @@ let __tla = (async () => {
         return null;
       }
       function Mt(At, Bt, $t, Tt) {
-        for (var Ft = null, jt = null, Xt = Bt, Qt = Bt = 0, Wt = null; Xt !== null && Qt < $t.length; Qt++) {
+        for (var Ft = null, Ot = null, Xt = Bt, Qt = Bt = 0, Wt = null; Xt !== null && Qt < $t.length; Qt++) {
           Xt.index > Qt ? (Wt = Xt, Xt = null) : Wt = Xt.sibling;
           var kt = _t(At, Xt, $t[Qt], Tt);
           if (kt === null) {
             Xt === null && (Xt = Wt);
             break;
           }
-          d && Xt && kt.alternate === null && b(At, Xt), Bt = j(kt, Bt, Qt), jt === null ? Ft = kt : jt.sibling = kt, jt = kt, Xt = Wt;
+          d && Xt && kt.alternate === null && b(At, Xt), Bt = j(kt, Bt, Qt), Ot === null ? Ft = kt : Ot.sibling = kt, Ot = kt, Xt = Wt;
         }
         if (Qt === $t.length) return _(At, Xt), I && tg(At, Qt), Ft;
         if (Xt === null) {
-          for (; Qt < $t.length; Qt++) Xt = xt(At, $t[Qt], Tt), Xt !== null && (Bt = j(Xt, Bt, Qt), jt === null ? Ft = Xt : jt.sibling = Xt, jt = Xt);
+          for (; Qt < $t.length; Qt++) Xt = xt(At, $t[Qt], Tt), Xt !== null && (Bt = j(Xt, Bt, Qt), Ot === null ? Ft = Xt : Ot.sibling = Xt, Ot = Xt);
           return I && tg(At, Qt), Ft;
         }
-        for (Xt = $(At, Xt); Qt < $t.length; Qt++) Wt = Ct(Xt, At, Qt, $t[Qt], Tt), Wt !== null && (d && Wt.alternate !== null && Xt.delete(Wt.key === null ? Qt : Wt.key), Bt = j(Wt, Bt, Qt), jt === null ? Ft = Wt : jt.sibling = Wt, jt = Wt);
+        for (Xt = $(At, Xt); Qt < $t.length; Qt++) Wt = Ct(Xt, At, Qt, $t[Qt], Tt), Wt !== null && (d && Wt.alternate !== null && Xt.delete(Wt.key === null ? Qt : Wt.key), Bt = j(Wt, Bt, Qt), Ot === null ? Ft = Wt : Ot.sibling = Wt, Ot = Wt);
         return d && Xt.forEach(function(ct) {
           return b(At, ct);
         }), I && tg(At, Qt), Ft;
@@ -3048,21 +3048,21 @@ let __tla = (async () => {
         var Ft = Ka($t);
         if (typeof Ft != "function") throw Error(p$1(150));
         if ($t = Ft.call($t), $t == null) throw Error(p$1(151));
-        for (var jt = Ft = null, Xt = Bt, Qt = Bt = 0, Wt = null, kt = $t.next(); Xt !== null && !kt.done; Qt++, kt = $t.next()) {
+        for (var Ot = Ft = null, Xt = Bt, Qt = Bt = 0, Wt = null, kt = $t.next(); Xt !== null && !kt.done; Qt++, kt = $t.next()) {
           Xt.index > Qt ? (Wt = Xt, Xt = null) : Wt = Xt.sibling;
           var ct = _t(At, Xt, kt.value, Tt);
           if (ct === null) {
             Xt === null && (Xt = Wt);
             break;
           }
-          d && Xt && ct.alternate === null && b(At, Xt), Bt = j(ct, Bt, Qt), jt === null ? Ft = ct : jt.sibling = ct, jt = ct, Xt = Wt;
+          d && Xt && ct.alternate === null && b(At, Xt), Bt = j(ct, Bt, Qt), Ot === null ? Ft = ct : Ot.sibling = ct, Ot = ct, Xt = Wt;
         }
         if (kt.done) return _(At, Xt), I && tg(At, Qt), Ft;
         if (Xt === null) {
-          for (; !kt.done; Qt++, kt = $t.next()) kt = xt(At, kt.value, Tt), kt !== null && (Bt = j(kt, Bt, Qt), jt === null ? Ft = kt : jt.sibling = kt, jt = kt);
+          for (; !kt.done; Qt++, kt = $t.next()) kt = xt(At, kt.value, Tt), kt !== null && (Bt = j(kt, Bt, Qt), Ot === null ? Ft = kt : Ot.sibling = kt, Ot = kt);
           return I && tg(At, Qt), Ft;
         }
-        for (Xt = $(At, Xt); !kt.done; Qt++, kt = $t.next()) kt = Ct(Xt, At, Qt, kt.value, Tt), kt !== null && (d && kt.alternate !== null && Xt.delete(kt.key === null ? Qt : kt.key), Bt = j(kt, Bt, Qt), jt === null ? Ft = kt : jt.sibling = kt, jt = kt);
+        for (Xt = $(At, Xt); !kt.done; Qt++, kt = $t.next()) kt = Ct(Xt, At, Qt, kt.value, Tt), kt !== null && (d && kt.alternate !== null && Xt.delete(kt.key === null ? Qt : kt.key), Bt = j(kt, Bt, Qt), Ot === null ? Ft = kt : Ot.sibling = kt, Ot = kt);
         return d && Xt.forEach(function(et) {
           return b(At, et);
         }), I && tg(At, Qt), Ft;
@@ -3072,29 +3072,29 @@ let __tla = (async () => {
           switch ($t.$$typeof) {
             case va:
               e: {
-                for (var Ft = $t.key, jt = Bt; jt !== null; ) {
-                  if (jt.key === Ft) {
+                for (var Ft = $t.key, Ot = Bt; Ot !== null; ) {
+                  if (Ot.key === Ft) {
                     if (Ft = $t.type, Ft === ya) {
-                      if (jt.tag === 7) {
-                        _(At, jt.sibling), Bt = rt(jt, $t.props.children), Bt.return = At, At = Bt;
+                      if (Ot.tag === 7) {
+                        _(At, Ot.sibling), Bt = rt(Ot, $t.props.children), Bt.return = At, At = Bt;
                         break e;
                       }
-                    } else if (jt.elementType === Ft || typeof Ft == "object" && Ft !== null && Ft.$$typeof === Ha && Ng(Ft) === jt.type) {
-                      _(At, jt.sibling), Bt = rt(jt, $t.props), Bt.ref = Lg(At, jt, $t), Bt.return = At, At = Bt;
+                    } else if (Ot.elementType === Ft || typeof Ft == "object" && Ft !== null && Ft.$$typeof === Ha && Ng(Ft) === Ot.type) {
+                      _(At, Ot.sibling), Bt = rt(Ot, $t.props), Bt.ref = Lg(At, Ot, $t), Bt.return = At, At = Bt;
                       break e;
                     }
-                    _(At, jt);
+                    _(At, Ot);
                     break;
-                  } else b(At, jt);
-                  jt = jt.sibling;
+                  } else b(At, Ot);
+                  Ot = Ot.sibling;
                 }
                 $t.type === ya ? (Bt = Tg($t.props.children, At.mode, Tt, $t.key), Bt.return = At, At = Bt) : (Tt = Rg($t.type, $t.key, $t.props, null, At.mode, Tt), Tt.ref = Lg(At, Bt, $t), Tt.return = At, At = Tt);
               }
               return st(At);
             case wa:
               e: {
-                for (jt = $t.key; Bt !== null; ) {
-                  if (Bt.key === jt) if (Bt.tag === 4 && Bt.stateNode.containerInfo === $t.containerInfo && Bt.stateNode.implementation === $t.implementation) {
+                for (Ot = $t.key; Bt !== null; ) {
+                  if (Bt.key === Ot) if (Bt.tag === 4 && Bt.stateNode.containerInfo === $t.containerInfo && Bt.stateNode.implementation === $t.implementation) {
                     _(At, Bt.sibling), Bt = rt(Bt, $t.children || []), Bt.return = At, At = Bt;
                     break e;
                   } else {
@@ -3108,7 +3108,7 @@ let __tla = (async () => {
               }
               return st(At);
             case Ha:
-              return jt = $t._init, Rt(At, Bt, jt($t._payload), Tt);
+              return Ot = $t._init, Rt(At, Bt, Ot($t._payload), Tt);
           }
           if (eb($t)) return Mt(At, Bt, $t, Tt);
           if (Ka($t)) return Et(At, Bt, $t, Tt);
@@ -7687,7 +7687,7 @@ Please change the parent <Route path="${Bt}"> to <Route path="${Bt === "/" ? "*"
       }
       let Bt = useHref(bt, {
         relative: rt
-      }), [$t, Tt, Ft] = usePrefetchBehavior($, _t), jt = useLinkClickHandler(bt, {
+      }), [$t, Tt, Ft] = usePrefetchBehavior($, _t), Ot = useLinkClickHandler(bt, {
         replace: st,
         state: dt,
         target: pt,
@@ -7696,7 +7696,7 @@ Please change the parent <Route path="${Bt}"> to <Route path="${Bt === "/" ? "*"
         viewTransition: xt
       });
       function Xt(Wt) {
-        b && b(Wt), Wt.defaultPrevented || jt(Wt);
+        b && b(Wt), Wt.defaultPrevented || Ot(Wt);
       }
       let Qt = reactExports.createElement("a", {
         ..._t,
@@ -7718,15 +7718,15 @@ Please change the parent <Route path="${Bt}"> to <Route path="${Bt === "/" ? "*"
       }), _t = useLocation(), Ct = reactExports.useContext(DataRouterStateContext), { navigator: Mt, basename: Et } = reactExports.useContext(NavigationContext), Rt = Ct != null && useViewTransitionState(xt) && dt === true, At = Mt.encodeLocation ? Mt.encodeLocation(xt).pathname : xt.pathname, Bt = _t.pathname, $t = Ct && Ct.navigation && Ct.navigation.location ? Ct.navigation.location.pathname : null;
       _ || (Bt = Bt.toLowerCase(), $t = $t ? $t.toLowerCase() : null, At = At.toLowerCase()), $t && Et && ($t = stripBasename($t, Et) || $t);
       const Tt = At !== "/" && At.endsWith("/") ? At.length - 1 : At.length;
-      let Ft = Bt === At || !rt && Bt.startsWith(At) && Bt.charAt(Tt) === "/", jt = $t != null && ($t === At || !rt && $t.startsWith(At) && $t.charAt(At.length) === "/"), Xt = {
+      let Ft = Bt === At || !rt && Bt.startsWith(At) && Bt.charAt(Tt) === "/", Ot = $t != null && ($t === At || !rt && $t.startsWith(At) && $t.charAt(At.length) === "/"), Xt = {
         isActive: Ft,
-        isPending: jt,
+        isPending: Ot,
         isTransitioning: Rt
       }, Qt = Ft ? b : void 0, Wt;
       typeof $ == "function" ? Wt = $(Xt) : Wt = [
         $,
         Ft ? "active" : null,
-        jt ? "pending" : null,
+        Ot ? "pending" : null,
         Rt ? "transitioning" : null
       ].filter(Boolean).join(" ");
       let kt = typeof j == "function" ? j(Xt) : j;
@@ -8043,8 +8043,8 @@ Please change the parent <Route path="${Bt}"> to <Route path="${Bt === "/" ? "*"
         }
       }, Rt = () => {
         const Tt = Math.random();
-        let Ft, jt = 0;
-        for (const Xt in Et) if (jt += Et[Xt].probability, Tt <= jt) {
+        let Ft, Ot = 0;
+        for (const Xt in Et) if (Ot += Et[Xt].probability, Tt <= Ot) {
           Ft = Et[Xt];
           break;
         }
@@ -8058,14 +8058,14 @@ Please change the parent <Route path="${Bt}"> to <Route path="${Bt === "/" ? "*"
           processed: false
         };
       }, At = (Tt, Ft) => {
-        const jt = Mt.current, Xt = 90, Qt = 95, Wt = 4, kt = 4, ct = Math.abs(Tt - jt), et = Math.abs(Ft - Xt);
+        const Ot = Mt.current, Xt = 90, Qt = 95, Wt = 4, kt = 4, ct = Math.abs(Tt - Ot), et = Math.abs(Ft - Xt);
         return ct < Wt && et < kt && Ft < Qt && Ft > Xt - kt;
       }, Bt = () => {
         const Tt = Date.now(), Ft = Tt - _t.current;
-        _t.current = Tt, Tt - Ct.current > 1e3 && (bt((jt) => [
-          ...jt,
+        _t.current = Tt, Tt - Ct.current > 1e3 && (bt((Ot) => [
+          ...Ot,
           Rt()
-        ]), Ct.current = Tt), bt((jt) => jt.map((Xt) => {
+        ]), Ct.current = Tt), bt((Ot) => Ot.map((Xt) => {
           if (Xt.caught) return Xt;
           const Qt = Xt.y + Xt.speed * Ft;
           return Qt > Xt.y && At(Xt.x, Qt) ? (Xt.type.points === "mth" ? j((Wt) => Wt + 1) : $((Wt) => Wt + Xt.type.points), {
@@ -8086,14 +8086,14 @@ Please change the parent <Route path="${Bt}"> to <Route path="${Bt === "/" ? "*"
         document.body.style.overflow = "hidden", document.addEventListener("touchmove", $t, {
           passive: false
         });
-        const Tt = requestAnimationFrame(Bt), Ft = (jt) => {
-          if (jt.key === "ArrowLeft") {
+        const Tt = requestAnimationFrame(Bt), Ft = (Ot) => {
+          if (Ot.key === "ArrowLeft") {
             const Xt = Math.max(5, Mt.current - 5);
             dt(Xt), Mt.current = Xt;
-          } else if (jt.key === "ArrowRight") {
+          } else if (Ot.key === "ArrowRight") {
             const Xt = Math.min(95, Mt.current + 5);
             dt(Xt), Mt.current = Xt;
-          } else jt.key === "Escape" && d();
+          } else Ot.key === "Escape" && d();
         };
         return window.addEventListener("keydown", Ft), () => {
           window.removeEventListener("keydown", Ft), cancelAnimationFrame(Tt), document.body.style.overflow = "auto", document.removeEventListener("touchmove", $t);
@@ -8571,13 +8571,13 @@ Please change the parent <Route path="${Bt}"> to <Route path="${Bt === "/" ? "*"
         if (!_ || !dt.current || !st.current) return;
         const Ct = dt.current.getBoundingClientRect(), Mt = st.current.getBoundingClientRect(), Et = 0.5, Rt = 1, At = 0.2, Bt = -1e3, $t = _t.gamma, Tt = _t.beta;
         b((Ft) => {
-          let jt = Ft.x + $t * Et;
+          let Ot = Ft.x + $t * Et;
           const Xt = Tt > 0 ? At : Rt;
           let Qt = Ft.y + Tt * Xt;
-          jt = Math.max(0, Math.min(jt, Ct.width - Mt.width));
+          Ot = Math.max(0, Math.min(Ot, Ct.width - Mt.width));
           const Wt = Ct.height - Mt.height;
           return Qt >= Wt && (Qt = Wt, Qt += Bt), Qt = Math.max(0, Qt), {
-            x: jt,
+            x: Ot,
             y: Qt
           };
         });
@@ -8949,7 +8949,7 @@ Please change the parent <Route path="${Bt}"> to <Route path="${Bt === "/" ? "*"
         }, 200);
         return () => clearInterval(at);
       }, []);
-      const [Bt, $t] = reactExports.useState("ArrowRight"), [Tt, Ft] = reactExports.useState(false), [jt, Xt] = reactExports.useState(0), [Qt, Wt] = reactExports.useState(/* @__PURE__ */ new Set()), kt = reactExports.useCallback(() => {
+      const [Bt, $t] = reactExports.useState("ArrowRight"), [Tt, Ft] = reactExports.useState(false), [Ot, Xt] = reactExports.useState(0), [Qt, Wt] = reactExports.useState(/* @__PURE__ */ new Set()), kt = reactExports.useCallback(() => {
         pt.forEach((at, it) => {
           at.x === st.x && at.y === st.y && !Qt.has(it) && (_t ? (xt((ht) => ht + 25), Wt((ht) => /* @__PURE__ */ new Set([
             ...ht,
@@ -9172,7 +9172,7 @@ Please change the parent <Route path="${Bt}"> to <Route path="${Bt === "/" ? "*"
                 className: "text-blue-400 animate-pulse rqnd-text whitespace-nowrap",
                 children: [
                   "Power: ",
-                  jt,
+                  Ot,
                   "s"
                 ]
               }),
@@ -9568,37 +9568,37 @@ Please change the parent <Route path="${Bt}"> to <Route path="${Bt === "/" ? "*"
       };
       reactExports.useEffect(() => {
         var _a4, _b2;
-        ((_b2 = (_a4 = window.Telegram) == null ? void 0 : _a4.WebApp) == null ? void 0 : _b2.CloudStorage) && (Rt.Social.forEach((jt) => {
-          window.Telegram.WebApp.CloudStorage.getItem(`task_${jt.id}`, (Xt, Qt) => {
+        ((_b2 = (_a4 = window.Telegram) == null ? void 0 : _a4.WebApp) == null ? void 0 : _b2.CloudStorage) && (Rt.Social.forEach((Ot) => {
+          window.Telegram.WebApp.CloudStorage.getItem(`task_${Ot.id}`, (Xt, Qt) => {
             !Xt && Qt && _t((Wt) => ({
               ...Wt,
-              [jt.id]: Qt === "true"
+              [Ot.id]: Qt === "true"
             }));
           });
-        }), Rt.Media.forEach((jt) => {
-          window.Telegram.WebApp.CloudStorage.getItem(`task_${jt.id}`, (Xt, Qt) => {
+        }), Rt.Media.forEach((Ot) => {
+          window.Telegram.WebApp.CloudStorage.getItem(`task_${Ot.id}`, (Xt, Qt) => {
             !Xt && Qt && _t((Wt) => ({
               ...Wt,
-              [jt.id]: Qt === "true"
+              [Ot.id]: Qt === "true"
             }));
           });
         }));
       }, []);
-      const At = (jt) => {
-        if (jt === 8) {
+      const At = (Ot) => {
+        if (Ot === 8) {
           yt(true);
           return;
         }
-        $(_ === jt ? null : jt);
-      }, Bt = async (jt, Xt) => {
+        $(_ === Ot ? null : Ot);
+      }, Bt = async (Ot, Xt) => {
         var _a4;
-        if (console.log("\u041F\u0440\u043E\u0432\u0435\u0440\u043A\u0430 \u043F\u043E\u0434\u043F\u0438\u0441\u043A\u0438 \u043D\u0430 \u043A\u0430\u043D\u0430\u043B:", jt), (!(st == null ? void 0 : st.telegramId) || rt || xt[Xt]) && xt[Xt]) {
+        if (console.log("\u041F\u0440\u043E\u0432\u0435\u0440\u043A\u0430 \u043F\u043E\u0434\u043F\u0438\u0441\u043A\u0438 \u043D\u0430 \u043A\u0430\u043D\u0430\u043B:", Ot), (!(st == null ? void 0 : st.telegramId) || rt || xt[Xt]) && xt[Xt]) {
           Ft("Reward Already Claimed", "You have already claimed this reward!");
           return;
         }
         try {
-          j(true), ((_a4 = window.Telegram) == null ? void 0 : _a4.WebApp) && window.Telegram.WebApp.openTelegramLink(`https://t.me/${jt}`), await new Promise((kt) => setTimeout(kt, 2e3));
-          const Wt = await (await fetch(`/check-channel-subscription?telegramId=${st.telegramId}&channel=${jt}`, {
+          j(true), ((_a4 = window.Telegram) == null ? void 0 : _a4.WebApp) && window.Telegram.WebApp.openTelegramLink(`https://t.me/${Ot}`), await new Promise((kt) => setTimeout(kt, 2e3));
+          const Wt = await (await fetch(`/check-channel-subscription?telegramId=${st.telegramId}&channel=${Ot}`, {
             headers: {
               "X-Telegram-Init-Data": pt.initData
             }
@@ -9617,10 +9617,10 @@ Please change the parent <Route path="${Bt}"> to <Route path="${Bt === "/" ? "*"
         } finally {
           j(false);
         }
-      }, $t = async (jt, Xt) => {
+      }, $t = async (Ot, Xt) => {
         var _a4;
-        if (Xt.stopPropagation(), !(st == null ? void 0 : st.telegramId) || rt || xt[jt.id]) {
-          if (xt[jt.id]) {
+        if (Xt.stopPropagation(), !(st == null ? void 0 : st.telegramId) || rt || xt[Ot.id]) {
+          if (xt[Ot.id]) {
             Ft("Reward Claimed", "You have already claimed the reward!");
             return;
           }
@@ -9628,8 +9628,8 @@ Please change the parent <Route path="${Bt}"> to <Route path="${Bt === "/" ? "*"
         }
         j(true);
         try {
-          ((_a4 = window.Telegram) == null ? void 0 : _a4.WebApp) ? window.Telegram.WebApp.openTelegramLink(`https://t.me/${jt.botUsername}`) : window.open(`https://t.me/${jt.botUsername}`, "_blank");
-          const Wt = parseInt(st.rootBalance || 0) + jt.reward;
+          ((_a4 = window.Telegram) == null ? void 0 : _a4.WebApp) ? window.Telegram.WebApp.openTelegramLink(`https://t.me/${Ot.botUsername}`) : window.open(`https://t.me/${Ot.botUsername}`, "_blank");
+          const Wt = parseInt(st.rootBalance || 0) + Ot.reward;
           if ((await (await fetch("/update-root-balance", {
             method: "POST",
             headers: {
@@ -9640,10 +9640,10 @@ Please change the parent <Route path="${Bt}"> to <Route path="${Bt === "/" ? "*"
               telegramId: st.telegramId,
               rootBalance: Wt
             })
-          })).json()).success) window.Telegram.WebApp.CloudStorage.setItem(`task_${jt.id}`, "true", (et) => {
+          })).json()).success) window.Telegram.WebApp.CloudStorage.setItem(`task_${Ot.id}`, "true", (et) => {
             et || (_t((tt) => ({
               ...tt,
-              [jt.id]: true
+              [Ot.id]: true
             })), dt({
               ...st,
               rootBalance: Wt
@@ -9655,18 +9655,18 @@ Please change the parent <Route path="${Bt}"> to <Route path="${Bt === "/" ? "*"
         } finally {
           j(false);
         }
-      }, Tt = async (jt, Xt) => {
+      }, Tt = async (Ot, Xt) => {
         Xt.stopPropagation();
         try {
-          const Wt = await (await fetch(`/check-channel-subscription?telegramId=${st.telegramId}&channel=${jt.channelUsername}`, {
+          const Wt = await (await fetch(`/check-channel-subscription?telegramId=${st.telegramId}&channel=${Ot.channelUsername}`, {
             headers: {
               "x-telegram-init-data": pt.initData
             }
           })).json();
-          Wt.success ? window.Telegram.WebApp.CloudStorage.setItem(`task_${jt.id}`, "true", (kt) => {
+          Wt.success ? window.Telegram.WebApp.CloudStorage.setItem(`task_${Ot.id}`, "true", (kt) => {
             kt || (_t((ct) => ({
               ...ct,
-              [jt.id]: true
+              [Ot.id]: true
             })), dt({
               ...st,
               rootBalance: Wt.newBalance
@@ -9675,10 +9675,10 @@ Please change the parent <Route path="${Bt}"> to <Route path="${Bt === "/" ? "*"
         } catch (Qt) {
           console.error("Error:", Qt), Ft("\u274C An error occurred. Please try again.", "An error occurred. Please try again.");
         }
-      }, Ft = (jt, Xt) => {
+      }, Ft = (Ot, Xt) => {
         Mt({
           isOpen: true,
-          title: jt,
+          title: Ot,
           message: Xt
         });
       };
@@ -9689,20 +9689,20 @@ Please change the parent <Route path="${Bt}"> to <Route path="${Bt === "/" ? "*"
             children: [
               jsxRuntimeExports.jsx("div", {
                 className: "flex gap-1.5 mb-4 overflow-x-auto p-1.5 custom-scrollbar",
-                children: Et.map((jt) => jsxRuntimeExports.jsx("button", {
-                  onClick: () => b(jt),
+                children: Et.map((Ot) => jsxRuntimeExports.jsx("button", {
+                  onClick: () => b(Ot),
                   className: `px-4 py-2 rounded-lg text-sm whitespace-nowrap transition-all duration-300
-                        ${d === jt ? "bg-blue-500 text-white shadow-[0_0_15px_rgba(59,130,246,0.3)]" : "bg-[#1E293B]/80 text-blue-400 hover:bg-[#1E293B] border border-blue-400/20"}`,
+                        ${d === Ot ? "bg-blue-500 text-white shadow-[0_0_15px_rgba(59,130,246,0.3)]" : "bg-[#1E293B]/80 text-blue-400 hover:bg-[#1E293B] border border-blue-400/20"}`,
                   style: {
                     fontFamily: "Polonium"
                   },
-                  children: jt
-                }, jt))
+                  children: Ot
+                }, Ot))
               }),
               jsxRuntimeExports.jsx("div", {
                 className: "space-y-3",
-                children: (_a3 = Rt[d]) == null ? void 0 : _a3.map((jt) => jsxRuntimeExports.jsxs("div", {
-                  onClick: () => At(jt.id),
+                children: (_a3 = Rt[d]) == null ? void 0 : _a3.map((Ot) => jsxRuntimeExports.jsxs("div", {
+                  onClick: () => At(Ot.id),
                   className: `bg-gradient-to-br from-[#1E293B]/95 via-[#0F172A]/90 to-[#020617]/95
                         backdrop-blur-md rounded-lg
                         border border-blue-400/20
@@ -9737,7 +9737,7 @@ Please change the parent <Route path="${Bt}"> to <Route path="${Bt === "/" ? "*"
                               style: {
                                 fontFamily: "Polonium"
                               },
-                              children: jt.title
+                              children: Ot.title
                             })
                           ]
                         }),
@@ -9747,13 +9747,13 @@ Please change the parent <Route path="${Bt}"> to <Route path="${Bt === "/" ? "*"
                             fontFamily: "Polonium"
                           },
                           children: [
-                            jt.reward,
+                            Ot.reward,
                             " POKO"
                           ]
                         })
                       ]
                     }),
-                    _ === jt.id && jsxRuntimeExports.jsxs("div", {
+                    _ === Ot.id && jsxRuntimeExports.jsxs("div", {
                       className: "px-3 pb-3 animate-slideDown",
                       children: [
                         jsxRuntimeExports.jsx("div", {
@@ -9761,20 +9761,20 @@ Please change the parent <Route path="${Bt}"> to <Route path="${Bt === "/" ? "*"
                           style: {
                             fontFamily: "Polonium"
                           },
-                          children: jt.description
+                          children: Ot.description
                         }),
                         jsxRuntimeExports.jsx("div", {
                           className: "space-y-2",
-                          children: jt.type === "bot" ? jsxRuntimeExports.jsxs("button", {
-                            onClick: (Xt) => $t(jt, Xt),
-                            disabled: rt || xt[jt.id],
+                          children: Ot.type === "bot" ? jsxRuntimeExports.jsxs("button", {
+                            onClick: (Xt) => $t(Ot, Xt),
+                            disabled: rt || xt[Ot.id],
                             className: `w-full bg-[#0F172A]/80 hover:bg-[#0F172A] text-blue-400 py-2 rounded-lg 
                                   text-sm transition-all duration-200
                                   border-2 border-blue-400/50 hover:border-blue-400
                                   shadow-[0_0_10px_rgba(96,165,250,0.2)]
                                   hover:shadow-[0_0_15px_rgba(96,165,250,0.4)]
                                   flex items-center justify-center gap-2
-                                  ${rt || xt[jt.id] ? "opacity-50 cursor-not-allowed" : ""}`,
+                                  ${rt || xt[Ot.id] ? "opacity-50 cursor-not-allowed" : ""}`,
                             style: {
                               fontFamily: "Polonium"
                             },
@@ -9791,9 +9791,9 @@ Please change the parent <Route path="${Bt}"> to <Route path="${Bt === "/" ? "*"
                                   d: "M13 10V3L4 14h7v7l9-11h-7z"
                                 })
                               }),
-                              xt[jt.id] ? "Reward Claimed" : "Play Game"
+                              xt[Ot.id] ? "Reward Claimed" : "Play Game"
                             ]
-                          }) : jt.type === "game" ? jsxRuntimeExports.jsxs("button", {
+                          }) : Ot.type === "game" ? jsxRuntimeExports.jsxs("button", {
                             onClick: () => yt(true),
                             className: `w-full bg-[#0F172A]/80 hover:bg-[#0F172A] text-blue-400 py-2 rounded-lg 
                                   text-sm transition-all duration-200
@@ -9822,7 +9822,7 @@ Please change the parent <Route path="${Bt}"> to <Route path="${Bt === "/" ? "*"
                           }) : jsxRuntimeExports.jsxs(jsxRuntimeExports.Fragment, {
                             children: [
                               jsxRuntimeExports.jsxs("button", {
-                                onClick: (Xt) => Bt(jt.channelUsername, jt.id),
+                                onClick: (Xt) => Bt(Ot.channelUsername, Ot.id),
                                 className: `w-full bg-[#0F172A]/80 hover:bg-[#0F172A] text-blue-400 py-2 rounded-lg 
                                     text-sm transition-all duration-200
                                     border-2 border-blue-400/50 hover:border-blue-400
@@ -9849,19 +9849,19 @@ Please change the parent <Route path="${Bt}"> to <Route path="${Bt === "/" ? "*"
                                 ]
                               }),
                               jsxRuntimeExports.jsx("button", {
-                                onClick: (Xt) => Tt(jt, Xt),
-                                disabled: xt[jt.id],
+                                onClick: (Xt) => Tt(Ot, Xt),
+                                disabled: xt[Ot.id],
                                 className: `w-full bg-[#0F172A]/80 hover:bg-[#0F172A] text-blue-400 py-2 rounded-lg 
                                     text-sm transition-all duration-200
                                     border-2 border-blue-400/50 hover:border-blue-400
                                     shadow-[0_0_10px_rgba(96,165,250,0.2)]
                                     hover:shadow-[0_0_15px_rgba(96,165,250,0.4)]
                                     flex items-center justify-center gap-2
-                                    ${xt[jt.id] ? "opacity-50 cursor-not-allowed" : ""}`,
+                                    ${xt[Ot.id] ? "opacity-50 cursor-not-allowed" : ""}`,
                                 style: {
                                   fontFamily: "Polonium"
                                 },
-                                children: xt[jt.id] ? "Reward Claimed" : "Claim Reward"
+                                children: xt[Ot.id] ? "Reward Claimed" : "Claim Reward"
                               })
                             ]
                           })
@@ -9869,7 +9869,7 @@ Please change the parent <Route path="${Bt}"> to <Route path="${Bt === "/" ? "*"
                       ]
                     })
                   ]
-                }, jt.id))
+                }, Ot.id))
               })
             ]
           }),
@@ -10047,15 +10047,15 @@ Please change the parent <Route path="${Bt}"> to <Route path="${Bt === "/" ? "*"
               }
             })).json();
             if (Ft.success) {
-              let jt = Ft.miners || [];
-              if (jt.filter((Qt) => Qt.type === "minion").length > 10) {
-                jt = jt.filter((Qt) => Qt.type !== "minion");
-                for (let Qt = 0; Qt < 10; Qt++) jt.push({
+              let Ot = Ft.miners || [];
+              if (Ot.filter((Qt) => Qt.type === "minion").length > 10) {
+                Ot = Ot.filter((Qt) => Qt.type !== "minion");
+                for (let Qt = 0; Qt < 10; Qt++) Ot.push({
                   type: "minion",
                   id: `minion-${Qt}`
                 });
               }
-              dt(jt);
+              dt(Ot);
             }
           } catch {
             $("\u041E\u0448\u0438\u0431\u043A\u0430 \u043F\u0440\u0438 \u0437\u0430\u0433\u0440\u0443\u0437\u043A\u0435 \u043C\u0430\u0439\u043D\u0435\u0440\u043E\u0432");
@@ -10066,8 +10066,8 @@ Please change the parent <Route path="${Bt}"> to <Route path="${Bt === "/" ? "*"
       }, [
         d == null ? void 0 : d.telegramId
       ]), reactExports.useEffect(() => {
-        window.Telegram.WebApp.CloudStorage.getItem("lastCollection", (Ft, jt) => {
-          if (Ft || !jt) {
+        window.Telegram.WebApp.CloudStorage.getItem("lastCollection", (Ft, Ot) => {
+          if (Ft || !Ot) {
             const Wt = {
               basic: Date.now(),
               minion: Date.now(),
@@ -10079,17 +10079,17 @@ Please change the parent <Route path="${Bt}"> to <Route path="${Bt === "/" ? "*"
             window.Telegram.WebApp.CloudStorage.setItem("lastCollection", JSON.stringify(Wt));
             return;
           }
-          const Xt = JSON.parse(jt);
+          const Xt = JSON.parse(Ot);
           let Qt = false;
           Xt.cube1 || (Xt.cube1 = Date.now(), Qt = true), Xt.cube2 || (Xt.cube2 = Date.now(), Qt = true), Xt.cube3 || (Xt.cube3 = Date.now(), Qt = true), Xt.cube4 || (Xt.cube4 = Date.now(), Qt = true), Qt && window.Telegram.WebApp.CloudStorage.setItem("lastCollection", JSON.stringify(Xt));
         });
         const $t = () => {
-          window.Telegram.WebApp.CloudStorage.getItem("lastCollection", (Ft, jt) => {
+          window.Telegram.WebApp.CloudStorage.getItem("lastCollection", (Ft, Ot) => {
             if (Ft) {
               console.error("Error getting lastCollection:", Ft);
               return;
             }
-            const Xt = JSON.parse(jt || "{}"), Qt = Date.now(), Wt = {
+            const Xt = JSON.parse(Ot || "{}"), Qt = Date.now(), Wt = {
               ...pt
             }, kt = st.reduce((ct, et) => (ct[et.type] = (ct[et.type] || 0) + 1, ct), {});
             Object.entries(kt).forEach(([ct, et]) => {
@@ -10108,9 +10108,9 @@ Please change the parent <Route path="${Bt}"> to <Route path="${Bt === "/" ? "*"
         try {
           const Ft = [
             ...st
-          ], jt = Ft.findIndex((Wt) => Wt.type === $t && Wt.id === Tt);
-          if (jt === -1) return;
-          Ft.splice(jt, 1), (await (await fetch("/update-user-miners", {
+          ], Ot = Ft.findIndex((Wt) => Wt.type === $t && Wt.id === Tt);
+          if (Ot === -1) return;
+          Ft.splice(Ot, 1), (await (await fetch("/update-user-miners", {
             method: "POST",
             headers: {
               "Content-Type": "application/json",
@@ -10129,11 +10129,11 @@ Please change the parent <Route path="${Bt}"> to <Route path="${Bt === "/" ? "*"
           if (!(d == null ? void 0 : d.telegramId)) return;
           const Tt = pt[$t];
           if (Tt <= 0) return;
-          const Ft = parseInt(d.rootBalance || 0), jt = Ft + Tt;
+          const Ft = parseInt(d.rootBalance || 0), Ot = Ft + Tt;
           console.log("Collecting MTH:", {
             currentBalance: Ft,
             amountToAdd: Tt,
-            newBalance: jt
+            newBalance: Ot
           }), (await (await fetch("/update-root-balance", {
             method: "POST",
             headers: {
@@ -10142,7 +10142,7 @@ Please change the parent <Route path="${Bt}"> to <Route path="${Bt === "/" ? "*"
             },
             body: JSON.stringify({
               telegramId: d.telegramId,
-              rootBalance: jt
+              rootBalance: Ot
             })
           })).json()).success && window.Telegram.WebApp.CloudStorage.getItem("lastCollection", (Wt, kt) => {
             if (Wt) {
@@ -10157,7 +10157,7 @@ Please change the parent <Route path="${Bt}"> to <Route path="${Bt === "/" ? "*"
               }
               b({
                 ...d,
-                rootBalance: jt
+                rootBalance: Ot
               }), bt((tt) => ({
                 ...tt,
                 [$t]: 0
@@ -10177,8 +10177,8 @@ Please change the parent <Route path="${Bt}"> to <Route path="${Bt === "/" ? "*"
           cube4: 16e4
         };
         return st.reduce((Tt, Ft) => {
-          const jt = $t[Ft.type] || 0;
-          return Tt + jt;
+          const Ot = $t[Ft.type] || 0;
+          return Tt + Ot;
         }, 0);
       };
       return rt ? jsxRuntimeExports.jsx("div", {
@@ -10247,7 +10247,7 @@ Please change the parent <Route path="${Bt}"> to <Route path="${Bt === "/" ? "*"
                   jsxRuntimeExports.jsx("div", {
                     className: "grid grid-cols-5 gap-3",
                     children: (() => {
-                      const $t = st.filter((ct) => ct.type === "basic"), Tt = st.filter((ct) => ct.type === "minion"), Ft = st.filter((ct) => ct.type === "cube1"), jt = st.filter((ct) => ct.type === "cube2"), Xt = st.filter((ct) => ct.type === "cube3"), Qt = st.filter((ct) => ct.type === "cube4"), Wt = [];
+                      const $t = st.filter((ct) => ct.type === "basic"), Tt = st.filter((ct) => ct.type === "minion"), Ft = st.filter((ct) => ct.type === "cube1"), Ot = st.filter((ct) => ct.type === "cube2"), Xt = st.filter((ct) => ct.type === "cube3"), Qt = st.filter((ct) => ct.type === "cube4"), Wt = [];
                       $t.length > 0 && Wt.push(jsxRuntimeExports.jsx("div", {
                         className: "relative",
                         children: jsxRuntimeExports.jsxs("div", {
@@ -10322,7 +10322,7 @@ Please change the parent <Route path="${Bt}"> to <Route path="${Bt === "/" ? "*"
                             ]
                           })
                         }, ct.id));
-                      }), jt.forEach((ct) => {
+                      }), Ot.forEach((ct) => {
                         Wt.push(jsxRuntimeExports.jsx("div", {
                           className: "relative",
                           children: jsxRuntimeExports.jsxs("div", {
@@ -11379,7 +11379,7 @@ Please change the parent <Route path="${Bt}"> to <Route path="${Bt === "/" ? "*"
       };
       function Et(Pt, It) {
         if ((typeof It != "string" || It === "") && (It = "utf8"), !yt.isEncoding(It)) throw new TypeError("Unknown encoding: " + It);
-        const Dt = jt(Pt, It) | 0;
+        const Dt = Ot(Pt, It) | 0;
         let Vt = bt(Dt);
         const ir = Vt.write(Pt, It);
         return ir !== Dt && (Vt = Vt.slice(0, ir)), Vt;
@@ -11461,7 +11461,7 @@ Please change the parent <Route path="${Bt}"> to <Route path="${Bt === "/" ? "*"
         }
         return ir;
       };
-      function jt(Pt, It) {
+      function Ot(Pt, It) {
         if (yt.isBuffer(Pt)) return Pt.length;
         if (st.isView(Pt) || lr(Pt, st)) return Pt.byteLength;
         if (typeof Pt != "string") throw new TypeError('The "string" argument must be one of type string, Buffer, or ArrayBuffer. Received type ' + typeof Pt);
@@ -11475,7 +11475,7 @@ Please change the parent <Route path="${Bt}"> to <Route path="${Bt === "/" ? "*"
             return Dt;
           case "utf8":
           case "utf-8":
-            return jr(Pt).length;
+            return Fr(Pt).length;
           case "ucs2":
           case "ucs-2":
           case "utf16le":
@@ -11486,11 +11486,11 @@ Please change the parent <Route path="${Bt}"> to <Route path="${Bt === "/" ? "*"
           case "base64":
             return Ur(Pt).length;
           default:
-            if (ir) return Vt ? -1 : jr(Pt).length;
+            if (ir) return Vt ? -1 : Fr(Pt).length;
             It = ("" + It).toLowerCase(), ir = true;
         }
       }
-      yt.byteLength = jt;
+      yt.byteLength = Ot;
       function Xt(Pt, It, Dt) {
         let Vt = false;
         if ((It === void 0 || It < 0) && (It = 0), It > this.length || ((Dt === void 0 || Dt > this.length) && (Dt = this.length), Dt <= 0) || (Dt >>>= 0, It >>>= 0, Dt <= It)) return "";
@@ -11622,7 +11622,7 @@ Please change the parent <Route path="${Bt}"> to <Route path="${Bt === "/" ? "*"
         return or;
       }
       function et(Pt, It, Dt, Vt) {
-        return Cr(jr(It, Pt.length - Dt), Pt, Dt, Vt);
+        return Cr(Fr(It, Pt.length - Dt), Pt, Dt, Vt);
       }
       function tt(Pt, It, Dt, Vt) {
         return Cr(_r(It), Pt, Dt, Vt);
@@ -12012,7 +12012,7 @@ Please change the parent <Route path="${Bt}"> to <Route path="${Bt === "/" ? "*"
         for (; Pt.length % 4 !== 0; ) Pt = Pt + "=";
         return Pt;
       }
-      function jr(Pt, It) {
+      function Fr(Pt, It) {
         It = It || 1 / 0;
         let Dt;
         const Vt = Pt.length;
@@ -12733,12 +12733,12 @@ Use Chrome, Firefox or Internet Explorer 11`);
             return Tt;
           }
         }
-      }() : Tt, jt = requireHasSymbols()(), Xt = requireGetProto(), Qt = requireObject_getPrototypeOf(), Wt = requireReflect_getPrototypeOf(), kt = requireFunctionApply(), ct = requireFunctionCall(), et = {}, tt = typeof Uint8Array > "u" || !Xt ? d : Xt(Uint8Array), nt = {
+      }() : Tt, Ot = requireHasSymbols()(), Xt = requireGetProto(), Qt = requireObject_getPrototypeOf(), Wt = requireReflect_getPrototypeOf(), kt = requireFunctionApply(), ct = requireFunctionCall(), et = {}, tt = typeof Uint8Array > "u" || !Xt ? d : Xt(Uint8Array), nt = {
         __proto__: null,
         "%AggregateError%": typeof AggregateError > "u" ? d : AggregateError,
         "%Array%": Array,
         "%ArrayBuffer%": typeof ArrayBuffer > "u" ? d : ArrayBuffer,
-        "%ArrayIteratorPrototype%": jt && Xt ? Xt([][Symbol.iterator]()) : d,
+        "%ArrayIteratorPrototype%": Ot && Xt ? Xt([][Symbol.iterator]()) : d,
         "%AsyncFromSyncIteratorPrototype%": d,
         "%AsyncFunction%": et,
         "%AsyncGenerator%": et,
@@ -12769,10 +12769,10 @@ Use Chrome, Firefox or Internet Explorer 11`);
         "%Int32Array%": typeof Int32Array > "u" ? d : Int32Array,
         "%isFinite%": isFinite,
         "%isNaN%": isNaN,
-        "%IteratorPrototype%": jt && Xt ? Xt(Xt([][Symbol.iterator]())) : d,
+        "%IteratorPrototype%": Ot && Xt ? Xt(Xt([][Symbol.iterator]())) : d,
         "%JSON%": typeof JSON == "object" ? JSON : d,
         "%Map%": typeof Map > "u" ? d : Map,
-        "%MapIteratorPrototype%": typeof Map > "u" || !jt || !Xt ? d : Xt((/* @__PURE__ */ new Map())[Symbol.iterator]()),
+        "%MapIteratorPrototype%": typeof Map > "u" || !Ot || !Xt ? d : Xt((/* @__PURE__ */ new Map())[Symbol.iterator]()),
         "%Math%": Math,
         "%Number%": Number,
         "%Object%": b,
@@ -12786,11 +12786,11 @@ Use Chrome, Firefox or Internet Explorer 11`);
         "%Reflect%": typeof Reflect > "u" ? d : Reflect,
         "%RegExp%": RegExp,
         "%Set%": typeof Set > "u" ? d : Set,
-        "%SetIteratorPrototype%": typeof Set > "u" || !jt || !Xt ? d : Xt((/* @__PURE__ */ new Set())[Symbol.iterator]()),
+        "%SetIteratorPrototype%": typeof Set > "u" || !Ot || !Xt ? d : Xt((/* @__PURE__ */ new Set())[Symbol.iterator]()),
         "%SharedArrayBuffer%": typeof SharedArrayBuffer > "u" ? d : SharedArrayBuffer,
         "%String%": String,
-        "%StringIteratorPrototype%": jt && Xt ? Xt(""[Symbol.iterator]()) : d,
-        "%Symbol%": jt ? Symbol : d,
+        "%StringIteratorPrototype%": Ot && Xt ? Xt(""[Symbol.iterator]()) : d,
+        "%Symbol%": Ot ? Symbol : d,
         "%SyntaxError%": st,
         "%ThrowTypeError%": Ft,
         "%TypedArray%": tt,
@@ -13080,10 +13080,10 @@ Use Chrome, Firefox or Internet Explorer 11`);
           0,
           1
         ], vr)));
-        for (var gr = 1, jr = true; gr < zt.length; gr += 1) {
+        for (var gr = 1, Fr = true; gr < zt.length; gr += 1) {
           var _r = zt[gr], Tr = St(_r, 0, 1), Ur = St(_r, -1);
           if ((Tr === '"' || Tr === "'" || Tr === "`" || Ur === '"' || Ur === "'" || Ur === "`") && Tr !== Ur) throw new st("property names with quotes must have matching quotes");
-          if ((_r === "constructor" || !jr) && (kr = true), sr += "." + _r, dr = "%" + sr + "%", at(nt, dr)) xr = nt[dr];
+          if ((_r === "constructor" || !Fr) && (kr = true), sr += "." + _r, dr = "%" + sr + "%", at(nt, dr)) xr = nt[dr];
           else if (xr != null) {
             if (!(_r in xr)) {
               if (!Gt) throw new dt("base intrinsic for " + tr + " exists, but the property is not available.");
@@ -13091,9 +13091,9 @@ Use Chrome, Firefox or Internet Explorer 11`);
             }
             if (Bt && gr + 1 >= zt.length) {
               var Cr = Bt(xr, _r);
-              jr = !!Cr, jr && "get" in Cr && !("originalValue" in Cr.get) ? xr = Cr.get : xr = xr[_r];
-            } else jr = at(xr, _r), xr = xr[_r];
-            jr && !kr && (nt[dr] = xr);
+              Fr = !!Cr, Fr && "get" in Cr && !("originalValue" in Cr.get) ? xr = Cr.get : xr = xr[_r];
+            } else Fr = at(xr, _r), xr = xr[_r];
+            Fr && !kr && (nt[dr] = xr);
           }
         }
         return xr;
@@ -13454,10 +13454,10 @@ Use Chrome, Firefox or Internet Explorer 11`);
         var st = typeof BigInt < "u", dt = typeof Symbol < "u", pt = j(Object.prototype.toString), bt = j(Number.prototype.valueOf), yt = j(String.prototype.valueOf), xt = j(Boolean.prototype.valueOf);
         if (st) var _t = j(BigInt.prototype.valueOf);
         if (dt) var Ct = j(Symbol.prototype.valueOf);
-        function Mt(gr, jr) {
+        function Mt(gr, Fr) {
           if (typeof gr != "object") return false;
           try {
-            return jr(gr), true;
+            return Fr(gr), true;
           } catch {
             return false;
           }
@@ -13491,10 +13491,10 @@ Use Chrome, Firefox or Internet Explorer 11`);
           return $(gr) === "Int8Array";
         }
         d.isInt8Array = Ft;
-        function jt(gr) {
+        function Ot(gr) {
           return $(gr) === "Int16Array";
         }
-        d.isInt16Array = jt;
+        d.isInt16Array = Ot;
         function Xt(gr) {
           return $(gr) === "Int32Array";
         }
@@ -13646,7 +13646,7 @@ Use Chrome, Firefox or Internet Explorer 11`);
           return Zt;
         }, $ = /%[sdj%]/g;
         d.format = function(St) {
-          if (!jt(St)) {
+          if (!Ot(St)) {
             for (var Nt = [], qt = 0; qt < arguments.length; qt++) Nt.push(dt(arguments[qt]));
             return Nt.join(" ");
           }
@@ -13786,7 +13786,7 @@ Use Chrome, Firefox or Internet Explorer 11`);
         function xt(St, Nt, qt) {
           if (St.customInspect && Nt && tt(Nt.inspect) && Nt.inspect !== d.inspect && !(Nt.constructor && Nt.constructor.prototype === Nt)) {
             var Zt = Nt.inspect(qt, St);
-            return jt(Zt) || (Zt = xt(St, Zt, qt)), Zt;
+            return Ot(Zt) || (Zt = xt(St, Zt, qt)), Zt;
           }
           var Ut = _t(St, Nt);
           if (Ut) return Ut;
@@ -13822,7 +13822,7 @@ Use Chrome, Firefox or Internet Explorer 11`);
         }
         function _t(St, Nt) {
           if (Qt(Nt)) return St.stylize("undefined", "undefined");
-          if (jt(Nt)) {
+          if (Ot(Nt)) {
             var qt = "'" + JSON.stringify(Nt).replace(/^"|"$/g, "").replace(/'/g, "\\'").replace(/\\"/g, '"') + "'";
             return St.stylize(qt, "string");
           }
@@ -13889,10 +13889,10 @@ Use Chrome, Firefox or Internet Explorer 11`);
           return typeof St == "number";
         }
         d.isNumber = Ft;
-        function jt(St) {
+        function Ot(St) {
           return typeof St == "string";
         }
-        d.isString = jt;
+        d.isString = Ot;
         function Xt(St) {
           return typeof St == "symbol";
         }
@@ -14356,7 +14356,7 @@ Use Chrome, Firefox or Internet Explorer 11`);
         };
       }
       var b;
-      Qt.WritableState = jt;
+      Qt.WritableState = Ot;
       var _ = {
         deprecate: requireBrowser$a()
       }, $ = requireStreamBrowser$1(), rt = require$$0$2.Buffer, j = (typeof commonjsGlobal < "u" ? commonjsGlobal : typeof window < "u" ? window : typeof self < "u" ? self : {}).Uint8Array || function() {
@@ -14371,19 +14371,19 @@ Use Chrome, Firefox or Internet Explorer 11`);
       requireInherits_browser()(Qt, $);
       function Ft() {
       }
-      function jt(Zt, Ut, Lt) {
+      function Ot(Zt, Ut, Lt) {
         b = b || require_stream_duplex$1(), Zt = Zt || {}, typeof Lt != "boolean" && (Lt = Ut instanceof b), this.objectMode = !!Zt.objectMode, Lt && (this.objectMode = this.objectMode || !!Zt.writableObjectMode), this.highWaterMark = yt(this, Zt, "writableHighWaterMark", Lt), this.finalCalled = false, this.needDrain = false, this.ending = false, this.ended = false, this.finished = false, this.destroyed = false;
         var Ht = Zt.decodeStrings === false;
         this.decodeStrings = !Ht, this.defaultEncoding = Zt.defaultEncoding || "utf8", this.length = 0, this.writing = false, this.corked = 0, this.sync = true, this.bufferProcessing = false, this.onwrite = function(tr) {
           ut(Ut, tr);
         }, this.writecb = null, this.writelen = 0, this.bufferedRequest = null, this.lastBufferedRequest = null, this.pendingcb = 0, this.prefinished = false, this.errorEmitted = false, this.emitClose = Zt.emitClose !== false, this.autoDestroy = !!Zt.autoDestroy, this.bufferedRequestCount = 0, this.corkedRequestsFree = new d(this);
       }
-      jt.prototype.getBuffer = function() {
+      Ot.prototype.getBuffer = function() {
         for (var Ut = this.bufferedRequest, Lt = []; Ut; ) Lt.push(Ut), Ut = Ut.next;
         return Lt;
       }, function() {
         try {
-          Object.defineProperty(jt.prototype, "buffer", {
+          Object.defineProperty(Ot.prototype, "buffer", {
             get: _.deprecate(function() {
               return this.getBuffer();
             }, "_writableState.buffer is deprecated. Use _writableState.getBuffer instead.", "DEP0003")
@@ -14394,7 +14394,7 @@ Use Chrome, Firefox or Internet Explorer 11`);
       var Xt;
       typeof Symbol == "function" && Symbol.hasInstance && typeof Function.prototype[Symbol.hasInstance] == "function" ? (Xt = Function.prototype[Symbol.hasInstance], Object.defineProperty(Qt, Symbol.hasInstance, {
         value: function(Ut) {
-          return Xt.call(this, Ut) ? true : this !== Qt ? false : Ut && Ut._writableState instanceof jt;
+          return Xt.call(this, Ut) ? true : this !== Qt ? false : Ut && Ut._writableState instanceof Ot;
         }
       })) : Xt = function(Ut) {
         return Ut instanceof this;
@@ -14403,7 +14403,7 @@ Use Chrome, Firefox or Internet Explorer 11`);
         b = b || require_stream_duplex$1();
         var Ut = this instanceof b;
         if (!Ut && !Xt.call(Qt, this)) return new Qt(Zt);
-        this._writableState = new jt(Zt, this, Ut), this.writable = true, Zt && (typeof Zt.write == "function" && (this._write = Zt.write), typeof Zt.writev == "function" && (this._writev = Zt.writev), typeof Zt.destroy == "function" && (this._destroy = Zt.destroy), typeof Zt.final == "function" && (this._final = Zt.final)), $.call(this);
+        this._writableState = new Ot(Zt, this, Ut), this.writable = true, Zt && (typeof Zt.write == "function" && (this._write = Zt.write), typeof Zt.writev == "function" && (this._writev = Zt.writev), typeof Zt.destroy == "function" && (this._destroy = Zt.destroy), typeof Zt.final == "function" && (this._final = Zt.final)), $.call(this);
       }
       Qt.prototype.pipe = function() {
         Tt(this, new Et());
@@ -14838,8 +14838,8 @@ Use Chrome, Firefox or Internet Explorer 11`);
         if (typeof $t != "object" || $t === null) return $t;
         var Ft = $t[Symbol.toPrimitive];
         if (Ft !== void 0) {
-          var jt = Ft.call($t, Tt);
-          if (typeof jt != "object") return jt;
+          var Ot = Ft.call($t, Tt);
+          if (typeof Ot != "object") return Ot;
           throw new TypeError("@@toPrimitive must return a primitive value.");
         }
         return (Tt === "string" ? String : Number)($t);
@@ -14862,14 +14862,14 @@ Use Chrome, Firefox or Internet Explorer 11`);
         process$1.nextTick(Ct, $t);
       }
       function Et($t, Tt) {
-        return function(Ft, jt) {
+        return function(Ft, Ot) {
           $t.then(function() {
             if (Tt[pt]) {
               Ft(_t(void 0, true));
               return;
             }
-            Tt[yt](Ft, jt);
-          }, jt);
+            Tt[yt](Ft, Ot);
+          }, Ot);
         };
       }
       var Rt = Object.getPrototypeOf(function() {
@@ -14886,8 +14886,8 @@ Use Chrome, Firefox or Internet Explorer 11`);
               Tt[dt] ? kt(Tt[dt]) : Wt(_t(void 0, true));
             });
           });
-          var jt = this[bt], Xt;
-          if (jt) Xt = new Promise(Et(jt, this));
+          var Ot = this[bt], Xt;
+          if (Ot) Xt = new Promise(Et(Ot, this));
           else {
             var Qt = this[xt].read();
             if (Qt !== null) return Promise.resolve(_t(Qt, false));
@@ -14899,17 +14899,17 @@ Use Chrome, Firefox or Internet Explorer 11`);
         return this;
       }), b(d, "return", function() {
         var Tt = this;
-        return new Promise(function(Ft, jt) {
+        return new Promise(function(Ft, Ot) {
           Tt[xt].destroy(null, function(Xt) {
             if (Xt) {
-              jt(Xt);
+              Ot(Xt);
               return;
             }
             Ft(_t(void 0, true));
           });
         });
       }), d), Rt), Bt = function(Tt) {
-        var Ft, jt = Object.create(At, (Ft = {}, b(Ft, xt, {
+        var Ft, Ot = Object.create(At, (Ft = {}, b(Ft, xt, {
           value: Tt,
           writable: true
         }), b(Ft, j, {
@@ -14926,20 +14926,20 @@ Use Chrome, Firefox or Internet Explorer 11`);
           writable: true
         }), b(Ft, yt, {
           value: function(Qt, Wt) {
-            var kt = jt[xt].read();
-            kt ? (jt[bt] = null, jt[j] = null, jt[st] = null, Qt(_t(kt, false))) : (jt[j] = Qt, jt[st] = Wt);
+            var kt = Ot[xt].read();
+            kt ? (Ot[bt] = null, Ot[j] = null, Ot[st] = null, Qt(_t(kt, false))) : (Ot[j] = Qt, Ot[st] = Wt);
           },
           writable: true
         }), Ft));
-        return jt[bt] = null, rt(Tt, function(Xt) {
+        return Ot[bt] = null, rt(Tt, function(Xt) {
           if (Xt && Xt.code !== "ERR_STREAM_PREMATURE_CLOSE") {
-            var Qt = jt[st];
-            Qt !== null && (jt[bt] = null, jt[j] = null, jt[st] = null, Qt(Xt)), jt[dt] = Xt;
+            var Qt = Ot[st];
+            Qt !== null && (Ot[bt] = null, Ot[j] = null, Ot[st] = null, Qt(Xt)), Ot[dt] = Xt;
             return;
           }
-          var Wt = jt[j];
-          Wt !== null && (jt[bt] = null, jt[j] = null, jt[st] = null, Wt(_t(void 0, true))), jt[pt] = true;
-        }), Tt.on("readable", Mt.bind(null, jt)), jt;
+          var Wt = Ot[j];
+          Wt !== null && (Ot[bt] = null, Ot[j] = null, Ot[st] = null, Wt(_t(void 0, true))), Ot[pt] = true;
+        }), Tt.on("readable", Mt.bind(null, Ot)), Ot;
       };
       return async_iterator = Bt, async_iterator;
     }
@@ -14970,7 +14970,7 @@ Use Chrome, Firefox or Internet Explorer 11`);
       };
       var bt = requireBuffer_list(), yt = requireDestroy$1(), xt = requireState(), _t = xt.getHighWaterMark, Ct = requireErrorsBrowser().codes, Mt = Ct.ERR_INVALID_ARG_TYPE, Et = Ct.ERR_STREAM_PUSH_AFTER_EOF, Rt = Ct.ERR_METHOD_NOT_IMPLEMENTED, At = Ct.ERR_STREAM_UNSHIFT_AFTER_END_EVENT, Bt, $t, Tt;
       requireInherits_browser()(Wt, _);
-      var Ft = yt.errorOrDestroy, jt = [
+      var Ft = yt.errorOrDestroy, Ot = [
         "error",
         "close",
         "destroy",
@@ -15118,15 +15118,15 @@ Use Chrome, Firefox or Internet Explorer 11`);
         }
         var gr = ht(sr);
         Gt.on("drain", gr);
-        var jr = false;
+        var Fr = false;
         function _r() {
-          pt("cleanup"), Gt.removeListener("close", Cr), Gt.removeListener("finish", lr), Gt.removeListener("drain", gr), Gt.removeListener("error", Ur), Gt.removeListener("unpipe", kr), sr.removeListener("end", vr), sr.removeListener("end", rr), sr.removeListener("data", Tr), jr = true, br.awaitDrain && (!Gt._writableState || Gt._writableState.needDrain) && gr();
+          pt("cleanup"), Gt.removeListener("close", Cr), Gt.removeListener("finish", lr), Gt.removeListener("drain", gr), Gt.removeListener("error", Ur), Gt.removeListener("unpipe", kr), sr.removeListener("end", vr), sr.removeListener("end", rr), sr.removeListener("data", Tr), Fr = true, br.awaitDrain && (!Gt._writableState || Gt._writableState.needDrain) && gr();
         }
         sr.on("data", Tr);
         function Tr(nr) {
           pt("ondata");
           var ar = Gt.write(nr);
-          pt("dest.write", ar), ar === false && ((br.pipesCount === 1 && br.pipes === Gt || br.pipesCount > 1 && tr(br.pipes, Gt) !== -1) && !jr && (pt("false write response, pause", br.awaitDrain), br.awaitDrain++), sr.pause());
+          pt("dest.write", ar), ar === false && ((br.pipesCount === 1 && br.pipes === Gt || br.pipesCount > 1 && tr(br.pipes, Gt) !== -1) && !Fr && (pt("false write response, pause", br.awaitDrain), br.awaitDrain++), sr.pause());
         }
         function Ur(nr) {
           pt("onerror", nr), rr(), Gt.removeListener("error", Ur), b(Gt, "error") === 0 && Ft(Gt, nr);
@@ -15220,7 +15220,7 @@ Use Chrome, Firefox or Internet Explorer 11`);
             return Gt[vr].apply(Gt, arguments);
           };
         }(dr));
-        for (var xr = 0; xr < jt.length; xr++) Gt.on(jt[xr], this.emit.bind(this, jt[xr]));
+        for (var xr = 0; xr < Ot.length; xr++) Gt.on(Ot[xr], this.emit.bind(this, Ot[xr]));
         return this._read = function(kr) {
           pt("wrapped _read", kr), br && (br = false, Gt.resume());
         }, this;
@@ -15400,8 +15400,8 @@ Use Chrome, Firefox or Internet Explorer 11`);
         if (Array.isArray(Ct[0]) && (Ct = Ct[0]), Ct.length < 2) throw new $("streams");
         var Rt, At = Ct.map(function(Bt, $t) {
           var Tt = $t < Ct.length - 1, Ft = $t > 0;
-          return dt(Bt, Tt, Ft, function(jt) {
-            Rt || (Rt = jt), jt && At.forEach(pt), !Tt && (At.forEach(pt), Et(Rt));
+          return dt(Bt, Tt, Ft, function(Ot) {
+            Rt || (Rt = Ot), Ot && At.forEach(pt), !Tt && (At.forEach(pt), Et(Rt));
           });
         });
         return Ct.reduce(bt);
@@ -15889,12 +15889,12 @@ Use Chrome, Firefox or Internet Explorer 11`);
       }
       b(yt, _), yt.prototype._update = function() {
         for (var At = $, Bt = 0; Bt < 16; ++Bt) At[Bt] = this._block.readInt32LE(Bt * 4);
-        for (var $t = this._a | 0, Tt = this._b | 0, Ft = this._c | 0, jt = this._d | 0, Xt = this._e | 0, Qt = this._a | 0, Wt = this._b | 0, kt = this._c | 0, ct = this._d | 0, et = this._e | 0, tt = 0; tt < 80; tt += 1) {
+        for (var $t = this._a | 0, Tt = this._b | 0, Ft = this._c | 0, Ot = this._d | 0, Xt = this._e | 0, Qt = this._a | 0, Wt = this._b | 0, kt = this._c | 0, ct = this._d | 0, et = this._e | 0, tt = 0; tt < 80; tt += 1) {
           var nt, ot;
-          tt < 16 ? (nt = _t($t, Tt, Ft, jt, Xt, At[rt[tt]], pt[0], st[tt]), ot = Rt(Qt, Wt, kt, ct, et, At[j[tt]], bt[0], dt[tt])) : tt < 32 ? (nt = Ct($t, Tt, Ft, jt, Xt, At[rt[tt]], pt[1], st[tt]), ot = Et(Qt, Wt, kt, ct, et, At[j[tt]], bt[1], dt[tt])) : tt < 48 ? (nt = Mt($t, Tt, Ft, jt, Xt, At[rt[tt]], pt[2], st[tt]), ot = Mt(Qt, Wt, kt, ct, et, At[j[tt]], bt[2], dt[tt])) : tt < 64 ? (nt = Et($t, Tt, Ft, jt, Xt, At[rt[tt]], pt[3], st[tt]), ot = Ct(Qt, Wt, kt, ct, et, At[j[tt]], bt[3], dt[tt])) : (nt = Rt($t, Tt, Ft, jt, Xt, At[rt[tt]], pt[4], st[tt]), ot = _t(Qt, Wt, kt, ct, et, At[j[tt]], bt[4], dt[tt])), $t = Xt, Xt = jt, jt = xt(Ft, 10), Ft = Tt, Tt = nt, Qt = et, et = ct, ct = xt(kt, 10), kt = Wt, Wt = ot;
+          tt < 16 ? (nt = _t($t, Tt, Ft, Ot, Xt, At[rt[tt]], pt[0], st[tt]), ot = Rt(Qt, Wt, kt, ct, et, At[j[tt]], bt[0], dt[tt])) : tt < 32 ? (nt = Ct($t, Tt, Ft, Ot, Xt, At[rt[tt]], pt[1], st[tt]), ot = Et(Qt, Wt, kt, ct, et, At[j[tt]], bt[1], dt[tt])) : tt < 48 ? (nt = Mt($t, Tt, Ft, Ot, Xt, At[rt[tt]], pt[2], st[tt]), ot = Mt(Qt, Wt, kt, ct, et, At[j[tt]], bt[2], dt[tt])) : tt < 64 ? (nt = Et($t, Tt, Ft, Ot, Xt, At[rt[tt]], pt[3], st[tt]), ot = Ct(Qt, Wt, kt, ct, et, At[j[tt]], bt[3], dt[tt])) : (nt = Rt($t, Tt, Ft, Ot, Xt, At[rt[tt]], pt[4], st[tt]), ot = _t(Qt, Wt, kt, ct, et, At[j[tt]], bt[4], dt[tt])), $t = Xt, Xt = Ot, Ot = xt(Ft, 10), Ft = Tt, Tt = nt, Qt = et, et = ct, ct = xt(kt, 10), kt = Wt, Wt = ot;
         }
         var ut = this._b + Ft + ct | 0;
-        this._b = this._c + jt + et | 0, this._c = this._d + Xt + Qt | 0, this._d = this._e + $t + Wt | 0, this._e = this._a + Tt + kt | 0, this._a = ut;
+        this._b = this._c + Ot + et | 0, this._c = this._d + Xt + Qt | 0, this._d = this._e + $t + Wt | 0, this._e = this._a + Tt + kt | 0, this._a = ut;
       }, yt.prototype._digest = function() {
         this._block[this._blockOffset++] = 128, this._blockOffset > 56 && (this._block.fill(0, this._blockOffset, 64), this._update(), this._blockOffset = 0), this._block.fill(0, this._blockOffset, 56), this._block.writeUInt32LE(this._length[0], 56), this._block.writeUInt32LE(this._length[1], 60), this._update();
         var At = d.alloc ? d.alloc(20) : new d(20);
@@ -15903,20 +15903,20 @@ Use Chrome, Firefox or Internet Explorer 11`);
       function xt(At, Bt) {
         return At << Bt | At >>> 32 - Bt;
       }
-      function _t(At, Bt, $t, Tt, Ft, jt, Xt, Qt) {
-        return xt(At + (Bt ^ $t ^ Tt) + jt + Xt | 0, Qt) + Ft | 0;
+      function _t(At, Bt, $t, Tt, Ft, Ot, Xt, Qt) {
+        return xt(At + (Bt ^ $t ^ Tt) + Ot + Xt | 0, Qt) + Ft | 0;
       }
-      function Ct(At, Bt, $t, Tt, Ft, jt, Xt, Qt) {
-        return xt(At + (Bt & $t | ~Bt & Tt) + jt + Xt | 0, Qt) + Ft | 0;
+      function Ct(At, Bt, $t, Tt, Ft, Ot, Xt, Qt) {
+        return xt(At + (Bt & $t | ~Bt & Tt) + Ot + Xt | 0, Qt) + Ft | 0;
       }
-      function Mt(At, Bt, $t, Tt, Ft, jt, Xt, Qt) {
-        return xt(At + ((Bt | ~$t) ^ Tt) + jt + Xt | 0, Qt) + Ft | 0;
+      function Mt(At, Bt, $t, Tt, Ft, Ot, Xt, Qt) {
+        return xt(At + ((Bt | ~$t) ^ Tt) + Ot + Xt | 0, Qt) + Ft | 0;
       }
-      function Et(At, Bt, $t, Tt, Ft, jt, Xt, Qt) {
-        return xt(At + (Bt & Tt | $t & ~Tt) + jt + Xt | 0, Qt) + Ft | 0;
+      function Et(At, Bt, $t, Tt, Ft, Ot, Xt, Qt) {
+        return xt(At + (Bt & Tt | $t & ~Tt) + Ot + Xt | 0, Qt) + Ft | 0;
       }
-      function Rt(At, Bt, $t, Tt, Ft, jt, Xt, Qt) {
-        return xt(At + (Bt ^ ($t | ~Tt)) + jt + Xt | 0, Qt) + Ft | 0;
+      function Rt(At, Bt, $t, Tt, Ft, Ot, Xt, Qt) {
+        return xt(At + (Bt ^ ($t | ~Tt)) + Ot + Xt | 0, Qt) + Ft | 0;
       }
       return ripemd160 = yt, ripemd160;
     }
@@ -16127,8 +16127,8 @@ Use Chrome, Firefox or Internet Explorer 11`);
         return (_t >>> 17 | _t << 15) ^ (_t >>> 19 | _t << 13) ^ _t >>> 10;
       }
       return j.prototype._update = function(_t) {
-        for (var Ct = this._w, Mt = this._a | 0, Et = this._b | 0, Rt = this._c | 0, At = this._d | 0, Bt = this._e | 0, $t = this._f | 0, Tt = this._g | 0, Ft = this._h | 0, jt = 0; jt < 16; ++jt) Ct[jt] = _t.readInt32BE(jt * 4);
-        for (; jt < 64; ++jt) Ct[jt] = xt(Ct[jt - 2]) + Ct[jt - 7] + yt(Ct[jt - 15]) + Ct[jt - 16] | 0;
+        for (var Ct = this._w, Mt = this._a | 0, Et = this._b | 0, Rt = this._c | 0, At = this._d | 0, Bt = this._e | 0, $t = this._f | 0, Tt = this._g | 0, Ft = this._h | 0, Ot = 0; Ot < 16; ++Ot) Ct[Ot] = _t.readInt32BE(Ot * 4);
+        for (; Ot < 64; ++Ot) Ct[Ot] = xt(Ct[Ot - 2]) + Ct[Ot - 7] + yt(Ct[Ot - 15]) + Ct[Ot - 16] | 0;
         for (var Xt = 0; Xt < 64; ++Xt) {
           var Qt = Ft + bt(Bt) + st(Bt, $t, Tt) + $[Xt] + Ct[Xt] | 0, Wt = pt(Mt) + dt(Mt, Et, Rt) | 0;
           Ft = Tt, Tt = $t, $t = Bt, Bt = At + Qt | 0, At = Rt, Rt = Et, Et = Mt, Mt = Qt + Wt | 0;
@@ -16354,7 +16354,7 @@ Use Chrome, Firefox or Internet Explorer 11`);
         return Et >>> 0 < Rt >>> 0 ? 1 : 0;
       }
       return j.prototype._update = function(Et) {
-        for (var Rt = this._w, At = this._ah | 0, Bt = this._bh | 0, $t = this._ch | 0, Tt = this._dh | 0, Ft = this._eh | 0, jt = this._fh | 0, Xt = this._gh | 0, Qt = this._hh | 0, Wt = this._al | 0, kt = this._bl | 0, ct = this._cl | 0, et = this._dl | 0, tt = this._el | 0, nt = this._fl | 0, ot = this._gl | 0, ut = this._hl | 0, mt = 0; mt < 32; mt += 2) Rt[mt] = Et.readInt32BE(mt * 4), Rt[mt + 1] = Et.readInt32BE(mt * 4 + 4);
+        for (var Rt = this._w, At = this._ah | 0, Bt = this._bh | 0, $t = this._ch | 0, Tt = this._dh | 0, Ft = this._eh | 0, Ot = this._fh | 0, Xt = this._gh | 0, Qt = this._hh | 0, Wt = this._al | 0, kt = this._bl | 0, ct = this._cl | 0, et = this._dl | 0, tt = this._el | 0, nt = this._fl | 0, ot = this._gl | 0, ut = this._hl | 0, mt = 0; mt < 32; mt += 2) Rt[mt] = Et.readInt32BE(mt * 4), Rt[mt + 1] = Et.readInt32BE(mt * 4 + 4);
         for (; mt < 160; mt += 2) {
           var vt = Rt[mt - 30], at = Rt[mt - 15 * 2 + 1], it = yt(vt, at), ht = xt(at, vt);
           vt = Rt[mt - 2 * 2], at = Rt[mt - 2 * 2 + 1];
@@ -16363,12 +16363,12 @@ Use Chrome, Firefox or Internet Explorer 11`);
         }
         for (var tr = 0; tr < 160; tr += 2) {
           Ht = Rt[tr], Lt = Rt[tr + 1];
-          var Gt = dt(At, Bt, $t), zt = dt(Wt, kt, ct), sr = pt(At, Wt), br = pt(Wt, At), dr = bt(Ft, tt), xr = bt(tt, Ft), kr = $[tr], vr = $[tr + 1], gr = st(Ft, jt, Xt), jr = st(tt, nt, ot), _r = ut + xr | 0, Tr = Qt + dr + Mt(_r, ut) | 0;
-          _r = _r + jr | 0, Tr = Tr + gr + Mt(_r, jr) | 0, _r = _r + vr | 0, Tr = Tr + kr + Mt(_r, vr) | 0, _r = _r + Lt | 0, Tr = Tr + Ht + Mt(_r, Lt) | 0;
+          var Gt = dt(At, Bt, $t), zt = dt(Wt, kt, ct), sr = pt(At, Wt), br = pt(Wt, At), dr = bt(Ft, tt), xr = bt(tt, Ft), kr = $[tr], vr = $[tr + 1], gr = st(Ft, Ot, Xt), Fr = st(tt, nt, ot), _r = ut + xr | 0, Tr = Qt + dr + Mt(_r, ut) | 0;
+          _r = _r + Fr | 0, Tr = Tr + gr + Mt(_r, Fr) | 0, _r = _r + vr | 0, Tr = Tr + kr + Mt(_r, vr) | 0, _r = _r + Lt | 0, Tr = Tr + Ht + Mt(_r, Lt) | 0;
           var Ur = br + zt | 0, Cr = sr + Gt + Mt(Ur, br) | 0;
-          Qt = Xt, ut = ot, Xt = jt, ot = nt, jt = Ft, nt = tt, tt = et + _r | 0, Ft = Tt + Tr + Mt(tt, et) | 0, Tt = $t, et = ct, $t = Bt, ct = kt, Bt = At, kt = Wt, Wt = _r + Ur | 0, At = Tr + Cr + Mt(Wt, _r) | 0;
+          Qt = Xt, ut = ot, Xt = Ot, ot = nt, Ot = Ft, nt = tt, tt = et + _r | 0, Ft = Tt + Tr + Mt(tt, et) | 0, Tt = $t, et = ct, $t = Bt, ct = kt, Bt = At, kt = Wt, Wt = _r + Ur | 0, At = Tr + Cr + Mt(Wt, _r) | 0;
         }
-        this._al = this._al + Wt | 0, this._bl = this._bl + kt | 0, this._cl = this._cl + ct | 0, this._dl = this._dl + et | 0, this._el = this._el + tt | 0, this._fl = this._fl + nt | 0, this._gl = this._gl + ot | 0, this._hl = this._hl + ut | 0, this._ah = this._ah + At + Mt(this._al, Wt) | 0, this._bh = this._bh + Bt + Mt(this._bl, kt) | 0, this._ch = this._ch + $t + Mt(this._cl, ct) | 0, this._dh = this._dh + Tt + Mt(this._dl, et) | 0, this._eh = this._eh + Ft + Mt(this._el, tt) | 0, this._fh = this._fh + jt + Mt(this._fl, nt) | 0, this._gh = this._gh + Xt + Mt(this._gl, ot) | 0, this._hh = this._hh + Qt + Mt(this._hl, ut) | 0;
+        this._al = this._al + Wt | 0, this._bl = this._bl + kt | 0, this._cl = this._cl + ct | 0, this._dl = this._dl + et | 0, this._el = this._el + tt | 0, this._fl = this._fl + nt | 0, this._gl = this._gl + ot | 0, this._hl = this._hl + ut | 0, this._ah = this._ah + At + Mt(this._al, Wt) | 0, this._bh = this._bh + Bt + Mt(this._bl, kt) | 0, this._ch = this._ch + $t + Mt(this._cl, ct) | 0, this._dh = this._dh + Tt + Mt(this._dl, et) | 0, this._eh = this._eh + Ft + Mt(this._el, tt) | 0, this._fh = this._fh + Ot + Mt(this._fl, nt) | 0, this._gh = this._gh + Xt + Mt(this._gl, ot) | 0, this._hh = this._hh + Qt + Mt(this._hl, ut) | 0;
       }, j.prototype._hash = function() {
         var Et = _.allocUnsafe(64);
         function Rt(At, Bt, $t) {
@@ -16775,7 +16775,7 @@ Use Chrome, Firefox or Internet Explorer 11`);
         rt(Mt, Et), _t = st(_t, j, "Password"), Ct = st(Ct, j, "Salt"), Rt = Rt || "sha1";
         var At = new bt(Rt, _t, Ct.length), Bt = $.allocUnsafe(Et), $t = $.allocUnsafe(Ct.length + 4);
         Ct.copy($t, 0, 0, Ct.length);
-        for (var Tt = 0, Ft = pt[Rt], jt = Math.ceil(Et / Ft), Xt = 1; Xt <= jt; Xt++) {
+        for (var Tt = 0, Ft = pt[Rt], Ot = Math.ceil(Et / Ft), Xt = 1; Xt <= Ot; Xt++) {
           $t.writeUInt32BE(Xt, Ct.length);
           for (var Qt = At.run($t, At.ipad1), Wt = Qt, kt = 1; kt < Mt; kt++) {
             Wt = At.run(Wt, At.ipad2);
@@ -16854,8 +16854,8 @@ Use Chrome, Firefox or Internet Explorer 11`);
             var Ft;
             try {
               Ft = $(Mt, Et, Rt, At, Bt);
-            } catch (jt) {
-              return $t(jt);
+            } catch (Ot) {
+              return $t(Ot);
             }
             $t(null, Ft);
           });
@@ -18166,11 +18166,11 @@ Use Chrome, Firefox or Internet Explorer 11`);
         for (var pt = 0; pt < dt.length; dt++) dt[pt] = 0;
       }
       function $(dt, pt, bt, yt, xt) {
-        for (var _t = bt[0], Ct = bt[1], Mt = bt[2], Et = bt[3], Rt = dt[0] ^ pt[0], At = dt[1] ^ pt[1], Bt = dt[2] ^ pt[2], $t = dt[3] ^ pt[3], Tt, Ft, jt, Xt, Qt = 4, Wt = 1; Wt < xt; Wt++) Tt = _t[Rt >>> 24] ^ Ct[At >>> 16 & 255] ^ Mt[Bt >>> 8 & 255] ^ Et[$t & 255] ^ pt[Qt++], Ft = _t[At >>> 24] ^ Ct[Bt >>> 16 & 255] ^ Mt[$t >>> 8 & 255] ^ Et[Rt & 255] ^ pt[Qt++], jt = _t[Bt >>> 24] ^ Ct[$t >>> 16 & 255] ^ Mt[Rt >>> 8 & 255] ^ Et[At & 255] ^ pt[Qt++], Xt = _t[$t >>> 24] ^ Ct[Rt >>> 16 & 255] ^ Mt[At >>> 8 & 255] ^ Et[Bt & 255] ^ pt[Qt++], Rt = Tt, At = Ft, Bt = jt, $t = Xt;
-        return Tt = (yt[Rt >>> 24] << 24 | yt[At >>> 16 & 255] << 16 | yt[Bt >>> 8 & 255] << 8 | yt[$t & 255]) ^ pt[Qt++], Ft = (yt[At >>> 24] << 24 | yt[Bt >>> 16 & 255] << 16 | yt[$t >>> 8 & 255] << 8 | yt[Rt & 255]) ^ pt[Qt++], jt = (yt[Bt >>> 24] << 24 | yt[$t >>> 16 & 255] << 16 | yt[Rt >>> 8 & 255] << 8 | yt[At & 255]) ^ pt[Qt++], Xt = (yt[$t >>> 24] << 24 | yt[Rt >>> 16 & 255] << 16 | yt[At >>> 8 & 255] << 8 | yt[Bt & 255]) ^ pt[Qt++], Tt = Tt >>> 0, Ft = Ft >>> 0, jt = jt >>> 0, Xt = Xt >>> 0, [
+        for (var _t = bt[0], Ct = bt[1], Mt = bt[2], Et = bt[3], Rt = dt[0] ^ pt[0], At = dt[1] ^ pt[1], Bt = dt[2] ^ pt[2], $t = dt[3] ^ pt[3], Tt, Ft, Ot, Xt, Qt = 4, Wt = 1; Wt < xt; Wt++) Tt = _t[Rt >>> 24] ^ Ct[At >>> 16 & 255] ^ Mt[Bt >>> 8 & 255] ^ Et[$t & 255] ^ pt[Qt++], Ft = _t[At >>> 24] ^ Ct[Bt >>> 16 & 255] ^ Mt[$t >>> 8 & 255] ^ Et[Rt & 255] ^ pt[Qt++], Ot = _t[Bt >>> 24] ^ Ct[$t >>> 16 & 255] ^ Mt[Rt >>> 8 & 255] ^ Et[At & 255] ^ pt[Qt++], Xt = _t[$t >>> 24] ^ Ct[Rt >>> 16 & 255] ^ Mt[At >>> 8 & 255] ^ Et[Bt & 255] ^ pt[Qt++], Rt = Tt, At = Ft, Bt = Ot, $t = Xt;
+        return Tt = (yt[Rt >>> 24] << 24 | yt[At >>> 16 & 255] << 16 | yt[Bt >>> 8 & 255] << 8 | yt[$t & 255]) ^ pt[Qt++], Ft = (yt[At >>> 24] << 24 | yt[Bt >>> 16 & 255] << 16 | yt[$t >>> 8 & 255] << 8 | yt[Rt & 255]) ^ pt[Qt++], Ot = (yt[Bt >>> 24] << 24 | yt[$t >>> 16 & 255] << 16 | yt[Rt >>> 8 & 255] << 8 | yt[At & 255]) ^ pt[Qt++], Xt = (yt[$t >>> 24] << 24 | yt[Rt >>> 16 & 255] << 16 | yt[At >>> 8 & 255] << 8 | yt[Bt & 255]) ^ pt[Qt++], Tt = Tt >>> 0, Ft = Ft >>> 0, Ot = Ot >>> 0, Xt = Xt >>> 0, [
           Tt,
           Ft,
-          jt,
+          Ot,
           Xt
         ];
       }
@@ -18993,7 +18993,7 @@ Use Chrome, Firefox or Internet Explorer 11`);
             return at !== 0 ? tt.words[it] = at | 0 : tt.length--, tt.strip();
           }
           var Et = function(et, tt, nt) {
-            var ot = et.words, ut = tt.words, mt = nt.words, vt = 0, at, it, ht, wt = ot[0] | 0, St = wt & 8191, Nt = wt >>> 13, qt = ot[1] | 0, Zt = qt & 8191, Ut = qt >>> 13, Lt = ot[2] | 0, Ht = Lt & 8191, tr = Lt >>> 13, Gt = ot[3] | 0, zt = Gt & 8191, sr = Gt >>> 13, br = ot[4] | 0, dr = br & 8191, xr = br >>> 13, kr = ot[5] | 0, vr = kr & 8191, gr = kr >>> 13, jr = ot[6] | 0, _r = jr & 8191, Tr = jr >>> 13, Ur = ot[7] | 0, Cr = Ur & 8191, lr = Ur >>> 13, rr = ot[8] | 0, nr = rr & 8191, ar = rr >>> 13, pr = ot[9] | 0, Pt = pr & 8191, It = pr >>> 13, Dt = ut[0] | 0, Vt = Dt & 8191, ir = Dt >>> 13, ur = ut[1] | 0, or = ur & 8191, wr = ur >>> 13, Ir = ut[2] | 0, fr = Ir & 8191, $r = Ir >>> 13, Pr = ut[3] | 0, Mr = Pr & 8191, Nr = Pr >>> 13, Vr = ut[4] | 0, Sr = Vr & 8191, Or = Vr >>> 13, Hr = ut[5] | 0, Rr = Hr & 8191, Lr = Hr >>> 13, Zr = ut[6] | 0, Br = Zr & 8191, qr = Zr >>> 13, Kt = ut[7] | 0, Yt = Kt & 8191, er = Kt >>> 13, Ot = ut[8] | 0, Jt = Ot & 8191, cr = Ot >>> 13, yr = ut[9] | 0, hr = yr & 8191, Er = yr >>> 13;
+            var ot = et.words, ut = tt.words, mt = nt.words, vt = 0, at, it, ht, wt = ot[0] | 0, St = wt & 8191, Nt = wt >>> 13, qt = ot[1] | 0, Zt = qt & 8191, Ut = qt >>> 13, Lt = ot[2] | 0, Ht = Lt & 8191, tr = Lt >>> 13, Gt = ot[3] | 0, zt = Gt & 8191, sr = Gt >>> 13, br = ot[4] | 0, dr = br & 8191, xr = br >>> 13, kr = ot[5] | 0, vr = kr & 8191, gr = kr >>> 13, Fr = ot[6] | 0, _r = Fr & 8191, Tr = Fr >>> 13, Ur = ot[7] | 0, Cr = Ur & 8191, lr = Ur >>> 13, rr = ot[8] | 0, nr = rr & 8191, ar = rr >>> 13, pr = ot[9] | 0, Pt = pr & 8191, It = pr >>> 13, Dt = ut[0] | 0, Vt = Dt & 8191, ir = Dt >>> 13, ur = ut[1] | 0, or = ur & 8191, wr = ur >>> 13, Ir = ut[2] | 0, fr = Ir & 8191, $r = Ir >>> 13, Pr = ut[3] | 0, Mr = Pr & 8191, Nr = Pr >>> 13, Vr = ut[4] | 0, Sr = Vr & 8191, jr = Vr >>> 13, Hr = ut[5] | 0, Rr = Hr & 8191, Lr = Hr >>> 13, Zr = ut[6] | 0, Br = Zr & 8191, qr = Zr >>> 13, Kt = ut[7] | 0, Yt = Kt & 8191, er = Kt >>> 13, jt = ut[8] | 0, Jt = jt & 8191, cr = jt >>> 13, yr = ut[9] | 0, hr = yr & 8191, Er = yr >>> 13;
             nt.negative = et.negative ^ tt.negative, nt.length = 19, at = Math.imul(St, Vt), it = Math.imul(St, ir), it = it + Math.imul(Nt, Vt) | 0, ht = Math.imul(Nt, ir);
             var zr = (vt + at | 0) + ((it & 8191) << 13) | 0;
             vt = (ht + (it >>> 13) | 0) + (zr >>> 26) | 0, zr &= 67108863, at = Math.imul(Zt, Vt), it = Math.imul(Zt, ir), it = it + Math.imul(Ut, Vt) | 0, ht = Math.imul(Ut, ir), at = at + Math.imul(St, or) | 0, it = it + Math.imul(St, wr) | 0, it = it + Math.imul(Nt, or) | 0, ht = ht + Math.imul(Nt, wr) | 0;
@@ -19002,25 +19002,25 @@ Use Chrome, Firefox or Internet Explorer 11`);
             var gn = (vt + at | 0) + ((it & 8191) << 13) | 0;
             vt = (ht + (it >>> 13) | 0) + (gn >>> 26) | 0, gn &= 67108863, at = Math.imul(zt, Vt), it = Math.imul(zt, ir), it = it + Math.imul(sr, Vt) | 0, ht = Math.imul(sr, ir), at = at + Math.imul(Ht, or) | 0, it = it + Math.imul(Ht, wr) | 0, it = it + Math.imul(tr, or) | 0, ht = ht + Math.imul(tr, wr) | 0, at = at + Math.imul(Zt, fr) | 0, it = it + Math.imul(Zt, $r) | 0, it = it + Math.imul(Ut, fr) | 0, ht = ht + Math.imul(Ut, $r) | 0, at = at + Math.imul(St, Mr) | 0, it = it + Math.imul(St, Nr) | 0, it = it + Math.imul(Nt, Mr) | 0, ht = ht + Math.imul(Nt, Nr) | 0;
             var Jr = (vt + at | 0) + ((it & 8191) << 13) | 0;
-            vt = (ht + (it >>> 13) | 0) + (Jr >>> 26) | 0, Jr &= 67108863, at = Math.imul(dr, Vt), it = Math.imul(dr, ir), it = it + Math.imul(xr, Vt) | 0, ht = Math.imul(xr, ir), at = at + Math.imul(zt, or) | 0, it = it + Math.imul(zt, wr) | 0, it = it + Math.imul(sr, or) | 0, ht = ht + Math.imul(sr, wr) | 0, at = at + Math.imul(Ht, fr) | 0, it = it + Math.imul(Ht, $r) | 0, it = it + Math.imul(tr, fr) | 0, ht = ht + Math.imul(tr, $r) | 0, at = at + Math.imul(Zt, Mr) | 0, it = it + Math.imul(Zt, Nr) | 0, it = it + Math.imul(Ut, Mr) | 0, ht = ht + Math.imul(Ut, Nr) | 0, at = at + Math.imul(St, Sr) | 0, it = it + Math.imul(St, Or) | 0, it = it + Math.imul(Nt, Sr) | 0, ht = ht + Math.imul(Nt, Or) | 0;
+            vt = (ht + (it >>> 13) | 0) + (Jr >>> 26) | 0, Jr &= 67108863, at = Math.imul(dr, Vt), it = Math.imul(dr, ir), it = it + Math.imul(xr, Vt) | 0, ht = Math.imul(xr, ir), at = at + Math.imul(zt, or) | 0, it = it + Math.imul(zt, wr) | 0, it = it + Math.imul(sr, or) | 0, ht = ht + Math.imul(sr, wr) | 0, at = at + Math.imul(Ht, fr) | 0, it = it + Math.imul(Ht, $r) | 0, it = it + Math.imul(tr, fr) | 0, ht = ht + Math.imul(tr, $r) | 0, at = at + Math.imul(Zt, Mr) | 0, it = it + Math.imul(Zt, Nr) | 0, it = it + Math.imul(Ut, Mr) | 0, ht = ht + Math.imul(Ut, Nr) | 0, at = at + Math.imul(St, Sr) | 0, it = it + Math.imul(St, jr) | 0, it = it + Math.imul(Nt, Sr) | 0, ht = ht + Math.imul(Nt, jr) | 0;
             var ln = (vt + at | 0) + ((it & 8191) << 13) | 0;
-            vt = (ht + (it >>> 13) | 0) + (ln >>> 26) | 0, ln &= 67108863, at = Math.imul(vr, Vt), it = Math.imul(vr, ir), it = it + Math.imul(gr, Vt) | 0, ht = Math.imul(gr, ir), at = at + Math.imul(dr, or) | 0, it = it + Math.imul(dr, wr) | 0, it = it + Math.imul(xr, or) | 0, ht = ht + Math.imul(xr, wr) | 0, at = at + Math.imul(zt, fr) | 0, it = it + Math.imul(zt, $r) | 0, it = it + Math.imul(sr, fr) | 0, ht = ht + Math.imul(sr, $r) | 0, at = at + Math.imul(Ht, Mr) | 0, it = it + Math.imul(Ht, Nr) | 0, it = it + Math.imul(tr, Mr) | 0, ht = ht + Math.imul(tr, Nr) | 0, at = at + Math.imul(Zt, Sr) | 0, it = it + Math.imul(Zt, Or) | 0, it = it + Math.imul(Ut, Sr) | 0, ht = ht + Math.imul(Ut, Or) | 0, at = at + Math.imul(St, Rr) | 0, it = it + Math.imul(St, Lr) | 0, it = it + Math.imul(Nt, Rr) | 0, ht = ht + Math.imul(Nt, Lr) | 0;
+            vt = (ht + (it >>> 13) | 0) + (ln >>> 26) | 0, ln &= 67108863, at = Math.imul(vr, Vt), it = Math.imul(vr, ir), it = it + Math.imul(gr, Vt) | 0, ht = Math.imul(gr, ir), at = at + Math.imul(dr, or) | 0, it = it + Math.imul(dr, wr) | 0, it = it + Math.imul(xr, or) | 0, ht = ht + Math.imul(xr, wr) | 0, at = at + Math.imul(zt, fr) | 0, it = it + Math.imul(zt, $r) | 0, it = it + Math.imul(sr, fr) | 0, ht = ht + Math.imul(sr, $r) | 0, at = at + Math.imul(Ht, Mr) | 0, it = it + Math.imul(Ht, Nr) | 0, it = it + Math.imul(tr, Mr) | 0, ht = ht + Math.imul(tr, Nr) | 0, at = at + Math.imul(Zt, Sr) | 0, it = it + Math.imul(Zt, jr) | 0, it = it + Math.imul(Ut, Sr) | 0, ht = ht + Math.imul(Ut, jr) | 0, at = at + Math.imul(St, Rr) | 0, it = it + Math.imul(St, Lr) | 0, it = it + Math.imul(Nt, Rr) | 0, ht = ht + Math.imul(Nt, Lr) | 0;
             var un = (vt + at | 0) + ((it & 8191) << 13) | 0;
-            vt = (ht + (it >>> 13) | 0) + (un >>> 26) | 0, un &= 67108863, at = Math.imul(_r, Vt), it = Math.imul(_r, ir), it = it + Math.imul(Tr, Vt) | 0, ht = Math.imul(Tr, ir), at = at + Math.imul(vr, or) | 0, it = it + Math.imul(vr, wr) | 0, it = it + Math.imul(gr, or) | 0, ht = ht + Math.imul(gr, wr) | 0, at = at + Math.imul(dr, fr) | 0, it = it + Math.imul(dr, $r) | 0, it = it + Math.imul(xr, fr) | 0, ht = ht + Math.imul(xr, $r) | 0, at = at + Math.imul(zt, Mr) | 0, it = it + Math.imul(zt, Nr) | 0, it = it + Math.imul(sr, Mr) | 0, ht = ht + Math.imul(sr, Nr) | 0, at = at + Math.imul(Ht, Sr) | 0, it = it + Math.imul(Ht, Or) | 0, it = it + Math.imul(tr, Sr) | 0, ht = ht + Math.imul(tr, Or) | 0, at = at + Math.imul(Zt, Rr) | 0, it = it + Math.imul(Zt, Lr) | 0, it = it + Math.imul(Ut, Rr) | 0, ht = ht + Math.imul(Ut, Lr) | 0, at = at + Math.imul(St, Br) | 0, it = it + Math.imul(St, qr) | 0, it = it + Math.imul(Nt, Br) | 0, ht = ht + Math.imul(Nt, qr) | 0;
+            vt = (ht + (it >>> 13) | 0) + (un >>> 26) | 0, un &= 67108863, at = Math.imul(_r, Vt), it = Math.imul(_r, ir), it = it + Math.imul(Tr, Vt) | 0, ht = Math.imul(Tr, ir), at = at + Math.imul(vr, or) | 0, it = it + Math.imul(vr, wr) | 0, it = it + Math.imul(gr, or) | 0, ht = ht + Math.imul(gr, wr) | 0, at = at + Math.imul(dr, fr) | 0, it = it + Math.imul(dr, $r) | 0, it = it + Math.imul(xr, fr) | 0, ht = ht + Math.imul(xr, $r) | 0, at = at + Math.imul(zt, Mr) | 0, it = it + Math.imul(zt, Nr) | 0, it = it + Math.imul(sr, Mr) | 0, ht = ht + Math.imul(sr, Nr) | 0, at = at + Math.imul(Ht, Sr) | 0, it = it + Math.imul(Ht, jr) | 0, it = it + Math.imul(tr, Sr) | 0, ht = ht + Math.imul(tr, jr) | 0, at = at + Math.imul(Zt, Rr) | 0, it = it + Math.imul(Zt, Lr) | 0, it = it + Math.imul(Ut, Rr) | 0, ht = ht + Math.imul(Ut, Lr) | 0, at = at + Math.imul(St, Br) | 0, it = it + Math.imul(St, qr) | 0, it = it + Math.imul(Nt, Br) | 0, ht = ht + Math.imul(Nt, qr) | 0;
             var mn = (vt + at | 0) + ((it & 8191) << 13) | 0;
-            vt = (ht + (it >>> 13) | 0) + (mn >>> 26) | 0, mn &= 67108863, at = Math.imul(Cr, Vt), it = Math.imul(Cr, ir), it = it + Math.imul(lr, Vt) | 0, ht = Math.imul(lr, ir), at = at + Math.imul(_r, or) | 0, it = it + Math.imul(_r, wr) | 0, it = it + Math.imul(Tr, or) | 0, ht = ht + Math.imul(Tr, wr) | 0, at = at + Math.imul(vr, fr) | 0, it = it + Math.imul(vr, $r) | 0, it = it + Math.imul(gr, fr) | 0, ht = ht + Math.imul(gr, $r) | 0, at = at + Math.imul(dr, Mr) | 0, it = it + Math.imul(dr, Nr) | 0, it = it + Math.imul(xr, Mr) | 0, ht = ht + Math.imul(xr, Nr) | 0, at = at + Math.imul(zt, Sr) | 0, it = it + Math.imul(zt, Or) | 0, it = it + Math.imul(sr, Sr) | 0, ht = ht + Math.imul(sr, Or) | 0, at = at + Math.imul(Ht, Rr) | 0, it = it + Math.imul(Ht, Lr) | 0, it = it + Math.imul(tr, Rr) | 0, ht = ht + Math.imul(tr, Lr) | 0, at = at + Math.imul(Zt, Br) | 0, it = it + Math.imul(Zt, qr) | 0, it = it + Math.imul(Ut, Br) | 0, ht = ht + Math.imul(Ut, qr) | 0, at = at + Math.imul(St, Yt) | 0, it = it + Math.imul(St, er) | 0, it = it + Math.imul(Nt, Yt) | 0, ht = ht + Math.imul(Nt, er) | 0;
+            vt = (ht + (it >>> 13) | 0) + (mn >>> 26) | 0, mn &= 67108863, at = Math.imul(Cr, Vt), it = Math.imul(Cr, ir), it = it + Math.imul(lr, Vt) | 0, ht = Math.imul(lr, ir), at = at + Math.imul(_r, or) | 0, it = it + Math.imul(_r, wr) | 0, it = it + Math.imul(Tr, or) | 0, ht = ht + Math.imul(Tr, wr) | 0, at = at + Math.imul(vr, fr) | 0, it = it + Math.imul(vr, $r) | 0, it = it + Math.imul(gr, fr) | 0, ht = ht + Math.imul(gr, $r) | 0, at = at + Math.imul(dr, Mr) | 0, it = it + Math.imul(dr, Nr) | 0, it = it + Math.imul(xr, Mr) | 0, ht = ht + Math.imul(xr, Nr) | 0, at = at + Math.imul(zt, Sr) | 0, it = it + Math.imul(zt, jr) | 0, it = it + Math.imul(sr, Sr) | 0, ht = ht + Math.imul(sr, jr) | 0, at = at + Math.imul(Ht, Rr) | 0, it = it + Math.imul(Ht, Lr) | 0, it = it + Math.imul(tr, Rr) | 0, ht = ht + Math.imul(tr, Lr) | 0, at = at + Math.imul(Zt, Br) | 0, it = it + Math.imul(Zt, qr) | 0, it = it + Math.imul(Ut, Br) | 0, ht = ht + Math.imul(Ut, qr) | 0, at = at + Math.imul(St, Yt) | 0, it = it + Math.imul(St, er) | 0, it = it + Math.imul(Nt, Yt) | 0, ht = ht + Math.imul(Nt, er) | 0;
             var pn = (vt + at | 0) + ((it & 8191) << 13) | 0;
-            vt = (ht + (it >>> 13) | 0) + (pn >>> 26) | 0, pn &= 67108863, at = Math.imul(nr, Vt), it = Math.imul(nr, ir), it = it + Math.imul(ar, Vt) | 0, ht = Math.imul(ar, ir), at = at + Math.imul(Cr, or) | 0, it = it + Math.imul(Cr, wr) | 0, it = it + Math.imul(lr, or) | 0, ht = ht + Math.imul(lr, wr) | 0, at = at + Math.imul(_r, fr) | 0, it = it + Math.imul(_r, $r) | 0, it = it + Math.imul(Tr, fr) | 0, ht = ht + Math.imul(Tr, $r) | 0, at = at + Math.imul(vr, Mr) | 0, it = it + Math.imul(vr, Nr) | 0, it = it + Math.imul(gr, Mr) | 0, ht = ht + Math.imul(gr, Nr) | 0, at = at + Math.imul(dr, Sr) | 0, it = it + Math.imul(dr, Or) | 0, it = it + Math.imul(xr, Sr) | 0, ht = ht + Math.imul(xr, Or) | 0, at = at + Math.imul(zt, Rr) | 0, it = it + Math.imul(zt, Lr) | 0, it = it + Math.imul(sr, Rr) | 0, ht = ht + Math.imul(sr, Lr) | 0, at = at + Math.imul(Ht, Br) | 0, it = it + Math.imul(Ht, qr) | 0, it = it + Math.imul(tr, Br) | 0, ht = ht + Math.imul(tr, qr) | 0, at = at + Math.imul(Zt, Yt) | 0, it = it + Math.imul(Zt, er) | 0, it = it + Math.imul(Ut, Yt) | 0, ht = ht + Math.imul(Ut, er) | 0, at = at + Math.imul(St, Jt) | 0, it = it + Math.imul(St, cr) | 0, it = it + Math.imul(Nt, Jt) | 0, ht = ht + Math.imul(Nt, cr) | 0;
+            vt = (ht + (it >>> 13) | 0) + (pn >>> 26) | 0, pn &= 67108863, at = Math.imul(nr, Vt), it = Math.imul(nr, ir), it = it + Math.imul(ar, Vt) | 0, ht = Math.imul(ar, ir), at = at + Math.imul(Cr, or) | 0, it = it + Math.imul(Cr, wr) | 0, it = it + Math.imul(lr, or) | 0, ht = ht + Math.imul(lr, wr) | 0, at = at + Math.imul(_r, fr) | 0, it = it + Math.imul(_r, $r) | 0, it = it + Math.imul(Tr, fr) | 0, ht = ht + Math.imul(Tr, $r) | 0, at = at + Math.imul(vr, Mr) | 0, it = it + Math.imul(vr, Nr) | 0, it = it + Math.imul(gr, Mr) | 0, ht = ht + Math.imul(gr, Nr) | 0, at = at + Math.imul(dr, Sr) | 0, it = it + Math.imul(dr, jr) | 0, it = it + Math.imul(xr, Sr) | 0, ht = ht + Math.imul(xr, jr) | 0, at = at + Math.imul(zt, Rr) | 0, it = it + Math.imul(zt, Lr) | 0, it = it + Math.imul(sr, Rr) | 0, ht = ht + Math.imul(sr, Lr) | 0, at = at + Math.imul(Ht, Br) | 0, it = it + Math.imul(Ht, qr) | 0, it = it + Math.imul(tr, Br) | 0, ht = ht + Math.imul(tr, qr) | 0, at = at + Math.imul(Zt, Yt) | 0, it = it + Math.imul(Zt, er) | 0, it = it + Math.imul(Ut, Yt) | 0, ht = ht + Math.imul(Ut, er) | 0, at = at + Math.imul(St, Jt) | 0, it = it + Math.imul(St, cr) | 0, it = it + Math.imul(Nt, Jt) | 0, ht = ht + Math.imul(Nt, cr) | 0;
             var fn = (vt + at | 0) + ((it & 8191) << 13) | 0;
-            vt = (ht + (it >>> 13) | 0) + (fn >>> 26) | 0, fn &= 67108863, at = Math.imul(Pt, Vt), it = Math.imul(Pt, ir), it = it + Math.imul(It, Vt) | 0, ht = Math.imul(It, ir), at = at + Math.imul(nr, or) | 0, it = it + Math.imul(nr, wr) | 0, it = it + Math.imul(ar, or) | 0, ht = ht + Math.imul(ar, wr) | 0, at = at + Math.imul(Cr, fr) | 0, it = it + Math.imul(Cr, $r) | 0, it = it + Math.imul(lr, fr) | 0, ht = ht + Math.imul(lr, $r) | 0, at = at + Math.imul(_r, Mr) | 0, it = it + Math.imul(_r, Nr) | 0, it = it + Math.imul(Tr, Mr) | 0, ht = ht + Math.imul(Tr, Nr) | 0, at = at + Math.imul(vr, Sr) | 0, it = it + Math.imul(vr, Or) | 0, it = it + Math.imul(gr, Sr) | 0, ht = ht + Math.imul(gr, Or) | 0, at = at + Math.imul(dr, Rr) | 0, it = it + Math.imul(dr, Lr) | 0, it = it + Math.imul(xr, Rr) | 0, ht = ht + Math.imul(xr, Lr) | 0, at = at + Math.imul(zt, Br) | 0, it = it + Math.imul(zt, qr) | 0, it = it + Math.imul(sr, Br) | 0, ht = ht + Math.imul(sr, qr) | 0, at = at + Math.imul(Ht, Yt) | 0, it = it + Math.imul(Ht, er) | 0, it = it + Math.imul(tr, Yt) | 0, ht = ht + Math.imul(tr, er) | 0, at = at + Math.imul(Zt, Jt) | 0, it = it + Math.imul(Zt, cr) | 0, it = it + Math.imul(Ut, Jt) | 0, ht = ht + Math.imul(Ut, cr) | 0, at = at + Math.imul(St, hr) | 0, it = it + Math.imul(St, Er) | 0, it = it + Math.imul(Nt, hr) | 0, ht = ht + Math.imul(Nt, Er) | 0;
+            vt = (ht + (it >>> 13) | 0) + (fn >>> 26) | 0, fn &= 67108863, at = Math.imul(Pt, Vt), it = Math.imul(Pt, ir), it = it + Math.imul(It, Vt) | 0, ht = Math.imul(It, ir), at = at + Math.imul(nr, or) | 0, it = it + Math.imul(nr, wr) | 0, it = it + Math.imul(ar, or) | 0, ht = ht + Math.imul(ar, wr) | 0, at = at + Math.imul(Cr, fr) | 0, it = it + Math.imul(Cr, $r) | 0, it = it + Math.imul(lr, fr) | 0, ht = ht + Math.imul(lr, $r) | 0, at = at + Math.imul(_r, Mr) | 0, it = it + Math.imul(_r, Nr) | 0, it = it + Math.imul(Tr, Mr) | 0, ht = ht + Math.imul(Tr, Nr) | 0, at = at + Math.imul(vr, Sr) | 0, it = it + Math.imul(vr, jr) | 0, it = it + Math.imul(gr, Sr) | 0, ht = ht + Math.imul(gr, jr) | 0, at = at + Math.imul(dr, Rr) | 0, it = it + Math.imul(dr, Lr) | 0, it = it + Math.imul(xr, Rr) | 0, ht = ht + Math.imul(xr, Lr) | 0, at = at + Math.imul(zt, Br) | 0, it = it + Math.imul(zt, qr) | 0, it = it + Math.imul(sr, Br) | 0, ht = ht + Math.imul(sr, qr) | 0, at = at + Math.imul(Ht, Yt) | 0, it = it + Math.imul(Ht, er) | 0, it = it + Math.imul(tr, Yt) | 0, ht = ht + Math.imul(tr, er) | 0, at = at + Math.imul(Zt, Jt) | 0, it = it + Math.imul(Zt, cr) | 0, it = it + Math.imul(Ut, Jt) | 0, ht = ht + Math.imul(Ut, cr) | 0, at = at + Math.imul(St, hr) | 0, it = it + Math.imul(St, Er) | 0, it = it + Math.imul(Nt, hr) | 0, ht = ht + Math.imul(Nt, Er) | 0;
             var hn = (vt + at | 0) + ((it & 8191) << 13) | 0;
-            vt = (ht + (it >>> 13) | 0) + (hn >>> 26) | 0, hn &= 67108863, at = Math.imul(Pt, or), it = Math.imul(Pt, wr), it = it + Math.imul(It, or) | 0, ht = Math.imul(It, wr), at = at + Math.imul(nr, fr) | 0, it = it + Math.imul(nr, $r) | 0, it = it + Math.imul(ar, fr) | 0, ht = ht + Math.imul(ar, $r) | 0, at = at + Math.imul(Cr, Mr) | 0, it = it + Math.imul(Cr, Nr) | 0, it = it + Math.imul(lr, Mr) | 0, ht = ht + Math.imul(lr, Nr) | 0, at = at + Math.imul(_r, Sr) | 0, it = it + Math.imul(_r, Or) | 0, it = it + Math.imul(Tr, Sr) | 0, ht = ht + Math.imul(Tr, Or) | 0, at = at + Math.imul(vr, Rr) | 0, it = it + Math.imul(vr, Lr) | 0, it = it + Math.imul(gr, Rr) | 0, ht = ht + Math.imul(gr, Lr) | 0, at = at + Math.imul(dr, Br) | 0, it = it + Math.imul(dr, qr) | 0, it = it + Math.imul(xr, Br) | 0, ht = ht + Math.imul(xr, qr) | 0, at = at + Math.imul(zt, Yt) | 0, it = it + Math.imul(zt, er) | 0, it = it + Math.imul(sr, Yt) | 0, ht = ht + Math.imul(sr, er) | 0, at = at + Math.imul(Ht, Jt) | 0, it = it + Math.imul(Ht, cr) | 0, it = it + Math.imul(tr, Jt) | 0, ht = ht + Math.imul(tr, cr) | 0, at = at + Math.imul(Zt, hr) | 0, it = it + Math.imul(Zt, Er) | 0, it = it + Math.imul(Ut, hr) | 0, ht = ht + Math.imul(Ut, Er) | 0;
+            vt = (ht + (it >>> 13) | 0) + (hn >>> 26) | 0, hn &= 67108863, at = Math.imul(Pt, or), it = Math.imul(Pt, wr), it = it + Math.imul(It, or) | 0, ht = Math.imul(It, wr), at = at + Math.imul(nr, fr) | 0, it = it + Math.imul(nr, $r) | 0, it = it + Math.imul(ar, fr) | 0, ht = ht + Math.imul(ar, $r) | 0, at = at + Math.imul(Cr, Mr) | 0, it = it + Math.imul(Cr, Nr) | 0, it = it + Math.imul(lr, Mr) | 0, ht = ht + Math.imul(lr, Nr) | 0, at = at + Math.imul(_r, Sr) | 0, it = it + Math.imul(_r, jr) | 0, it = it + Math.imul(Tr, Sr) | 0, ht = ht + Math.imul(Tr, jr) | 0, at = at + Math.imul(vr, Rr) | 0, it = it + Math.imul(vr, Lr) | 0, it = it + Math.imul(gr, Rr) | 0, ht = ht + Math.imul(gr, Lr) | 0, at = at + Math.imul(dr, Br) | 0, it = it + Math.imul(dr, qr) | 0, it = it + Math.imul(xr, Br) | 0, ht = ht + Math.imul(xr, qr) | 0, at = at + Math.imul(zt, Yt) | 0, it = it + Math.imul(zt, er) | 0, it = it + Math.imul(sr, Yt) | 0, ht = ht + Math.imul(sr, er) | 0, at = at + Math.imul(Ht, Jt) | 0, it = it + Math.imul(Ht, cr) | 0, it = it + Math.imul(tr, Jt) | 0, ht = ht + Math.imul(tr, cr) | 0, at = at + Math.imul(Zt, hr) | 0, it = it + Math.imul(Zt, Er) | 0, it = it + Math.imul(Ut, hr) | 0, ht = ht + Math.imul(Ut, Er) | 0;
             var dn = (vt + at | 0) + ((it & 8191) << 13) | 0;
-            vt = (ht + (it >>> 13) | 0) + (dn >>> 26) | 0, dn &= 67108863, at = Math.imul(Pt, fr), it = Math.imul(Pt, $r), it = it + Math.imul(It, fr) | 0, ht = Math.imul(It, $r), at = at + Math.imul(nr, Mr) | 0, it = it + Math.imul(nr, Nr) | 0, it = it + Math.imul(ar, Mr) | 0, ht = ht + Math.imul(ar, Nr) | 0, at = at + Math.imul(Cr, Sr) | 0, it = it + Math.imul(Cr, Or) | 0, it = it + Math.imul(lr, Sr) | 0, ht = ht + Math.imul(lr, Or) | 0, at = at + Math.imul(_r, Rr) | 0, it = it + Math.imul(_r, Lr) | 0, it = it + Math.imul(Tr, Rr) | 0, ht = ht + Math.imul(Tr, Lr) | 0, at = at + Math.imul(vr, Br) | 0, it = it + Math.imul(vr, qr) | 0, it = it + Math.imul(gr, Br) | 0, ht = ht + Math.imul(gr, qr) | 0, at = at + Math.imul(dr, Yt) | 0, it = it + Math.imul(dr, er) | 0, it = it + Math.imul(xr, Yt) | 0, ht = ht + Math.imul(xr, er) | 0, at = at + Math.imul(zt, Jt) | 0, it = it + Math.imul(zt, cr) | 0, it = it + Math.imul(sr, Jt) | 0, ht = ht + Math.imul(sr, cr) | 0, at = at + Math.imul(Ht, hr) | 0, it = it + Math.imul(Ht, Er) | 0, it = it + Math.imul(tr, hr) | 0, ht = ht + Math.imul(tr, Er) | 0;
+            vt = (ht + (it >>> 13) | 0) + (dn >>> 26) | 0, dn &= 67108863, at = Math.imul(Pt, fr), it = Math.imul(Pt, $r), it = it + Math.imul(It, fr) | 0, ht = Math.imul(It, $r), at = at + Math.imul(nr, Mr) | 0, it = it + Math.imul(nr, Nr) | 0, it = it + Math.imul(ar, Mr) | 0, ht = ht + Math.imul(ar, Nr) | 0, at = at + Math.imul(Cr, Sr) | 0, it = it + Math.imul(Cr, jr) | 0, it = it + Math.imul(lr, Sr) | 0, ht = ht + Math.imul(lr, jr) | 0, at = at + Math.imul(_r, Rr) | 0, it = it + Math.imul(_r, Lr) | 0, it = it + Math.imul(Tr, Rr) | 0, ht = ht + Math.imul(Tr, Lr) | 0, at = at + Math.imul(vr, Br) | 0, it = it + Math.imul(vr, qr) | 0, it = it + Math.imul(gr, Br) | 0, ht = ht + Math.imul(gr, qr) | 0, at = at + Math.imul(dr, Yt) | 0, it = it + Math.imul(dr, er) | 0, it = it + Math.imul(xr, Yt) | 0, ht = ht + Math.imul(xr, er) | 0, at = at + Math.imul(zt, Jt) | 0, it = it + Math.imul(zt, cr) | 0, it = it + Math.imul(sr, Jt) | 0, ht = ht + Math.imul(sr, cr) | 0, at = at + Math.imul(Ht, hr) | 0, it = it + Math.imul(Ht, Er) | 0, it = it + Math.imul(tr, hr) | 0, ht = ht + Math.imul(tr, Er) | 0;
             var tn = (vt + at | 0) + ((it & 8191) << 13) | 0;
-            vt = (ht + (it >>> 13) | 0) + (tn >>> 26) | 0, tn &= 67108863, at = Math.imul(Pt, Mr), it = Math.imul(Pt, Nr), it = it + Math.imul(It, Mr) | 0, ht = Math.imul(It, Nr), at = at + Math.imul(nr, Sr) | 0, it = it + Math.imul(nr, Or) | 0, it = it + Math.imul(ar, Sr) | 0, ht = ht + Math.imul(ar, Or) | 0, at = at + Math.imul(Cr, Rr) | 0, it = it + Math.imul(Cr, Lr) | 0, it = it + Math.imul(lr, Rr) | 0, ht = ht + Math.imul(lr, Lr) | 0, at = at + Math.imul(_r, Br) | 0, it = it + Math.imul(_r, qr) | 0, it = it + Math.imul(Tr, Br) | 0, ht = ht + Math.imul(Tr, qr) | 0, at = at + Math.imul(vr, Yt) | 0, it = it + Math.imul(vr, er) | 0, it = it + Math.imul(gr, Yt) | 0, ht = ht + Math.imul(gr, er) | 0, at = at + Math.imul(dr, Jt) | 0, it = it + Math.imul(dr, cr) | 0, it = it + Math.imul(xr, Jt) | 0, ht = ht + Math.imul(xr, cr) | 0, at = at + Math.imul(zt, hr) | 0, it = it + Math.imul(zt, Er) | 0, it = it + Math.imul(sr, hr) | 0, ht = ht + Math.imul(sr, Er) | 0;
+            vt = (ht + (it >>> 13) | 0) + (tn >>> 26) | 0, tn &= 67108863, at = Math.imul(Pt, Mr), it = Math.imul(Pt, Nr), it = it + Math.imul(It, Mr) | 0, ht = Math.imul(It, Nr), at = at + Math.imul(nr, Sr) | 0, it = it + Math.imul(nr, jr) | 0, it = it + Math.imul(ar, Sr) | 0, ht = ht + Math.imul(ar, jr) | 0, at = at + Math.imul(Cr, Rr) | 0, it = it + Math.imul(Cr, Lr) | 0, it = it + Math.imul(lr, Rr) | 0, ht = ht + Math.imul(lr, Lr) | 0, at = at + Math.imul(_r, Br) | 0, it = it + Math.imul(_r, qr) | 0, it = it + Math.imul(Tr, Br) | 0, ht = ht + Math.imul(Tr, qr) | 0, at = at + Math.imul(vr, Yt) | 0, it = it + Math.imul(vr, er) | 0, it = it + Math.imul(gr, Yt) | 0, ht = ht + Math.imul(gr, er) | 0, at = at + Math.imul(dr, Jt) | 0, it = it + Math.imul(dr, cr) | 0, it = it + Math.imul(xr, Jt) | 0, ht = ht + Math.imul(xr, cr) | 0, at = at + Math.imul(zt, hr) | 0, it = it + Math.imul(zt, Er) | 0, it = it + Math.imul(sr, hr) | 0, ht = ht + Math.imul(sr, Er) | 0;
             var an = (vt + at | 0) + ((it & 8191) << 13) | 0;
-            vt = (ht + (it >>> 13) | 0) + (an >>> 26) | 0, an &= 67108863, at = Math.imul(Pt, Sr), it = Math.imul(Pt, Or), it = it + Math.imul(It, Sr) | 0, ht = Math.imul(It, Or), at = at + Math.imul(nr, Rr) | 0, it = it + Math.imul(nr, Lr) | 0, it = it + Math.imul(ar, Rr) | 0, ht = ht + Math.imul(ar, Lr) | 0, at = at + Math.imul(Cr, Br) | 0, it = it + Math.imul(Cr, qr) | 0, it = it + Math.imul(lr, Br) | 0, ht = ht + Math.imul(lr, qr) | 0, at = at + Math.imul(_r, Yt) | 0, it = it + Math.imul(_r, er) | 0, it = it + Math.imul(Tr, Yt) | 0, ht = ht + Math.imul(Tr, er) | 0, at = at + Math.imul(vr, Jt) | 0, it = it + Math.imul(vr, cr) | 0, it = it + Math.imul(gr, Jt) | 0, ht = ht + Math.imul(gr, cr) | 0, at = at + Math.imul(dr, hr) | 0, it = it + Math.imul(dr, Er) | 0, it = it + Math.imul(xr, hr) | 0, ht = ht + Math.imul(xr, Er) | 0;
+            vt = (ht + (it >>> 13) | 0) + (an >>> 26) | 0, an &= 67108863, at = Math.imul(Pt, Sr), it = Math.imul(Pt, jr), it = it + Math.imul(It, Sr) | 0, ht = Math.imul(It, jr), at = at + Math.imul(nr, Rr) | 0, it = it + Math.imul(nr, Lr) | 0, it = it + Math.imul(ar, Rr) | 0, ht = ht + Math.imul(ar, Lr) | 0, at = at + Math.imul(Cr, Br) | 0, it = it + Math.imul(Cr, qr) | 0, it = it + Math.imul(lr, Br) | 0, ht = ht + Math.imul(lr, qr) | 0, at = at + Math.imul(_r, Yt) | 0, it = it + Math.imul(_r, er) | 0, it = it + Math.imul(Tr, Yt) | 0, ht = ht + Math.imul(Tr, er) | 0, at = at + Math.imul(vr, Jt) | 0, it = it + Math.imul(vr, cr) | 0, it = it + Math.imul(gr, Jt) | 0, ht = ht + Math.imul(gr, cr) | 0, at = at + Math.imul(dr, hr) | 0, it = it + Math.imul(dr, Er) | 0, it = it + Math.imul(xr, hr) | 0, ht = ht + Math.imul(xr, Er) | 0;
             var Yr = (vt + at | 0) + ((it & 8191) << 13) | 0;
             vt = (ht + (it >>> 13) | 0) + (Yr >>> 26) | 0, Yr &= 67108863, at = Math.imul(Pt, Rr), it = Math.imul(Pt, Lr), it = it + Math.imul(It, Rr) | 0, ht = Math.imul(It, Lr), at = at + Math.imul(nr, Br) | 0, it = it + Math.imul(nr, qr) | 0, it = it + Math.imul(ar, Br) | 0, ht = ht + Math.imul(ar, qr) | 0, at = at + Math.imul(Cr, Yt) | 0, it = it + Math.imul(Cr, er) | 0, it = it + Math.imul(lr, Yt) | 0, ht = ht + Math.imul(lr, er) | 0, at = at + Math.imul(_r, Jt) | 0, it = it + Math.imul(_r, cr) | 0, it = it + Math.imul(Tr, Jt) | 0, ht = ht + Math.imul(Tr, cr) | 0, at = at + Math.imul(vr, hr) | 0, it = it + Math.imul(vr, Er) | 0, it = it + Math.imul(gr, hr) | 0, ht = ht + Math.imul(gr, Er) | 0;
             var rn = (vt + at | 0) + ((it & 8191) << 13) | 0;
@@ -19031,8 +19031,8 @@ Use Chrome, Firefox or Internet Explorer 11`);
             vt = (ht + (it >>> 13) | 0) + (Gr >>> 26) | 0, Gr &= 67108863, at = Math.imul(Pt, Jt), it = Math.imul(Pt, cr), it = it + Math.imul(It, Jt) | 0, ht = Math.imul(It, cr), at = at + Math.imul(nr, hr) | 0, it = it + Math.imul(nr, Er) | 0, it = it + Math.imul(ar, hr) | 0, ht = ht + Math.imul(ar, Er) | 0;
             var Dr = (vt + at | 0) + ((it & 8191) << 13) | 0;
             vt = (ht + (it >>> 13) | 0) + (Dr >>> 26) | 0, Dr &= 67108863, at = Math.imul(Pt, hr), it = Math.imul(Pt, Er), it = it + Math.imul(It, hr) | 0, ht = Math.imul(It, Er);
-            var Fr = (vt + at | 0) + ((it & 8191) << 13) | 0;
-            return vt = (ht + (it >>> 13) | 0) + (Fr >>> 26) | 0, Fr &= 67108863, mt[0] = zr, mt[1] = Wr, mt[2] = gn, mt[3] = Jr, mt[4] = ln, mt[5] = un, mt[6] = mn, mt[7] = pn, mt[8] = fn, mt[9] = hn, mt[10] = dn, mt[11] = tn, mt[12] = an, mt[13] = Yr, mt[14] = rn, mt[15] = nn, mt[16] = Gr, mt[17] = Dr, mt[18] = Fr, vt !== 0 && (mt[19] = vt, nt.length++), nt;
+            var Or = (vt + at | 0) + ((it & 8191) << 13) | 0;
+            return vt = (ht + (it >>> 13) | 0) + (Or >>> 26) | 0, Or &= 67108863, mt[0] = zr, mt[1] = Wr, mt[2] = gn, mt[3] = Jr, mt[4] = ln, mt[5] = un, mt[6] = mn, mt[7] = pn, mt[8] = fn, mt[9] = hn, mt[10] = dn, mt[11] = tn, mt[12] = an, mt[13] = Yr, mt[14] = rn, mt[15] = nn, mt[16] = Gr, mt[17] = Dr, mt[18] = Or, vt !== 0 && (mt[19] = vt, nt.length++), nt;
           };
           Math.imul || (Et = Mt);
           function Rt(ct, et, tt) {
@@ -19497,10 +19497,10 @@ Use Chrome, Firefox or Internet Explorer 11`);
             }
             return et.words[et.length - 1] === 0 && (et.length--, et.words[et.length - 1] === 0 && et.length--), et;
           };
-          function jt() {
+          function Ot() {
             Tt.call(this, "p224", "ffffffff ffffffff ffffffff ffffffff 00000000 00000000 00000001");
           }
-          rt(jt, Tt);
+          rt(Ot, Tt);
           function Xt() {
             Tt.call(this, "p192", "ffffffff ffffffff ffffffff fffffffe ffffffff ffffffff");
           }
@@ -19518,7 +19518,7 @@ Use Chrome, Firefox or Internet Explorer 11`);
             if ($t[et]) return $t[et];
             var tt;
             if (et === "k256") tt = new Ft();
-            else if (et === "p224") tt = new jt();
+            else if (et === "p224") tt = new Ot();
             else if (et === "p192") tt = new Xt();
             else if (et === "p25519") tt = new Qt();
             else throw new Error("Unknown prime " + et);
@@ -20034,7 +20034,7 @@ Use Chrome, Firefox or Internet Explorer 11`);
             return at !== 0 ? tt.words[it] = at | 0 : tt.length--, tt.strip();
           }
           var Et = function(et, tt, nt) {
-            var ot = et.words, ut = tt.words, mt = nt.words, vt = 0, at, it, ht, wt = ot[0] | 0, St = wt & 8191, Nt = wt >>> 13, qt = ot[1] | 0, Zt = qt & 8191, Ut = qt >>> 13, Lt = ot[2] | 0, Ht = Lt & 8191, tr = Lt >>> 13, Gt = ot[3] | 0, zt = Gt & 8191, sr = Gt >>> 13, br = ot[4] | 0, dr = br & 8191, xr = br >>> 13, kr = ot[5] | 0, vr = kr & 8191, gr = kr >>> 13, jr = ot[6] | 0, _r = jr & 8191, Tr = jr >>> 13, Ur = ot[7] | 0, Cr = Ur & 8191, lr = Ur >>> 13, rr = ot[8] | 0, nr = rr & 8191, ar = rr >>> 13, pr = ot[9] | 0, Pt = pr & 8191, It = pr >>> 13, Dt = ut[0] | 0, Vt = Dt & 8191, ir = Dt >>> 13, ur = ut[1] | 0, or = ur & 8191, wr = ur >>> 13, Ir = ut[2] | 0, fr = Ir & 8191, $r = Ir >>> 13, Pr = ut[3] | 0, Mr = Pr & 8191, Nr = Pr >>> 13, Vr = ut[4] | 0, Sr = Vr & 8191, Or = Vr >>> 13, Hr = ut[5] | 0, Rr = Hr & 8191, Lr = Hr >>> 13, Zr = ut[6] | 0, Br = Zr & 8191, qr = Zr >>> 13, Kt = ut[7] | 0, Yt = Kt & 8191, er = Kt >>> 13, Ot = ut[8] | 0, Jt = Ot & 8191, cr = Ot >>> 13, yr = ut[9] | 0, hr = yr & 8191, Er = yr >>> 13;
+            var ot = et.words, ut = tt.words, mt = nt.words, vt = 0, at, it, ht, wt = ot[0] | 0, St = wt & 8191, Nt = wt >>> 13, qt = ot[1] | 0, Zt = qt & 8191, Ut = qt >>> 13, Lt = ot[2] | 0, Ht = Lt & 8191, tr = Lt >>> 13, Gt = ot[3] | 0, zt = Gt & 8191, sr = Gt >>> 13, br = ot[4] | 0, dr = br & 8191, xr = br >>> 13, kr = ot[5] | 0, vr = kr & 8191, gr = kr >>> 13, Fr = ot[6] | 0, _r = Fr & 8191, Tr = Fr >>> 13, Ur = ot[7] | 0, Cr = Ur & 8191, lr = Ur >>> 13, rr = ot[8] | 0, nr = rr & 8191, ar = rr >>> 13, pr = ot[9] | 0, Pt = pr & 8191, It = pr >>> 13, Dt = ut[0] | 0, Vt = Dt & 8191, ir = Dt >>> 13, ur = ut[1] | 0, or = ur & 8191, wr = ur >>> 13, Ir = ut[2] | 0, fr = Ir & 8191, $r = Ir >>> 13, Pr = ut[3] | 0, Mr = Pr & 8191, Nr = Pr >>> 13, Vr = ut[4] | 0, Sr = Vr & 8191, jr = Vr >>> 13, Hr = ut[5] | 0, Rr = Hr & 8191, Lr = Hr >>> 13, Zr = ut[6] | 0, Br = Zr & 8191, qr = Zr >>> 13, Kt = ut[7] | 0, Yt = Kt & 8191, er = Kt >>> 13, jt = ut[8] | 0, Jt = jt & 8191, cr = jt >>> 13, yr = ut[9] | 0, hr = yr & 8191, Er = yr >>> 13;
             nt.negative = et.negative ^ tt.negative, nt.length = 19, at = Math.imul(St, Vt), it = Math.imul(St, ir), it = it + Math.imul(Nt, Vt) | 0, ht = Math.imul(Nt, ir);
             var zr = (vt + at | 0) + ((it & 8191) << 13) | 0;
             vt = (ht + (it >>> 13) | 0) + (zr >>> 26) | 0, zr &= 67108863, at = Math.imul(Zt, Vt), it = Math.imul(Zt, ir), it = it + Math.imul(Ut, Vt) | 0, ht = Math.imul(Ut, ir), at = at + Math.imul(St, or) | 0, it = it + Math.imul(St, wr) | 0, it = it + Math.imul(Nt, or) | 0, ht = ht + Math.imul(Nt, wr) | 0;
@@ -20043,25 +20043,25 @@ Use Chrome, Firefox or Internet Explorer 11`);
             var gn = (vt + at | 0) + ((it & 8191) << 13) | 0;
             vt = (ht + (it >>> 13) | 0) + (gn >>> 26) | 0, gn &= 67108863, at = Math.imul(zt, Vt), it = Math.imul(zt, ir), it = it + Math.imul(sr, Vt) | 0, ht = Math.imul(sr, ir), at = at + Math.imul(Ht, or) | 0, it = it + Math.imul(Ht, wr) | 0, it = it + Math.imul(tr, or) | 0, ht = ht + Math.imul(tr, wr) | 0, at = at + Math.imul(Zt, fr) | 0, it = it + Math.imul(Zt, $r) | 0, it = it + Math.imul(Ut, fr) | 0, ht = ht + Math.imul(Ut, $r) | 0, at = at + Math.imul(St, Mr) | 0, it = it + Math.imul(St, Nr) | 0, it = it + Math.imul(Nt, Mr) | 0, ht = ht + Math.imul(Nt, Nr) | 0;
             var Jr = (vt + at | 0) + ((it & 8191) << 13) | 0;
-            vt = (ht + (it >>> 13) | 0) + (Jr >>> 26) | 0, Jr &= 67108863, at = Math.imul(dr, Vt), it = Math.imul(dr, ir), it = it + Math.imul(xr, Vt) | 0, ht = Math.imul(xr, ir), at = at + Math.imul(zt, or) | 0, it = it + Math.imul(zt, wr) | 0, it = it + Math.imul(sr, or) | 0, ht = ht + Math.imul(sr, wr) | 0, at = at + Math.imul(Ht, fr) | 0, it = it + Math.imul(Ht, $r) | 0, it = it + Math.imul(tr, fr) | 0, ht = ht + Math.imul(tr, $r) | 0, at = at + Math.imul(Zt, Mr) | 0, it = it + Math.imul(Zt, Nr) | 0, it = it + Math.imul(Ut, Mr) | 0, ht = ht + Math.imul(Ut, Nr) | 0, at = at + Math.imul(St, Sr) | 0, it = it + Math.imul(St, Or) | 0, it = it + Math.imul(Nt, Sr) | 0, ht = ht + Math.imul(Nt, Or) | 0;
+            vt = (ht + (it >>> 13) | 0) + (Jr >>> 26) | 0, Jr &= 67108863, at = Math.imul(dr, Vt), it = Math.imul(dr, ir), it = it + Math.imul(xr, Vt) | 0, ht = Math.imul(xr, ir), at = at + Math.imul(zt, or) | 0, it = it + Math.imul(zt, wr) | 0, it = it + Math.imul(sr, or) | 0, ht = ht + Math.imul(sr, wr) | 0, at = at + Math.imul(Ht, fr) | 0, it = it + Math.imul(Ht, $r) | 0, it = it + Math.imul(tr, fr) | 0, ht = ht + Math.imul(tr, $r) | 0, at = at + Math.imul(Zt, Mr) | 0, it = it + Math.imul(Zt, Nr) | 0, it = it + Math.imul(Ut, Mr) | 0, ht = ht + Math.imul(Ut, Nr) | 0, at = at + Math.imul(St, Sr) | 0, it = it + Math.imul(St, jr) | 0, it = it + Math.imul(Nt, Sr) | 0, ht = ht + Math.imul(Nt, jr) | 0;
             var ln = (vt + at | 0) + ((it & 8191) << 13) | 0;
-            vt = (ht + (it >>> 13) | 0) + (ln >>> 26) | 0, ln &= 67108863, at = Math.imul(vr, Vt), it = Math.imul(vr, ir), it = it + Math.imul(gr, Vt) | 0, ht = Math.imul(gr, ir), at = at + Math.imul(dr, or) | 0, it = it + Math.imul(dr, wr) | 0, it = it + Math.imul(xr, or) | 0, ht = ht + Math.imul(xr, wr) | 0, at = at + Math.imul(zt, fr) | 0, it = it + Math.imul(zt, $r) | 0, it = it + Math.imul(sr, fr) | 0, ht = ht + Math.imul(sr, $r) | 0, at = at + Math.imul(Ht, Mr) | 0, it = it + Math.imul(Ht, Nr) | 0, it = it + Math.imul(tr, Mr) | 0, ht = ht + Math.imul(tr, Nr) | 0, at = at + Math.imul(Zt, Sr) | 0, it = it + Math.imul(Zt, Or) | 0, it = it + Math.imul(Ut, Sr) | 0, ht = ht + Math.imul(Ut, Or) | 0, at = at + Math.imul(St, Rr) | 0, it = it + Math.imul(St, Lr) | 0, it = it + Math.imul(Nt, Rr) | 0, ht = ht + Math.imul(Nt, Lr) | 0;
+            vt = (ht + (it >>> 13) | 0) + (ln >>> 26) | 0, ln &= 67108863, at = Math.imul(vr, Vt), it = Math.imul(vr, ir), it = it + Math.imul(gr, Vt) | 0, ht = Math.imul(gr, ir), at = at + Math.imul(dr, or) | 0, it = it + Math.imul(dr, wr) | 0, it = it + Math.imul(xr, or) | 0, ht = ht + Math.imul(xr, wr) | 0, at = at + Math.imul(zt, fr) | 0, it = it + Math.imul(zt, $r) | 0, it = it + Math.imul(sr, fr) | 0, ht = ht + Math.imul(sr, $r) | 0, at = at + Math.imul(Ht, Mr) | 0, it = it + Math.imul(Ht, Nr) | 0, it = it + Math.imul(tr, Mr) | 0, ht = ht + Math.imul(tr, Nr) | 0, at = at + Math.imul(Zt, Sr) | 0, it = it + Math.imul(Zt, jr) | 0, it = it + Math.imul(Ut, Sr) | 0, ht = ht + Math.imul(Ut, jr) | 0, at = at + Math.imul(St, Rr) | 0, it = it + Math.imul(St, Lr) | 0, it = it + Math.imul(Nt, Rr) | 0, ht = ht + Math.imul(Nt, Lr) | 0;
             var un = (vt + at | 0) + ((it & 8191) << 13) | 0;
-            vt = (ht + (it >>> 13) | 0) + (un >>> 26) | 0, un &= 67108863, at = Math.imul(_r, Vt), it = Math.imul(_r, ir), it = it + Math.imul(Tr, Vt) | 0, ht = Math.imul(Tr, ir), at = at + Math.imul(vr, or) | 0, it = it + Math.imul(vr, wr) | 0, it = it + Math.imul(gr, or) | 0, ht = ht + Math.imul(gr, wr) | 0, at = at + Math.imul(dr, fr) | 0, it = it + Math.imul(dr, $r) | 0, it = it + Math.imul(xr, fr) | 0, ht = ht + Math.imul(xr, $r) | 0, at = at + Math.imul(zt, Mr) | 0, it = it + Math.imul(zt, Nr) | 0, it = it + Math.imul(sr, Mr) | 0, ht = ht + Math.imul(sr, Nr) | 0, at = at + Math.imul(Ht, Sr) | 0, it = it + Math.imul(Ht, Or) | 0, it = it + Math.imul(tr, Sr) | 0, ht = ht + Math.imul(tr, Or) | 0, at = at + Math.imul(Zt, Rr) | 0, it = it + Math.imul(Zt, Lr) | 0, it = it + Math.imul(Ut, Rr) | 0, ht = ht + Math.imul(Ut, Lr) | 0, at = at + Math.imul(St, Br) | 0, it = it + Math.imul(St, qr) | 0, it = it + Math.imul(Nt, Br) | 0, ht = ht + Math.imul(Nt, qr) | 0;
+            vt = (ht + (it >>> 13) | 0) + (un >>> 26) | 0, un &= 67108863, at = Math.imul(_r, Vt), it = Math.imul(_r, ir), it = it + Math.imul(Tr, Vt) | 0, ht = Math.imul(Tr, ir), at = at + Math.imul(vr, or) | 0, it = it + Math.imul(vr, wr) | 0, it = it + Math.imul(gr, or) | 0, ht = ht + Math.imul(gr, wr) | 0, at = at + Math.imul(dr, fr) | 0, it = it + Math.imul(dr, $r) | 0, it = it + Math.imul(xr, fr) | 0, ht = ht + Math.imul(xr, $r) | 0, at = at + Math.imul(zt, Mr) | 0, it = it + Math.imul(zt, Nr) | 0, it = it + Math.imul(sr, Mr) | 0, ht = ht + Math.imul(sr, Nr) | 0, at = at + Math.imul(Ht, Sr) | 0, it = it + Math.imul(Ht, jr) | 0, it = it + Math.imul(tr, Sr) | 0, ht = ht + Math.imul(tr, jr) | 0, at = at + Math.imul(Zt, Rr) | 0, it = it + Math.imul(Zt, Lr) | 0, it = it + Math.imul(Ut, Rr) | 0, ht = ht + Math.imul(Ut, Lr) | 0, at = at + Math.imul(St, Br) | 0, it = it + Math.imul(St, qr) | 0, it = it + Math.imul(Nt, Br) | 0, ht = ht + Math.imul(Nt, qr) | 0;
             var mn = (vt + at | 0) + ((it & 8191) << 13) | 0;
-            vt = (ht + (it >>> 13) | 0) + (mn >>> 26) | 0, mn &= 67108863, at = Math.imul(Cr, Vt), it = Math.imul(Cr, ir), it = it + Math.imul(lr, Vt) | 0, ht = Math.imul(lr, ir), at = at + Math.imul(_r, or) | 0, it = it + Math.imul(_r, wr) | 0, it = it + Math.imul(Tr, or) | 0, ht = ht + Math.imul(Tr, wr) | 0, at = at + Math.imul(vr, fr) | 0, it = it + Math.imul(vr, $r) | 0, it = it + Math.imul(gr, fr) | 0, ht = ht + Math.imul(gr, $r) | 0, at = at + Math.imul(dr, Mr) | 0, it = it + Math.imul(dr, Nr) | 0, it = it + Math.imul(xr, Mr) | 0, ht = ht + Math.imul(xr, Nr) | 0, at = at + Math.imul(zt, Sr) | 0, it = it + Math.imul(zt, Or) | 0, it = it + Math.imul(sr, Sr) | 0, ht = ht + Math.imul(sr, Or) | 0, at = at + Math.imul(Ht, Rr) | 0, it = it + Math.imul(Ht, Lr) | 0, it = it + Math.imul(tr, Rr) | 0, ht = ht + Math.imul(tr, Lr) | 0, at = at + Math.imul(Zt, Br) | 0, it = it + Math.imul(Zt, qr) | 0, it = it + Math.imul(Ut, Br) | 0, ht = ht + Math.imul(Ut, qr) | 0, at = at + Math.imul(St, Yt) | 0, it = it + Math.imul(St, er) | 0, it = it + Math.imul(Nt, Yt) | 0, ht = ht + Math.imul(Nt, er) | 0;
+            vt = (ht + (it >>> 13) | 0) + (mn >>> 26) | 0, mn &= 67108863, at = Math.imul(Cr, Vt), it = Math.imul(Cr, ir), it = it + Math.imul(lr, Vt) | 0, ht = Math.imul(lr, ir), at = at + Math.imul(_r, or) | 0, it = it + Math.imul(_r, wr) | 0, it = it + Math.imul(Tr, or) | 0, ht = ht + Math.imul(Tr, wr) | 0, at = at + Math.imul(vr, fr) | 0, it = it + Math.imul(vr, $r) | 0, it = it + Math.imul(gr, fr) | 0, ht = ht + Math.imul(gr, $r) | 0, at = at + Math.imul(dr, Mr) | 0, it = it + Math.imul(dr, Nr) | 0, it = it + Math.imul(xr, Mr) | 0, ht = ht + Math.imul(xr, Nr) | 0, at = at + Math.imul(zt, Sr) | 0, it = it + Math.imul(zt, jr) | 0, it = it + Math.imul(sr, Sr) | 0, ht = ht + Math.imul(sr, jr) | 0, at = at + Math.imul(Ht, Rr) | 0, it = it + Math.imul(Ht, Lr) | 0, it = it + Math.imul(tr, Rr) | 0, ht = ht + Math.imul(tr, Lr) | 0, at = at + Math.imul(Zt, Br) | 0, it = it + Math.imul(Zt, qr) | 0, it = it + Math.imul(Ut, Br) | 0, ht = ht + Math.imul(Ut, qr) | 0, at = at + Math.imul(St, Yt) | 0, it = it + Math.imul(St, er) | 0, it = it + Math.imul(Nt, Yt) | 0, ht = ht + Math.imul(Nt, er) | 0;
             var pn = (vt + at | 0) + ((it & 8191) << 13) | 0;
-            vt = (ht + (it >>> 13) | 0) + (pn >>> 26) | 0, pn &= 67108863, at = Math.imul(nr, Vt), it = Math.imul(nr, ir), it = it + Math.imul(ar, Vt) | 0, ht = Math.imul(ar, ir), at = at + Math.imul(Cr, or) | 0, it = it + Math.imul(Cr, wr) | 0, it = it + Math.imul(lr, or) | 0, ht = ht + Math.imul(lr, wr) | 0, at = at + Math.imul(_r, fr) | 0, it = it + Math.imul(_r, $r) | 0, it = it + Math.imul(Tr, fr) | 0, ht = ht + Math.imul(Tr, $r) | 0, at = at + Math.imul(vr, Mr) | 0, it = it + Math.imul(vr, Nr) | 0, it = it + Math.imul(gr, Mr) | 0, ht = ht + Math.imul(gr, Nr) | 0, at = at + Math.imul(dr, Sr) | 0, it = it + Math.imul(dr, Or) | 0, it = it + Math.imul(xr, Sr) | 0, ht = ht + Math.imul(xr, Or) | 0, at = at + Math.imul(zt, Rr) | 0, it = it + Math.imul(zt, Lr) | 0, it = it + Math.imul(sr, Rr) | 0, ht = ht + Math.imul(sr, Lr) | 0, at = at + Math.imul(Ht, Br) | 0, it = it + Math.imul(Ht, qr) | 0, it = it + Math.imul(tr, Br) | 0, ht = ht + Math.imul(tr, qr) | 0, at = at + Math.imul(Zt, Yt) | 0, it = it + Math.imul(Zt, er) | 0, it = it + Math.imul(Ut, Yt) | 0, ht = ht + Math.imul(Ut, er) | 0, at = at + Math.imul(St, Jt) | 0, it = it + Math.imul(St, cr) | 0, it = it + Math.imul(Nt, Jt) | 0, ht = ht + Math.imul(Nt, cr) | 0;
+            vt = (ht + (it >>> 13) | 0) + (pn >>> 26) | 0, pn &= 67108863, at = Math.imul(nr, Vt), it = Math.imul(nr, ir), it = it + Math.imul(ar, Vt) | 0, ht = Math.imul(ar, ir), at = at + Math.imul(Cr, or) | 0, it = it + Math.imul(Cr, wr) | 0, it = it + Math.imul(lr, or) | 0, ht = ht + Math.imul(lr, wr) | 0, at = at + Math.imul(_r, fr) | 0, it = it + Math.imul(_r, $r) | 0, it = it + Math.imul(Tr, fr) | 0, ht = ht + Math.imul(Tr, $r) | 0, at = at + Math.imul(vr, Mr) | 0, it = it + Math.imul(vr, Nr) | 0, it = it + Math.imul(gr, Mr) | 0, ht = ht + Math.imul(gr, Nr) | 0, at = at + Math.imul(dr, Sr) | 0, it = it + Math.imul(dr, jr) | 0, it = it + Math.imul(xr, Sr) | 0, ht = ht + Math.imul(xr, jr) | 0, at = at + Math.imul(zt, Rr) | 0, it = it + Math.imul(zt, Lr) | 0, it = it + Math.imul(sr, Rr) | 0, ht = ht + Math.imul(sr, Lr) | 0, at = at + Math.imul(Ht, Br) | 0, it = it + Math.imul(Ht, qr) | 0, it = it + Math.imul(tr, Br) | 0, ht = ht + Math.imul(tr, qr) | 0, at = at + Math.imul(Zt, Yt) | 0, it = it + Math.imul(Zt, er) | 0, it = it + Math.imul(Ut, Yt) | 0, ht = ht + Math.imul(Ut, er) | 0, at = at + Math.imul(St, Jt) | 0, it = it + Math.imul(St, cr) | 0, it = it + Math.imul(Nt, Jt) | 0, ht = ht + Math.imul(Nt, cr) | 0;
             var fn = (vt + at | 0) + ((it & 8191) << 13) | 0;
-            vt = (ht + (it >>> 13) | 0) + (fn >>> 26) | 0, fn &= 67108863, at = Math.imul(Pt, Vt), it = Math.imul(Pt, ir), it = it + Math.imul(It, Vt) | 0, ht = Math.imul(It, ir), at = at + Math.imul(nr, or) | 0, it = it + Math.imul(nr, wr) | 0, it = it + Math.imul(ar, or) | 0, ht = ht + Math.imul(ar, wr) | 0, at = at + Math.imul(Cr, fr) | 0, it = it + Math.imul(Cr, $r) | 0, it = it + Math.imul(lr, fr) | 0, ht = ht + Math.imul(lr, $r) | 0, at = at + Math.imul(_r, Mr) | 0, it = it + Math.imul(_r, Nr) | 0, it = it + Math.imul(Tr, Mr) | 0, ht = ht + Math.imul(Tr, Nr) | 0, at = at + Math.imul(vr, Sr) | 0, it = it + Math.imul(vr, Or) | 0, it = it + Math.imul(gr, Sr) | 0, ht = ht + Math.imul(gr, Or) | 0, at = at + Math.imul(dr, Rr) | 0, it = it + Math.imul(dr, Lr) | 0, it = it + Math.imul(xr, Rr) | 0, ht = ht + Math.imul(xr, Lr) | 0, at = at + Math.imul(zt, Br) | 0, it = it + Math.imul(zt, qr) | 0, it = it + Math.imul(sr, Br) | 0, ht = ht + Math.imul(sr, qr) | 0, at = at + Math.imul(Ht, Yt) | 0, it = it + Math.imul(Ht, er) | 0, it = it + Math.imul(tr, Yt) | 0, ht = ht + Math.imul(tr, er) | 0, at = at + Math.imul(Zt, Jt) | 0, it = it + Math.imul(Zt, cr) | 0, it = it + Math.imul(Ut, Jt) | 0, ht = ht + Math.imul(Ut, cr) | 0, at = at + Math.imul(St, hr) | 0, it = it + Math.imul(St, Er) | 0, it = it + Math.imul(Nt, hr) | 0, ht = ht + Math.imul(Nt, Er) | 0;
+            vt = (ht + (it >>> 13) | 0) + (fn >>> 26) | 0, fn &= 67108863, at = Math.imul(Pt, Vt), it = Math.imul(Pt, ir), it = it + Math.imul(It, Vt) | 0, ht = Math.imul(It, ir), at = at + Math.imul(nr, or) | 0, it = it + Math.imul(nr, wr) | 0, it = it + Math.imul(ar, or) | 0, ht = ht + Math.imul(ar, wr) | 0, at = at + Math.imul(Cr, fr) | 0, it = it + Math.imul(Cr, $r) | 0, it = it + Math.imul(lr, fr) | 0, ht = ht + Math.imul(lr, $r) | 0, at = at + Math.imul(_r, Mr) | 0, it = it + Math.imul(_r, Nr) | 0, it = it + Math.imul(Tr, Mr) | 0, ht = ht + Math.imul(Tr, Nr) | 0, at = at + Math.imul(vr, Sr) | 0, it = it + Math.imul(vr, jr) | 0, it = it + Math.imul(gr, Sr) | 0, ht = ht + Math.imul(gr, jr) | 0, at = at + Math.imul(dr, Rr) | 0, it = it + Math.imul(dr, Lr) | 0, it = it + Math.imul(xr, Rr) | 0, ht = ht + Math.imul(xr, Lr) | 0, at = at + Math.imul(zt, Br) | 0, it = it + Math.imul(zt, qr) | 0, it = it + Math.imul(sr, Br) | 0, ht = ht + Math.imul(sr, qr) | 0, at = at + Math.imul(Ht, Yt) | 0, it = it + Math.imul(Ht, er) | 0, it = it + Math.imul(tr, Yt) | 0, ht = ht + Math.imul(tr, er) | 0, at = at + Math.imul(Zt, Jt) | 0, it = it + Math.imul(Zt, cr) | 0, it = it + Math.imul(Ut, Jt) | 0, ht = ht + Math.imul(Ut, cr) | 0, at = at + Math.imul(St, hr) | 0, it = it + Math.imul(St, Er) | 0, it = it + Math.imul(Nt, hr) | 0, ht = ht + Math.imul(Nt, Er) | 0;
             var hn = (vt + at | 0) + ((it & 8191) << 13) | 0;
-            vt = (ht + (it >>> 13) | 0) + (hn >>> 26) | 0, hn &= 67108863, at = Math.imul(Pt, or), it = Math.imul(Pt, wr), it = it + Math.imul(It, or) | 0, ht = Math.imul(It, wr), at = at + Math.imul(nr, fr) | 0, it = it + Math.imul(nr, $r) | 0, it = it + Math.imul(ar, fr) | 0, ht = ht + Math.imul(ar, $r) | 0, at = at + Math.imul(Cr, Mr) | 0, it = it + Math.imul(Cr, Nr) | 0, it = it + Math.imul(lr, Mr) | 0, ht = ht + Math.imul(lr, Nr) | 0, at = at + Math.imul(_r, Sr) | 0, it = it + Math.imul(_r, Or) | 0, it = it + Math.imul(Tr, Sr) | 0, ht = ht + Math.imul(Tr, Or) | 0, at = at + Math.imul(vr, Rr) | 0, it = it + Math.imul(vr, Lr) | 0, it = it + Math.imul(gr, Rr) | 0, ht = ht + Math.imul(gr, Lr) | 0, at = at + Math.imul(dr, Br) | 0, it = it + Math.imul(dr, qr) | 0, it = it + Math.imul(xr, Br) | 0, ht = ht + Math.imul(xr, qr) | 0, at = at + Math.imul(zt, Yt) | 0, it = it + Math.imul(zt, er) | 0, it = it + Math.imul(sr, Yt) | 0, ht = ht + Math.imul(sr, er) | 0, at = at + Math.imul(Ht, Jt) | 0, it = it + Math.imul(Ht, cr) | 0, it = it + Math.imul(tr, Jt) | 0, ht = ht + Math.imul(tr, cr) | 0, at = at + Math.imul(Zt, hr) | 0, it = it + Math.imul(Zt, Er) | 0, it = it + Math.imul(Ut, hr) | 0, ht = ht + Math.imul(Ut, Er) | 0;
+            vt = (ht + (it >>> 13) | 0) + (hn >>> 26) | 0, hn &= 67108863, at = Math.imul(Pt, or), it = Math.imul(Pt, wr), it = it + Math.imul(It, or) | 0, ht = Math.imul(It, wr), at = at + Math.imul(nr, fr) | 0, it = it + Math.imul(nr, $r) | 0, it = it + Math.imul(ar, fr) | 0, ht = ht + Math.imul(ar, $r) | 0, at = at + Math.imul(Cr, Mr) | 0, it = it + Math.imul(Cr, Nr) | 0, it = it + Math.imul(lr, Mr) | 0, ht = ht + Math.imul(lr, Nr) | 0, at = at + Math.imul(_r, Sr) | 0, it = it + Math.imul(_r, jr) | 0, it = it + Math.imul(Tr, Sr) | 0, ht = ht + Math.imul(Tr, jr) | 0, at = at + Math.imul(vr, Rr) | 0, it = it + Math.imul(vr, Lr) | 0, it = it + Math.imul(gr, Rr) | 0, ht = ht + Math.imul(gr, Lr) | 0, at = at + Math.imul(dr, Br) | 0, it = it + Math.imul(dr, qr) | 0, it = it + Math.imul(xr, Br) | 0, ht = ht + Math.imul(xr, qr) | 0, at = at + Math.imul(zt, Yt) | 0, it = it + Math.imul(zt, er) | 0, it = it + Math.imul(sr, Yt) | 0, ht = ht + Math.imul(sr, er) | 0, at = at + Math.imul(Ht, Jt) | 0, it = it + Math.imul(Ht, cr) | 0, it = it + Math.imul(tr, Jt) | 0, ht = ht + Math.imul(tr, cr) | 0, at = at + Math.imul(Zt, hr) | 0, it = it + Math.imul(Zt, Er) | 0, it = it + Math.imul(Ut, hr) | 0, ht = ht + Math.imul(Ut, Er) | 0;
             var dn = (vt + at | 0) + ((it & 8191) << 13) | 0;
-            vt = (ht + (it >>> 13) | 0) + (dn >>> 26) | 0, dn &= 67108863, at = Math.imul(Pt, fr), it = Math.imul(Pt, $r), it = it + Math.imul(It, fr) | 0, ht = Math.imul(It, $r), at = at + Math.imul(nr, Mr) | 0, it = it + Math.imul(nr, Nr) | 0, it = it + Math.imul(ar, Mr) | 0, ht = ht + Math.imul(ar, Nr) | 0, at = at + Math.imul(Cr, Sr) | 0, it = it + Math.imul(Cr, Or) | 0, it = it + Math.imul(lr, Sr) | 0, ht = ht + Math.imul(lr, Or) | 0, at = at + Math.imul(_r, Rr) | 0, it = it + Math.imul(_r, Lr) | 0, it = it + Math.imul(Tr, Rr) | 0, ht = ht + Math.imul(Tr, Lr) | 0, at = at + Math.imul(vr, Br) | 0, it = it + Math.imul(vr, qr) | 0, it = it + Math.imul(gr, Br) | 0, ht = ht + Math.imul(gr, qr) | 0, at = at + Math.imul(dr, Yt) | 0, it = it + Math.imul(dr, er) | 0, it = it + Math.imul(xr, Yt) | 0, ht = ht + Math.imul(xr, er) | 0, at = at + Math.imul(zt, Jt) | 0, it = it + Math.imul(zt, cr) | 0, it = it + Math.imul(sr, Jt) | 0, ht = ht + Math.imul(sr, cr) | 0, at = at + Math.imul(Ht, hr) | 0, it = it + Math.imul(Ht, Er) | 0, it = it + Math.imul(tr, hr) | 0, ht = ht + Math.imul(tr, Er) | 0;
+            vt = (ht + (it >>> 13) | 0) + (dn >>> 26) | 0, dn &= 67108863, at = Math.imul(Pt, fr), it = Math.imul(Pt, $r), it = it + Math.imul(It, fr) | 0, ht = Math.imul(It, $r), at = at + Math.imul(nr, Mr) | 0, it = it + Math.imul(nr, Nr) | 0, it = it + Math.imul(ar, Mr) | 0, ht = ht + Math.imul(ar, Nr) | 0, at = at + Math.imul(Cr, Sr) | 0, it = it + Math.imul(Cr, jr) | 0, it = it + Math.imul(lr, Sr) | 0, ht = ht + Math.imul(lr, jr) | 0, at = at + Math.imul(_r, Rr) | 0, it = it + Math.imul(_r, Lr) | 0, it = it + Math.imul(Tr, Rr) | 0, ht = ht + Math.imul(Tr, Lr) | 0, at = at + Math.imul(vr, Br) | 0, it = it + Math.imul(vr, qr) | 0, it = it + Math.imul(gr, Br) | 0, ht = ht + Math.imul(gr, qr) | 0, at = at + Math.imul(dr, Yt) | 0, it = it + Math.imul(dr, er) | 0, it = it + Math.imul(xr, Yt) | 0, ht = ht + Math.imul(xr, er) | 0, at = at + Math.imul(zt, Jt) | 0, it = it + Math.imul(zt, cr) | 0, it = it + Math.imul(sr, Jt) | 0, ht = ht + Math.imul(sr, cr) | 0, at = at + Math.imul(Ht, hr) | 0, it = it + Math.imul(Ht, Er) | 0, it = it + Math.imul(tr, hr) | 0, ht = ht + Math.imul(tr, Er) | 0;
             var tn = (vt + at | 0) + ((it & 8191) << 13) | 0;
-            vt = (ht + (it >>> 13) | 0) + (tn >>> 26) | 0, tn &= 67108863, at = Math.imul(Pt, Mr), it = Math.imul(Pt, Nr), it = it + Math.imul(It, Mr) | 0, ht = Math.imul(It, Nr), at = at + Math.imul(nr, Sr) | 0, it = it + Math.imul(nr, Or) | 0, it = it + Math.imul(ar, Sr) | 0, ht = ht + Math.imul(ar, Or) | 0, at = at + Math.imul(Cr, Rr) | 0, it = it + Math.imul(Cr, Lr) | 0, it = it + Math.imul(lr, Rr) | 0, ht = ht + Math.imul(lr, Lr) | 0, at = at + Math.imul(_r, Br) | 0, it = it + Math.imul(_r, qr) | 0, it = it + Math.imul(Tr, Br) | 0, ht = ht + Math.imul(Tr, qr) | 0, at = at + Math.imul(vr, Yt) | 0, it = it + Math.imul(vr, er) | 0, it = it + Math.imul(gr, Yt) | 0, ht = ht + Math.imul(gr, er) | 0, at = at + Math.imul(dr, Jt) | 0, it = it + Math.imul(dr, cr) | 0, it = it + Math.imul(xr, Jt) | 0, ht = ht + Math.imul(xr, cr) | 0, at = at + Math.imul(zt, hr) | 0, it = it + Math.imul(zt, Er) | 0, it = it + Math.imul(sr, hr) | 0, ht = ht + Math.imul(sr, Er) | 0;
+            vt = (ht + (it >>> 13) | 0) + (tn >>> 26) | 0, tn &= 67108863, at = Math.imul(Pt, Mr), it = Math.imul(Pt, Nr), it = it + Math.imul(It, Mr) | 0, ht = Math.imul(It, Nr), at = at + Math.imul(nr, Sr) | 0, it = it + Math.imul(nr, jr) | 0, it = it + Math.imul(ar, Sr) | 0, ht = ht + Math.imul(ar, jr) | 0, at = at + Math.imul(Cr, Rr) | 0, it = it + Math.imul(Cr, Lr) | 0, it = it + Math.imul(lr, Rr) | 0, ht = ht + Math.imul(lr, Lr) | 0, at = at + Math.imul(_r, Br) | 0, it = it + Math.imul(_r, qr) | 0, it = it + Math.imul(Tr, Br) | 0, ht = ht + Math.imul(Tr, qr) | 0, at = at + Math.imul(vr, Yt) | 0, it = it + Math.imul(vr, er) | 0, it = it + Math.imul(gr, Yt) | 0, ht = ht + Math.imul(gr, er) | 0, at = at + Math.imul(dr, Jt) | 0, it = it + Math.imul(dr, cr) | 0, it = it + Math.imul(xr, Jt) | 0, ht = ht + Math.imul(xr, cr) | 0, at = at + Math.imul(zt, hr) | 0, it = it + Math.imul(zt, Er) | 0, it = it + Math.imul(sr, hr) | 0, ht = ht + Math.imul(sr, Er) | 0;
             var an = (vt + at | 0) + ((it & 8191) << 13) | 0;
-            vt = (ht + (it >>> 13) | 0) + (an >>> 26) | 0, an &= 67108863, at = Math.imul(Pt, Sr), it = Math.imul(Pt, Or), it = it + Math.imul(It, Sr) | 0, ht = Math.imul(It, Or), at = at + Math.imul(nr, Rr) | 0, it = it + Math.imul(nr, Lr) | 0, it = it + Math.imul(ar, Rr) | 0, ht = ht + Math.imul(ar, Lr) | 0, at = at + Math.imul(Cr, Br) | 0, it = it + Math.imul(Cr, qr) | 0, it = it + Math.imul(lr, Br) | 0, ht = ht + Math.imul(lr, qr) | 0, at = at + Math.imul(_r, Yt) | 0, it = it + Math.imul(_r, er) | 0, it = it + Math.imul(Tr, Yt) | 0, ht = ht + Math.imul(Tr, er) | 0, at = at + Math.imul(vr, Jt) | 0, it = it + Math.imul(vr, cr) | 0, it = it + Math.imul(gr, Jt) | 0, ht = ht + Math.imul(gr, cr) | 0, at = at + Math.imul(dr, hr) | 0, it = it + Math.imul(dr, Er) | 0, it = it + Math.imul(xr, hr) | 0, ht = ht + Math.imul(xr, Er) | 0;
+            vt = (ht + (it >>> 13) | 0) + (an >>> 26) | 0, an &= 67108863, at = Math.imul(Pt, Sr), it = Math.imul(Pt, jr), it = it + Math.imul(It, Sr) | 0, ht = Math.imul(It, jr), at = at + Math.imul(nr, Rr) | 0, it = it + Math.imul(nr, Lr) | 0, it = it + Math.imul(ar, Rr) | 0, ht = ht + Math.imul(ar, Lr) | 0, at = at + Math.imul(Cr, Br) | 0, it = it + Math.imul(Cr, qr) | 0, it = it + Math.imul(lr, Br) | 0, ht = ht + Math.imul(lr, qr) | 0, at = at + Math.imul(_r, Yt) | 0, it = it + Math.imul(_r, er) | 0, it = it + Math.imul(Tr, Yt) | 0, ht = ht + Math.imul(Tr, er) | 0, at = at + Math.imul(vr, Jt) | 0, it = it + Math.imul(vr, cr) | 0, it = it + Math.imul(gr, Jt) | 0, ht = ht + Math.imul(gr, cr) | 0, at = at + Math.imul(dr, hr) | 0, it = it + Math.imul(dr, Er) | 0, it = it + Math.imul(xr, hr) | 0, ht = ht + Math.imul(xr, Er) | 0;
             var Yr = (vt + at | 0) + ((it & 8191) << 13) | 0;
             vt = (ht + (it >>> 13) | 0) + (Yr >>> 26) | 0, Yr &= 67108863, at = Math.imul(Pt, Rr), it = Math.imul(Pt, Lr), it = it + Math.imul(It, Rr) | 0, ht = Math.imul(It, Lr), at = at + Math.imul(nr, Br) | 0, it = it + Math.imul(nr, qr) | 0, it = it + Math.imul(ar, Br) | 0, ht = ht + Math.imul(ar, qr) | 0, at = at + Math.imul(Cr, Yt) | 0, it = it + Math.imul(Cr, er) | 0, it = it + Math.imul(lr, Yt) | 0, ht = ht + Math.imul(lr, er) | 0, at = at + Math.imul(_r, Jt) | 0, it = it + Math.imul(_r, cr) | 0, it = it + Math.imul(Tr, Jt) | 0, ht = ht + Math.imul(Tr, cr) | 0, at = at + Math.imul(vr, hr) | 0, it = it + Math.imul(vr, Er) | 0, it = it + Math.imul(gr, hr) | 0, ht = ht + Math.imul(gr, Er) | 0;
             var rn = (vt + at | 0) + ((it & 8191) << 13) | 0;
@@ -20072,8 +20072,8 @@ Use Chrome, Firefox or Internet Explorer 11`);
             vt = (ht + (it >>> 13) | 0) + (Gr >>> 26) | 0, Gr &= 67108863, at = Math.imul(Pt, Jt), it = Math.imul(Pt, cr), it = it + Math.imul(It, Jt) | 0, ht = Math.imul(It, cr), at = at + Math.imul(nr, hr) | 0, it = it + Math.imul(nr, Er) | 0, it = it + Math.imul(ar, hr) | 0, ht = ht + Math.imul(ar, Er) | 0;
             var Dr = (vt + at | 0) + ((it & 8191) << 13) | 0;
             vt = (ht + (it >>> 13) | 0) + (Dr >>> 26) | 0, Dr &= 67108863, at = Math.imul(Pt, hr), it = Math.imul(Pt, Er), it = it + Math.imul(It, hr) | 0, ht = Math.imul(It, Er);
-            var Fr = (vt + at | 0) + ((it & 8191) << 13) | 0;
-            return vt = (ht + (it >>> 13) | 0) + (Fr >>> 26) | 0, Fr &= 67108863, mt[0] = zr, mt[1] = Wr, mt[2] = gn, mt[3] = Jr, mt[4] = ln, mt[5] = un, mt[6] = mn, mt[7] = pn, mt[8] = fn, mt[9] = hn, mt[10] = dn, mt[11] = tn, mt[12] = an, mt[13] = Yr, mt[14] = rn, mt[15] = nn, mt[16] = Gr, mt[17] = Dr, mt[18] = Fr, vt !== 0 && (mt[19] = vt, nt.length++), nt;
+            var Or = (vt + at | 0) + ((it & 8191) << 13) | 0;
+            return vt = (ht + (it >>> 13) | 0) + (Or >>> 26) | 0, Or &= 67108863, mt[0] = zr, mt[1] = Wr, mt[2] = gn, mt[3] = Jr, mt[4] = ln, mt[5] = un, mt[6] = mn, mt[7] = pn, mt[8] = fn, mt[9] = hn, mt[10] = dn, mt[11] = tn, mt[12] = an, mt[13] = Yr, mt[14] = rn, mt[15] = nn, mt[16] = Gr, mt[17] = Dr, mt[18] = Or, vt !== 0 && (mt[19] = vt, nt.length++), nt;
           };
           Math.imul || (Et = Mt);
           function Rt(ct, et, tt) {
@@ -20538,10 +20538,10 @@ Use Chrome, Firefox or Internet Explorer 11`);
             }
             return et.words[et.length - 1] === 0 && (et.length--, et.words[et.length - 1] === 0 && et.length--), et;
           };
-          function jt() {
+          function Ot() {
             Tt.call(this, "p224", "ffffffff ffffffff ffffffff ffffffff 00000000 00000000 00000001");
           }
-          rt(jt, Tt);
+          rt(Ot, Tt);
           function Xt() {
             Tt.call(this, "p192", "ffffffff ffffffff ffffffff fffffffe ffffffff ffffffff");
           }
@@ -20559,7 +20559,7 @@ Use Chrome, Firefox or Internet Explorer 11`);
             if ($t[et]) return $t[et];
             var tt;
             if (et === "k256") tt = new Ft();
-            else if (et === "p224") tt = new jt();
+            else if (et === "p224") tt = new Ot();
             else if (et === "p192") tt = new Xt();
             else if (et === "p25519") tt = new Qt();
             else throw new Error("Unknown prime " + et);
@@ -20788,8 +20788,8 @@ Use Chrome, Firefox or Internet Explorer 11`);
         var At = 1048576, Bt = [];
         Bt[0] = 2;
         for (var $t = 1, Tt = 3; Tt < At; Tt += 2) {
-          for (var Ft = Math.ceil(Math.sqrt(Tt)), jt = 0; jt < $t && Bt[jt] <= Ft && Tt % Bt[jt] !== 0; jt++) ;
-          $t !== jt && Bt[jt] <= Ft || (Bt[$t++] = Tt);
+          for (var Ft = Math.ceil(Math.sqrt(Tt)), Ot = 0; Ot < $t && Bt[Ot] <= Ft && Tt % Bt[Ot] !== 0; Ot++) ;
+          $t !== Ot && Bt[Ot] <= Ft || (Bt[$t++] = Tt);
         }
         return _t = Bt, Bt;
       }
@@ -21307,12 +21307,12 @@ Use Chrome, Firefox or Internet Explorer 11`);
       function Ft(mt, vt, at, it, ht) {
         --vt.pendingcb, at ? (d.nextTick(ht, it), d.nextTick(nt, mt, vt), mt._writableState.errorEmitted = true, mt.emit("error", it)) : (ht(it), mt._writableState.errorEmitted = true, mt.emit("error", it), nt(mt, vt));
       }
-      function jt(mt) {
+      function Ot(mt) {
         mt.writing = false, mt.writecb = null, mt.length -= mt.writelen, mt.writelen = 0;
       }
       function Xt(mt, vt) {
         var at = mt._writableState, it = at.sync, ht = at.writecb;
-        if (jt(at), vt) Ft(mt, at, it, vt, ht);
+        if (Ot(at), vt) Ft(mt, at, it, vt, ht);
         else {
           var wt = ct(at);
           !wt && !at.corked && !at.bufferProcessing && at.bufferedRequest && kt(mt, at), it ? _(Qt, mt, at, wt, ht) : Qt(mt, at, wt, ht);
@@ -21501,7 +21501,7 @@ Use Chrome, Firefox or Internet Explorer 11`);
           var sr;
           Gt || (sr = Ft(zt, Lt)), sr ? Ut.emit("error", sr) : zt.objectMode || Lt && Lt.length > 0 ? (typeof Lt != "string" && !zt.objectMode && Object.getPrototypeOf(Lt) !== j.prototype && (Lt = dt(Lt)), tr ? zt.endEmitted ? Ut.emit("error", new Error("stream.unshift() after end event")) : Tt(Ut, zt, Lt, true) : zt.ended ? Ut.emit("error", new Error("stream.push() after EOF")) : (zt.reading = false, zt.decoder && !Ht ? (Lt = zt.decoder.write(Lt), zt.objectMode || Lt.length !== 0 ? Tt(Ut, zt, Lt, false) : tt(Ut, zt)) : Tt(Ut, zt, Lt, false))) : tr || (zt.reading = false);
         }
-        return jt(zt);
+        return Ot(zt);
       }
       function Tt(Ut, Lt, Ht, tr) {
         Lt.flowing && Lt.length === 0 && !Lt.sync ? (Ut.emit("data", Ht), Ut.read(0)) : (Lt.length += Lt.objectMode ? 1 : Ht.length, tr ? Lt.buffer.unshift(Ht) : Lt.buffer.push(Ht), Lt.needReadable && ct(Ut)), tt(Ut, Lt);
@@ -21510,7 +21510,7 @@ Use Chrome, Firefox or Internet Explorer 11`);
         var Ht;
         return !pt(Lt) && typeof Lt != "string" && Lt !== void 0 && !Ut.objectMode && (Ht = new TypeError("Invalid non-string/buffer chunk")), Ht;
       }
-      function jt(Ut) {
+      function Ot(Ut) {
         return !Ut.ended && (Ut.needReadable || Ut.length < Ut.highWaterMark || Ut.length === 0);
       }
       Bt.prototype.isPaused = function() {
@@ -21589,7 +21589,7 @@ Use Chrome, Firefox or Internet Explorer 11`);
         Ut.on("drain", dr);
         var xr = false;
         function kr() {
-          xt("cleanup"), Ut.removeListener("close", _r), Ut.removeListener("finish", Tr), Ut.removeListener("drain", dr), Ut.removeListener("error", jr), Ut.removeListener("unpipe", sr), Ht.removeListener("end", br), Ht.removeListener("end", Ur), Ht.removeListener("data", gr), xr = true, tr.awaitDrain && (!Ut._writableState || Ut._writableState.needDrain) && dr();
+          xt("cleanup"), Ut.removeListener("close", _r), Ut.removeListener("finish", Tr), Ut.removeListener("drain", dr), Ut.removeListener("error", Fr), Ut.removeListener("unpipe", sr), Ht.removeListener("end", br), Ht.removeListener("end", Ur), Ht.removeListener("data", gr), xr = true, tr.awaitDrain && (!Ut._writableState || Ut._writableState.needDrain) && dr();
         }
         var vr = false;
         Ht.on("data", gr);
@@ -21598,10 +21598,10 @@ Use Chrome, Firefox or Internet Explorer 11`);
           var lr = Ut.write(Cr);
           lr === false && !vr && ((tr.pipesCount === 1 && tr.pipes === Ut || tr.pipesCount > 1 && Zt(tr.pipes, Ut) !== -1) && !xr && (xt("false write response, pause", tr.awaitDrain), tr.awaitDrain++, vr = true), Ht.pause());
         }
-        function jr(Cr) {
-          xt("onerror", Cr), Ur(), Ut.removeListener("error", jr), $(Ut, "error") === 0 && Ut.emit("error", Cr);
+        function Fr(Cr) {
+          xt("onerror", Cr), Ur(), Ut.removeListener("error", Fr), $(Ut, "error") === 0 && Ut.emit("error", Cr);
         }
-        Rt(Ut, "error", jr);
+        Rt(Ut, "error", Fr);
         function _r() {
           Ut.removeListener("finish", Tr), Ur();
         }
@@ -22246,7 +22246,7 @@ Use Chrome, Firefox or Internet Explorer 11`);
             return ht !== 0 ? ot.words[wt] = ht | 0 : ot.length--, ot._strip();
           }
           var Bt = function(nt, ot, ut) {
-            var mt = nt.words, vt = ot.words, at = ut.words, it = 0, ht, wt, St, Nt = mt[0] | 0, qt = Nt & 8191, Zt = Nt >>> 13, Ut = mt[1] | 0, Lt = Ut & 8191, Ht = Ut >>> 13, tr = mt[2] | 0, Gt = tr & 8191, zt = tr >>> 13, sr = mt[3] | 0, br = sr & 8191, dr = sr >>> 13, xr = mt[4] | 0, kr = xr & 8191, vr = xr >>> 13, gr = mt[5] | 0, jr = gr & 8191, _r = gr >>> 13, Tr = mt[6] | 0, Ur = Tr & 8191, Cr = Tr >>> 13, lr = mt[7] | 0, rr = lr & 8191, nr = lr >>> 13, ar = mt[8] | 0, pr = ar & 8191, Pt = ar >>> 13, It = mt[9] | 0, Dt = It & 8191, Vt = It >>> 13, ir = vt[0] | 0, ur = ir & 8191, or = ir >>> 13, wr = vt[1] | 0, Ir = wr & 8191, fr = wr >>> 13, $r = vt[2] | 0, Pr = $r & 8191, Mr = $r >>> 13, Nr = vt[3] | 0, Vr = Nr & 8191, Sr = Nr >>> 13, Or = vt[4] | 0, Hr = Or & 8191, Rr = Or >>> 13, Lr = vt[5] | 0, Zr = Lr & 8191, Br = Lr >>> 13, qr = vt[6] | 0, Kt = qr & 8191, Yt = qr >>> 13, er = vt[7] | 0, Ot = er & 8191, Jt = er >>> 13, cr = vt[8] | 0, yr = cr & 8191, hr = cr >>> 13, Er = vt[9] | 0, zr = Er & 8191, Wr = Er >>> 13;
+            var mt = nt.words, vt = ot.words, at = ut.words, it = 0, ht, wt, St, Nt = mt[0] | 0, qt = Nt & 8191, Zt = Nt >>> 13, Ut = mt[1] | 0, Lt = Ut & 8191, Ht = Ut >>> 13, tr = mt[2] | 0, Gt = tr & 8191, zt = tr >>> 13, sr = mt[3] | 0, br = sr & 8191, dr = sr >>> 13, xr = mt[4] | 0, kr = xr & 8191, vr = xr >>> 13, gr = mt[5] | 0, Fr = gr & 8191, _r = gr >>> 13, Tr = mt[6] | 0, Ur = Tr & 8191, Cr = Tr >>> 13, lr = mt[7] | 0, rr = lr & 8191, nr = lr >>> 13, ar = mt[8] | 0, pr = ar & 8191, Pt = ar >>> 13, It = mt[9] | 0, Dt = It & 8191, Vt = It >>> 13, ir = vt[0] | 0, ur = ir & 8191, or = ir >>> 13, wr = vt[1] | 0, Ir = wr & 8191, fr = wr >>> 13, $r = vt[2] | 0, Pr = $r & 8191, Mr = $r >>> 13, Nr = vt[3] | 0, Vr = Nr & 8191, Sr = Nr >>> 13, jr = vt[4] | 0, Hr = jr & 8191, Rr = jr >>> 13, Lr = vt[5] | 0, Zr = Lr & 8191, Br = Lr >>> 13, qr = vt[6] | 0, Kt = qr & 8191, Yt = qr >>> 13, er = vt[7] | 0, jt = er & 8191, Jt = er >>> 13, cr = vt[8] | 0, yr = cr & 8191, hr = cr >>> 13, Er = vt[9] | 0, zr = Er & 8191, Wr = Er >>> 13;
             ut.negative = nt.negative ^ ot.negative, ut.length = 19, ht = Math.imul(qt, ur), wt = Math.imul(qt, or), wt = wt + Math.imul(Zt, ur) | 0, St = Math.imul(Zt, or);
             var gn = (it + ht | 0) + ((wt & 8191) << 13) | 0;
             it = (St + (wt >>> 13) | 0) + (gn >>> 26) | 0, gn &= 67108863, ht = Math.imul(Lt, ur), wt = Math.imul(Lt, or), wt = wt + Math.imul(Ht, ur) | 0, St = Math.imul(Ht, or), ht = ht + Math.imul(qt, Ir) | 0, wt = wt + Math.imul(qt, fr) | 0, wt = wt + Math.imul(Zt, Ir) | 0, St = St + Math.imul(Zt, fr) | 0;
@@ -22257,35 +22257,35 @@ Use Chrome, Firefox or Internet Explorer 11`);
             var un = (it + ht | 0) + ((wt & 8191) << 13) | 0;
             it = (St + (wt >>> 13) | 0) + (un >>> 26) | 0, un &= 67108863, ht = Math.imul(kr, ur), wt = Math.imul(kr, or), wt = wt + Math.imul(vr, ur) | 0, St = Math.imul(vr, or), ht = ht + Math.imul(br, Ir) | 0, wt = wt + Math.imul(br, fr) | 0, wt = wt + Math.imul(dr, Ir) | 0, St = St + Math.imul(dr, fr) | 0, ht = ht + Math.imul(Gt, Pr) | 0, wt = wt + Math.imul(Gt, Mr) | 0, wt = wt + Math.imul(zt, Pr) | 0, St = St + Math.imul(zt, Mr) | 0, ht = ht + Math.imul(Lt, Vr) | 0, wt = wt + Math.imul(Lt, Sr) | 0, wt = wt + Math.imul(Ht, Vr) | 0, St = St + Math.imul(Ht, Sr) | 0, ht = ht + Math.imul(qt, Hr) | 0, wt = wt + Math.imul(qt, Rr) | 0, wt = wt + Math.imul(Zt, Hr) | 0, St = St + Math.imul(Zt, Rr) | 0;
             var mn = (it + ht | 0) + ((wt & 8191) << 13) | 0;
-            it = (St + (wt >>> 13) | 0) + (mn >>> 26) | 0, mn &= 67108863, ht = Math.imul(jr, ur), wt = Math.imul(jr, or), wt = wt + Math.imul(_r, ur) | 0, St = Math.imul(_r, or), ht = ht + Math.imul(kr, Ir) | 0, wt = wt + Math.imul(kr, fr) | 0, wt = wt + Math.imul(vr, Ir) | 0, St = St + Math.imul(vr, fr) | 0, ht = ht + Math.imul(br, Pr) | 0, wt = wt + Math.imul(br, Mr) | 0, wt = wt + Math.imul(dr, Pr) | 0, St = St + Math.imul(dr, Mr) | 0, ht = ht + Math.imul(Gt, Vr) | 0, wt = wt + Math.imul(Gt, Sr) | 0, wt = wt + Math.imul(zt, Vr) | 0, St = St + Math.imul(zt, Sr) | 0, ht = ht + Math.imul(Lt, Hr) | 0, wt = wt + Math.imul(Lt, Rr) | 0, wt = wt + Math.imul(Ht, Hr) | 0, St = St + Math.imul(Ht, Rr) | 0, ht = ht + Math.imul(qt, Zr) | 0, wt = wt + Math.imul(qt, Br) | 0, wt = wt + Math.imul(Zt, Zr) | 0, St = St + Math.imul(Zt, Br) | 0;
+            it = (St + (wt >>> 13) | 0) + (mn >>> 26) | 0, mn &= 67108863, ht = Math.imul(Fr, ur), wt = Math.imul(Fr, or), wt = wt + Math.imul(_r, ur) | 0, St = Math.imul(_r, or), ht = ht + Math.imul(kr, Ir) | 0, wt = wt + Math.imul(kr, fr) | 0, wt = wt + Math.imul(vr, Ir) | 0, St = St + Math.imul(vr, fr) | 0, ht = ht + Math.imul(br, Pr) | 0, wt = wt + Math.imul(br, Mr) | 0, wt = wt + Math.imul(dr, Pr) | 0, St = St + Math.imul(dr, Mr) | 0, ht = ht + Math.imul(Gt, Vr) | 0, wt = wt + Math.imul(Gt, Sr) | 0, wt = wt + Math.imul(zt, Vr) | 0, St = St + Math.imul(zt, Sr) | 0, ht = ht + Math.imul(Lt, Hr) | 0, wt = wt + Math.imul(Lt, Rr) | 0, wt = wt + Math.imul(Ht, Hr) | 0, St = St + Math.imul(Ht, Rr) | 0, ht = ht + Math.imul(qt, Zr) | 0, wt = wt + Math.imul(qt, Br) | 0, wt = wt + Math.imul(Zt, Zr) | 0, St = St + Math.imul(Zt, Br) | 0;
             var pn = (it + ht | 0) + ((wt & 8191) << 13) | 0;
-            it = (St + (wt >>> 13) | 0) + (pn >>> 26) | 0, pn &= 67108863, ht = Math.imul(Ur, ur), wt = Math.imul(Ur, or), wt = wt + Math.imul(Cr, ur) | 0, St = Math.imul(Cr, or), ht = ht + Math.imul(jr, Ir) | 0, wt = wt + Math.imul(jr, fr) | 0, wt = wt + Math.imul(_r, Ir) | 0, St = St + Math.imul(_r, fr) | 0, ht = ht + Math.imul(kr, Pr) | 0, wt = wt + Math.imul(kr, Mr) | 0, wt = wt + Math.imul(vr, Pr) | 0, St = St + Math.imul(vr, Mr) | 0, ht = ht + Math.imul(br, Vr) | 0, wt = wt + Math.imul(br, Sr) | 0, wt = wt + Math.imul(dr, Vr) | 0, St = St + Math.imul(dr, Sr) | 0, ht = ht + Math.imul(Gt, Hr) | 0, wt = wt + Math.imul(Gt, Rr) | 0, wt = wt + Math.imul(zt, Hr) | 0, St = St + Math.imul(zt, Rr) | 0, ht = ht + Math.imul(Lt, Zr) | 0, wt = wt + Math.imul(Lt, Br) | 0, wt = wt + Math.imul(Ht, Zr) | 0, St = St + Math.imul(Ht, Br) | 0, ht = ht + Math.imul(qt, Kt) | 0, wt = wt + Math.imul(qt, Yt) | 0, wt = wt + Math.imul(Zt, Kt) | 0, St = St + Math.imul(Zt, Yt) | 0;
+            it = (St + (wt >>> 13) | 0) + (pn >>> 26) | 0, pn &= 67108863, ht = Math.imul(Ur, ur), wt = Math.imul(Ur, or), wt = wt + Math.imul(Cr, ur) | 0, St = Math.imul(Cr, or), ht = ht + Math.imul(Fr, Ir) | 0, wt = wt + Math.imul(Fr, fr) | 0, wt = wt + Math.imul(_r, Ir) | 0, St = St + Math.imul(_r, fr) | 0, ht = ht + Math.imul(kr, Pr) | 0, wt = wt + Math.imul(kr, Mr) | 0, wt = wt + Math.imul(vr, Pr) | 0, St = St + Math.imul(vr, Mr) | 0, ht = ht + Math.imul(br, Vr) | 0, wt = wt + Math.imul(br, Sr) | 0, wt = wt + Math.imul(dr, Vr) | 0, St = St + Math.imul(dr, Sr) | 0, ht = ht + Math.imul(Gt, Hr) | 0, wt = wt + Math.imul(Gt, Rr) | 0, wt = wt + Math.imul(zt, Hr) | 0, St = St + Math.imul(zt, Rr) | 0, ht = ht + Math.imul(Lt, Zr) | 0, wt = wt + Math.imul(Lt, Br) | 0, wt = wt + Math.imul(Ht, Zr) | 0, St = St + Math.imul(Ht, Br) | 0, ht = ht + Math.imul(qt, Kt) | 0, wt = wt + Math.imul(qt, Yt) | 0, wt = wt + Math.imul(Zt, Kt) | 0, St = St + Math.imul(Zt, Yt) | 0;
             var fn = (it + ht | 0) + ((wt & 8191) << 13) | 0;
-            it = (St + (wt >>> 13) | 0) + (fn >>> 26) | 0, fn &= 67108863, ht = Math.imul(rr, ur), wt = Math.imul(rr, or), wt = wt + Math.imul(nr, ur) | 0, St = Math.imul(nr, or), ht = ht + Math.imul(Ur, Ir) | 0, wt = wt + Math.imul(Ur, fr) | 0, wt = wt + Math.imul(Cr, Ir) | 0, St = St + Math.imul(Cr, fr) | 0, ht = ht + Math.imul(jr, Pr) | 0, wt = wt + Math.imul(jr, Mr) | 0, wt = wt + Math.imul(_r, Pr) | 0, St = St + Math.imul(_r, Mr) | 0, ht = ht + Math.imul(kr, Vr) | 0, wt = wt + Math.imul(kr, Sr) | 0, wt = wt + Math.imul(vr, Vr) | 0, St = St + Math.imul(vr, Sr) | 0, ht = ht + Math.imul(br, Hr) | 0, wt = wt + Math.imul(br, Rr) | 0, wt = wt + Math.imul(dr, Hr) | 0, St = St + Math.imul(dr, Rr) | 0, ht = ht + Math.imul(Gt, Zr) | 0, wt = wt + Math.imul(Gt, Br) | 0, wt = wt + Math.imul(zt, Zr) | 0, St = St + Math.imul(zt, Br) | 0, ht = ht + Math.imul(Lt, Kt) | 0, wt = wt + Math.imul(Lt, Yt) | 0, wt = wt + Math.imul(Ht, Kt) | 0, St = St + Math.imul(Ht, Yt) | 0, ht = ht + Math.imul(qt, Ot) | 0, wt = wt + Math.imul(qt, Jt) | 0, wt = wt + Math.imul(Zt, Ot) | 0, St = St + Math.imul(Zt, Jt) | 0;
+            it = (St + (wt >>> 13) | 0) + (fn >>> 26) | 0, fn &= 67108863, ht = Math.imul(rr, ur), wt = Math.imul(rr, or), wt = wt + Math.imul(nr, ur) | 0, St = Math.imul(nr, or), ht = ht + Math.imul(Ur, Ir) | 0, wt = wt + Math.imul(Ur, fr) | 0, wt = wt + Math.imul(Cr, Ir) | 0, St = St + Math.imul(Cr, fr) | 0, ht = ht + Math.imul(Fr, Pr) | 0, wt = wt + Math.imul(Fr, Mr) | 0, wt = wt + Math.imul(_r, Pr) | 0, St = St + Math.imul(_r, Mr) | 0, ht = ht + Math.imul(kr, Vr) | 0, wt = wt + Math.imul(kr, Sr) | 0, wt = wt + Math.imul(vr, Vr) | 0, St = St + Math.imul(vr, Sr) | 0, ht = ht + Math.imul(br, Hr) | 0, wt = wt + Math.imul(br, Rr) | 0, wt = wt + Math.imul(dr, Hr) | 0, St = St + Math.imul(dr, Rr) | 0, ht = ht + Math.imul(Gt, Zr) | 0, wt = wt + Math.imul(Gt, Br) | 0, wt = wt + Math.imul(zt, Zr) | 0, St = St + Math.imul(zt, Br) | 0, ht = ht + Math.imul(Lt, Kt) | 0, wt = wt + Math.imul(Lt, Yt) | 0, wt = wt + Math.imul(Ht, Kt) | 0, St = St + Math.imul(Ht, Yt) | 0, ht = ht + Math.imul(qt, jt) | 0, wt = wt + Math.imul(qt, Jt) | 0, wt = wt + Math.imul(Zt, jt) | 0, St = St + Math.imul(Zt, Jt) | 0;
             var hn = (it + ht | 0) + ((wt & 8191) << 13) | 0;
-            it = (St + (wt >>> 13) | 0) + (hn >>> 26) | 0, hn &= 67108863, ht = Math.imul(pr, ur), wt = Math.imul(pr, or), wt = wt + Math.imul(Pt, ur) | 0, St = Math.imul(Pt, or), ht = ht + Math.imul(rr, Ir) | 0, wt = wt + Math.imul(rr, fr) | 0, wt = wt + Math.imul(nr, Ir) | 0, St = St + Math.imul(nr, fr) | 0, ht = ht + Math.imul(Ur, Pr) | 0, wt = wt + Math.imul(Ur, Mr) | 0, wt = wt + Math.imul(Cr, Pr) | 0, St = St + Math.imul(Cr, Mr) | 0, ht = ht + Math.imul(jr, Vr) | 0, wt = wt + Math.imul(jr, Sr) | 0, wt = wt + Math.imul(_r, Vr) | 0, St = St + Math.imul(_r, Sr) | 0, ht = ht + Math.imul(kr, Hr) | 0, wt = wt + Math.imul(kr, Rr) | 0, wt = wt + Math.imul(vr, Hr) | 0, St = St + Math.imul(vr, Rr) | 0, ht = ht + Math.imul(br, Zr) | 0, wt = wt + Math.imul(br, Br) | 0, wt = wt + Math.imul(dr, Zr) | 0, St = St + Math.imul(dr, Br) | 0, ht = ht + Math.imul(Gt, Kt) | 0, wt = wt + Math.imul(Gt, Yt) | 0, wt = wt + Math.imul(zt, Kt) | 0, St = St + Math.imul(zt, Yt) | 0, ht = ht + Math.imul(Lt, Ot) | 0, wt = wt + Math.imul(Lt, Jt) | 0, wt = wt + Math.imul(Ht, Ot) | 0, St = St + Math.imul(Ht, Jt) | 0, ht = ht + Math.imul(qt, yr) | 0, wt = wt + Math.imul(qt, hr) | 0, wt = wt + Math.imul(Zt, yr) | 0, St = St + Math.imul(Zt, hr) | 0;
+            it = (St + (wt >>> 13) | 0) + (hn >>> 26) | 0, hn &= 67108863, ht = Math.imul(pr, ur), wt = Math.imul(pr, or), wt = wt + Math.imul(Pt, ur) | 0, St = Math.imul(Pt, or), ht = ht + Math.imul(rr, Ir) | 0, wt = wt + Math.imul(rr, fr) | 0, wt = wt + Math.imul(nr, Ir) | 0, St = St + Math.imul(nr, fr) | 0, ht = ht + Math.imul(Ur, Pr) | 0, wt = wt + Math.imul(Ur, Mr) | 0, wt = wt + Math.imul(Cr, Pr) | 0, St = St + Math.imul(Cr, Mr) | 0, ht = ht + Math.imul(Fr, Vr) | 0, wt = wt + Math.imul(Fr, Sr) | 0, wt = wt + Math.imul(_r, Vr) | 0, St = St + Math.imul(_r, Sr) | 0, ht = ht + Math.imul(kr, Hr) | 0, wt = wt + Math.imul(kr, Rr) | 0, wt = wt + Math.imul(vr, Hr) | 0, St = St + Math.imul(vr, Rr) | 0, ht = ht + Math.imul(br, Zr) | 0, wt = wt + Math.imul(br, Br) | 0, wt = wt + Math.imul(dr, Zr) | 0, St = St + Math.imul(dr, Br) | 0, ht = ht + Math.imul(Gt, Kt) | 0, wt = wt + Math.imul(Gt, Yt) | 0, wt = wt + Math.imul(zt, Kt) | 0, St = St + Math.imul(zt, Yt) | 0, ht = ht + Math.imul(Lt, jt) | 0, wt = wt + Math.imul(Lt, Jt) | 0, wt = wt + Math.imul(Ht, jt) | 0, St = St + Math.imul(Ht, Jt) | 0, ht = ht + Math.imul(qt, yr) | 0, wt = wt + Math.imul(qt, hr) | 0, wt = wt + Math.imul(Zt, yr) | 0, St = St + Math.imul(Zt, hr) | 0;
             var dn = (it + ht | 0) + ((wt & 8191) << 13) | 0;
-            it = (St + (wt >>> 13) | 0) + (dn >>> 26) | 0, dn &= 67108863, ht = Math.imul(Dt, ur), wt = Math.imul(Dt, or), wt = wt + Math.imul(Vt, ur) | 0, St = Math.imul(Vt, or), ht = ht + Math.imul(pr, Ir) | 0, wt = wt + Math.imul(pr, fr) | 0, wt = wt + Math.imul(Pt, Ir) | 0, St = St + Math.imul(Pt, fr) | 0, ht = ht + Math.imul(rr, Pr) | 0, wt = wt + Math.imul(rr, Mr) | 0, wt = wt + Math.imul(nr, Pr) | 0, St = St + Math.imul(nr, Mr) | 0, ht = ht + Math.imul(Ur, Vr) | 0, wt = wt + Math.imul(Ur, Sr) | 0, wt = wt + Math.imul(Cr, Vr) | 0, St = St + Math.imul(Cr, Sr) | 0, ht = ht + Math.imul(jr, Hr) | 0, wt = wt + Math.imul(jr, Rr) | 0, wt = wt + Math.imul(_r, Hr) | 0, St = St + Math.imul(_r, Rr) | 0, ht = ht + Math.imul(kr, Zr) | 0, wt = wt + Math.imul(kr, Br) | 0, wt = wt + Math.imul(vr, Zr) | 0, St = St + Math.imul(vr, Br) | 0, ht = ht + Math.imul(br, Kt) | 0, wt = wt + Math.imul(br, Yt) | 0, wt = wt + Math.imul(dr, Kt) | 0, St = St + Math.imul(dr, Yt) | 0, ht = ht + Math.imul(Gt, Ot) | 0, wt = wt + Math.imul(Gt, Jt) | 0, wt = wt + Math.imul(zt, Ot) | 0, St = St + Math.imul(zt, Jt) | 0, ht = ht + Math.imul(Lt, yr) | 0, wt = wt + Math.imul(Lt, hr) | 0, wt = wt + Math.imul(Ht, yr) | 0, St = St + Math.imul(Ht, hr) | 0, ht = ht + Math.imul(qt, zr) | 0, wt = wt + Math.imul(qt, Wr) | 0, wt = wt + Math.imul(Zt, zr) | 0, St = St + Math.imul(Zt, Wr) | 0;
+            it = (St + (wt >>> 13) | 0) + (dn >>> 26) | 0, dn &= 67108863, ht = Math.imul(Dt, ur), wt = Math.imul(Dt, or), wt = wt + Math.imul(Vt, ur) | 0, St = Math.imul(Vt, or), ht = ht + Math.imul(pr, Ir) | 0, wt = wt + Math.imul(pr, fr) | 0, wt = wt + Math.imul(Pt, Ir) | 0, St = St + Math.imul(Pt, fr) | 0, ht = ht + Math.imul(rr, Pr) | 0, wt = wt + Math.imul(rr, Mr) | 0, wt = wt + Math.imul(nr, Pr) | 0, St = St + Math.imul(nr, Mr) | 0, ht = ht + Math.imul(Ur, Vr) | 0, wt = wt + Math.imul(Ur, Sr) | 0, wt = wt + Math.imul(Cr, Vr) | 0, St = St + Math.imul(Cr, Sr) | 0, ht = ht + Math.imul(Fr, Hr) | 0, wt = wt + Math.imul(Fr, Rr) | 0, wt = wt + Math.imul(_r, Hr) | 0, St = St + Math.imul(_r, Rr) | 0, ht = ht + Math.imul(kr, Zr) | 0, wt = wt + Math.imul(kr, Br) | 0, wt = wt + Math.imul(vr, Zr) | 0, St = St + Math.imul(vr, Br) | 0, ht = ht + Math.imul(br, Kt) | 0, wt = wt + Math.imul(br, Yt) | 0, wt = wt + Math.imul(dr, Kt) | 0, St = St + Math.imul(dr, Yt) | 0, ht = ht + Math.imul(Gt, jt) | 0, wt = wt + Math.imul(Gt, Jt) | 0, wt = wt + Math.imul(zt, jt) | 0, St = St + Math.imul(zt, Jt) | 0, ht = ht + Math.imul(Lt, yr) | 0, wt = wt + Math.imul(Lt, hr) | 0, wt = wt + Math.imul(Ht, yr) | 0, St = St + Math.imul(Ht, hr) | 0, ht = ht + Math.imul(qt, zr) | 0, wt = wt + Math.imul(qt, Wr) | 0, wt = wt + Math.imul(Zt, zr) | 0, St = St + Math.imul(Zt, Wr) | 0;
             var tn = (it + ht | 0) + ((wt & 8191) << 13) | 0;
-            it = (St + (wt >>> 13) | 0) + (tn >>> 26) | 0, tn &= 67108863, ht = Math.imul(Dt, Ir), wt = Math.imul(Dt, fr), wt = wt + Math.imul(Vt, Ir) | 0, St = Math.imul(Vt, fr), ht = ht + Math.imul(pr, Pr) | 0, wt = wt + Math.imul(pr, Mr) | 0, wt = wt + Math.imul(Pt, Pr) | 0, St = St + Math.imul(Pt, Mr) | 0, ht = ht + Math.imul(rr, Vr) | 0, wt = wt + Math.imul(rr, Sr) | 0, wt = wt + Math.imul(nr, Vr) | 0, St = St + Math.imul(nr, Sr) | 0, ht = ht + Math.imul(Ur, Hr) | 0, wt = wt + Math.imul(Ur, Rr) | 0, wt = wt + Math.imul(Cr, Hr) | 0, St = St + Math.imul(Cr, Rr) | 0, ht = ht + Math.imul(jr, Zr) | 0, wt = wt + Math.imul(jr, Br) | 0, wt = wt + Math.imul(_r, Zr) | 0, St = St + Math.imul(_r, Br) | 0, ht = ht + Math.imul(kr, Kt) | 0, wt = wt + Math.imul(kr, Yt) | 0, wt = wt + Math.imul(vr, Kt) | 0, St = St + Math.imul(vr, Yt) | 0, ht = ht + Math.imul(br, Ot) | 0, wt = wt + Math.imul(br, Jt) | 0, wt = wt + Math.imul(dr, Ot) | 0, St = St + Math.imul(dr, Jt) | 0, ht = ht + Math.imul(Gt, yr) | 0, wt = wt + Math.imul(Gt, hr) | 0, wt = wt + Math.imul(zt, yr) | 0, St = St + Math.imul(zt, hr) | 0, ht = ht + Math.imul(Lt, zr) | 0, wt = wt + Math.imul(Lt, Wr) | 0, wt = wt + Math.imul(Ht, zr) | 0, St = St + Math.imul(Ht, Wr) | 0;
+            it = (St + (wt >>> 13) | 0) + (tn >>> 26) | 0, tn &= 67108863, ht = Math.imul(Dt, Ir), wt = Math.imul(Dt, fr), wt = wt + Math.imul(Vt, Ir) | 0, St = Math.imul(Vt, fr), ht = ht + Math.imul(pr, Pr) | 0, wt = wt + Math.imul(pr, Mr) | 0, wt = wt + Math.imul(Pt, Pr) | 0, St = St + Math.imul(Pt, Mr) | 0, ht = ht + Math.imul(rr, Vr) | 0, wt = wt + Math.imul(rr, Sr) | 0, wt = wt + Math.imul(nr, Vr) | 0, St = St + Math.imul(nr, Sr) | 0, ht = ht + Math.imul(Ur, Hr) | 0, wt = wt + Math.imul(Ur, Rr) | 0, wt = wt + Math.imul(Cr, Hr) | 0, St = St + Math.imul(Cr, Rr) | 0, ht = ht + Math.imul(Fr, Zr) | 0, wt = wt + Math.imul(Fr, Br) | 0, wt = wt + Math.imul(_r, Zr) | 0, St = St + Math.imul(_r, Br) | 0, ht = ht + Math.imul(kr, Kt) | 0, wt = wt + Math.imul(kr, Yt) | 0, wt = wt + Math.imul(vr, Kt) | 0, St = St + Math.imul(vr, Yt) | 0, ht = ht + Math.imul(br, jt) | 0, wt = wt + Math.imul(br, Jt) | 0, wt = wt + Math.imul(dr, jt) | 0, St = St + Math.imul(dr, Jt) | 0, ht = ht + Math.imul(Gt, yr) | 0, wt = wt + Math.imul(Gt, hr) | 0, wt = wt + Math.imul(zt, yr) | 0, St = St + Math.imul(zt, hr) | 0, ht = ht + Math.imul(Lt, zr) | 0, wt = wt + Math.imul(Lt, Wr) | 0, wt = wt + Math.imul(Ht, zr) | 0, St = St + Math.imul(Ht, Wr) | 0;
             var an = (it + ht | 0) + ((wt & 8191) << 13) | 0;
-            it = (St + (wt >>> 13) | 0) + (an >>> 26) | 0, an &= 67108863, ht = Math.imul(Dt, Pr), wt = Math.imul(Dt, Mr), wt = wt + Math.imul(Vt, Pr) | 0, St = Math.imul(Vt, Mr), ht = ht + Math.imul(pr, Vr) | 0, wt = wt + Math.imul(pr, Sr) | 0, wt = wt + Math.imul(Pt, Vr) | 0, St = St + Math.imul(Pt, Sr) | 0, ht = ht + Math.imul(rr, Hr) | 0, wt = wt + Math.imul(rr, Rr) | 0, wt = wt + Math.imul(nr, Hr) | 0, St = St + Math.imul(nr, Rr) | 0, ht = ht + Math.imul(Ur, Zr) | 0, wt = wt + Math.imul(Ur, Br) | 0, wt = wt + Math.imul(Cr, Zr) | 0, St = St + Math.imul(Cr, Br) | 0, ht = ht + Math.imul(jr, Kt) | 0, wt = wt + Math.imul(jr, Yt) | 0, wt = wt + Math.imul(_r, Kt) | 0, St = St + Math.imul(_r, Yt) | 0, ht = ht + Math.imul(kr, Ot) | 0, wt = wt + Math.imul(kr, Jt) | 0, wt = wt + Math.imul(vr, Ot) | 0, St = St + Math.imul(vr, Jt) | 0, ht = ht + Math.imul(br, yr) | 0, wt = wt + Math.imul(br, hr) | 0, wt = wt + Math.imul(dr, yr) | 0, St = St + Math.imul(dr, hr) | 0, ht = ht + Math.imul(Gt, zr) | 0, wt = wt + Math.imul(Gt, Wr) | 0, wt = wt + Math.imul(zt, zr) | 0, St = St + Math.imul(zt, Wr) | 0;
+            it = (St + (wt >>> 13) | 0) + (an >>> 26) | 0, an &= 67108863, ht = Math.imul(Dt, Pr), wt = Math.imul(Dt, Mr), wt = wt + Math.imul(Vt, Pr) | 0, St = Math.imul(Vt, Mr), ht = ht + Math.imul(pr, Vr) | 0, wt = wt + Math.imul(pr, Sr) | 0, wt = wt + Math.imul(Pt, Vr) | 0, St = St + Math.imul(Pt, Sr) | 0, ht = ht + Math.imul(rr, Hr) | 0, wt = wt + Math.imul(rr, Rr) | 0, wt = wt + Math.imul(nr, Hr) | 0, St = St + Math.imul(nr, Rr) | 0, ht = ht + Math.imul(Ur, Zr) | 0, wt = wt + Math.imul(Ur, Br) | 0, wt = wt + Math.imul(Cr, Zr) | 0, St = St + Math.imul(Cr, Br) | 0, ht = ht + Math.imul(Fr, Kt) | 0, wt = wt + Math.imul(Fr, Yt) | 0, wt = wt + Math.imul(_r, Kt) | 0, St = St + Math.imul(_r, Yt) | 0, ht = ht + Math.imul(kr, jt) | 0, wt = wt + Math.imul(kr, Jt) | 0, wt = wt + Math.imul(vr, jt) | 0, St = St + Math.imul(vr, Jt) | 0, ht = ht + Math.imul(br, yr) | 0, wt = wt + Math.imul(br, hr) | 0, wt = wt + Math.imul(dr, yr) | 0, St = St + Math.imul(dr, hr) | 0, ht = ht + Math.imul(Gt, zr) | 0, wt = wt + Math.imul(Gt, Wr) | 0, wt = wt + Math.imul(zt, zr) | 0, St = St + Math.imul(zt, Wr) | 0;
             var Yr = (it + ht | 0) + ((wt & 8191) << 13) | 0;
-            it = (St + (wt >>> 13) | 0) + (Yr >>> 26) | 0, Yr &= 67108863, ht = Math.imul(Dt, Vr), wt = Math.imul(Dt, Sr), wt = wt + Math.imul(Vt, Vr) | 0, St = Math.imul(Vt, Sr), ht = ht + Math.imul(pr, Hr) | 0, wt = wt + Math.imul(pr, Rr) | 0, wt = wt + Math.imul(Pt, Hr) | 0, St = St + Math.imul(Pt, Rr) | 0, ht = ht + Math.imul(rr, Zr) | 0, wt = wt + Math.imul(rr, Br) | 0, wt = wt + Math.imul(nr, Zr) | 0, St = St + Math.imul(nr, Br) | 0, ht = ht + Math.imul(Ur, Kt) | 0, wt = wt + Math.imul(Ur, Yt) | 0, wt = wt + Math.imul(Cr, Kt) | 0, St = St + Math.imul(Cr, Yt) | 0, ht = ht + Math.imul(jr, Ot) | 0, wt = wt + Math.imul(jr, Jt) | 0, wt = wt + Math.imul(_r, Ot) | 0, St = St + Math.imul(_r, Jt) | 0, ht = ht + Math.imul(kr, yr) | 0, wt = wt + Math.imul(kr, hr) | 0, wt = wt + Math.imul(vr, yr) | 0, St = St + Math.imul(vr, hr) | 0, ht = ht + Math.imul(br, zr) | 0, wt = wt + Math.imul(br, Wr) | 0, wt = wt + Math.imul(dr, zr) | 0, St = St + Math.imul(dr, Wr) | 0;
+            it = (St + (wt >>> 13) | 0) + (Yr >>> 26) | 0, Yr &= 67108863, ht = Math.imul(Dt, Vr), wt = Math.imul(Dt, Sr), wt = wt + Math.imul(Vt, Vr) | 0, St = Math.imul(Vt, Sr), ht = ht + Math.imul(pr, Hr) | 0, wt = wt + Math.imul(pr, Rr) | 0, wt = wt + Math.imul(Pt, Hr) | 0, St = St + Math.imul(Pt, Rr) | 0, ht = ht + Math.imul(rr, Zr) | 0, wt = wt + Math.imul(rr, Br) | 0, wt = wt + Math.imul(nr, Zr) | 0, St = St + Math.imul(nr, Br) | 0, ht = ht + Math.imul(Ur, Kt) | 0, wt = wt + Math.imul(Ur, Yt) | 0, wt = wt + Math.imul(Cr, Kt) | 0, St = St + Math.imul(Cr, Yt) | 0, ht = ht + Math.imul(Fr, jt) | 0, wt = wt + Math.imul(Fr, Jt) | 0, wt = wt + Math.imul(_r, jt) | 0, St = St + Math.imul(_r, Jt) | 0, ht = ht + Math.imul(kr, yr) | 0, wt = wt + Math.imul(kr, hr) | 0, wt = wt + Math.imul(vr, yr) | 0, St = St + Math.imul(vr, hr) | 0, ht = ht + Math.imul(br, zr) | 0, wt = wt + Math.imul(br, Wr) | 0, wt = wt + Math.imul(dr, zr) | 0, St = St + Math.imul(dr, Wr) | 0;
             var rn = (it + ht | 0) + ((wt & 8191) << 13) | 0;
-            it = (St + (wt >>> 13) | 0) + (rn >>> 26) | 0, rn &= 67108863, ht = Math.imul(Dt, Hr), wt = Math.imul(Dt, Rr), wt = wt + Math.imul(Vt, Hr) | 0, St = Math.imul(Vt, Rr), ht = ht + Math.imul(pr, Zr) | 0, wt = wt + Math.imul(pr, Br) | 0, wt = wt + Math.imul(Pt, Zr) | 0, St = St + Math.imul(Pt, Br) | 0, ht = ht + Math.imul(rr, Kt) | 0, wt = wt + Math.imul(rr, Yt) | 0, wt = wt + Math.imul(nr, Kt) | 0, St = St + Math.imul(nr, Yt) | 0, ht = ht + Math.imul(Ur, Ot) | 0, wt = wt + Math.imul(Ur, Jt) | 0, wt = wt + Math.imul(Cr, Ot) | 0, St = St + Math.imul(Cr, Jt) | 0, ht = ht + Math.imul(jr, yr) | 0, wt = wt + Math.imul(jr, hr) | 0, wt = wt + Math.imul(_r, yr) | 0, St = St + Math.imul(_r, hr) | 0, ht = ht + Math.imul(kr, zr) | 0, wt = wt + Math.imul(kr, Wr) | 0, wt = wt + Math.imul(vr, zr) | 0, St = St + Math.imul(vr, Wr) | 0;
+            it = (St + (wt >>> 13) | 0) + (rn >>> 26) | 0, rn &= 67108863, ht = Math.imul(Dt, Hr), wt = Math.imul(Dt, Rr), wt = wt + Math.imul(Vt, Hr) | 0, St = Math.imul(Vt, Rr), ht = ht + Math.imul(pr, Zr) | 0, wt = wt + Math.imul(pr, Br) | 0, wt = wt + Math.imul(Pt, Zr) | 0, St = St + Math.imul(Pt, Br) | 0, ht = ht + Math.imul(rr, Kt) | 0, wt = wt + Math.imul(rr, Yt) | 0, wt = wt + Math.imul(nr, Kt) | 0, St = St + Math.imul(nr, Yt) | 0, ht = ht + Math.imul(Ur, jt) | 0, wt = wt + Math.imul(Ur, Jt) | 0, wt = wt + Math.imul(Cr, jt) | 0, St = St + Math.imul(Cr, Jt) | 0, ht = ht + Math.imul(Fr, yr) | 0, wt = wt + Math.imul(Fr, hr) | 0, wt = wt + Math.imul(_r, yr) | 0, St = St + Math.imul(_r, hr) | 0, ht = ht + Math.imul(kr, zr) | 0, wt = wt + Math.imul(kr, Wr) | 0, wt = wt + Math.imul(vr, zr) | 0, St = St + Math.imul(vr, Wr) | 0;
             var nn = (it + ht | 0) + ((wt & 8191) << 13) | 0;
-            it = (St + (wt >>> 13) | 0) + (nn >>> 26) | 0, nn &= 67108863, ht = Math.imul(Dt, Zr), wt = Math.imul(Dt, Br), wt = wt + Math.imul(Vt, Zr) | 0, St = Math.imul(Vt, Br), ht = ht + Math.imul(pr, Kt) | 0, wt = wt + Math.imul(pr, Yt) | 0, wt = wt + Math.imul(Pt, Kt) | 0, St = St + Math.imul(Pt, Yt) | 0, ht = ht + Math.imul(rr, Ot) | 0, wt = wt + Math.imul(rr, Jt) | 0, wt = wt + Math.imul(nr, Ot) | 0, St = St + Math.imul(nr, Jt) | 0, ht = ht + Math.imul(Ur, yr) | 0, wt = wt + Math.imul(Ur, hr) | 0, wt = wt + Math.imul(Cr, yr) | 0, St = St + Math.imul(Cr, hr) | 0, ht = ht + Math.imul(jr, zr) | 0, wt = wt + Math.imul(jr, Wr) | 0, wt = wt + Math.imul(_r, zr) | 0, St = St + Math.imul(_r, Wr) | 0;
+            it = (St + (wt >>> 13) | 0) + (nn >>> 26) | 0, nn &= 67108863, ht = Math.imul(Dt, Zr), wt = Math.imul(Dt, Br), wt = wt + Math.imul(Vt, Zr) | 0, St = Math.imul(Vt, Br), ht = ht + Math.imul(pr, Kt) | 0, wt = wt + Math.imul(pr, Yt) | 0, wt = wt + Math.imul(Pt, Kt) | 0, St = St + Math.imul(Pt, Yt) | 0, ht = ht + Math.imul(rr, jt) | 0, wt = wt + Math.imul(rr, Jt) | 0, wt = wt + Math.imul(nr, jt) | 0, St = St + Math.imul(nr, Jt) | 0, ht = ht + Math.imul(Ur, yr) | 0, wt = wt + Math.imul(Ur, hr) | 0, wt = wt + Math.imul(Cr, yr) | 0, St = St + Math.imul(Cr, hr) | 0, ht = ht + Math.imul(Fr, zr) | 0, wt = wt + Math.imul(Fr, Wr) | 0, wt = wt + Math.imul(_r, zr) | 0, St = St + Math.imul(_r, Wr) | 0;
             var Gr = (it + ht | 0) + ((wt & 8191) << 13) | 0;
-            it = (St + (wt >>> 13) | 0) + (Gr >>> 26) | 0, Gr &= 67108863, ht = Math.imul(Dt, Kt), wt = Math.imul(Dt, Yt), wt = wt + Math.imul(Vt, Kt) | 0, St = Math.imul(Vt, Yt), ht = ht + Math.imul(pr, Ot) | 0, wt = wt + Math.imul(pr, Jt) | 0, wt = wt + Math.imul(Pt, Ot) | 0, St = St + Math.imul(Pt, Jt) | 0, ht = ht + Math.imul(rr, yr) | 0, wt = wt + Math.imul(rr, hr) | 0, wt = wt + Math.imul(nr, yr) | 0, St = St + Math.imul(nr, hr) | 0, ht = ht + Math.imul(Ur, zr) | 0, wt = wt + Math.imul(Ur, Wr) | 0, wt = wt + Math.imul(Cr, zr) | 0, St = St + Math.imul(Cr, Wr) | 0;
+            it = (St + (wt >>> 13) | 0) + (Gr >>> 26) | 0, Gr &= 67108863, ht = Math.imul(Dt, Kt), wt = Math.imul(Dt, Yt), wt = wt + Math.imul(Vt, Kt) | 0, St = Math.imul(Vt, Yt), ht = ht + Math.imul(pr, jt) | 0, wt = wt + Math.imul(pr, Jt) | 0, wt = wt + Math.imul(Pt, jt) | 0, St = St + Math.imul(Pt, Jt) | 0, ht = ht + Math.imul(rr, yr) | 0, wt = wt + Math.imul(rr, hr) | 0, wt = wt + Math.imul(nr, yr) | 0, St = St + Math.imul(nr, hr) | 0, ht = ht + Math.imul(Ur, zr) | 0, wt = wt + Math.imul(Ur, Wr) | 0, wt = wt + Math.imul(Cr, zr) | 0, St = St + Math.imul(Cr, Wr) | 0;
             var Dr = (it + ht | 0) + ((wt & 8191) << 13) | 0;
-            it = (St + (wt >>> 13) | 0) + (Dr >>> 26) | 0, Dr &= 67108863, ht = Math.imul(Dt, Ot), wt = Math.imul(Dt, Jt), wt = wt + Math.imul(Vt, Ot) | 0, St = Math.imul(Vt, Jt), ht = ht + Math.imul(pr, yr) | 0, wt = wt + Math.imul(pr, hr) | 0, wt = wt + Math.imul(Pt, yr) | 0, St = St + Math.imul(Pt, hr) | 0, ht = ht + Math.imul(rr, zr) | 0, wt = wt + Math.imul(rr, Wr) | 0, wt = wt + Math.imul(nr, zr) | 0, St = St + Math.imul(nr, Wr) | 0;
-            var Fr = (it + ht | 0) + ((wt & 8191) << 13) | 0;
-            it = (St + (wt >>> 13) | 0) + (Fr >>> 26) | 0, Fr &= 67108863, ht = Math.imul(Dt, yr), wt = Math.imul(Dt, hr), wt = wt + Math.imul(Vt, yr) | 0, St = Math.imul(Vt, hr), ht = ht + Math.imul(pr, zr) | 0, wt = wt + Math.imul(pr, Wr) | 0, wt = wt + Math.imul(Pt, zr) | 0, St = St + Math.imul(Pt, Wr) | 0;
+            it = (St + (wt >>> 13) | 0) + (Dr >>> 26) | 0, Dr &= 67108863, ht = Math.imul(Dt, jt), wt = Math.imul(Dt, Jt), wt = wt + Math.imul(Vt, jt) | 0, St = Math.imul(Vt, Jt), ht = ht + Math.imul(pr, yr) | 0, wt = wt + Math.imul(pr, hr) | 0, wt = wt + Math.imul(Pt, yr) | 0, St = St + Math.imul(Pt, hr) | 0, ht = ht + Math.imul(rr, zr) | 0, wt = wt + Math.imul(rr, Wr) | 0, wt = wt + Math.imul(nr, zr) | 0, St = St + Math.imul(nr, Wr) | 0;
+            var Or = (it + ht | 0) + ((wt & 8191) << 13) | 0;
+            it = (St + (wt >>> 13) | 0) + (Or >>> 26) | 0, Or &= 67108863, ht = Math.imul(Dt, yr), wt = Math.imul(Dt, hr), wt = wt + Math.imul(Vt, yr) | 0, St = Math.imul(Vt, hr), ht = ht + Math.imul(pr, zr) | 0, wt = wt + Math.imul(pr, Wr) | 0, wt = wt + Math.imul(Pt, zr) | 0, St = St + Math.imul(Pt, Wr) | 0;
             var Xr = (it + ht | 0) + ((wt & 8191) << 13) | 0;
             it = (St + (wt >>> 13) | 0) + (Xr >>> 26) | 0, Xr &= 67108863, ht = Math.imul(Dt, zr), wt = Math.imul(Dt, Wr), wt = wt + Math.imul(Vt, zr) | 0, St = Math.imul(Vt, Wr);
             var Kr = (it + ht | 0) + ((wt & 8191) << 13) | 0;
-            return it = (St + (wt >>> 13) | 0) + (Kr >>> 26) | 0, Kr &= 67108863, at[0] = gn, at[1] = Jr, at[2] = ln, at[3] = un, at[4] = mn, at[5] = pn, at[6] = fn, at[7] = hn, at[8] = dn, at[9] = tn, at[10] = an, at[11] = Yr, at[12] = rn, at[13] = nn, at[14] = Gr, at[15] = Dr, at[16] = Fr, at[17] = Xr, at[18] = Kr, it !== 0 && (at[19] = it, ut.length++), ut;
+            return it = (St + (wt >>> 13) | 0) + (Kr >>> 26) | 0, Kr &= 67108863, at[0] = gn, at[1] = Jr, at[2] = ln, at[3] = un, at[4] = mn, at[5] = pn, at[6] = fn, at[7] = hn, at[8] = dn, at[9] = tn, at[10] = an, at[11] = Yr, at[12] = rn, at[13] = nn, at[14] = Gr, at[15] = Dr, at[16] = Or, at[17] = Xr, at[18] = Kr, it !== 0 && (at[19] = it, ut.length++), ut;
           };
           Math.imul || (Bt = At);
           function $t(tt, nt, ot) {
@@ -22664,28 +22664,28 @@ Use Chrome, Firefox or Internet Explorer 11`);
             p192: null,
             p25519: null
           };
-          function jt(tt, nt) {
+          function Ot(tt, nt) {
             this.name = tt, this.p = new j(nt, 16), this.n = this.p.bitLength(), this.k = new j(1).iushln(this.n).isub(this.p), this.tmp = this._tmp();
           }
-          jt.prototype._tmp = function() {
+          Ot.prototype._tmp = function() {
             var nt = new j(null);
             return nt.words = new Array(Math.ceil(this.n / 13)), nt;
-          }, jt.prototype.ireduce = function(nt) {
+          }, Ot.prototype.ireduce = function(nt) {
             var ot = nt, ut;
             do
               this.split(ot, this.tmp), ot = this.imulK(ot), ot = ot.iadd(this.tmp), ut = ot.bitLength();
             while (ut > this.n);
             var mt = ut < this.n ? -1 : ot.ucmp(this.p);
             return mt === 0 ? (ot.words[0] = 0, ot.length = 1) : mt > 0 ? ot.isub(this.p) : ot.strip !== void 0 ? ot.strip() : ot._strip(), ot;
-          }, jt.prototype.split = function(nt, ot) {
+          }, Ot.prototype.split = function(nt, ot) {
             nt.iushrn(this.n, 0, ot);
-          }, jt.prototype.imulK = function(nt) {
+          }, Ot.prototype.imulK = function(nt) {
             return nt.imul(this.k);
           };
           function Xt() {
-            jt.call(this, "k256", "ffffffff ffffffff ffffffff ffffffff ffffffff ffffffff fffffffe fffffc2f");
+            Ot.call(this, "k256", "ffffffff ffffffff ffffffff ffffffff ffffffff ffffffff fffffffe fffffc2f");
           }
-          rt(Xt, jt), Xt.prototype.split = function(nt, ot) {
+          rt(Xt, Ot), Xt.prototype.split = function(nt, ot) {
             for (var ut = 4194303, mt = Math.min(nt.length, 9), vt = 0; vt < mt; vt++) ot.words[vt] = nt.words[vt];
             if (ot.length = mt, nt.length <= 9) {
               nt.words[0] = 0, nt.length = 1;
@@ -22706,17 +22706,17 @@ Use Chrome, Firefox or Internet Explorer 11`);
             return nt.words[nt.length - 1] === 0 && (nt.length--, nt.words[nt.length - 1] === 0 && nt.length--), nt;
           };
           function Qt() {
-            jt.call(this, "p224", "ffffffff ffffffff ffffffff ffffffff 00000000 00000000 00000001");
+            Ot.call(this, "p224", "ffffffff ffffffff ffffffff ffffffff 00000000 00000000 00000001");
           }
-          rt(Qt, jt);
+          rt(Qt, Ot);
           function Wt() {
-            jt.call(this, "p192", "ffffffff ffffffff ffffffff fffffffe ffffffff ffffffff");
+            Ot.call(this, "p192", "ffffffff ffffffff ffffffff fffffffe ffffffff ffffffff");
           }
-          rt(Wt, jt);
+          rt(Wt, Ot);
           function kt() {
-            jt.call(this, "25519", "7fffffffffffffff ffffffffffffffff ffffffffffffffff ffffffffffffffed");
+            Ot.call(this, "25519", "7fffffffffffffff ffffffffffffffff ffffffffffffffff ffffffffffffffed");
           }
-          rt(kt, jt), kt.prototype.imulK = function(nt) {
+          rt(kt, Ot), kt.prototype.imulK = function(nt) {
             for (var ot = 0, ut = 0; ut < nt.length; ut++) {
               var mt = (nt.words[ut] | 0) * 19 + ot, vt = mt & 67108863;
               mt >>>= 26, nt.words[ut] = vt, ot = mt;
@@ -23271,7 +23271,7 @@ Use Chrome, Firefox or Internet Explorer 11`);
             return at !== 0 ? tt.words[it] = at | 0 : tt.length--, tt.strip();
           }
           var Et = function(et, tt, nt) {
-            var ot = et.words, ut = tt.words, mt = nt.words, vt = 0, at, it, ht, wt = ot[0] | 0, St = wt & 8191, Nt = wt >>> 13, qt = ot[1] | 0, Zt = qt & 8191, Ut = qt >>> 13, Lt = ot[2] | 0, Ht = Lt & 8191, tr = Lt >>> 13, Gt = ot[3] | 0, zt = Gt & 8191, sr = Gt >>> 13, br = ot[4] | 0, dr = br & 8191, xr = br >>> 13, kr = ot[5] | 0, vr = kr & 8191, gr = kr >>> 13, jr = ot[6] | 0, _r = jr & 8191, Tr = jr >>> 13, Ur = ot[7] | 0, Cr = Ur & 8191, lr = Ur >>> 13, rr = ot[8] | 0, nr = rr & 8191, ar = rr >>> 13, pr = ot[9] | 0, Pt = pr & 8191, It = pr >>> 13, Dt = ut[0] | 0, Vt = Dt & 8191, ir = Dt >>> 13, ur = ut[1] | 0, or = ur & 8191, wr = ur >>> 13, Ir = ut[2] | 0, fr = Ir & 8191, $r = Ir >>> 13, Pr = ut[3] | 0, Mr = Pr & 8191, Nr = Pr >>> 13, Vr = ut[4] | 0, Sr = Vr & 8191, Or = Vr >>> 13, Hr = ut[5] | 0, Rr = Hr & 8191, Lr = Hr >>> 13, Zr = ut[6] | 0, Br = Zr & 8191, qr = Zr >>> 13, Kt = ut[7] | 0, Yt = Kt & 8191, er = Kt >>> 13, Ot = ut[8] | 0, Jt = Ot & 8191, cr = Ot >>> 13, yr = ut[9] | 0, hr = yr & 8191, Er = yr >>> 13;
+            var ot = et.words, ut = tt.words, mt = nt.words, vt = 0, at, it, ht, wt = ot[0] | 0, St = wt & 8191, Nt = wt >>> 13, qt = ot[1] | 0, Zt = qt & 8191, Ut = qt >>> 13, Lt = ot[2] | 0, Ht = Lt & 8191, tr = Lt >>> 13, Gt = ot[3] | 0, zt = Gt & 8191, sr = Gt >>> 13, br = ot[4] | 0, dr = br & 8191, xr = br >>> 13, kr = ot[5] | 0, vr = kr & 8191, gr = kr >>> 13, Fr = ot[6] | 0, _r = Fr & 8191, Tr = Fr >>> 13, Ur = ot[7] | 0, Cr = Ur & 8191, lr = Ur >>> 13, rr = ot[8] | 0, nr = rr & 8191, ar = rr >>> 13, pr = ot[9] | 0, Pt = pr & 8191, It = pr >>> 13, Dt = ut[0] | 0, Vt = Dt & 8191, ir = Dt >>> 13, ur = ut[1] | 0, or = ur & 8191, wr = ur >>> 13, Ir = ut[2] | 0, fr = Ir & 8191, $r = Ir >>> 13, Pr = ut[3] | 0, Mr = Pr & 8191, Nr = Pr >>> 13, Vr = ut[4] | 0, Sr = Vr & 8191, jr = Vr >>> 13, Hr = ut[5] | 0, Rr = Hr & 8191, Lr = Hr >>> 13, Zr = ut[6] | 0, Br = Zr & 8191, qr = Zr >>> 13, Kt = ut[7] | 0, Yt = Kt & 8191, er = Kt >>> 13, jt = ut[8] | 0, Jt = jt & 8191, cr = jt >>> 13, yr = ut[9] | 0, hr = yr & 8191, Er = yr >>> 13;
             nt.negative = et.negative ^ tt.negative, nt.length = 19, at = Math.imul(St, Vt), it = Math.imul(St, ir), it = it + Math.imul(Nt, Vt) | 0, ht = Math.imul(Nt, ir);
             var zr = (vt + at | 0) + ((it & 8191) << 13) | 0;
             vt = (ht + (it >>> 13) | 0) + (zr >>> 26) | 0, zr &= 67108863, at = Math.imul(Zt, Vt), it = Math.imul(Zt, ir), it = it + Math.imul(Ut, Vt) | 0, ht = Math.imul(Ut, ir), at = at + Math.imul(St, or) | 0, it = it + Math.imul(St, wr) | 0, it = it + Math.imul(Nt, or) | 0, ht = ht + Math.imul(Nt, wr) | 0;
@@ -23280,25 +23280,25 @@ Use Chrome, Firefox or Internet Explorer 11`);
             var gn = (vt + at | 0) + ((it & 8191) << 13) | 0;
             vt = (ht + (it >>> 13) | 0) + (gn >>> 26) | 0, gn &= 67108863, at = Math.imul(zt, Vt), it = Math.imul(zt, ir), it = it + Math.imul(sr, Vt) | 0, ht = Math.imul(sr, ir), at = at + Math.imul(Ht, or) | 0, it = it + Math.imul(Ht, wr) | 0, it = it + Math.imul(tr, or) | 0, ht = ht + Math.imul(tr, wr) | 0, at = at + Math.imul(Zt, fr) | 0, it = it + Math.imul(Zt, $r) | 0, it = it + Math.imul(Ut, fr) | 0, ht = ht + Math.imul(Ut, $r) | 0, at = at + Math.imul(St, Mr) | 0, it = it + Math.imul(St, Nr) | 0, it = it + Math.imul(Nt, Mr) | 0, ht = ht + Math.imul(Nt, Nr) | 0;
             var Jr = (vt + at | 0) + ((it & 8191) << 13) | 0;
-            vt = (ht + (it >>> 13) | 0) + (Jr >>> 26) | 0, Jr &= 67108863, at = Math.imul(dr, Vt), it = Math.imul(dr, ir), it = it + Math.imul(xr, Vt) | 0, ht = Math.imul(xr, ir), at = at + Math.imul(zt, or) | 0, it = it + Math.imul(zt, wr) | 0, it = it + Math.imul(sr, or) | 0, ht = ht + Math.imul(sr, wr) | 0, at = at + Math.imul(Ht, fr) | 0, it = it + Math.imul(Ht, $r) | 0, it = it + Math.imul(tr, fr) | 0, ht = ht + Math.imul(tr, $r) | 0, at = at + Math.imul(Zt, Mr) | 0, it = it + Math.imul(Zt, Nr) | 0, it = it + Math.imul(Ut, Mr) | 0, ht = ht + Math.imul(Ut, Nr) | 0, at = at + Math.imul(St, Sr) | 0, it = it + Math.imul(St, Or) | 0, it = it + Math.imul(Nt, Sr) | 0, ht = ht + Math.imul(Nt, Or) | 0;
+            vt = (ht + (it >>> 13) | 0) + (Jr >>> 26) | 0, Jr &= 67108863, at = Math.imul(dr, Vt), it = Math.imul(dr, ir), it = it + Math.imul(xr, Vt) | 0, ht = Math.imul(xr, ir), at = at + Math.imul(zt, or) | 0, it = it + Math.imul(zt, wr) | 0, it = it + Math.imul(sr, or) | 0, ht = ht + Math.imul(sr, wr) | 0, at = at + Math.imul(Ht, fr) | 0, it = it + Math.imul(Ht, $r) | 0, it = it + Math.imul(tr, fr) | 0, ht = ht + Math.imul(tr, $r) | 0, at = at + Math.imul(Zt, Mr) | 0, it = it + Math.imul(Zt, Nr) | 0, it = it + Math.imul(Ut, Mr) | 0, ht = ht + Math.imul(Ut, Nr) | 0, at = at + Math.imul(St, Sr) | 0, it = it + Math.imul(St, jr) | 0, it = it + Math.imul(Nt, Sr) | 0, ht = ht + Math.imul(Nt, jr) | 0;
             var ln = (vt + at | 0) + ((it & 8191) << 13) | 0;
-            vt = (ht + (it >>> 13) | 0) + (ln >>> 26) | 0, ln &= 67108863, at = Math.imul(vr, Vt), it = Math.imul(vr, ir), it = it + Math.imul(gr, Vt) | 0, ht = Math.imul(gr, ir), at = at + Math.imul(dr, or) | 0, it = it + Math.imul(dr, wr) | 0, it = it + Math.imul(xr, or) | 0, ht = ht + Math.imul(xr, wr) | 0, at = at + Math.imul(zt, fr) | 0, it = it + Math.imul(zt, $r) | 0, it = it + Math.imul(sr, fr) | 0, ht = ht + Math.imul(sr, $r) | 0, at = at + Math.imul(Ht, Mr) | 0, it = it + Math.imul(Ht, Nr) | 0, it = it + Math.imul(tr, Mr) | 0, ht = ht + Math.imul(tr, Nr) | 0, at = at + Math.imul(Zt, Sr) | 0, it = it + Math.imul(Zt, Or) | 0, it = it + Math.imul(Ut, Sr) | 0, ht = ht + Math.imul(Ut, Or) | 0, at = at + Math.imul(St, Rr) | 0, it = it + Math.imul(St, Lr) | 0, it = it + Math.imul(Nt, Rr) | 0, ht = ht + Math.imul(Nt, Lr) | 0;
+            vt = (ht + (it >>> 13) | 0) + (ln >>> 26) | 0, ln &= 67108863, at = Math.imul(vr, Vt), it = Math.imul(vr, ir), it = it + Math.imul(gr, Vt) | 0, ht = Math.imul(gr, ir), at = at + Math.imul(dr, or) | 0, it = it + Math.imul(dr, wr) | 0, it = it + Math.imul(xr, or) | 0, ht = ht + Math.imul(xr, wr) | 0, at = at + Math.imul(zt, fr) | 0, it = it + Math.imul(zt, $r) | 0, it = it + Math.imul(sr, fr) | 0, ht = ht + Math.imul(sr, $r) | 0, at = at + Math.imul(Ht, Mr) | 0, it = it + Math.imul(Ht, Nr) | 0, it = it + Math.imul(tr, Mr) | 0, ht = ht + Math.imul(tr, Nr) | 0, at = at + Math.imul(Zt, Sr) | 0, it = it + Math.imul(Zt, jr) | 0, it = it + Math.imul(Ut, Sr) | 0, ht = ht + Math.imul(Ut, jr) | 0, at = at + Math.imul(St, Rr) | 0, it = it + Math.imul(St, Lr) | 0, it = it + Math.imul(Nt, Rr) | 0, ht = ht + Math.imul(Nt, Lr) | 0;
             var un = (vt + at | 0) + ((it & 8191) << 13) | 0;
-            vt = (ht + (it >>> 13) | 0) + (un >>> 26) | 0, un &= 67108863, at = Math.imul(_r, Vt), it = Math.imul(_r, ir), it = it + Math.imul(Tr, Vt) | 0, ht = Math.imul(Tr, ir), at = at + Math.imul(vr, or) | 0, it = it + Math.imul(vr, wr) | 0, it = it + Math.imul(gr, or) | 0, ht = ht + Math.imul(gr, wr) | 0, at = at + Math.imul(dr, fr) | 0, it = it + Math.imul(dr, $r) | 0, it = it + Math.imul(xr, fr) | 0, ht = ht + Math.imul(xr, $r) | 0, at = at + Math.imul(zt, Mr) | 0, it = it + Math.imul(zt, Nr) | 0, it = it + Math.imul(sr, Mr) | 0, ht = ht + Math.imul(sr, Nr) | 0, at = at + Math.imul(Ht, Sr) | 0, it = it + Math.imul(Ht, Or) | 0, it = it + Math.imul(tr, Sr) | 0, ht = ht + Math.imul(tr, Or) | 0, at = at + Math.imul(Zt, Rr) | 0, it = it + Math.imul(Zt, Lr) | 0, it = it + Math.imul(Ut, Rr) | 0, ht = ht + Math.imul(Ut, Lr) | 0, at = at + Math.imul(St, Br) | 0, it = it + Math.imul(St, qr) | 0, it = it + Math.imul(Nt, Br) | 0, ht = ht + Math.imul(Nt, qr) | 0;
+            vt = (ht + (it >>> 13) | 0) + (un >>> 26) | 0, un &= 67108863, at = Math.imul(_r, Vt), it = Math.imul(_r, ir), it = it + Math.imul(Tr, Vt) | 0, ht = Math.imul(Tr, ir), at = at + Math.imul(vr, or) | 0, it = it + Math.imul(vr, wr) | 0, it = it + Math.imul(gr, or) | 0, ht = ht + Math.imul(gr, wr) | 0, at = at + Math.imul(dr, fr) | 0, it = it + Math.imul(dr, $r) | 0, it = it + Math.imul(xr, fr) | 0, ht = ht + Math.imul(xr, $r) | 0, at = at + Math.imul(zt, Mr) | 0, it = it + Math.imul(zt, Nr) | 0, it = it + Math.imul(sr, Mr) | 0, ht = ht + Math.imul(sr, Nr) | 0, at = at + Math.imul(Ht, Sr) | 0, it = it + Math.imul(Ht, jr) | 0, it = it + Math.imul(tr, Sr) | 0, ht = ht + Math.imul(tr, jr) | 0, at = at + Math.imul(Zt, Rr) | 0, it = it + Math.imul(Zt, Lr) | 0, it = it + Math.imul(Ut, Rr) | 0, ht = ht + Math.imul(Ut, Lr) | 0, at = at + Math.imul(St, Br) | 0, it = it + Math.imul(St, qr) | 0, it = it + Math.imul(Nt, Br) | 0, ht = ht + Math.imul(Nt, qr) | 0;
             var mn = (vt + at | 0) + ((it & 8191) << 13) | 0;
-            vt = (ht + (it >>> 13) | 0) + (mn >>> 26) | 0, mn &= 67108863, at = Math.imul(Cr, Vt), it = Math.imul(Cr, ir), it = it + Math.imul(lr, Vt) | 0, ht = Math.imul(lr, ir), at = at + Math.imul(_r, or) | 0, it = it + Math.imul(_r, wr) | 0, it = it + Math.imul(Tr, or) | 0, ht = ht + Math.imul(Tr, wr) | 0, at = at + Math.imul(vr, fr) | 0, it = it + Math.imul(vr, $r) | 0, it = it + Math.imul(gr, fr) | 0, ht = ht + Math.imul(gr, $r) | 0, at = at + Math.imul(dr, Mr) | 0, it = it + Math.imul(dr, Nr) | 0, it = it + Math.imul(xr, Mr) | 0, ht = ht + Math.imul(xr, Nr) | 0, at = at + Math.imul(zt, Sr) | 0, it = it + Math.imul(zt, Or) | 0, it = it + Math.imul(sr, Sr) | 0, ht = ht + Math.imul(sr, Or) | 0, at = at + Math.imul(Ht, Rr) | 0, it = it + Math.imul(Ht, Lr) | 0, it = it + Math.imul(tr, Rr) | 0, ht = ht + Math.imul(tr, Lr) | 0, at = at + Math.imul(Zt, Br) | 0, it = it + Math.imul(Zt, qr) | 0, it = it + Math.imul(Ut, Br) | 0, ht = ht + Math.imul(Ut, qr) | 0, at = at + Math.imul(St, Yt) | 0, it = it + Math.imul(St, er) | 0, it = it + Math.imul(Nt, Yt) | 0, ht = ht + Math.imul(Nt, er) | 0;
+            vt = (ht + (it >>> 13) | 0) + (mn >>> 26) | 0, mn &= 67108863, at = Math.imul(Cr, Vt), it = Math.imul(Cr, ir), it = it + Math.imul(lr, Vt) | 0, ht = Math.imul(lr, ir), at = at + Math.imul(_r, or) | 0, it = it + Math.imul(_r, wr) | 0, it = it + Math.imul(Tr, or) | 0, ht = ht + Math.imul(Tr, wr) | 0, at = at + Math.imul(vr, fr) | 0, it = it + Math.imul(vr, $r) | 0, it = it + Math.imul(gr, fr) | 0, ht = ht + Math.imul(gr, $r) | 0, at = at + Math.imul(dr, Mr) | 0, it = it + Math.imul(dr, Nr) | 0, it = it + Math.imul(xr, Mr) | 0, ht = ht + Math.imul(xr, Nr) | 0, at = at + Math.imul(zt, Sr) | 0, it = it + Math.imul(zt, jr) | 0, it = it + Math.imul(sr, Sr) | 0, ht = ht + Math.imul(sr, jr) | 0, at = at + Math.imul(Ht, Rr) | 0, it = it + Math.imul(Ht, Lr) | 0, it = it + Math.imul(tr, Rr) | 0, ht = ht + Math.imul(tr, Lr) | 0, at = at + Math.imul(Zt, Br) | 0, it = it + Math.imul(Zt, qr) | 0, it = it + Math.imul(Ut, Br) | 0, ht = ht + Math.imul(Ut, qr) | 0, at = at + Math.imul(St, Yt) | 0, it = it + Math.imul(St, er) | 0, it = it + Math.imul(Nt, Yt) | 0, ht = ht + Math.imul(Nt, er) | 0;
             var pn = (vt + at | 0) + ((it & 8191) << 13) | 0;
-            vt = (ht + (it >>> 13) | 0) + (pn >>> 26) | 0, pn &= 67108863, at = Math.imul(nr, Vt), it = Math.imul(nr, ir), it = it + Math.imul(ar, Vt) | 0, ht = Math.imul(ar, ir), at = at + Math.imul(Cr, or) | 0, it = it + Math.imul(Cr, wr) | 0, it = it + Math.imul(lr, or) | 0, ht = ht + Math.imul(lr, wr) | 0, at = at + Math.imul(_r, fr) | 0, it = it + Math.imul(_r, $r) | 0, it = it + Math.imul(Tr, fr) | 0, ht = ht + Math.imul(Tr, $r) | 0, at = at + Math.imul(vr, Mr) | 0, it = it + Math.imul(vr, Nr) | 0, it = it + Math.imul(gr, Mr) | 0, ht = ht + Math.imul(gr, Nr) | 0, at = at + Math.imul(dr, Sr) | 0, it = it + Math.imul(dr, Or) | 0, it = it + Math.imul(xr, Sr) | 0, ht = ht + Math.imul(xr, Or) | 0, at = at + Math.imul(zt, Rr) | 0, it = it + Math.imul(zt, Lr) | 0, it = it + Math.imul(sr, Rr) | 0, ht = ht + Math.imul(sr, Lr) | 0, at = at + Math.imul(Ht, Br) | 0, it = it + Math.imul(Ht, qr) | 0, it = it + Math.imul(tr, Br) | 0, ht = ht + Math.imul(tr, qr) | 0, at = at + Math.imul(Zt, Yt) | 0, it = it + Math.imul(Zt, er) | 0, it = it + Math.imul(Ut, Yt) | 0, ht = ht + Math.imul(Ut, er) | 0, at = at + Math.imul(St, Jt) | 0, it = it + Math.imul(St, cr) | 0, it = it + Math.imul(Nt, Jt) | 0, ht = ht + Math.imul(Nt, cr) | 0;
+            vt = (ht + (it >>> 13) | 0) + (pn >>> 26) | 0, pn &= 67108863, at = Math.imul(nr, Vt), it = Math.imul(nr, ir), it = it + Math.imul(ar, Vt) | 0, ht = Math.imul(ar, ir), at = at + Math.imul(Cr, or) | 0, it = it + Math.imul(Cr, wr) | 0, it = it + Math.imul(lr, or) | 0, ht = ht + Math.imul(lr, wr) | 0, at = at + Math.imul(_r, fr) | 0, it = it + Math.imul(_r, $r) | 0, it = it + Math.imul(Tr, fr) | 0, ht = ht + Math.imul(Tr, $r) | 0, at = at + Math.imul(vr, Mr) | 0, it = it + Math.imul(vr, Nr) | 0, it = it + Math.imul(gr, Mr) | 0, ht = ht + Math.imul(gr, Nr) | 0, at = at + Math.imul(dr, Sr) | 0, it = it + Math.imul(dr, jr) | 0, it = it + Math.imul(xr, Sr) | 0, ht = ht + Math.imul(xr, jr) | 0, at = at + Math.imul(zt, Rr) | 0, it = it + Math.imul(zt, Lr) | 0, it = it + Math.imul(sr, Rr) | 0, ht = ht + Math.imul(sr, Lr) | 0, at = at + Math.imul(Ht, Br) | 0, it = it + Math.imul(Ht, qr) | 0, it = it + Math.imul(tr, Br) | 0, ht = ht + Math.imul(tr, qr) | 0, at = at + Math.imul(Zt, Yt) | 0, it = it + Math.imul(Zt, er) | 0, it = it + Math.imul(Ut, Yt) | 0, ht = ht + Math.imul(Ut, er) | 0, at = at + Math.imul(St, Jt) | 0, it = it + Math.imul(St, cr) | 0, it = it + Math.imul(Nt, Jt) | 0, ht = ht + Math.imul(Nt, cr) | 0;
             var fn = (vt + at | 0) + ((it & 8191) << 13) | 0;
-            vt = (ht + (it >>> 13) | 0) + (fn >>> 26) | 0, fn &= 67108863, at = Math.imul(Pt, Vt), it = Math.imul(Pt, ir), it = it + Math.imul(It, Vt) | 0, ht = Math.imul(It, ir), at = at + Math.imul(nr, or) | 0, it = it + Math.imul(nr, wr) | 0, it = it + Math.imul(ar, or) | 0, ht = ht + Math.imul(ar, wr) | 0, at = at + Math.imul(Cr, fr) | 0, it = it + Math.imul(Cr, $r) | 0, it = it + Math.imul(lr, fr) | 0, ht = ht + Math.imul(lr, $r) | 0, at = at + Math.imul(_r, Mr) | 0, it = it + Math.imul(_r, Nr) | 0, it = it + Math.imul(Tr, Mr) | 0, ht = ht + Math.imul(Tr, Nr) | 0, at = at + Math.imul(vr, Sr) | 0, it = it + Math.imul(vr, Or) | 0, it = it + Math.imul(gr, Sr) | 0, ht = ht + Math.imul(gr, Or) | 0, at = at + Math.imul(dr, Rr) | 0, it = it + Math.imul(dr, Lr) | 0, it = it + Math.imul(xr, Rr) | 0, ht = ht + Math.imul(xr, Lr) | 0, at = at + Math.imul(zt, Br) | 0, it = it + Math.imul(zt, qr) | 0, it = it + Math.imul(sr, Br) | 0, ht = ht + Math.imul(sr, qr) | 0, at = at + Math.imul(Ht, Yt) | 0, it = it + Math.imul(Ht, er) | 0, it = it + Math.imul(tr, Yt) | 0, ht = ht + Math.imul(tr, er) | 0, at = at + Math.imul(Zt, Jt) | 0, it = it + Math.imul(Zt, cr) | 0, it = it + Math.imul(Ut, Jt) | 0, ht = ht + Math.imul(Ut, cr) | 0, at = at + Math.imul(St, hr) | 0, it = it + Math.imul(St, Er) | 0, it = it + Math.imul(Nt, hr) | 0, ht = ht + Math.imul(Nt, Er) | 0;
+            vt = (ht + (it >>> 13) | 0) + (fn >>> 26) | 0, fn &= 67108863, at = Math.imul(Pt, Vt), it = Math.imul(Pt, ir), it = it + Math.imul(It, Vt) | 0, ht = Math.imul(It, ir), at = at + Math.imul(nr, or) | 0, it = it + Math.imul(nr, wr) | 0, it = it + Math.imul(ar, or) | 0, ht = ht + Math.imul(ar, wr) | 0, at = at + Math.imul(Cr, fr) | 0, it = it + Math.imul(Cr, $r) | 0, it = it + Math.imul(lr, fr) | 0, ht = ht + Math.imul(lr, $r) | 0, at = at + Math.imul(_r, Mr) | 0, it = it + Math.imul(_r, Nr) | 0, it = it + Math.imul(Tr, Mr) | 0, ht = ht + Math.imul(Tr, Nr) | 0, at = at + Math.imul(vr, Sr) | 0, it = it + Math.imul(vr, jr) | 0, it = it + Math.imul(gr, Sr) | 0, ht = ht + Math.imul(gr, jr) | 0, at = at + Math.imul(dr, Rr) | 0, it = it + Math.imul(dr, Lr) | 0, it = it + Math.imul(xr, Rr) | 0, ht = ht + Math.imul(xr, Lr) | 0, at = at + Math.imul(zt, Br) | 0, it = it + Math.imul(zt, qr) | 0, it = it + Math.imul(sr, Br) | 0, ht = ht + Math.imul(sr, qr) | 0, at = at + Math.imul(Ht, Yt) | 0, it = it + Math.imul(Ht, er) | 0, it = it + Math.imul(tr, Yt) | 0, ht = ht + Math.imul(tr, er) | 0, at = at + Math.imul(Zt, Jt) | 0, it = it + Math.imul(Zt, cr) | 0, it = it + Math.imul(Ut, Jt) | 0, ht = ht + Math.imul(Ut, cr) | 0, at = at + Math.imul(St, hr) | 0, it = it + Math.imul(St, Er) | 0, it = it + Math.imul(Nt, hr) | 0, ht = ht + Math.imul(Nt, Er) | 0;
             var hn = (vt + at | 0) + ((it & 8191) << 13) | 0;
-            vt = (ht + (it >>> 13) | 0) + (hn >>> 26) | 0, hn &= 67108863, at = Math.imul(Pt, or), it = Math.imul(Pt, wr), it = it + Math.imul(It, or) | 0, ht = Math.imul(It, wr), at = at + Math.imul(nr, fr) | 0, it = it + Math.imul(nr, $r) | 0, it = it + Math.imul(ar, fr) | 0, ht = ht + Math.imul(ar, $r) | 0, at = at + Math.imul(Cr, Mr) | 0, it = it + Math.imul(Cr, Nr) | 0, it = it + Math.imul(lr, Mr) | 0, ht = ht + Math.imul(lr, Nr) | 0, at = at + Math.imul(_r, Sr) | 0, it = it + Math.imul(_r, Or) | 0, it = it + Math.imul(Tr, Sr) | 0, ht = ht + Math.imul(Tr, Or) | 0, at = at + Math.imul(vr, Rr) | 0, it = it + Math.imul(vr, Lr) | 0, it = it + Math.imul(gr, Rr) | 0, ht = ht + Math.imul(gr, Lr) | 0, at = at + Math.imul(dr, Br) | 0, it = it + Math.imul(dr, qr) | 0, it = it + Math.imul(xr, Br) | 0, ht = ht + Math.imul(xr, qr) | 0, at = at + Math.imul(zt, Yt) | 0, it = it + Math.imul(zt, er) | 0, it = it + Math.imul(sr, Yt) | 0, ht = ht + Math.imul(sr, er) | 0, at = at + Math.imul(Ht, Jt) | 0, it = it + Math.imul(Ht, cr) | 0, it = it + Math.imul(tr, Jt) | 0, ht = ht + Math.imul(tr, cr) | 0, at = at + Math.imul(Zt, hr) | 0, it = it + Math.imul(Zt, Er) | 0, it = it + Math.imul(Ut, hr) | 0, ht = ht + Math.imul(Ut, Er) | 0;
+            vt = (ht + (it >>> 13) | 0) + (hn >>> 26) | 0, hn &= 67108863, at = Math.imul(Pt, or), it = Math.imul(Pt, wr), it = it + Math.imul(It, or) | 0, ht = Math.imul(It, wr), at = at + Math.imul(nr, fr) | 0, it = it + Math.imul(nr, $r) | 0, it = it + Math.imul(ar, fr) | 0, ht = ht + Math.imul(ar, $r) | 0, at = at + Math.imul(Cr, Mr) | 0, it = it + Math.imul(Cr, Nr) | 0, it = it + Math.imul(lr, Mr) | 0, ht = ht + Math.imul(lr, Nr) | 0, at = at + Math.imul(_r, Sr) | 0, it = it + Math.imul(_r, jr) | 0, it = it + Math.imul(Tr, Sr) | 0, ht = ht + Math.imul(Tr, jr) | 0, at = at + Math.imul(vr, Rr) | 0, it = it + Math.imul(vr, Lr) | 0, it = it + Math.imul(gr, Rr) | 0, ht = ht + Math.imul(gr, Lr) | 0, at = at + Math.imul(dr, Br) | 0, it = it + Math.imul(dr, qr) | 0, it = it + Math.imul(xr, Br) | 0, ht = ht + Math.imul(xr, qr) | 0, at = at + Math.imul(zt, Yt) | 0, it = it + Math.imul(zt, er) | 0, it = it + Math.imul(sr, Yt) | 0, ht = ht + Math.imul(sr, er) | 0, at = at + Math.imul(Ht, Jt) | 0, it = it + Math.imul(Ht, cr) | 0, it = it + Math.imul(tr, Jt) | 0, ht = ht + Math.imul(tr, cr) | 0, at = at + Math.imul(Zt, hr) | 0, it = it + Math.imul(Zt, Er) | 0, it = it + Math.imul(Ut, hr) | 0, ht = ht + Math.imul(Ut, Er) | 0;
             var dn = (vt + at | 0) + ((it & 8191) << 13) | 0;
-            vt = (ht + (it >>> 13) | 0) + (dn >>> 26) | 0, dn &= 67108863, at = Math.imul(Pt, fr), it = Math.imul(Pt, $r), it = it + Math.imul(It, fr) | 0, ht = Math.imul(It, $r), at = at + Math.imul(nr, Mr) | 0, it = it + Math.imul(nr, Nr) | 0, it = it + Math.imul(ar, Mr) | 0, ht = ht + Math.imul(ar, Nr) | 0, at = at + Math.imul(Cr, Sr) | 0, it = it + Math.imul(Cr, Or) | 0, it = it + Math.imul(lr, Sr) | 0, ht = ht + Math.imul(lr, Or) | 0, at = at + Math.imul(_r, Rr) | 0, it = it + Math.imul(_r, Lr) | 0, it = it + Math.imul(Tr, Rr) | 0, ht = ht + Math.imul(Tr, Lr) | 0, at = at + Math.imul(vr, Br) | 0, it = it + Math.imul(vr, qr) | 0, it = it + Math.imul(gr, Br) | 0, ht = ht + Math.imul(gr, qr) | 0, at = at + Math.imul(dr, Yt) | 0, it = it + Math.imul(dr, er) | 0, it = it + Math.imul(xr, Yt) | 0, ht = ht + Math.imul(xr, er) | 0, at = at + Math.imul(zt, Jt) | 0, it = it + Math.imul(zt, cr) | 0, it = it + Math.imul(sr, Jt) | 0, ht = ht + Math.imul(sr, cr) | 0, at = at + Math.imul(Ht, hr) | 0, it = it + Math.imul(Ht, Er) | 0, it = it + Math.imul(tr, hr) | 0, ht = ht + Math.imul(tr, Er) | 0;
+            vt = (ht + (it >>> 13) | 0) + (dn >>> 26) | 0, dn &= 67108863, at = Math.imul(Pt, fr), it = Math.imul(Pt, $r), it = it + Math.imul(It, fr) | 0, ht = Math.imul(It, $r), at = at + Math.imul(nr, Mr) | 0, it = it + Math.imul(nr, Nr) | 0, it = it + Math.imul(ar, Mr) | 0, ht = ht + Math.imul(ar, Nr) | 0, at = at + Math.imul(Cr, Sr) | 0, it = it + Math.imul(Cr, jr) | 0, it = it + Math.imul(lr, Sr) | 0, ht = ht + Math.imul(lr, jr) | 0, at = at + Math.imul(_r, Rr) | 0, it = it + Math.imul(_r, Lr) | 0, it = it + Math.imul(Tr, Rr) | 0, ht = ht + Math.imul(Tr, Lr) | 0, at = at + Math.imul(vr, Br) | 0, it = it + Math.imul(vr, qr) | 0, it = it + Math.imul(gr, Br) | 0, ht = ht + Math.imul(gr, qr) | 0, at = at + Math.imul(dr, Yt) | 0, it = it + Math.imul(dr, er) | 0, it = it + Math.imul(xr, Yt) | 0, ht = ht + Math.imul(xr, er) | 0, at = at + Math.imul(zt, Jt) | 0, it = it + Math.imul(zt, cr) | 0, it = it + Math.imul(sr, Jt) | 0, ht = ht + Math.imul(sr, cr) | 0, at = at + Math.imul(Ht, hr) | 0, it = it + Math.imul(Ht, Er) | 0, it = it + Math.imul(tr, hr) | 0, ht = ht + Math.imul(tr, Er) | 0;
             var tn = (vt + at | 0) + ((it & 8191) << 13) | 0;
-            vt = (ht + (it >>> 13) | 0) + (tn >>> 26) | 0, tn &= 67108863, at = Math.imul(Pt, Mr), it = Math.imul(Pt, Nr), it = it + Math.imul(It, Mr) | 0, ht = Math.imul(It, Nr), at = at + Math.imul(nr, Sr) | 0, it = it + Math.imul(nr, Or) | 0, it = it + Math.imul(ar, Sr) | 0, ht = ht + Math.imul(ar, Or) | 0, at = at + Math.imul(Cr, Rr) | 0, it = it + Math.imul(Cr, Lr) | 0, it = it + Math.imul(lr, Rr) | 0, ht = ht + Math.imul(lr, Lr) | 0, at = at + Math.imul(_r, Br) | 0, it = it + Math.imul(_r, qr) | 0, it = it + Math.imul(Tr, Br) | 0, ht = ht + Math.imul(Tr, qr) | 0, at = at + Math.imul(vr, Yt) | 0, it = it + Math.imul(vr, er) | 0, it = it + Math.imul(gr, Yt) | 0, ht = ht + Math.imul(gr, er) | 0, at = at + Math.imul(dr, Jt) | 0, it = it + Math.imul(dr, cr) | 0, it = it + Math.imul(xr, Jt) | 0, ht = ht + Math.imul(xr, cr) | 0, at = at + Math.imul(zt, hr) | 0, it = it + Math.imul(zt, Er) | 0, it = it + Math.imul(sr, hr) | 0, ht = ht + Math.imul(sr, Er) | 0;
+            vt = (ht + (it >>> 13) | 0) + (tn >>> 26) | 0, tn &= 67108863, at = Math.imul(Pt, Mr), it = Math.imul(Pt, Nr), it = it + Math.imul(It, Mr) | 0, ht = Math.imul(It, Nr), at = at + Math.imul(nr, Sr) | 0, it = it + Math.imul(nr, jr) | 0, it = it + Math.imul(ar, Sr) | 0, ht = ht + Math.imul(ar, jr) | 0, at = at + Math.imul(Cr, Rr) | 0, it = it + Math.imul(Cr, Lr) | 0, it = it + Math.imul(lr, Rr) | 0, ht = ht + Math.imul(lr, Lr) | 0, at = at + Math.imul(_r, Br) | 0, it = it + Math.imul(_r, qr) | 0, it = it + Math.imul(Tr, Br) | 0, ht = ht + Math.imul(Tr, qr) | 0, at = at + Math.imul(vr, Yt) | 0, it = it + Math.imul(vr, er) | 0, it = it + Math.imul(gr, Yt) | 0, ht = ht + Math.imul(gr, er) | 0, at = at + Math.imul(dr, Jt) | 0, it = it + Math.imul(dr, cr) | 0, it = it + Math.imul(xr, Jt) | 0, ht = ht + Math.imul(xr, cr) | 0, at = at + Math.imul(zt, hr) | 0, it = it + Math.imul(zt, Er) | 0, it = it + Math.imul(sr, hr) | 0, ht = ht + Math.imul(sr, Er) | 0;
             var an = (vt + at | 0) + ((it & 8191) << 13) | 0;
-            vt = (ht + (it >>> 13) | 0) + (an >>> 26) | 0, an &= 67108863, at = Math.imul(Pt, Sr), it = Math.imul(Pt, Or), it = it + Math.imul(It, Sr) | 0, ht = Math.imul(It, Or), at = at + Math.imul(nr, Rr) | 0, it = it + Math.imul(nr, Lr) | 0, it = it + Math.imul(ar, Rr) | 0, ht = ht + Math.imul(ar, Lr) | 0, at = at + Math.imul(Cr, Br) | 0, it = it + Math.imul(Cr, qr) | 0, it = it + Math.imul(lr, Br) | 0, ht = ht + Math.imul(lr, qr) | 0, at = at + Math.imul(_r, Yt) | 0, it = it + Math.imul(_r, er) | 0, it = it + Math.imul(Tr, Yt) | 0, ht = ht + Math.imul(Tr, er) | 0, at = at + Math.imul(vr, Jt) | 0, it = it + Math.imul(vr, cr) | 0, it = it + Math.imul(gr, Jt) | 0, ht = ht + Math.imul(gr, cr) | 0, at = at + Math.imul(dr, hr) | 0, it = it + Math.imul(dr, Er) | 0, it = it + Math.imul(xr, hr) | 0, ht = ht + Math.imul(xr, Er) | 0;
+            vt = (ht + (it >>> 13) | 0) + (an >>> 26) | 0, an &= 67108863, at = Math.imul(Pt, Sr), it = Math.imul(Pt, jr), it = it + Math.imul(It, Sr) | 0, ht = Math.imul(It, jr), at = at + Math.imul(nr, Rr) | 0, it = it + Math.imul(nr, Lr) | 0, it = it + Math.imul(ar, Rr) | 0, ht = ht + Math.imul(ar, Lr) | 0, at = at + Math.imul(Cr, Br) | 0, it = it + Math.imul(Cr, qr) | 0, it = it + Math.imul(lr, Br) | 0, ht = ht + Math.imul(lr, qr) | 0, at = at + Math.imul(_r, Yt) | 0, it = it + Math.imul(_r, er) | 0, it = it + Math.imul(Tr, Yt) | 0, ht = ht + Math.imul(Tr, er) | 0, at = at + Math.imul(vr, Jt) | 0, it = it + Math.imul(vr, cr) | 0, it = it + Math.imul(gr, Jt) | 0, ht = ht + Math.imul(gr, cr) | 0, at = at + Math.imul(dr, hr) | 0, it = it + Math.imul(dr, Er) | 0, it = it + Math.imul(xr, hr) | 0, ht = ht + Math.imul(xr, Er) | 0;
             var Yr = (vt + at | 0) + ((it & 8191) << 13) | 0;
             vt = (ht + (it >>> 13) | 0) + (Yr >>> 26) | 0, Yr &= 67108863, at = Math.imul(Pt, Rr), it = Math.imul(Pt, Lr), it = it + Math.imul(It, Rr) | 0, ht = Math.imul(It, Lr), at = at + Math.imul(nr, Br) | 0, it = it + Math.imul(nr, qr) | 0, it = it + Math.imul(ar, Br) | 0, ht = ht + Math.imul(ar, qr) | 0, at = at + Math.imul(Cr, Yt) | 0, it = it + Math.imul(Cr, er) | 0, it = it + Math.imul(lr, Yt) | 0, ht = ht + Math.imul(lr, er) | 0, at = at + Math.imul(_r, Jt) | 0, it = it + Math.imul(_r, cr) | 0, it = it + Math.imul(Tr, Jt) | 0, ht = ht + Math.imul(Tr, cr) | 0, at = at + Math.imul(vr, hr) | 0, it = it + Math.imul(vr, Er) | 0, it = it + Math.imul(gr, hr) | 0, ht = ht + Math.imul(gr, Er) | 0;
             var rn = (vt + at | 0) + ((it & 8191) << 13) | 0;
@@ -23309,8 +23309,8 @@ Use Chrome, Firefox or Internet Explorer 11`);
             vt = (ht + (it >>> 13) | 0) + (Gr >>> 26) | 0, Gr &= 67108863, at = Math.imul(Pt, Jt), it = Math.imul(Pt, cr), it = it + Math.imul(It, Jt) | 0, ht = Math.imul(It, cr), at = at + Math.imul(nr, hr) | 0, it = it + Math.imul(nr, Er) | 0, it = it + Math.imul(ar, hr) | 0, ht = ht + Math.imul(ar, Er) | 0;
             var Dr = (vt + at | 0) + ((it & 8191) << 13) | 0;
             vt = (ht + (it >>> 13) | 0) + (Dr >>> 26) | 0, Dr &= 67108863, at = Math.imul(Pt, hr), it = Math.imul(Pt, Er), it = it + Math.imul(It, hr) | 0, ht = Math.imul(It, Er);
-            var Fr = (vt + at | 0) + ((it & 8191) << 13) | 0;
-            return vt = (ht + (it >>> 13) | 0) + (Fr >>> 26) | 0, Fr &= 67108863, mt[0] = zr, mt[1] = Wr, mt[2] = gn, mt[3] = Jr, mt[4] = ln, mt[5] = un, mt[6] = mn, mt[7] = pn, mt[8] = fn, mt[9] = hn, mt[10] = dn, mt[11] = tn, mt[12] = an, mt[13] = Yr, mt[14] = rn, mt[15] = nn, mt[16] = Gr, mt[17] = Dr, mt[18] = Fr, vt !== 0 && (mt[19] = vt, nt.length++), nt;
+            var Or = (vt + at | 0) + ((it & 8191) << 13) | 0;
+            return vt = (ht + (it >>> 13) | 0) + (Or >>> 26) | 0, Or &= 67108863, mt[0] = zr, mt[1] = Wr, mt[2] = gn, mt[3] = Jr, mt[4] = ln, mt[5] = un, mt[6] = mn, mt[7] = pn, mt[8] = fn, mt[9] = hn, mt[10] = dn, mt[11] = tn, mt[12] = an, mt[13] = Yr, mt[14] = rn, mt[15] = nn, mt[16] = Gr, mt[17] = Dr, mt[18] = Or, vt !== 0 && (mt[19] = vt, nt.length++), nt;
           };
           Math.imul || (Et = Mt);
           function Rt(ct, et, tt) {
@@ -23775,10 +23775,10 @@ Use Chrome, Firefox or Internet Explorer 11`);
             }
             return et.words[et.length - 1] === 0 && (et.length--, et.words[et.length - 1] === 0 && et.length--), et;
           };
-          function jt() {
+          function Ot() {
             Tt.call(this, "p224", "ffffffff ffffffff ffffffff ffffffff 00000000 00000000 00000001");
           }
-          rt(jt, Tt);
+          rt(Ot, Tt);
           function Xt() {
             Tt.call(this, "p192", "ffffffff ffffffff ffffffff fffffffe ffffffff ffffffff");
           }
@@ -23796,7 +23796,7 @@ Use Chrome, Firefox or Internet Explorer 11`);
             if ($t[et]) return $t[et];
             var tt;
             if (et === "k256") tt = new Ft();
-            else if (et === "p224") tt = new jt();
+            else if (et === "p224") tt = new Ot();
             else if (et === "p192") tt = new Xt();
             else if (et === "p25519") tt = new Qt();
             else throw new Error("Unknown prime " + et);
@@ -24046,18 +24046,18 @@ Use Chrome, Firefox or Internet Explorer 11`);
           Ct[At] = Tt.wnd, Mt[At] = Tt.points;
         }
         for (At = xt - 1; At >= 1; At -= 2) {
-          var Ft = At - 1, jt = At;
-          if (Ct[Ft] !== 1 || Ct[jt] !== 1) {
-            Et[Ft] = _(yt[Ft], Ct[Ft], this._bitLength), Et[jt] = _(yt[jt], Ct[jt], this._bitLength), Rt = Math.max(Et[Ft].length, Rt), Rt = Math.max(Et[jt].length, Rt);
+          var Ft = At - 1, Ot = At;
+          if (Ct[Ft] !== 1 || Ct[Ot] !== 1) {
+            Et[Ft] = _(yt[Ft], Ct[Ft], this._bitLength), Et[Ot] = _(yt[Ot], Ct[Ot], this._bitLength), Rt = Math.max(Et[Ft].length, Rt), Rt = Math.max(Et[Ot].length, Rt);
             continue;
           }
           var Xt = [
             bt[Ft],
             null,
             null,
-            bt[jt]
+            bt[Ot]
           ];
-          bt[Ft].y.cmp(bt[jt].y) === 0 ? (Xt[1] = bt[Ft].add(bt[jt]), Xt[2] = bt[Ft].toJ().mixedAdd(bt[jt].neg())) : bt[Ft].y.cmp(bt[jt].y.redNeg()) === 0 ? (Xt[1] = bt[Ft].toJ().mixedAdd(bt[jt]), Xt[2] = bt[Ft].add(bt[jt].neg())) : (Xt[1] = bt[Ft].toJ().mixedAdd(bt[jt]), Xt[2] = bt[Ft].toJ().mixedAdd(bt[jt].neg()));
+          bt[Ft].y.cmp(bt[Ot].y) === 0 ? (Xt[1] = bt[Ft].add(bt[Ot]), Xt[2] = bt[Ft].toJ().mixedAdd(bt[Ot].neg())) : bt[Ft].y.cmp(bt[Ot].y.redNeg()) === 0 ? (Xt[1] = bt[Ft].toJ().mixedAdd(bt[Ot]), Xt[2] = bt[Ft].add(bt[Ot].neg())) : (Xt[1] = bt[Ft].toJ().mixedAdd(bt[Ot]), Xt[2] = bt[Ft].toJ().mixedAdd(bt[Ot].neg()));
           var Qt = [
             -3,
             -1,
@@ -24068,10 +24068,10 @@ Use Chrome, Firefox or Internet Explorer 11`);
             5,
             1,
             3
-          ], Wt = $(yt[Ft], yt[jt]);
-          for (Rt = Math.max(Wt[0].length, Rt), Et[Ft] = new Array(Rt), Et[jt] = new Array(Rt), Bt = 0; Bt < Rt; Bt++) {
+          ], Wt = $(yt[Ft], yt[Ot]);
+          for (Rt = Math.max(Wt[0].length, Rt), Et[Ft] = new Array(Rt), Et[Ot] = new Array(Rt), Bt = 0; Bt < Rt; Bt++) {
             var kt = Wt[0][Bt] | 0, ct = Wt[1][Bt] | 0;
-            Et[Ft][Bt] = Qt[(kt + 1) * 3 + (ct + 1)], Et[jt][Bt] = 0, Mt[Ft] = Xt;
+            Et[Ft][Bt] = Qt[(kt + 1) * 3 + (ct + 1)], Et[Ot][Bt] = 0, Mt[Ft] = Xt;
           }
         }
         var et = this.jpoint(null, null, null), tt = this._wnafT4;
@@ -24198,7 +24198,7 @@ Use Chrome, Firefox or Internet Explorer 11`);
           Et
         ];
       }, j.prototype._getEndoBasis = function(bt) {
-        for (var yt = this.n.ushrn(Math.floor(this.n.bitLength() / 2)), xt = bt, _t = this.n.clone(), Ct = new b(1), Mt = new b(0), Et = new b(0), Rt = new b(1), At, Bt, $t, Tt, Ft, jt, Xt, Qt = 0, Wt, kt; xt.cmpn(0) !== 0; ) {
+        for (var yt = this.n.ushrn(Math.floor(this.n.bitLength() / 2)), xt = bt, _t = this.n.clone(), Ct = new b(1), Mt = new b(0), Et = new b(0), Rt = new b(1), At, Bt, $t, Tt, Ft, Ot, Xt, Qt = 0, Wt, kt; xt.cmpn(0) !== 0; ) {
           var ct = _t.div(xt);
           Wt = _t.sub(ct.mul(xt)), kt = Et.sub(ct.mul(Ct));
           var et = Rt.sub(ct.mul(Mt));
@@ -24206,16 +24206,16 @@ Use Chrome, Firefox or Internet Explorer 11`);
           else if ($t && ++Qt === 2) break;
           Xt = Wt, _t = xt, xt = Wt, Et = Ct, Ct = kt, Rt = Mt, Mt = et;
         }
-        Ft = Wt.neg(), jt = kt;
-        var tt = $t.sqr().add(Tt.sqr()), nt = Ft.sqr().add(jt.sqr());
-        return nt.cmp(tt) >= 0 && (Ft = At, jt = Bt), $t.negative && ($t = $t.neg(), Tt = Tt.neg()), Ft.negative && (Ft = Ft.neg(), jt = jt.neg()), [
+        Ft = Wt.neg(), Ot = kt;
+        var tt = $t.sqr().add(Tt.sqr()), nt = Ft.sqr().add(Ot.sqr());
+        return nt.cmp(tt) >= 0 && (Ft = At, Ot = Bt), $t.negative && ($t = $t.neg(), Tt = Tt.neg()), Ft.negative && (Ft = Ft.neg(), Ot = Ot.neg()), [
           {
             a: $t,
             b: Tt
           },
           {
             a: Ft,
-            b: jt
+            b: Ot
           }
         ];
       }, j.prototype._endoSplit = function(bt) {
@@ -24403,15 +24403,15 @@ Use Chrome, Firefox or Internet Explorer 11`);
         if (bt.isInfinity()) return this;
         var yt = bt.z.redSqr(), xt = this.z.redSqr(), _t = this.x.redMul(yt), Ct = bt.x.redMul(xt), Mt = this.y.redMul(yt.redMul(bt.z)), Et = bt.y.redMul(xt.redMul(this.z)), Rt = _t.redSub(Ct), At = Mt.redSub(Et);
         if (Rt.cmpn(0) === 0) return At.cmpn(0) !== 0 ? this.curve.jpoint(null, null, null) : this.dbl();
-        var Bt = Rt.redSqr(), $t = Bt.redMul(Rt), Tt = _t.redMul(Bt), Ft = At.redSqr().redIAdd($t).redISub(Tt).redISub(Tt), jt = At.redMul(Tt.redISub(Ft)).redISub(Mt.redMul($t)), Xt = this.z.redMul(bt.z).redMul(Rt);
-        return this.curve.jpoint(Ft, jt, Xt);
+        var Bt = Rt.redSqr(), $t = Bt.redMul(Rt), Tt = _t.redMul(Bt), Ft = At.redSqr().redIAdd($t).redISub(Tt).redISub(Tt), Ot = At.redMul(Tt.redISub(Ft)).redISub(Mt.redMul($t)), Xt = this.z.redMul(bt.z).redMul(Rt);
+        return this.curve.jpoint(Ft, Ot, Xt);
       }, dt.prototype.mixedAdd = function(bt) {
         if (this.isInfinity()) return bt.toJ();
         if (bt.isInfinity()) return this;
         var yt = this.z.redSqr(), xt = this.x, _t = bt.x.redMul(yt), Ct = this.y, Mt = bt.y.redMul(yt).redMul(this.z), Et = xt.redSub(_t), Rt = Ct.redSub(Mt);
         if (Et.cmpn(0) === 0) return Rt.cmpn(0) !== 0 ? this.curve.jpoint(null, null, null) : this.dbl();
-        var At = Et.redSqr(), Bt = At.redMul(Et), $t = xt.redMul(At), Tt = Rt.redSqr().redIAdd(Bt).redISub($t).redISub($t), Ft = Rt.redMul($t.redISub(Tt)).redISub(Ct.redMul(Bt)), jt = this.z.redMul(Et);
-        return this.curve.jpoint(Tt, Ft, jt);
+        var At = Et.redSqr(), Bt = At.redMul(Et), $t = xt.redMul(At), Tt = Rt.redSqr().redIAdd(Bt).redISub($t).redISub($t), Ft = Rt.redMul($t.redISub(Tt)).redISub(Ct.redMul(Bt)), Ot = this.z.redMul(Et);
+        return this.curve.jpoint(Tt, Ft, Ot);
       }, dt.prototype.dblp = function(bt) {
         if (bt === 0) return this;
         if (this.isInfinity()) return this;
@@ -24424,7 +24424,7 @@ Use Chrome, Firefox or Internet Explorer 11`);
         }
         var _t = this.curve.a, Ct = this.curve.tinv, Mt = this.x, Et = this.y, Rt = this.z, At = Rt.redSqr().redSqr(), Bt = Et.redAdd(Et);
         for (yt = 0; yt < bt; yt++) {
-          var $t = Mt.redSqr(), Tt = Bt.redSqr(), Ft = Tt.redSqr(), jt = $t.redAdd($t).redIAdd($t).redIAdd(_t.redMul(At)), Xt = Mt.redMul(Tt), Qt = jt.redSqr().redISub(Xt.redAdd(Xt)), Wt = Xt.redISub(Qt), kt = jt.redMul(Wt);
+          var $t = Mt.redSqr(), Tt = Bt.redSqr(), Ft = Tt.redSqr(), Ot = $t.redAdd($t).redIAdd($t).redIAdd(_t.redMul(At)), Xt = Mt.redMul(Tt), Qt = Ot.redSqr().redISub(Xt.redAdd(Xt)), Wt = Xt.redISub(Qt), kt = Ot.redMul(Wt);
           kt = kt.redIAdd(kt).redISub(Ft);
           var ct = Bt.redMul(Rt);
           yt + 1 < bt && (At = At.redMul(Ft)), Mt = Qt, Rt = ct, Bt = kt;
@@ -24440,10 +24440,10 @@ Use Chrome, Firefox or Internet Explorer 11`);
           var Rt = _t.redAdd(_t).redIAdd(_t), At = Rt.redSqr().redISub(Et).redISub(Et), Bt = Mt.redIAdd(Mt);
           Bt = Bt.redIAdd(Bt), Bt = Bt.redIAdd(Bt), bt = At, yt = Rt.redMul(Et.redISub(At)).redISub(Bt), xt = this.y.redAdd(this.y);
         } else {
-          var $t = this.x.redSqr(), Tt = this.y.redSqr(), Ft = Tt.redSqr(), jt = this.x.redAdd(Tt).redSqr().redISub($t).redISub(Ft);
-          jt = jt.redIAdd(jt);
+          var $t = this.x.redSqr(), Tt = this.y.redSqr(), Ft = Tt.redSqr(), Ot = this.x.redAdd(Tt).redSqr().redISub($t).redISub(Ft);
+          Ot = Ot.redIAdd(Ot);
           var Xt = $t.redAdd($t).redIAdd($t), Qt = Xt.redSqr(), Wt = Ft.redIAdd(Ft);
-          Wt = Wt.redIAdd(Wt), Wt = Wt.redIAdd(Wt), bt = Qt.redISub(jt).redISub(jt), yt = Xt.redMul(jt.redISub(bt)).redISub(Wt), xt = this.y.redMul(this.z), xt = xt.redIAdd(xt);
+          Wt = Wt.redIAdd(Wt), Wt = Wt.redIAdd(Wt), bt = Qt.redISub(Ot).redISub(Ot), yt = Xt.redMul(Ot.redISub(bt)).redISub(Wt), xt = this.y.redMul(this.z), xt = xt.redIAdd(xt);
         }
         return this.curve.jpoint(bt, yt, xt);
       }, dt.prototype._threeDbl = function() {
@@ -24456,14 +24456,14 @@ Use Chrome, Firefox or Internet Explorer 11`);
           var Bt = Mt.redIAdd(Mt);
           Bt = Bt.redIAdd(Bt), Bt = Bt.redIAdd(Bt), yt = Rt.redMul(Et.redISub(At)).redISub(Bt), xt = this.y.redAdd(this.y);
         } else {
-          var $t = this.z.redSqr(), Tt = this.y.redSqr(), Ft = this.x.redMul(Tt), jt = this.x.redSub($t).redMul(this.x.redAdd($t));
-          jt = jt.redAdd(jt).redIAdd(jt);
+          var $t = this.z.redSqr(), Tt = this.y.redSqr(), Ft = this.x.redMul(Tt), Ot = this.x.redSub($t).redMul(this.x.redAdd($t));
+          Ot = Ot.redAdd(Ot).redIAdd(Ot);
           var Xt = Ft.redIAdd(Ft);
           Xt = Xt.redIAdd(Xt);
           var Qt = Xt.redAdd(Xt);
-          bt = jt.redSqr().redISub(Qt), xt = this.y.redAdd(this.z).redSqr().redISub(Tt).redISub($t);
+          bt = Ot.redSqr().redISub(Qt), xt = this.y.redAdd(this.z).redSqr().redISub(Tt).redISub($t);
           var Wt = Tt.redSqr();
-          Wt = Wt.redIAdd(Wt), Wt = Wt.redIAdd(Wt), Wt = Wt.redIAdd(Wt), yt = jt.redMul(Xt.redISub(bt)).redISub(Wt);
+          Wt = Wt.redIAdd(Wt), Wt = Wt.redIAdd(Wt), Wt = Wt.redIAdd(Wt), yt = Ot.redMul(Xt.redISub(bt)).redISub(Wt);
         }
         return this.curve.jpoint(bt, yt, xt);
       }, dt.prototype._dbl = function() {
@@ -24471,8 +24471,8 @@ Use Chrome, Firefox or Internet Explorer 11`);
         At = At.redIAdd(At);
         var Bt = At.redMul(Et), $t = Rt.redSqr().redISub(Bt.redAdd(Bt)), Tt = Bt.redISub($t), Ft = Et.redSqr();
         Ft = Ft.redIAdd(Ft), Ft = Ft.redIAdd(Ft), Ft = Ft.redIAdd(Ft);
-        var jt = Rt.redMul(Tt).redISub(Ft), Xt = xt.redAdd(xt).redMul(_t);
-        return this.curve.jpoint($t, jt, Xt);
+        var Ot = Rt.redMul(Tt).redISub(Ft), Xt = xt.redAdd(xt).redMul(_t);
+        return this.curve.jpoint($t, Ot, Xt);
       }, dt.prototype.trpl = function() {
         if (!this.curve.zeroA) return this.dbl().add(this);
         var bt = this.x.redSqr(), yt = this.y.redSqr(), xt = this.z.redSqr(), _t = yt.redSqr(), Ct = bt.redAdd(bt).redIAdd(bt), Mt = Ct.redSqr(), Et = this.x.redAdd(yt).redSqr().redISub(bt).redISub(_t);
@@ -24485,8 +24485,8 @@ Use Chrome, Firefox or Internet Explorer 11`);
         Tt = Tt.redIAdd(Tt), Tt = Tt.redIAdd(Tt);
         var Ft = this.y.redMul(Bt.redMul(At.redISub(Bt)).redISub(Et.redMul(Rt)));
         Ft = Ft.redIAdd(Ft), Ft = Ft.redIAdd(Ft), Ft = Ft.redIAdd(Ft);
-        var jt = this.z.redAdd(Et).redSqr().redISub(xt).redISub(Rt);
-        return this.curve.jpoint(Tt, Ft, jt);
+        var Ot = this.z.redAdd(Et).redSqr().redISub(xt).redISub(Rt);
+        return this.curve.jpoint(Tt, Ft, Ot);
       }, dt.prototype.mul = function(bt, yt) {
         return bt = new b(bt, yt), this.curve._wnafMul(this, bt);
       }, dt.prototype.eq = function(bt) {
@@ -24799,13 +24799,13 @@ Use Chrome, Firefox or Internet Explorer 11`);
         return it >>> 0;
       }
       utils$3.sum64_4_lo = Ft;
-      function jt(et, tt, nt, ot, ut, mt, vt, at, it, ht) {
+      function Ot(et, tt, nt, ot, ut, mt, vt, at, it, ht) {
         var wt = 0, St = tt;
         St = St + ot >>> 0, wt += St < tt ? 1 : 0, St = St + mt >>> 0, wt += St < mt ? 1 : 0, St = St + at >>> 0, wt += St < at ? 1 : 0, St = St + ht >>> 0, wt += St < ht ? 1 : 0;
         var Nt = et + nt + ut + vt + it + wt;
         return Nt >>> 0;
       }
-      utils$3.sum64_5_hi = jt;
+      utils$3.sum64_5_hi = Ot;
       function Xt(et, tt, nt, ot, ut, mt, vt, at, it, ht) {
         var wt = tt + ot + mt + at + ht;
         return wt >>> 0;
@@ -25019,12 +25019,12 @@ Use Chrome, Firefox or Internet Explorer 11`);
       return d.inherits(Et, Ct), _256 = Et, Et.blockSize = 512, Et.outSize = 256, Et.hmacStrength = 192, Et.padLength = 64, Et.prototype._update = function(At, Bt) {
         for (var $t = this.W, Tt = 0; Tt < 16; Tt++) $t[Tt] = At[Bt + Tt];
         for (; Tt < $t.length; Tt++) $t[Tt] = j(_t($t[Tt - 2]), $t[Tt - 7], xt($t[Tt - 15]), $t[Tt - 16]);
-        var Ft = this.h[0], jt = this.h[1], Xt = this.h[2], Qt = this.h[3], Wt = this.h[4], kt = this.h[5], ct = this.h[6], et = this.h[7];
+        var Ft = this.h[0], Ot = this.h[1], Xt = this.h[2], Qt = this.h[3], Wt = this.h[4], kt = this.h[5], ct = this.h[6], et = this.h[7];
         for ($(this.k.length === $t.length), Tt = 0; Tt < $t.length; Tt++) {
-          var tt = st(et, yt(Wt), dt(Wt, kt, ct), this.k[Tt], $t[Tt]), nt = rt(bt(Ft), pt(Ft, jt, Xt));
-          et = ct, ct = kt, kt = Wt, Wt = rt(Qt, tt), Qt = Xt, Xt = jt, jt = Ft, Ft = rt(tt, nt);
+          var tt = st(et, yt(Wt), dt(Wt, kt, ct), this.k[Tt], $t[Tt]), nt = rt(bt(Ft), pt(Ft, Ot, Xt));
+          et = ct, ct = kt, kt = Wt, Wt = rt(Qt, tt), Qt = Xt, Xt = Ot, Ot = Ft, Ft = rt(tt, nt);
         }
-        this.h[0] = rt(this.h[0], Ft), this.h[1] = rt(this.h[1], jt), this.h[2] = rt(this.h[2], Xt), this.h[3] = rt(this.h[3], Qt), this.h[4] = rt(this.h[4], Wt), this.h[5] = rt(this.h[5], kt), this.h[6] = rt(this.h[6], ct), this.h[7] = rt(this.h[7], et);
+        this.h[0] = rt(this.h[0], Ft), this.h[1] = rt(this.h[1], Ot), this.h[2] = rt(this.h[2], Xt), this.h[3] = rt(this.h[3], Qt), this.h[4] = rt(this.h[4], Wt), this.h[5] = rt(this.h[5], kt), this.h[6] = rt(this.h[6], ct), this.h[7] = rt(this.h[7], et);
       }, Et.prototype._digest = function(At) {
         return At === "hex" ? d.toHex32(this.h, "big") : d.split32(this.h, "big");
       }, _256;
@@ -25249,8 +25249,8 @@ Use Chrome, Firefox or Internet Explorer 11`);
         var ut = this.W, mt = this.h[0], vt = this.h[1], at = this.h[2], it = this.h[3], ht = this.h[4], wt = this.h[5], St = this.h[6], Nt = this.h[7], qt = this.h[8], Zt = this.h[9], Ut = this.h[10], Lt = this.h[11], Ht = this.h[12], tr = this.h[13], Gt = this.h[14], zt = this.h[15];
         _(this.k.length === ut.length);
         for (var sr = 0; sr < ut.length; sr += 2) {
-          var br = Gt, dr = zt, xr = Xt(qt, Zt), kr = Qt(qt, Zt), vr = At(qt, Zt, Ut, Lt, Ht), gr = Bt(qt, Zt, Ut, Lt, Ht, tr), jr = this.k[sr], _r = this.k[sr + 1], Tr = ut[sr], Ur = ut[sr + 1], Cr = _t(br, dr, xr, kr, vr, gr, jr, _r, Tr, Ur), lr = Ct(br, dr, xr, kr, vr, gr, jr, _r, Tr, Ur);
-          br = Ft(mt, vt), dr = jt(mt, vt), xr = $t(mt, vt, at, it, ht), kr = Tt(mt, vt, at, it, ht, wt);
+          var br = Gt, dr = zt, xr = Xt(qt, Zt), kr = Qt(qt, Zt), vr = At(qt, Zt, Ut, Lt, Ht), gr = Bt(qt, Zt, Ut, Lt, Ht, tr), Fr = this.k[sr], _r = this.k[sr + 1], Tr = ut[sr], Ur = ut[sr + 1], Cr = _t(br, dr, xr, kr, vr, gr, Fr, _r, Tr, Ur), lr = Ct(br, dr, xr, kr, vr, gr, Fr, _r, Tr, Ur);
+          br = Ft(mt, vt), dr = Ot(mt, vt), xr = $t(mt, vt, at, it, ht), kr = Tt(mt, vt, at, it, ht, wt);
           var rr = pt(br, dr, xr, kr), nr = bt(br, dr, xr, kr);
           Gt = Ht, zt = tr, Ht = Ut, tr = Lt, Ut = qt, Lt = Zt, qt = pt(St, Nt, Cr, lr), Zt = bt(Nt, Nt, Cr, lr), St = ht, Nt = wt, ht = at, wt = it, at = mt, it = vt, mt = pt(Cr, lr, rr, nr), vt = bt(Cr, lr, rr, nr);
         }
@@ -25278,7 +25278,7 @@ Use Chrome, Firefox or Internet Explorer 11`);
         var ot = $(tt, nt, 28), ut = $(nt, tt, 2), mt = $(nt, tt, 7), vt = ot ^ ut ^ mt;
         return vt < 0 && (vt += 4294967296), vt;
       }
-      function jt(tt, nt) {
+      function Ot(tt, nt) {
         var ot = rt(tt, nt, 28), ut = rt(nt, tt, 2), mt = rt(nt, tt, 7), vt = ot ^ ut ^ mt;
         return vt < 0 && (vt += 4294967296), vt;
       }
@@ -25358,11 +25358,11 @@ Use Chrome, Firefox or Internet Explorer 11`);
         ], this.endian = "little";
       }
       d.inherits(dt, st), ripemd.ripemd160 = dt, dt.blockSize = 512, dt.outSize = 160, dt.hmacStrength = 192, dt.padLength = 64, dt.prototype._update = function(Rt, At) {
-        for (var Bt = this.h[0], $t = this.h[1], Tt = this.h[2], Ft = this.h[3], jt = this.h[4], Xt = Bt, Qt = $t, Wt = Tt, kt = Ft, ct = jt, et = 0; et < 80; et++) {
-          var tt = $(_(j(Bt, pt(et, $t, Tt, Ft), Rt[xt[et] + At], bt(et)), Ct[et]), jt);
-          Bt = jt, jt = Ft, Ft = _(Tt, 10), Tt = $t, $t = tt, tt = $(_(j(Xt, pt(79 - et, Qt, Wt, kt), Rt[_t[et] + At], yt(et)), Mt[et]), ct), Xt = ct, ct = kt, kt = _(Wt, 10), Wt = Qt, Qt = tt;
+        for (var Bt = this.h[0], $t = this.h[1], Tt = this.h[2], Ft = this.h[3], Ot = this.h[4], Xt = Bt, Qt = $t, Wt = Tt, kt = Ft, ct = Ot, et = 0; et < 80; et++) {
+          var tt = $(_(j(Bt, pt(et, $t, Tt, Ft), Rt[xt[et] + At], bt(et)), Ct[et]), Ot);
+          Bt = Ot, Ot = Ft, Ft = _(Tt, 10), Tt = $t, $t = tt, tt = $(_(j(Xt, pt(79 - et, Qt, Wt, kt), Rt[_t[et] + At], yt(et)), Mt[et]), ct), Xt = ct, ct = kt, kt = _(Wt, 10), Wt = Qt, Qt = tt;
         }
-        tt = rt(this.h[1], Tt, kt), this.h[1] = rt(this.h[2], Ft, ct), this.h[2] = rt(this.h[3], jt, Xt), this.h[3] = rt(this.h[4], Bt, Qt), this.h[4] = rt(this.h[0], $t, Wt), this.h[0] = tt;
+        tt = rt(this.h[1], Tt, kt), this.h[1] = rt(this.h[2], Ft, ct), this.h[2] = rt(this.h[3], Ot, Xt), this.h[3] = rt(this.h[4], Bt, Qt), this.h[4] = rt(this.h[0], $t, Wt), this.h[0] = tt;
       }, dt.prototype._digest = function(Rt) {
         return Rt === "hex" ? d.toHex32(this.h, "little") : d.split32(this.h, "little");
       };
@@ -26881,13 +26881,13 @@ Use Chrome, Firefox or Internet Explorer 11`);
         }), $t = this.n.sub(new d(1)), Tt = 0; ; Tt++) {
           var Ft = Ct.k ? Ct.k(Tt) : new d(Bt.generate(this.n.byteLength()));
           if (Ft = this._truncateToN(Ft, true), !(Ft.cmpn(1) <= 0 || Ft.cmp($t) >= 0)) {
-            var jt = this.g.mul(Ft);
-            if (!jt.isInfinity()) {
-              var Xt = jt.getX(), Qt = Xt.umod(this.n);
+            var Ot = this.g.mul(Ft);
+            if (!Ot.isInfinity()) {
+              var Xt = Ot.getX(), Qt = Xt.umod(this.n);
               if (Qt.cmpn(0) !== 0) {
                 var Wt = Ft.invm(this.n).mul(Qt.mul(xt.getPrivate()).iadd(yt));
                 if (Wt = Wt.umod(this.n), Wt.cmpn(0) !== 0) {
-                  var kt = (jt.getY().isOdd() ? 1 : 0) | (Xt.cmp(Qt) !== 0 ? 2 : 0);
+                  var kt = (Ot.getY().isOdd() ? 1 : 0) | (Xt.cmp(Qt) !== 0 ? 2 : 0);
                   return Ct.canonical && Wt.cmp(this.nh) > 0 && (Wt = this.n.sub(Wt), kt ^= 1), new dt({
                     r: Qt,
                     s: Wt,
@@ -27466,7 +27466,7 @@ Use Chrome, Firefox or Internet Explorer 11`);
             return ht !== 0 ? ot.words[wt] = ht | 0 : ot.length--, ot._strip();
           }
           var Bt = function(nt, ot, ut) {
-            var mt = nt.words, vt = ot.words, at = ut.words, it = 0, ht, wt, St, Nt = mt[0] | 0, qt = Nt & 8191, Zt = Nt >>> 13, Ut = mt[1] | 0, Lt = Ut & 8191, Ht = Ut >>> 13, tr = mt[2] | 0, Gt = tr & 8191, zt = tr >>> 13, sr = mt[3] | 0, br = sr & 8191, dr = sr >>> 13, xr = mt[4] | 0, kr = xr & 8191, vr = xr >>> 13, gr = mt[5] | 0, jr = gr & 8191, _r = gr >>> 13, Tr = mt[6] | 0, Ur = Tr & 8191, Cr = Tr >>> 13, lr = mt[7] | 0, rr = lr & 8191, nr = lr >>> 13, ar = mt[8] | 0, pr = ar & 8191, Pt = ar >>> 13, It = mt[9] | 0, Dt = It & 8191, Vt = It >>> 13, ir = vt[0] | 0, ur = ir & 8191, or = ir >>> 13, wr = vt[1] | 0, Ir = wr & 8191, fr = wr >>> 13, $r = vt[2] | 0, Pr = $r & 8191, Mr = $r >>> 13, Nr = vt[3] | 0, Vr = Nr & 8191, Sr = Nr >>> 13, Or = vt[4] | 0, Hr = Or & 8191, Rr = Or >>> 13, Lr = vt[5] | 0, Zr = Lr & 8191, Br = Lr >>> 13, qr = vt[6] | 0, Kt = qr & 8191, Yt = qr >>> 13, er = vt[7] | 0, Ot = er & 8191, Jt = er >>> 13, cr = vt[8] | 0, yr = cr & 8191, hr = cr >>> 13, Er = vt[9] | 0, zr = Er & 8191, Wr = Er >>> 13;
+            var mt = nt.words, vt = ot.words, at = ut.words, it = 0, ht, wt, St, Nt = mt[0] | 0, qt = Nt & 8191, Zt = Nt >>> 13, Ut = mt[1] | 0, Lt = Ut & 8191, Ht = Ut >>> 13, tr = mt[2] | 0, Gt = tr & 8191, zt = tr >>> 13, sr = mt[3] | 0, br = sr & 8191, dr = sr >>> 13, xr = mt[4] | 0, kr = xr & 8191, vr = xr >>> 13, gr = mt[5] | 0, Fr = gr & 8191, _r = gr >>> 13, Tr = mt[6] | 0, Ur = Tr & 8191, Cr = Tr >>> 13, lr = mt[7] | 0, rr = lr & 8191, nr = lr >>> 13, ar = mt[8] | 0, pr = ar & 8191, Pt = ar >>> 13, It = mt[9] | 0, Dt = It & 8191, Vt = It >>> 13, ir = vt[0] | 0, ur = ir & 8191, or = ir >>> 13, wr = vt[1] | 0, Ir = wr & 8191, fr = wr >>> 13, $r = vt[2] | 0, Pr = $r & 8191, Mr = $r >>> 13, Nr = vt[3] | 0, Vr = Nr & 8191, Sr = Nr >>> 13, jr = vt[4] | 0, Hr = jr & 8191, Rr = jr >>> 13, Lr = vt[5] | 0, Zr = Lr & 8191, Br = Lr >>> 13, qr = vt[6] | 0, Kt = qr & 8191, Yt = qr >>> 13, er = vt[7] | 0, jt = er & 8191, Jt = er >>> 13, cr = vt[8] | 0, yr = cr & 8191, hr = cr >>> 13, Er = vt[9] | 0, zr = Er & 8191, Wr = Er >>> 13;
             ut.negative = nt.negative ^ ot.negative, ut.length = 19, ht = Math.imul(qt, ur), wt = Math.imul(qt, or), wt = wt + Math.imul(Zt, ur) | 0, St = Math.imul(Zt, or);
             var gn = (it + ht | 0) + ((wt & 8191) << 13) | 0;
             it = (St + (wt >>> 13) | 0) + (gn >>> 26) | 0, gn &= 67108863, ht = Math.imul(Lt, ur), wt = Math.imul(Lt, or), wt = wt + Math.imul(Ht, ur) | 0, St = Math.imul(Ht, or), ht = ht + Math.imul(qt, Ir) | 0, wt = wt + Math.imul(qt, fr) | 0, wt = wt + Math.imul(Zt, Ir) | 0, St = St + Math.imul(Zt, fr) | 0;
@@ -27477,35 +27477,35 @@ Use Chrome, Firefox or Internet Explorer 11`);
             var un = (it + ht | 0) + ((wt & 8191) << 13) | 0;
             it = (St + (wt >>> 13) | 0) + (un >>> 26) | 0, un &= 67108863, ht = Math.imul(kr, ur), wt = Math.imul(kr, or), wt = wt + Math.imul(vr, ur) | 0, St = Math.imul(vr, or), ht = ht + Math.imul(br, Ir) | 0, wt = wt + Math.imul(br, fr) | 0, wt = wt + Math.imul(dr, Ir) | 0, St = St + Math.imul(dr, fr) | 0, ht = ht + Math.imul(Gt, Pr) | 0, wt = wt + Math.imul(Gt, Mr) | 0, wt = wt + Math.imul(zt, Pr) | 0, St = St + Math.imul(zt, Mr) | 0, ht = ht + Math.imul(Lt, Vr) | 0, wt = wt + Math.imul(Lt, Sr) | 0, wt = wt + Math.imul(Ht, Vr) | 0, St = St + Math.imul(Ht, Sr) | 0, ht = ht + Math.imul(qt, Hr) | 0, wt = wt + Math.imul(qt, Rr) | 0, wt = wt + Math.imul(Zt, Hr) | 0, St = St + Math.imul(Zt, Rr) | 0;
             var mn = (it + ht | 0) + ((wt & 8191) << 13) | 0;
-            it = (St + (wt >>> 13) | 0) + (mn >>> 26) | 0, mn &= 67108863, ht = Math.imul(jr, ur), wt = Math.imul(jr, or), wt = wt + Math.imul(_r, ur) | 0, St = Math.imul(_r, or), ht = ht + Math.imul(kr, Ir) | 0, wt = wt + Math.imul(kr, fr) | 0, wt = wt + Math.imul(vr, Ir) | 0, St = St + Math.imul(vr, fr) | 0, ht = ht + Math.imul(br, Pr) | 0, wt = wt + Math.imul(br, Mr) | 0, wt = wt + Math.imul(dr, Pr) | 0, St = St + Math.imul(dr, Mr) | 0, ht = ht + Math.imul(Gt, Vr) | 0, wt = wt + Math.imul(Gt, Sr) | 0, wt = wt + Math.imul(zt, Vr) | 0, St = St + Math.imul(zt, Sr) | 0, ht = ht + Math.imul(Lt, Hr) | 0, wt = wt + Math.imul(Lt, Rr) | 0, wt = wt + Math.imul(Ht, Hr) | 0, St = St + Math.imul(Ht, Rr) | 0, ht = ht + Math.imul(qt, Zr) | 0, wt = wt + Math.imul(qt, Br) | 0, wt = wt + Math.imul(Zt, Zr) | 0, St = St + Math.imul(Zt, Br) | 0;
+            it = (St + (wt >>> 13) | 0) + (mn >>> 26) | 0, mn &= 67108863, ht = Math.imul(Fr, ur), wt = Math.imul(Fr, or), wt = wt + Math.imul(_r, ur) | 0, St = Math.imul(_r, or), ht = ht + Math.imul(kr, Ir) | 0, wt = wt + Math.imul(kr, fr) | 0, wt = wt + Math.imul(vr, Ir) | 0, St = St + Math.imul(vr, fr) | 0, ht = ht + Math.imul(br, Pr) | 0, wt = wt + Math.imul(br, Mr) | 0, wt = wt + Math.imul(dr, Pr) | 0, St = St + Math.imul(dr, Mr) | 0, ht = ht + Math.imul(Gt, Vr) | 0, wt = wt + Math.imul(Gt, Sr) | 0, wt = wt + Math.imul(zt, Vr) | 0, St = St + Math.imul(zt, Sr) | 0, ht = ht + Math.imul(Lt, Hr) | 0, wt = wt + Math.imul(Lt, Rr) | 0, wt = wt + Math.imul(Ht, Hr) | 0, St = St + Math.imul(Ht, Rr) | 0, ht = ht + Math.imul(qt, Zr) | 0, wt = wt + Math.imul(qt, Br) | 0, wt = wt + Math.imul(Zt, Zr) | 0, St = St + Math.imul(Zt, Br) | 0;
             var pn = (it + ht | 0) + ((wt & 8191) << 13) | 0;
-            it = (St + (wt >>> 13) | 0) + (pn >>> 26) | 0, pn &= 67108863, ht = Math.imul(Ur, ur), wt = Math.imul(Ur, or), wt = wt + Math.imul(Cr, ur) | 0, St = Math.imul(Cr, or), ht = ht + Math.imul(jr, Ir) | 0, wt = wt + Math.imul(jr, fr) | 0, wt = wt + Math.imul(_r, Ir) | 0, St = St + Math.imul(_r, fr) | 0, ht = ht + Math.imul(kr, Pr) | 0, wt = wt + Math.imul(kr, Mr) | 0, wt = wt + Math.imul(vr, Pr) | 0, St = St + Math.imul(vr, Mr) | 0, ht = ht + Math.imul(br, Vr) | 0, wt = wt + Math.imul(br, Sr) | 0, wt = wt + Math.imul(dr, Vr) | 0, St = St + Math.imul(dr, Sr) | 0, ht = ht + Math.imul(Gt, Hr) | 0, wt = wt + Math.imul(Gt, Rr) | 0, wt = wt + Math.imul(zt, Hr) | 0, St = St + Math.imul(zt, Rr) | 0, ht = ht + Math.imul(Lt, Zr) | 0, wt = wt + Math.imul(Lt, Br) | 0, wt = wt + Math.imul(Ht, Zr) | 0, St = St + Math.imul(Ht, Br) | 0, ht = ht + Math.imul(qt, Kt) | 0, wt = wt + Math.imul(qt, Yt) | 0, wt = wt + Math.imul(Zt, Kt) | 0, St = St + Math.imul(Zt, Yt) | 0;
+            it = (St + (wt >>> 13) | 0) + (pn >>> 26) | 0, pn &= 67108863, ht = Math.imul(Ur, ur), wt = Math.imul(Ur, or), wt = wt + Math.imul(Cr, ur) | 0, St = Math.imul(Cr, or), ht = ht + Math.imul(Fr, Ir) | 0, wt = wt + Math.imul(Fr, fr) | 0, wt = wt + Math.imul(_r, Ir) | 0, St = St + Math.imul(_r, fr) | 0, ht = ht + Math.imul(kr, Pr) | 0, wt = wt + Math.imul(kr, Mr) | 0, wt = wt + Math.imul(vr, Pr) | 0, St = St + Math.imul(vr, Mr) | 0, ht = ht + Math.imul(br, Vr) | 0, wt = wt + Math.imul(br, Sr) | 0, wt = wt + Math.imul(dr, Vr) | 0, St = St + Math.imul(dr, Sr) | 0, ht = ht + Math.imul(Gt, Hr) | 0, wt = wt + Math.imul(Gt, Rr) | 0, wt = wt + Math.imul(zt, Hr) | 0, St = St + Math.imul(zt, Rr) | 0, ht = ht + Math.imul(Lt, Zr) | 0, wt = wt + Math.imul(Lt, Br) | 0, wt = wt + Math.imul(Ht, Zr) | 0, St = St + Math.imul(Ht, Br) | 0, ht = ht + Math.imul(qt, Kt) | 0, wt = wt + Math.imul(qt, Yt) | 0, wt = wt + Math.imul(Zt, Kt) | 0, St = St + Math.imul(Zt, Yt) | 0;
             var fn = (it + ht | 0) + ((wt & 8191) << 13) | 0;
-            it = (St + (wt >>> 13) | 0) + (fn >>> 26) | 0, fn &= 67108863, ht = Math.imul(rr, ur), wt = Math.imul(rr, or), wt = wt + Math.imul(nr, ur) | 0, St = Math.imul(nr, or), ht = ht + Math.imul(Ur, Ir) | 0, wt = wt + Math.imul(Ur, fr) | 0, wt = wt + Math.imul(Cr, Ir) | 0, St = St + Math.imul(Cr, fr) | 0, ht = ht + Math.imul(jr, Pr) | 0, wt = wt + Math.imul(jr, Mr) | 0, wt = wt + Math.imul(_r, Pr) | 0, St = St + Math.imul(_r, Mr) | 0, ht = ht + Math.imul(kr, Vr) | 0, wt = wt + Math.imul(kr, Sr) | 0, wt = wt + Math.imul(vr, Vr) | 0, St = St + Math.imul(vr, Sr) | 0, ht = ht + Math.imul(br, Hr) | 0, wt = wt + Math.imul(br, Rr) | 0, wt = wt + Math.imul(dr, Hr) | 0, St = St + Math.imul(dr, Rr) | 0, ht = ht + Math.imul(Gt, Zr) | 0, wt = wt + Math.imul(Gt, Br) | 0, wt = wt + Math.imul(zt, Zr) | 0, St = St + Math.imul(zt, Br) | 0, ht = ht + Math.imul(Lt, Kt) | 0, wt = wt + Math.imul(Lt, Yt) | 0, wt = wt + Math.imul(Ht, Kt) | 0, St = St + Math.imul(Ht, Yt) | 0, ht = ht + Math.imul(qt, Ot) | 0, wt = wt + Math.imul(qt, Jt) | 0, wt = wt + Math.imul(Zt, Ot) | 0, St = St + Math.imul(Zt, Jt) | 0;
+            it = (St + (wt >>> 13) | 0) + (fn >>> 26) | 0, fn &= 67108863, ht = Math.imul(rr, ur), wt = Math.imul(rr, or), wt = wt + Math.imul(nr, ur) | 0, St = Math.imul(nr, or), ht = ht + Math.imul(Ur, Ir) | 0, wt = wt + Math.imul(Ur, fr) | 0, wt = wt + Math.imul(Cr, Ir) | 0, St = St + Math.imul(Cr, fr) | 0, ht = ht + Math.imul(Fr, Pr) | 0, wt = wt + Math.imul(Fr, Mr) | 0, wt = wt + Math.imul(_r, Pr) | 0, St = St + Math.imul(_r, Mr) | 0, ht = ht + Math.imul(kr, Vr) | 0, wt = wt + Math.imul(kr, Sr) | 0, wt = wt + Math.imul(vr, Vr) | 0, St = St + Math.imul(vr, Sr) | 0, ht = ht + Math.imul(br, Hr) | 0, wt = wt + Math.imul(br, Rr) | 0, wt = wt + Math.imul(dr, Hr) | 0, St = St + Math.imul(dr, Rr) | 0, ht = ht + Math.imul(Gt, Zr) | 0, wt = wt + Math.imul(Gt, Br) | 0, wt = wt + Math.imul(zt, Zr) | 0, St = St + Math.imul(zt, Br) | 0, ht = ht + Math.imul(Lt, Kt) | 0, wt = wt + Math.imul(Lt, Yt) | 0, wt = wt + Math.imul(Ht, Kt) | 0, St = St + Math.imul(Ht, Yt) | 0, ht = ht + Math.imul(qt, jt) | 0, wt = wt + Math.imul(qt, Jt) | 0, wt = wt + Math.imul(Zt, jt) | 0, St = St + Math.imul(Zt, Jt) | 0;
             var hn = (it + ht | 0) + ((wt & 8191) << 13) | 0;
-            it = (St + (wt >>> 13) | 0) + (hn >>> 26) | 0, hn &= 67108863, ht = Math.imul(pr, ur), wt = Math.imul(pr, or), wt = wt + Math.imul(Pt, ur) | 0, St = Math.imul(Pt, or), ht = ht + Math.imul(rr, Ir) | 0, wt = wt + Math.imul(rr, fr) | 0, wt = wt + Math.imul(nr, Ir) | 0, St = St + Math.imul(nr, fr) | 0, ht = ht + Math.imul(Ur, Pr) | 0, wt = wt + Math.imul(Ur, Mr) | 0, wt = wt + Math.imul(Cr, Pr) | 0, St = St + Math.imul(Cr, Mr) | 0, ht = ht + Math.imul(jr, Vr) | 0, wt = wt + Math.imul(jr, Sr) | 0, wt = wt + Math.imul(_r, Vr) | 0, St = St + Math.imul(_r, Sr) | 0, ht = ht + Math.imul(kr, Hr) | 0, wt = wt + Math.imul(kr, Rr) | 0, wt = wt + Math.imul(vr, Hr) | 0, St = St + Math.imul(vr, Rr) | 0, ht = ht + Math.imul(br, Zr) | 0, wt = wt + Math.imul(br, Br) | 0, wt = wt + Math.imul(dr, Zr) | 0, St = St + Math.imul(dr, Br) | 0, ht = ht + Math.imul(Gt, Kt) | 0, wt = wt + Math.imul(Gt, Yt) | 0, wt = wt + Math.imul(zt, Kt) | 0, St = St + Math.imul(zt, Yt) | 0, ht = ht + Math.imul(Lt, Ot) | 0, wt = wt + Math.imul(Lt, Jt) | 0, wt = wt + Math.imul(Ht, Ot) | 0, St = St + Math.imul(Ht, Jt) | 0, ht = ht + Math.imul(qt, yr) | 0, wt = wt + Math.imul(qt, hr) | 0, wt = wt + Math.imul(Zt, yr) | 0, St = St + Math.imul(Zt, hr) | 0;
+            it = (St + (wt >>> 13) | 0) + (hn >>> 26) | 0, hn &= 67108863, ht = Math.imul(pr, ur), wt = Math.imul(pr, or), wt = wt + Math.imul(Pt, ur) | 0, St = Math.imul(Pt, or), ht = ht + Math.imul(rr, Ir) | 0, wt = wt + Math.imul(rr, fr) | 0, wt = wt + Math.imul(nr, Ir) | 0, St = St + Math.imul(nr, fr) | 0, ht = ht + Math.imul(Ur, Pr) | 0, wt = wt + Math.imul(Ur, Mr) | 0, wt = wt + Math.imul(Cr, Pr) | 0, St = St + Math.imul(Cr, Mr) | 0, ht = ht + Math.imul(Fr, Vr) | 0, wt = wt + Math.imul(Fr, Sr) | 0, wt = wt + Math.imul(_r, Vr) | 0, St = St + Math.imul(_r, Sr) | 0, ht = ht + Math.imul(kr, Hr) | 0, wt = wt + Math.imul(kr, Rr) | 0, wt = wt + Math.imul(vr, Hr) | 0, St = St + Math.imul(vr, Rr) | 0, ht = ht + Math.imul(br, Zr) | 0, wt = wt + Math.imul(br, Br) | 0, wt = wt + Math.imul(dr, Zr) | 0, St = St + Math.imul(dr, Br) | 0, ht = ht + Math.imul(Gt, Kt) | 0, wt = wt + Math.imul(Gt, Yt) | 0, wt = wt + Math.imul(zt, Kt) | 0, St = St + Math.imul(zt, Yt) | 0, ht = ht + Math.imul(Lt, jt) | 0, wt = wt + Math.imul(Lt, Jt) | 0, wt = wt + Math.imul(Ht, jt) | 0, St = St + Math.imul(Ht, Jt) | 0, ht = ht + Math.imul(qt, yr) | 0, wt = wt + Math.imul(qt, hr) | 0, wt = wt + Math.imul(Zt, yr) | 0, St = St + Math.imul(Zt, hr) | 0;
             var dn = (it + ht | 0) + ((wt & 8191) << 13) | 0;
-            it = (St + (wt >>> 13) | 0) + (dn >>> 26) | 0, dn &= 67108863, ht = Math.imul(Dt, ur), wt = Math.imul(Dt, or), wt = wt + Math.imul(Vt, ur) | 0, St = Math.imul(Vt, or), ht = ht + Math.imul(pr, Ir) | 0, wt = wt + Math.imul(pr, fr) | 0, wt = wt + Math.imul(Pt, Ir) | 0, St = St + Math.imul(Pt, fr) | 0, ht = ht + Math.imul(rr, Pr) | 0, wt = wt + Math.imul(rr, Mr) | 0, wt = wt + Math.imul(nr, Pr) | 0, St = St + Math.imul(nr, Mr) | 0, ht = ht + Math.imul(Ur, Vr) | 0, wt = wt + Math.imul(Ur, Sr) | 0, wt = wt + Math.imul(Cr, Vr) | 0, St = St + Math.imul(Cr, Sr) | 0, ht = ht + Math.imul(jr, Hr) | 0, wt = wt + Math.imul(jr, Rr) | 0, wt = wt + Math.imul(_r, Hr) | 0, St = St + Math.imul(_r, Rr) | 0, ht = ht + Math.imul(kr, Zr) | 0, wt = wt + Math.imul(kr, Br) | 0, wt = wt + Math.imul(vr, Zr) | 0, St = St + Math.imul(vr, Br) | 0, ht = ht + Math.imul(br, Kt) | 0, wt = wt + Math.imul(br, Yt) | 0, wt = wt + Math.imul(dr, Kt) | 0, St = St + Math.imul(dr, Yt) | 0, ht = ht + Math.imul(Gt, Ot) | 0, wt = wt + Math.imul(Gt, Jt) | 0, wt = wt + Math.imul(zt, Ot) | 0, St = St + Math.imul(zt, Jt) | 0, ht = ht + Math.imul(Lt, yr) | 0, wt = wt + Math.imul(Lt, hr) | 0, wt = wt + Math.imul(Ht, yr) | 0, St = St + Math.imul(Ht, hr) | 0, ht = ht + Math.imul(qt, zr) | 0, wt = wt + Math.imul(qt, Wr) | 0, wt = wt + Math.imul(Zt, zr) | 0, St = St + Math.imul(Zt, Wr) | 0;
+            it = (St + (wt >>> 13) | 0) + (dn >>> 26) | 0, dn &= 67108863, ht = Math.imul(Dt, ur), wt = Math.imul(Dt, or), wt = wt + Math.imul(Vt, ur) | 0, St = Math.imul(Vt, or), ht = ht + Math.imul(pr, Ir) | 0, wt = wt + Math.imul(pr, fr) | 0, wt = wt + Math.imul(Pt, Ir) | 0, St = St + Math.imul(Pt, fr) | 0, ht = ht + Math.imul(rr, Pr) | 0, wt = wt + Math.imul(rr, Mr) | 0, wt = wt + Math.imul(nr, Pr) | 0, St = St + Math.imul(nr, Mr) | 0, ht = ht + Math.imul(Ur, Vr) | 0, wt = wt + Math.imul(Ur, Sr) | 0, wt = wt + Math.imul(Cr, Vr) | 0, St = St + Math.imul(Cr, Sr) | 0, ht = ht + Math.imul(Fr, Hr) | 0, wt = wt + Math.imul(Fr, Rr) | 0, wt = wt + Math.imul(_r, Hr) | 0, St = St + Math.imul(_r, Rr) | 0, ht = ht + Math.imul(kr, Zr) | 0, wt = wt + Math.imul(kr, Br) | 0, wt = wt + Math.imul(vr, Zr) | 0, St = St + Math.imul(vr, Br) | 0, ht = ht + Math.imul(br, Kt) | 0, wt = wt + Math.imul(br, Yt) | 0, wt = wt + Math.imul(dr, Kt) | 0, St = St + Math.imul(dr, Yt) | 0, ht = ht + Math.imul(Gt, jt) | 0, wt = wt + Math.imul(Gt, Jt) | 0, wt = wt + Math.imul(zt, jt) | 0, St = St + Math.imul(zt, Jt) | 0, ht = ht + Math.imul(Lt, yr) | 0, wt = wt + Math.imul(Lt, hr) | 0, wt = wt + Math.imul(Ht, yr) | 0, St = St + Math.imul(Ht, hr) | 0, ht = ht + Math.imul(qt, zr) | 0, wt = wt + Math.imul(qt, Wr) | 0, wt = wt + Math.imul(Zt, zr) | 0, St = St + Math.imul(Zt, Wr) | 0;
             var tn = (it + ht | 0) + ((wt & 8191) << 13) | 0;
-            it = (St + (wt >>> 13) | 0) + (tn >>> 26) | 0, tn &= 67108863, ht = Math.imul(Dt, Ir), wt = Math.imul(Dt, fr), wt = wt + Math.imul(Vt, Ir) | 0, St = Math.imul(Vt, fr), ht = ht + Math.imul(pr, Pr) | 0, wt = wt + Math.imul(pr, Mr) | 0, wt = wt + Math.imul(Pt, Pr) | 0, St = St + Math.imul(Pt, Mr) | 0, ht = ht + Math.imul(rr, Vr) | 0, wt = wt + Math.imul(rr, Sr) | 0, wt = wt + Math.imul(nr, Vr) | 0, St = St + Math.imul(nr, Sr) | 0, ht = ht + Math.imul(Ur, Hr) | 0, wt = wt + Math.imul(Ur, Rr) | 0, wt = wt + Math.imul(Cr, Hr) | 0, St = St + Math.imul(Cr, Rr) | 0, ht = ht + Math.imul(jr, Zr) | 0, wt = wt + Math.imul(jr, Br) | 0, wt = wt + Math.imul(_r, Zr) | 0, St = St + Math.imul(_r, Br) | 0, ht = ht + Math.imul(kr, Kt) | 0, wt = wt + Math.imul(kr, Yt) | 0, wt = wt + Math.imul(vr, Kt) | 0, St = St + Math.imul(vr, Yt) | 0, ht = ht + Math.imul(br, Ot) | 0, wt = wt + Math.imul(br, Jt) | 0, wt = wt + Math.imul(dr, Ot) | 0, St = St + Math.imul(dr, Jt) | 0, ht = ht + Math.imul(Gt, yr) | 0, wt = wt + Math.imul(Gt, hr) | 0, wt = wt + Math.imul(zt, yr) | 0, St = St + Math.imul(zt, hr) | 0, ht = ht + Math.imul(Lt, zr) | 0, wt = wt + Math.imul(Lt, Wr) | 0, wt = wt + Math.imul(Ht, zr) | 0, St = St + Math.imul(Ht, Wr) | 0;
+            it = (St + (wt >>> 13) | 0) + (tn >>> 26) | 0, tn &= 67108863, ht = Math.imul(Dt, Ir), wt = Math.imul(Dt, fr), wt = wt + Math.imul(Vt, Ir) | 0, St = Math.imul(Vt, fr), ht = ht + Math.imul(pr, Pr) | 0, wt = wt + Math.imul(pr, Mr) | 0, wt = wt + Math.imul(Pt, Pr) | 0, St = St + Math.imul(Pt, Mr) | 0, ht = ht + Math.imul(rr, Vr) | 0, wt = wt + Math.imul(rr, Sr) | 0, wt = wt + Math.imul(nr, Vr) | 0, St = St + Math.imul(nr, Sr) | 0, ht = ht + Math.imul(Ur, Hr) | 0, wt = wt + Math.imul(Ur, Rr) | 0, wt = wt + Math.imul(Cr, Hr) | 0, St = St + Math.imul(Cr, Rr) | 0, ht = ht + Math.imul(Fr, Zr) | 0, wt = wt + Math.imul(Fr, Br) | 0, wt = wt + Math.imul(_r, Zr) | 0, St = St + Math.imul(_r, Br) | 0, ht = ht + Math.imul(kr, Kt) | 0, wt = wt + Math.imul(kr, Yt) | 0, wt = wt + Math.imul(vr, Kt) | 0, St = St + Math.imul(vr, Yt) | 0, ht = ht + Math.imul(br, jt) | 0, wt = wt + Math.imul(br, Jt) | 0, wt = wt + Math.imul(dr, jt) | 0, St = St + Math.imul(dr, Jt) | 0, ht = ht + Math.imul(Gt, yr) | 0, wt = wt + Math.imul(Gt, hr) | 0, wt = wt + Math.imul(zt, yr) | 0, St = St + Math.imul(zt, hr) | 0, ht = ht + Math.imul(Lt, zr) | 0, wt = wt + Math.imul(Lt, Wr) | 0, wt = wt + Math.imul(Ht, zr) | 0, St = St + Math.imul(Ht, Wr) | 0;
             var an = (it + ht | 0) + ((wt & 8191) << 13) | 0;
-            it = (St + (wt >>> 13) | 0) + (an >>> 26) | 0, an &= 67108863, ht = Math.imul(Dt, Pr), wt = Math.imul(Dt, Mr), wt = wt + Math.imul(Vt, Pr) | 0, St = Math.imul(Vt, Mr), ht = ht + Math.imul(pr, Vr) | 0, wt = wt + Math.imul(pr, Sr) | 0, wt = wt + Math.imul(Pt, Vr) | 0, St = St + Math.imul(Pt, Sr) | 0, ht = ht + Math.imul(rr, Hr) | 0, wt = wt + Math.imul(rr, Rr) | 0, wt = wt + Math.imul(nr, Hr) | 0, St = St + Math.imul(nr, Rr) | 0, ht = ht + Math.imul(Ur, Zr) | 0, wt = wt + Math.imul(Ur, Br) | 0, wt = wt + Math.imul(Cr, Zr) | 0, St = St + Math.imul(Cr, Br) | 0, ht = ht + Math.imul(jr, Kt) | 0, wt = wt + Math.imul(jr, Yt) | 0, wt = wt + Math.imul(_r, Kt) | 0, St = St + Math.imul(_r, Yt) | 0, ht = ht + Math.imul(kr, Ot) | 0, wt = wt + Math.imul(kr, Jt) | 0, wt = wt + Math.imul(vr, Ot) | 0, St = St + Math.imul(vr, Jt) | 0, ht = ht + Math.imul(br, yr) | 0, wt = wt + Math.imul(br, hr) | 0, wt = wt + Math.imul(dr, yr) | 0, St = St + Math.imul(dr, hr) | 0, ht = ht + Math.imul(Gt, zr) | 0, wt = wt + Math.imul(Gt, Wr) | 0, wt = wt + Math.imul(zt, zr) | 0, St = St + Math.imul(zt, Wr) | 0;
+            it = (St + (wt >>> 13) | 0) + (an >>> 26) | 0, an &= 67108863, ht = Math.imul(Dt, Pr), wt = Math.imul(Dt, Mr), wt = wt + Math.imul(Vt, Pr) | 0, St = Math.imul(Vt, Mr), ht = ht + Math.imul(pr, Vr) | 0, wt = wt + Math.imul(pr, Sr) | 0, wt = wt + Math.imul(Pt, Vr) | 0, St = St + Math.imul(Pt, Sr) | 0, ht = ht + Math.imul(rr, Hr) | 0, wt = wt + Math.imul(rr, Rr) | 0, wt = wt + Math.imul(nr, Hr) | 0, St = St + Math.imul(nr, Rr) | 0, ht = ht + Math.imul(Ur, Zr) | 0, wt = wt + Math.imul(Ur, Br) | 0, wt = wt + Math.imul(Cr, Zr) | 0, St = St + Math.imul(Cr, Br) | 0, ht = ht + Math.imul(Fr, Kt) | 0, wt = wt + Math.imul(Fr, Yt) | 0, wt = wt + Math.imul(_r, Kt) | 0, St = St + Math.imul(_r, Yt) | 0, ht = ht + Math.imul(kr, jt) | 0, wt = wt + Math.imul(kr, Jt) | 0, wt = wt + Math.imul(vr, jt) | 0, St = St + Math.imul(vr, Jt) | 0, ht = ht + Math.imul(br, yr) | 0, wt = wt + Math.imul(br, hr) | 0, wt = wt + Math.imul(dr, yr) | 0, St = St + Math.imul(dr, hr) | 0, ht = ht + Math.imul(Gt, zr) | 0, wt = wt + Math.imul(Gt, Wr) | 0, wt = wt + Math.imul(zt, zr) | 0, St = St + Math.imul(zt, Wr) | 0;
             var Yr = (it + ht | 0) + ((wt & 8191) << 13) | 0;
-            it = (St + (wt >>> 13) | 0) + (Yr >>> 26) | 0, Yr &= 67108863, ht = Math.imul(Dt, Vr), wt = Math.imul(Dt, Sr), wt = wt + Math.imul(Vt, Vr) | 0, St = Math.imul(Vt, Sr), ht = ht + Math.imul(pr, Hr) | 0, wt = wt + Math.imul(pr, Rr) | 0, wt = wt + Math.imul(Pt, Hr) | 0, St = St + Math.imul(Pt, Rr) | 0, ht = ht + Math.imul(rr, Zr) | 0, wt = wt + Math.imul(rr, Br) | 0, wt = wt + Math.imul(nr, Zr) | 0, St = St + Math.imul(nr, Br) | 0, ht = ht + Math.imul(Ur, Kt) | 0, wt = wt + Math.imul(Ur, Yt) | 0, wt = wt + Math.imul(Cr, Kt) | 0, St = St + Math.imul(Cr, Yt) | 0, ht = ht + Math.imul(jr, Ot) | 0, wt = wt + Math.imul(jr, Jt) | 0, wt = wt + Math.imul(_r, Ot) | 0, St = St + Math.imul(_r, Jt) | 0, ht = ht + Math.imul(kr, yr) | 0, wt = wt + Math.imul(kr, hr) | 0, wt = wt + Math.imul(vr, yr) | 0, St = St + Math.imul(vr, hr) | 0, ht = ht + Math.imul(br, zr) | 0, wt = wt + Math.imul(br, Wr) | 0, wt = wt + Math.imul(dr, zr) | 0, St = St + Math.imul(dr, Wr) | 0;
+            it = (St + (wt >>> 13) | 0) + (Yr >>> 26) | 0, Yr &= 67108863, ht = Math.imul(Dt, Vr), wt = Math.imul(Dt, Sr), wt = wt + Math.imul(Vt, Vr) | 0, St = Math.imul(Vt, Sr), ht = ht + Math.imul(pr, Hr) | 0, wt = wt + Math.imul(pr, Rr) | 0, wt = wt + Math.imul(Pt, Hr) | 0, St = St + Math.imul(Pt, Rr) | 0, ht = ht + Math.imul(rr, Zr) | 0, wt = wt + Math.imul(rr, Br) | 0, wt = wt + Math.imul(nr, Zr) | 0, St = St + Math.imul(nr, Br) | 0, ht = ht + Math.imul(Ur, Kt) | 0, wt = wt + Math.imul(Ur, Yt) | 0, wt = wt + Math.imul(Cr, Kt) | 0, St = St + Math.imul(Cr, Yt) | 0, ht = ht + Math.imul(Fr, jt) | 0, wt = wt + Math.imul(Fr, Jt) | 0, wt = wt + Math.imul(_r, jt) | 0, St = St + Math.imul(_r, Jt) | 0, ht = ht + Math.imul(kr, yr) | 0, wt = wt + Math.imul(kr, hr) | 0, wt = wt + Math.imul(vr, yr) | 0, St = St + Math.imul(vr, hr) | 0, ht = ht + Math.imul(br, zr) | 0, wt = wt + Math.imul(br, Wr) | 0, wt = wt + Math.imul(dr, zr) | 0, St = St + Math.imul(dr, Wr) | 0;
             var rn = (it + ht | 0) + ((wt & 8191) << 13) | 0;
-            it = (St + (wt >>> 13) | 0) + (rn >>> 26) | 0, rn &= 67108863, ht = Math.imul(Dt, Hr), wt = Math.imul(Dt, Rr), wt = wt + Math.imul(Vt, Hr) | 0, St = Math.imul(Vt, Rr), ht = ht + Math.imul(pr, Zr) | 0, wt = wt + Math.imul(pr, Br) | 0, wt = wt + Math.imul(Pt, Zr) | 0, St = St + Math.imul(Pt, Br) | 0, ht = ht + Math.imul(rr, Kt) | 0, wt = wt + Math.imul(rr, Yt) | 0, wt = wt + Math.imul(nr, Kt) | 0, St = St + Math.imul(nr, Yt) | 0, ht = ht + Math.imul(Ur, Ot) | 0, wt = wt + Math.imul(Ur, Jt) | 0, wt = wt + Math.imul(Cr, Ot) | 0, St = St + Math.imul(Cr, Jt) | 0, ht = ht + Math.imul(jr, yr) | 0, wt = wt + Math.imul(jr, hr) | 0, wt = wt + Math.imul(_r, yr) | 0, St = St + Math.imul(_r, hr) | 0, ht = ht + Math.imul(kr, zr) | 0, wt = wt + Math.imul(kr, Wr) | 0, wt = wt + Math.imul(vr, zr) | 0, St = St + Math.imul(vr, Wr) | 0;
+            it = (St + (wt >>> 13) | 0) + (rn >>> 26) | 0, rn &= 67108863, ht = Math.imul(Dt, Hr), wt = Math.imul(Dt, Rr), wt = wt + Math.imul(Vt, Hr) | 0, St = Math.imul(Vt, Rr), ht = ht + Math.imul(pr, Zr) | 0, wt = wt + Math.imul(pr, Br) | 0, wt = wt + Math.imul(Pt, Zr) | 0, St = St + Math.imul(Pt, Br) | 0, ht = ht + Math.imul(rr, Kt) | 0, wt = wt + Math.imul(rr, Yt) | 0, wt = wt + Math.imul(nr, Kt) | 0, St = St + Math.imul(nr, Yt) | 0, ht = ht + Math.imul(Ur, jt) | 0, wt = wt + Math.imul(Ur, Jt) | 0, wt = wt + Math.imul(Cr, jt) | 0, St = St + Math.imul(Cr, Jt) | 0, ht = ht + Math.imul(Fr, yr) | 0, wt = wt + Math.imul(Fr, hr) | 0, wt = wt + Math.imul(_r, yr) | 0, St = St + Math.imul(_r, hr) | 0, ht = ht + Math.imul(kr, zr) | 0, wt = wt + Math.imul(kr, Wr) | 0, wt = wt + Math.imul(vr, zr) | 0, St = St + Math.imul(vr, Wr) | 0;
             var nn = (it + ht | 0) + ((wt & 8191) << 13) | 0;
-            it = (St + (wt >>> 13) | 0) + (nn >>> 26) | 0, nn &= 67108863, ht = Math.imul(Dt, Zr), wt = Math.imul(Dt, Br), wt = wt + Math.imul(Vt, Zr) | 0, St = Math.imul(Vt, Br), ht = ht + Math.imul(pr, Kt) | 0, wt = wt + Math.imul(pr, Yt) | 0, wt = wt + Math.imul(Pt, Kt) | 0, St = St + Math.imul(Pt, Yt) | 0, ht = ht + Math.imul(rr, Ot) | 0, wt = wt + Math.imul(rr, Jt) | 0, wt = wt + Math.imul(nr, Ot) | 0, St = St + Math.imul(nr, Jt) | 0, ht = ht + Math.imul(Ur, yr) | 0, wt = wt + Math.imul(Ur, hr) | 0, wt = wt + Math.imul(Cr, yr) | 0, St = St + Math.imul(Cr, hr) | 0, ht = ht + Math.imul(jr, zr) | 0, wt = wt + Math.imul(jr, Wr) | 0, wt = wt + Math.imul(_r, zr) | 0, St = St + Math.imul(_r, Wr) | 0;
+            it = (St + (wt >>> 13) | 0) + (nn >>> 26) | 0, nn &= 67108863, ht = Math.imul(Dt, Zr), wt = Math.imul(Dt, Br), wt = wt + Math.imul(Vt, Zr) | 0, St = Math.imul(Vt, Br), ht = ht + Math.imul(pr, Kt) | 0, wt = wt + Math.imul(pr, Yt) | 0, wt = wt + Math.imul(Pt, Kt) | 0, St = St + Math.imul(Pt, Yt) | 0, ht = ht + Math.imul(rr, jt) | 0, wt = wt + Math.imul(rr, Jt) | 0, wt = wt + Math.imul(nr, jt) | 0, St = St + Math.imul(nr, Jt) | 0, ht = ht + Math.imul(Ur, yr) | 0, wt = wt + Math.imul(Ur, hr) | 0, wt = wt + Math.imul(Cr, yr) | 0, St = St + Math.imul(Cr, hr) | 0, ht = ht + Math.imul(Fr, zr) | 0, wt = wt + Math.imul(Fr, Wr) | 0, wt = wt + Math.imul(_r, zr) | 0, St = St + Math.imul(_r, Wr) | 0;
             var Gr = (it + ht | 0) + ((wt & 8191) << 13) | 0;
-            it = (St + (wt >>> 13) | 0) + (Gr >>> 26) | 0, Gr &= 67108863, ht = Math.imul(Dt, Kt), wt = Math.imul(Dt, Yt), wt = wt + Math.imul(Vt, Kt) | 0, St = Math.imul(Vt, Yt), ht = ht + Math.imul(pr, Ot) | 0, wt = wt + Math.imul(pr, Jt) | 0, wt = wt + Math.imul(Pt, Ot) | 0, St = St + Math.imul(Pt, Jt) | 0, ht = ht + Math.imul(rr, yr) | 0, wt = wt + Math.imul(rr, hr) | 0, wt = wt + Math.imul(nr, yr) | 0, St = St + Math.imul(nr, hr) | 0, ht = ht + Math.imul(Ur, zr) | 0, wt = wt + Math.imul(Ur, Wr) | 0, wt = wt + Math.imul(Cr, zr) | 0, St = St + Math.imul(Cr, Wr) | 0;
+            it = (St + (wt >>> 13) | 0) + (Gr >>> 26) | 0, Gr &= 67108863, ht = Math.imul(Dt, Kt), wt = Math.imul(Dt, Yt), wt = wt + Math.imul(Vt, Kt) | 0, St = Math.imul(Vt, Yt), ht = ht + Math.imul(pr, jt) | 0, wt = wt + Math.imul(pr, Jt) | 0, wt = wt + Math.imul(Pt, jt) | 0, St = St + Math.imul(Pt, Jt) | 0, ht = ht + Math.imul(rr, yr) | 0, wt = wt + Math.imul(rr, hr) | 0, wt = wt + Math.imul(nr, yr) | 0, St = St + Math.imul(nr, hr) | 0, ht = ht + Math.imul(Ur, zr) | 0, wt = wt + Math.imul(Ur, Wr) | 0, wt = wt + Math.imul(Cr, zr) | 0, St = St + Math.imul(Cr, Wr) | 0;
             var Dr = (it + ht | 0) + ((wt & 8191) << 13) | 0;
-            it = (St + (wt >>> 13) | 0) + (Dr >>> 26) | 0, Dr &= 67108863, ht = Math.imul(Dt, Ot), wt = Math.imul(Dt, Jt), wt = wt + Math.imul(Vt, Ot) | 0, St = Math.imul(Vt, Jt), ht = ht + Math.imul(pr, yr) | 0, wt = wt + Math.imul(pr, hr) | 0, wt = wt + Math.imul(Pt, yr) | 0, St = St + Math.imul(Pt, hr) | 0, ht = ht + Math.imul(rr, zr) | 0, wt = wt + Math.imul(rr, Wr) | 0, wt = wt + Math.imul(nr, zr) | 0, St = St + Math.imul(nr, Wr) | 0;
-            var Fr = (it + ht | 0) + ((wt & 8191) << 13) | 0;
-            it = (St + (wt >>> 13) | 0) + (Fr >>> 26) | 0, Fr &= 67108863, ht = Math.imul(Dt, yr), wt = Math.imul(Dt, hr), wt = wt + Math.imul(Vt, yr) | 0, St = Math.imul(Vt, hr), ht = ht + Math.imul(pr, zr) | 0, wt = wt + Math.imul(pr, Wr) | 0, wt = wt + Math.imul(Pt, zr) | 0, St = St + Math.imul(Pt, Wr) | 0;
+            it = (St + (wt >>> 13) | 0) + (Dr >>> 26) | 0, Dr &= 67108863, ht = Math.imul(Dt, jt), wt = Math.imul(Dt, Jt), wt = wt + Math.imul(Vt, jt) | 0, St = Math.imul(Vt, Jt), ht = ht + Math.imul(pr, yr) | 0, wt = wt + Math.imul(pr, hr) | 0, wt = wt + Math.imul(Pt, yr) | 0, St = St + Math.imul(Pt, hr) | 0, ht = ht + Math.imul(rr, zr) | 0, wt = wt + Math.imul(rr, Wr) | 0, wt = wt + Math.imul(nr, zr) | 0, St = St + Math.imul(nr, Wr) | 0;
+            var Or = (it + ht | 0) + ((wt & 8191) << 13) | 0;
+            it = (St + (wt >>> 13) | 0) + (Or >>> 26) | 0, Or &= 67108863, ht = Math.imul(Dt, yr), wt = Math.imul(Dt, hr), wt = wt + Math.imul(Vt, yr) | 0, St = Math.imul(Vt, hr), ht = ht + Math.imul(pr, zr) | 0, wt = wt + Math.imul(pr, Wr) | 0, wt = wt + Math.imul(Pt, zr) | 0, St = St + Math.imul(Pt, Wr) | 0;
             var Xr = (it + ht | 0) + ((wt & 8191) << 13) | 0;
             it = (St + (wt >>> 13) | 0) + (Xr >>> 26) | 0, Xr &= 67108863, ht = Math.imul(Dt, zr), wt = Math.imul(Dt, Wr), wt = wt + Math.imul(Vt, zr) | 0, St = Math.imul(Vt, Wr);
             var Kr = (it + ht | 0) + ((wt & 8191) << 13) | 0;
-            return it = (St + (wt >>> 13) | 0) + (Kr >>> 26) | 0, Kr &= 67108863, at[0] = gn, at[1] = Jr, at[2] = ln, at[3] = un, at[4] = mn, at[5] = pn, at[6] = fn, at[7] = hn, at[8] = dn, at[9] = tn, at[10] = an, at[11] = Yr, at[12] = rn, at[13] = nn, at[14] = Gr, at[15] = Dr, at[16] = Fr, at[17] = Xr, at[18] = Kr, it !== 0 && (at[19] = it, ut.length++), ut;
+            return it = (St + (wt >>> 13) | 0) + (Kr >>> 26) | 0, Kr &= 67108863, at[0] = gn, at[1] = Jr, at[2] = ln, at[3] = un, at[4] = mn, at[5] = pn, at[6] = fn, at[7] = hn, at[8] = dn, at[9] = tn, at[10] = an, at[11] = Yr, at[12] = rn, at[13] = nn, at[14] = Gr, at[15] = Dr, at[16] = Or, at[17] = Xr, at[18] = Kr, it !== 0 && (at[19] = it, ut.length++), ut;
           };
           Math.imul || (Bt = At);
           function $t(tt, nt, ot) {
@@ -27884,28 +27884,28 @@ Use Chrome, Firefox or Internet Explorer 11`);
             p192: null,
             p25519: null
           };
-          function jt(tt, nt) {
+          function Ot(tt, nt) {
             this.name = tt, this.p = new j(nt, 16), this.n = this.p.bitLength(), this.k = new j(1).iushln(this.n).isub(this.p), this.tmp = this._tmp();
           }
-          jt.prototype._tmp = function() {
+          Ot.prototype._tmp = function() {
             var nt = new j(null);
             return nt.words = new Array(Math.ceil(this.n / 13)), nt;
-          }, jt.prototype.ireduce = function(nt) {
+          }, Ot.prototype.ireduce = function(nt) {
             var ot = nt, ut;
             do
               this.split(ot, this.tmp), ot = this.imulK(ot), ot = ot.iadd(this.tmp), ut = ot.bitLength();
             while (ut > this.n);
             var mt = ut < this.n ? -1 : ot.ucmp(this.p);
             return mt === 0 ? (ot.words[0] = 0, ot.length = 1) : mt > 0 ? ot.isub(this.p) : ot.strip !== void 0 ? ot.strip() : ot._strip(), ot;
-          }, jt.prototype.split = function(nt, ot) {
+          }, Ot.prototype.split = function(nt, ot) {
             nt.iushrn(this.n, 0, ot);
-          }, jt.prototype.imulK = function(nt) {
+          }, Ot.prototype.imulK = function(nt) {
             return nt.imul(this.k);
           };
           function Xt() {
-            jt.call(this, "k256", "ffffffff ffffffff ffffffff ffffffff ffffffff ffffffff fffffffe fffffc2f");
+            Ot.call(this, "k256", "ffffffff ffffffff ffffffff ffffffff ffffffff ffffffff fffffffe fffffc2f");
           }
-          rt(Xt, jt), Xt.prototype.split = function(nt, ot) {
+          rt(Xt, Ot), Xt.prototype.split = function(nt, ot) {
             for (var ut = 4194303, mt = Math.min(nt.length, 9), vt = 0; vt < mt; vt++) ot.words[vt] = nt.words[vt];
             if (ot.length = mt, nt.length <= 9) {
               nt.words[0] = 0, nt.length = 1;
@@ -27926,17 +27926,17 @@ Use Chrome, Firefox or Internet Explorer 11`);
             return nt.words[nt.length - 1] === 0 && (nt.length--, nt.words[nt.length - 1] === 0 && nt.length--), nt;
           };
           function Qt() {
-            jt.call(this, "p224", "ffffffff ffffffff ffffffff ffffffff 00000000 00000000 00000001");
+            Ot.call(this, "p224", "ffffffff ffffffff ffffffff ffffffff 00000000 00000000 00000001");
           }
-          rt(Qt, jt);
+          rt(Qt, Ot);
           function Wt() {
-            jt.call(this, "p192", "ffffffff ffffffff ffffffff fffffffe ffffffff ffffffff");
+            Ot.call(this, "p192", "ffffffff ffffffff ffffffff fffffffe ffffffff ffffffff");
           }
-          rt(Wt, jt);
+          rt(Wt, Ot);
           function kt() {
-            jt.call(this, "25519", "7fffffffffffffff ffffffffffffffff ffffffffffffffff ffffffffffffffed");
+            Ot.call(this, "25519", "7fffffffffffffff ffffffffffffffff ffffffffffffffff ffffffffffffffed");
           }
-          rt(kt, jt), kt.prototype.imulK = function(nt) {
+          rt(kt, Ot), kt.prototype.imulK = function(nt) {
             for (var ot = 0, ut = 0; ut < nt.length; ut++) {
               var mt = (nt.words[ut] | 0) * 19 + ot, vt = mt & 67108863;
               mt >>>= 26, nt.words[ut] = vt, ot = mt;
@@ -28462,7 +28462,7 @@ Use Chrome, Firefox or Internet Explorer 11`);
             return at !== 0 ? tt.words[it] = at | 0 : tt.length--, tt.strip();
           }
           var Et = function(et, tt, nt) {
-            var ot = et.words, ut = tt.words, mt = nt.words, vt = 0, at, it, ht, wt = ot[0] | 0, St = wt & 8191, Nt = wt >>> 13, qt = ot[1] | 0, Zt = qt & 8191, Ut = qt >>> 13, Lt = ot[2] | 0, Ht = Lt & 8191, tr = Lt >>> 13, Gt = ot[3] | 0, zt = Gt & 8191, sr = Gt >>> 13, br = ot[4] | 0, dr = br & 8191, xr = br >>> 13, kr = ot[5] | 0, vr = kr & 8191, gr = kr >>> 13, jr = ot[6] | 0, _r = jr & 8191, Tr = jr >>> 13, Ur = ot[7] | 0, Cr = Ur & 8191, lr = Ur >>> 13, rr = ot[8] | 0, nr = rr & 8191, ar = rr >>> 13, pr = ot[9] | 0, Pt = pr & 8191, It = pr >>> 13, Dt = ut[0] | 0, Vt = Dt & 8191, ir = Dt >>> 13, ur = ut[1] | 0, or = ur & 8191, wr = ur >>> 13, Ir = ut[2] | 0, fr = Ir & 8191, $r = Ir >>> 13, Pr = ut[3] | 0, Mr = Pr & 8191, Nr = Pr >>> 13, Vr = ut[4] | 0, Sr = Vr & 8191, Or = Vr >>> 13, Hr = ut[5] | 0, Rr = Hr & 8191, Lr = Hr >>> 13, Zr = ut[6] | 0, Br = Zr & 8191, qr = Zr >>> 13, Kt = ut[7] | 0, Yt = Kt & 8191, er = Kt >>> 13, Ot = ut[8] | 0, Jt = Ot & 8191, cr = Ot >>> 13, yr = ut[9] | 0, hr = yr & 8191, Er = yr >>> 13;
+            var ot = et.words, ut = tt.words, mt = nt.words, vt = 0, at, it, ht, wt = ot[0] | 0, St = wt & 8191, Nt = wt >>> 13, qt = ot[1] | 0, Zt = qt & 8191, Ut = qt >>> 13, Lt = ot[2] | 0, Ht = Lt & 8191, tr = Lt >>> 13, Gt = ot[3] | 0, zt = Gt & 8191, sr = Gt >>> 13, br = ot[4] | 0, dr = br & 8191, xr = br >>> 13, kr = ot[5] | 0, vr = kr & 8191, gr = kr >>> 13, Fr = ot[6] | 0, _r = Fr & 8191, Tr = Fr >>> 13, Ur = ot[7] | 0, Cr = Ur & 8191, lr = Ur >>> 13, rr = ot[8] | 0, nr = rr & 8191, ar = rr >>> 13, pr = ot[9] | 0, Pt = pr & 8191, It = pr >>> 13, Dt = ut[0] | 0, Vt = Dt & 8191, ir = Dt >>> 13, ur = ut[1] | 0, or = ur & 8191, wr = ur >>> 13, Ir = ut[2] | 0, fr = Ir & 8191, $r = Ir >>> 13, Pr = ut[3] | 0, Mr = Pr & 8191, Nr = Pr >>> 13, Vr = ut[4] | 0, Sr = Vr & 8191, jr = Vr >>> 13, Hr = ut[5] | 0, Rr = Hr & 8191, Lr = Hr >>> 13, Zr = ut[6] | 0, Br = Zr & 8191, qr = Zr >>> 13, Kt = ut[7] | 0, Yt = Kt & 8191, er = Kt >>> 13, jt = ut[8] | 0, Jt = jt & 8191, cr = jt >>> 13, yr = ut[9] | 0, hr = yr & 8191, Er = yr >>> 13;
             nt.negative = et.negative ^ tt.negative, nt.length = 19, at = Math.imul(St, Vt), it = Math.imul(St, ir), it = it + Math.imul(Nt, Vt) | 0, ht = Math.imul(Nt, ir);
             var zr = (vt + at | 0) + ((it & 8191) << 13) | 0;
             vt = (ht + (it >>> 13) | 0) + (zr >>> 26) | 0, zr &= 67108863, at = Math.imul(Zt, Vt), it = Math.imul(Zt, ir), it = it + Math.imul(Ut, Vt) | 0, ht = Math.imul(Ut, ir), at = at + Math.imul(St, or) | 0, it = it + Math.imul(St, wr) | 0, it = it + Math.imul(Nt, or) | 0, ht = ht + Math.imul(Nt, wr) | 0;
@@ -28471,25 +28471,25 @@ Use Chrome, Firefox or Internet Explorer 11`);
             var gn = (vt + at | 0) + ((it & 8191) << 13) | 0;
             vt = (ht + (it >>> 13) | 0) + (gn >>> 26) | 0, gn &= 67108863, at = Math.imul(zt, Vt), it = Math.imul(zt, ir), it = it + Math.imul(sr, Vt) | 0, ht = Math.imul(sr, ir), at = at + Math.imul(Ht, or) | 0, it = it + Math.imul(Ht, wr) | 0, it = it + Math.imul(tr, or) | 0, ht = ht + Math.imul(tr, wr) | 0, at = at + Math.imul(Zt, fr) | 0, it = it + Math.imul(Zt, $r) | 0, it = it + Math.imul(Ut, fr) | 0, ht = ht + Math.imul(Ut, $r) | 0, at = at + Math.imul(St, Mr) | 0, it = it + Math.imul(St, Nr) | 0, it = it + Math.imul(Nt, Mr) | 0, ht = ht + Math.imul(Nt, Nr) | 0;
             var Jr = (vt + at | 0) + ((it & 8191) << 13) | 0;
-            vt = (ht + (it >>> 13) | 0) + (Jr >>> 26) | 0, Jr &= 67108863, at = Math.imul(dr, Vt), it = Math.imul(dr, ir), it = it + Math.imul(xr, Vt) | 0, ht = Math.imul(xr, ir), at = at + Math.imul(zt, or) | 0, it = it + Math.imul(zt, wr) | 0, it = it + Math.imul(sr, or) | 0, ht = ht + Math.imul(sr, wr) | 0, at = at + Math.imul(Ht, fr) | 0, it = it + Math.imul(Ht, $r) | 0, it = it + Math.imul(tr, fr) | 0, ht = ht + Math.imul(tr, $r) | 0, at = at + Math.imul(Zt, Mr) | 0, it = it + Math.imul(Zt, Nr) | 0, it = it + Math.imul(Ut, Mr) | 0, ht = ht + Math.imul(Ut, Nr) | 0, at = at + Math.imul(St, Sr) | 0, it = it + Math.imul(St, Or) | 0, it = it + Math.imul(Nt, Sr) | 0, ht = ht + Math.imul(Nt, Or) | 0;
+            vt = (ht + (it >>> 13) | 0) + (Jr >>> 26) | 0, Jr &= 67108863, at = Math.imul(dr, Vt), it = Math.imul(dr, ir), it = it + Math.imul(xr, Vt) | 0, ht = Math.imul(xr, ir), at = at + Math.imul(zt, or) | 0, it = it + Math.imul(zt, wr) | 0, it = it + Math.imul(sr, or) | 0, ht = ht + Math.imul(sr, wr) | 0, at = at + Math.imul(Ht, fr) | 0, it = it + Math.imul(Ht, $r) | 0, it = it + Math.imul(tr, fr) | 0, ht = ht + Math.imul(tr, $r) | 0, at = at + Math.imul(Zt, Mr) | 0, it = it + Math.imul(Zt, Nr) | 0, it = it + Math.imul(Ut, Mr) | 0, ht = ht + Math.imul(Ut, Nr) | 0, at = at + Math.imul(St, Sr) | 0, it = it + Math.imul(St, jr) | 0, it = it + Math.imul(Nt, Sr) | 0, ht = ht + Math.imul(Nt, jr) | 0;
             var ln = (vt + at | 0) + ((it & 8191) << 13) | 0;
-            vt = (ht + (it >>> 13) | 0) + (ln >>> 26) | 0, ln &= 67108863, at = Math.imul(vr, Vt), it = Math.imul(vr, ir), it = it + Math.imul(gr, Vt) | 0, ht = Math.imul(gr, ir), at = at + Math.imul(dr, or) | 0, it = it + Math.imul(dr, wr) | 0, it = it + Math.imul(xr, or) | 0, ht = ht + Math.imul(xr, wr) | 0, at = at + Math.imul(zt, fr) | 0, it = it + Math.imul(zt, $r) | 0, it = it + Math.imul(sr, fr) | 0, ht = ht + Math.imul(sr, $r) | 0, at = at + Math.imul(Ht, Mr) | 0, it = it + Math.imul(Ht, Nr) | 0, it = it + Math.imul(tr, Mr) | 0, ht = ht + Math.imul(tr, Nr) | 0, at = at + Math.imul(Zt, Sr) | 0, it = it + Math.imul(Zt, Or) | 0, it = it + Math.imul(Ut, Sr) | 0, ht = ht + Math.imul(Ut, Or) | 0, at = at + Math.imul(St, Rr) | 0, it = it + Math.imul(St, Lr) | 0, it = it + Math.imul(Nt, Rr) | 0, ht = ht + Math.imul(Nt, Lr) | 0;
+            vt = (ht + (it >>> 13) | 0) + (ln >>> 26) | 0, ln &= 67108863, at = Math.imul(vr, Vt), it = Math.imul(vr, ir), it = it + Math.imul(gr, Vt) | 0, ht = Math.imul(gr, ir), at = at + Math.imul(dr, or) | 0, it = it + Math.imul(dr, wr) | 0, it = it + Math.imul(xr, or) | 0, ht = ht + Math.imul(xr, wr) | 0, at = at + Math.imul(zt, fr) | 0, it = it + Math.imul(zt, $r) | 0, it = it + Math.imul(sr, fr) | 0, ht = ht + Math.imul(sr, $r) | 0, at = at + Math.imul(Ht, Mr) | 0, it = it + Math.imul(Ht, Nr) | 0, it = it + Math.imul(tr, Mr) | 0, ht = ht + Math.imul(tr, Nr) | 0, at = at + Math.imul(Zt, Sr) | 0, it = it + Math.imul(Zt, jr) | 0, it = it + Math.imul(Ut, Sr) | 0, ht = ht + Math.imul(Ut, jr) | 0, at = at + Math.imul(St, Rr) | 0, it = it + Math.imul(St, Lr) | 0, it = it + Math.imul(Nt, Rr) | 0, ht = ht + Math.imul(Nt, Lr) | 0;
             var un = (vt + at | 0) + ((it & 8191) << 13) | 0;
-            vt = (ht + (it >>> 13) | 0) + (un >>> 26) | 0, un &= 67108863, at = Math.imul(_r, Vt), it = Math.imul(_r, ir), it = it + Math.imul(Tr, Vt) | 0, ht = Math.imul(Tr, ir), at = at + Math.imul(vr, or) | 0, it = it + Math.imul(vr, wr) | 0, it = it + Math.imul(gr, or) | 0, ht = ht + Math.imul(gr, wr) | 0, at = at + Math.imul(dr, fr) | 0, it = it + Math.imul(dr, $r) | 0, it = it + Math.imul(xr, fr) | 0, ht = ht + Math.imul(xr, $r) | 0, at = at + Math.imul(zt, Mr) | 0, it = it + Math.imul(zt, Nr) | 0, it = it + Math.imul(sr, Mr) | 0, ht = ht + Math.imul(sr, Nr) | 0, at = at + Math.imul(Ht, Sr) | 0, it = it + Math.imul(Ht, Or) | 0, it = it + Math.imul(tr, Sr) | 0, ht = ht + Math.imul(tr, Or) | 0, at = at + Math.imul(Zt, Rr) | 0, it = it + Math.imul(Zt, Lr) | 0, it = it + Math.imul(Ut, Rr) | 0, ht = ht + Math.imul(Ut, Lr) | 0, at = at + Math.imul(St, Br) | 0, it = it + Math.imul(St, qr) | 0, it = it + Math.imul(Nt, Br) | 0, ht = ht + Math.imul(Nt, qr) | 0;
+            vt = (ht + (it >>> 13) | 0) + (un >>> 26) | 0, un &= 67108863, at = Math.imul(_r, Vt), it = Math.imul(_r, ir), it = it + Math.imul(Tr, Vt) | 0, ht = Math.imul(Tr, ir), at = at + Math.imul(vr, or) | 0, it = it + Math.imul(vr, wr) | 0, it = it + Math.imul(gr, or) | 0, ht = ht + Math.imul(gr, wr) | 0, at = at + Math.imul(dr, fr) | 0, it = it + Math.imul(dr, $r) | 0, it = it + Math.imul(xr, fr) | 0, ht = ht + Math.imul(xr, $r) | 0, at = at + Math.imul(zt, Mr) | 0, it = it + Math.imul(zt, Nr) | 0, it = it + Math.imul(sr, Mr) | 0, ht = ht + Math.imul(sr, Nr) | 0, at = at + Math.imul(Ht, Sr) | 0, it = it + Math.imul(Ht, jr) | 0, it = it + Math.imul(tr, Sr) | 0, ht = ht + Math.imul(tr, jr) | 0, at = at + Math.imul(Zt, Rr) | 0, it = it + Math.imul(Zt, Lr) | 0, it = it + Math.imul(Ut, Rr) | 0, ht = ht + Math.imul(Ut, Lr) | 0, at = at + Math.imul(St, Br) | 0, it = it + Math.imul(St, qr) | 0, it = it + Math.imul(Nt, Br) | 0, ht = ht + Math.imul(Nt, qr) | 0;
             var mn = (vt + at | 0) + ((it & 8191) << 13) | 0;
-            vt = (ht + (it >>> 13) | 0) + (mn >>> 26) | 0, mn &= 67108863, at = Math.imul(Cr, Vt), it = Math.imul(Cr, ir), it = it + Math.imul(lr, Vt) | 0, ht = Math.imul(lr, ir), at = at + Math.imul(_r, or) | 0, it = it + Math.imul(_r, wr) | 0, it = it + Math.imul(Tr, or) | 0, ht = ht + Math.imul(Tr, wr) | 0, at = at + Math.imul(vr, fr) | 0, it = it + Math.imul(vr, $r) | 0, it = it + Math.imul(gr, fr) | 0, ht = ht + Math.imul(gr, $r) | 0, at = at + Math.imul(dr, Mr) | 0, it = it + Math.imul(dr, Nr) | 0, it = it + Math.imul(xr, Mr) | 0, ht = ht + Math.imul(xr, Nr) | 0, at = at + Math.imul(zt, Sr) | 0, it = it + Math.imul(zt, Or) | 0, it = it + Math.imul(sr, Sr) | 0, ht = ht + Math.imul(sr, Or) | 0, at = at + Math.imul(Ht, Rr) | 0, it = it + Math.imul(Ht, Lr) | 0, it = it + Math.imul(tr, Rr) | 0, ht = ht + Math.imul(tr, Lr) | 0, at = at + Math.imul(Zt, Br) | 0, it = it + Math.imul(Zt, qr) | 0, it = it + Math.imul(Ut, Br) | 0, ht = ht + Math.imul(Ut, qr) | 0, at = at + Math.imul(St, Yt) | 0, it = it + Math.imul(St, er) | 0, it = it + Math.imul(Nt, Yt) | 0, ht = ht + Math.imul(Nt, er) | 0;
+            vt = (ht + (it >>> 13) | 0) + (mn >>> 26) | 0, mn &= 67108863, at = Math.imul(Cr, Vt), it = Math.imul(Cr, ir), it = it + Math.imul(lr, Vt) | 0, ht = Math.imul(lr, ir), at = at + Math.imul(_r, or) | 0, it = it + Math.imul(_r, wr) | 0, it = it + Math.imul(Tr, or) | 0, ht = ht + Math.imul(Tr, wr) | 0, at = at + Math.imul(vr, fr) | 0, it = it + Math.imul(vr, $r) | 0, it = it + Math.imul(gr, fr) | 0, ht = ht + Math.imul(gr, $r) | 0, at = at + Math.imul(dr, Mr) | 0, it = it + Math.imul(dr, Nr) | 0, it = it + Math.imul(xr, Mr) | 0, ht = ht + Math.imul(xr, Nr) | 0, at = at + Math.imul(zt, Sr) | 0, it = it + Math.imul(zt, jr) | 0, it = it + Math.imul(sr, Sr) | 0, ht = ht + Math.imul(sr, jr) | 0, at = at + Math.imul(Ht, Rr) | 0, it = it + Math.imul(Ht, Lr) | 0, it = it + Math.imul(tr, Rr) | 0, ht = ht + Math.imul(tr, Lr) | 0, at = at + Math.imul(Zt, Br) | 0, it = it + Math.imul(Zt, qr) | 0, it = it + Math.imul(Ut, Br) | 0, ht = ht + Math.imul(Ut, qr) | 0, at = at + Math.imul(St, Yt) | 0, it = it + Math.imul(St, er) | 0, it = it + Math.imul(Nt, Yt) | 0, ht = ht + Math.imul(Nt, er) | 0;
             var pn = (vt + at | 0) + ((it & 8191) << 13) | 0;
-            vt = (ht + (it >>> 13) | 0) + (pn >>> 26) | 0, pn &= 67108863, at = Math.imul(nr, Vt), it = Math.imul(nr, ir), it = it + Math.imul(ar, Vt) | 0, ht = Math.imul(ar, ir), at = at + Math.imul(Cr, or) | 0, it = it + Math.imul(Cr, wr) | 0, it = it + Math.imul(lr, or) | 0, ht = ht + Math.imul(lr, wr) | 0, at = at + Math.imul(_r, fr) | 0, it = it + Math.imul(_r, $r) | 0, it = it + Math.imul(Tr, fr) | 0, ht = ht + Math.imul(Tr, $r) | 0, at = at + Math.imul(vr, Mr) | 0, it = it + Math.imul(vr, Nr) | 0, it = it + Math.imul(gr, Mr) | 0, ht = ht + Math.imul(gr, Nr) | 0, at = at + Math.imul(dr, Sr) | 0, it = it + Math.imul(dr, Or) | 0, it = it + Math.imul(xr, Sr) | 0, ht = ht + Math.imul(xr, Or) | 0, at = at + Math.imul(zt, Rr) | 0, it = it + Math.imul(zt, Lr) | 0, it = it + Math.imul(sr, Rr) | 0, ht = ht + Math.imul(sr, Lr) | 0, at = at + Math.imul(Ht, Br) | 0, it = it + Math.imul(Ht, qr) | 0, it = it + Math.imul(tr, Br) | 0, ht = ht + Math.imul(tr, qr) | 0, at = at + Math.imul(Zt, Yt) | 0, it = it + Math.imul(Zt, er) | 0, it = it + Math.imul(Ut, Yt) | 0, ht = ht + Math.imul(Ut, er) | 0, at = at + Math.imul(St, Jt) | 0, it = it + Math.imul(St, cr) | 0, it = it + Math.imul(Nt, Jt) | 0, ht = ht + Math.imul(Nt, cr) | 0;
+            vt = (ht + (it >>> 13) | 0) + (pn >>> 26) | 0, pn &= 67108863, at = Math.imul(nr, Vt), it = Math.imul(nr, ir), it = it + Math.imul(ar, Vt) | 0, ht = Math.imul(ar, ir), at = at + Math.imul(Cr, or) | 0, it = it + Math.imul(Cr, wr) | 0, it = it + Math.imul(lr, or) | 0, ht = ht + Math.imul(lr, wr) | 0, at = at + Math.imul(_r, fr) | 0, it = it + Math.imul(_r, $r) | 0, it = it + Math.imul(Tr, fr) | 0, ht = ht + Math.imul(Tr, $r) | 0, at = at + Math.imul(vr, Mr) | 0, it = it + Math.imul(vr, Nr) | 0, it = it + Math.imul(gr, Mr) | 0, ht = ht + Math.imul(gr, Nr) | 0, at = at + Math.imul(dr, Sr) | 0, it = it + Math.imul(dr, jr) | 0, it = it + Math.imul(xr, Sr) | 0, ht = ht + Math.imul(xr, jr) | 0, at = at + Math.imul(zt, Rr) | 0, it = it + Math.imul(zt, Lr) | 0, it = it + Math.imul(sr, Rr) | 0, ht = ht + Math.imul(sr, Lr) | 0, at = at + Math.imul(Ht, Br) | 0, it = it + Math.imul(Ht, qr) | 0, it = it + Math.imul(tr, Br) | 0, ht = ht + Math.imul(tr, qr) | 0, at = at + Math.imul(Zt, Yt) | 0, it = it + Math.imul(Zt, er) | 0, it = it + Math.imul(Ut, Yt) | 0, ht = ht + Math.imul(Ut, er) | 0, at = at + Math.imul(St, Jt) | 0, it = it + Math.imul(St, cr) | 0, it = it + Math.imul(Nt, Jt) | 0, ht = ht + Math.imul(Nt, cr) | 0;
             var fn = (vt + at | 0) + ((it & 8191) << 13) | 0;
-            vt = (ht + (it >>> 13) | 0) + (fn >>> 26) | 0, fn &= 67108863, at = Math.imul(Pt, Vt), it = Math.imul(Pt, ir), it = it + Math.imul(It, Vt) | 0, ht = Math.imul(It, ir), at = at + Math.imul(nr, or) | 0, it = it + Math.imul(nr, wr) | 0, it = it + Math.imul(ar, or) | 0, ht = ht + Math.imul(ar, wr) | 0, at = at + Math.imul(Cr, fr) | 0, it = it + Math.imul(Cr, $r) | 0, it = it + Math.imul(lr, fr) | 0, ht = ht + Math.imul(lr, $r) | 0, at = at + Math.imul(_r, Mr) | 0, it = it + Math.imul(_r, Nr) | 0, it = it + Math.imul(Tr, Mr) | 0, ht = ht + Math.imul(Tr, Nr) | 0, at = at + Math.imul(vr, Sr) | 0, it = it + Math.imul(vr, Or) | 0, it = it + Math.imul(gr, Sr) | 0, ht = ht + Math.imul(gr, Or) | 0, at = at + Math.imul(dr, Rr) | 0, it = it + Math.imul(dr, Lr) | 0, it = it + Math.imul(xr, Rr) | 0, ht = ht + Math.imul(xr, Lr) | 0, at = at + Math.imul(zt, Br) | 0, it = it + Math.imul(zt, qr) | 0, it = it + Math.imul(sr, Br) | 0, ht = ht + Math.imul(sr, qr) | 0, at = at + Math.imul(Ht, Yt) | 0, it = it + Math.imul(Ht, er) | 0, it = it + Math.imul(tr, Yt) | 0, ht = ht + Math.imul(tr, er) | 0, at = at + Math.imul(Zt, Jt) | 0, it = it + Math.imul(Zt, cr) | 0, it = it + Math.imul(Ut, Jt) | 0, ht = ht + Math.imul(Ut, cr) | 0, at = at + Math.imul(St, hr) | 0, it = it + Math.imul(St, Er) | 0, it = it + Math.imul(Nt, hr) | 0, ht = ht + Math.imul(Nt, Er) | 0;
+            vt = (ht + (it >>> 13) | 0) + (fn >>> 26) | 0, fn &= 67108863, at = Math.imul(Pt, Vt), it = Math.imul(Pt, ir), it = it + Math.imul(It, Vt) | 0, ht = Math.imul(It, ir), at = at + Math.imul(nr, or) | 0, it = it + Math.imul(nr, wr) | 0, it = it + Math.imul(ar, or) | 0, ht = ht + Math.imul(ar, wr) | 0, at = at + Math.imul(Cr, fr) | 0, it = it + Math.imul(Cr, $r) | 0, it = it + Math.imul(lr, fr) | 0, ht = ht + Math.imul(lr, $r) | 0, at = at + Math.imul(_r, Mr) | 0, it = it + Math.imul(_r, Nr) | 0, it = it + Math.imul(Tr, Mr) | 0, ht = ht + Math.imul(Tr, Nr) | 0, at = at + Math.imul(vr, Sr) | 0, it = it + Math.imul(vr, jr) | 0, it = it + Math.imul(gr, Sr) | 0, ht = ht + Math.imul(gr, jr) | 0, at = at + Math.imul(dr, Rr) | 0, it = it + Math.imul(dr, Lr) | 0, it = it + Math.imul(xr, Rr) | 0, ht = ht + Math.imul(xr, Lr) | 0, at = at + Math.imul(zt, Br) | 0, it = it + Math.imul(zt, qr) | 0, it = it + Math.imul(sr, Br) | 0, ht = ht + Math.imul(sr, qr) | 0, at = at + Math.imul(Ht, Yt) | 0, it = it + Math.imul(Ht, er) | 0, it = it + Math.imul(tr, Yt) | 0, ht = ht + Math.imul(tr, er) | 0, at = at + Math.imul(Zt, Jt) | 0, it = it + Math.imul(Zt, cr) | 0, it = it + Math.imul(Ut, Jt) | 0, ht = ht + Math.imul(Ut, cr) | 0, at = at + Math.imul(St, hr) | 0, it = it + Math.imul(St, Er) | 0, it = it + Math.imul(Nt, hr) | 0, ht = ht + Math.imul(Nt, Er) | 0;
             var hn = (vt + at | 0) + ((it & 8191) << 13) | 0;
-            vt = (ht + (it >>> 13) | 0) + (hn >>> 26) | 0, hn &= 67108863, at = Math.imul(Pt, or), it = Math.imul(Pt, wr), it = it + Math.imul(It, or) | 0, ht = Math.imul(It, wr), at = at + Math.imul(nr, fr) | 0, it = it + Math.imul(nr, $r) | 0, it = it + Math.imul(ar, fr) | 0, ht = ht + Math.imul(ar, $r) | 0, at = at + Math.imul(Cr, Mr) | 0, it = it + Math.imul(Cr, Nr) | 0, it = it + Math.imul(lr, Mr) | 0, ht = ht + Math.imul(lr, Nr) | 0, at = at + Math.imul(_r, Sr) | 0, it = it + Math.imul(_r, Or) | 0, it = it + Math.imul(Tr, Sr) | 0, ht = ht + Math.imul(Tr, Or) | 0, at = at + Math.imul(vr, Rr) | 0, it = it + Math.imul(vr, Lr) | 0, it = it + Math.imul(gr, Rr) | 0, ht = ht + Math.imul(gr, Lr) | 0, at = at + Math.imul(dr, Br) | 0, it = it + Math.imul(dr, qr) | 0, it = it + Math.imul(xr, Br) | 0, ht = ht + Math.imul(xr, qr) | 0, at = at + Math.imul(zt, Yt) | 0, it = it + Math.imul(zt, er) | 0, it = it + Math.imul(sr, Yt) | 0, ht = ht + Math.imul(sr, er) | 0, at = at + Math.imul(Ht, Jt) | 0, it = it + Math.imul(Ht, cr) | 0, it = it + Math.imul(tr, Jt) | 0, ht = ht + Math.imul(tr, cr) | 0, at = at + Math.imul(Zt, hr) | 0, it = it + Math.imul(Zt, Er) | 0, it = it + Math.imul(Ut, hr) | 0, ht = ht + Math.imul(Ut, Er) | 0;
+            vt = (ht + (it >>> 13) | 0) + (hn >>> 26) | 0, hn &= 67108863, at = Math.imul(Pt, or), it = Math.imul(Pt, wr), it = it + Math.imul(It, or) | 0, ht = Math.imul(It, wr), at = at + Math.imul(nr, fr) | 0, it = it + Math.imul(nr, $r) | 0, it = it + Math.imul(ar, fr) | 0, ht = ht + Math.imul(ar, $r) | 0, at = at + Math.imul(Cr, Mr) | 0, it = it + Math.imul(Cr, Nr) | 0, it = it + Math.imul(lr, Mr) | 0, ht = ht + Math.imul(lr, Nr) | 0, at = at + Math.imul(_r, Sr) | 0, it = it + Math.imul(_r, jr) | 0, it = it + Math.imul(Tr, Sr) | 0, ht = ht + Math.imul(Tr, jr) | 0, at = at + Math.imul(vr, Rr) | 0, it = it + Math.imul(vr, Lr) | 0, it = it + Math.imul(gr, Rr) | 0, ht = ht + Math.imul(gr, Lr) | 0, at = at + Math.imul(dr, Br) | 0, it = it + Math.imul(dr, qr) | 0, it = it + Math.imul(xr, Br) | 0, ht = ht + Math.imul(xr, qr) | 0, at = at + Math.imul(zt, Yt) | 0, it = it + Math.imul(zt, er) | 0, it = it + Math.imul(sr, Yt) | 0, ht = ht + Math.imul(sr, er) | 0, at = at + Math.imul(Ht, Jt) | 0, it = it + Math.imul(Ht, cr) | 0, it = it + Math.imul(tr, Jt) | 0, ht = ht + Math.imul(tr, cr) | 0, at = at + Math.imul(Zt, hr) | 0, it = it + Math.imul(Zt, Er) | 0, it = it + Math.imul(Ut, hr) | 0, ht = ht + Math.imul(Ut, Er) | 0;
             var dn = (vt + at | 0) + ((it & 8191) << 13) | 0;
-            vt = (ht + (it >>> 13) | 0) + (dn >>> 26) | 0, dn &= 67108863, at = Math.imul(Pt, fr), it = Math.imul(Pt, $r), it = it + Math.imul(It, fr) | 0, ht = Math.imul(It, $r), at = at + Math.imul(nr, Mr) | 0, it = it + Math.imul(nr, Nr) | 0, it = it + Math.imul(ar, Mr) | 0, ht = ht + Math.imul(ar, Nr) | 0, at = at + Math.imul(Cr, Sr) | 0, it = it + Math.imul(Cr, Or) | 0, it = it + Math.imul(lr, Sr) | 0, ht = ht + Math.imul(lr, Or) | 0, at = at + Math.imul(_r, Rr) | 0, it = it + Math.imul(_r, Lr) | 0, it = it + Math.imul(Tr, Rr) | 0, ht = ht + Math.imul(Tr, Lr) | 0, at = at + Math.imul(vr, Br) | 0, it = it + Math.imul(vr, qr) | 0, it = it + Math.imul(gr, Br) | 0, ht = ht + Math.imul(gr, qr) | 0, at = at + Math.imul(dr, Yt) | 0, it = it + Math.imul(dr, er) | 0, it = it + Math.imul(xr, Yt) | 0, ht = ht + Math.imul(xr, er) | 0, at = at + Math.imul(zt, Jt) | 0, it = it + Math.imul(zt, cr) | 0, it = it + Math.imul(sr, Jt) | 0, ht = ht + Math.imul(sr, cr) | 0, at = at + Math.imul(Ht, hr) | 0, it = it + Math.imul(Ht, Er) | 0, it = it + Math.imul(tr, hr) | 0, ht = ht + Math.imul(tr, Er) | 0;
+            vt = (ht + (it >>> 13) | 0) + (dn >>> 26) | 0, dn &= 67108863, at = Math.imul(Pt, fr), it = Math.imul(Pt, $r), it = it + Math.imul(It, fr) | 0, ht = Math.imul(It, $r), at = at + Math.imul(nr, Mr) | 0, it = it + Math.imul(nr, Nr) | 0, it = it + Math.imul(ar, Mr) | 0, ht = ht + Math.imul(ar, Nr) | 0, at = at + Math.imul(Cr, Sr) | 0, it = it + Math.imul(Cr, jr) | 0, it = it + Math.imul(lr, Sr) | 0, ht = ht + Math.imul(lr, jr) | 0, at = at + Math.imul(_r, Rr) | 0, it = it + Math.imul(_r, Lr) | 0, it = it + Math.imul(Tr, Rr) | 0, ht = ht + Math.imul(Tr, Lr) | 0, at = at + Math.imul(vr, Br) | 0, it = it + Math.imul(vr, qr) | 0, it = it + Math.imul(gr, Br) | 0, ht = ht + Math.imul(gr, qr) | 0, at = at + Math.imul(dr, Yt) | 0, it = it + Math.imul(dr, er) | 0, it = it + Math.imul(xr, Yt) | 0, ht = ht + Math.imul(xr, er) | 0, at = at + Math.imul(zt, Jt) | 0, it = it + Math.imul(zt, cr) | 0, it = it + Math.imul(sr, Jt) | 0, ht = ht + Math.imul(sr, cr) | 0, at = at + Math.imul(Ht, hr) | 0, it = it + Math.imul(Ht, Er) | 0, it = it + Math.imul(tr, hr) | 0, ht = ht + Math.imul(tr, Er) | 0;
             var tn = (vt + at | 0) + ((it & 8191) << 13) | 0;
-            vt = (ht + (it >>> 13) | 0) + (tn >>> 26) | 0, tn &= 67108863, at = Math.imul(Pt, Mr), it = Math.imul(Pt, Nr), it = it + Math.imul(It, Mr) | 0, ht = Math.imul(It, Nr), at = at + Math.imul(nr, Sr) | 0, it = it + Math.imul(nr, Or) | 0, it = it + Math.imul(ar, Sr) | 0, ht = ht + Math.imul(ar, Or) | 0, at = at + Math.imul(Cr, Rr) | 0, it = it + Math.imul(Cr, Lr) | 0, it = it + Math.imul(lr, Rr) | 0, ht = ht + Math.imul(lr, Lr) | 0, at = at + Math.imul(_r, Br) | 0, it = it + Math.imul(_r, qr) | 0, it = it + Math.imul(Tr, Br) | 0, ht = ht + Math.imul(Tr, qr) | 0, at = at + Math.imul(vr, Yt) | 0, it = it + Math.imul(vr, er) | 0, it = it + Math.imul(gr, Yt) | 0, ht = ht + Math.imul(gr, er) | 0, at = at + Math.imul(dr, Jt) | 0, it = it + Math.imul(dr, cr) | 0, it = it + Math.imul(xr, Jt) | 0, ht = ht + Math.imul(xr, cr) | 0, at = at + Math.imul(zt, hr) | 0, it = it + Math.imul(zt, Er) | 0, it = it + Math.imul(sr, hr) | 0, ht = ht + Math.imul(sr, Er) | 0;
+            vt = (ht + (it >>> 13) | 0) + (tn >>> 26) | 0, tn &= 67108863, at = Math.imul(Pt, Mr), it = Math.imul(Pt, Nr), it = it + Math.imul(It, Mr) | 0, ht = Math.imul(It, Nr), at = at + Math.imul(nr, Sr) | 0, it = it + Math.imul(nr, jr) | 0, it = it + Math.imul(ar, Sr) | 0, ht = ht + Math.imul(ar, jr) | 0, at = at + Math.imul(Cr, Rr) | 0, it = it + Math.imul(Cr, Lr) | 0, it = it + Math.imul(lr, Rr) | 0, ht = ht + Math.imul(lr, Lr) | 0, at = at + Math.imul(_r, Br) | 0, it = it + Math.imul(_r, qr) | 0, it = it + Math.imul(Tr, Br) | 0, ht = ht + Math.imul(Tr, qr) | 0, at = at + Math.imul(vr, Yt) | 0, it = it + Math.imul(vr, er) | 0, it = it + Math.imul(gr, Yt) | 0, ht = ht + Math.imul(gr, er) | 0, at = at + Math.imul(dr, Jt) | 0, it = it + Math.imul(dr, cr) | 0, it = it + Math.imul(xr, Jt) | 0, ht = ht + Math.imul(xr, cr) | 0, at = at + Math.imul(zt, hr) | 0, it = it + Math.imul(zt, Er) | 0, it = it + Math.imul(sr, hr) | 0, ht = ht + Math.imul(sr, Er) | 0;
             var an = (vt + at | 0) + ((it & 8191) << 13) | 0;
-            vt = (ht + (it >>> 13) | 0) + (an >>> 26) | 0, an &= 67108863, at = Math.imul(Pt, Sr), it = Math.imul(Pt, Or), it = it + Math.imul(It, Sr) | 0, ht = Math.imul(It, Or), at = at + Math.imul(nr, Rr) | 0, it = it + Math.imul(nr, Lr) | 0, it = it + Math.imul(ar, Rr) | 0, ht = ht + Math.imul(ar, Lr) | 0, at = at + Math.imul(Cr, Br) | 0, it = it + Math.imul(Cr, qr) | 0, it = it + Math.imul(lr, Br) | 0, ht = ht + Math.imul(lr, qr) | 0, at = at + Math.imul(_r, Yt) | 0, it = it + Math.imul(_r, er) | 0, it = it + Math.imul(Tr, Yt) | 0, ht = ht + Math.imul(Tr, er) | 0, at = at + Math.imul(vr, Jt) | 0, it = it + Math.imul(vr, cr) | 0, it = it + Math.imul(gr, Jt) | 0, ht = ht + Math.imul(gr, cr) | 0, at = at + Math.imul(dr, hr) | 0, it = it + Math.imul(dr, Er) | 0, it = it + Math.imul(xr, hr) | 0, ht = ht + Math.imul(xr, Er) | 0;
+            vt = (ht + (it >>> 13) | 0) + (an >>> 26) | 0, an &= 67108863, at = Math.imul(Pt, Sr), it = Math.imul(Pt, jr), it = it + Math.imul(It, Sr) | 0, ht = Math.imul(It, jr), at = at + Math.imul(nr, Rr) | 0, it = it + Math.imul(nr, Lr) | 0, it = it + Math.imul(ar, Rr) | 0, ht = ht + Math.imul(ar, Lr) | 0, at = at + Math.imul(Cr, Br) | 0, it = it + Math.imul(Cr, qr) | 0, it = it + Math.imul(lr, Br) | 0, ht = ht + Math.imul(lr, qr) | 0, at = at + Math.imul(_r, Yt) | 0, it = it + Math.imul(_r, er) | 0, it = it + Math.imul(Tr, Yt) | 0, ht = ht + Math.imul(Tr, er) | 0, at = at + Math.imul(vr, Jt) | 0, it = it + Math.imul(vr, cr) | 0, it = it + Math.imul(gr, Jt) | 0, ht = ht + Math.imul(gr, cr) | 0, at = at + Math.imul(dr, hr) | 0, it = it + Math.imul(dr, Er) | 0, it = it + Math.imul(xr, hr) | 0, ht = ht + Math.imul(xr, Er) | 0;
             var Yr = (vt + at | 0) + ((it & 8191) << 13) | 0;
             vt = (ht + (it >>> 13) | 0) + (Yr >>> 26) | 0, Yr &= 67108863, at = Math.imul(Pt, Rr), it = Math.imul(Pt, Lr), it = it + Math.imul(It, Rr) | 0, ht = Math.imul(It, Lr), at = at + Math.imul(nr, Br) | 0, it = it + Math.imul(nr, qr) | 0, it = it + Math.imul(ar, Br) | 0, ht = ht + Math.imul(ar, qr) | 0, at = at + Math.imul(Cr, Yt) | 0, it = it + Math.imul(Cr, er) | 0, it = it + Math.imul(lr, Yt) | 0, ht = ht + Math.imul(lr, er) | 0, at = at + Math.imul(_r, Jt) | 0, it = it + Math.imul(_r, cr) | 0, it = it + Math.imul(Tr, Jt) | 0, ht = ht + Math.imul(Tr, cr) | 0, at = at + Math.imul(vr, hr) | 0, it = it + Math.imul(vr, Er) | 0, it = it + Math.imul(gr, hr) | 0, ht = ht + Math.imul(gr, Er) | 0;
             var rn = (vt + at | 0) + ((it & 8191) << 13) | 0;
@@ -28500,8 +28500,8 @@ Use Chrome, Firefox or Internet Explorer 11`);
             vt = (ht + (it >>> 13) | 0) + (Gr >>> 26) | 0, Gr &= 67108863, at = Math.imul(Pt, Jt), it = Math.imul(Pt, cr), it = it + Math.imul(It, Jt) | 0, ht = Math.imul(It, cr), at = at + Math.imul(nr, hr) | 0, it = it + Math.imul(nr, Er) | 0, it = it + Math.imul(ar, hr) | 0, ht = ht + Math.imul(ar, Er) | 0;
             var Dr = (vt + at | 0) + ((it & 8191) << 13) | 0;
             vt = (ht + (it >>> 13) | 0) + (Dr >>> 26) | 0, Dr &= 67108863, at = Math.imul(Pt, hr), it = Math.imul(Pt, Er), it = it + Math.imul(It, hr) | 0, ht = Math.imul(It, Er);
-            var Fr = (vt + at | 0) + ((it & 8191) << 13) | 0;
-            return vt = (ht + (it >>> 13) | 0) + (Fr >>> 26) | 0, Fr &= 67108863, mt[0] = zr, mt[1] = Wr, mt[2] = gn, mt[3] = Jr, mt[4] = ln, mt[5] = un, mt[6] = mn, mt[7] = pn, mt[8] = fn, mt[9] = hn, mt[10] = dn, mt[11] = tn, mt[12] = an, mt[13] = Yr, mt[14] = rn, mt[15] = nn, mt[16] = Gr, mt[17] = Dr, mt[18] = Fr, vt !== 0 && (mt[19] = vt, nt.length++), nt;
+            var Or = (vt + at | 0) + ((it & 8191) << 13) | 0;
+            return vt = (ht + (it >>> 13) | 0) + (Or >>> 26) | 0, Or &= 67108863, mt[0] = zr, mt[1] = Wr, mt[2] = gn, mt[3] = Jr, mt[4] = ln, mt[5] = un, mt[6] = mn, mt[7] = pn, mt[8] = fn, mt[9] = hn, mt[10] = dn, mt[11] = tn, mt[12] = an, mt[13] = Yr, mt[14] = rn, mt[15] = nn, mt[16] = Gr, mt[17] = Dr, mt[18] = Or, vt !== 0 && (mt[19] = vt, nt.length++), nt;
           };
           Math.imul || (Et = Mt);
           function Rt(ct, et, tt) {
@@ -28966,10 +28966,10 @@ Use Chrome, Firefox or Internet Explorer 11`);
             }
             return et.words[et.length - 1] === 0 && (et.length--, et.words[et.length - 1] === 0 && et.length--), et;
           };
-          function jt() {
+          function Ot() {
             Tt.call(this, "p224", "ffffffff ffffffff ffffffff ffffffff 00000000 00000000 00000001");
           }
-          rt(jt, Tt);
+          rt(Ot, Tt);
           function Xt() {
             Tt.call(this, "p192", "ffffffff ffffffff ffffffff fffffffe ffffffff ffffffff");
           }
@@ -28987,7 +28987,7 @@ Use Chrome, Firefox or Internet Explorer 11`);
             if ($t[et]) return $t[et];
             var tt;
             if (et === "k256") tt = new Ft();
-            else if (et === "p224") tt = new jt();
+            else if (et === "p224") tt = new Ot();
             else if (et === "p192") tt = new Xt();
             else if (et === "p25519") tt = new Qt();
             else throw new Error("Unknown prime " + et);
@@ -29562,8 +29562,8 @@ Use Chrome, Firefox or Internet Explorer 11`);
           if (!_t.any && _t.choice === null && _t.children !== null && _t.children.forEach(function(Qt) {
             Qt._decode(yt, xt);
           }), _t.contains && (_t.tag === "octstr" || _t.tag === "bitstr")) {
-            var jt = new _(Ct);
-            Ct = this._getUse(_t.contains, yt._reporterState.obj)._decode(jt, xt);
+            var Ot = new _(Ct);
+            Ct = this._getUse(_t.contains, yt._reporterState.obj)._decode(Ot, xt);
           }
         }
         return _t.obj && Mt && (Ct = yt.leaveObject(Bt)), _t.key !== null && (Ct !== null || Mt === true) ? yt.leaveKey(Et, _t.key, Ct) : Et !== null && yt.exitKey(Et), Ct;
@@ -29612,8 +29612,8 @@ Use Chrome, Firefox or Internet Explorer 11`);
           if (Tt._baseState.key === null) return xt.error("Child should have a key");
           var Ft = xt.enterKey(Tt._baseState.key);
           if (typeof yt != "object") return xt.error("Child expected, but input is not object");
-          var jt = Tt._encode(yt[Tt._baseState.key], xt, yt);
-          return xt.leaveKey(Ft), jt;
+          var Ot = Tt._encode(yt[Tt._baseState.key], xt, yt);
+          return xt.leaveKey(Ft), Ot;
         }, this).filter(function(Tt) {
           return Tt;
         }), Mt = this._createEncoderBuffer(Mt);
@@ -30253,13 +30253,13 @@ Use Chrome, Firefox or Internet Explorer 11`);
       hasRequiredSign = 1;
       var d = requireSafeBuffer$1().Buffer, b = requireBrowser$8(), _ = requireBrowserifyRsa(), $ = requireElliptic().ec, rt = requireBn$3(), j = requireParseAsn1(), st = require$$4$1, dt = 1;
       function pt(At, Bt, $t, Tt, Ft) {
-        var jt = j(Bt);
-        if (jt.curve) {
+        var Ot = j(Bt);
+        if (Ot.curve) {
           if (Tt !== "ecdsa" && Tt !== "ecdsa/rsa") throw new Error("wrong private key type");
-          return bt(At, jt);
-        } else if (jt.type === "dsa") {
+          return bt(At, Ot);
+        } else if (Ot.type === "dsa") {
           if (Tt !== "dsa") throw new Error("wrong private key type");
-          return yt(At, jt, $t);
+          return yt(At, Ot, $t);
         }
         if (Tt !== "rsa" && Tt !== "ecdsa/rsa") throw new Error("wrong private key type");
         if (Bt.padding !== void 0 && Bt.padding !== dt) throw new Error("illegal or unsupported padding mode");
@@ -30267,23 +30267,23 @@ Use Chrome, Firefox or Internet Explorer 11`);
           Ft,
           At
         ]);
-        for (var Xt = jt.modulus.byteLength(), Qt = [
+        for (var Xt = Ot.modulus.byteLength(), Qt = [
           0,
           1
         ]; At.length + Qt.length + 1 < Xt; ) Qt.push(255);
         Qt.push(0);
         for (var Wt = -1; ++Wt < At.length; ) Qt.push(At[Wt]);
-        var kt = _(Qt, jt);
+        var kt = _(Qt, Ot);
         return kt;
       }
       function bt(At, Bt) {
         var $t = st[Bt.curve.join(".")];
         if (!$t) throw new Error("unknown curve " + Bt.curve.join("."));
-        var Tt = new $($t), Ft = Tt.keyFromPrivate(Bt.privateKey), jt = Ft.sign(At);
-        return d.from(jt.toDER());
+        var Tt = new $($t), Ft = Tt.keyFromPrivate(Bt.privateKey), Ot = Ft.sign(At);
+        return d.from(Ot.toDER());
       }
       function yt(At, Bt, $t) {
-        for (var Tt = Bt.params.priv_key, Ft = Bt.params.p, jt = Bt.params.q, Xt = Bt.params.g, Qt = new rt(0), Wt, kt = Ct(At, jt).mod(jt), ct = false, et = _t(Tt, jt, At, $t); ct === false; ) Wt = Et(jt, et, $t), Qt = Rt(Xt, Wt, Ft, jt), ct = Wt.invm(jt).imul(kt.add(Tt.mul(Qt))).mod(jt), ct.cmpn(0) === 0 && (ct = false, Qt = new rt(0));
+        for (var Tt = Bt.params.priv_key, Ft = Bt.params.p, Ot = Bt.params.q, Xt = Bt.params.g, Qt = new rt(0), Wt, kt = Ct(At, Ot).mod(Ot), ct = false, et = _t(Tt, Ot, At, $t); ct === false; ) Wt = Et(Ot, et, $t), Qt = Rt(Xt, Wt, Ft, Ot), ct = Wt.invm(Ot).imul(kt.add(Tt.mul(Qt))).mod(Ot), ct.cmpn(0) === 0 && (ct = false, Qt = new rt(0));
         return xt(Qt, ct);
       }
       function xt(At, Bt) {
@@ -30311,9 +30311,9 @@ Use Chrome, Firefox or Internet Explorer 11`);
             At
           ]);
         }
-        var jt = $t.length, Xt = Mt($t, Bt), Qt = d.alloc(jt);
+        var Ot = $t.length, Xt = Mt($t, Bt), Qt = d.alloc(Ot);
         Qt.fill(1);
-        var Wt = d.alloc(jt);
+        var Wt = d.alloc(Ot);
         return Wt = b(Tt, Wt).update(Qt).update(d.from([
           0
         ])).update(At).update(Xt).digest(), Qt = b(Tt, Wt).update(Qt).digest(), Wt = b(Tt, Wt).update(Qt).update(d.from([
@@ -30856,7 +30856,7 @@ Use Chrome, Firefox or Internet Explorer 11`);
             return at !== 0 ? tt.words[it] = at | 0 : tt.length--, tt.strip();
           }
           var Et = function(et, tt, nt) {
-            var ot = et.words, ut = tt.words, mt = nt.words, vt = 0, at, it, ht, wt = ot[0] | 0, St = wt & 8191, Nt = wt >>> 13, qt = ot[1] | 0, Zt = qt & 8191, Ut = qt >>> 13, Lt = ot[2] | 0, Ht = Lt & 8191, tr = Lt >>> 13, Gt = ot[3] | 0, zt = Gt & 8191, sr = Gt >>> 13, br = ot[4] | 0, dr = br & 8191, xr = br >>> 13, kr = ot[5] | 0, vr = kr & 8191, gr = kr >>> 13, jr = ot[6] | 0, _r = jr & 8191, Tr = jr >>> 13, Ur = ot[7] | 0, Cr = Ur & 8191, lr = Ur >>> 13, rr = ot[8] | 0, nr = rr & 8191, ar = rr >>> 13, pr = ot[9] | 0, Pt = pr & 8191, It = pr >>> 13, Dt = ut[0] | 0, Vt = Dt & 8191, ir = Dt >>> 13, ur = ut[1] | 0, or = ur & 8191, wr = ur >>> 13, Ir = ut[2] | 0, fr = Ir & 8191, $r = Ir >>> 13, Pr = ut[3] | 0, Mr = Pr & 8191, Nr = Pr >>> 13, Vr = ut[4] | 0, Sr = Vr & 8191, Or = Vr >>> 13, Hr = ut[5] | 0, Rr = Hr & 8191, Lr = Hr >>> 13, Zr = ut[6] | 0, Br = Zr & 8191, qr = Zr >>> 13, Kt = ut[7] | 0, Yt = Kt & 8191, er = Kt >>> 13, Ot = ut[8] | 0, Jt = Ot & 8191, cr = Ot >>> 13, yr = ut[9] | 0, hr = yr & 8191, Er = yr >>> 13;
+            var ot = et.words, ut = tt.words, mt = nt.words, vt = 0, at, it, ht, wt = ot[0] | 0, St = wt & 8191, Nt = wt >>> 13, qt = ot[1] | 0, Zt = qt & 8191, Ut = qt >>> 13, Lt = ot[2] | 0, Ht = Lt & 8191, tr = Lt >>> 13, Gt = ot[3] | 0, zt = Gt & 8191, sr = Gt >>> 13, br = ot[4] | 0, dr = br & 8191, xr = br >>> 13, kr = ot[5] | 0, vr = kr & 8191, gr = kr >>> 13, Fr = ot[6] | 0, _r = Fr & 8191, Tr = Fr >>> 13, Ur = ot[7] | 0, Cr = Ur & 8191, lr = Ur >>> 13, rr = ot[8] | 0, nr = rr & 8191, ar = rr >>> 13, pr = ot[9] | 0, Pt = pr & 8191, It = pr >>> 13, Dt = ut[0] | 0, Vt = Dt & 8191, ir = Dt >>> 13, ur = ut[1] | 0, or = ur & 8191, wr = ur >>> 13, Ir = ut[2] | 0, fr = Ir & 8191, $r = Ir >>> 13, Pr = ut[3] | 0, Mr = Pr & 8191, Nr = Pr >>> 13, Vr = ut[4] | 0, Sr = Vr & 8191, jr = Vr >>> 13, Hr = ut[5] | 0, Rr = Hr & 8191, Lr = Hr >>> 13, Zr = ut[6] | 0, Br = Zr & 8191, qr = Zr >>> 13, Kt = ut[7] | 0, Yt = Kt & 8191, er = Kt >>> 13, jt = ut[8] | 0, Jt = jt & 8191, cr = jt >>> 13, yr = ut[9] | 0, hr = yr & 8191, Er = yr >>> 13;
             nt.negative = et.negative ^ tt.negative, nt.length = 19, at = Math.imul(St, Vt), it = Math.imul(St, ir), it = it + Math.imul(Nt, Vt) | 0, ht = Math.imul(Nt, ir);
             var zr = (vt + at | 0) + ((it & 8191) << 13) | 0;
             vt = (ht + (it >>> 13) | 0) + (zr >>> 26) | 0, zr &= 67108863, at = Math.imul(Zt, Vt), it = Math.imul(Zt, ir), it = it + Math.imul(Ut, Vt) | 0, ht = Math.imul(Ut, ir), at = at + Math.imul(St, or) | 0, it = it + Math.imul(St, wr) | 0, it = it + Math.imul(Nt, or) | 0, ht = ht + Math.imul(Nt, wr) | 0;
@@ -30865,25 +30865,25 @@ Use Chrome, Firefox or Internet Explorer 11`);
             var gn = (vt + at | 0) + ((it & 8191) << 13) | 0;
             vt = (ht + (it >>> 13) | 0) + (gn >>> 26) | 0, gn &= 67108863, at = Math.imul(zt, Vt), it = Math.imul(zt, ir), it = it + Math.imul(sr, Vt) | 0, ht = Math.imul(sr, ir), at = at + Math.imul(Ht, or) | 0, it = it + Math.imul(Ht, wr) | 0, it = it + Math.imul(tr, or) | 0, ht = ht + Math.imul(tr, wr) | 0, at = at + Math.imul(Zt, fr) | 0, it = it + Math.imul(Zt, $r) | 0, it = it + Math.imul(Ut, fr) | 0, ht = ht + Math.imul(Ut, $r) | 0, at = at + Math.imul(St, Mr) | 0, it = it + Math.imul(St, Nr) | 0, it = it + Math.imul(Nt, Mr) | 0, ht = ht + Math.imul(Nt, Nr) | 0;
             var Jr = (vt + at | 0) + ((it & 8191) << 13) | 0;
-            vt = (ht + (it >>> 13) | 0) + (Jr >>> 26) | 0, Jr &= 67108863, at = Math.imul(dr, Vt), it = Math.imul(dr, ir), it = it + Math.imul(xr, Vt) | 0, ht = Math.imul(xr, ir), at = at + Math.imul(zt, or) | 0, it = it + Math.imul(zt, wr) | 0, it = it + Math.imul(sr, or) | 0, ht = ht + Math.imul(sr, wr) | 0, at = at + Math.imul(Ht, fr) | 0, it = it + Math.imul(Ht, $r) | 0, it = it + Math.imul(tr, fr) | 0, ht = ht + Math.imul(tr, $r) | 0, at = at + Math.imul(Zt, Mr) | 0, it = it + Math.imul(Zt, Nr) | 0, it = it + Math.imul(Ut, Mr) | 0, ht = ht + Math.imul(Ut, Nr) | 0, at = at + Math.imul(St, Sr) | 0, it = it + Math.imul(St, Or) | 0, it = it + Math.imul(Nt, Sr) | 0, ht = ht + Math.imul(Nt, Or) | 0;
+            vt = (ht + (it >>> 13) | 0) + (Jr >>> 26) | 0, Jr &= 67108863, at = Math.imul(dr, Vt), it = Math.imul(dr, ir), it = it + Math.imul(xr, Vt) | 0, ht = Math.imul(xr, ir), at = at + Math.imul(zt, or) | 0, it = it + Math.imul(zt, wr) | 0, it = it + Math.imul(sr, or) | 0, ht = ht + Math.imul(sr, wr) | 0, at = at + Math.imul(Ht, fr) | 0, it = it + Math.imul(Ht, $r) | 0, it = it + Math.imul(tr, fr) | 0, ht = ht + Math.imul(tr, $r) | 0, at = at + Math.imul(Zt, Mr) | 0, it = it + Math.imul(Zt, Nr) | 0, it = it + Math.imul(Ut, Mr) | 0, ht = ht + Math.imul(Ut, Nr) | 0, at = at + Math.imul(St, Sr) | 0, it = it + Math.imul(St, jr) | 0, it = it + Math.imul(Nt, Sr) | 0, ht = ht + Math.imul(Nt, jr) | 0;
             var ln = (vt + at | 0) + ((it & 8191) << 13) | 0;
-            vt = (ht + (it >>> 13) | 0) + (ln >>> 26) | 0, ln &= 67108863, at = Math.imul(vr, Vt), it = Math.imul(vr, ir), it = it + Math.imul(gr, Vt) | 0, ht = Math.imul(gr, ir), at = at + Math.imul(dr, or) | 0, it = it + Math.imul(dr, wr) | 0, it = it + Math.imul(xr, or) | 0, ht = ht + Math.imul(xr, wr) | 0, at = at + Math.imul(zt, fr) | 0, it = it + Math.imul(zt, $r) | 0, it = it + Math.imul(sr, fr) | 0, ht = ht + Math.imul(sr, $r) | 0, at = at + Math.imul(Ht, Mr) | 0, it = it + Math.imul(Ht, Nr) | 0, it = it + Math.imul(tr, Mr) | 0, ht = ht + Math.imul(tr, Nr) | 0, at = at + Math.imul(Zt, Sr) | 0, it = it + Math.imul(Zt, Or) | 0, it = it + Math.imul(Ut, Sr) | 0, ht = ht + Math.imul(Ut, Or) | 0, at = at + Math.imul(St, Rr) | 0, it = it + Math.imul(St, Lr) | 0, it = it + Math.imul(Nt, Rr) | 0, ht = ht + Math.imul(Nt, Lr) | 0;
+            vt = (ht + (it >>> 13) | 0) + (ln >>> 26) | 0, ln &= 67108863, at = Math.imul(vr, Vt), it = Math.imul(vr, ir), it = it + Math.imul(gr, Vt) | 0, ht = Math.imul(gr, ir), at = at + Math.imul(dr, or) | 0, it = it + Math.imul(dr, wr) | 0, it = it + Math.imul(xr, or) | 0, ht = ht + Math.imul(xr, wr) | 0, at = at + Math.imul(zt, fr) | 0, it = it + Math.imul(zt, $r) | 0, it = it + Math.imul(sr, fr) | 0, ht = ht + Math.imul(sr, $r) | 0, at = at + Math.imul(Ht, Mr) | 0, it = it + Math.imul(Ht, Nr) | 0, it = it + Math.imul(tr, Mr) | 0, ht = ht + Math.imul(tr, Nr) | 0, at = at + Math.imul(Zt, Sr) | 0, it = it + Math.imul(Zt, jr) | 0, it = it + Math.imul(Ut, Sr) | 0, ht = ht + Math.imul(Ut, jr) | 0, at = at + Math.imul(St, Rr) | 0, it = it + Math.imul(St, Lr) | 0, it = it + Math.imul(Nt, Rr) | 0, ht = ht + Math.imul(Nt, Lr) | 0;
             var un = (vt + at | 0) + ((it & 8191) << 13) | 0;
-            vt = (ht + (it >>> 13) | 0) + (un >>> 26) | 0, un &= 67108863, at = Math.imul(_r, Vt), it = Math.imul(_r, ir), it = it + Math.imul(Tr, Vt) | 0, ht = Math.imul(Tr, ir), at = at + Math.imul(vr, or) | 0, it = it + Math.imul(vr, wr) | 0, it = it + Math.imul(gr, or) | 0, ht = ht + Math.imul(gr, wr) | 0, at = at + Math.imul(dr, fr) | 0, it = it + Math.imul(dr, $r) | 0, it = it + Math.imul(xr, fr) | 0, ht = ht + Math.imul(xr, $r) | 0, at = at + Math.imul(zt, Mr) | 0, it = it + Math.imul(zt, Nr) | 0, it = it + Math.imul(sr, Mr) | 0, ht = ht + Math.imul(sr, Nr) | 0, at = at + Math.imul(Ht, Sr) | 0, it = it + Math.imul(Ht, Or) | 0, it = it + Math.imul(tr, Sr) | 0, ht = ht + Math.imul(tr, Or) | 0, at = at + Math.imul(Zt, Rr) | 0, it = it + Math.imul(Zt, Lr) | 0, it = it + Math.imul(Ut, Rr) | 0, ht = ht + Math.imul(Ut, Lr) | 0, at = at + Math.imul(St, Br) | 0, it = it + Math.imul(St, qr) | 0, it = it + Math.imul(Nt, Br) | 0, ht = ht + Math.imul(Nt, qr) | 0;
+            vt = (ht + (it >>> 13) | 0) + (un >>> 26) | 0, un &= 67108863, at = Math.imul(_r, Vt), it = Math.imul(_r, ir), it = it + Math.imul(Tr, Vt) | 0, ht = Math.imul(Tr, ir), at = at + Math.imul(vr, or) | 0, it = it + Math.imul(vr, wr) | 0, it = it + Math.imul(gr, or) | 0, ht = ht + Math.imul(gr, wr) | 0, at = at + Math.imul(dr, fr) | 0, it = it + Math.imul(dr, $r) | 0, it = it + Math.imul(xr, fr) | 0, ht = ht + Math.imul(xr, $r) | 0, at = at + Math.imul(zt, Mr) | 0, it = it + Math.imul(zt, Nr) | 0, it = it + Math.imul(sr, Mr) | 0, ht = ht + Math.imul(sr, Nr) | 0, at = at + Math.imul(Ht, Sr) | 0, it = it + Math.imul(Ht, jr) | 0, it = it + Math.imul(tr, Sr) | 0, ht = ht + Math.imul(tr, jr) | 0, at = at + Math.imul(Zt, Rr) | 0, it = it + Math.imul(Zt, Lr) | 0, it = it + Math.imul(Ut, Rr) | 0, ht = ht + Math.imul(Ut, Lr) | 0, at = at + Math.imul(St, Br) | 0, it = it + Math.imul(St, qr) | 0, it = it + Math.imul(Nt, Br) | 0, ht = ht + Math.imul(Nt, qr) | 0;
             var mn = (vt + at | 0) + ((it & 8191) << 13) | 0;
-            vt = (ht + (it >>> 13) | 0) + (mn >>> 26) | 0, mn &= 67108863, at = Math.imul(Cr, Vt), it = Math.imul(Cr, ir), it = it + Math.imul(lr, Vt) | 0, ht = Math.imul(lr, ir), at = at + Math.imul(_r, or) | 0, it = it + Math.imul(_r, wr) | 0, it = it + Math.imul(Tr, or) | 0, ht = ht + Math.imul(Tr, wr) | 0, at = at + Math.imul(vr, fr) | 0, it = it + Math.imul(vr, $r) | 0, it = it + Math.imul(gr, fr) | 0, ht = ht + Math.imul(gr, $r) | 0, at = at + Math.imul(dr, Mr) | 0, it = it + Math.imul(dr, Nr) | 0, it = it + Math.imul(xr, Mr) | 0, ht = ht + Math.imul(xr, Nr) | 0, at = at + Math.imul(zt, Sr) | 0, it = it + Math.imul(zt, Or) | 0, it = it + Math.imul(sr, Sr) | 0, ht = ht + Math.imul(sr, Or) | 0, at = at + Math.imul(Ht, Rr) | 0, it = it + Math.imul(Ht, Lr) | 0, it = it + Math.imul(tr, Rr) | 0, ht = ht + Math.imul(tr, Lr) | 0, at = at + Math.imul(Zt, Br) | 0, it = it + Math.imul(Zt, qr) | 0, it = it + Math.imul(Ut, Br) | 0, ht = ht + Math.imul(Ut, qr) | 0, at = at + Math.imul(St, Yt) | 0, it = it + Math.imul(St, er) | 0, it = it + Math.imul(Nt, Yt) | 0, ht = ht + Math.imul(Nt, er) | 0;
+            vt = (ht + (it >>> 13) | 0) + (mn >>> 26) | 0, mn &= 67108863, at = Math.imul(Cr, Vt), it = Math.imul(Cr, ir), it = it + Math.imul(lr, Vt) | 0, ht = Math.imul(lr, ir), at = at + Math.imul(_r, or) | 0, it = it + Math.imul(_r, wr) | 0, it = it + Math.imul(Tr, or) | 0, ht = ht + Math.imul(Tr, wr) | 0, at = at + Math.imul(vr, fr) | 0, it = it + Math.imul(vr, $r) | 0, it = it + Math.imul(gr, fr) | 0, ht = ht + Math.imul(gr, $r) | 0, at = at + Math.imul(dr, Mr) | 0, it = it + Math.imul(dr, Nr) | 0, it = it + Math.imul(xr, Mr) | 0, ht = ht + Math.imul(xr, Nr) | 0, at = at + Math.imul(zt, Sr) | 0, it = it + Math.imul(zt, jr) | 0, it = it + Math.imul(sr, Sr) | 0, ht = ht + Math.imul(sr, jr) | 0, at = at + Math.imul(Ht, Rr) | 0, it = it + Math.imul(Ht, Lr) | 0, it = it + Math.imul(tr, Rr) | 0, ht = ht + Math.imul(tr, Lr) | 0, at = at + Math.imul(Zt, Br) | 0, it = it + Math.imul(Zt, qr) | 0, it = it + Math.imul(Ut, Br) | 0, ht = ht + Math.imul(Ut, qr) | 0, at = at + Math.imul(St, Yt) | 0, it = it + Math.imul(St, er) | 0, it = it + Math.imul(Nt, Yt) | 0, ht = ht + Math.imul(Nt, er) | 0;
             var pn = (vt + at | 0) + ((it & 8191) << 13) | 0;
-            vt = (ht + (it >>> 13) | 0) + (pn >>> 26) | 0, pn &= 67108863, at = Math.imul(nr, Vt), it = Math.imul(nr, ir), it = it + Math.imul(ar, Vt) | 0, ht = Math.imul(ar, ir), at = at + Math.imul(Cr, or) | 0, it = it + Math.imul(Cr, wr) | 0, it = it + Math.imul(lr, or) | 0, ht = ht + Math.imul(lr, wr) | 0, at = at + Math.imul(_r, fr) | 0, it = it + Math.imul(_r, $r) | 0, it = it + Math.imul(Tr, fr) | 0, ht = ht + Math.imul(Tr, $r) | 0, at = at + Math.imul(vr, Mr) | 0, it = it + Math.imul(vr, Nr) | 0, it = it + Math.imul(gr, Mr) | 0, ht = ht + Math.imul(gr, Nr) | 0, at = at + Math.imul(dr, Sr) | 0, it = it + Math.imul(dr, Or) | 0, it = it + Math.imul(xr, Sr) | 0, ht = ht + Math.imul(xr, Or) | 0, at = at + Math.imul(zt, Rr) | 0, it = it + Math.imul(zt, Lr) | 0, it = it + Math.imul(sr, Rr) | 0, ht = ht + Math.imul(sr, Lr) | 0, at = at + Math.imul(Ht, Br) | 0, it = it + Math.imul(Ht, qr) | 0, it = it + Math.imul(tr, Br) | 0, ht = ht + Math.imul(tr, qr) | 0, at = at + Math.imul(Zt, Yt) | 0, it = it + Math.imul(Zt, er) | 0, it = it + Math.imul(Ut, Yt) | 0, ht = ht + Math.imul(Ut, er) | 0, at = at + Math.imul(St, Jt) | 0, it = it + Math.imul(St, cr) | 0, it = it + Math.imul(Nt, Jt) | 0, ht = ht + Math.imul(Nt, cr) | 0;
+            vt = (ht + (it >>> 13) | 0) + (pn >>> 26) | 0, pn &= 67108863, at = Math.imul(nr, Vt), it = Math.imul(nr, ir), it = it + Math.imul(ar, Vt) | 0, ht = Math.imul(ar, ir), at = at + Math.imul(Cr, or) | 0, it = it + Math.imul(Cr, wr) | 0, it = it + Math.imul(lr, or) | 0, ht = ht + Math.imul(lr, wr) | 0, at = at + Math.imul(_r, fr) | 0, it = it + Math.imul(_r, $r) | 0, it = it + Math.imul(Tr, fr) | 0, ht = ht + Math.imul(Tr, $r) | 0, at = at + Math.imul(vr, Mr) | 0, it = it + Math.imul(vr, Nr) | 0, it = it + Math.imul(gr, Mr) | 0, ht = ht + Math.imul(gr, Nr) | 0, at = at + Math.imul(dr, Sr) | 0, it = it + Math.imul(dr, jr) | 0, it = it + Math.imul(xr, Sr) | 0, ht = ht + Math.imul(xr, jr) | 0, at = at + Math.imul(zt, Rr) | 0, it = it + Math.imul(zt, Lr) | 0, it = it + Math.imul(sr, Rr) | 0, ht = ht + Math.imul(sr, Lr) | 0, at = at + Math.imul(Ht, Br) | 0, it = it + Math.imul(Ht, qr) | 0, it = it + Math.imul(tr, Br) | 0, ht = ht + Math.imul(tr, qr) | 0, at = at + Math.imul(Zt, Yt) | 0, it = it + Math.imul(Zt, er) | 0, it = it + Math.imul(Ut, Yt) | 0, ht = ht + Math.imul(Ut, er) | 0, at = at + Math.imul(St, Jt) | 0, it = it + Math.imul(St, cr) | 0, it = it + Math.imul(Nt, Jt) | 0, ht = ht + Math.imul(Nt, cr) | 0;
             var fn = (vt + at | 0) + ((it & 8191) << 13) | 0;
-            vt = (ht + (it >>> 13) | 0) + (fn >>> 26) | 0, fn &= 67108863, at = Math.imul(Pt, Vt), it = Math.imul(Pt, ir), it = it + Math.imul(It, Vt) | 0, ht = Math.imul(It, ir), at = at + Math.imul(nr, or) | 0, it = it + Math.imul(nr, wr) | 0, it = it + Math.imul(ar, or) | 0, ht = ht + Math.imul(ar, wr) | 0, at = at + Math.imul(Cr, fr) | 0, it = it + Math.imul(Cr, $r) | 0, it = it + Math.imul(lr, fr) | 0, ht = ht + Math.imul(lr, $r) | 0, at = at + Math.imul(_r, Mr) | 0, it = it + Math.imul(_r, Nr) | 0, it = it + Math.imul(Tr, Mr) | 0, ht = ht + Math.imul(Tr, Nr) | 0, at = at + Math.imul(vr, Sr) | 0, it = it + Math.imul(vr, Or) | 0, it = it + Math.imul(gr, Sr) | 0, ht = ht + Math.imul(gr, Or) | 0, at = at + Math.imul(dr, Rr) | 0, it = it + Math.imul(dr, Lr) | 0, it = it + Math.imul(xr, Rr) | 0, ht = ht + Math.imul(xr, Lr) | 0, at = at + Math.imul(zt, Br) | 0, it = it + Math.imul(zt, qr) | 0, it = it + Math.imul(sr, Br) | 0, ht = ht + Math.imul(sr, qr) | 0, at = at + Math.imul(Ht, Yt) | 0, it = it + Math.imul(Ht, er) | 0, it = it + Math.imul(tr, Yt) | 0, ht = ht + Math.imul(tr, er) | 0, at = at + Math.imul(Zt, Jt) | 0, it = it + Math.imul(Zt, cr) | 0, it = it + Math.imul(Ut, Jt) | 0, ht = ht + Math.imul(Ut, cr) | 0, at = at + Math.imul(St, hr) | 0, it = it + Math.imul(St, Er) | 0, it = it + Math.imul(Nt, hr) | 0, ht = ht + Math.imul(Nt, Er) | 0;
+            vt = (ht + (it >>> 13) | 0) + (fn >>> 26) | 0, fn &= 67108863, at = Math.imul(Pt, Vt), it = Math.imul(Pt, ir), it = it + Math.imul(It, Vt) | 0, ht = Math.imul(It, ir), at = at + Math.imul(nr, or) | 0, it = it + Math.imul(nr, wr) | 0, it = it + Math.imul(ar, or) | 0, ht = ht + Math.imul(ar, wr) | 0, at = at + Math.imul(Cr, fr) | 0, it = it + Math.imul(Cr, $r) | 0, it = it + Math.imul(lr, fr) | 0, ht = ht + Math.imul(lr, $r) | 0, at = at + Math.imul(_r, Mr) | 0, it = it + Math.imul(_r, Nr) | 0, it = it + Math.imul(Tr, Mr) | 0, ht = ht + Math.imul(Tr, Nr) | 0, at = at + Math.imul(vr, Sr) | 0, it = it + Math.imul(vr, jr) | 0, it = it + Math.imul(gr, Sr) | 0, ht = ht + Math.imul(gr, jr) | 0, at = at + Math.imul(dr, Rr) | 0, it = it + Math.imul(dr, Lr) | 0, it = it + Math.imul(xr, Rr) | 0, ht = ht + Math.imul(xr, Lr) | 0, at = at + Math.imul(zt, Br) | 0, it = it + Math.imul(zt, qr) | 0, it = it + Math.imul(sr, Br) | 0, ht = ht + Math.imul(sr, qr) | 0, at = at + Math.imul(Ht, Yt) | 0, it = it + Math.imul(Ht, er) | 0, it = it + Math.imul(tr, Yt) | 0, ht = ht + Math.imul(tr, er) | 0, at = at + Math.imul(Zt, Jt) | 0, it = it + Math.imul(Zt, cr) | 0, it = it + Math.imul(Ut, Jt) | 0, ht = ht + Math.imul(Ut, cr) | 0, at = at + Math.imul(St, hr) | 0, it = it + Math.imul(St, Er) | 0, it = it + Math.imul(Nt, hr) | 0, ht = ht + Math.imul(Nt, Er) | 0;
             var hn = (vt + at | 0) + ((it & 8191) << 13) | 0;
-            vt = (ht + (it >>> 13) | 0) + (hn >>> 26) | 0, hn &= 67108863, at = Math.imul(Pt, or), it = Math.imul(Pt, wr), it = it + Math.imul(It, or) | 0, ht = Math.imul(It, wr), at = at + Math.imul(nr, fr) | 0, it = it + Math.imul(nr, $r) | 0, it = it + Math.imul(ar, fr) | 0, ht = ht + Math.imul(ar, $r) | 0, at = at + Math.imul(Cr, Mr) | 0, it = it + Math.imul(Cr, Nr) | 0, it = it + Math.imul(lr, Mr) | 0, ht = ht + Math.imul(lr, Nr) | 0, at = at + Math.imul(_r, Sr) | 0, it = it + Math.imul(_r, Or) | 0, it = it + Math.imul(Tr, Sr) | 0, ht = ht + Math.imul(Tr, Or) | 0, at = at + Math.imul(vr, Rr) | 0, it = it + Math.imul(vr, Lr) | 0, it = it + Math.imul(gr, Rr) | 0, ht = ht + Math.imul(gr, Lr) | 0, at = at + Math.imul(dr, Br) | 0, it = it + Math.imul(dr, qr) | 0, it = it + Math.imul(xr, Br) | 0, ht = ht + Math.imul(xr, qr) | 0, at = at + Math.imul(zt, Yt) | 0, it = it + Math.imul(zt, er) | 0, it = it + Math.imul(sr, Yt) | 0, ht = ht + Math.imul(sr, er) | 0, at = at + Math.imul(Ht, Jt) | 0, it = it + Math.imul(Ht, cr) | 0, it = it + Math.imul(tr, Jt) | 0, ht = ht + Math.imul(tr, cr) | 0, at = at + Math.imul(Zt, hr) | 0, it = it + Math.imul(Zt, Er) | 0, it = it + Math.imul(Ut, hr) | 0, ht = ht + Math.imul(Ut, Er) | 0;
+            vt = (ht + (it >>> 13) | 0) + (hn >>> 26) | 0, hn &= 67108863, at = Math.imul(Pt, or), it = Math.imul(Pt, wr), it = it + Math.imul(It, or) | 0, ht = Math.imul(It, wr), at = at + Math.imul(nr, fr) | 0, it = it + Math.imul(nr, $r) | 0, it = it + Math.imul(ar, fr) | 0, ht = ht + Math.imul(ar, $r) | 0, at = at + Math.imul(Cr, Mr) | 0, it = it + Math.imul(Cr, Nr) | 0, it = it + Math.imul(lr, Mr) | 0, ht = ht + Math.imul(lr, Nr) | 0, at = at + Math.imul(_r, Sr) | 0, it = it + Math.imul(_r, jr) | 0, it = it + Math.imul(Tr, Sr) | 0, ht = ht + Math.imul(Tr, jr) | 0, at = at + Math.imul(vr, Rr) | 0, it = it + Math.imul(vr, Lr) | 0, it = it + Math.imul(gr, Rr) | 0, ht = ht + Math.imul(gr, Lr) | 0, at = at + Math.imul(dr, Br) | 0, it = it + Math.imul(dr, qr) | 0, it = it + Math.imul(xr, Br) | 0, ht = ht + Math.imul(xr, qr) | 0, at = at + Math.imul(zt, Yt) | 0, it = it + Math.imul(zt, er) | 0, it = it + Math.imul(sr, Yt) | 0, ht = ht + Math.imul(sr, er) | 0, at = at + Math.imul(Ht, Jt) | 0, it = it + Math.imul(Ht, cr) | 0, it = it + Math.imul(tr, Jt) | 0, ht = ht + Math.imul(tr, cr) | 0, at = at + Math.imul(Zt, hr) | 0, it = it + Math.imul(Zt, Er) | 0, it = it + Math.imul(Ut, hr) | 0, ht = ht + Math.imul(Ut, Er) | 0;
             var dn = (vt + at | 0) + ((it & 8191) << 13) | 0;
-            vt = (ht + (it >>> 13) | 0) + (dn >>> 26) | 0, dn &= 67108863, at = Math.imul(Pt, fr), it = Math.imul(Pt, $r), it = it + Math.imul(It, fr) | 0, ht = Math.imul(It, $r), at = at + Math.imul(nr, Mr) | 0, it = it + Math.imul(nr, Nr) | 0, it = it + Math.imul(ar, Mr) | 0, ht = ht + Math.imul(ar, Nr) | 0, at = at + Math.imul(Cr, Sr) | 0, it = it + Math.imul(Cr, Or) | 0, it = it + Math.imul(lr, Sr) | 0, ht = ht + Math.imul(lr, Or) | 0, at = at + Math.imul(_r, Rr) | 0, it = it + Math.imul(_r, Lr) | 0, it = it + Math.imul(Tr, Rr) | 0, ht = ht + Math.imul(Tr, Lr) | 0, at = at + Math.imul(vr, Br) | 0, it = it + Math.imul(vr, qr) | 0, it = it + Math.imul(gr, Br) | 0, ht = ht + Math.imul(gr, qr) | 0, at = at + Math.imul(dr, Yt) | 0, it = it + Math.imul(dr, er) | 0, it = it + Math.imul(xr, Yt) | 0, ht = ht + Math.imul(xr, er) | 0, at = at + Math.imul(zt, Jt) | 0, it = it + Math.imul(zt, cr) | 0, it = it + Math.imul(sr, Jt) | 0, ht = ht + Math.imul(sr, cr) | 0, at = at + Math.imul(Ht, hr) | 0, it = it + Math.imul(Ht, Er) | 0, it = it + Math.imul(tr, hr) | 0, ht = ht + Math.imul(tr, Er) | 0;
+            vt = (ht + (it >>> 13) | 0) + (dn >>> 26) | 0, dn &= 67108863, at = Math.imul(Pt, fr), it = Math.imul(Pt, $r), it = it + Math.imul(It, fr) | 0, ht = Math.imul(It, $r), at = at + Math.imul(nr, Mr) | 0, it = it + Math.imul(nr, Nr) | 0, it = it + Math.imul(ar, Mr) | 0, ht = ht + Math.imul(ar, Nr) | 0, at = at + Math.imul(Cr, Sr) | 0, it = it + Math.imul(Cr, jr) | 0, it = it + Math.imul(lr, Sr) | 0, ht = ht + Math.imul(lr, jr) | 0, at = at + Math.imul(_r, Rr) | 0, it = it + Math.imul(_r, Lr) | 0, it = it + Math.imul(Tr, Rr) | 0, ht = ht + Math.imul(Tr, Lr) | 0, at = at + Math.imul(vr, Br) | 0, it = it + Math.imul(vr, qr) | 0, it = it + Math.imul(gr, Br) | 0, ht = ht + Math.imul(gr, qr) | 0, at = at + Math.imul(dr, Yt) | 0, it = it + Math.imul(dr, er) | 0, it = it + Math.imul(xr, Yt) | 0, ht = ht + Math.imul(xr, er) | 0, at = at + Math.imul(zt, Jt) | 0, it = it + Math.imul(zt, cr) | 0, it = it + Math.imul(sr, Jt) | 0, ht = ht + Math.imul(sr, cr) | 0, at = at + Math.imul(Ht, hr) | 0, it = it + Math.imul(Ht, Er) | 0, it = it + Math.imul(tr, hr) | 0, ht = ht + Math.imul(tr, Er) | 0;
             var tn = (vt + at | 0) + ((it & 8191) << 13) | 0;
-            vt = (ht + (it >>> 13) | 0) + (tn >>> 26) | 0, tn &= 67108863, at = Math.imul(Pt, Mr), it = Math.imul(Pt, Nr), it = it + Math.imul(It, Mr) | 0, ht = Math.imul(It, Nr), at = at + Math.imul(nr, Sr) | 0, it = it + Math.imul(nr, Or) | 0, it = it + Math.imul(ar, Sr) | 0, ht = ht + Math.imul(ar, Or) | 0, at = at + Math.imul(Cr, Rr) | 0, it = it + Math.imul(Cr, Lr) | 0, it = it + Math.imul(lr, Rr) | 0, ht = ht + Math.imul(lr, Lr) | 0, at = at + Math.imul(_r, Br) | 0, it = it + Math.imul(_r, qr) | 0, it = it + Math.imul(Tr, Br) | 0, ht = ht + Math.imul(Tr, qr) | 0, at = at + Math.imul(vr, Yt) | 0, it = it + Math.imul(vr, er) | 0, it = it + Math.imul(gr, Yt) | 0, ht = ht + Math.imul(gr, er) | 0, at = at + Math.imul(dr, Jt) | 0, it = it + Math.imul(dr, cr) | 0, it = it + Math.imul(xr, Jt) | 0, ht = ht + Math.imul(xr, cr) | 0, at = at + Math.imul(zt, hr) | 0, it = it + Math.imul(zt, Er) | 0, it = it + Math.imul(sr, hr) | 0, ht = ht + Math.imul(sr, Er) | 0;
+            vt = (ht + (it >>> 13) | 0) + (tn >>> 26) | 0, tn &= 67108863, at = Math.imul(Pt, Mr), it = Math.imul(Pt, Nr), it = it + Math.imul(It, Mr) | 0, ht = Math.imul(It, Nr), at = at + Math.imul(nr, Sr) | 0, it = it + Math.imul(nr, jr) | 0, it = it + Math.imul(ar, Sr) | 0, ht = ht + Math.imul(ar, jr) | 0, at = at + Math.imul(Cr, Rr) | 0, it = it + Math.imul(Cr, Lr) | 0, it = it + Math.imul(lr, Rr) | 0, ht = ht + Math.imul(lr, Lr) | 0, at = at + Math.imul(_r, Br) | 0, it = it + Math.imul(_r, qr) | 0, it = it + Math.imul(Tr, Br) | 0, ht = ht + Math.imul(Tr, qr) | 0, at = at + Math.imul(vr, Yt) | 0, it = it + Math.imul(vr, er) | 0, it = it + Math.imul(gr, Yt) | 0, ht = ht + Math.imul(gr, er) | 0, at = at + Math.imul(dr, Jt) | 0, it = it + Math.imul(dr, cr) | 0, it = it + Math.imul(xr, Jt) | 0, ht = ht + Math.imul(xr, cr) | 0, at = at + Math.imul(zt, hr) | 0, it = it + Math.imul(zt, Er) | 0, it = it + Math.imul(sr, hr) | 0, ht = ht + Math.imul(sr, Er) | 0;
             var an = (vt + at | 0) + ((it & 8191) << 13) | 0;
-            vt = (ht + (it >>> 13) | 0) + (an >>> 26) | 0, an &= 67108863, at = Math.imul(Pt, Sr), it = Math.imul(Pt, Or), it = it + Math.imul(It, Sr) | 0, ht = Math.imul(It, Or), at = at + Math.imul(nr, Rr) | 0, it = it + Math.imul(nr, Lr) | 0, it = it + Math.imul(ar, Rr) | 0, ht = ht + Math.imul(ar, Lr) | 0, at = at + Math.imul(Cr, Br) | 0, it = it + Math.imul(Cr, qr) | 0, it = it + Math.imul(lr, Br) | 0, ht = ht + Math.imul(lr, qr) | 0, at = at + Math.imul(_r, Yt) | 0, it = it + Math.imul(_r, er) | 0, it = it + Math.imul(Tr, Yt) | 0, ht = ht + Math.imul(Tr, er) | 0, at = at + Math.imul(vr, Jt) | 0, it = it + Math.imul(vr, cr) | 0, it = it + Math.imul(gr, Jt) | 0, ht = ht + Math.imul(gr, cr) | 0, at = at + Math.imul(dr, hr) | 0, it = it + Math.imul(dr, Er) | 0, it = it + Math.imul(xr, hr) | 0, ht = ht + Math.imul(xr, Er) | 0;
+            vt = (ht + (it >>> 13) | 0) + (an >>> 26) | 0, an &= 67108863, at = Math.imul(Pt, Sr), it = Math.imul(Pt, jr), it = it + Math.imul(It, Sr) | 0, ht = Math.imul(It, jr), at = at + Math.imul(nr, Rr) | 0, it = it + Math.imul(nr, Lr) | 0, it = it + Math.imul(ar, Rr) | 0, ht = ht + Math.imul(ar, Lr) | 0, at = at + Math.imul(Cr, Br) | 0, it = it + Math.imul(Cr, qr) | 0, it = it + Math.imul(lr, Br) | 0, ht = ht + Math.imul(lr, qr) | 0, at = at + Math.imul(_r, Yt) | 0, it = it + Math.imul(_r, er) | 0, it = it + Math.imul(Tr, Yt) | 0, ht = ht + Math.imul(Tr, er) | 0, at = at + Math.imul(vr, Jt) | 0, it = it + Math.imul(vr, cr) | 0, it = it + Math.imul(gr, Jt) | 0, ht = ht + Math.imul(gr, cr) | 0, at = at + Math.imul(dr, hr) | 0, it = it + Math.imul(dr, Er) | 0, it = it + Math.imul(xr, hr) | 0, ht = ht + Math.imul(xr, Er) | 0;
             var Yr = (vt + at | 0) + ((it & 8191) << 13) | 0;
             vt = (ht + (it >>> 13) | 0) + (Yr >>> 26) | 0, Yr &= 67108863, at = Math.imul(Pt, Rr), it = Math.imul(Pt, Lr), it = it + Math.imul(It, Rr) | 0, ht = Math.imul(It, Lr), at = at + Math.imul(nr, Br) | 0, it = it + Math.imul(nr, qr) | 0, it = it + Math.imul(ar, Br) | 0, ht = ht + Math.imul(ar, qr) | 0, at = at + Math.imul(Cr, Yt) | 0, it = it + Math.imul(Cr, er) | 0, it = it + Math.imul(lr, Yt) | 0, ht = ht + Math.imul(lr, er) | 0, at = at + Math.imul(_r, Jt) | 0, it = it + Math.imul(_r, cr) | 0, it = it + Math.imul(Tr, Jt) | 0, ht = ht + Math.imul(Tr, cr) | 0, at = at + Math.imul(vr, hr) | 0, it = it + Math.imul(vr, Er) | 0, it = it + Math.imul(gr, hr) | 0, ht = ht + Math.imul(gr, Er) | 0;
             var rn = (vt + at | 0) + ((it & 8191) << 13) | 0;
@@ -30894,8 +30894,8 @@ Use Chrome, Firefox or Internet Explorer 11`);
             vt = (ht + (it >>> 13) | 0) + (Gr >>> 26) | 0, Gr &= 67108863, at = Math.imul(Pt, Jt), it = Math.imul(Pt, cr), it = it + Math.imul(It, Jt) | 0, ht = Math.imul(It, cr), at = at + Math.imul(nr, hr) | 0, it = it + Math.imul(nr, Er) | 0, it = it + Math.imul(ar, hr) | 0, ht = ht + Math.imul(ar, Er) | 0;
             var Dr = (vt + at | 0) + ((it & 8191) << 13) | 0;
             vt = (ht + (it >>> 13) | 0) + (Dr >>> 26) | 0, Dr &= 67108863, at = Math.imul(Pt, hr), it = Math.imul(Pt, Er), it = it + Math.imul(It, hr) | 0, ht = Math.imul(It, Er);
-            var Fr = (vt + at | 0) + ((it & 8191) << 13) | 0;
-            return vt = (ht + (it >>> 13) | 0) + (Fr >>> 26) | 0, Fr &= 67108863, mt[0] = zr, mt[1] = Wr, mt[2] = gn, mt[3] = Jr, mt[4] = ln, mt[5] = un, mt[6] = mn, mt[7] = pn, mt[8] = fn, mt[9] = hn, mt[10] = dn, mt[11] = tn, mt[12] = an, mt[13] = Yr, mt[14] = rn, mt[15] = nn, mt[16] = Gr, mt[17] = Dr, mt[18] = Fr, vt !== 0 && (mt[19] = vt, nt.length++), nt;
+            var Or = (vt + at | 0) + ((it & 8191) << 13) | 0;
+            return vt = (ht + (it >>> 13) | 0) + (Or >>> 26) | 0, Or &= 67108863, mt[0] = zr, mt[1] = Wr, mt[2] = gn, mt[3] = Jr, mt[4] = ln, mt[5] = un, mt[6] = mn, mt[7] = pn, mt[8] = fn, mt[9] = hn, mt[10] = dn, mt[11] = tn, mt[12] = an, mt[13] = Yr, mt[14] = rn, mt[15] = nn, mt[16] = Gr, mt[17] = Dr, mt[18] = Or, vt !== 0 && (mt[19] = vt, nt.length++), nt;
           };
           Math.imul || (Et = Mt);
           function Rt(ct, et, tt) {
@@ -31360,10 +31360,10 @@ Use Chrome, Firefox or Internet Explorer 11`);
             }
             return et.words[et.length - 1] === 0 && (et.length--, et.words[et.length - 1] === 0 && et.length--), et;
           };
-          function jt() {
+          function Ot() {
             Tt.call(this, "p224", "ffffffff ffffffff ffffffff ffffffff 00000000 00000000 00000001");
           }
-          rt(jt, Tt);
+          rt(Ot, Tt);
           function Xt() {
             Tt.call(this, "p192", "ffffffff ffffffff ffffffff fffffffe ffffffff ffffffff");
           }
@@ -31381,7 +31381,7 @@ Use Chrome, Firefox or Internet Explorer 11`);
             if ($t[et]) return $t[et];
             var tt;
             if (et === "k256") tt = new Ft();
-            else if (et === "p224") tt = new jt();
+            else if (et === "p224") tt = new Ot();
             else if (et === "p192") tt = new Xt();
             else if (et === "p25519") tt = new Qt();
             else throw new Error("Unknown prime " + et);
@@ -31998,7 +31998,7 @@ Use Chrome, Firefox or Internet Explorer 11`);
             return at !== 0 ? tt.words[it] = at | 0 : tt.length--, tt.strip();
           }
           var Et = function(et, tt, nt) {
-            var ot = et.words, ut = tt.words, mt = nt.words, vt = 0, at, it, ht, wt = ot[0] | 0, St = wt & 8191, Nt = wt >>> 13, qt = ot[1] | 0, Zt = qt & 8191, Ut = qt >>> 13, Lt = ot[2] | 0, Ht = Lt & 8191, tr = Lt >>> 13, Gt = ot[3] | 0, zt = Gt & 8191, sr = Gt >>> 13, br = ot[4] | 0, dr = br & 8191, xr = br >>> 13, kr = ot[5] | 0, vr = kr & 8191, gr = kr >>> 13, jr = ot[6] | 0, _r = jr & 8191, Tr = jr >>> 13, Ur = ot[7] | 0, Cr = Ur & 8191, lr = Ur >>> 13, rr = ot[8] | 0, nr = rr & 8191, ar = rr >>> 13, pr = ot[9] | 0, Pt = pr & 8191, It = pr >>> 13, Dt = ut[0] | 0, Vt = Dt & 8191, ir = Dt >>> 13, ur = ut[1] | 0, or = ur & 8191, wr = ur >>> 13, Ir = ut[2] | 0, fr = Ir & 8191, $r = Ir >>> 13, Pr = ut[3] | 0, Mr = Pr & 8191, Nr = Pr >>> 13, Vr = ut[4] | 0, Sr = Vr & 8191, Or = Vr >>> 13, Hr = ut[5] | 0, Rr = Hr & 8191, Lr = Hr >>> 13, Zr = ut[6] | 0, Br = Zr & 8191, qr = Zr >>> 13, Kt = ut[7] | 0, Yt = Kt & 8191, er = Kt >>> 13, Ot = ut[8] | 0, Jt = Ot & 8191, cr = Ot >>> 13, yr = ut[9] | 0, hr = yr & 8191, Er = yr >>> 13;
+            var ot = et.words, ut = tt.words, mt = nt.words, vt = 0, at, it, ht, wt = ot[0] | 0, St = wt & 8191, Nt = wt >>> 13, qt = ot[1] | 0, Zt = qt & 8191, Ut = qt >>> 13, Lt = ot[2] | 0, Ht = Lt & 8191, tr = Lt >>> 13, Gt = ot[3] | 0, zt = Gt & 8191, sr = Gt >>> 13, br = ot[4] | 0, dr = br & 8191, xr = br >>> 13, kr = ot[5] | 0, vr = kr & 8191, gr = kr >>> 13, Fr = ot[6] | 0, _r = Fr & 8191, Tr = Fr >>> 13, Ur = ot[7] | 0, Cr = Ur & 8191, lr = Ur >>> 13, rr = ot[8] | 0, nr = rr & 8191, ar = rr >>> 13, pr = ot[9] | 0, Pt = pr & 8191, It = pr >>> 13, Dt = ut[0] | 0, Vt = Dt & 8191, ir = Dt >>> 13, ur = ut[1] | 0, or = ur & 8191, wr = ur >>> 13, Ir = ut[2] | 0, fr = Ir & 8191, $r = Ir >>> 13, Pr = ut[3] | 0, Mr = Pr & 8191, Nr = Pr >>> 13, Vr = ut[4] | 0, Sr = Vr & 8191, jr = Vr >>> 13, Hr = ut[5] | 0, Rr = Hr & 8191, Lr = Hr >>> 13, Zr = ut[6] | 0, Br = Zr & 8191, qr = Zr >>> 13, Kt = ut[7] | 0, Yt = Kt & 8191, er = Kt >>> 13, jt = ut[8] | 0, Jt = jt & 8191, cr = jt >>> 13, yr = ut[9] | 0, hr = yr & 8191, Er = yr >>> 13;
             nt.negative = et.negative ^ tt.negative, nt.length = 19, at = Math.imul(St, Vt), it = Math.imul(St, ir), it = it + Math.imul(Nt, Vt) | 0, ht = Math.imul(Nt, ir);
             var zr = (vt + at | 0) + ((it & 8191) << 13) | 0;
             vt = (ht + (it >>> 13) | 0) + (zr >>> 26) | 0, zr &= 67108863, at = Math.imul(Zt, Vt), it = Math.imul(Zt, ir), it = it + Math.imul(Ut, Vt) | 0, ht = Math.imul(Ut, ir), at = at + Math.imul(St, or) | 0, it = it + Math.imul(St, wr) | 0, it = it + Math.imul(Nt, or) | 0, ht = ht + Math.imul(Nt, wr) | 0;
@@ -32007,25 +32007,25 @@ Use Chrome, Firefox or Internet Explorer 11`);
             var gn = (vt + at | 0) + ((it & 8191) << 13) | 0;
             vt = (ht + (it >>> 13) | 0) + (gn >>> 26) | 0, gn &= 67108863, at = Math.imul(zt, Vt), it = Math.imul(zt, ir), it = it + Math.imul(sr, Vt) | 0, ht = Math.imul(sr, ir), at = at + Math.imul(Ht, or) | 0, it = it + Math.imul(Ht, wr) | 0, it = it + Math.imul(tr, or) | 0, ht = ht + Math.imul(tr, wr) | 0, at = at + Math.imul(Zt, fr) | 0, it = it + Math.imul(Zt, $r) | 0, it = it + Math.imul(Ut, fr) | 0, ht = ht + Math.imul(Ut, $r) | 0, at = at + Math.imul(St, Mr) | 0, it = it + Math.imul(St, Nr) | 0, it = it + Math.imul(Nt, Mr) | 0, ht = ht + Math.imul(Nt, Nr) | 0;
             var Jr = (vt + at | 0) + ((it & 8191) << 13) | 0;
-            vt = (ht + (it >>> 13) | 0) + (Jr >>> 26) | 0, Jr &= 67108863, at = Math.imul(dr, Vt), it = Math.imul(dr, ir), it = it + Math.imul(xr, Vt) | 0, ht = Math.imul(xr, ir), at = at + Math.imul(zt, or) | 0, it = it + Math.imul(zt, wr) | 0, it = it + Math.imul(sr, or) | 0, ht = ht + Math.imul(sr, wr) | 0, at = at + Math.imul(Ht, fr) | 0, it = it + Math.imul(Ht, $r) | 0, it = it + Math.imul(tr, fr) | 0, ht = ht + Math.imul(tr, $r) | 0, at = at + Math.imul(Zt, Mr) | 0, it = it + Math.imul(Zt, Nr) | 0, it = it + Math.imul(Ut, Mr) | 0, ht = ht + Math.imul(Ut, Nr) | 0, at = at + Math.imul(St, Sr) | 0, it = it + Math.imul(St, Or) | 0, it = it + Math.imul(Nt, Sr) | 0, ht = ht + Math.imul(Nt, Or) | 0;
+            vt = (ht + (it >>> 13) | 0) + (Jr >>> 26) | 0, Jr &= 67108863, at = Math.imul(dr, Vt), it = Math.imul(dr, ir), it = it + Math.imul(xr, Vt) | 0, ht = Math.imul(xr, ir), at = at + Math.imul(zt, or) | 0, it = it + Math.imul(zt, wr) | 0, it = it + Math.imul(sr, or) | 0, ht = ht + Math.imul(sr, wr) | 0, at = at + Math.imul(Ht, fr) | 0, it = it + Math.imul(Ht, $r) | 0, it = it + Math.imul(tr, fr) | 0, ht = ht + Math.imul(tr, $r) | 0, at = at + Math.imul(Zt, Mr) | 0, it = it + Math.imul(Zt, Nr) | 0, it = it + Math.imul(Ut, Mr) | 0, ht = ht + Math.imul(Ut, Nr) | 0, at = at + Math.imul(St, Sr) | 0, it = it + Math.imul(St, jr) | 0, it = it + Math.imul(Nt, Sr) | 0, ht = ht + Math.imul(Nt, jr) | 0;
             var ln = (vt + at | 0) + ((it & 8191) << 13) | 0;
-            vt = (ht + (it >>> 13) | 0) + (ln >>> 26) | 0, ln &= 67108863, at = Math.imul(vr, Vt), it = Math.imul(vr, ir), it = it + Math.imul(gr, Vt) | 0, ht = Math.imul(gr, ir), at = at + Math.imul(dr, or) | 0, it = it + Math.imul(dr, wr) | 0, it = it + Math.imul(xr, or) | 0, ht = ht + Math.imul(xr, wr) | 0, at = at + Math.imul(zt, fr) | 0, it = it + Math.imul(zt, $r) | 0, it = it + Math.imul(sr, fr) | 0, ht = ht + Math.imul(sr, $r) | 0, at = at + Math.imul(Ht, Mr) | 0, it = it + Math.imul(Ht, Nr) | 0, it = it + Math.imul(tr, Mr) | 0, ht = ht + Math.imul(tr, Nr) | 0, at = at + Math.imul(Zt, Sr) | 0, it = it + Math.imul(Zt, Or) | 0, it = it + Math.imul(Ut, Sr) | 0, ht = ht + Math.imul(Ut, Or) | 0, at = at + Math.imul(St, Rr) | 0, it = it + Math.imul(St, Lr) | 0, it = it + Math.imul(Nt, Rr) | 0, ht = ht + Math.imul(Nt, Lr) | 0;
+            vt = (ht + (it >>> 13) | 0) + (ln >>> 26) | 0, ln &= 67108863, at = Math.imul(vr, Vt), it = Math.imul(vr, ir), it = it + Math.imul(gr, Vt) | 0, ht = Math.imul(gr, ir), at = at + Math.imul(dr, or) | 0, it = it + Math.imul(dr, wr) | 0, it = it + Math.imul(xr, or) | 0, ht = ht + Math.imul(xr, wr) | 0, at = at + Math.imul(zt, fr) | 0, it = it + Math.imul(zt, $r) | 0, it = it + Math.imul(sr, fr) | 0, ht = ht + Math.imul(sr, $r) | 0, at = at + Math.imul(Ht, Mr) | 0, it = it + Math.imul(Ht, Nr) | 0, it = it + Math.imul(tr, Mr) | 0, ht = ht + Math.imul(tr, Nr) | 0, at = at + Math.imul(Zt, Sr) | 0, it = it + Math.imul(Zt, jr) | 0, it = it + Math.imul(Ut, Sr) | 0, ht = ht + Math.imul(Ut, jr) | 0, at = at + Math.imul(St, Rr) | 0, it = it + Math.imul(St, Lr) | 0, it = it + Math.imul(Nt, Rr) | 0, ht = ht + Math.imul(Nt, Lr) | 0;
             var un = (vt + at | 0) + ((it & 8191) << 13) | 0;
-            vt = (ht + (it >>> 13) | 0) + (un >>> 26) | 0, un &= 67108863, at = Math.imul(_r, Vt), it = Math.imul(_r, ir), it = it + Math.imul(Tr, Vt) | 0, ht = Math.imul(Tr, ir), at = at + Math.imul(vr, or) | 0, it = it + Math.imul(vr, wr) | 0, it = it + Math.imul(gr, or) | 0, ht = ht + Math.imul(gr, wr) | 0, at = at + Math.imul(dr, fr) | 0, it = it + Math.imul(dr, $r) | 0, it = it + Math.imul(xr, fr) | 0, ht = ht + Math.imul(xr, $r) | 0, at = at + Math.imul(zt, Mr) | 0, it = it + Math.imul(zt, Nr) | 0, it = it + Math.imul(sr, Mr) | 0, ht = ht + Math.imul(sr, Nr) | 0, at = at + Math.imul(Ht, Sr) | 0, it = it + Math.imul(Ht, Or) | 0, it = it + Math.imul(tr, Sr) | 0, ht = ht + Math.imul(tr, Or) | 0, at = at + Math.imul(Zt, Rr) | 0, it = it + Math.imul(Zt, Lr) | 0, it = it + Math.imul(Ut, Rr) | 0, ht = ht + Math.imul(Ut, Lr) | 0, at = at + Math.imul(St, Br) | 0, it = it + Math.imul(St, qr) | 0, it = it + Math.imul(Nt, Br) | 0, ht = ht + Math.imul(Nt, qr) | 0;
+            vt = (ht + (it >>> 13) | 0) + (un >>> 26) | 0, un &= 67108863, at = Math.imul(_r, Vt), it = Math.imul(_r, ir), it = it + Math.imul(Tr, Vt) | 0, ht = Math.imul(Tr, ir), at = at + Math.imul(vr, or) | 0, it = it + Math.imul(vr, wr) | 0, it = it + Math.imul(gr, or) | 0, ht = ht + Math.imul(gr, wr) | 0, at = at + Math.imul(dr, fr) | 0, it = it + Math.imul(dr, $r) | 0, it = it + Math.imul(xr, fr) | 0, ht = ht + Math.imul(xr, $r) | 0, at = at + Math.imul(zt, Mr) | 0, it = it + Math.imul(zt, Nr) | 0, it = it + Math.imul(sr, Mr) | 0, ht = ht + Math.imul(sr, Nr) | 0, at = at + Math.imul(Ht, Sr) | 0, it = it + Math.imul(Ht, jr) | 0, it = it + Math.imul(tr, Sr) | 0, ht = ht + Math.imul(tr, jr) | 0, at = at + Math.imul(Zt, Rr) | 0, it = it + Math.imul(Zt, Lr) | 0, it = it + Math.imul(Ut, Rr) | 0, ht = ht + Math.imul(Ut, Lr) | 0, at = at + Math.imul(St, Br) | 0, it = it + Math.imul(St, qr) | 0, it = it + Math.imul(Nt, Br) | 0, ht = ht + Math.imul(Nt, qr) | 0;
             var mn = (vt + at | 0) + ((it & 8191) << 13) | 0;
-            vt = (ht + (it >>> 13) | 0) + (mn >>> 26) | 0, mn &= 67108863, at = Math.imul(Cr, Vt), it = Math.imul(Cr, ir), it = it + Math.imul(lr, Vt) | 0, ht = Math.imul(lr, ir), at = at + Math.imul(_r, or) | 0, it = it + Math.imul(_r, wr) | 0, it = it + Math.imul(Tr, or) | 0, ht = ht + Math.imul(Tr, wr) | 0, at = at + Math.imul(vr, fr) | 0, it = it + Math.imul(vr, $r) | 0, it = it + Math.imul(gr, fr) | 0, ht = ht + Math.imul(gr, $r) | 0, at = at + Math.imul(dr, Mr) | 0, it = it + Math.imul(dr, Nr) | 0, it = it + Math.imul(xr, Mr) | 0, ht = ht + Math.imul(xr, Nr) | 0, at = at + Math.imul(zt, Sr) | 0, it = it + Math.imul(zt, Or) | 0, it = it + Math.imul(sr, Sr) | 0, ht = ht + Math.imul(sr, Or) | 0, at = at + Math.imul(Ht, Rr) | 0, it = it + Math.imul(Ht, Lr) | 0, it = it + Math.imul(tr, Rr) | 0, ht = ht + Math.imul(tr, Lr) | 0, at = at + Math.imul(Zt, Br) | 0, it = it + Math.imul(Zt, qr) | 0, it = it + Math.imul(Ut, Br) | 0, ht = ht + Math.imul(Ut, qr) | 0, at = at + Math.imul(St, Yt) | 0, it = it + Math.imul(St, er) | 0, it = it + Math.imul(Nt, Yt) | 0, ht = ht + Math.imul(Nt, er) | 0;
+            vt = (ht + (it >>> 13) | 0) + (mn >>> 26) | 0, mn &= 67108863, at = Math.imul(Cr, Vt), it = Math.imul(Cr, ir), it = it + Math.imul(lr, Vt) | 0, ht = Math.imul(lr, ir), at = at + Math.imul(_r, or) | 0, it = it + Math.imul(_r, wr) | 0, it = it + Math.imul(Tr, or) | 0, ht = ht + Math.imul(Tr, wr) | 0, at = at + Math.imul(vr, fr) | 0, it = it + Math.imul(vr, $r) | 0, it = it + Math.imul(gr, fr) | 0, ht = ht + Math.imul(gr, $r) | 0, at = at + Math.imul(dr, Mr) | 0, it = it + Math.imul(dr, Nr) | 0, it = it + Math.imul(xr, Mr) | 0, ht = ht + Math.imul(xr, Nr) | 0, at = at + Math.imul(zt, Sr) | 0, it = it + Math.imul(zt, jr) | 0, it = it + Math.imul(sr, Sr) | 0, ht = ht + Math.imul(sr, jr) | 0, at = at + Math.imul(Ht, Rr) | 0, it = it + Math.imul(Ht, Lr) | 0, it = it + Math.imul(tr, Rr) | 0, ht = ht + Math.imul(tr, Lr) | 0, at = at + Math.imul(Zt, Br) | 0, it = it + Math.imul(Zt, qr) | 0, it = it + Math.imul(Ut, Br) | 0, ht = ht + Math.imul(Ut, qr) | 0, at = at + Math.imul(St, Yt) | 0, it = it + Math.imul(St, er) | 0, it = it + Math.imul(Nt, Yt) | 0, ht = ht + Math.imul(Nt, er) | 0;
             var pn = (vt + at | 0) + ((it & 8191) << 13) | 0;
-            vt = (ht + (it >>> 13) | 0) + (pn >>> 26) | 0, pn &= 67108863, at = Math.imul(nr, Vt), it = Math.imul(nr, ir), it = it + Math.imul(ar, Vt) | 0, ht = Math.imul(ar, ir), at = at + Math.imul(Cr, or) | 0, it = it + Math.imul(Cr, wr) | 0, it = it + Math.imul(lr, or) | 0, ht = ht + Math.imul(lr, wr) | 0, at = at + Math.imul(_r, fr) | 0, it = it + Math.imul(_r, $r) | 0, it = it + Math.imul(Tr, fr) | 0, ht = ht + Math.imul(Tr, $r) | 0, at = at + Math.imul(vr, Mr) | 0, it = it + Math.imul(vr, Nr) | 0, it = it + Math.imul(gr, Mr) | 0, ht = ht + Math.imul(gr, Nr) | 0, at = at + Math.imul(dr, Sr) | 0, it = it + Math.imul(dr, Or) | 0, it = it + Math.imul(xr, Sr) | 0, ht = ht + Math.imul(xr, Or) | 0, at = at + Math.imul(zt, Rr) | 0, it = it + Math.imul(zt, Lr) | 0, it = it + Math.imul(sr, Rr) | 0, ht = ht + Math.imul(sr, Lr) | 0, at = at + Math.imul(Ht, Br) | 0, it = it + Math.imul(Ht, qr) | 0, it = it + Math.imul(tr, Br) | 0, ht = ht + Math.imul(tr, qr) | 0, at = at + Math.imul(Zt, Yt) | 0, it = it + Math.imul(Zt, er) | 0, it = it + Math.imul(Ut, Yt) | 0, ht = ht + Math.imul(Ut, er) | 0, at = at + Math.imul(St, Jt) | 0, it = it + Math.imul(St, cr) | 0, it = it + Math.imul(Nt, Jt) | 0, ht = ht + Math.imul(Nt, cr) | 0;
+            vt = (ht + (it >>> 13) | 0) + (pn >>> 26) | 0, pn &= 67108863, at = Math.imul(nr, Vt), it = Math.imul(nr, ir), it = it + Math.imul(ar, Vt) | 0, ht = Math.imul(ar, ir), at = at + Math.imul(Cr, or) | 0, it = it + Math.imul(Cr, wr) | 0, it = it + Math.imul(lr, or) | 0, ht = ht + Math.imul(lr, wr) | 0, at = at + Math.imul(_r, fr) | 0, it = it + Math.imul(_r, $r) | 0, it = it + Math.imul(Tr, fr) | 0, ht = ht + Math.imul(Tr, $r) | 0, at = at + Math.imul(vr, Mr) | 0, it = it + Math.imul(vr, Nr) | 0, it = it + Math.imul(gr, Mr) | 0, ht = ht + Math.imul(gr, Nr) | 0, at = at + Math.imul(dr, Sr) | 0, it = it + Math.imul(dr, jr) | 0, it = it + Math.imul(xr, Sr) | 0, ht = ht + Math.imul(xr, jr) | 0, at = at + Math.imul(zt, Rr) | 0, it = it + Math.imul(zt, Lr) | 0, it = it + Math.imul(sr, Rr) | 0, ht = ht + Math.imul(sr, Lr) | 0, at = at + Math.imul(Ht, Br) | 0, it = it + Math.imul(Ht, qr) | 0, it = it + Math.imul(tr, Br) | 0, ht = ht + Math.imul(tr, qr) | 0, at = at + Math.imul(Zt, Yt) | 0, it = it + Math.imul(Zt, er) | 0, it = it + Math.imul(Ut, Yt) | 0, ht = ht + Math.imul(Ut, er) | 0, at = at + Math.imul(St, Jt) | 0, it = it + Math.imul(St, cr) | 0, it = it + Math.imul(Nt, Jt) | 0, ht = ht + Math.imul(Nt, cr) | 0;
             var fn = (vt + at | 0) + ((it & 8191) << 13) | 0;
-            vt = (ht + (it >>> 13) | 0) + (fn >>> 26) | 0, fn &= 67108863, at = Math.imul(Pt, Vt), it = Math.imul(Pt, ir), it = it + Math.imul(It, Vt) | 0, ht = Math.imul(It, ir), at = at + Math.imul(nr, or) | 0, it = it + Math.imul(nr, wr) | 0, it = it + Math.imul(ar, or) | 0, ht = ht + Math.imul(ar, wr) | 0, at = at + Math.imul(Cr, fr) | 0, it = it + Math.imul(Cr, $r) | 0, it = it + Math.imul(lr, fr) | 0, ht = ht + Math.imul(lr, $r) | 0, at = at + Math.imul(_r, Mr) | 0, it = it + Math.imul(_r, Nr) | 0, it = it + Math.imul(Tr, Mr) | 0, ht = ht + Math.imul(Tr, Nr) | 0, at = at + Math.imul(vr, Sr) | 0, it = it + Math.imul(vr, Or) | 0, it = it + Math.imul(gr, Sr) | 0, ht = ht + Math.imul(gr, Or) | 0, at = at + Math.imul(dr, Rr) | 0, it = it + Math.imul(dr, Lr) | 0, it = it + Math.imul(xr, Rr) | 0, ht = ht + Math.imul(xr, Lr) | 0, at = at + Math.imul(zt, Br) | 0, it = it + Math.imul(zt, qr) | 0, it = it + Math.imul(sr, Br) | 0, ht = ht + Math.imul(sr, qr) | 0, at = at + Math.imul(Ht, Yt) | 0, it = it + Math.imul(Ht, er) | 0, it = it + Math.imul(tr, Yt) | 0, ht = ht + Math.imul(tr, er) | 0, at = at + Math.imul(Zt, Jt) | 0, it = it + Math.imul(Zt, cr) | 0, it = it + Math.imul(Ut, Jt) | 0, ht = ht + Math.imul(Ut, cr) | 0, at = at + Math.imul(St, hr) | 0, it = it + Math.imul(St, Er) | 0, it = it + Math.imul(Nt, hr) | 0, ht = ht + Math.imul(Nt, Er) | 0;
+            vt = (ht + (it >>> 13) | 0) + (fn >>> 26) | 0, fn &= 67108863, at = Math.imul(Pt, Vt), it = Math.imul(Pt, ir), it = it + Math.imul(It, Vt) | 0, ht = Math.imul(It, ir), at = at + Math.imul(nr, or) | 0, it = it + Math.imul(nr, wr) | 0, it = it + Math.imul(ar, or) | 0, ht = ht + Math.imul(ar, wr) | 0, at = at + Math.imul(Cr, fr) | 0, it = it + Math.imul(Cr, $r) | 0, it = it + Math.imul(lr, fr) | 0, ht = ht + Math.imul(lr, $r) | 0, at = at + Math.imul(_r, Mr) | 0, it = it + Math.imul(_r, Nr) | 0, it = it + Math.imul(Tr, Mr) | 0, ht = ht + Math.imul(Tr, Nr) | 0, at = at + Math.imul(vr, Sr) | 0, it = it + Math.imul(vr, jr) | 0, it = it + Math.imul(gr, Sr) | 0, ht = ht + Math.imul(gr, jr) | 0, at = at + Math.imul(dr, Rr) | 0, it = it + Math.imul(dr, Lr) | 0, it = it + Math.imul(xr, Rr) | 0, ht = ht + Math.imul(xr, Lr) | 0, at = at + Math.imul(zt, Br) | 0, it = it + Math.imul(zt, qr) | 0, it = it + Math.imul(sr, Br) | 0, ht = ht + Math.imul(sr, qr) | 0, at = at + Math.imul(Ht, Yt) | 0, it = it + Math.imul(Ht, er) | 0, it = it + Math.imul(tr, Yt) | 0, ht = ht + Math.imul(tr, er) | 0, at = at + Math.imul(Zt, Jt) | 0, it = it + Math.imul(Zt, cr) | 0, it = it + Math.imul(Ut, Jt) | 0, ht = ht + Math.imul(Ut, cr) | 0, at = at + Math.imul(St, hr) | 0, it = it + Math.imul(St, Er) | 0, it = it + Math.imul(Nt, hr) | 0, ht = ht + Math.imul(Nt, Er) | 0;
             var hn = (vt + at | 0) + ((it & 8191) << 13) | 0;
-            vt = (ht + (it >>> 13) | 0) + (hn >>> 26) | 0, hn &= 67108863, at = Math.imul(Pt, or), it = Math.imul(Pt, wr), it = it + Math.imul(It, or) | 0, ht = Math.imul(It, wr), at = at + Math.imul(nr, fr) | 0, it = it + Math.imul(nr, $r) | 0, it = it + Math.imul(ar, fr) | 0, ht = ht + Math.imul(ar, $r) | 0, at = at + Math.imul(Cr, Mr) | 0, it = it + Math.imul(Cr, Nr) | 0, it = it + Math.imul(lr, Mr) | 0, ht = ht + Math.imul(lr, Nr) | 0, at = at + Math.imul(_r, Sr) | 0, it = it + Math.imul(_r, Or) | 0, it = it + Math.imul(Tr, Sr) | 0, ht = ht + Math.imul(Tr, Or) | 0, at = at + Math.imul(vr, Rr) | 0, it = it + Math.imul(vr, Lr) | 0, it = it + Math.imul(gr, Rr) | 0, ht = ht + Math.imul(gr, Lr) | 0, at = at + Math.imul(dr, Br) | 0, it = it + Math.imul(dr, qr) | 0, it = it + Math.imul(xr, Br) | 0, ht = ht + Math.imul(xr, qr) | 0, at = at + Math.imul(zt, Yt) | 0, it = it + Math.imul(zt, er) | 0, it = it + Math.imul(sr, Yt) | 0, ht = ht + Math.imul(sr, er) | 0, at = at + Math.imul(Ht, Jt) | 0, it = it + Math.imul(Ht, cr) | 0, it = it + Math.imul(tr, Jt) | 0, ht = ht + Math.imul(tr, cr) | 0, at = at + Math.imul(Zt, hr) | 0, it = it + Math.imul(Zt, Er) | 0, it = it + Math.imul(Ut, hr) | 0, ht = ht + Math.imul(Ut, Er) | 0;
+            vt = (ht + (it >>> 13) | 0) + (hn >>> 26) | 0, hn &= 67108863, at = Math.imul(Pt, or), it = Math.imul(Pt, wr), it = it + Math.imul(It, or) | 0, ht = Math.imul(It, wr), at = at + Math.imul(nr, fr) | 0, it = it + Math.imul(nr, $r) | 0, it = it + Math.imul(ar, fr) | 0, ht = ht + Math.imul(ar, $r) | 0, at = at + Math.imul(Cr, Mr) | 0, it = it + Math.imul(Cr, Nr) | 0, it = it + Math.imul(lr, Mr) | 0, ht = ht + Math.imul(lr, Nr) | 0, at = at + Math.imul(_r, Sr) | 0, it = it + Math.imul(_r, jr) | 0, it = it + Math.imul(Tr, Sr) | 0, ht = ht + Math.imul(Tr, jr) | 0, at = at + Math.imul(vr, Rr) | 0, it = it + Math.imul(vr, Lr) | 0, it = it + Math.imul(gr, Rr) | 0, ht = ht + Math.imul(gr, Lr) | 0, at = at + Math.imul(dr, Br) | 0, it = it + Math.imul(dr, qr) | 0, it = it + Math.imul(xr, Br) | 0, ht = ht + Math.imul(xr, qr) | 0, at = at + Math.imul(zt, Yt) | 0, it = it + Math.imul(zt, er) | 0, it = it + Math.imul(sr, Yt) | 0, ht = ht + Math.imul(sr, er) | 0, at = at + Math.imul(Ht, Jt) | 0, it = it + Math.imul(Ht, cr) | 0, it = it + Math.imul(tr, Jt) | 0, ht = ht + Math.imul(tr, cr) | 0, at = at + Math.imul(Zt, hr) | 0, it = it + Math.imul(Zt, Er) | 0, it = it + Math.imul(Ut, hr) | 0, ht = ht + Math.imul(Ut, Er) | 0;
             var dn = (vt + at | 0) + ((it & 8191) << 13) | 0;
-            vt = (ht + (it >>> 13) | 0) + (dn >>> 26) | 0, dn &= 67108863, at = Math.imul(Pt, fr), it = Math.imul(Pt, $r), it = it + Math.imul(It, fr) | 0, ht = Math.imul(It, $r), at = at + Math.imul(nr, Mr) | 0, it = it + Math.imul(nr, Nr) | 0, it = it + Math.imul(ar, Mr) | 0, ht = ht + Math.imul(ar, Nr) | 0, at = at + Math.imul(Cr, Sr) | 0, it = it + Math.imul(Cr, Or) | 0, it = it + Math.imul(lr, Sr) | 0, ht = ht + Math.imul(lr, Or) | 0, at = at + Math.imul(_r, Rr) | 0, it = it + Math.imul(_r, Lr) | 0, it = it + Math.imul(Tr, Rr) | 0, ht = ht + Math.imul(Tr, Lr) | 0, at = at + Math.imul(vr, Br) | 0, it = it + Math.imul(vr, qr) | 0, it = it + Math.imul(gr, Br) | 0, ht = ht + Math.imul(gr, qr) | 0, at = at + Math.imul(dr, Yt) | 0, it = it + Math.imul(dr, er) | 0, it = it + Math.imul(xr, Yt) | 0, ht = ht + Math.imul(xr, er) | 0, at = at + Math.imul(zt, Jt) | 0, it = it + Math.imul(zt, cr) | 0, it = it + Math.imul(sr, Jt) | 0, ht = ht + Math.imul(sr, cr) | 0, at = at + Math.imul(Ht, hr) | 0, it = it + Math.imul(Ht, Er) | 0, it = it + Math.imul(tr, hr) | 0, ht = ht + Math.imul(tr, Er) | 0;
+            vt = (ht + (it >>> 13) | 0) + (dn >>> 26) | 0, dn &= 67108863, at = Math.imul(Pt, fr), it = Math.imul(Pt, $r), it = it + Math.imul(It, fr) | 0, ht = Math.imul(It, $r), at = at + Math.imul(nr, Mr) | 0, it = it + Math.imul(nr, Nr) | 0, it = it + Math.imul(ar, Mr) | 0, ht = ht + Math.imul(ar, Nr) | 0, at = at + Math.imul(Cr, Sr) | 0, it = it + Math.imul(Cr, jr) | 0, it = it + Math.imul(lr, Sr) | 0, ht = ht + Math.imul(lr, jr) | 0, at = at + Math.imul(_r, Rr) | 0, it = it + Math.imul(_r, Lr) | 0, it = it + Math.imul(Tr, Rr) | 0, ht = ht + Math.imul(Tr, Lr) | 0, at = at + Math.imul(vr, Br) | 0, it = it + Math.imul(vr, qr) | 0, it = it + Math.imul(gr, Br) | 0, ht = ht + Math.imul(gr, qr) | 0, at = at + Math.imul(dr, Yt) | 0, it = it + Math.imul(dr, er) | 0, it = it + Math.imul(xr, Yt) | 0, ht = ht + Math.imul(xr, er) | 0, at = at + Math.imul(zt, Jt) | 0, it = it + Math.imul(zt, cr) | 0, it = it + Math.imul(sr, Jt) | 0, ht = ht + Math.imul(sr, cr) | 0, at = at + Math.imul(Ht, hr) | 0, it = it + Math.imul(Ht, Er) | 0, it = it + Math.imul(tr, hr) | 0, ht = ht + Math.imul(tr, Er) | 0;
             var tn = (vt + at | 0) + ((it & 8191) << 13) | 0;
-            vt = (ht + (it >>> 13) | 0) + (tn >>> 26) | 0, tn &= 67108863, at = Math.imul(Pt, Mr), it = Math.imul(Pt, Nr), it = it + Math.imul(It, Mr) | 0, ht = Math.imul(It, Nr), at = at + Math.imul(nr, Sr) | 0, it = it + Math.imul(nr, Or) | 0, it = it + Math.imul(ar, Sr) | 0, ht = ht + Math.imul(ar, Or) | 0, at = at + Math.imul(Cr, Rr) | 0, it = it + Math.imul(Cr, Lr) | 0, it = it + Math.imul(lr, Rr) | 0, ht = ht + Math.imul(lr, Lr) | 0, at = at + Math.imul(_r, Br) | 0, it = it + Math.imul(_r, qr) | 0, it = it + Math.imul(Tr, Br) | 0, ht = ht + Math.imul(Tr, qr) | 0, at = at + Math.imul(vr, Yt) | 0, it = it + Math.imul(vr, er) | 0, it = it + Math.imul(gr, Yt) | 0, ht = ht + Math.imul(gr, er) | 0, at = at + Math.imul(dr, Jt) | 0, it = it + Math.imul(dr, cr) | 0, it = it + Math.imul(xr, Jt) | 0, ht = ht + Math.imul(xr, cr) | 0, at = at + Math.imul(zt, hr) | 0, it = it + Math.imul(zt, Er) | 0, it = it + Math.imul(sr, hr) | 0, ht = ht + Math.imul(sr, Er) | 0;
+            vt = (ht + (it >>> 13) | 0) + (tn >>> 26) | 0, tn &= 67108863, at = Math.imul(Pt, Mr), it = Math.imul(Pt, Nr), it = it + Math.imul(It, Mr) | 0, ht = Math.imul(It, Nr), at = at + Math.imul(nr, Sr) | 0, it = it + Math.imul(nr, jr) | 0, it = it + Math.imul(ar, Sr) | 0, ht = ht + Math.imul(ar, jr) | 0, at = at + Math.imul(Cr, Rr) | 0, it = it + Math.imul(Cr, Lr) | 0, it = it + Math.imul(lr, Rr) | 0, ht = ht + Math.imul(lr, Lr) | 0, at = at + Math.imul(_r, Br) | 0, it = it + Math.imul(_r, qr) | 0, it = it + Math.imul(Tr, Br) | 0, ht = ht + Math.imul(Tr, qr) | 0, at = at + Math.imul(vr, Yt) | 0, it = it + Math.imul(vr, er) | 0, it = it + Math.imul(gr, Yt) | 0, ht = ht + Math.imul(gr, er) | 0, at = at + Math.imul(dr, Jt) | 0, it = it + Math.imul(dr, cr) | 0, it = it + Math.imul(xr, Jt) | 0, ht = ht + Math.imul(xr, cr) | 0, at = at + Math.imul(zt, hr) | 0, it = it + Math.imul(zt, Er) | 0, it = it + Math.imul(sr, hr) | 0, ht = ht + Math.imul(sr, Er) | 0;
             var an = (vt + at | 0) + ((it & 8191) << 13) | 0;
-            vt = (ht + (it >>> 13) | 0) + (an >>> 26) | 0, an &= 67108863, at = Math.imul(Pt, Sr), it = Math.imul(Pt, Or), it = it + Math.imul(It, Sr) | 0, ht = Math.imul(It, Or), at = at + Math.imul(nr, Rr) | 0, it = it + Math.imul(nr, Lr) | 0, it = it + Math.imul(ar, Rr) | 0, ht = ht + Math.imul(ar, Lr) | 0, at = at + Math.imul(Cr, Br) | 0, it = it + Math.imul(Cr, qr) | 0, it = it + Math.imul(lr, Br) | 0, ht = ht + Math.imul(lr, qr) | 0, at = at + Math.imul(_r, Yt) | 0, it = it + Math.imul(_r, er) | 0, it = it + Math.imul(Tr, Yt) | 0, ht = ht + Math.imul(Tr, er) | 0, at = at + Math.imul(vr, Jt) | 0, it = it + Math.imul(vr, cr) | 0, it = it + Math.imul(gr, Jt) | 0, ht = ht + Math.imul(gr, cr) | 0, at = at + Math.imul(dr, hr) | 0, it = it + Math.imul(dr, Er) | 0, it = it + Math.imul(xr, hr) | 0, ht = ht + Math.imul(xr, Er) | 0;
+            vt = (ht + (it >>> 13) | 0) + (an >>> 26) | 0, an &= 67108863, at = Math.imul(Pt, Sr), it = Math.imul(Pt, jr), it = it + Math.imul(It, Sr) | 0, ht = Math.imul(It, jr), at = at + Math.imul(nr, Rr) | 0, it = it + Math.imul(nr, Lr) | 0, it = it + Math.imul(ar, Rr) | 0, ht = ht + Math.imul(ar, Lr) | 0, at = at + Math.imul(Cr, Br) | 0, it = it + Math.imul(Cr, qr) | 0, it = it + Math.imul(lr, Br) | 0, ht = ht + Math.imul(lr, qr) | 0, at = at + Math.imul(_r, Yt) | 0, it = it + Math.imul(_r, er) | 0, it = it + Math.imul(Tr, Yt) | 0, ht = ht + Math.imul(Tr, er) | 0, at = at + Math.imul(vr, Jt) | 0, it = it + Math.imul(vr, cr) | 0, it = it + Math.imul(gr, Jt) | 0, ht = ht + Math.imul(gr, cr) | 0, at = at + Math.imul(dr, hr) | 0, it = it + Math.imul(dr, Er) | 0, it = it + Math.imul(xr, hr) | 0, ht = ht + Math.imul(xr, Er) | 0;
             var Yr = (vt + at | 0) + ((it & 8191) << 13) | 0;
             vt = (ht + (it >>> 13) | 0) + (Yr >>> 26) | 0, Yr &= 67108863, at = Math.imul(Pt, Rr), it = Math.imul(Pt, Lr), it = it + Math.imul(It, Rr) | 0, ht = Math.imul(It, Lr), at = at + Math.imul(nr, Br) | 0, it = it + Math.imul(nr, qr) | 0, it = it + Math.imul(ar, Br) | 0, ht = ht + Math.imul(ar, qr) | 0, at = at + Math.imul(Cr, Yt) | 0, it = it + Math.imul(Cr, er) | 0, it = it + Math.imul(lr, Yt) | 0, ht = ht + Math.imul(lr, er) | 0, at = at + Math.imul(_r, Jt) | 0, it = it + Math.imul(_r, cr) | 0, it = it + Math.imul(Tr, Jt) | 0, ht = ht + Math.imul(Tr, cr) | 0, at = at + Math.imul(vr, hr) | 0, it = it + Math.imul(vr, Er) | 0, it = it + Math.imul(gr, hr) | 0, ht = ht + Math.imul(gr, Er) | 0;
             var rn = (vt + at | 0) + ((it & 8191) << 13) | 0;
@@ -32036,8 +32036,8 @@ Use Chrome, Firefox or Internet Explorer 11`);
             vt = (ht + (it >>> 13) | 0) + (Gr >>> 26) | 0, Gr &= 67108863, at = Math.imul(Pt, Jt), it = Math.imul(Pt, cr), it = it + Math.imul(It, Jt) | 0, ht = Math.imul(It, cr), at = at + Math.imul(nr, hr) | 0, it = it + Math.imul(nr, Er) | 0, it = it + Math.imul(ar, hr) | 0, ht = ht + Math.imul(ar, Er) | 0;
             var Dr = (vt + at | 0) + ((it & 8191) << 13) | 0;
             vt = (ht + (it >>> 13) | 0) + (Dr >>> 26) | 0, Dr &= 67108863, at = Math.imul(Pt, hr), it = Math.imul(Pt, Er), it = it + Math.imul(It, hr) | 0, ht = Math.imul(It, Er);
-            var Fr = (vt + at | 0) + ((it & 8191) << 13) | 0;
-            return vt = (ht + (it >>> 13) | 0) + (Fr >>> 26) | 0, Fr &= 67108863, mt[0] = zr, mt[1] = Wr, mt[2] = gn, mt[3] = Jr, mt[4] = ln, mt[5] = un, mt[6] = mn, mt[7] = pn, mt[8] = fn, mt[9] = hn, mt[10] = dn, mt[11] = tn, mt[12] = an, mt[13] = Yr, mt[14] = rn, mt[15] = nn, mt[16] = Gr, mt[17] = Dr, mt[18] = Fr, vt !== 0 && (mt[19] = vt, nt.length++), nt;
+            var Or = (vt + at | 0) + ((it & 8191) << 13) | 0;
+            return vt = (ht + (it >>> 13) | 0) + (Or >>> 26) | 0, Or &= 67108863, mt[0] = zr, mt[1] = Wr, mt[2] = gn, mt[3] = Jr, mt[4] = ln, mt[5] = un, mt[6] = mn, mt[7] = pn, mt[8] = fn, mt[9] = hn, mt[10] = dn, mt[11] = tn, mt[12] = an, mt[13] = Yr, mt[14] = rn, mt[15] = nn, mt[16] = Gr, mt[17] = Dr, mt[18] = Or, vt !== 0 && (mt[19] = vt, nt.length++), nt;
           };
           Math.imul || (Et = Mt);
           function Rt(ct, et, tt) {
@@ -32502,10 +32502,10 @@ Use Chrome, Firefox or Internet Explorer 11`);
             }
             return et.words[et.length - 1] === 0 && (et.length--, et.words[et.length - 1] === 0 && et.length--), et;
           };
-          function jt() {
+          function Ot() {
             Tt.call(this, "p224", "ffffffff ffffffff ffffffff ffffffff 00000000 00000000 00000001");
           }
-          rt(jt, Tt);
+          rt(Ot, Tt);
           function Xt() {
             Tt.call(this, "p192", "ffffffff ffffffff ffffffff fffffffe ffffffff ffffffff");
           }
@@ -32523,7 +32523,7 @@ Use Chrome, Firefox or Internet Explorer 11`);
             if ($t[et]) return $t[et];
             var tt;
             if (et === "k256") tt = new Ft();
-            else if (et === "p224") tt = new jt();
+            else if (et === "p224") tt = new Ot();
             else if (et === "p192") tt = new Xt();
             else if (et === "p25519") tt = new Qt();
             else throw new Error("Unknown prime " + et);
@@ -32670,16 +32670,16 @@ Use Chrome, Firefox or Internet Explorer 11`);
       function bt(_t, Ct) {
         var Mt = _t.modulus.byteLength(), Et = Ct.length, Rt = _("sha1").update(pt.alloc(0)).digest(), At = Rt.length, Bt = 2 * At;
         if (Et > Mt - Bt - 2) throw new Error("message too long");
-        var $t = pt.alloc(Mt - Et - Bt - 2), Tt = Mt - At - 1, Ft = b(At), jt = rt(pt.concat([
+        var $t = pt.alloc(Mt - Et - Bt - 2), Tt = Mt - At - 1, Ft = b(At), Ot = rt(pt.concat([
           Rt,
           $t,
           pt.alloc(1, 1),
           Ct
-        ], Tt), $(Ft, Tt)), Xt = rt(Ft, $(jt, At));
+        ], Tt), $(Ft, Tt)), Xt = rt(Ft, $(Ot, At));
         return new j(pt.concat([
           pt.alloc(1),
           Xt,
-          jt
+          Ot
         ], Mt));
       }
       function yt(_t, Ct, Mt) {
@@ -32964,35 +32964,35 @@ https://github.com/browserify/crypto-browserify`);
           9344,
           11139
         ]);
-        function Mt(Kt, Yt, er, Ot) {
-          Kt[Yt] = er >> 24 & 255, Kt[Yt + 1] = er >> 16 & 255, Kt[Yt + 2] = er >> 8 & 255, Kt[Yt + 3] = er & 255, Kt[Yt + 4] = Ot >> 24 & 255, Kt[Yt + 5] = Ot >> 16 & 255, Kt[Yt + 6] = Ot >> 8 & 255, Kt[Yt + 7] = Ot & 255;
+        function Mt(Kt, Yt, er, jt) {
+          Kt[Yt] = er >> 24 & 255, Kt[Yt + 1] = er >> 16 & 255, Kt[Yt + 2] = er >> 8 & 255, Kt[Yt + 3] = er & 255, Kt[Yt + 4] = jt >> 24 & 255, Kt[Yt + 5] = jt >> 16 & 255, Kt[Yt + 6] = jt >> 8 & 255, Kt[Yt + 7] = jt & 255;
         }
-        function Et(Kt, Yt, er, Ot, Jt) {
+        function Et(Kt, Yt, er, jt, Jt) {
           var cr, yr = 0;
-          for (cr = 0; cr < Jt; cr++) yr |= Kt[Yt + cr] ^ er[Ot + cr];
+          for (cr = 0; cr < Jt; cr++) yr |= Kt[Yt + cr] ^ er[jt + cr];
           return (1 & yr - 1 >>> 8) - 1;
         }
-        function Rt(Kt, Yt, er, Ot) {
-          return Et(Kt, Yt, er, Ot, 16);
+        function Rt(Kt, Yt, er, jt) {
+          return Et(Kt, Yt, er, jt, 16);
         }
-        function At(Kt, Yt, er, Ot) {
-          return Et(Kt, Yt, er, Ot, 32);
+        function At(Kt, Yt, er, jt) {
+          return Et(Kt, Yt, er, jt, 32);
         }
-        function Bt(Kt, Yt, er, Ot) {
-          for (var Jt = Ot[0] & 255 | (Ot[1] & 255) << 8 | (Ot[2] & 255) << 16 | (Ot[3] & 255) << 24, cr = er[0] & 255 | (er[1] & 255) << 8 | (er[2] & 255) << 16 | (er[3] & 255) << 24, yr = er[4] & 255 | (er[5] & 255) << 8 | (er[6] & 255) << 16 | (er[7] & 255) << 24, hr = er[8] & 255 | (er[9] & 255) << 8 | (er[10] & 255) << 16 | (er[11] & 255) << 24, Er = er[12] & 255 | (er[13] & 255) << 8 | (er[14] & 255) << 16 | (er[15] & 255) << 24, zr = Ot[4] & 255 | (Ot[5] & 255) << 8 | (Ot[6] & 255) << 16 | (Ot[7] & 255) << 24, Wr = Yt[0] & 255 | (Yt[1] & 255) << 8 | (Yt[2] & 255) << 16 | (Yt[3] & 255) << 24, gn = Yt[4] & 255 | (Yt[5] & 255) << 8 | (Yt[6] & 255) << 16 | (Yt[7] & 255) << 24, Jr = Yt[8] & 255 | (Yt[9] & 255) << 8 | (Yt[10] & 255) << 16 | (Yt[11] & 255) << 24, ln = Yt[12] & 255 | (Yt[13] & 255) << 8 | (Yt[14] & 255) << 16 | (Yt[15] & 255) << 24, un = Ot[8] & 255 | (Ot[9] & 255) << 8 | (Ot[10] & 255) << 16 | (Ot[11] & 255) << 24, mn = er[16] & 255 | (er[17] & 255) << 8 | (er[18] & 255) << 16 | (er[19] & 255) << 24, pn = er[20] & 255 | (er[21] & 255) << 8 | (er[22] & 255) << 16 | (er[23] & 255) << 24, fn = er[24] & 255 | (er[25] & 255) << 8 | (er[26] & 255) << 16 | (er[27] & 255) << 24, hn = er[28] & 255 | (er[29] & 255) << 8 | (er[30] & 255) << 16 | (er[31] & 255) << 24, dn = Ot[12] & 255 | (Ot[13] & 255) << 8 | (Ot[14] & 255) << 16 | (Ot[15] & 255) << 24, tn = Jt, an = cr, Yr = yr, rn = hr, nn = Er, Gr = zr, Dr = Wr, Fr = gn, Xr = Jr, Kr = ln, Qr = un, sn = mn, vn = pn, yn = fn, xn = hn, wn = dn, Ar, Cn = 0; Cn < 20; Cn += 2) Ar = tn + vn | 0, nn ^= Ar << 7 | Ar >>> 25, Ar = nn + tn | 0, Xr ^= Ar << 9 | Ar >>> 23, Ar = Xr + nn | 0, vn ^= Ar << 13 | Ar >>> 19, Ar = vn + Xr | 0, tn ^= Ar << 18 | Ar >>> 14, Ar = Gr + an | 0, Kr ^= Ar << 7 | Ar >>> 25, Ar = Kr + Gr | 0, yn ^= Ar << 9 | Ar >>> 23, Ar = yn + Kr | 0, an ^= Ar << 13 | Ar >>> 19, Ar = an + yn | 0, Gr ^= Ar << 18 | Ar >>> 14, Ar = Qr + Dr | 0, xn ^= Ar << 7 | Ar >>> 25, Ar = xn + Qr | 0, Yr ^= Ar << 9 | Ar >>> 23, Ar = Yr + xn | 0, Dr ^= Ar << 13 | Ar >>> 19, Ar = Dr + Yr | 0, Qr ^= Ar << 18 | Ar >>> 14, Ar = wn + sn | 0, rn ^= Ar << 7 | Ar >>> 25, Ar = rn + wn | 0, Fr ^= Ar << 9 | Ar >>> 23, Ar = Fr + rn | 0, sn ^= Ar << 13 | Ar >>> 19, Ar = sn + Fr | 0, wn ^= Ar << 18 | Ar >>> 14, Ar = tn + rn | 0, an ^= Ar << 7 | Ar >>> 25, Ar = an + tn | 0, Yr ^= Ar << 9 | Ar >>> 23, Ar = Yr + an | 0, rn ^= Ar << 13 | Ar >>> 19, Ar = rn + Yr | 0, tn ^= Ar << 18 | Ar >>> 14, Ar = Gr + nn | 0, Dr ^= Ar << 7 | Ar >>> 25, Ar = Dr + Gr | 0, Fr ^= Ar << 9 | Ar >>> 23, Ar = Fr + Dr | 0, nn ^= Ar << 13 | Ar >>> 19, Ar = nn + Fr | 0, Gr ^= Ar << 18 | Ar >>> 14, Ar = Qr + Kr | 0, sn ^= Ar << 7 | Ar >>> 25, Ar = sn + Qr | 0, Xr ^= Ar << 9 | Ar >>> 23, Ar = Xr + sn | 0, Kr ^= Ar << 13 | Ar >>> 19, Ar = Kr + Xr | 0, Qr ^= Ar << 18 | Ar >>> 14, Ar = wn + xn | 0, vn ^= Ar << 7 | Ar >>> 25, Ar = vn + wn | 0, yn ^= Ar << 9 | Ar >>> 23, Ar = yn + vn | 0, xn ^= Ar << 13 | Ar >>> 19, Ar = xn + yn | 0, wn ^= Ar << 18 | Ar >>> 14;
-          tn = tn + Jt | 0, an = an + cr | 0, Yr = Yr + yr | 0, rn = rn + hr | 0, nn = nn + Er | 0, Gr = Gr + zr | 0, Dr = Dr + Wr | 0, Fr = Fr + gn | 0, Xr = Xr + Jr | 0, Kr = Kr + ln | 0, Qr = Qr + un | 0, sn = sn + mn | 0, vn = vn + pn | 0, yn = yn + fn | 0, xn = xn + hn | 0, wn = wn + dn | 0, Kt[0] = tn >>> 0 & 255, Kt[1] = tn >>> 8 & 255, Kt[2] = tn >>> 16 & 255, Kt[3] = tn >>> 24 & 255, Kt[4] = an >>> 0 & 255, Kt[5] = an >>> 8 & 255, Kt[6] = an >>> 16 & 255, Kt[7] = an >>> 24 & 255, Kt[8] = Yr >>> 0 & 255, Kt[9] = Yr >>> 8 & 255, Kt[10] = Yr >>> 16 & 255, Kt[11] = Yr >>> 24 & 255, Kt[12] = rn >>> 0 & 255, Kt[13] = rn >>> 8 & 255, Kt[14] = rn >>> 16 & 255, Kt[15] = rn >>> 24 & 255, Kt[16] = nn >>> 0 & 255, Kt[17] = nn >>> 8 & 255, Kt[18] = nn >>> 16 & 255, Kt[19] = nn >>> 24 & 255, Kt[20] = Gr >>> 0 & 255, Kt[21] = Gr >>> 8 & 255, Kt[22] = Gr >>> 16 & 255, Kt[23] = Gr >>> 24 & 255, Kt[24] = Dr >>> 0 & 255, Kt[25] = Dr >>> 8 & 255, Kt[26] = Dr >>> 16 & 255, Kt[27] = Dr >>> 24 & 255, Kt[28] = Fr >>> 0 & 255, Kt[29] = Fr >>> 8 & 255, Kt[30] = Fr >>> 16 & 255, Kt[31] = Fr >>> 24 & 255, Kt[32] = Xr >>> 0 & 255, Kt[33] = Xr >>> 8 & 255, Kt[34] = Xr >>> 16 & 255, Kt[35] = Xr >>> 24 & 255, Kt[36] = Kr >>> 0 & 255, Kt[37] = Kr >>> 8 & 255, Kt[38] = Kr >>> 16 & 255, Kt[39] = Kr >>> 24 & 255, Kt[40] = Qr >>> 0 & 255, Kt[41] = Qr >>> 8 & 255, Kt[42] = Qr >>> 16 & 255, Kt[43] = Qr >>> 24 & 255, Kt[44] = sn >>> 0 & 255, Kt[45] = sn >>> 8 & 255, Kt[46] = sn >>> 16 & 255, Kt[47] = sn >>> 24 & 255, Kt[48] = vn >>> 0 & 255, Kt[49] = vn >>> 8 & 255, Kt[50] = vn >>> 16 & 255, Kt[51] = vn >>> 24 & 255, Kt[52] = yn >>> 0 & 255, Kt[53] = yn >>> 8 & 255, Kt[54] = yn >>> 16 & 255, Kt[55] = yn >>> 24 & 255, Kt[56] = xn >>> 0 & 255, Kt[57] = xn >>> 8 & 255, Kt[58] = xn >>> 16 & 255, Kt[59] = xn >>> 24 & 255, Kt[60] = wn >>> 0 & 255, Kt[61] = wn >>> 8 & 255, Kt[62] = wn >>> 16 & 255, Kt[63] = wn >>> 24 & 255;
+        function Bt(Kt, Yt, er, jt) {
+          for (var Jt = jt[0] & 255 | (jt[1] & 255) << 8 | (jt[2] & 255) << 16 | (jt[3] & 255) << 24, cr = er[0] & 255 | (er[1] & 255) << 8 | (er[2] & 255) << 16 | (er[3] & 255) << 24, yr = er[4] & 255 | (er[5] & 255) << 8 | (er[6] & 255) << 16 | (er[7] & 255) << 24, hr = er[8] & 255 | (er[9] & 255) << 8 | (er[10] & 255) << 16 | (er[11] & 255) << 24, Er = er[12] & 255 | (er[13] & 255) << 8 | (er[14] & 255) << 16 | (er[15] & 255) << 24, zr = jt[4] & 255 | (jt[5] & 255) << 8 | (jt[6] & 255) << 16 | (jt[7] & 255) << 24, Wr = Yt[0] & 255 | (Yt[1] & 255) << 8 | (Yt[2] & 255) << 16 | (Yt[3] & 255) << 24, gn = Yt[4] & 255 | (Yt[5] & 255) << 8 | (Yt[6] & 255) << 16 | (Yt[7] & 255) << 24, Jr = Yt[8] & 255 | (Yt[9] & 255) << 8 | (Yt[10] & 255) << 16 | (Yt[11] & 255) << 24, ln = Yt[12] & 255 | (Yt[13] & 255) << 8 | (Yt[14] & 255) << 16 | (Yt[15] & 255) << 24, un = jt[8] & 255 | (jt[9] & 255) << 8 | (jt[10] & 255) << 16 | (jt[11] & 255) << 24, mn = er[16] & 255 | (er[17] & 255) << 8 | (er[18] & 255) << 16 | (er[19] & 255) << 24, pn = er[20] & 255 | (er[21] & 255) << 8 | (er[22] & 255) << 16 | (er[23] & 255) << 24, fn = er[24] & 255 | (er[25] & 255) << 8 | (er[26] & 255) << 16 | (er[27] & 255) << 24, hn = er[28] & 255 | (er[29] & 255) << 8 | (er[30] & 255) << 16 | (er[31] & 255) << 24, dn = jt[12] & 255 | (jt[13] & 255) << 8 | (jt[14] & 255) << 16 | (jt[15] & 255) << 24, tn = Jt, an = cr, Yr = yr, rn = hr, nn = Er, Gr = zr, Dr = Wr, Or = gn, Xr = Jr, Kr = ln, Qr = un, sn = mn, vn = pn, yn = fn, xn = hn, wn = dn, Ar, Cn = 0; Cn < 20; Cn += 2) Ar = tn + vn | 0, nn ^= Ar << 7 | Ar >>> 25, Ar = nn + tn | 0, Xr ^= Ar << 9 | Ar >>> 23, Ar = Xr + nn | 0, vn ^= Ar << 13 | Ar >>> 19, Ar = vn + Xr | 0, tn ^= Ar << 18 | Ar >>> 14, Ar = Gr + an | 0, Kr ^= Ar << 7 | Ar >>> 25, Ar = Kr + Gr | 0, yn ^= Ar << 9 | Ar >>> 23, Ar = yn + Kr | 0, an ^= Ar << 13 | Ar >>> 19, Ar = an + yn | 0, Gr ^= Ar << 18 | Ar >>> 14, Ar = Qr + Dr | 0, xn ^= Ar << 7 | Ar >>> 25, Ar = xn + Qr | 0, Yr ^= Ar << 9 | Ar >>> 23, Ar = Yr + xn | 0, Dr ^= Ar << 13 | Ar >>> 19, Ar = Dr + Yr | 0, Qr ^= Ar << 18 | Ar >>> 14, Ar = wn + sn | 0, rn ^= Ar << 7 | Ar >>> 25, Ar = rn + wn | 0, Or ^= Ar << 9 | Ar >>> 23, Ar = Or + rn | 0, sn ^= Ar << 13 | Ar >>> 19, Ar = sn + Or | 0, wn ^= Ar << 18 | Ar >>> 14, Ar = tn + rn | 0, an ^= Ar << 7 | Ar >>> 25, Ar = an + tn | 0, Yr ^= Ar << 9 | Ar >>> 23, Ar = Yr + an | 0, rn ^= Ar << 13 | Ar >>> 19, Ar = rn + Yr | 0, tn ^= Ar << 18 | Ar >>> 14, Ar = Gr + nn | 0, Dr ^= Ar << 7 | Ar >>> 25, Ar = Dr + Gr | 0, Or ^= Ar << 9 | Ar >>> 23, Ar = Or + Dr | 0, nn ^= Ar << 13 | Ar >>> 19, Ar = nn + Or | 0, Gr ^= Ar << 18 | Ar >>> 14, Ar = Qr + Kr | 0, sn ^= Ar << 7 | Ar >>> 25, Ar = sn + Qr | 0, Xr ^= Ar << 9 | Ar >>> 23, Ar = Xr + sn | 0, Kr ^= Ar << 13 | Ar >>> 19, Ar = Kr + Xr | 0, Qr ^= Ar << 18 | Ar >>> 14, Ar = wn + xn | 0, vn ^= Ar << 7 | Ar >>> 25, Ar = vn + wn | 0, yn ^= Ar << 9 | Ar >>> 23, Ar = yn + vn | 0, xn ^= Ar << 13 | Ar >>> 19, Ar = xn + yn | 0, wn ^= Ar << 18 | Ar >>> 14;
+          tn = tn + Jt | 0, an = an + cr | 0, Yr = Yr + yr | 0, rn = rn + hr | 0, nn = nn + Er | 0, Gr = Gr + zr | 0, Dr = Dr + Wr | 0, Or = Or + gn | 0, Xr = Xr + Jr | 0, Kr = Kr + ln | 0, Qr = Qr + un | 0, sn = sn + mn | 0, vn = vn + pn | 0, yn = yn + fn | 0, xn = xn + hn | 0, wn = wn + dn | 0, Kt[0] = tn >>> 0 & 255, Kt[1] = tn >>> 8 & 255, Kt[2] = tn >>> 16 & 255, Kt[3] = tn >>> 24 & 255, Kt[4] = an >>> 0 & 255, Kt[5] = an >>> 8 & 255, Kt[6] = an >>> 16 & 255, Kt[7] = an >>> 24 & 255, Kt[8] = Yr >>> 0 & 255, Kt[9] = Yr >>> 8 & 255, Kt[10] = Yr >>> 16 & 255, Kt[11] = Yr >>> 24 & 255, Kt[12] = rn >>> 0 & 255, Kt[13] = rn >>> 8 & 255, Kt[14] = rn >>> 16 & 255, Kt[15] = rn >>> 24 & 255, Kt[16] = nn >>> 0 & 255, Kt[17] = nn >>> 8 & 255, Kt[18] = nn >>> 16 & 255, Kt[19] = nn >>> 24 & 255, Kt[20] = Gr >>> 0 & 255, Kt[21] = Gr >>> 8 & 255, Kt[22] = Gr >>> 16 & 255, Kt[23] = Gr >>> 24 & 255, Kt[24] = Dr >>> 0 & 255, Kt[25] = Dr >>> 8 & 255, Kt[26] = Dr >>> 16 & 255, Kt[27] = Dr >>> 24 & 255, Kt[28] = Or >>> 0 & 255, Kt[29] = Or >>> 8 & 255, Kt[30] = Or >>> 16 & 255, Kt[31] = Or >>> 24 & 255, Kt[32] = Xr >>> 0 & 255, Kt[33] = Xr >>> 8 & 255, Kt[34] = Xr >>> 16 & 255, Kt[35] = Xr >>> 24 & 255, Kt[36] = Kr >>> 0 & 255, Kt[37] = Kr >>> 8 & 255, Kt[38] = Kr >>> 16 & 255, Kt[39] = Kr >>> 24 & 255, Kt[40] = Qr >>> 0 & 255, Kt[41] = Qr >>> 8 & 255, Kt[42] = Qr >>> 16 & 255, Kt[43] = Qr >>> 24 & 255, Kt[44] = sn >>> 0 & 255, Kt[45] = sn >>> 8 & 255, Kt[46] = sn >>> 16 & 255, Kt[47] = sn >>> 24 & 255, Kt[48] = vn >>> 0 & 255, Kt[49] = vn >>> 8 & 255, Kt[50] = vn >>> 16 & 255, Kt[51] = vn >>> 24 & 255, Kt[52] = yn >>> 0 & 255, Kt[53] = yn >>> 8 & 255, Kt[54] = yn >>> 16 & 255, Kt[55] = yn >>> 24 & 255, Kt[56] = xn >>> 0 & 255, Kt[57] = xn >>> 8 & 255, Kt[58] = xn >>> 16 & 255, Kt[59] = xn >>> 24 & 255, Kt[60] = wn >>> 0 & 255, Kt[61] = wn >>> 8 & 255, Kt[62] = wn >>> 16 & 255, Kt[63] = wn >>> 24 & 255;
         }
-        function $t(Kt, Yt, er, Ot) {
-          for (var Jt = Ot[0] & 255 | (Ot[1] & 255) << 8 | (Ot[2] & 255) << 16 | (Ot[3] & 255) << 24, cr = er[0] & 255 | (er[1] & 255) << 8 | (er[2] & 255) << 16 | (er[3] & 255) << 24, yr = er[4] & 255 | (er[5] & 255) << 8 | (er[6] & 255) << 16 | (er[7] & 255) << 24, hr = er[8] & 255 | (er[9] & 255) << 8 | (er[10] & 255) << 16 | (er[11] & 255) << 24, Er = er[12] & 255 | (er[13] & 255) << 8 | (er[14] & 255) << 16 | (er[15] & 255) << 24, zr = Ot[4] & 255 | (Ot[5] & 255) << 8 | (Ot[6] & 255) << 16 | (Ot[7] & 255) << 24, Wr = Yt[0] & 255 | (Yt[1] & 255) << 8 | (Yt[2] & 255) << 16 | (Yt[3] & 255) << 24, gn = Yt[4] & 255 | (Yt[5] & 255) << 8 | (Yt[6] & 255) << 16 | (Yt[7] & 255) << 24, Jr = Yt[8] & 255 | (Yt[9] & 255) << 8 | (Yt[10] & 255) << 16 | (Yt[11] & 255) << 24, ln = Yt[12] & 255 | (Yt[13] & 255) << 8 | (Yt[14] & 255) << 16 | (Yt[15] & 255) << 24, un = Ot[8] & 255 | (Ot[9] & 255) << 8 | (Ot[10] & 255) << 16 | (Ot[11] & 255) << 24, mn = er[16] & 255 | (er[17] & 255) << 8 | (er[18] & 255) << 16 | (er[19] & 255) << 24, pn = er[20] & 255 | (er[21] & 255) << 8 | (er[22] & 255) << 16 | (er[23] & 255) << 24, fn = er[24] & 255 | (er[25] & 255) << 8 | (er[26] & 255) << 16 | (er[27] & 255) << 24, hn = er[28] & 255 | (er[29] & 255) << 8 | (er[30] & 255) << 16 | (er[31] & 255) << 24, dn = Ot[12] & 255 | (Ot[13] & 255) << 8 | (Ot[14] & 255) << 16 | (Ot[15] & 255) << 24, tn = Jt, an = cr, Yr = yr, rn = hr, nn = Er, Gr = zr, Dr = Wr, Fr = gn, Xr = Jr, Kr = ln, Qr = un, sn = mn, vn = pn, yn = fn, xn = hn, wn = dn, Ar, Cn = 0; Cn < 20; Cn += 2) Ar = tn + vn | 0, nn ^= Ar << 7 | Ar >>> 25, Ar = nn + tn | 0, Xr ^= Ar << 9 | Ar >>> 23, Ar = Xr + nn | 0, vn ^= Ar << 13 | Ar >>> 19, Ar = vn + Xr | 0, tn ^= Ar << 18 | Ar >>> 14, Ar = Gr + an | 0, Kr ^= Ar << 7 | Ar >>> 25, Ar = Kr + Gr | 0, yn ^= Ar << 9 | Ar >>> 23, Ar = yn + Kr | 0, an ^= Ar << 13 | Ar >>> 19, Ar = an + yn | 0, Gr ^= Ar << 18 | Ar >>> 14, Ar = Qr + Dr | 0, xn ^= Ar << 7 | Ar >>> 25, Ar = xn + Qr | 0, Yr ^= Ar << 9 | Ar >>> 23, Ar = Yr + xn | 0, Dr ^= Ar << 13 | Ar >>> 19, Ar = Dr + Yr | 0, Qr ^= Ar << 18 | Ar >>> 14, Ar = wn + sn | 0, rn ^= Ar << 7 | Ar >>> 25, Ar = rn + wn | 0, Fr ^= Ar << 9 | Ar >>> 23, Ar = Fr + rn | 0, sn ^= Ar << 13 | Ar >>> 19, Ar = sn + Fr | 0, wn ^= Ar << 18 | Ar >>> 14, Ar = tn + rn | 0, an ^= Ar << 7 | Ar >>> 25, Ar = an + tn | 0, Yr ^= Ar << 9 | Ar >>> 23, Ar = Yr + an | 0, rn ^= Ar << 13 | Ar >>> 19, Ar = rn + Yr | 0, tn ^= Ar << 18 | Ar >>> 14, Ar = Gr + nn | 0, Dr ^= Ar << 7 | Ar >>> 25, Ar = Dr + Gr | 0, Fr ^= Ar << 9 | Ar >>> 23, Ar = Fr + Dr | 0, nn ^= Ar << 13 | Ar >>> 19, Ar = nn + Fr | 0, Gr ^= Ar << 18 | Ar >>> 14, Ar = Qr + Kr | 0, sn ^= Ar << 7 | Ar >>> 25, Ar = sn + Qr | 0, Xr ^= Ar << 9 | Ar >>> 23, Ar = Xr + sn | 0, Kr ^= Ar << 13 | Ar >>> 19, Ar = Kr + Xr | 0, Qr ^= Ar << 18 | Ar >>> 14, Ar = wn + xn | 0, vn ^= Ar << 7 | Ar >>> 25, Ar = vn + wn | 0, yn ^= Ar << 9 | Ar >>> 23, Ar = yn + vn | 0, xn ^= Ar << 13 | Ar >>> 19, Ar = xn + yn | 0, wn ^= Ar << 18 | Ar >>> 14;
-          Kt[0] = tn >>> 0 & 255, Kt[1] = tn >>> 8 & 255, Kt[2] = tn >>> 16 & 255, Kt[3] = tn >>> 24 & 255, Kt[4] = Gr >>> 0 & 255, Kt[5] = Gr >>> 8 & 255, Kt[6] = Gr >>> 16 & 255, Kt[7] = Gr >>> 24 & 255, Kt[8] = Qr >>> 0 & 255, Kt[9] = Qr >>> 8 & 255, Kt[10] = Qr >>> 16 & 255, Kt[11] = Qr >>> 24 & 255, Kt[12] = wn >>> 0 & 255, Kt[13] = wn >>> 8 & 255, Kt[14] = wn >>> 16 & 255, Kt[15] = wn >>> 24 & 255, Kt[16] = Dr >>> 0 & 255, Kt[17] = Dr >>> 8 & 255, Kt[18] = Dr >>> 16 & 255, Kt[19] = Dr >>> 24 & 255, Kt[20] = Fr >>> 0 & 255, Kt[21] = Fr >>> 8 & 255, Kt[22] = Fr >>> 16 & 255, Kt[23] = Fr >>> 24 & 255, Kt[24] = Xr >>> 0 & 255, Kt[25] = Xr >>> 8 & 255, Kt[26] = Xr >>> 16 & 255, Kt[27] = Xr >>> 24 & 255, Kt[28] = Kr >>> 0 & 255, Kt[29] = Kr >>> 8 & 255, Kt[30] = Kr >>> 16 & 255, Kt[31] = Kr >>> 24 & 255;
+        function $t(Kt, Yt, er, jt) {
+          for (var Jt = jt[0] & 255 | (jt[1] & 255) << 8 | (jt[2] & 255) << 16 | (jt[3] & 255) << 24, cr = er[0] & 255 | (er[1] & 255) << 8 | (er[2] & 255) << 16 | (er[3] & 255) << 24, yr = er[4] & 255 | (er[5] & 255) << 8 | (er[6] & 255) << 16 | (er[7] & 255) << 24, hr = er[8] & 255 | (er[9] & 255) << 8 | (er[10] & 255) << 16 | (er[11] & 255) << 24, Er = er[12] & 255 | (er[13] & 255) << 8 | (er[14] & 255) << 16 | (er[15] & 255) << 24, zr = jt[4] & 255 | (jt[5] & 255) << 8 | (jt[6] & 255) << 16 | (jt[7] & 255) << 24, Wr = Yt[0] & 255 | (Yt[1] & 255) << 8 | (Yt[2] & 255) << 16 | (Yt[3] & 255) << 24, gn = Yt[4] & 255 | (Yt[5] & 255) << 8 | (Yt[6] & 255) << 16 | (Yt[7] & 255) << 24, Jr = Yt[8] & 255 | (Yt[9] & 255) << 8 | (Yt[10] & 255) << 16 | (Yt[11] & 255) << 24, ln = Yt[12] & 255 | (Yt[13] & 255) << 8 | (Yt[14] & 255) << 16 | (Yt[15] & 255) << 24, un = jt[8] & 255 | (jt[9] & 255) << 8 | (jt[10] & 255) << 16 | (jt[11] & 255) << 24, mn = er[16] & 255 | (er[17] & 255) << 8 | (er[18] & 255) << 16 | (er[19] & 255) << 24, pn = er[20] & 255 | (er[21] & 255) << 8 | (er[22] & 255) << 16 | (er[23] & 255) << 24, fn = er[24] & 255 | (er[25] & 255) << 8 | (er[26] & 255) << 16 | (er[27] & 255) << 24, hn = er[28] & 255 | (er[29] & 255) << 8 | (er[30] & 255) << 16 | (er[31] & 255) << 24, dn = jt[12] & 255 | (jt[13] & 255) << 8 | (jt[14] & 255) << 16 | (jt[15] & 255) << 24, tn = Jt, an = cr, Yr = yr, rn = hr, nn = Er, Gr = zr, Dr = Wr, Or = gn, Xr = Jr, Kr = ln, Qr = un, sn = mn, vn = pn, yn = fn, xn = hn, wn = dn, Ar, Cn = 0; Cn < 20; Cn += 2) Ar = tn + vn | 0, nn ^= Ar << 7 | Ar >>> 25, Ar = nn + tn | 0, Xr ^= Ar << 9 | Ar >>> 23, Ar = Xr + nn | 0, vn ^= Ar << 13 | Ar >>> 19, Ar = vn + Xr | 0, tn ^= Ar << 18 | Ar >>> 14, Ar = Gr + an | 0, Kr ^= Ar << 7 | Ar >>> 25, Ar = Kr + Gr | 0, yn ^= Ar << 9 | Ar >>> 23, Ar = yn + Kr | 0, an ^= Ar << 13 | Ar >>> 19, Ar = an + yn | 0, Gr ^= Ar << 18 | Ar >>> 14, Ar = Qr + Dr | 0, xn ^= Ar << 7 | Ar >>> 25, Ar = xn + Qr | 0, Yr ^= Ar << 9 | Ar >>> 23, Ar = Yr + xn | 0, Dr ^= Ar << 13 | Ar >>> 19, Ar = Dr + Yr | 0, Qr ^= Ar << 18 | Ar >>> 14, Ar = wn + sn | 0, rn ^= Ar << 7 | Ar >>> 25, Ar = rn + wn | 0, Or ^= Ar << 9 | Ar >>> 23, Ar = Or + rn | 0, sn ^= Ar << 13 | Ar >>> 19, Ar = sn + Or | 0, wn ^= Ar << 18 | Ar >>> 14, Ar = tn + rn | 0, an ^= Ar << 7 | Ar >>> 25, Ar = an + tn | 0, Yr ^= Ar << 9 | Ar >>> 23, Ar = Yr + an | 0, rn ^= Ar << 13 | Ar >>> 19, Ar = rn + Yr | 0, tn ^= Ar << 18 | Ar >>> 14, Ar = Gr + nn | 0, Dr ^= Ar << 7 | Ar >>> 25, Ar = Dr + Gr | 0, Or ^= Ar << 9 | Ar >>> 23, Ar = Or + Dr | 0, nn ^= Ar << 13 | Ar >>> 19, Ar = nn + Or | 0, Gr ^= Ar << 18 | Ar >>> 14, Ar = Qr + Kr | 0, sn ^= Ar << 7 | Ar >>> 25, Ar = sn + Qr | 0, Xr ^= Ar << 9 | Ar >>> 23, Ar = Xr + sn | 0, Kr ^= Ar << 13 | Ar >>> 19, Ar = Kr + Xr | 0, Qr ^= Ar << 18 | Ar >>> 14, Ar = wn + xn | 0, vn ^= Ar << 7 | Ar >>> 25, Ar = vn + wn | 0, yn ^= Ar << 9 | Ar >>> 23, Ar = yn + vn | 0, xn ^= Ar << 13 | Ar >>> 19, Ar = xn + yn | 0, wn ^= Ar << 18 | Ar >>> 14;
+          Kt[0] = tn >>> 0 & 255, Kt[1] = tn >>> 8 & 255, Kt[2] = tn >>> 16 & 255, Kt[3] = tn >>> 24 & 255, Kt[4] = Gr >>> 0 & 255, Kt[5] = Gr >>> 8 & 255, Kt[6] = Gr >>> 16 & 255, Kt[7] = Gr >>> 24 & 255, Kt[8] = Qr >>> 0 & 255, Kt[9] = Qr >>> 8 & 255, Kt[10] = Qr >>> 16 & 255, Kt[11] = Qr >>> 24 & 255, Kt[12] = wn >>> 0 & 255, Kt[13] = wn >>> 8 & 255, Kt[14] = wn >>> 16 & 255, Kt[15] = wn >>> 24 & 255, Kt[16] = Dr >>> 0 & 255, Kt[17] = Dr >>> 8 & 255, Kt[18] = Dr >>> 16 & 255, Kt[19] = Dr >>> 24 & 255, Kt[20] = Or >>> 0 & 255, Kt[21] = Or >>> 8 & 255, Kt[22] = Or >>> 16 & 255, Kt[23] = Or >>> 24 & 255, Kt[24] = Xr >>> 0 & 255, Kt[25] = Xr >>> 8 & 255, Kt[26] = Xr >>> 16 & 255, Kt[27] = Xr >>> 24 & 255, Kt[28] = Kr >>> 0 & 255, Kt[29] = Kr >>> 8 & 255, Kt[30] = Kr >>> 16 & 255, Kt[31] = Kr >>> 24 & 255;
         }
-        function Tt(Kt, Yt, er, Ot) {
-          Bt(Kt, Yt, er, Ot);
+        function Tt(Kt, Yt, er, jt) {
+          Bt(Kt, Yt, er, jt);
         }
-        function Ft(Kt, Yt, er, Ot) {
-          $t(Kt, Yt, er, Ot);
+        function Ft(Kt, Yt, er, jt) {
+          $t(Kt, Yt, er, jt);
         }
-        var jt = new Uint8Array([
+        var Ot = new Uint8Array([
           101,
           120,
           112,
@@ -33010,92 +33010,92 @@ https://github.com/browserify/crypto-browserify`);
           32,
           107
         ]);
-        function Xt(Kt, Yt, er, Ot, Jt, cr, yr) {
+        function Xt(Kt, Yt, er, jt, Jt, cr, yr) {
           var hr = new Uint8Array(16), Er = new Uint8Array(64), zr, Wr;
           for (Wr = 0; Wr < 16; Wr++) hr[Wr] = 0;
           for (Wr = 0; Wr < 8; Wr++) hr[Wr] = cr[Wr];
           for (; Jt >= 64; ) {
-            for (Tt(Er, hr, yr, jt), Wr = 0; Wr < 64; Wr++) Kt[Yt + Wr] = er[Ot + Wr] ^ Er[Wr];
+            for (Tt(Er, hr, yr, Ot), Wr = 0; Wr < 64; Wr++) Kt[Yt + Wr] = er[jt + Wr] ^ Er[Wr];
             for (zr = 1, Wr = 8; Wr < 16; Wr++) zr = zr + (hr[Wr] & 255) | 0, hr[Wr] = zr & 255, zr >>>= 8;
-            Jt -= 64, Yt += 64, Ot += 64;
+            Jt -= 64, Yt += 64, jt += 64;
           }
-          if (Jt > 0) for (Tt(Er, hr, yr, jt), Wr = 0; Wr < Jt; Wr++) Kt[Yt + Wr] = er[Ot + Wr] ^ Er[Wr];
+          if (Jt > 0) for (Tt(Er, hr, yr, Ot), Wr = 0; Wr < Jt; Wr++) Kt[Yt + Wr] = er[jt + Wr] ^ Er[Wr];
           return 0;
         }
-        function Qt(Kt, Yt, er, Ot, Jt) {
+        function Qt(Kt, Yt, er, jt, Jt) {
           var cr = new Uint8Array(16), yr = new Uint8Array(64), hr, Er;
           for (Er = 0; Er < 16; Er++) cr[Er] = 0;
-          for (Er = 0; Er < 8; Er++) cr[Er] = Ot[Er];
+          for (Er = 0; Er < 8; Er++) cr[Er] = jt[Er];
           for (; er >= 64; ) {
-            for (Tt(yr, cr, Jt, jt), Er = 0; Er < 64; Er++) Kt[Yt + Er] = yr[Er];
+            for (Tt(yr, cr, Jt, Ot), Er = 0; Er < 64; Er++) Kt[Yt + Er] = yr[Er];
             for (hr = 1, Er = 8; Er < 16; Er++) hr = hr + (cr[Er] & 255) | 0, cr[Er] = hr & 255, hr >>>= 8;
             er -= 64, Yt += 64;
           }
-          if (er > 0) for (Tt(yr, cr, Jt, jt), Er = 0; Er < er; Er++) Kt[Yt + Er] = yr[Er];
+          if (er > 0) for (Tt(yr, cr, Jt, Ot), Er = 0; Er < er; Er++) Kt[Yt + Er] = yr[Er];
           return 0;
         }
-        function Wt(Kt, Yt, er, Ot, Jt) {
+        function Wt(Kt, Yt, er, jt, Jt) {
           var cr = new Uint8Array(32);
-          Ft(cr, Ot, Jt, jt);
-          for (var yr = new Uint8Array(8), hr = 0; hr < 8; hr++) yr[hr] = Ot[hr + 16];
+          Ft(cr, jt, Jt, Ot);
+          for (var yr = new Uint8Array(8), hr = 0; hr < 8; hr++) yr[hr] = jt[hr + 16];
           return Qt(Kt, Yt, er, yr, cr);
         }
-        function kt(Kt, Yt, er, Ot, Jt, cr, yr) {
+        function kt(Kt, Yt, er, jt, Jt, cr, yr) {
           var hr = new Uint8Array(32);
-          Ft(hr, cr, yr, jt);
+          Ft(hr, cr, yr, Ot);
           for (var Er = new Uint8Array(8), zr = 0; zr < 8; zr++) Er[zr] = cr[zr + 16];
-          return Xt(Kt, Yt, er, Ot, Jt, Er, hr);
+          return Xt(Kt, Yt, er, jt, Jt, Er, hr);
         }
         var ct = function(Kt) {
           this.buffer = new Uint8Array(16), this.r = new Uint16Array(10), this.h = new Uint16Array(10), this.pad = new Uint16Array(8), this.leftover = 0, this.fin = 0;
-          var Yt, er, Ot, Jt, cr, yr, hr, Er;
-          Yt = Kt[0] & 255 | (Kt[1] & 255) << 8, this.r[0] = Yt & 8191, er = Kt[2] & 255 | (Kt[3] & 255) << 8, this.r[1] = (Yt >>> 13 | er << 3) & 8191, Ot = Kt[4] & 255 | (Kt[5] & 255) << 8, this.r[2] = (er >>> 10 | Ot << 6) & 7939, Jt = Kt[6] & 255 | (Kt[7] & 255) << 8, this.r[3] = (Ot >>> 7 | Jt << 9) & 8191, cr = Kt[8] & 255 | (Kt[9] & 255) << 8, this.r[4] = (Jt >>> 4 | cr << 12) & 255, this.r[5] = cr >>> 1 & 8190, yr = Kt[10] & 255 | (Kt[11] & 255) << 8, this.r[6] = (cr >>> 14 | yr << 2) & 8191, hr = Kt[12] & 255 | (Kt[13] & 255) << 8, this.r[7] = (yr >>> 11 | hr << 5) & 8065, Er = Kt[14] & 255 | (Kt[15] & 255) << 8, this.r[8] = (hr >>> 8 | Er << 8) & 8191, this.r[9] = Er >>> 5 & 127, this.pad[0] = Kt[16] & 255 | (Kt[17] & 255) << 8, this.pad[1] = Kt[18] & 255 | (Kt[19] & 255) << 8, this.pad[2] = Kt[20] & 255 | (Kt[21] & 255) << 8, this.pad[3] = Kt[22] & 255 | (Kt[23] & 255) << 8, this.pad[4] = Kt[24] & 255 | (Kt[25] & 255) << 8, this.pad[5] = Kt[26] & 255 | (Kt[27] & 255) << 8, this.pad[6] = Kt[28] & 255 | (Kt[29] & 255) << 8, this.pad[7] = Kt[30] & 255 | (Kt[31] & 255) << 8;
+          var Yt, er, jt, Jt, cr, yr, hr, Er;
+          Yt = Kt[0] & 255 | (Kt[1] & 255) << 8, this.r[0] = Yt & 8191, er = Kt[2] & 255 | (Kt[3] & 255) << 8, this.r[1] = (Yt >>> 13 | er << 3) & 8191, jt = Kt[4] & 255 | (Kt[5] & 255) << 8, this.r[2] = (er >>> 10 | jt << 6) & 7939, Jt = Kt[6] & 255 | (Kt[7] & 255) << 8, this.r[3] = (jt >>> 7 | Jt << 9) & 8191, cr = Kt[8] & 255 | (Kt[9] & 255) << 8, this.r[4] = (Jt >>> 4 | cr << 12) & 255, this.r[5] = cr >>> 1 & 8190, yr = Kt[10] & 255 | (Kt[11] & 255) << 8, this.r[6] = (cr >>> 14 | yr << 2) & 8191, hr = Kt[12] & 255 | (Kt[13] & 255) << 8, this.r[7] = (yr >>> 11 | hr << 5) & 8065, Er = Kt[14] & 255 | (Kt[15] & 255) << 8, this.r[8] = (hr >>> 8 | Er << 8) & 8191, this.r[9] = Er >>> 5 & 127, this.pad[0] = Kt[16] & 255 | (Kt[17] & 255) << 8, this.pad[1] = Kt[18] & 255 | (Kt[19] & 255) << 8, this.pad[2] = Kt[20] & 255 | (Kt[21] & 255) << 8, this.pad[3] = Kt[22] & 255 | (Kt[23] & 255) << 8, this.pad[4] = Kt[24] & 255 | (Kt[25] & 255) << 8, this.pad[5] = Kt[26] & 255 | (Kt[27] & 255) << 8, this.pad[6] = Kt[28] & 255 | (Kt[29] & 255) << 8, this.pad[7] = Kt[30] & 255 | (Kt[31] & 255) << 8;
         };
         ct.prototype.blocks = function(Kt, Yt, er) {
-          for (var Ot = this.fin ? 0 : 2048, Jt, cr, yr, hr, Er, zr, Wr, gn, Jr, ln, un, mn, pn, fn, hn, dn, tn, an, Yr, rn = this.h[0], nn = this.h[1], Gr = this.h[2], Dr = this.h[3], Fr = this.h[4], Xr = this.h[5], Kr = this.h[6], Qr = this.h[7], sn = this.h[8], vn = this.h[9], yn = this.r[0], xn = this.r[1], wn = this.r[2], Ar = this.r[3], Cn = this.r[4], Sn = this.r[5], An = this.r[6], _n = this.r[7], En = this.r[8], Mn = this.r[9]; er >= 16; ) Jt = Kt[Yt + 0] & 255 | (Kt[Yt + 1] & 255) << 8, rn += Jt & 8191, cr = Kt[Yt + 2] & 255 | (Kt[Yt + 3] & 255) << 8, nn += (Jt >>> 13 | cr << 3) & 8191, yr = Kt[Yt + 4] & 255 | (Kt[Yt + 5] & 255) << 8, Gr += (cr >>> 10 | yr << 6) & 8191, hr = Kt[Yt + 6] & 255 | (Kt[Yt + 7] & 255) << 8, Dr += (yr >>> 7 | hr << 9) & 8191, Er = Kt[Yt + 8] & 255 | (Kt[Yt + 9] & 255) << 8, Fr += (hr >>> 4 | Er << 12) & 8191, Xr += Er >>> 1 & 8191, zr = Kt[Yt + 10] & 255 | (Kt[Yt + 11] & 255) << 8, Kr += (Er >>> 14 | zr << 2) & 8191, Wr = Kt[Yt + 12] & 255 | (Kt[Yt + 13] & 255) << 8, Qr += (zr >>> 11 | Wr << 5) & 8191, gn = Kt[Yt + 14] & 255 | (Kt[Yt + 15] & 255) << 8, sn += (Wr >>> 8 | gn << 8) & 8191, vn += gn >>> 5 | Ot, Jr = 0, ln = Jr, ln += rn * yn, ln += nn * (5 * Mn), ln += Gr * (5 * En), ln += Dr * (5 * _n), ln += Fr * (5 * An), Jr = ln >>> 13, ln &= 8191, ln += Xr * (5 * Sn), ln += Kr * (5 * Cn), ln += Qr * (5 * Ar), ln += sn * (5 * wn), ln += vn * (5 * xn), Jr += ln >>> 13, ln &= 8191, un = Jr, un += rn * xn, un += nn * yn, un += Gr * (5 * Mn), un += Dr * (5 * En), un += Fr * (5 * _n), Jr = un >>> 13, un &= 8191, un += Xr * (5 * An), un += Kr * (5 * Sn), un += Qr * (5 * Cn), un += sn * (5 * Ar), un += vn * (5 * wn), Jr += un >>> 13, un &= 8191, mn = Jr, mn += rn * wn, mn += nn * xn, mn += Gr * yn, mn += Dr * (5 * Mn), mn += Fr * (5 * En), Jr = mn >>> 13, mn &= 8191, mn += Xr * (5 * _n), mn += Kr * (5 * An), mn += Qr * (5 * Sn), mn += sn * (5 * Cn), mn += vn * (5 * Ar), Jr += mn >>> 13, mn &= 8191, pn = Jr, pn += rn * Ar, pn += nn * wn, pn += Gr * xn, pn += Dr * yn, pn += Fr * (5 * Mn), Jr = pn >>> 13, pn &= 8191, pn += Xr * (5 * En), pn += Kr * (5 * _n), pn += Qr * (5 * An), pn += sn * (5 * Sn), pn += vn * (5 * Cn), Jr += pn >>> 13, pn &= 8191, fn = Jr, fn += rn * Cn, fn += nn * Ar, fn += Gr * wn, fn += Dr * xn, fn += Fr * yn, Jr = fn >>> 13, fn &= 8191, fn += Xr * (5 * Mn), fn += Kr * (5 * En), fn += Qr * (5 * _n), fn += sn * (5 * An), fn += vn * (5 * Sn), Jr += fn >>> 13, fn &= 8191, hn = Jr, hn += rn * Sn, hn += nn * Cn, hn += Gr * Ar, hn += Dr * wn, hn += Fr * xn, Jr = hn >>> 13, hn &= 8191, hn += Xr * yn, hn += Kr * (5 * Mn), hn += Qr * (5 * En), hn += sn * (5 * _n), hn += vn * (5 * An), Jr += hn >>> 13, hn &= 8191, dn = Jr, dn += rn * An, dn += nn * Sn, dn += Gr * Cn, dn += Dr * Ar, dn += Fr * wn, Jr = dn >>> 13, dn &= 8191, dn += Xr * xn, dn += Kr * yn, dn += Qr * (5 * Mn), dn += sn * (5 * En), dn += vn * (5 * _n), Jr += dn >>> 13, dn &= 8191, tn = Jr, tn += rn * _n, tn += nn * An, tn += Gr * Sn, tn += Dr * Cn, tn += Fr * Ar, Jr = tn >>> 13, tn &= 8191, tn += Xr * wn, tn += Kr * xn, tn += Qr * yn, tn += sn * (5 * Mn), tn += vn * (5 * En), Jr += tn >>> 13, tn &= 8191, an = Jr, an += rn * En, an += nn * _n, an += Gr * An, an += Dr * Sn, an += Fr * Cn, Jr = an >>> 13, an &= 8191, an += Xr * Ar, an += Kr * wn, an += Qr * xn, an += sn * yn, an += vn * (5 * Mn), Jr += an >>> 13, an &= 8191, Yr = Jr, Yr += rn * Mn, Yr += nn * En, Yr += Gr * _n, Yr += Dr * An, Yr += Fr * Sn, Jr = Yr >>> 13, Yr &= 8191, Yr += Xr * Cn, Yr += Kr * Ar, Yr += Qr * wn, Yr += sn * xn, Yr += vn * yn, Jr += Yr >>> 13, Yr &= 8191, Jr = (Jr << 2) + Jr | 0, Jr = Jr + ln | 0, ln = Jr & 8191, Jr = Jr >>> 13, un += Jr, rn = ln, nn = un, Gr = mn, Dr = pn, Fr = fn, Xr = hn, Kr = dn, Qr = tn, sn = an, vn = Yr, Yt += 16, er -= 16;
-          this.h[0] = rn, this.h[1] = nn, this.h[2] = Gr, this.h[3] = Dr, this.h[4] = Fr, this.h[5] = Xr, this.h[6] = Kr, this.h[7] = Qr, this.h[8] = sn, this.h[9] = vn;
+          for (var jt = this.fin ? 0 : 2048, Jt, cr, yr, hr, Er, zr, Wr, gn, Jr, ln, un, mn, pn, fn, hn, dn, tn, an, Yr, rn = this.h[0], nn = this.h[1], Gr = this.h[2], Dr = this.h[3], Or = this.h[4], Xr = this.h[5], Kr = this.h[6], Qr = this.h[7], sn = this.h[8], vn = this.h[9], yn = this.r[0], xn = this.r[1], wn = this.r[2], Ar = this.r[3], Cn = this.r[4], Sn = this.r[5], An = this.r[6], _n = this.r[7], En = this.r[8], Mn = this.r[9]; er >= 16; ) Jt = Kt[Yt + 0] & 255 | (Kt[Yt + 1] & 255) << 8, rn += Jt & 8191, cr = Kt[Yt + 2] & 255 | (Kt[Yt + 3] & 255) << 8, nn += (Jt >>> 13 | cr << 3) & 8191, yr = Kt[Yt + 4] & 255 | (Kt[Yt + 5] & 255) << 8, Gr += (cr >>> 10 | yr << 6) & 8191, hr = Kt[Yt + 6] & 255 | (Kt[Yt + 7] & 255) << 8, Dr += (yr >>> 7 | hr << 9) & 8191, Er = Kt[Yt + 8] & 255 | (Kt[Yt + 9] & 255) << 8, Or += (hr >>> 4 | Er << 12) & 8191, Xr += Er >>> 1 & 8191, zr = Kt[Yt + 10] & 255 | (Kt[Yt + 11] & 255) << 8, Kr += (Er >>> 14 | zr << 2) & 8191, Wr = Kt[Yt + 12] & 255 | (Kt[Yt + 13] & 255) << 8, Qr += (zr >>> 11 | Wr << 5) & 8191, gn = Kt[Yt + 14] & 255 | (Kt[Yt + 15] & 255) << 8, sn += (Wr >>> 8 | gn << 8) & 8191, vn += gn >>> 5 | jt, Jr = 0, ln = Jr, ln += rn * yn, ln += nn * (5 * Mn), ln += Gr * (5 * En), ln += Dr * (5 * _n), ln += Or * (5 * An), Jr = ln >>> 13, ln &= 8191, ln += Xr * (5 * Sn), ln += Kr * (5 * Cn), ln += Qr * (5 * Ar), ln += sn * (5 * wn), ln += vn * (5 * xn), Jr += ln >>> 13, ln &= 8191, un = Jr, un += rn * xn, un += nn * yn, un += Gr * (5 * Mn), un += Dr * (5 * En), un += Or * (5 * _n), Jr = un >>> 13, un &= 8191, un += Xr * (5 * An), un += Kr * (5 * Sn), un += Qr * (5 * Cn), un += sn * (5 * Ar), un += vn * (5 * wn), Jr += un >>> 13, un &= 8191, mn = Jr, mn += rn * wn, mn += nn * xn, mn += Gr * yn, mn += Dr * (5 * Mn), mn += Or * (5 * En), Jr = mn >>> 13, mn &= 8191, mn += Xr * (5 * _n), mn += Kr * (5 * An), mn += Qr * (5 * Sn), mn += sn * (5 * Cn), mn += vn * (5 * Ar), Jr += mn >>> 13, mn &= 8191, pn = Jr, pn += rn * Ar, pn += nn * wn, pn += Gr * xn, pn += Dr * yn, pn += Or * (5 * Mn), Jr = pn >>> 13, pn &= 8191, pn += Xr * (5 * En), pn += Kr * (5 * _n), pn += Qr * (5 * An), pn += sn * (5 * Sn), pn += vn * (5 * Cn), Jr += pn >>> 13, pn &= 8191, fn = Jr, fn += rn * Cn, fn += nn * Ar, fn += Gr * wn, fn += Dr * xn, fn += Or * yn, Jr = fn >>> 13, fn &= 8191, fn += Xr * (5 * Mn), fn += Kr * (5 * En), fn += Qr * (5 * _n), fn += sn * (5 * An), fn += vn * (5 * Sn), Jr += fn >>> 13, fn &= 8191, hn = Jr, hn += rn * Sn, hn += nn * Cn, hn += Gr * Ar, hn += Dr * wn, hn += Or * xn, Jr = hn >>> 13, hn &= 8191, hn += Xr * yn, hn += Kr * (5 * Mn), hn += Qr * (5 * En), hn += sn * (5 * _n), hn += vn * (5 * An), Jr += hn >>> 13, hn &= 8191, dn = Jr, dn += rn * An, dn += nn * Sn, dn += Gr * Cn, dn += Dr * Ar, dn += Or * wn, Jr = dn >>> 13, dn &= 8191, dn += Xr * xn, dn += Kr * yn, dn += Qr * (5 * Mn), dn += sn * (5 * En), dn += vn * (5 * _n), Jr += dn >>> 13, dn &= 8191, tn = Jr, tn += rn * _n, tn += nn * An, tn += Gr * Sn, tn += Dr * Cn, tn += Or * Ar, Jr = tn >>> 13, tn &= 8191, tn += Xr * wn, tn += Kr * xn, tn += Qr * yn, tn += sn * (5 * Mn), tn += vn * (5 * En), Jr += tn >>> 13, tn &= 8191, an = Jr, an += rn * En, an += nn * _n, an += Gr * An, an += Dr * Sn, an += Or * Cn, Jr = an >>> 13, an &= 8191, an += Xr * Ar, an += Kr * wn, an += Qr * xn, an += sn * yn, an += vn * (5 * Mn), Jr += an >>> 13, an &= 8191, Yr = Jr, Yr += rn * Mn, Yr += nn * En, Yr += Gr * _n, Yr += Dr * An, Yr += Or * Sn, Jr = Yr >>> 13, Yr &= 8191, Yr += Xr * Cn, Yr += Kr * Ar, Yr += Qr * wn, Yr += sn * xn, Yr += vn * yn, Jr += Yr >>> 13, Yr &= 8191, Jr = (Jr << 2) + Jr | 0, Jr = Jr + ln | 0, ln = Jr & 8191, Jr = Jr >>> 13, un += Jr, rn = ln, nn = un, Gr = mn, Dr = pn, Or = fn, Xr = hn, Kr = dn, Qr = tn, sn = an, vn = Yr, Yt += 16, er -= 16;
+          this.h[0] = rn, this.h[1] = nn, this.h[2] = Gr, this.h[3] = Dr, this.h[4] = Or, this.h[5] = Xr, this.h[6] = Kr, this.h[7] = Qr, this.h[8] = sn, this.h[9] = vn;
         }, ct.prototype.finish = function(Kt, Yt) {
-          var er = new Uint16Array(10), Ot, Jt, cr, yr;
+          var er = new Uint16Array(10), jt, Jt, cr, yr;
           if (this.leftover) {
             for (yr = this.leftover, this.buffer[yr++] = 1; yr < 16; yr++) this.buffer[yr] = 0;
             this.fin = 1, this.blocks(this.buffer, 0, 16);
           }
-          for (Ot = this.h[1] >>> 13, this.h[1] &= 8191, yr = 2; yr < 10; yr++) this.h[yr] += Ot, Ot = this.h[yr] >>> 13, this.h[yr] &= 8191;
-          for (this.h[0] += Ot * 5, Ot = this.h[0] >>> 13, this.h[0] &= 8191, this.h[1] += Ot, Ot = this.h[1] >>> 13, this.h[1] &= 8191, this.h[2] += Ot, er[0] = this.h[0] + 5, Ot = er[0] >>> 13, er[0] &= 8191, yr = 1; yr < 10; yr++) er[yr] = this.h[yr] + Ot, Ot = er[yr] >>> 13, er[yr] &= 8191;
-          for (er[9] -= 8192, Jt = (Ot ^ 1) - 1, yr = 0; yr < 10; yr++) er[yr] &= Jt;
+          for (jt = this.h[1] >>> 13, this.h[1] &= 8191, yr = 2; yr < 10; yr++) this.h[yr] += jt, jt = this.h[yr] >>> 13, this.h[yr] &= 8191;
+          for (this.h[0] += jt * 5, jt = this.h[0] >>> 13, this.h[0] &= 8191, this.h[1] += jt, jt = this.h[1] >>> 13, this.h[1] &= 8191, this.h[2] += jt, er[0] = this.h[0] + 5, jt = er[0] >>> 13, er[0] &= 8191, yr = 1; yr < 10; yr++) er[yr] = this.h[yr] + jt, jt = er[yr] >>> 13, er[yr] &= 8191;
+          for (er[9] -= 8192, Jt = (jt ^ 1) - 1, yr = 0; yr < 10; yr++) er[yr] &= Jt;
           for (Jt = ~Jt, yr = 0; yr < 10; yr++) this.h[yr] = this.h[yr] & Jt | er[yr];
           for (this.h[0] = (this.h[0] | this.h[1] << 13) & 65535, this.h[1] = (this.h[1] >>> 3 | this.h[2] << 10) & 65535, this.h[2] = (this.h[2] >>> 6 | this.h[3] << 7) & 65535, this.h[3] = (this.h[3] >>> 9 | this.h[4] << 4) & 65535, this.h[4] = (this.h[4] >>> 12 | this.h[5] << 1 | this.h[6] << 14) & 65535, this.h[5] = (this.h[6] >>> 2 | this.h[7] << 11) & 65535, this.h[6] = (this.h[7] >>> 5 | this.h[8] << 8) & 65535, this.h[7] = (this.h[8] >>> 8 | this.h[9] << 5) & 65535, cr = this.h[0] + this.pad[0], this.h[0] = cr & 65535, yr = 1; yr < 8; yr++) cr = (this.h[yr] + this.pad[yr] | 0) + (cr >>> 16) | 0, this.h[yr] = cr & 65535;
           Kt[Yt + 0] = this.h[0] >>> 0 & 255, Kt[Yt + 1] = this.h[0] >>> 8 & 255, Kt[Yt + 2] = this.h[1] >>> 0 & 255, Kt[Yt + 3] = this.h[1] >>> 8 & 255, Kt[Yt + 4] = this.h[2] >>> 0 & 255, Kt[Yt + 5] = this.h[2] >>> 8 & 255, Kt[Yt + 6] = this.h[3] >>> 0 & 255, Kt[Yt + 7] = this.h[3] >>> 8 & 255, Kt[Yt + 8] = this.h[4] >>> 0 & 255, Kt[Yt + 9] = this.h[4] >>> 8 & 255, Kt[Yt + 10] = this.h[5] >>> 0 & 255, Kt[Yt + 11] = this.h[5] >>> 8 & 255, Kt[Yt + 12] = this.h[6] >>> 0 & 255, Kt[Yt + 13] = this.h[6] >>> 8 & 255, Kt[Yt + 14] = this.h[7] >>> 0 & 255, Kt[Yt + 15] = this.h[7] >>> 8 & 255;
         }, ct.prototype.update = function(Kt, Yt, er) {
-          var Ot, Jt;
+          var jt, Jt;
           if (this.leftover) {
-            for (Jt = 16 - this.leftover, Jt > er && (Jt = er), Ot = 0; Ot < Jt; Ot++) this.buffer[this.leftover + Ot] = Kt[Yt + Ot];
+            for (Jt = 16 - this.leftover, Jt > er && (Jt = er), jt = 0; jt < Jt; jt++) this.buffer[this.leftover + jt] = Kt[Yt + jt];
             if (er -= Jt, Yt += Jt, this.leftover += Jt, this.leftover < 16) return;
             this.blocks(this.buffer, 0, 16), this.leftover = 0;
           }
           if (er >= 16 && (Jt = er - er % 16, this.blocks(Kt, Yt, Jt), Yt += Jt, er -= Jt), er) {
-            for (Ot = 0; Ot < er; Ot++) this.buffer[this.leftover + Ot] = Kt[Yt + Ot];
+            for (jt = 0; jt < er; jt++) this.buffer[this.leftover + jt] = Kt[Yt + jt];
             this.leftover += er;
           }
         };
-        function et(Kt, Yt, er, Ot, Jt, cr) {
+        function et(Kt, Yt, er, jt, Jt, cr) {
           var yr = new ct(cr);
-          return yr.update(er, Ot, Jt), yr.finish(Kt, Yt), 0;
+          return yr.update(er, jt, Jt), yr.finish(Kt, Yt), 0;
         }
-        function tt(Kt, Yt, er, Ot, Jt, cr) {
+        function tt(Kt, Yt, er, jt, Jt, cr) {
           var yr = new Uint8Array(16);
-          return et(yr, 0, er, Ot, Jt, cr), Rt(Kt, Yt, yr, 0);
+          return et(yr, 0, er, jt, Jt, cr), Rt(Kt, Yt, yr, 0);
         }
-        function nt(Kt, Yt, er, Ot, Jt) {
+        function nt(Kt, Yt, er, jt, Jt) {
           var cr;
           if (er < 32) return -1;
-          for (kt(Kt, 0, Yt, 0, er, Ot, Jt), et(Kt, 16, Kt, 32, er - 32, Kt), cr = 0; cr < 16; cr++) Kt[cr] = 0;
+          for (kt(Kt, 0, Yt, 0, er, jt, Jt), et(Kt, 16, Kt, 32, er - 32, Kt), cr = 0; cr < 16; cr++) Kt[cr] = 0;
           return 0;
         }
-        function ot(Kt, Yt, er, Ot, Jt) {
+        function ot(Kt, Yt, er, jt, Jt) {
           var cr, yr = new Uint8Array(32);
-          if (er < 32 || (Wt(yr, 0, 32, Ot, Jt), tt(Yt, 16, Yt, 32, er - 32, yr) !== 0)) return -1;
-          for (kt(Kt, 0, Yt, 0, er, Ot, Jt), cr = 0; cr < 32; cr++) Kt[cr] = 0;
+          if (er < 32 || (Wt(yr, 0, 32, jt, Jt), tt(Yt, 16, Yt, 32, er - 32, yr) !== 0)) return -1;
+          for (kt(Kt, 0, Yt, 0, er, jt, Jt), cr = 0; cr < 32; cr++) Kt[cr] = 0;
           return 0;
         }
         function ut(Kt, Yt) {
@@ -33103,25 +33103,25 @@ https://github.com/browserify/crypto-browserify`);
           for (er = 0; er < 16; er++) Kt[er] = Yt[er] | 0;
         }
         function mt(Kt) {
-          var Yt, er, Ot = 1;
-          for (Yt = 0; Yt < 16; Yt++) er = Kt[Yt] + Ot + 65535, Ot = Math.floor(er / 65536), Kt[Yt] = er - Ot * 65536;
-          Kt[0] += Ot - 1 + 37 * (Ot - 1);
+          var Yt, er, jt = 1;
+          for (Yt = 0; Yt < 16; Yt++) er = Kt[Yt] + jt + 65535, jt = Math.floor(er / 65536), Kt[Yt] = er - jt * 65536;
+          Kt[0] += jt - 1 + 37 * (jt - 1);
         }
         function vt(Kt, Yt, er) {
-          for (var Ot, Jt = ~(er - 1), cr = 0; cr < 16; cr++) Ot = Jt & (Kt[cr] ^ Yt[cr]), Kt[cr] ^= Ot, Yt[cr] ^= Ot;
+          for (var jt, Jt = ~(er - 1), cr = 0; cr < 16; cr++) jt = Jt & (Kt[cr] ^ Yt[cr]), Kt[cr] ^= jt, Yt[cr] ^= jt;
         }
         function at(Kt, Yt) {
-          var er, Ot, Jt, cr = _(), yr = _();
+          var er, jt, Jt, cr = _(), yr = _();
           for (er = 0; er < 16; er++) yr[er] = Yt[er];
-          for (mt(yr), mt(yr), mt(yr), Ot = 0; Ot < 2; Ot++) {
+          for (mt(yr), mt(yr), mt(yr), jt = 0; jt < 2; jt++) {
             for (cr[0] = yr[0] - 65517, er = 1; er < 15; er++) cr[er] = yr[er] - 65535 - (cr[er - 1] >> 16 & 1), cr[er - 1] &= 65535;
             cr[15] = yr[15] - 32767 - (cr[14] >> 16 & 1), Jt = cr[15] >> 16 & 1, cr[14] &= 65535, vt(yr, cr, 1 - Jt);
           }
           for (er = 0; er < 16; er++) Kt[2 * er] = yr[er] & 255, Kt[2 * er + 1] = yr[er] >> 8;
         }
         function it(Kt, Yt) {
-          var er = new Uint8Array(32), Ot = new Uint8Array(32);
-          return at(er, Kt), at(Ot, Yt), At(er, 0, Ot, 0);
+          var er = new Uint8Array(32), jt = new Uint8Array(32);
+          return at(er, Kt), at(jt, Yt), At(er, 0, jt, 0);
         }
         function ht(Kt) {
           var Yt = new Uint8Array(32);
@@ -33133,35 +33133,35 @@ https://github.com/browserify/crypto-browserify`);
           Kt[15] &= 32767;
         }
         function St(Kt, Yt, er) {
-          for (var Ot = 0; Ot < 16; Ot++) Kt[Ot] = Yt[Ot] + er[Ot];
+          for (var jt = 0; jt < 16; jt++) Kt[jt] = Yt[jt] + er[jt];
         }
         function Nt(Kt, Yt, er) {
-          for (var Ot = 0; Ot < 16; Ot++) Kt[Ot] = Yt[Ot] - er[Ot];
+          for (var jt = 0; jt < 16; jt++) Kt[jt] = Yt[jt] - er[jt];
         }
         function qt(Kt, Yt, er) {
-          var Ot, Jt, cr = 0, yr = 0, hr = 0, Er = 0, zr = 0, Wr = 0, gn = 0, Jr = 0, ln = 0, un = 0, mn = 0, pn = 0, fn = 0, hn = 0, dn = 0, tn = 0, an = 0, Yr = 0, rn = 0, nn = 0, Gr = 0, Dr = 0, Fr = 0, Xr = 0, Kr = 0, Qr = 0, sn = 0, vn = 0, yn = 0, xn = 0, wn = 0, Ar = er[0], Cn = er[1], Sn = er[2], An = er[3], _n = er[4], En = er[5], Mn = er[6], Tn = er[7], Bn = er[8], Rn = er[9], $n = er[10], kn = er[11], In = er[12], Pn = er[13], Nn = er[14], Dn = er[15];
-          Ot = Yt[0], cr += Ot * Ar, yr += Ot * Cn, hr += Ot * Sn, Er += Ot * An, zr += Ot * _n, Wr += Ot * En, gn += Ot * Mn, Jr += Ot * Tn, ln += Ot * Bn, un += Ot * Rn, mn += Ot * $n, pn += Ot * kn, fn += Ot * In, hn += Ot * Pn, dn += Ot * Nn, tn += Ot * Dn, Ot = Yt[1], yr += Ot * Ar, hr += Ot * Cn, Er += Ot * Sn, zr += Ot * An, Wr += Ot * _n, gn += Ot * En, Jr += Ot * Mn, ln += Ot * Tn, un += Ot * Bn, mn += Ot * Rn, pn += Ot * $n, fn += Ot * kn, hn += Ot * In, dn += Ot * Pn, tn += Ot * Nn, an += Ot * Dn, Ot = Yt[2], hr += Ot * Ar, Er += Ot * Cn, zr += Ot * Sn, Wr += Ot * An, gn += Ot * _n, Jr += Ot * En, ln += Ot * Mn, un += Ot * Tn, mn += Ot * Bn, pn += Ot * Rn, fn += Ot * $n, hn += Ot * kn, dn += Ot * In, tn += Ot * Pn, an += Ot * Nn, Yr += Ot * Dn, Ot = Yt[3], Er += Ot * Ar, zr += Ot * Cn, Wr += Ot * Sn, gn += Ot * An, Jr += Ot * _n, ln += Ot * En, un += Ot * Mn, mn += Ot * Tn, pn += Ot * Bn, fn += Ot * Rn, hn += Ot * $n, dn += Ot * kn, tn += Ot * In, an += Ot * Pn, Yr += Ot * Nn, rn += Ot * Dn, Ot = Yt[4], zr += Ot * Ar, Wr += Ot * Cn, gn += Ot * Sn, Jr += Ot * An, ln += Ot * _n, un += Ot * En, mn += Ot * Mn, pn += Ot * Tn, fn += Ot * Bn, hn += Ot * Rn, dn += Ot * $n, tn += Ot * kn, an += Ot * In, Yr += Ot * Pn, rn += Ot * Nn, nn += Ot * Dn, Ot = Yt[5], Wr += Ot * Ar, gn += Ot * Cn, Jr += Ot * Sn, ln += Ot * An, un += Ot * _n, mn += Ot * En, pn += Ot * Mn, fn += Ot * Tn, hn += Ot * Bn, dn += Ot * Rn, tn += Ot * $n, an += Ot * kn, Yr += Ot * In, rn += Ot * Pn, nn += Ot * Nn, Gr += Ot * Dn, Ot = Yt[6], gn += Ot * Ar, Jr += Ot * Cn, ln += Ot * Sn, un += Ot * An, mn += Ot * _n, pn += Ot * En, fn += Ot * Mn, hn += Ot * Tn, dn += Ot * Bn, tn += Ot * Rn, an += Ot * $n, Yr += Ot * kn, rn += Ot * In, nn += Ot * Pn, Gr += Ot * Nn, Dr += Ot * Dn, Ot = Yt[7], Jr += Ot * Ar, ln += Ot * Cn, un += Ot * Sn, mn += Ot * An, pn += Ot * _n, fn += Ot * En, hn += Ot * Mn, dn += Ot * Tn, tn += Ot * Bn, an += Ot * Rn, Yr += Ot * $n, rn += Ot * kn, nn += Ot * In, Gr += Ot * Pn, Dr += Ot * Nn, Fr += Ot * Dn, Ot = Yt[8], ln += Ot * Ar, un += Ot * Cn, mn += Ot * Sn, pn += Ot * An, fn += Ot * _n, hn += Ot * En, dn += Ot * Mn, tn += Ot * Tn, an += Ot * Bn, Yr += Ot * Rn, rn += Ot * $n, nn += Ot * kn, Gr += Ot * In, Dr += Ot * Pn, Fr += Ot * Nn, Xr += Ot * Dn, Ot = Yt[9], un += Ot * Ar, mn += Ot * Cn, pn += Ot * Sn, fn += Ot * An, hn += Ot * _n, dn += Ot * En, tn += Ot * Mn, an += Ot * Tn, Yr += Ot * Bn, rn += Ot * Rn, nn += Ot * $n, Gr += Ot * kn, Dr += Ot * In, Fr += Ot * Pn, Xr += Ot * Nn, Kr += Ot * Dn, Ot = Yt[10], mn += Ot * Ar, pn += Ot * Cn, fn += Ot * Sn, hn += Ot * An, dn += Ot * _n, tn += Ot * En, an += Ot * Mn, Yr += Ot * Tn, rn += Ot * Bn, nn += Ot * Rn, Gr += Ot * $n, Dr += Ot * kn, Fr += Ot * In, Xr += Ot * Pn, Kr += Ot * Nn, Qr += Ot * Dn, Ot = Yt[11], pn += Ot * Ar, fn += Ot * Cn, hn += Ot * Sn, dn += Ot * An, tn += Ot * _n, an += Ot * En, Yr += Ot * Mn, rn += Ot * Tn, nn += Ot * Bn, Gr += Ot * Rn, Dr += Ot * $n, Fr += Ot * kn, Xr += Ot * In, Kr += Ot * Pn, Qr += Ot * Nn, sn += Ot * Dn, Ot = Yt[12], fn += Ot * Ar, hn += Ot * Cn, dn += Ot * Sn, tn += Ot * An, an += Ot * _n, Yr += Ot * En, rn += Ot * Mn, nn += Ot * Tn, Gr += Ot * Bn, Dr += Ot * Rn, Fr += Ot * $n, Xr += Ot * kn, Kr += Ot * In, Qr += Ot * Pn, sn += Ot * Nn, vn += Ot * Dn, Ot = Yt[13], hn += Ot * Ar, dn += Ot * Cn, tn += Ot * Sn, an += Ot * An, Yr += Ot * _n, rn += Ot * En, nn += Ot * Mn, Gr += Ot * Tn, Dr += Ot * Bn, Fr += Ot * Rn, Xr += Ot * $n, Kr += Ot * kn, Qr += Ot * In, sn += Ot * Pn, vn += Ot * Nn, yn += Ot * Dn, Ot = Yt[14], dn += Ot * Ar, tn += Ot * Cn, an += Ot * Sn, Yr += Ot * An, rn += Ot * _n, nn += Ot * En, Gr += Ot * Mn, Dr += Ot * Tn, Fr += Ot * Bn, Xr += Ot * Rn, Kr += Ot * $n, Qr += Ot * kn, sn += Ot * In, vn += Ot * Pn, yn += Ot * Nn, xn += Ot * Dn, Ot = Yt[15], tn += Ot * Ar, an += Ot * Cn, Yr += Ot * Sn, rn += Ot * An, nn += Ot * _n, Gr += Ot * En, Dr += Ot * Mn, Fr += Ot * Tn, Xr += Ot * Bn, Kr += Ot * Rn, Qr += Ot * $n, sn += Ot * kn, vn += Ot * In, yn += Ot * Pn, xn += Ot * Nn, wn += Ot * Dn, cr += 38 * an, yr += 38 * Yr, hr += 38 * rn, Er += 38 * nn, zr += 38 * Gr, Wr += 38 * Dr, gn += 38 * Fr, Jr += 38 * Xr, ln += 38 * Kr, un += 38 * Qr, mn += 38 * sn, pn += 38 * vn, fn += 38 * yn, hn += 38 * xn, dn += 38 * wn, Jt = 1, Ot = cr + Jt + 65535, Jt = Math.floor(Ot / 65536), cr = Ot - Jt * 65536, Ot = yr + Jt + 65535, Jt = Math.floor(Ot / 65536), yr = Ot - Jt * 65536, Ot = hr + Jt + 65535, Jt = Math.floor(Ot / 65536), hr = Ot - Jt * 65536, Ot = Er + Jt + 65535, Jt = Math.floor(Ot / 65536), Er = Ot - Jt * 65536, Ot = zr + Jt + 65535, Jt = Math.floor(Ot / 65536), zr = Ot - Jt * 65536, Ot = Wr + Jt + 65535, Jt = Math.floor(Ot / 65536), Wr = Ot - Jt * 65536, Ot = gn + Jt + 65535, Jt = Math.floor(Ot / 65536), gn = Ot - Jt * 65536, Ot = Jr + Jt + 65535, Jt = Math.floor(Ot / 65536), Jr = Ot - Jt * 65536, Ot = ln + Jt + 65535, Jt = Math.floor(Ot / 65536), ln = Ot - Jt * 65536, Ot = un + Jt + 65535, Jt = Math.floor(Ot / 65536), un = Ot - Jt * 65536, Ot = mn + Jt + 65535, Jt = Math.floor(Ot / 65536), mn = Ot - Jt * 65536, Ot = pn + Jt + 65535, Jt = Math.floor(Ot / 65536), pn = Ot - Jt * 65536, Ot = fn + Jt + 65535, Jt = Math.floor(Ot / 65536), fn = Ot - Jt * 65536, Ot = hn + Jt + 65535, Jt = Math.floor(Ot / 65536), hn = Ot - Jt * 65536, Ot = dn + Jt + 65535, Jt = Math.floor(Ot / 65536), dn = Ot - Jt * 65536, Ot = tn + Jt + 65535, Jt = Math.floor(Ot / 65536), tn = Ot - Jt * 65536, cr += Jt - 1 + 37 * (Jt - 1), Jt = 1, Ot = cr + Jt + 65535, Jt = Math.floor(Ot / 65536), cr = Ot - Jt * 65536, Ot = yr + Jt + 65535, Jt = Math.floor(Ot / 65536), yr = Ot - Jt * 65536, Ot = hr + Jt + 65535, Jt = Math.floor(Ot / 65536), hr = Ot - Jt * 65536, Ot = Er + Jt + 65535, Jt = Math.floor(Ot / 65536), Er = Ot - Jt * 65536, Ot = zr + Jt + 65535, Jt = Math.floor(Ot / 65536), zr = Ot - Jt * 65536, Ot = Wr + Jt + 65535, Jt = Math.floor(Ot / 65536), Wr = Ot - Jt * 65536, Ot = gn + Jt + 65535, Jt = Math.floor(Ot / 65536), gn = Ot - Jt * 65536, Ot = Jr + Jt + 65535, Jt = Math.floor(Ot / 65536), Jr = Ot - Jt * 65536, Ot = ln + Jt + 65535, Jt = Math.floor(Ot / 65536), ln = Ot - Jt * 65536, Ot = un + Jt + 65535, Jt = Math.floor(Ot / 65536), un = Ot - Jt * 65536, Ot = mn + Jt + 65535, Jt = Math.floor(Ot / 65536), mn = Ot - Jt * 65536, Ot = pn + Jt + 65535, Jt = Math.floor(Ot / 65536), pn = Ot - Jt * 65536, Ot = fn + Jt + 65535, Jt = Math.floor(Ot / 65536), fn = Ot - Jt * 65536, Ot = hn + Jt + 65535, Jt = Math.floor(Ot / 65536), hn = Ot - Jt * 65536, Ot = dn + Jt + 65535, Jt = Math.floor(Ot / 65536), dn = Ot - Jt * 65536, Ot = tn + Jt + 65535, Jt = Math.floor(Ot / 65536), tn = Ot - Jt * 65536, cr += Jt - 1 + 37 * (Jt - 1), Kt[0] = cr, Kt[1] = yr, Kt[2] = hr, Kt[3] = Er, Kt[4] = zr, Kt[5] = Wr, Kt[6] = gn, Kt[7] = Jr, Kt[8] = ln, Kt[9] = un, Kt[10] = mn, Kt[11] = pn, Kt[12] = fn, Kt[13] = hn, Kt[14] = dn, Kt[15] = tn;
+          var jt, Jt, cr = 0, yr = 0, hr = 0, Er = 0, zr = 0, Wr = 0, gn = 0, Jr = 0, ln = 0, un = 0, mn = 0, pn = 0, fn = 0, hn = 0, dn = 0, tn = 0, an = 0, Yr = 0, rn = 0, nn = 0, Gr = 0, Dr = 0, Or = 0, Xr = 0, Kr = 0, Qr = 0, sn = 0, vn = 0, yn = 0, xn = 0, wn = 0, Ar = er[0], Cn = er[1], Sn = er[2], An = er[3], _n = er[4], En = er[5], Mn = er[6], Tn = er[7], Bn = er[8], Rn = er[9], $n = er[10], kn = er[11], In = er[12], Pn = er[13], Nn = er[14], Dn = er[15];
+          jt = Yt[0], cr += jt * Ar, yr += jt * Cn, hr += jt * Sn, Er += jt * An, zr += jt * _n, Wr += jt * En, gn += jt * Mn, Jr += jt * Tn, ln += jt * Bn, un += jt * Rn, mn += jt * $n, pn += jt * kn, fn += jt * In, hn += jt * Pn, dn += jt * Nn, tn += jt * Dn, jt = Yt[1], yr += jt * Ar, hr += jt * Cn, Er += jt * Sn, zr += jt * An, Wr += jt * _n, gn += jt * En, Jr += jt * Mn, ln += jt * Tn, un += jt * Bn, mn += jt * Rn, pn += jt * $n, fn += jt * kn, hn += jt * In, dn += jt * Pn, tn += jt * Nn, an += jt * Dn, jt = Yt[2], hr += jt * Ar, Er += jt * Cn, zr += jt * Sn, Wr += jt * An, gn += jt * _n, Jr += jt * En, ln += jt * Mn, un += jt * Tn, mn += jt * Bn, pn += jt * Rn, fn += jt * $n, hn += jt * kn, dn += jt * In, tn += jt * Pn, an += jt * Nn, Yr += jt * Dn, jt = Yt[3], Er += jt * Ar, zr += jt * Cn, Wr += jt * Sn, gn += jt * An, Jr += jt * _n, ln += jt * En, un += jt * Mn, mn += jt * Tn, pn += jt * Bn, fn += jt * Rn, hn += jt * $n, dn += jt * kn, tn += jt * In, an += jt * Pn, Yr += jt * Nn, rn += jt * Dn, jt = Yt[4], zr += jt * Ar, Wr += jt * Cn, gn += jt * Sn, Jr += jt * An, ln += jt * _n, un += jt * En, mn += jt * Mn, pn += jt * Tn, fn += jt * Bn, hn += jt * Rn, dn += jt * $n, tn += jt * kn, an += jt * In, Yr += jt * Pn, rn += jt * Nn, nn += jt * Dn, jt = Yt[5], Wr += jt * Ar, gn += jt * Cn, Jr += jt * Sn, ln += jt * An, un += jt * _n, mn += jt * En, pn += jt * Mn, fn += jt * Tn, hn += jt * Bn, dn += jt * Rn, tn += jt * $n, an += jt * kn, Yr += jt * In, rn += jt * Pn, nn += jt * Nn, Gr += jt * Dn, jt = Yt[6], gn += jt * Ar, Jr += jt * Cn, ln += jt * Sn, un += jt * An, mn += jt * _n, pn += jt * En, fn += jt * Mn, hn += jt * Tn, dn += jt * Bn, tn += jt * Rn, an += jt * $n, Yr += jt * kn, rn += jt * In, nn += jt * Pn, Gr += jt * Nn, Dr += jt * Dn, jt = Yt[7], Jr += jt * Ar, ln += jt * Cn, un += jt * Sn, mn += jt * An, pn += jt * _n, fn += jt * En, hn += jt * Mn, dn += jt * Tn, tn += jt * Bn, an += jt * Rn, Yr += jt * $n, rn += jt * kn, nn += jt * In, Gr += jt * Pn, Dr += jt * Nn, Or += jt * Dn, jt = Yt[8], ln += jt * Ar, un += jt * Cn, mn += jt * Sn, pn += jt * An, fn += jt * _n, hn += jt * En, dn += jt * Mn, tn += jt * Tn, an += jt * Bn, Yr += jt * Rn, rn += jt * $n, nn += jt * kn, Gr += jt * In, Dr += jt * Pn, Or += jt * Nn, Xr += jt * Dn, jt = Yt[9], un += jt * Ar, mn += jt * Cn, pn += jt * Sn, fn += jt * An, hn += jt * _n, dn += jt * En, tn += jt * Mn, an += jt * Tn, Yr += jt * Bn, rn += jt * Rn, nn += jt * $n, Gr += jt * kn, Dr += jt * In, Or += jt * Pn, Xr += jt * Nn, Kr += jt * Dn, jt = Yt[10], mn += jt * Ar, pn += jt * Cn, fn += jt * Sn, hn += jt * An, dn += jt * _n, tn += jt * En, an += jt * Mn, Yr += jt * Tn, rn += jt * Bn, nn += jt * Rn, Gr += jt * $n, Dr += jt * kn, Or += jt * In, Xr += jt * Pn, Kr += jt * Nn, Qr += jt * Dn, jt = Yt[11], pn += jt * Ar, fn += jt * Cn, hn += jt * Sn, dn += jt * An, tn += jt * _n, an += jt * En, Yr += jt * Mn, rn += jt * Tn, nn += jt * Bn, Gr += jt * Rn, Dr += jt * $n, Or += jt * kn, Xr += jt * In, Kr += jt * Pn, Qr += jt * Nn, sn += jt * Dn, jt = Yt[12], fn += jt * Ar, hn += jt * Cn, dn += jt * Sn, tn += jt * An, an += jt * _n, Yr += jt * En, rn += jt * Mn, nn += jt * Tn, Gr += jt * Bn, Dr += jt * Rn, Or += jt * $n, Xr += jt * kn, Kr += jt * In, Qr += jt * Pn, sn += jt * Nn, vn += jt * Dn, jt = Yt[13], hn += jt * Ar, dn += jt * Cn, tn += jt * Sn, an += jt * An, Yr += jt * _n, rn += jt * En, nn += jt * Mn, Gr += jt * Tn, Dr += jt * Bn, Or += jt * Rn, Xr += jt * $n, Kr += jt * kn, Qr += jt * In, sn += jt * Pn, vn += jt * Nn, yn += jt * Dn, jt = Yt[14], dn += jt * Ar, tn += jt * Cn, an += jt * Sn, Yr += jt * An, rn += jt * _n, nn += jt * En, Gr += jt * Mn, Dr += jt * Tn, Or += jt * Bn, Xr += jt * Rn, Kr += jt * $n, Qr += jt * kn, sn += jt * In, vn += jt * Pn, yn += jt * Nn, xn += jt * Dn, jt = Yt[15], tn += jt * Ar, an += jt * Cn, Yr += jt * Sn, rn += jt * An, nn += jt * _n, Gr += jt * En, Dr += jt * Mn, Or += jt * Tn, Xr += jt * Bn, Kr += jt * Rn, Qr += jt * $n, sn += jt * kn, vn += jt * In, yn += jt * Pn, xn += jt * Nn, wn += jt * Dn, cr += 38 * an, yr += 38 * Yr, hr += 38 * rn, Er += 38 * nn, zr += 38 * Gr, Wr += 38 * Dr, gn += 38 * Or, Jr += 38 * Xr, ln += 38 * Kr, un += 38 * Qr, mn += 38 * sn, pn += 38 * vn, fn += 38 * yn, hn += 38 * xn, dn += 38 * wn, Jt = 1, jt = cr + Jt + 65535, Jt = Math.floor(jt / 65536), cr = jt - Jt * 65536, jt = yr + Jt + 65535, Jt = Math.floor(jt / 65536), yr = jt - Jt * 65536, jt = hr + Jt + 65535, Jt = Math.floor(jt / 65536), hr = jt - Jt * 65536, jt = Er + Jt + 65535, Jt = Math.floor(jt / 65536), Er = jt - Jt * 65536, jt = zr + Jt + 65535, Jt = Math.floor(jt / 65536), zr = jt - Jt * 65536, jt = Wr + Jt + 65535, Jt = Math.floor(jt / 65536), Wr = jt - Jt * 65536, jt = gn + Jt + 65535, Jt = Math.floor(jt / 65536), gn = jt - Jt * 65536, jt = Jr + Jt + 65535, Jt = Math.floor(jt / 65536), Jr = jt - Jt * 65536, jt = ln + Jt + 65535, Jt = Math.floor(jt / 65536), ln = jt - Jt * 65536, jt = un + Jt + 65535, Jt = Math.floor(jt / 65536), un = jt - Jt * 65536, jt = mn + Jt + 65535, Jt = Math.floor(jt / 65536), mn = jt - Jt * 65536, jt = pn + Jt + 65535, Jt = Math.floor(jt / 65536), pn = jt - Jt * 65536, jt = fn + Jt + 65535, Jt = Math.floor(jt / 65536), fn = jt - Jt * 65536, jt = hn + Jt + 65535, Jt = Math.floor(jt / 65536), hn = jt - Jt * 65536, jt = dn + Jt + 65535, Jt = Math.floor(jt / 65536), dn = jt - Jt * 65536, jt = tn + Jt + 65535, Jt = Math.floor(jt / 65536), tn = jt - Jt * 65536, cr += Jt - 1 + 37 * (Jt - 1), Jt = 1, jt = cr + Jt + 65535, Jt = Math.floor(jt / 65536), cr = jt - Jt * 65536, jt = yr + Jt + 65535, Jt = Math.floor(jt / 65536), yr = jt - Jt * 65536, jt = hr + Jt + 65535, Jt = Math.floor(jt / 65536), hr = jt - Jt * 65536, jt = Er + Jt + 65535, Jt = Math.floor(jt / 65536), Er = jt - Jt * 65536, jt = zr + Jt + 65535, Jt = Math.floor(jt / 65536), zr = jt - Jt * 65536, jt = Wr + Jt + 65535, Jt = Math.floor(jt / 65536), Wr = jt - Jt * 65536, jt = gn + Jt + 65535, Jt = Math.floor(jt / 65536), gn = jt - Jt * 65536, jt = Jr + Jt + 65535, Jt = Math.floor(jt / 65536), Jr = jt - Jt * 65536, jt = ln + Jt + 65535, Jt = Math.floor(jt / 65536), ln = jt - Jt * 65536, jt = un + Jt + 65535, Jt = Math.floor(jt / 65536), un = jt - Jt * 65536, jt = mn + Jt + 65535, Jt = Math.floor(jt / 65536), mn = jt - Jt * 65536, jt = pn + Jt + 65535, Jt = Math.floor(jt / 65536), pn = jt - Jt * 65536, jt = fn + Jt + 65535, Jt = Math.floor(jt / 65536), fn = jt - Jt * 65536, jt = hn + Jt + 65535, Jt = Math.floor(jt / 65536), hn = jt - Jt * 65536, jt = dn + Jt + 65535, Jt = Math.floor(jt / 65536), dn = jt - Jt * 65536, jt = tn + Jt + 65535, Jt = Math.floor(jt / 65536), tn = jt - Jt * 65536, cr += Jt - 1 + 37 * (Jt - 1), Kt[0] = cr, Kt[1] = yr, Kt[2] = hr, Kt[3] = Er, Kt[4] = zr, Kt[5] = Wr, Kt[6] = gn, Kt[7] = Jr, Kt[8] = ln, Kt[9] = un, Kt[10] = mn, Kt[11] = pn, Kt[12] = fn, Kt[13] = hn, Kt[14] = dn, Kt[15] = tn;
         }
         function Zt(Kt, Yt) {
           qt(Kt, Yt, Yt);
         }
         function Ut(Kt, Yt) {
-          var er = _(), Ot;
-          for (Ot = 0; Ot < 16; Ot++) er[Ot] = Yt[Ot];
-          for (Ot = 253; Ot >= 0; Ot--) Zt(er, er), Ot !== 2 && Ot !== 4 && qt(er, er, Yt);
-          for (Ot = 0; Ot < 16; Ot++) Kt[Ot] = er[Ot];
+          var er = _(), jt;
+          for (jt = 0; jt < 16; jt++) er[jt] = Yt[jt];
+          for (jt = 253; jt >= 0; jt--) Zt(er, er), jt !== 2 && jt !== 4 && qt(er, er, Yt);
+          for (jt = 0; jt < 16; jt++) Kt[jt] = er[jt];
         }
         function Lt(Kt, Yt) {
-          var er = _(), Ot;
-          for (Ot = 0; Ot < 16; Ot++) er[Ot] = Yt[Ot];
-          for (Ot = 250; Ot >= 0; Ot--) Zt(er, er), Ot !== 1 && qt(er, er, Yt);
-          for (Ot = 0; Ot < 16; Ot++) Kt[Ot] = er[Ot];
+          var er = _(), jt;
+          for (jt = 0; jt < 16; jt++) er[jt] = Yt[jt];
+          for (jt = 250; jt >= 0; jt--) Zt(er, er), jt !== 1 && qt(er, er, Yt);
+          for (jt = 0; jt < 16; jt++) Kt[jt] = er[jt];
         }
         function Ht(Kt, Yt, er) {
-          var Ot = new Uint8Array(32), Jt = new Float64Array(80), cr, yr, hr = _(), Er = _(), zr = _(), Wr = _(), gn = _(), Jr = _();
-          for (yr = 0; yr < 31; yr++) Ot[yr] = Yt[yr];
-          for (Ot[31] = Yt[31] & 127 | 64, Ot[0] &= 248, wt(Jt, er), yr = 0; yr < 16; yr++) Er[yr] = Jt[yr], Wr[yr] = hr[yr] = zr[yr] = 0;
-          for (hr[0] = Wr[0] = 1, yr = 254; yr >= 0; --yr) cr = Ot[yr >>> 3] >>> (yr & 7) & 1, vt(hr, Er, cr), vt(zr, Wr, cr), St(gn, hr, zr), Nt(hr, hr, zr), St(zr, Er, Wr), Nt(Er, Er, Wr), Zt(Wr, gn), Zt(Jr, hr), qt(hr, zr, hr), qt(zr, Er, gn), St(gn, hr, zr), Nt(hr, hr, zr), Zt(Er, hr), Nt(zr, Wr, Jr), qt(hr, zr, pt), St(hr, hr, Wr), qt(zr, zr, hr), qt(hr, Wr, Jr), qt(Wr, Er, Jt), Zt(Er, gn), vt(hr, Er, cr), vt(zr, Wr, cr);
+          var jt = new Uint8Array(32), Jt = new Float64Array(80), cr, yr, hr = _(), Er = _(), zr = _(), Wr = _(), gn = _(), Jr = _();
+          for (yr = 0; yr < 31; yr++) jt[yr] = Yt[yr];
+          for (jt[31] = Yt[31] & 127 | 64, jt[0] &= 248, wt(Jt, er), yr = 0; yr < 16; yr++) Er[yr] = Jt[yr], Wr[yr] = hr[yr] = zr[yr] = 0;
+          for (hr[0] = Wr[0] = 1, yr = 254; yr >= 0; --yr) cr = jt[yr >>> 3] >>> (yr & 7) & 1, vt(hr, Er, cr), vt(zr, Wr, cr), St(gn, hr, zr), Nt(hr, hr, zr), St(zr, Er, Wr), Nt(Er, Er, Wr), Zt(Wr, gn), Zt(Jr, hr), qt(hr, zr, hr), qt(zr, Er, gn), St(gn, hr, zr), Nt(hr, hr, zr), Zt(Er, hr), Nt(zr, Wr, Jr), qt(hr, zr, pt), St(hr, hr, Wr), qt(zr, zr, hr), qt(hr, Wr, Jr), qt(Wr, Er, Jt), Zt(Er, gn), vt(hr, Er, cr), vt(zr, Wr, cr);
           for (yr = 0; yr < 16; yr++) Jt[yr + 16] = hr[yr], Jt[yr + 32] = zr[yr], Jt[yr + 48] = Er[yr], Jt[yr + 64] = Wr[yr];
           var ln = Jt.subarray(32), un = Jt.subarray(16);
           return Ut(ln, ln), qt(un, un, ln), at(Kt, un), 0;
@@ -33173,17 +33173,17 @@ https://github.com/browserify/crypto-browserify`);
           return $(Yt, 32), tr(Kt, Yt);
         }
         function zt(Kt, Yt, er) {
-          var Ot = new Uint8Array(32);
-          return Ht(Ot, er, Yt), Ft(Kt, rt, Ot, jt);
+          var jt = new Uint8Array(32);
+          return Ht(jt, er, Yt), Ft(Kt, rt, jt, Ot);
         }
         var sr = nt, br = ot;
-        function dr(Kt, Yt, er, Ot, Jt, cr) {
+        function dr(Kt, Yt, er, jt, Jt, cr) {
           var yr = new Uint8Array(32);
-          return zt(yr, Jt, cr), sr(Kt, Yt, er, Ot, yr);
+          return zt(yr, Jt, cr), sr(Kt, Yt, er, jt, yr);
         }
-        function xr(Kt, Yt, er, Ot, Jt, cr) {
+        function xr(Kt, Yt, er, jt, Jt, cr) {
           var yr = new Uint8Array(32);
-          return zt(yr, Jt, cr), br(Kt, Yt, er, Ot, yr);
+          return zt(yr, Jt, cr), br(Kt, Yt, er, jt, yr);
         }
         var kr = [
           1116352408,
@@ -33347,35 +33347,35 @@ https://github.com/browserify/crypto-browserify`);
           1816402316,
           1246189591
         ];
-        function vr(Kt, Yt, er, Ot) {
-          for (var Jt = new Int32Array(16), cr = new Int32Array(16), yr, hr, Er, zr, Wr, gn, Jr, ln, un, mn, pn, fn, hn, dn, tn, an, Yr, rn, nn, Gr, Dr, Fr, Xr, Kr, Qr, sn, vn = Kt[0], yn = Kt[1], xn = Kt[2], wn = Kt[3], Ar = Kt[4], Cn = Kt[5], Sn = Kt[6], An = Kt[7], _n = Yt[0], En = Yt[1], Mn = Yt[2], Tn = Yt[3], Bn = Yt[4], Rn = Yt[5], $n = Yt[6], kn = Yt[7], In = 0; Ot >= 128; ) {
+        function vr(Kt, Yt, er, jt) {
+          for (var Jt = new Int32Array(16), cr = new Int32Array(16), yr, hr, Er, zr, Wr, gn, Jr, ln, un, mn, pn, fn, hn, dn, tn, an, Yr, rn, nn, Gr, Dr, Or, Xr, Kr, Qr, sn, vn = Kt[0], yn = Kt[1], xn = Kt[2], wn = Kt[3], Ar = Kt[4], Cn = Kt[5], Sn = Kt[6], An = Kt[7], _n = Yt[0], En = Yt[1], Mn = Yt[2], Tn = Yt[3], Bn = Yt[4], Rn = Yt[5], $n = Yt[6], kn = Yt[7], In = 0; jt >= 128; ) {
             for (nn = 0; nn < 16; nn++) Gr = 8 * nn + In, Jt[nn] = er[Gr + 0] << 24 | er[Gr + 1] << 16 | er[Gr + 2] << 8 | er[Gr + 3], cr[nn] = er[Gr + 4] << 24 | er[Gr + 5] << 16 | er[Gr + 6] << 8 | er[Gr + 7];
-            for (nn = 0; nn < 80; nn++) if (yr = vn, hr = yn, Er = xn, zr = wn, Wr = Ar, gn = Cn, Jr = Sn, ln = An, un = _n, mn = En, pn = Mn, fn = Tn, hn = Bn, dn = Rn, tn = $n, an = kn, Dr = An, Fr = kn, Xr = Fr & 65535, Kr = Fr >>> 16, Qr = Dr & 65535, sn = Dr >>> 16, Dr = (Ar >>> 14 | Bn << 18) ^ (Ar >>> 18 | Bn << 14) ^ (Bn >>> 9 | Ar << 23), Fr = (Bn >>> 14 | Ar << 18) ^ (Bn >>> 18 | Ar << 14) ^ (Ar >>> 9 | Bn << 23), Xr += Fr & 65535, Kr += Fr >>> 16, Qr += Dr & 65535, sn += Dr >>> 16, Dr = Ar & Cn ^ ~Ar & Sn, Fr = Bn & Rn ^ ~Bn & $n, Xr += Fr & 65535, Kr += Fr >>> 16, Qr += Dr & 65535, sn += Dr >>> 16, Dr = kr[nn * 2], Fr = kr[nn * 2 + 1], Xr += Fr & 65535, Kr += Fr >>> 16, Qr += Dr & 65535, sn += Dr >>> 16, Dr = Jt[nn % 16], Fr = cr[nn % 16], Xr += Fr & 65535, Kr += Fr >>> 16, Qr += Dr & 65535, sn += Dr >>> 16, Kr += Xr >>> 16, Qr += Kr >>> 16, sn += Qr >>> 16, Yr = Qr & 65535 | sn << 16, rn = Xr & 65535 | Kr << 16, Dr = Yr, Fr = rn, Xr = Fr & 65535, Kr = Fr >>> 16, Qr = Dr & 65535, sn = Dr >>> 16, Dr = (vn >>> 28 | _n << 4) ^ (_n >>> 2 | vn << 30) ^ (_n >>> 7 | vn << 25), Fr = (_n >>> 28 | vn << 4) ^ (vn >>> 2 | _n << 30) ^ (vn >>> 7 | _n << 25), Xr += Fr & 65535, Kr += Fr >>> 16, Qr += Dr & 65535, sn += Dr >>> 16, Dr = vn & yn ^ vn & xn ^ yn & xn, Fr = _n & En ^ _n & Mn ^ En & Mn, Xr += Fr & 65535, Kr += Fr >>> 16, Qr += Dr & 65535, sn += Dr >>> 16, Kr += Xr >>> 16, Qr += Kr >>> 16, sn += Qr >>> 16, ln = Qr & 65535 | sn << 16, an = Xr & 65535 | Kr << 16, Dr = zr, Fr = fn, Xr = Fr & 65535, Kr = Fr >>> 16, Qr = Dr & 65535, sn = Dr >>> 16, Dr = Yr, Fr = rn, Xr += Fr & 65535, Kr += Fr >>> 16, Qr += Dr & 65535, sn += Dr >>> 16, Kr += Xr >>> 16, Qr += Kr >>> 16, sn += Qr >>> 16, zr = Qr & 65535 | sn << 16, fn = Xr & 65535 | Kr << 16, yn = yr, xn = hr, wn = Er, Ar = zr, Cn = Wr, Sn = gn, An = Jr, vn = ln, En = un, Mn = mn, Tn = pn, Bn = fn, Rn = hn, $n = dn, kn = tn, _n = an, nn % 16 === 15) for (Gr = 0; Gr < 16; Gr++) Dr = Jt[Gr], Fr = cr[Gr], Xr = Fr & 65535, Kr = Fr >>> 16, Qr = Dr & 65535, sn = Dr >>> 16, Dr = Jt[(Gr + 9) % 16], Fr = cr[(Gr + 9) % 16], Xr += Fr & 65535, Kr += Fr >>> 16, Qr += Dr & 65535, sn += Dr >>> 16, Yr = Jt[(Gr + 1) % 16], rn = cr[(Gr + 1) % 16], Dr = (Yr >>> 1 | rn << 31) ^ (Yr >>> 8 | rn << 24) ^ Yr >>> 7, Fr = (rn >>> 1 | Yr << 31) ^ (rn >>> 8 | Yr << 24) ^ (rn >>> 7 | Yr << 25), Xr += Fr & 65535, Kr += Fr >>> 16, Qr += Dr & 65535, sn += Dr >>> 16, Yr = Jt[(Gr + 14) % 16], rn = cr[(Gr + 14) % 16], Dr = (Yr >>> 19 | rn << 13) ^ (rn >>> 29 | Yr << 3) ^ Yr >>> 6, Fr = (rn >>> 19 | Yr << 13) ^ (Yr >>> 29 | rn << 3) ^ (rn >>> 6 | Yr << 26), Xr += Fr & 65535, Kr += Fr >>> 16, Qr += Dr & 65535, sn += Dr >>> 16, Kr += Xr >>> 16, Qr += Kr >>> 16, sn += Qr >>> 16, Jt[Gr] = Qr & 65535 | sn << 16, cr[Gr] = Xr & 65535 | Kr << 16;
-            Dr = vn, Fr = _n, Xr = Fr & 65535, Kr = Fr >>> 16, Qr = Dr & 65535, sn = Dr >>> 16, Dr = Kt[0], Fr = Yt[0], Xr += Fr & 65535, Kr += Fr >>> 16, Qr += Dr & 65535, sn += Dr >>> 16, Kr += Xr >>> 16, Qr += Kr >>> 16, sn += Qr >>> 16, Kt[0] = vn = Qr & 65535 | sn << 16, Yt[0] = _n = Xr & 65535 | Kr << 16, Dr = yn, Fr = En, Xr = Fr & 65535, Kr = Fr >>> 16, Qr = Dr & 65535, sn = Dr >>> 16, Dr = Kt[1], Fr = Yt[1], Xr += Fr & 65535, Kr += Fr >>> 16, Qr += Dr & 65535, sn += Dr >>> 16, Kr += Xr >>> 16, Qr += Kr >>> 16, sn += Qr >>> 16, Kt[1] = yn = Qr & 65535 | sn << 16, Yt[1] = En = Xr & 65535 | Kr << 16, Dr = xn, Fr = Mn, Xr = Fr & 65535, Kr = Fr >>> 16, Qr = Dr & 65535, sn = Dr >>> 16, Dr = Kt[2], Fr = Yt[2], Xr += Fr & 65535, Kr += Fr >>> 16, Qr += Dr & 65535, sn += Dr >>> 16, Kr += Xr >>> 16, Qr += Kr >>> 16, sn += Qr >>> 16, Kt[2] = xn = Qr & 65535 | sn << 16, Yt[2] = Mn = Xr & 65535 | Kr << 16, Dr = wn, Fr = Tn, Xr = Fr & 65535, Kr = Fr >>> 16, Qr = Dr & 65535, sn = Dr >>> 16, Dr = Kt[3], Fr = Yt[3], Xr += Fr & 65535, Kr += Fr >>> 16, Qr += Dr & 65535, sn += Dr >>> 16, Kr += Xr >>> 16, Qr += Kr >>> 16, sn += Qr >>> 16, Kt[3] = wn = Qr & 65535 | sn << 16, Yt[3] = Tn = Xr & 65535 | Kr << 16, Dr = Ar, Fr = Bn, Xr = Fr & 65535, Kr = Fr >>> 16, Qr = Dr & 65535, sn = Dr >>> 16, Dr = Kt[4], Fr = Yt[4], Xr += Fr & 65535, Kr += Fr >>> 16, Qr += Dr & 65535, sn += Dr >>> 16, Kr += Xr >>> 16, Qr += Kr >>> 16, sn += Qr >>> 16, Kt[4] = Ar = Qr & 65535 | sn << 16, Yt[4] = Bn = Xr & 65535 | Kr << 16, Dr = Cn, Fr = Rn, Xr = Fr & 65535, Kr = Fr >>> 16, Qr = Dr & 65535, sn = Dr >>> 16, Dr = Kt[5], Fr = Yt[5], Xr += Fr & 65535, Kr += Fr >>> 16, Qr += Dr & 65535, sn += Dr >>> 16, Kr += Xr >>> 16, Qr += Kr >>> 16, sn += Qr >>> 16, Kt[5] = Cn = Qr & 65535 | sn << 16, Yt[5] = Rn = Xr & 65535 | Kr << 16, Dr = Sn, Fr = $n, Xr = Fr & 65535, Kr = Fr >>> 16, Qr = Dr & 65535, sn = Dr >>> 16, Dr = Kt[6], Fr = Yt[6], Xr += Fr & 65535, Kr += Fr >>> 16, Qr += Dr & 65535, sn += Dr >>> 16, Kr += Xr >>> 16, Qr += Kr >>> 16, sn += Qr >>> 16, Kt[6] = Sn = Qr & 65535 | sn << 16, Yt[6] = $n = Xr & 65535 | Kr << 16, Dr = An, Fr = kn, Xr = Fr & 65535, Kr = Fr >>> 16, Qr = Dr & 65535, sn = Dr >>> 16, Dr = Kt[7], Fr = Yt[7], Xr += Fr & 65535, Kr += Fr >>> 16, Qr += Dr & 65535, sn += Dr >>> 16, Kr += Xr >>> 16, Qr += Kr >>> 16, sn += Qr >>> 16, Kt[7] = An = Qr & 65535 | sn << 16, Yt[7] = kn = Xr & 65535 | Kr << 16, In += 128, Ot -= 128;
+            for (nn = 0; nn < 80; nn++) if (yr = vn, hr = yn, Er = xn, zr = wn, Wr = Ar, gn = Cn, Jr = Sn, ln = An, un = _n, mn = En, pn = Mn, fn = Tn, hn = Bn, dn = Rn, tn = $n, an = kn, Dr = An, Or = kn, Xr = Or & 65535, Kr = Or >>> 16, Qr = Dr & 65535, sn = Dr >>> 16, Dr = (Ar >>> 14 | Bn << 18) ^ (Ar >>> 18 | Bn << 14) ^ (Bn >>> 9 | Ar << 23), Or = (Bn >>> 14 | Ar << 18) ^ (Bn >>> 18 | Ar << 14) ^ (Ar >>> 9 | Bn << 23), Xr += Or & 65535, Kr += Or >>> 16, Qr += Dr & 65535, sn += Dr >>> 16, Dr = Ar & Cn ^ ~Ar & Sn, Or = Bn & Rn ^ ~Bn & $n, Xr += Or & 65535, Kr += Or >>> 16, Qr += Dr & 65535, sn += Dr >>> 16, Dr = kr[nn * 2], Or = kr[nn * 2 + 1], Xr += Or & 65535, Kr += Or >>> 16, Qr += Dr & 65535, sn += Dr >>> 16, Dr = Jt[nn % 16], Or = cr[nn % 16], Xr += Or & 65535, Kr += Or >>> 16, Qr += Dr & 65535, sn += Dr >>> 16, Kr += Xr >>> 16, Qr += Kr >>> 16, sn += Qr >>> 16, Yr = Qr & 65535 | sn << 16, rn = Xr & 65535 | Kr << 16, Dr = Yr, Or = rn, Xr = Or & 65535, Kr = Or >>> 16, Qr = Dr & 65535, sn = Dr >>> 16, Dr = (vn >>> 28 | _n << 4) ^ (_n >>> 2 | vn << 30) ^ (_n >>> 7 | vn << 25), Or = (_n >>> 28 | vn << 4) ^ (vn >>> 2 | _n << 30) ^ (vn >>> 7 | _n << 25), Xr += Or & 65535, Kr += Or >>> 16, Qr += Dr & 65535, sn += Dr >>> 16, Dr = vn & yn ^ vn & xn ^ yn & xn, Or = _n & En ^ _n & Mn ^ En & Mn, Xr += Or & 65535, Kr += Or >>> 16, Qr += Dr & 65535, sn += Dr >>> 16, Kr += Xr >>> 16, Qr += Kr >>> 16, sn += Qr >>> 16, ln = Qr & 65535 | sn << 16, an = Xr & 65535 | Kr << 16, Dr = zr, Or = fn, Xr = Or & 65535, Kr = Or >>> 16, Qr = Dr & 65535, sn = Dr >>> 16, Dr = Yr, Or = rn, Xr += Or & 65535, Kr += Or >>> 16, Qr += Dr & 65535, sn += Dr >>> 16, Kr += Xr >>> 16, Qr += Kr >>> 16, sn += Qr >>> 16, zr = Qr & 65535 | sn << 16, fn = Xr & 65535 | Kr << 16, yn = yr, xn = hr, wn = Er, Ar = zr, Cn = Wr, Sn = gn, An = Jr, vn = ln, En = un, Mn = mn, Tn = pn, Bn = fn, Rn = hn, $n = dn, kn = tn, _n = an, nn % 16 === 15) for (Gr = 0; Gr < 16; Gr++) Dr = Jt[Gr], Or = cr[Gr], Xr = Or & 65535, Kr = Or >>> 16, Qr = Dr & 65535, sn = Dr >>> 16, Dr = Jt[(Gr + 9) % 16], Or = cr[(Gr + 9) % 16], Xr += Or & 65535, Kr += Or >>> 16, Qr += Dr & 65535, sn += Dr >>> 16, Yr = Jt[(Gr + 1) % 16], rn = cr[(Gr + 1) % 16], Dr = (Yr >>> 1 | rn << 31) ^ (Yr >>> 8 | rn << 24) ^ Yr >>> 7, Or = (rn >>> 1 | Yr << 31) ^ (rn >>> 8 | Yr << 24) ^ (rn >>> 7 | Yr << 25), Xr += Or & 65535, Kr += Or >>> 16, Qr += Dr & 65535, sn += Dr >>> 16, Yr = Jt[(Gr + 14) % 16], rn = cr[(Gr + 14) % 16], Dr = (Yr >>> 19 | rn << 13) ^ (rn >>> 29 | Yr << 3) ^ Yr >>> 6, Or = (rn >>> 19 | Yr << 13) ^ (Yr >>> 29 | rn << 3) ^ (rn >>> 6 | Yr << 26), Xr += Or & 65535, Kr += Or >>> 16, Qr += Dr & 65535, sn += Dr >>> 16, Kr += Xr >>> 16, Qr += Kr >>> 16, sn += Qr >>> 16, Jt[Gr] = Qr & 65535 | sn << 16, cr[Gr] = Xr & 65535 | Kr << 16;
+            Dr = vn, Or = _n, Xr = Or & 65535, Kr = Or >>> 16, Qr = Dr & 65535, sn = Dr >>> 16, Dr = Kt[0], Or = Yt[0], Xr += Or & 65535, Kr += Or >>> 16, Qr += Dr & 65535, sn += Dr >>> 16, Kr += Xr >>> 16, Qr += Kr >>> 16, sn += Qr >>> 16, Kt[0] = vn = Qr & 65535 | sn << 16, Yt[0] = _n = Xr & 65535 | Kr << 16, Dr = yn, Or = En, Xr = Or & 65535, Kr = Or >>> 16, Qr = Dr & 65535, sn = Dr >>> 16, Dr = Kt[1], Or = Yt[1], Xr += Or & 65535, Kr += Or >>> 16, Qr += Dr & 65535, sn += Dr >>> 16, Kr += Xr >>> 16, Qr += Kr >>> 16, sn += Qr >>> 16, Kt[1] = yn = Qr & 65535 | sn << 16, Yt[1] = En = Xr & 65535 | Kr << 16, Dr = xn, Or = Mn, Xr = Or & 65535, Kr = Or >>> 16, Qr = Dr & 65535, sn = Dr >>> 16, Dr = Kt[2], Or = Yt[2], Xr += Or & 65535, Kr += Or >>> 16, Qr += Dr & 65535, sn += Dr >>> 16, Kr += Xr >>> 16, Qr += Kr >>> 16, sn += Qr >>> 16, Kt[2] = xn = Qr & 65535 | sn << 16, Yt[2] = Mn = Xr & 65535 | Kr << 16, Dr = wn, Or = Tn, Xr = Or & 65535, Kr = Or >>> 16, Qr = Dr & 65535, sn = Dr >>> 16, Dr = Kt[3], Or = Yt[3], Xr += Or & 65535, Kr += Or >>> 16, Qr += Dr & 65535, sn += Dr >>> 16, Kr += Xr >>> 16, Qr += Kr >>> 16, sn += Qr >>> 16, Kt[3] = wn = Qr & 65535 | sn << 16, Yt[3] = Tn = Xr & 65535 | Kr << 16, Dr = Ar, Or = Bn, Xr = Or & 65535, Kr = Or >>> 16, Qr = Dr & 65535, sn = Dr >>> 16, Dr = Kt[4], Or = Yt[4], Xr += Or & 65535, Kr += Or >>> 16, Qr += Dr & 65535, sn += Dr >>> 16, Kr += Xr >>> 16, Qr += Kr >>> 16, sn += Qr >>> 16, Kt[4] = Ar = Qr & 65535 | sn << 16, Yt[4] = Bn = Xr & 65535 | Kr << 16, Dr = Cn, Or = Rn, Xr = Or & 65535, Kr = Or >>> 16, Qr = Dr & 65535, sn = Dr >>> 16, Dr = Kt[5], Or = Yt[5], Xr += Or & 65535, Kr += Or >>> 16, Qr += Dr & 65535, sn += Dr >>> 16, Kr += Xr >>> 16, Qr += Kr >>> 16, sn += Qr >>> 16, Kt[5] = Cn = Qr & 65535 | sn << 16, Yt[5] = Rn = Xr & 65535 | Kr << 16, Dr = Sn, Or = $n, Xr = Or & 65535, Kr = Or >>> 16, Qr = Dr & 65535, sn = Dr >>> 16, Dr = Kt[6], Or = Yt[6], Xr += Or & 65535, Kr += Or >>> 16, Qr += Dr & 65535, sn += Dr >>> 16, Kr += Xr >>> 16, Qr += Kr >>> 16, sn += Qr >>> 16, Kt[6] = Sn = Qr & 65535 | sn << 16, Yt[6] = $n = Xr & 65535 | Kr << 16, Dr = An, Or = kn, Xr = Or & 65535, Kr = Or >>> 16, Qr = Dr & 65535, sn = Dr >>> 16, Dr = Kt[7], Or = Yt[7], Xr += Or & 65535, Kr += Or >>> 16, Qr += Dr & 65535, sn += Dr >>> 16, Kr += Xr >>> 16, Qr += Kr >>> 16, sn += Qr >>> 16, Kt[7] = An = Qr & 65535 | sn << 16, Yt[7] = kn = Xr & 65535 | Kr << 16, In += 128, jt -= 128;
           }
-          return Ot;
+          return jt;
         }
         function gr(Kt, Yt, er) {
-          var Ot = new Int32Array(8), Jt = new Int32Array(8), cr = new Uint8Array(256), yr, hr = er;
-          for (Ot[0] = 1779033703, Ot[1] = 3144134277, Ot[2] = 1013904242, Ot[3] = 2773480762, Ot[4] = 1359893119, Ot[5] = 2600822924, Ot[6] = 528734635, Ot[7] = 1541459225, Jt[0] = 4089235720, Jt[1] = 2227873595, Jt[2] = 4271175723, Jt[3] = 1595750129, Jt[4] = 2917565137, Jt[5] = 725511199, Jt[6] = 4215389547, Jt[7] = 327033209, vr(Ot, Jt, Yt, er), er %= 128, yr = 0; yr < er; yr++) cr[yr] = Yt[hr - er + yr];
-          for (cr[er] = 128, er = 256 - 128 * (er < 112 ? 1 : 0), cr[er - 9] = 0, Mt(cr, er - 8, hr / 536870912 | 0, hr << 3), vr(Ot, Jt, cr, er), yr = 0; yr < 8; yr++) Mt(Kt, 8 * yr, Ot[yr], Jt[yr]);
+          var jt = new Int32Array(8), Jt = new Int32Array(8), cr = new Uint8Array(256), yr, hr = er;
+          for (jt[0] = 1779033703, jt[1] = 3144134277, jt[2] = 1013904242, jt[3] = 2773480762, jt[4] = 1359893119, jt[5] = 2600822924, jt[6] = 528734635, jt[7] = 1541459225, Jt[0] = 4089235720, Jt[1] = 2227873595, Jt[2] = 4271175723, Jt[3] = 1595750129, Jt[4] = 2917565137, Jt[5] = 725511199, Jt[6] = 4215389547, Jt[7] = 327033209, vr(jt, Jt, Yt, er), er %= 128, yr = 0; yr < er; yr++) cr[yr] = Yt[hr - er + yr];
+          for (cr[er] = 128, er = 256 - 128 * (er < 112 ? 1 : 0), cr[er - 9] = 0, Mt(cr, er - 8, hr / 536870912 | 0, hr << 3), vr(jt, Jt, cr, er), yr = 0; yr < 8; yr++) Mt(Kt, 8 * yr, jt[yr], Jt[yr]);
           return 0;
         }
-        function jr(Kt, Yt) {
-          var er = _(), Ot = _(), Jt = _(), cr = _(), yr = _(), hr = _(), Er = _(), zr = _(), Wr = _();
-          Nt(er, Kt[1], Kt[0]), Nt(Wr, Yt[1], Yt[0]), qt(er, er, Wr), St(Ot, Kt[0], Kt[1]), St(Wr, Yt[0], Yt[1]), qt(Ot, Ot, Wr), qt(Jt, Kt[3], Yt[3]), qt(Jt, Jt, yt), qt(cr, Kt[2], Yt[2]), St(cr, cr, cr), Nt(yr, Ot, er), Nt(hr, cr, Jt), St(Er, cr, Jt), St(zr, Ot, er), qt(Kt[0], yr, hr), qt(Kt[1], zr, Er), qt(Kt[2], Er, hr), qt(Kt[3], yr, zr);
+        function Fr(Kt, Yt) {
+          var er = _(), jt = _(), Jt = _(), cr = _(), yr = _(), hr = _(), Er = _(), zr = _(), Wr = _();
+          Nt(er, Kt[1], Kt[0]), Nt(Wr, Yt[1], Yt[0]), qt(er, er, Wr), St(jt, Kt[0], Kt[1]), St(Wr, Yt[0], Yt[1]), qt(jt, jt, Wr), qt(Jt, Kt[3], Yt[3]), qt(Jt, Jt, yt), qt(cr, Kt[2], Yt[2]), St(cr, cr, cr), Nt(yr, jt, er), Nt(hr, cr, Jt), St(Er, cr, Jt), St(zr, jt, er), qt(Kt[0], yr, hr), qt(Kt[1], zr, Er), qt(Kt[2], Er, hr), qt(Kt[3], yr, zr);
         }
         function _r(Kt, Yt, er) {
-          var Ot;
-          for (Ot = 0; Ot < 4; Ot++) vt(Kt[Ot], Yt[Ot], er);
+          var jt;
+          for (jt = 0; jt < 4; jt++) vt(Kt[jt], Yt[jt], er);
         }
         function Tr(Kt, Yt) {
-          var er = _(), Ot = _(), Jt = _();
-          Ut(Jt, Yt[2]), qt(er, Yt[0], Jt), qt(Ot, Yt[1], Jt), at(Kt, Ot), Kt[31] ^= ht(er) << 7;
+          var er = _(), jt = _(), Jt = _();
+          Ut(Jt, Yt[2]), qt(er, Yt[0], Jt), qt(jt, Yt[1], Jt), at(Kt, jt), Kt[31] ^= ht(er) << 7;
         }
         function Ur(Kt, Yt, er) {
-          var Ot, Jt;
-          for (ut(Kt[0], st), ut(Kt[1], dt), ut(Kt[2], dt), ut(Kt[3], st), Jt = 255; Jt >= 0; --Jt) Ot = er[Jt / 8 | 0] >> (Jt & 7) & 1, _r(Kt, Yt, Ot), jr(Yt, Kt), jr(Kt, Kt), _r(Kt, Yt, Ot);
+          var jt, Jt;
+          for (ut(Kt[0], st), ut(Kt[1], dt), ut(Kt[2], dt), ut(Kt[3], st), Jt = 255; Jt >= 0; --Jt) jt = er[Jt / 8 | 0] >> (Jt & 7) & 1, _r(Kt, Yt, jt), Fr(Yt, Kt), Fr(Kt, Kt), _r(Kt, Yt, jt);
         }
         function Cr(Kt, Yt) {
           var er = [
@@ -33387,13 +33387,13 @@ https://github.com/browserify/crypto-browserify`);
           ut(er[0], xt), ut(er[1], _t), ut(er[2], dt), qt(er[3], xt, _t), Ur(Kt, er, Yt);
         }
         function lr(Kt, Yt, er) {
-          var Ot = new Uint8Array(64), Jt = [
+          var jt = new Uint8Array(64), Jt = [
             _(),
             _(),
             _(),
             _()
           ], cr;
-          for (er || $(Yt, 32), gr(Ot, Yt, 32), Ot[0] &= 248, Ot[31] &= 127, Ot[31] |= 64, Cr(Jt, Ot), Tr(Kt, Jt), cr = 0; cr < 32; cr++) Yt[cr + 32] = Kt[cr];
+          for (er || $(Yt, 32), gr(jt, Yt, 32), jt[0] &= 248, jt[31] &= 127, jt[31] |= 64, Cr(Jt, jt), Tr(Kt, Jt), cr = 0; cr < 32; cr++) Yt[cr + 32] = Kt[cr];
           return 0;
         }
         var rr = new Float64Array([
@@ -33431,14 +33431,14 @@ https://github.com/browserify/crypto-browserify`);
           16
         ]);
         function nr(Kt, Yt) {
-          var er, Ot, Jt, cr;
-          for (Ot = 63; Ot >= 32; --Ot) {
-            for (er = 0, Jt = Ot - 32, cr = Ot - 12; Jt < cr; ++Jt) Yt[Jt] += er - 16 * Yt[Ot] * rr[Jt - (Ot - 32)], er = Math.floor((Yt[Jt] + 128) / 256), Yt[Jt] -= er * 256;
-            Yt[Jt] += er, Yt[Ot] = 0;
+          var er, jt, Jt, cr;
+          for (jt = 63; jt >= 32; --jt) {
+            for (er = 0, Jt = jt - 32, cr = jt - 12; Jt < cr; ++Jt) Yt[Jt] += er - 16 * Yt[jt] * rr[Jt - (jt - 32)], er = Math.floor((Yt[Jt] + 128) / 256), Yt[Jt] -= er * 256;
+            Yt[Jt] += er, Yt[jt] = 0;
           }
           for (er = 0, Jt = 0; Jt < 32; Jt++) Yt[Jt] += er - (Yt[31] >> 4) * rr[Jt], er = Yt[Jt] >> 8, Yt[Jt] &= 255;
           for (Jt = 0; Jt < 32; Jt++) Yt[Jt] -= er * rr[Jt];
-          for (Ot = 0; Ot < 32; Ot++) Yt[Ot + 1] += Yt[Ot] >> 8, Kt[Ot] = Yt[Ot] & 255;
+          for (jt = 0; jt < 32; jt++) Yt[jt + 1] += Yt[jt] >> 8, Kt[jt] = Yt[jt] & 255;
         }
         function ar(Kt) {
           var Yt = new Float64Array(64), er;
@@ -33446,28 +33446,28 @@ https://github.com/browserify/crypto-browserify`);
           for (er = 0; er < 64; er++) Kt[er] = 0;
           nr(Kt, Yt);
         }
-        function pr(Kt, Yt, er, Ot) {
+        function pr(Kt, Yt, er, jt) {
           var Jt = new Uint8Array(64), cr = new Uint8Array(64), yr = new Uint8Array(64), hr, Er, zr = new Float64Array(64), Wr = [
             _(),
             _(),
             _(),
             _()
           ];
-          gr(Jt, Ot, 32), Jt[0] &= 248, Jt[31] &= 127, Jt[31] |= 64;
+          gr(Jt, jt, 32), Jt[0] &= 248, Jt[31] &= 127, Jt[31] |= 64;
           var gn = er + 64;
           for (hr = 0; hr < er; hr++) Kt[64 + hr] = Yt[hr];
           for (hr = 0; hr < 32; hr++) Kt[32 + hr] = Jt[32 + hr];
-          for (gr(yr, Kt.subarray(32), er + 32), ar(yr), Cr(Wr, yr), Tr(Kt, Wr), hr = 32; hr < 64; hr++) Kt[hr] = Ot[hr];
+          for (gr(yr, Kt.subarray(32), er + 32), ar(yr), Cr(Wr, yr), Tr(Kt, Wr), hr = 32; hr < 64; hr++) Kt[hr] = jt[hr];
           for (gr(cr, Kt, er + 64), ar(cr), hr = 0; hr < 64; hr++) zr[hr] = 0;
           for (hr = 0; hr < 32; hr++) zr[hr] = yr[hr];
           for (hr = 0; hr < 32; hr++) for (Er = 0; Er < 32; Er++) zr[hr + Er] += cr[hr] * Jt[Er];
           return nr(Kt.subarray(32), zr), gn;
         }
         function Pt(Kt, Yt) {
-          var er = _(), Ot = _(), Jt = _(), cr = _(), yr = _(), hr = _(), Er = _();
-          return ut(Kt[2], dt), wt(Kt[1], Yt), Zt(Jt, Kt[1]), qt(cr, Jt, bt), Nt(Jt, Jt, Kt[2]), St(cr, Kt[2], cr), Zt(yr, cr), Zt(hr, yr), qt(Er, hr, yr), qt(er, Er, Jt), qt(er, er, cr), Lt(er, er), qt(er, er, Jt), qt(er, er, cr), qt(er, er, cr), qt(Kt[0], er, cr), Zt(Ot, Kt[0]), qt(Ot, Ot, cr), it(Ot, Jt) && qt(Kt[0], Kt[0], Ct), Zt(Ot, Kt[0]), qt(Ot, Ot, cr), it(Ot, Jt) ? -1 : (ht(Kt[0]) === Yt[31] >> 7 && Nt(Kt[0], st, Kt[0]), qt(Kt[3], Kt[0], Kt[1]), 0);
+          var er = _(), jt = _(), Jt = _(), cr = _(), yr = _(), hr = _(), Er = _();
+          return ut(Kt[2], dt), wt(Kt[1], Yt), Zt(Jt, Kt[1]), qt(cr, Jt, bt), Nt(Jt, Jt, Kt[2]), St(cr, Kt[2], cr), Zt(yr, cr), Zt(hr, yr), qt(Er, hr, yr), qt(er, Er, Jt), qt(er, er, cr), Lt(er, er), qt(er, er, Jt), qt(er, er, cr), qt(er, er, cr), qt(Kt[0], er, cr), Zt(jt, Kt[0]), qt(jt, jt, cr), it(jt, Jt) && qt(Kt[0], Kt[0], Ct), Zt(jt, Kt[0]), qt(jt, jt, cr), it(jt, Jt) ? -1 : (ht(Kt[0]) === Yt[31] >> 7 && Nt(Kt[0], st, Kt[0]), qt(Kt[3], Kt[0], Kt[1]), 0);
         }
-        function It(Kt, Yt, er, Ot) {
+        function It(Kt, Yt, er, jt) {
           var Jt, cr = new Uint8Array(32), yr = new Uint8Array(64), hr = [
             _(),
             _(),
@@ -33479,17 +33479,17 @@ https://github.com/browserify/crypto-browserify`);
             _(),
             _()
           ];
-          if (er < 64 || Pt(Er, Ot)) return -1;
+          if (er < 64 || Pt(Er, jt)) return -1;
           for (Jt = 0; Jt < er; Jt++) Kt[Jt] = Yt[Jt];
-          for (Jt = 0; Jt < 32; Jt++) Kt[Jt + 32] = Ot[Jt];
-          if (gr(yr, Kt, er), ar(yr), Ur(hr, Er, yr), Cr(Er, Yt.subarray(32)), jr(hr, Er), Tr(cr, hr), er -= 64, At(Yt, 0, cr, 0)) {
+          for (Jt = 0; Jt < 32; Jt++) Kt[Jt + 32] = jt[Jt];
+          if (gr(yr, Kt, er), ar(yr), Ur(hr, Er, yr), Cr(Er, Yt.subarray(32)), Fr(hr, Er), Tr(cr, hr), er -= 64, At(Yt, 0, cr, 0)) {
             for (Jt = 0; Jt < er; Jt++) Kt[Jt] = 0;
             return -1;
           }
           for (Jt = 0; Jt < er; Jt++) Kt[Jt] = Yt[Jt + 64];
           return er;
         }
-        var Dt = 32, Vt = 24, ir = 32, ur = 16, or = 32, wr = 32, Ir = 32, fr = 32, $r = 32, Pr = Vt, Mr = ir, Nr = ur, Vr = 64, Sr = 32, Or = 64, Hr = 32, Rr = 64;
+        var Dt = 32, Vt = 24, ir = 32, ur = 16, or = 32, wr = 32, Ir = 32, fr = 32, $r = 32, Pr = Vt, Mr = ir, Nr = ur, Vr = 64, Sr = 32, jr = 64, Hr = 32, Rr = 64;
         b.lowlevel = {
           crypto_core_hsalsa20: Ft,
           crypto_stream_xor: kt,
@@ -33527,7 +33527,7 @@ https://github.com/browserify/crypto-browserify`);
           crypto_box_BOXZEROBYTES: Nr,
           crypto_sign_BYTES: Vr,
           crypto_sign_PUBLICKEYBYTES: Sr,
-          crypto_sign_SECRETKEYBYTES: Or,
+          crypto_sign_SECRETKEYBYTES: jr,
           crypto_sign_SEEDBYTES: Hr,
           crypto_hash_BYTES: Rr,
           gf: _,
@@ -33540,7 +33540,7 @@ https://github.com/browserify/crypto-browserify`);
           S: Zt,
           Z: Nt,
           pow2523: Lt,
-          add: jr,
+          add: Fr,
           set25519: ut,
           modL: nr,
           scalarmult: Ur,
@@ -33565,12 +33565,12 @@ https://github.com/browserify/crypto-browserify`);
           return $(Yt, Kt), Yt;
         }, b.secretbox = function(Kt, Yt, er) {
           Br(Kt, Yt, er), Lr(er, Yt);
-          for (var Ot = new Uint8Array(ir + Kt.length), Jt = new Uint8Array(Ot.length), cr = 0; cr < Kt.length; cr++) Ot[cr + ir] = Kt[cr];
-          return nt(Jt, Ot, Ot.length, Yt, er), Jt.subarray(ur);
+          for (var jt = new Uint8Array(ir + Kt.length), Jt = new Uint8Array(jt.length), cr = 0; cr < Kt.length; cr++) jt[cr + ir] = Kt[cr];
+          return nt(Jt, jt, jt.length, Yt, er), Jt.subarray(ur);
         }, b.secretbox.open = function(Kt, Yt, er) {
           Br(Kt, Yt, er), Lr(er, Yt);
-          for (var Ot = new Uint8Array(ur + Kt.length), Jt = new Uint8Array(Ot.length), cr = 0; cr < Kt.length; cr++) Ot[cr + ur] = Kt[cr];
-          return Ot.length < 32 || ot(Jt, Ot, Ot.length, Yt, er) !== 0 ? null : Jt.subarray(ir);
+          for (var jt = new Uint8Array(ur + Kt.length), Jt = new Uint8Array(jt.length), cr = 0; cr < Kt.length; cr++) jt[cr + ur] = Kt[cr];
+          return jt.length < 32 || ot(Jt, jt, jt.length, Yt, er) !== 0 ? null : Jt.subarray(ir);
         }, b.secretbox.keyLength = Dt, b.secretbox.nonceLength = Vt, b.secretbox.overheadLength = ur, b.scalarMult = function(Kt, Yt) {
           if (Br(Kt, Yt), Kt.length !== wr) throw new Error("bad n size");
           if (Yt.length !== or) throw new Error("bad p size");
@@ -33580,15 +33580,15 @@ https://github.com/browserify/crypto-browserify`);
           if (Br(Kt), Kt.length !== wr) throw new Error("bad n size");
           var Yt = new Uint8Array(or);
           return tr(Yt, Kt), Yt;
-        }, b.scalarMult.scalarLength = wr, b.scalarMult.groupElementLength = or, b.box = function(Kt, Yt, er, Ot) {
-          var Jt = b.box.before(er, Ot);
+        }, b.scalarMult.scalarLength = wr, b.scalarMult.groupElementLength = or, b.box = function(Kt, Yt, er, jt) {
+          var Jt = b.box.before(er, jt);
           return b.secretbox(Kt, Yt, Jt);
         }, b.box.before = function(Kt, Yt) {
           Br(Kt, Yt), Zr(Kt, Yt);
           var er = new Uint8Array($r);
           return zt(er, Kt, Yt), er;
-        }, b.box.after = b.secretbox, b.box.open = function(Kt, Yt, er, Ot) {
-          var Jt = b.box.before(er, Ot);
+        }, b.box.after = b.secretbox, b.box.open = function(Kt, Yt, er, jt) {
+          var Jt = b.box.before(er, jt);
           return b.secretbox.open(Kt, Yt, Jt);
         }, b.box.open.after = b.secretbox.open, b.box.keyPair = function() {
           var Kt = new Uint8Array(Ir), Yt = new Uint8Array(fr);
@@ -33604,33 +33604,33 @@ https://github.com/browserify/crypto-browserify`);
             secretKey: new Uint8Array(Kt)
           };
         }, b.box.publicKeyLength = Ir, b.box.secretKeyLength = fr, b.box.sharedKeyLength = $r, b.box.nonceLength = Pr, b.box.overheadLength = b.secretbox.overheadLength, b.sign = function(Kt, Yt) {
-          if (Br(Kt, Yt), Yt.length !== Or) throw new Error("bad secret key size");
+          if (Br(Kt, Yt), Yt.length !== jr) throw new Error("bad secret key size");
           var er = new Uint8Array(Vr + Kt.length);
           return pr(er, Kt, Kt.length, Yt), er;
         }, b.sign.open = function(Kt, Yt) {
           if (Br(Kt, Yt), Yt.length !== Sr) throw new Error("bad public key size");
-          var er = new Uint8Array(Kt.length), Ot = It(er, Kt, Kt.length, Yt);
-          if (Ot < 0) return null;
-          for (var Jt = new Uint8Array(Ot), cr = 0; cr < Jt.length; cr++) Jt[cr] = er[cr];
+          var er = new Uint8Array(Kt.length), jt = It(er, Kt, Kt.length, Yt);
+          if (jt < 0) return null;
+          for (var Jt = new Uint8Array(jt), cr = 0; cr < Jt.length; cr++) Jt[cr] = er[cr];
           return Jt;
         }, b.sign.detached = function(Kt, Yt) {
-          for (var er = b.sign(Kt, Yt), Ot = new Uint8Array(Vr), Jt = 0; Jt < Ot.length; Jt++) Ot[Jt] = er[Jt];
-          return Ot;
+          for (var er = b.sign(Kt, Yt), jt = new Uint8Array(Vr), Jt = 0; Jt < jt.length; Jt++) jt[Jt] = er[Jt];
+          return jt;
         }, b.sign.detached.verify = function(Kt, Yt, er) {
           if (Br(Kt, Yt, er), Yt.length !== Vr) throw new Error("bad signature size");
           if (er.length !== Sr) throw new Error("bad public key size");
-          var Ot = new Uint8Array(Vr + Kt.length), Jt = new Uint8Array(Vr + Kt.length), cr;
-          for (cr = 0; cr < Vr; cr++) Ot[cr] = Yt[cr];
-          for (cr = 0; cr < Kt.length; cr++) Ot[cr + Vr] = Kt[cr];
-          return It(Jt, Ot, Ot.length, er) >= 0;
+          var jt = new Uint8Array(Vr + Kt.length), Jt = new Uint8Array(Vr + Kt.length), cr;
+          for (cr = 0; cr < Vr; cr++) jt[cr] = Yt[cr];
+          for (cr = 0; cr < Kt.length; cr++) jt[cr + Vr] = Kt[cr];
+          return It(Jt, jt, jt.length, er) >= 0;
         }, b.sign.keyPair = function() {
-          var Kt = new Uint8Array(Sr), Yt = new Uint8Array(Or);
+          var Kt = new Uint8Array(Sr), Yt = new Uint8Array(jr);
           return lr(Kt, Yt), {
             publicKey: Kt,
             secretKey: Yt
           };
         }, b.sign.keyPair.fromSecretKey = function(Kt) {
-          if (Br(Kt), Kt.length !== Or) throw new Error("bad secret key size");
+          if (Br(Kt), Kt.length !== jr) throw new Error("bad secret key size");
           for (var Yt = new Uint8Array(Sr), er = 0; er < Yt.length; er++) Yt[er] = Kt[32 + er];
           return {
             publicKey: Yt,
@@ -33638,12 +33638,12 @@ https://github.com/browserify/crypto-browserify`);
           };
         }, b.sign.keyPair.fromSeed = function(Kt) {
           if (Br(Kt), Kt.length !== Hr) throw new Error("bad seed size");
-          for (var Yt = new Uint8Array(Sr), er = new Uint8Array(Or), Ot = 0; Ot < 32; Ot++) er[Ot] = Kt[Ot];
+          for (var Yt = new Uint8Array(Sr), er = new Uint8Array(jr), jt = 0; jt < 32; jt++) er[jt] = Kt[jt];
           return lr(Yt, er, true), {
             publicKey: Yt,
             secretKey: er
           };
-        }, b.sign.publicKeyLength = Sr, b.sign.secretKeyLength = Or, b.sign.seedLength = Hr, b.sign.signatureLength = Vr, b.hash = function(Kt) {
+        }, b.sign.publicKeyLength = Sr, b.sign.secretKeyLength = jr, b.sign.seedLength = Hr, b.sign.signatureLength = Vr, b.hash = function(Kt) {
           Br(Kt);
           var Yt = new Uint8Array(Rr);
           return gr(Yt, Kt, Kt.length), Yt;
@@ -33655,15 +33655,15 @@ https://github.com/browserify/crypto-browserify`);
           var Kt = typeof self < "u" ? self.crypto || self.msCrypto : null;
           if (Kt && Kt.getRandomValues) {
             var Yt = 65536;
-            b.setPRNG(function(er, Ot) {
-              var Jt, cr = new Uint8Array(Ot);
-              for (Jt = 0; Jt < Ot; Jt += Yt) Kt.getRandomValues(cr.subarray(Jt, Jt + Math.min(Ot - Jt, Yt)));
-              for (Jt = 0; Jt < Ot; Jt++) er[Jt] = cr[Jt];
+            b.setPRNG(function(er, jt) {
+              var Jt, cr = new Uint8Array(jt);
+              for (Jt = 0; Jt < jt; Jt += Yt) Kt.getRandomValues(cr.subarray(Jt, Jt + Math.min(jt - Jt, Yt)));
+              for (Jt = 0; Jt < jt; Jt++) er[Jt] = cr[Jt];
               qr(cr);
             });
-          } else typeof commonjsRequire < "u" && (Kt = requireCryptoBrowserify(), Kt && Kt.randomBytes && b.setPRNG(function(er, Ot) {
-            var Jt, cr = Kt.randomBytes(Ot);
-            for (Jt = 0; Jt < Ot; Jt++) er[Jt] = cr[Jt];
+          } else typeof commonjsRequire < "u" && (Kt = requireCryptoBrowserify(), Kt && Kt.randomBytes && b.setPRNG(function(er, jt) {
+            var Jt, cr = Kt.randomBytes(jt);
+            for (Jt = 0; Jt < jt; Jt++) er[Jt] = cr[Jt];
             qr(cr);
           }));
         }();
@@ -35957,7 +35957,7 @@ https://github.com/browserify/crypto-browserify`);
     };
     (function(d, b) {
       (function(_, $) {
-        var rt = "1.0.40", j = "", st = "?", dt = "function", pt = "undefined", bt = "object", yt = "string", xt = "major", _t = "model", Ct = "name", Mt = "type", Et = "vendor", Rt = "version", At = "architecture", Bt = "console", $t = "mobile", Tt = "tablet", Ft = "smarttv", jt = "wearable", Xt = "embedded", Qt = 500, Wt = "Amazon", kt = "Apple", ct = "ASUS", et = "BlackBerry", tt = "Browser", nt = "Chrome", ot = "Edge", ut = "Firefox", mt = "Google", vt = "Huawei", at = "LG", it = "Microsoft", ht = "Motorola", wt = "Opera", St = "Samsung", Nt = "Sharp", qt = "Sony", Zt = "Xiaomi", Ut = "Zebra", Lt = "Facebook", Ht = "Chromium OS", tr = "Mac OS", Gt = " Browser", zt = function(rr, nr) {
+        var rt = "1.0.40", j = "", st = "?", dt = "function", pt = "undefined", bt = "object", yt = "string", xt = "major", _t = "model", Ct = "name", Mt = "type", Et = "vendor", Rt = "version", At = "architecture", Bt = "console", $t = "mobile", Tt = "tablet", Ft = "smarttv", Ot = "wearable", Xt = "embedded", Qt = 500, Wt = "Amazon", kt = "Apple", ct = "ASUS", et = "BlackBerry", tt = "Browser", nt = "Chrome", ot = "Edge", ut = "Firefox", mt = "Google", vt = "Huawei", at = "LG", it = "Microsoft", ht = "Motorola", wt = "Opera", St = "Samsung", Nt = "Sharp", qt = "Sony", Zt = "Xiaomi", Ut = "Zebra", Lt = "Facebook", Ht = "Chromium OS", tr = "Mac OS", Gt = " Browser", zt = function(rr, nr) {
           var ar = {};
           for (var pr in rr) nr[pr] && nr[pr].length % 2 === 0 ? ar[pr] = nr[pr].concat(rr[pr]) : ar[pr] = rr[pr];
           return ar;
@@ -35983,7 +35983,7 @@ https://github.com/browserify/crypto-browserify`);
             for (var pr = 0; pr < nr[ar].length; pr++) if (br(nr[ar][pr], rr)) return ar === st ? $ : ar;
           } else if (br(nr[ar], rr)) return ar === st ? $ : ar;
           return nr.hasOwnProperty("*") ? nr["*"] : rr;
-        }, jr = {
+        }, Fr = {
           "1.0": "/8",
           "1.2": "/1",
           "1.3": "/3",
@@ -36459,7 +36459,7 @@ https://github.com/browserify/crypto-browserify`);
               [
                 Rt,
                 gr,
-                jr
+                Fr
               ]
             ],
             [
@@ -37928,7 +37928,7 @@ https://github.com/browserify/crypto-browserify`);
               ],
               [
                 Mt,
-                jt
+                Ot
               ]
             ],
             [
@@ -37939,7 +37939,7 @@ https://github.com/browserify/crypto-browserify`);
               _t,
               [
                 Mt,
-                jt
+                Ot
               ]
             ],
             [
@@ -37953,7 +37953,7 @@ https://github.com/browserify/crypto-browserify`);
               ],
               [
                 Mt,
-                jt
+                Ot
               ]
             ],
             [
@@ -37967,7 +37967,7 @@ https://github.com/browserify/crypto-browserify`);
               ],
               [
                 Mt,
-                jt
+                Ot
               ]
             ],
             [
@@ -37981,7 +37981,7 @@ https://github.com/browserify/crypto-browserify`);
               ],
               [
                 Mt,
-                jt
+                Ot
               ]
             ],
             [
@@ -37995,7 +37995,7 @@ https://github.com/browserify/crypto-browserify`);
               ],
               [
                 Mt,
-                jt
+                Ot
               ]
             ],
             [
@@ -38006,7 +38006,7 @@ https://github.com/browserify/crypto-browserify`);
               _t,
               [
                 Mt,
-                jt
+                Ot
               ]
             ],
             [
@@ -38020,7 +38020,7 @@ https://github.com/browserify/crypto-browserify`);
               ],
               [
                 Mt,
-                jt
+                Ot
               ]
             ],
             [
@@ -38385,7 +38385,7 @@ https://github.com/browserify/crypto-browserify`);
           $t,
           Ft,
           Tt,
-          jt,
+          Ot,
           Xt
         ]), Ur.ENGINE = Ur.OS = sr([
           Ct,
@@ -38606,9 +38606,9 @@ https://github.com/browserify/crypto-browserify`);
       function Ft(Wt, kt, ct, et) {
         return st === Wt && (st = null, yt = true, (Wt === dt || kt === dt) && j.onHydrated && queueMicrotask(() => j.onHydrated(et, {
           value: kt
-        })), dt = NO_INIT, jt(kt, ct)), kt;
+        })), dt = NO_INIT, Ot(kt, ct)), kt;
       }
-      function jt(Wt, kt) {
+      function Ot(Wt, kt) {
         runUpdates(() => {
           kt === void 0 && Mt(() => Wt), Tt(kt !== void 0 ? "errored" : "ready"), Rt(kt);
           for (const ct of _t.keys()) ct.decrement();
@@ -38908,7 +38908,7 @@ https://github.com/browserify/crypto-browserify`);
           let _t = pt.length, Ct, Mt, Et, Rt, At, Bt, $t, Tt, Ft;
           if (_t === 0) st !== 0 && (dispose(j), j = [], $ = [], rt = [], st = 0, dt && (dt = [])), _.fallback && ($ = [
             FALLBACK
-          ], rt[0] = createRoot((jt) => (j[0] = jt, _.fallback())), st = 1);
+          ], rt[0] = createRoot((Ot) => (j[0] = Ot, _.fallback())), st = 1);
           else if (st === 0) {
             for (rt = new Array(_t), yt = 0; yt < _t; yt++) $[yt] = pt[yt], rt[yt] = createRoot(xt);
             st = _t;
@@ -40748,25 +40748,25 @@ https://github.com/browserify/crypto-browserify`);
       function Et(At, Bt) {
         if (!_ || d.appear) {
           let $t = function(Xt) {
-            At && (!Xt || Xt.target === At) && (At.removeEventListener("transitionend", $t), At.removeEventListener("animationend", $t), At.classList.remove(...Ft), At.classList.remove(...jt), batch(() => {
+            At && (!Xt || Xt.target === At) && (At.removeEventListener("transitionend", $t), At.removeEventListener("animationend", $t), At.classList.remove(...Ft), At.classList.remove(...Ot), batch(() => {
               $() !== At && rt(At), j() === At && st(void 0);
             }), yt && yt(At), d.mode === "inout" && Rt(At, Bt));
           };
-          const Tt = Mt().enterClass.split(" "), Ft = Mt().enterActiveClass.split(" "), jt = Mt().enterToClass.split(" ");
+          const Tt = Mt().enterClass.split(" "), Ft = Mt().enterActiveClass.split(" "), Ot = Mt().enterToClass.split(" ");
           pt && pt(At), At.classList.add(...Tt), At.classList.add(...Ft), nextFrame(() => {
-            At.classList.remove(...Tt), At.classList.add(...jt), bt && bt(At, () => $t()), (!bt || bt.length < 2) && (At.addEventListener("transitionend", $t), At.addEventListener("animationend", $t));
+            At.classList.remove(...Tt), At.classList.add(...Ot), bt && bt(At, () => $t()), (!bt || bt.length < 2) && (At.addEventListener("transitionend", $t), At.addEventListener("animationend", $t));
           });
         }
         Bt && !d.mode ? st(At) : rt(At);
       }
       function Rt(At, Bt) {
         const $t = Mt().exitClass.split(" "), Tt = Mt().exitActiveClass.split(" "), Ft = Mt().exitToClass.split(" ");
-        if (!Bt.parentNode) return jt();
+        if (!Bt.parentNode) return Ot();
         xt && xt(Bt), Bt.classList.add(...$t), Bt.classList.add(...Tt), nextFrame(() => {
           Bt.classList.remove(...$t), Bt.classList.add(...Ft);
-        }), _t && _t(Bt, () => jt()), (!_t || _t.length < 2) && (Bt.addEventListener("transitionend", jt), Bt.addEventListener("animationend", jt));
-        function jt(Xt) {
-          (!Xt || Xt.target === Bt) && (Bt.removeEventListener("transitionend", jt), Bt.removeEventListener("animationend", jt), Bt.classList.remove(...Tt), Bt.classList.remove(...Ft), $() === Bt && rt(void 0), Ct && Ct(Bt), d.mode === "outin" && Et(At, Bt));
+        }), _t && _t(Bt, () => Ot()), (!_t || _t.length < 2) && (Bt.addEventListener("transitionend", Ot), Bt.addEventListener("animationend", Ot));
+        function Ot(Xt) {
+          (!Xt || Xt.target === Bt) && (Bt.removeEventListener("transitionend", Ot), Bt.removeEventListener("animationend", Ot), Bt.classList.remove(...Tt), Bt.classList.remove(...Ft), $() === Bt && rt(void 0), Ct && Ct(Bt), d.mode === "outin" && Et(At, Bt));
         }
       }
       return createComputed((At) => {
@@ -40805,7 +40805,7 @@ https://github.com/browserify/crypto-browserify`);
       return createComputed(() => {
         const Ct = b(), Mt = [
           ...Ct
-        ], Et = new Set(Ct), Rt = new Set(xt), At = _().enterClass.split(" "), Bt = _().enterActiveClass.split(" "), $t = _().enterToClass.split(" "), Tt = _().exitClass.split(" "), Ft = _().exitActiveClass.split(" "), jt = _().exitToClass.split(" ");
+        ], Et = new Set(Ct), Rt = new Set(xt), At = _().enterClass.split(" "), Bt = _().enterActiveClass.split(" "), $t = _().enterToClass.split(" "), Tt = _().exitClass.split(" "), Ft = _().exitActiveClass.split(" "), Ot = _().exitToClass.split(" ");
         for (let Xt = 0; Xt < Ct.length; Xt++) {
           const Qt = Ct[Xt];
           if (!_t && !Rt.has(Qt)) {
@@ -40821,10 +40821,10 @@ https://github.com/browserify/crypto-browserify`);
           const Qt = xt[Xt];
           if (!Et.has(Qt) && Qt.parentNode) {
             let Wt = function(kt) {
-              (!kt || kt.target === Qt) && (Qt.removeEventListener("transitionend", Wt), Qt.removeEventListener("animationend", Wt), Qt.classList.remove(...Ft), Qt.classList.remove(...jt), pt && pt(Qt), xt = xt.filter((ct) => ct !== Qt), yt(xt));
+              (!kt || kt.target === Qt) && (Qt.removeEventListener("transitionend", Wt), Qt.removeEventListener("animationend", Wt), Qt.classList.remove(...Ft), Qt.classList.remove(...Ot), pt && pt(Qt), xt = xt.filter((ct) => ct !== Qt), yt(xt));
             };
             Mt.splice(Xt, 0, Qt), st && st(Qt), Qt.classList.add(...Tt), Qt.classList.add(...Ft), nextFrame(() => {
-              Qt.classList.remove(...Tt), Qt.classList.add(...jt);
+              Qt.classList.remove(...Tt), Qt.classList.add(...Ot);
             }), dt && dt(Qt, () => Wt()), (!dt || dt.length < 2) && (Qt.addEventListener("transitionend", Wt), Qt.addEventListener("animationend", Wt));
           }
         }
@@ -41466,8 +41466,8 @@ https://github.com/browserify/crypto-browserify`);
     };
     (function(d, b) {
       var _ = function() {
-        var $ = function(Ft, jt) {
-          var Xt = 236, Qt = 17, Wt = Ft, kt = j[jt], ct = null, et = 0, tt = null, nt = [], ot = {}, ut = function(Lt, Ht) {
+        var $ = function(Ft, Ot) {
+          var Xt = 236, Qt = 17, Wt = Ft, kt = j[Ot], ct = null, et = 0, tt = null, nt = [], ot = {}, ut = function(Lt, Ht) {
             et = Wt * 4 + 17, ct = function(tr) {
               for (var Gt = new Array(tr), zt = 0; zt < tr; zt += 1) {
                 Gt[zt] = new Array(tr);
@@ -41530,7 +41530,7 @@ https://github.com/browserify/crypto-browserify`);
               Gt = Math.max(Gt, xr), zt = Math.max(zt, kr), sr[dr] = new Array(xr);
               for (var vr = 0; vr < sr[dr].length; vr += 1) sr[dr][vr] = 255 & Lt.getBuffer()[vr + tr];
               tr += xr;
-              var gr = dt.getErrorCorrectPolynomial(kr), jr = bt(sr[dr], gr.getLength() - 1), _r = jr.mod(gr);
+              var gr = dt.getErrorCorrectPolynomial(kr), Fr = bt(sr[dr], gr.getLength() - 1), _r = Fr.mod(gr);
               br[dr] = new Array(gr.getLength() - 1);
               for (var vr = 0; vr < br[dr].length; vr += 1) {
                 var Tr = vr + _r.getLength() - br[dr].length;
@@ -41662,21 +41662,21 @@ https://github.com/browserify/crypto-browserify`);
               "\u2588 ": "\u2580",
               " \u2588": " ",
               "  ": " "
-            }, jr = "";
+            }, Fr = "";
             for (sr = 0; sr < tr; sr += 2) {
-              for (dr = Math.floor((sr - Gt) / Ht), xr = Math.floor((sr + 1 - Gt) / Ht), br = 0; br < tr; br += 1) kr = "\u2588", Gt <= br && br < zt && Gt <= sr && sr < zt && ot.isDark(dr, Math.floor((br - Gt) / Ht)) && (kr = " "), Gt <= br && br < zt && Gt <= sr + 1 && sr + 1 < zt && ot.isDark(xr, Math.floor((br - Gt) / Ht)) ? kr += " " : kr += "\u2588", jr += Lt < 1 && sr + 1 >= zt ? gr[kr] : vr[kr];
-              jr += `
+              for (dr = Math.floor((sr - Gt) / Ht), xr = Math.floor((sr + 1 - Gt) / Ht), br = 0; br < tr; br += 1) kr = "\u2588", Gt <= br && br < zt && Gt <= sr && sr < zt && ot.isDark(dr, Math.floor((br - Gt) / Ht)) && (kr = " "), Gt <= br && br < zt && Gt <= sr + 1 && sr + 1 < zt && ot.isDark(xr, Math.floor((br - Gt) / Ht)) ? kr += " " : kr += "\u2588", Fr += Lt < 1 && sr + 1 >= zt ? gr[kr] : vr[kr];
+              Fr += `
 `;
             }
-            return tr % 2 && Lt > 0 ? jr.substring(0, jr.length - tr - 1) + Array(tr + 1).join("\u2580") : jr.substring(0, jr.length - 1);
+            return tr % 2 && Lt > 0 ? Fr.substring(0, Fr.length - tr - 1) + Array(tr + 1).join("\u2580") : Fr.substring(0, Fr.length - 1);
           };
           return ot.createASCII = function(Lt, Ht) {
             if (Lt = Lt || 1, Lt < 2) return Ut(Ht);
             Lt -= 1, Ht = typeof Ht > "u" ? Lt * 2 : Ht;
-            var tr = ot.getModuleCount() * Lt + Ht * 2, Gt = Ht, zt = tr - Ht, sr, br, dr, xr, kr = Array(Lt + 1).join("\u2588\u2588"), vr = Array(Lt + 1).join("  "), gr = "", jr = "";
+            var tr = ot.getModuleCount() * Lt + Ht * 2, Gt = Ht, zt = tr - Ht, sr, br, dr, xr, kr = Array(Lt + 1).join("\u2588\u2588"), vr = Array(Lt + 1).join("  "), gr = "", Fr = "";
             for (sr = 0; sr < tr; sr += 1) {
-              for (dr = Math.floor((sr - Gt) / Lt), jr = "", br = 0; br < tr; br += 1) xr = 1, Gt <= br && br < zt && Gt <= sr && sr < zt && ot.isDark(dr, Math.floor((br - Gt) / Lt)) && (xr = 0), jr += xr ? kr : vr;
-              for (dr = 0; dr < Lt; dr += 1) gr += jr + `
+              for (dr = Math.floor((sr - Gt) / Lt), Fr = "", br = 0; br < tr; br += 1) xr = 1, Gt <= br && br < zt && Gt <= sr && sr < zt && ot.isDark(dr, Math.floor((br - Gt) / Lt)) && (xr = 0), Fr += xr ? kr : vr;
+              for (dr = 0; dr < Lt; dr += 1) gr += Fr + `
 `;
             }
             return gr.substring(0, gr.length - 1);
@@ -41687,13 +41687,13 @@ https://github.com/browserify/crypto-browserify`);
         };
         $.stringToBytesFuncs = {
           default: function(Ft) {
-            for (var jt = [], Xt = 0; Xt < Ft.length; Xt += 1) {
+            for (var Ot = [], Xt = 0; Xt < Ft.length; Xt += 1) {
               var Qt = Ft.charCodeAt(Xt);
-              jt.push(Qt & 255);
+              Ot.push(Qt & 255);
             }
-            return jt;
+            return Ot;
           }
-        }, $.stringToBytes = $.stringToBytesFuncs.default, $.createStringToBytes = function(Ft, jt) {
+        }, $.stringToBytes = $.stringToBytesFuncs.default, $.createStringToBytes = function(Ft, Ot) {
           var Xt = function() {
             for (var Wt = Bt(Ft), kt = function() {
               var at = Wt.read();
@@ -41705,7 +41705,7 @@ https://github.com/browserify/crypto-browserify`);
               var nt = kt(), ot = kt(), ut = kt(), mt = String.fromCharCode(tt << 8 | nt), vt = ot << 8 | ut;
               et[mt] = vt, ct += 1;
             }
-            if (ct != jt) throw ct + " != " + jt;
+            if (ct != Ot) throw ct + " != " + Ot;
             return et;
           }(), Qt = 63;
           return function(Wt) {
@@ -41998,12 +41998,12 @@ https://github.com/browserify/crypto-browserify`);
               142,
               170
             ]
-          ], jt = 1335, Xt = 7973, Qt = 21522, Wt = {}, kt = function(ct) {
+          ], Ot = 1335, Xt = 7973, Qt = 21522, Wt = {}, kt = function(ct) {
             for (var et = 0; ct != 0; ) et += 1, ct >>>= 1;
             return et;
           };
           return Wt.getBCHTypeInfo = function(ct) {
-            for (var et = ct << 10; kt(et) - kt(jt) >= 0; ) et ^= jt << kt(et) - kt(jt);
+            for (var et = ct << 10; kt(et) - kt(Ot) >= 0; ) et ^= Ot << kt(et) - kt(Ot);
             return (ct << 10 | et) ^ Qt;
           }, Wt.getBCHTypeNumber = function(ct) {
             for (var et = ct << 12; kt(et) - kt(Xt) >= 0; ) et ^= Xt << kt(et) - kt(Xt);
@@ -42109,24 +42109,24 @@ https://github.com/browserify/crypto-browserify`);
             return tt += wt * 10, tt;
           }, Wt;
         }(), pt = function() {
-          for (var Ft = new Array(256), jt = new Array(256), Xt = 0; Xt < 8; Xt += 1) Ft[Xt] = 1 << Xt;
+          for (var Ft = new Array(256), Ot = new Array(256), Xt = 0; Xt < 8; Xt += 1) Ft[Xt] = 1 << Xt;
           for (var Xt = 8; Xt < 256; Xt += 1) Ft[Xt] = Ft[Xt - 4] ^ Ft[Xt - 5] ^ Ft[Xt - 6] ^ Ft[Xt - 8];
-          for (var Xt = 0; Xt < 255; Xt += 1) jt[Ft[Xt]] = Xt;
+          for (var Xt = 0; Xt < 255; Xt += 1) Ot[Ft[Xt]] = Xt;
           var Qt = {};
           return Qt.glog = function(Wt) {
             if (Wt < 1) throw "glog(" + Wt + ")";
-            return jt[Wt];
+            return Ot[Wt];
           }, Qt.gexp = function(Wt) {
             for (; Wt < 0; ) Wt += 255;
             for (; Wt >= 256; ) Wt -= 255;
             return Ft[Wt];
           }, Qt;
         }();
-        function bt(Ft, jt) {
-          if (typeof Ft.length > "u") throw Ft.length + "/" + jt;
+        function bt(Ft, Ot) {
+          if (typeof Ft.length > "u") throw Ft.length + "/" + Ot;
           var Xt = function() {
             for (var Wt = 0; Wt < Ft.length && Ft[Wt] == 0; ) Wt += 1;
-            for (var kt = new Array(Ft.length - Wt + jt), ct = 0; ct < Ft.length - Wt; ct += 1) kt[ct] = Ft[ct + Wt];
+            for (var kt = new Array(Ft.length - Wt + Ot), ct = 0; ct < Ft.length - Wt; ct += 1) kt[ct] = Ft[ct + Wt];
             return kt;
           }(), Qt = {};
           return Qt.getAt = function(Wt) {
@@ -43329,7 +43329,7 @@ https://github.com/browserify/crypto-browserify`);
               46,
               16
             ]
-          ], jt = function(Wt, kt) {
+          ], Ot = function(Wt, kt) {
             var ct = {};
             return ct.totalCount = Wt, ct.dataCount = kt, ct;
           }, Xt = {}, Qt = function(Wt, kt) {
@@ -43349,11 +43349,11 @@ https://github.com/browserify/crypto-browserify`);
           return Xt.getRSBlocks = function(Wt, kt) {
             var ct = Qt(Wt, kt);
             if (typeof ct > "u") throw "bad rs block @ typeNumber:" + Wt + "/errorCorrectionLevel:" + kt;
-            for (var et = ct.length / 3, tt = [], nt = 0; nt < et; nt += 1) for (var ot = ct[nt * 3 + 0], ut = ct[nt * 3 + 1], mt = ct[nt * 3 + 2], vt = 0; vt < ot; vt += 1) tt.push(jt(ut, mt));
+            for (var et = ct.length / 3, tt = [], nt = 0; nt < et; nt += 1) for (var ot = ct[nt * 3 + 0], ut = ct[nt * 3 + 1], mt = ct[nt * 3 + 2], vt = 0; vt < ot; vt += 1) tt.push(Ot(ut, mt));
             return tt;
           }, Xt;
         }(), xt = function() {
-          var Ft = [], jt = 0, Xt = {};
+          var Ft = [], Ot = 0, Xt = {};
           return Xt.getBuffer = function() {
             return Ft;
           }, Xt.getAt = function(Qt) {
@@ -43362,15 +43362,15 @@ https://github.com/browserify/crypto-browserify`);
           }, Xt.put = function(Qt, Wt) {
             for (var kt = 0; kt < Wt; kt += 1) Xt.putBit((Qt >>> Wt - kt - 1 & 1) == 1);
           }, Xt.getLengthInBits = function() {
-            return jt;
+            return Ot;
           }, Xt.putBit = function(Qt) {
-            var Wt = Math.floor(jt / 8);
-            Ft.length <= Wt && Ft.push(0), Qt && (Ft[Wt] |= 128 >>> jt % 8), jt += 1;
+            var Wt = Math.floor(Ot / 8);
+            Ft.length <= Wt && Ft.push(0), Qt && (Ft[Wt] |= 128 >>> Ot % 8), Ot += 1;
           }, Xt;
         }, _t = function(Ft) {
-          var jt = rt.MODE_NUMBER, Xt = Ft, Qt = {};
+          var Ot = rt.MODE_NUMBER, Xt = Ft, Qt = {};
           Qt.getMode = function() {
-            return jt;
+            return Ot;
           }, Qt.getLength = function(ct) {
             return Xt.length;
           }, Qt.write = function(ct) {
@@ -43386,9 +43386,9 @@ https://github.com/browserify/crypto-browserify`);
           };
           return Qt;
         }, Ct = function(Ft) {
-          var jt = rt.MODE_ALPHA_NUM, Xt = Ft, Qt = {};
+          var Ot = rt.MODE_ALPHA_NUM, Xt = Ft, Qt = {};
           Qt.getMode = function() {
-            return jt;
+            return Ot;
           }, Qt.getLength = function(kt) {
             return Xt.length;
           }, Qt.write = function(kt) {
@@ -43423,16 +43423,16 @@ https://github.com/browserify/crypto-browserify`);
           };
           return Qt;
         }, Mt = function(Ft) {
-          var jt = rt.MODE_8BIT_BYTE, Xt = $.stringToBytes(Ft), Qt = {};
+          var Ot = rt.MODE_8BIT_BYTE, Xt = $.stringToBytes(Ft), Qt = {};
           return Qt.getMode = function() {
-            return jt;
+            return Ot;
           }, Qt.getLength = function(Wt) {
             return Xt.length;
           }, Qt.write = function(Wt) {
             for (var kt = 0; kt < Xt.length; kt += 1) Wt.put(Xt[kt], 8);
           }, Qt;
         }, Et = function(Ft) {
-          var jt = rt.MODE_KANJI, Xt = $.stringToBytesFuncs.SJIS;
+          var Ot = rt.MODE_KANJI, Xt = $.stringToBytesFuncs.SJIS;
           if (!Xt) throw "sjis not supported.";
           (function(kt, ct) {
             var et = Xt(kt);
@@ -43440,7 +43440,7 @@ https://github.com/browserify/crypto-browserify`);
           })("\u53CB", 38726);
           var Qt = Xt(Ft), Wt = {};
           return Wt.getMode = function() {
-            return jt;
+            return Ot;
           }, Wt.getLength = function(kt) {
             return ~~(Qt.length / 2);
           }, Wt.write = function(kt) {
@@ -43454,26 +43454,26 @@ https://github.com/browserify/crypto-browserify`);
             if (et < ct.length) throw "illegal char at " + (et + 1);
           }, Wt;
         }, Rt = function() {
-          var Ft = [], jt = {};
-          return jt.writeByte = function(Xt) {
+          var Ft = [], Ot = {};
+          return Ot.writeByte = function(Xt) {
             Ft.push(Xt & 255);
-          }, jt.writeShort = function(Xt) {
-            jt.writeByte(Xt), jt.writeByte(Xt >>> 8);
-          }, jt.writeBytes = function(Xt, Qt, Wt) {
+          }, Ot.writeShort = function(Xt) {
+            Ot.writeByte(Xt), Ot.writeByte(Xt >>> 8);
+          }, Ot.writeBytes = function(Xt, Qt, Wt) {
             Qt = Qt || 0, Wt = Wt || Xt.length;
-            for (var kt = 0; kt < Wt; kt += 1) jt.writeByte(Xt[kt + Qt]);
-          }, jt.writeString = function(Xt) {
-            for (var Qt = 0; Qt < Xt.length; Qt += 1) jt.writeByte(Xt.charCodeAt(Qt));
-          }, jt.toByteArray = function() {
+            for (var kt = 0; kt < Wt; kt += 1) Ot.writeByte(Xt[kt + Qt]);
+          }, Ot.writeString = function(Xt) {
+            for (var Qt = 0; Qt < Xt.length; Qt += 1) Ot.writeByte(Xt.charCodeAt(Qt));
+          }, Ot.toByteArray = function() {
             return Ft;
-          }, jt.toString = function() {
+          }, Ot.toString = function() {
             var Xt = "";
             Xt += "[";
             for (var Qt = 0; Qt < Ft.length; Qt += 1) Qt > 0 && (Xt += ","), Xt += Ft[Qt];
             return Xt += "]", Xt;
-          }, jt;
+          }, Ot;
         }, At = function() {
-          var Ft = 0, jt = 0, Xt = 0, Qt = "", Wt = {}, kt = function(et) {
+          var Ft = 0, Ot = 0, Xt = 0, Qt = "", Wt = {}, kt = function(et) {
             Qt += String.fromCharCode(ct(et & 63));
           }, ct = function(et) {
             if (!(et < 0)) {
@@ -43486,21 +43486,21 @@ https://github.com/browserify/crypto-browserify`);
             throw "n:" + et;
           };
           return Wt.writeByte = function(et) {
-            for (Ft = Ft << 8 | et & 255, jt += 8, Xt += 1; jt >= 6; ) kt(Ft >>> jt - 6), jt -= 6;
+            for (Ft = Ft << 8 | et & 255, Ot += 8, Xt += 1; Ot >= 6; ) kt(Ft >>> Ot - 6), Ot -= 6;
           }, Wt.flush = function() {
-            if (jt > 0 && (kt(Ft << 6 - jt), Ft = 0, jt = 0), Xt % 3 != 0) for (var et = 3 - Xt % 3, tt = 0; tt < et; tt += 1) Qt += "=";
+            if (Ot > 0 && (kt(Ft << 6 - Ot), Ft = 0, Ot = 0), Xt % 3 != 0) for (var et = 3 - Xt % 3, tt = 0; tt < et; tt += 1) Qt += "=";
           }, Wt.toString = function() {
             return Qt;
           }, Wt;
         }, Bt = function(Ft) {
-          var jt = Ft, Xt = 0, Qt = 0, Wt = 0, kt = {};
+          var Ot = Ft, Xt = 0, Qt = 0, Wt = 0, kt = {};
           kt.read = function() {
             for (; Wt < 8; ) {
-              if (Xt >= jt.length) {
+              if (Xt >= Ot.length) {
                 if (Wt == 0) return -1;
                 throw "unexpected end of file./" + Wt;
               }
-              var et = jt.charAt(Xt);
+              var et = Ot.charAt(Xt);
               if (Xt += 1, et == "=") return Wt = 0, -1;
               if (et.match(/^\s$/)) continue;
               Qt = Qt << 6 | ct(et.charCodeAt(0)), Wt += 6;
@@ -43517,8 +43517,8 @@ https://github.com/browserify/crypto-browserify`);
             throw "c:" + et;
           };
           return kt;
-        }, $t = function(Ft, jt) {
-          var Xt = Ft, Qt = jt, Wt = new Array(Ft * jt), kt = {};
+        }, $t = function(Ft, Ot) {
+          var Xt = Ft, Qt = Ot, Wt = new Array(Ft * Ot), kt = {};
           kt.setPixel = function(nt, ot, ut) {
             Wt[ot * Xt + nt] = ut;
           }, kt.write = function(nt) {
@@ -43562,8 +43562,8 @@ https://github.com/browserify/crypto-browserify`);
             }, ut;
           };
           return kt;
-        }, Tt = function(Ft, jt, Xt) {
-          for (var Qt = $t(Ft, jt), Wt = 0; Wt < jt; Wt += 1) for (var kt = 0; kt < Ft; kt += 1) Qt.setPixel(kt, Wt, Xt(kt, Wt));
+        }, Tt = function(Ft, Ot, Xt) {
+          for (var Qt = $t(Ft, Ot), Wt = 0; Wt < Ot; Wt += 1) for (var kt = 0; kt < Ft; kt += 1) Qt.setPixel(kt, Wt, Xt(kt, Wt));
           var ct = Rt();
           Qt.write(ct);
           for (var et = At(), tt = ct.toByteArray(), nt = 0; nt < tt.length; nt += 1) et.writeByte(tt[nt]);
@@ -45605,8 +45605,8 @@ https://github.com/browserify/crypto-browserify`);
                                   }
                                 }), null), insert(Bt, createComponent(NotificationsStyled, {}), null), createRenderEffect(($t) => {
                                   var Tt, Ft;
-                                  const jt = Mt.strategy, Xt = `${(Tt = Mt.y) != null ? Tt : 0}px`, Qt = `${(Ft = Mt.x) != null ? Ft : 0}px`;
-                                  return jt !== $t._v$ && Bt.style.setProperty("position", $t._v$ = jt), Xt !== $t._v$2 && Bt.style.setProperty("top", $t._v$2 = Xt), Qt !== $t._v$3 && Bt.style.setProperty("left", $t._v$3 = Qt), $t;
+                                  const Ot = Mt.strategy, Xt = `${(Tt = Mt.y) != null ? Tt : 0}px`, Qt = `${(Ft = Mt.x) != null ? Ft : 0}px`;
+                                  return Ot !== $t._v$ && Bt.style.setProperty("position", $t._v$ = Ot), Xt !== $t._v$2 && Bt.style.setProperty("top", $t._v$2 = Xt), Qt !== $t._v$3 && Bt.style.setProperty("left", $t._v$3 = Qt), $t;
                                 }, {
                                   _v$: void 0,
                                   _v$2: void 0,
@@ -47154,7 +47154,7 @@ https://github.com/browserify/crypto-browserify`);
         });
       }, Rt = () => {
         st(null);
-        const $t = d.walletsList.find((jt) => jt.appName === AT_WALLET_APP_NAME);
+        const $t = d.walletsList.find((Ot) => Ot.appName === AT_WALLET_APP_NAME);
         if (!$t || !isWalletInfoRemote($t)) throw new TonConnectUIError("@wallet bot not found in the wallets list");
         const Tt = dt.connect({
           bridgeUrl: $t.bridgeUrl,
@@ -47461,9 +47461,9 @@ https://github.com/browserify/crypto-browserify`);
         let Bt = applyWalletsListConfiguration($(), appState.walletsListConfiguration);
         const $t = Bt.filter(isWalletInfoCurrentlyInjected), Tt = Bt.filter((Wt) => !isWalletInfoCurrentlyInjected(Wt));
         Bt = ($t || []).concat(Tt);
-        const Ft = appState.preferredWalletAppName, jt = Bt.find((Wt) => eqWalletName(Wt, Ft)), Xt = Bt.filter((Wt) => eqWalletName(Wt, Ft)).length >= 2;
-        Ft && jt && !Xt && (Bt = [
-          __spreadProps(__spreadValues$1({}, jt), {
+        const Ft = appState.preferredWalletAppName, Ot = Bt.find((Wt) => eqWalletName(Wt, Ft)), Xt = Bt.filter((Wt) => eqWalletName(Wt, Ft)).length >= 2;
+        Ft && Ot && !Xt && (Bt = [
+          __spreadProps(__spreadValues$1({}, Ot), {
             isPreferred: true
           })
         ].concat(Bt.filter((Wt) => !eqWalletName(Wt, Ft))));
@@ -48699,9 +48699,9 @@ https://github.com/browserify/crypto-browserify`);
         hashPart: bt
       };
     }
-    let Address$m = class Fn {
+    let Address$m = class On {
       static isAddress(b) {
-        return b instanceof Fn;
+        return b instanceof On;
       }
       static isFriendly(b) {
         return !(b.length !== 48 || !/[A-Za-z0-9+/_-]+/.test(b));
@@ -48712,16 +48712,16 @@ https://github.com/browserify/crypto-browserify`);
         return !(!Number.isInteger(parseFloat(_)) || !/[a-f0-9]+/.test($.toLowerCase()) || $.length !== 64);
       }
       static normalize(b) {
-        return typeof b == "string" ? Fn.parse(b).toString() : b.toString();
+        return typeof b == "string" ? On.parse(b).toString() : b.toString();
       }
       static parse(b) {
-        if (Fn.isFriendly(b)) return this.parseFriendly(b).address;
-        if (Fn.isRaw(b)) return this.parseRaw(b);
+        if (On.isFriendly(b)) return this.parseFriendly(b).address;
+        if (On.isRaw(b)) return this.parseRaw(b);
         throw new Error("Unknown address type: " + b);
       }
       static parseRaw(b) {
         let _ = parseInt(b.split(":")[0]), $ = Buffer.from(b.split(":")[1], "hex");
-        return new Fn(_, $);
+        return new On(_, $);
       }
       static parseFriendly(b) {
         if (Buffer.isBuffer(b)) {
@@ -48729,14 +48729,14 @@ https://github.com/browserify/crypto-browserify`);
           return {
             isBounceable: _.isBounceable,
             isTestOnly: _.isTestOnly,
-            address: new Fn(_.workchain, _.hashPart)
+            address: new On(_.workchain, _.hashPart)
           };
         } else {
           let _ = b.replace(/\-/g, "+").replace(/_/g, "/"), $ = parseFriendlyAddress$1(_);
           return {
             isBounceable: $.isBounceable,
             isTestOnly: $.isTestOnly,
-            address: new Fn($.workchain, $.hashPart)
+            address: new On($.workchain, $.hashPart)
           };
         }
       }
@@ -49452,13 +49452,13 @@ https://github.com/browserify/crypto-browserify`);
       }
       function $($t, Tt) {
         if ($t.size === 0) throw Error("Internal inconsistency");
-        let Ft = /* @__PURE__ */ new Map(), jt = /* @__PURE__ */ new Map();
-        for (let [Xt, Qt] of $t.entries()) Xt[Tt] === "0" ? Ft.set(Xt, Qt) : jt.set(Xt, Qt);
+        let Ft = /* @__PURE__ */ new Map(), Ot = /* @__PURE__ */ new Map();
+        for (let [Xt, Qt] of $t.entries()) Xt[Tt] === "0" ? Ft.set(Xt, Qt) : Ot.set(Xt, Qt);
         if (Ft.size === 0) throw Error("Internal inconsistency. Left emtpy.");
-        if (jt.size === 0) throw Error("Internal inconsistency. Right emtpy.");
+        if (Ot.size === 0) throw Error("Internal inconsistency. Right emtpy.");
         return {
           left: Ft,
-          right: jt
+          right: Ot
         };
       }
       function rt($t, Tt) {
@@ -49467,11 +49467,11 @@ https://github.com/browserify/crypto-browserify`);
           type: "leaf",
           value: Array.from($t.values())[0]
         };
-        let { left: Ft, right: jt } = $($t, Tt);
+        let { left: Ft, right: Ot } = $($t, Tt);
         return {
           type: "fork",
           left: j(Ft, Tt + 1),
-          right: j(jt, Tt + 1)
+          right: j(Ot, Tt + 1)
         };
       }
       function j($t, Tt = 0) {
@@ -49484,9 +49484,9 @@ https://github.com/browserify/crypto-browserify`);
       }
       function st($t, Tt) {
         let Ft = /* @__PURE__ */ new Map();
-        for (let jt of Array.from($t.keys())) {
-          const Xt = _(jt.toString(2), Tt);
-          Ft.set(Xt, $t.get(jt));
+        for (let Ot of Array.from($t.keys())) {
+          const Xt = _(Ot.toString(2), Tt);
+          Ft.set(Xt, $t.get(Ot));
         }
         return j(Ft);
       }
@@ -49502,17 +49502,17 @@ https://github.com/browserify/crypto-browserify`);
       }
       function bt($t, Tt, Ft) {
         Ft.storeBit(1), Ft.storeBit(0);
-        let jt = Math.ceil(Math.log2(Tt + 1));
-        return Ft.storeUint($t.length, jt), $t.length > 0 && Ft.storeUint(BigInt("0b" + $t), $t.length), Ft;
+        let Ot = Math.ceil(Math.log2(Tt + 1));
+        return Ft.storeUint($t.length, Ot), $t.length > 0 && Ft.storeUint(BigInt("0b" + $t), $t.length), Ft;
       }
       serializeDict.writeLabelLong = bt;
       function yt($t, Tt) {
         return 2 + Math.ceil(Math.log2(Tt + 1)) + $t.length;
       }
-      function xt($t, Tt, Ft, jt) {
-        jt.storeBit(1), jt.storeBit(1), jt.storeBit($t);
+      function xt($t, Tt, Ft, Ot) {
+        Ot.storeBit(1), Ot.storeBit(1), Ot.storeBit($t);
         let Xt = Math.ceil(Math.log2(Ft + 1));
-        jt.storeUint(Tt, Xt);
+        Ot.storeUint(Tt, Xt);
       }
       serializeDict.writeLabelSame = xt;
       function _t($t) {
@@ -49524,30 +49524,30 @@ https://github.com/browserify/crypto-browserify`);
         return true;
       }
       function Mt($t, Tt) {
-        let Ft = "short", jt = pt($t), Xt = yt($t, Tt);
-        if (Xt < jt && (jt = Xt, Ft = "long"), Ct($t)) {
+        let Ft = "short", Ot = pt($t), Xt = yt($t, Tt);
+        if (Xt < Ot && (Ot = Xt, Ft = "long"), Ct($t)) {
           let Qt = _t(Tt);
-          Qt < jt && (jt = Qt, Ft = "same");
+          Qt < Ot && (Ot = Qt, Ft = "same");
         }
         return Ft;
       }
       serializeDict.detectLabelType = Mt;
       function Et($t, Tt, Ft) {
-        let jt = Mt($t, Tt);
-        jt === "short" ? dt($t, Ft) : jt === "long" ? bt($t, Tt, Ft) : jt === "same" && xt($t[0] === "1", $t.length, Tt, Ft);
+        let Ot = Mt($t, Tt);
+        Ot === "short" ? dt($t, Ft) : Ot === "long" ? bt($t, Tt, Ft) : Ot === "same" && xt($t[0] === "1", $t.length, Tt, Ft);
       }
-      function Rt($t, Tt, Ft, jt) {
-        if ($t.type === "leaf" && Ft($t.value, jt), $t.type === "fork") {
+      function Rt($t, Tt, Ft, Ot) {
+        if ($t.type === "leaf" && Ft($t.value, Ot), $t.type === "fork") {
           const Xt = (0, d.beginCell)(), Qt = (0, d.beginCell)();
-          At($t.left, Tt - 1, Ft, Xt), At($t.right, Tt - 1, Ft, Qt), jt.storeRef(Xt), jt.storeRef(Qt);
+          At($t.left, Tt - 1, Ft, Xt), At($t.right, Tt - 1, Ft, Qt), Ot.storeRef(Xt), Ot.storeRef(Qt);
         }
       }
-      function At($t, Tt, Ft, jt) {
-        Et($t.label, Tt, jt), Rt($t.node, Tt - $t.label.length, Ft, jt);
+      function At($t, Tt, Ft, Ot) {
+        Et($t.label, Tt, Ot), Rt($t.node, Tt - $t.label.length, Ft, Ot);
       }
-      function Bt($t, Tt, Ft, jt) {
+      function Bt($t, Tt, Ft, Ot) {
         const Xt = st($t, Tt);
-        At(Xt, Tt, Ft, jt);
+        At(Xt, Tt, Ft, Ot);
       }
       return serializeDict.serializeDict = Bt, serializeDict;
     }
@@ -49594,26 +49594,26 @@ https://github.com/browserify/crypto-browserify`);
         value: true
       }), Dictionary.Dictionary = void 0;
       const d = Address$n, b = requireBuilder(), _ = requireCell(), $ = requireBitString(), rt = requireGenerateMerkleProof(), j = requireGenerateMerkleUpdate(), st = parseDict$1, dt = requireSerializeDict(), pt = internalKeySerializer;
-      let bt = class jn {
+      let bt = class Fn {
         static empty(nt, ot) {
-          return nt && ot ? new jn(/* @__PURE__ */ new Map(), nt, ot) : new jn(/* @__PURE__ */ new Map(), null, null);
+          return nt && ot ? new Fn(/* @__PURE__ */ new Map(), nt, ot) : new Fn(/* @__PURE__ */ new Map(), null, null);
         }
         static load(nt, ot, ut) {
           let mt;
           if (ut instanceof _.Cell) {
-            if (ut.isExotic) return jn.empty(nt, ot);
+            if (ut.isExotic) return Fn.empty(nt, ot);
             mt = ut.beginParse();
           } else mt = ut;
           let vt = mt.loadMaybeRef();
-          return vt && !vt.isExotic ? jn.loadDirect(nt, ot, vt.beginParse()) : jn.empty(nt, ot);
+          return vt && !vt.isExotic ? Fn.loadDirect(nt, ot, vt.beginParse()) : Fn.empty(nt, ot);
         }
         static loadDirect(nt, ot, ut) {
-          if (!ut) return jn.empty(nt, ot);
+          if (!ut) return Fn.empty(nt, ot);
           let mt;
           ut instanceof _.Cell ? mt = ut.beginParse() : mt = ut;
           let vt = (0, st.parseDict)(mt, nt.bits, ot.parse), at = /* @__PURE__ */ new Map();
           for (let [it, ht] of vt) at.set((0, pt.serializeInternalKey)(nt.parse(it)), ht);
-          return new jn(at, nt, ot);
+          return new Fn(at, nt, ot);
         }
         constructor(nt, ot, ut) {
           this._key = ot, this._value = ut, this._map = nt;
@@ -49697,7 +49697,7 @@ https://github.com/browserify/crypto-browserify`);
         BigInt: (tt) => Bt(tt),
         Int: (tt) => At(tt),
         BigVarInt: (tt) => $t(tt),
-        BigUint: (tt) => jt(tt),
+        BigUint: (tt) => Ot(tt),
         Uint: (tt) => Ft(tt),
         BigVarUint: (tt) => Tt(tt),
         Bool: () => Xt(),
@@ -49836,7 +49836,7 @@ https://github.com/browserify/crypto-browserify`);
           }
         };
       }
-      function jt(tt) {
+      function Ot(tt) {
         return {
           serialize: (nt, ot) => {
             ot.storeUint(nt, tt);
@@ -50396,13 +50396,13 @@ https://github.com/browserify/crypto-browserify`);
                 return function(It, Dt, Vt, ir, ur) {
                   var or, wr, Ir, fr, $r, Pr, Mr, Nr, Vr = 0, Sr = Vt || [
                     0
-                  ], Or = (ir = ir || 0) >>> 3;
+                  ], jr = (ir = ir || 0) >>> 3;
                   if (Dt === "UTF8") for (Mr = ur === -1 ? 3 : 0, Ir = 0; Ir < It.length; Ir += 1) for (wr = [], 128 > (or = It.charCodeAt(Ir)) ? wr.push(or) : 2048 > or ? (wr.push(192 | or >>> 6), wr.push(128 | 63 & or)) : 55296 > or || 57344 <= or ? wr.push(224 | or >>> 12, 128 | or >>> 6 & 63, 128 | 63 & or) : (Ir += 1, or = 65536 + ((1023 & or) << 10 | 1023 & It.charCodeAt(Ir)), wr.push(240 | or >>> 18, 128 | or >>> 12 & 63, 128 | or >>> 6 & 63, 128 | 63 & or)), fr = 0; fr < wr.length; fr += 1) {
-                    for ($r = (Pr = Vr + Or) >>> 2; Sr.length <= $r; ) Sr.push(0);
+                    for ($r = (Pr = Vr + jr) >>> 2; Sr.length <= $r; ) Sr.push(0);
                     Sr[$r] |= wr[fr] << 8 * (Mr + ur * (Pr % 4)), Vr += 1;
                   }
                   else for (Mr = ur === -1 ? 2 : 0, Nr = Dt === "UTF16LE" && ur !== 1 || Dt !== "UTF16LE" && ur === 1, Ir = 0; Ir < It.length; Ir += 1) {
-                    for (or = It.charCodeAt(Ir), Nr === true && (or = (fr = 255 & or) << 8 | or >>> 8), $r = (Pr = Vr + Or) >>> 2; Sr.length <= $r; ) Sr.push(0);
+                    for (or = It.charCodeAt(Ir), Nr === true && (or = (fr = 255 & or) << 8 | or >>> 8), $r = (Pr = Vr + jr) >>> 2; Sr.length <= $r; ) Sr.push(0);
                     Sr[$r] |= or << 8 * (Mr + ur * (Pr % 4)), Vr += 2;
                   }
                   return {
@@ -50723,7 +50723,7 @@ https://github.com/browserify/crypto-browserify`);
         function Ft(lr, rr, nr) {
           return lr & rr ^ lr & nr ^ rr & nr;
         }
-        function jt(lr) {
+        function Ot(lr) {
           return At(lr, 2) ^ At(lr, 13) ^ At(lr, 22);
         }
         function Xt(lr, rr) {
@@ -50785,7 +50785,7 @@ https://github.com/browserify/crypto-browserify`);
         }
         function mt(lr, rr) {
           var nr, ar, pr, Pt, It, Dt, Vt, ir, ur, or, wr, Ir, fr = [];
-          for (nr = rr[0], ar = rr[1], pr = rr[2], Pt = rr[3], It = rr[4], Dt = rr[5], Vt = rr[6], ir = rr[7], wr = 0; wr < 64; wr += 1) fr[wr] = wr < 16 ? lr[wr] : Qt(At(Ir = fr[wr - 2], 17) ^ At(Ir, 19) ^ Bt(Ir, 10), fr[wr - 7], kt(fr[wr - 15]), fr[wr - 16]), ur = Wt(ir, ct(It), Tt(It, Dt, Vt), st[wr], fr[wr]), or = Xt(jt(nr), Ft(nr, ar, pr)), ir = Vt, Vt = Dt, Dt = It, It = Xt(Pt, ur), Pt = pr, pr = ar, ar = nr, nr = Xt(ur, or);
+          for (nr = rr[0], ar = rr[1], pr = rr[2], Pt = rr[3], It = rr[4], Dt = rr[5], Vt = rr[6], ir = rr[7], wr = 0; wr < 64; wr += 1) fr[wr] = wr < 16 ? lr[wr] : Qt(At(Ir = fr[wr - 2], 17) ^ At(Ir, 19) ^ Bt(Ir, 10), fr[wr - 7], kt(fr[wr - 15]), fr[wr - 16]), ur = Wt(ir, ct(It), Tt(It, Dt, Vt), st[wr], fr[wr]), or = Xt(Ot(nr), Ft(nr, ar, pr)), ir = Vt, Vt = Dt, Dt = It, It = Xt(Pt, ur), Pt = pr, pr = ar, ar = nr, nr = Xt(ur, or);
           return rr[0] = Xt(nr, rr[0]), rr[1] = Xt(ar, rr[1]), rr[2] = Xt(pr, rr[2]), rr[3] = Xt(Pt, rr[3]), rr[4] = Xt(It, rr[4]), rr[5] = Xt(Dt, rr[5]), rr[6] = Xt(Vt, rr[6]), rr[7] = Xt(ir, rr[7]), rr;
         }
         var vt = function(lr) {
@@ -51097,7 +51097,7 @@ https://github.com/browserify/crypto-browserify`);
           for (rr = 0; rr < 5; rr += 1) nr[rr] = lr[rr].slice();
           return nr;
         }
-        function jr(lr, rr) {
+        function Fr(lr, rr) {
           var nr, ar, pr, Pt, It, Dt, Vt, ir, ur, or = [], wr = [];
           if (lr !== null) for (ar = 0; ar < lr.length; ar += 2) rr[(ar >>> 1) % 5][(ar >>> 1) / 5 | 0] = Ht(rr[(ar >>> 1) % 5][(ar >>> 1) / 5 | 0], new at(lr[ar + 1], lr[ar]));
           for (nr = 0; nr < 24; nr += 1) {
@@ -51141,7 +51141,7 @@ https://github.com/browserify/crypto-browserify`);
               if (Vt.kmacKey || Vt.hmacKey) throw new Error("Cannot set numRounds with MAC");
               if (Pt.o === "CSHAKE128" || Pt.o === "CSHAKE256") throw new Error("Cannot set numRounds for CSHAKE variants");
             }
-            switch (Pt.C = 1, Pt.p = rt(Pt.t, Pt.i, Pt.C), Pt.R = jr, Pt.B = gr, Pt.L = vr, Pt.m = vr(), Pt.T = false, nr) {
+            switch (Pt.C = 1, Pt.p = rt(Pt.t, Pt.i, Pt.C), Pt.R = Fr, Pt.B = gr, Pt.L = vr, Pt.m = vr(), Pt.T = false, nr) {
               case "SHA3-224":
                 Pt.S = Dt = 1152, Pt.U = 224, Pt.g = true, Pt.F = Pt.Y;
                 break;
@@ -51177,10 +51177,10 @@ https://github.com/browserify/crypto-browserify`);
             }
             return Pt.K = function(ir, ur, or, wr, Ir) {
               return function(fr, $r, Pr, Mr, Nr, Vr, Sr) {
-                var Or, Hr, Rr = 0, Lr = [], Zr = Nr >>> 5, Br = $r >>> 5;
-                for (Or = 0; Or < Br && $r >= Nr; Or += Zr) Mr = jr(fr.slice(Or, Or + Zr), Mr), $r -= Nr;
-                for (fr = fr.slice(Or), $r %= Nr; fr.length < Zr; ) fr.push(0);
-                for (fr[(Or = $r >>> 3) >> 2] ^= Vr << Or % 4 * 8, fr[Zr - 1] ^= 2147483648, Mr = jr(fr, Mr); 32 * Lr.length < Sr && (Hr = Mr[Rr % 5][Rr / 5 | 0], Lr.push(Hr.I), !(32 * Lr.length >= Sr)); ) Lr.push(Hr.N), 64 * (Rr += 1) % Nr == 0 && (jr(null, Mr), Rr = 0);
+                var jr, Hr, Rr = 0, Lr = [], Zr = Nr >>> 5, Br = $r >>> 5;
+                for (jr = 0; jr < Br && $r >= Nr; jr += Zr) Mr = Fr(fr.slice(jr, jr + Zr), Mr), $r -= Nr;
+                for (fr = fr.slice(jr), $r %= Nr; fr.length < Zr; ) fr.push(0);
+                for (fr[(jr = $r >>> 3) >> 2] ^= Vr << jr % 4 * 8, fr[Zr - 1] ^= 2147483648, Mr = Fr(fr, Mr); 32 * Lr.length < Sr && (Hr = Mr[Rr % 5][Rr / 5 | 0], Lr.push(Hr.I), !(32 * Lr.length >= Sr)); ) Lr.push(Hr.N), 64 * (Rr += 1) % Nr == 0 && (Fr(null, Mr), Rr = 0);
                 return Lr;
               }(ir, ur, 0, wr, Dt, It, Ir);
             }, Vt.hmacKey && Pt.k(_t("hmacKey", Vt.hmacKey, Pt.C)), Pt;
@@ -61865,44 +61865,44 @@ https://github.com/browserify/crypto-browserify`);
       function bt(yt, xt, _t) {
         let Ct, Mt = null;
         if (yt === b.CellType.Ordinary) {
-          let jt = 0;
-          for (let Xt of _t) jt = jt | Xt.mask.value;
-          Ct = new _.LevelMask(jt);
+          let Ot = 0;
+          for (let Xt of _t) Ot = Ot | Xt.mask.value;
+          Ct = new _.LevelMask(Ot);
         } else if (yt === b.CellType.PrunedBranch) Mt = (0, $.exoticPruned)(xt, _t), Ct = new _.LevelMask(Mt.mask);
         else if (yt === b.CellType.MerkleProof) (0, rt.exoticMerkleProof)(xt, _t), Ct = new _.LevelMask(_t[0].mask.value >> 1);
         else if (yt === b.CellType.MerkleUpdate) (0, dt.exoticMerkleUpdate)(xt, _t), Ct = new _.LevelMask((_t[0].mask.value | _t[1].mask.value) >> 1);
         else if (yt === b.CellType.Library) (0, pt.exoticLibrary)(xt, _t), Ct = new _.LevelMask();
         else throw new Error("Unsupported exotic type");
         let Et = [], Rt = [], At = yt === b.CellType.PrunedBranch ? 1 : Ct.hashCount, $t = Ct.hashCount - At;
-        for (let jt = 0, Xt = 0; jt <= Ct.level; jt++) {
-          if (!Ct.isSignificant(jt)) continue;
+        for (let Ot = 0, Xt = 0; Ot <= Ct.level; Ot++) {
+          if (!Ct.isSignificant(Ot)) continue;
           if (Xt < $t) {
             Xt++;
             continue;
           }
           let Qt;
           if (Xt === $t) {
-            if (!(jt === 0 || yt === b.CellType.PrunedBranch)) throw Error("Invalid");
+            if (!(Ot === 0 || yt === b.CellType.PrunedBranch)) throw Error("Invalid");
             Qt = xt;
           } else {
-            if (!(jt !== 0 && yt !== b.CellType.PrunedBranch)) throw Error("Invalid: " + jt + ", " + yt);
+            if (!(Ot !== 0 && yt !== b.CellType.PrunedBranch)) throw Error("Invalid: " + Ot + ", " + yt);
             Qt = new d.BitString(Rt[Xt - $t - 1], 0, 256);
           }
           let Wt = 0;
           for (let tt of _t) {
             let nt;
-            yt == b.CellType.MerkleProof || yt == b.CellType.MerkleUpdate ? nt = tt.depth(jt + 1) : nt = tt.depth(jt), Wt = Math.max(Wt, nt);
+            yt == b.CellType.MerkleProof || yt == b.CellType.MerkleUpdate ? nt = tt.depth(Ot + 1) : nt = tt.depth(Ot), Wt = Math.max(Wt, nt);
           }
           _t.length > 0 && Wt++;
-          let kt = (0, j.getRepr)(xt, Qt, _t, jt, Ct.apply(jt).value, yt), ct = (0, st.sha256_sync)(kt), et = Xt - $t;
+          let kt = (0, j.getRepr)(xt, Qt, _t, Ot, Ct.apply(Ot).value, yt), ct = (0, st.sha256_sync)(kt), et = Xt - $t;
           Et[et] = Wt, Rt[et] = ct, Xt++;
         }
         let Tt = [], Ft = [];
-        if (Mt) for (let jt = 0; jt < 4; jt++) {
-          const { hashIndex: Xt } = Ct.apply(jt), { hashIndex: Qt } = Ct;
+        if (Mt) for (let Ot = 0; Ot < 4; Ot++) {
+          const { hashIndex: Xt } = Ct.apply(Ot), { hashIndex: Qt } = Ct;
           Xt !== Qt ? (Tt.push(Mt.pruned[Xt].hash), Ft.push(Mt.pruned[Xt].depth)) : (Tt.push(Rt[0]), Ft.push(Et[0]));
         }
-        else for (let jt = 0; jt < 4; jt++) Tt.push(Rt[Ct.apply(jt).hashIndex]), Ft.push(Et[Ct.apply(jt).hashIndex]);
+        else for (let Ot = 0; Ot < 4; Ot++) Tt.push(Rt[Ct.apply(Ot).hashIndex]), Ft.push(Et[Ct.apply(Ot).hashIndex]);
         return {
           mask: Ct,
           hashes: Tt,
@@ -62007,7 +62007,7 @@ https://github.com/browserify/crypto-browserify`);
         return Bt + 1;
       }
       function xt(At, Bt) {
-        const $t = At.loadUint(8), Tt = $t % 8, Ft = !!($t & 8), jt = At.loadUint(8), Xt = Math.ceil(jt / 2), Qt = !!(jt % 2), Wt = $t >> 5, kt = ($t & 16) != 0, et = kt ? bt(Wt) * 32 : 0, tt = kt ? bt(Wt) * 2 : 0;
+        const $t = At.loadUint(8), Tt = $t % 8, Ft = !!($t & 8), Ot = At.loadUint(8), Xt = Math.ceil(Ot / 2), Qt = !!(Ot % 2), Wt = $t >> 5, kt = ($t & 16) != 0, et = kt ? bt(Wt) * 32 : 0, tt = kt ? bt(Wt) * 2 : 0;
         At.skip(et * 8), At.skip(tt * 8);
         let nt = b.BitString.EMPTY;
         Xt > 0 && (Qt ? nt = At.loadPaddedBits(Xt * 8) : nt = At.loadBits(Xt * 8));
@@ -62025,11 +62025,11 @@ https://github.com/browserify/crypto-browserify`);
       function Ct(At) {
         let Bt = new d.BitReader(new b.BitString(At, 0, At.length * 8)), $t = Bt.loadUint(32);
         if ($t === 1761568243) {
-          let Tt = Bt.loadUint(8), Ft = Bt.loadUint(8), jt = Bt.loadUint(Tt * 8), Xt = Bt.loadUint(Tt * 8), Qt = Bt.loadUint(Tt * 8), Wt = Bt.loadUint(Ft * 8), kt = Bt.loadBuffer(jt * Ft), ct = Bt.loadBuffer(Wt);
+          let Tt = Bt.loadUint(8), Ft = Bt.loadUint(8), Ot = Bt.loadUint(Tt * 8), Xt = Bt.loadUint(Tt * 8), Qt = Bt.loadUint(Tt * 8), Wt = Bt.loadUint(Ft * 8), kt = Bt.loadBuffer(Ot * Ft), ct = Bt.loadBuffer(Wt);
           return {
             size: Tt,
             offBytes: Ft,
-            cells: jt,
+            cells: Ot,
             roots: Xt,
             absent: Qt,
             totalCellSize: Wt,
@@ -62040,12 +62040,12 @@ https://github.com/browserify/crypto-browserify`);
             ]
           };
         } else if ($t === 2898503464) {
-          let Tt = Bt.loadUint(8), Ft = Bt.loadUint(8), jt = Bt.loadUint(Tt * 8), Xt = Bt.loadUint(Tt * 8), Qt = Bt.loadUint(Tt * 8), Wt = Bt.loadUint(Ft * 8), kt = Bt.loadBuffer(jt * Ft), ct = Bt.loadBuffer(Wt), et = Bt.loadBuffer(4);
+          let Tt = Bt.loadUint(8), Ft = Bt.loadUint(8), Ot = Bt.loadUint(Tt * 8), Xt = Bt.loadUint(Tt * 8), Qt = Bt.loadUint(Tt * 8), Wt = Bt.loadUint(Ft * 8), kt = Bt.loadBuffer(Ot * Ft), ct = Bt.loadBuffer(Wt), et = Bt.loadBuffer(4);
           if (!(0, pt.crc32c)(At.subarray(0, At.length - 4)).equals(et)) throw Error("Invalid CRC32C");
           return {
             size: Tt,
             offBytes: Ft,
-            cells: jt,
+            cells: Ot,
             roots: Xt,
             absent: Qt,
             totalCellSize: Wt,
@@ -62058,8 +62058,8 @@ https://github.com/browserify/crypto-browserify`);
         } else if ($t === 3052313714) {
           let Tt = Bt.loadUint(1), Ft = Bt.loadUint(1);
           Bt.loadUint(1), Bt.loadUint(2);
-          let jt = Bt.loadUint(3), Xt = Bt.loadUint(8), Qt = Bt.loadUint(jt * 8), Wt = Bt.loadUint(jt * 8), kt = Bt.loadUint(jt * 8), ct = Bt.loadUint(Xt * 8), et = [];
-          for (let ot = 0; ot < Wt; ot++) et.push(Bt.loadUint(jt * 8));
+          let Ot = Bt.loadUint(3), Xt = Bt.loadUint(8), Qt = Bt.loadUint(Ot * 8), Wt = Bt.loadUint(Ot * 8), kt = Bt.loadUint(Ot * 8), ct = Bt.loadUint(Xt * 8), et = [];
+          for (let ot = 0; ot < Wt; ot++) et.push(Bt.loadUint(Ot * 8));
           let tt = null;
           Tt && (tt = Bt.loadBuffer(Qt * Xt));
           let nt = Bt.loadBuffer(ct);
@@ -62068,7 +62068,7 @@ https://github.com/browserify/crypto-browserify`);
             if (!(0, pt.crc32c)(At.subarray(0, At.length - 4)).equals(ot)) throw Error("Invalid CRC32C");
           }
           return {
-            size: jt,
+            size: Ot,
             offBytes: Xt,
             cells: Qt,
             roots: Wt,
@@ -62083,46 +62083,46 @@ https://github.com/browserify/crypto-browserify`);
       serialization.parseBoc = Ct;
       function Mt(At) {
         let Bt = Ct(At), $t = new d.BitReader(new b.BitString(Bt.cellData, 0, Bt.cellData.length * 8)), Tt = [];
-        for (let jt = 0; jt < Bt.cells; jt++) {
+        for (let Ot = 0; Ot < Bt.cells; Ot++) {
           let Xt = xt($t, Bt.size);
           Tt.push({
             ...Xt,
             result: null
           });
         }
-        for (let jt = Tt.length - 1; jt >= 0; jt--) {
-          if (Tt[jt].result) throw Error("Impossible");
+        for (let Ot = Tt.length - 1; Ot >= 0; Ot--) {
+          if (Tt[Ot].result) throw Error("Impossible");
           let Xt = [];
-          for (let Qt of Tt[jt].refs) {
+          for (let Qt of Tt[Ot].refs) {
             if (!Tt[Qt].result) throw Error("Invalid BOC file");
             Xt.push(Tt[Qt].result);
           }
-          Tt[jt].result = new _.Cell({
-            bits: Tt[jt].bits,
+          Tt[Ot].result = new _.Cell({
+            bits: Tt[Ot].bits,
             refs: Xt,
-            exotic: Tt[jt].exotic
+            exotic: Tt[Ot].exotic
           });
         }
         let Ft = [];
-        for (let jt = 0; jt < Bt.root.length; jt++) Ft.push(Tt[Bt.root[jt]].result);
+        for (let Ot = 0; Ot < Bt.root.length; Ot++) Ft.push(Tt[Bt.root[Ot]].result);
         return Ft;
       }
       serialization.deserializeBoc = Mt;
       function Et(At, Bt, $t, Tt) {
-        let Ft = (0, st.getRefsDescriptor)(At.refs, At.mask.value, At.type), jt = (0, st.getBitsDescriptor)(At.bits);
-        Tt.writeUint(Ft, 8), Tt.writeUint(jt, 8), Tt.writeBuffer((0, dt.bitsToPaddedBuffer)(At.bits));
+        let Ft = (0, st.getRefsDescriptor)(At.refs, At.mask.value, At.type), Ot = (0, st.getBitsDescriptor)(At.bits);
+        Tt.writeUint(Ft, 8), Tt.writeUint(Ot, 8), Tt.writeBuffer((0, dt.bitsToPaddedBuffer)(At.bits));
         for (let Xt of Bt) Tt.writeUint(Xt, $t * 8);
       }
       function Rt(At, Bt) {
-        let $t = (0, $.topologicalSort)(At), Tt = $t.length, Ft = Bt.idx, jt = Bt.crc32, Xt = false, Qt = 0, Wt = Math.max(Math.ceil((0, rt.bitsForNumber)(Tt, "uint") / 8), 1), kt = 0, ct = [];
+        let $t = (0, $.topologicalSort)(At), Tt = $t.length, Ft = Bt.idx, Ot = Bt.crc32, Xt = false, Qt = 0, Wt = Math.max(Math.ceil((0, rt.bitsForNumber)(Tt, "uint") / 8), 1), kt = 0, ct = [];
         for (let ut of $t) {
           let mt = _t(ut.cell, Wt);
           kt += mt, ct.push(kt);
         }
-        let et = Math.max(Math.ceil((0, rt.bitsForNumber)(kt, "uint") / 8), 1), tt = (6 + 3 * Wt + et + 1 * Wt + (Ft ? Tt * et : 0) + kt + (jt ? 4 : 0)) * 8, nt = new j.BitBuilder(tt);
-        if (nt.writeUint(3052313714, 32), nt.writeBit(Ft), nt.writeBit(jt), nt.writeBit(Xt), nt.writeUint(Qt, 2), nt.writeUint(Wt, 3), nt.writeUint(et, 8), nt.writeUint(Tt, Wt * 8), nt.writeUint(1, Wt * 8), nt.writeUint(0, Wt * 8), nt.writeUint(kt, et * 8), nt.writeUint(0, Wt * 8), Ft) for (let ut = 0; ut < Tt; ut++) nt.writeUint(ct[ut], et * 8);
+        let et = Math.max(Math.ceil((0, rt.bitsForNumber)(kt, "uint") / 8), 1), tt = (6 + 3 * Wt + et + 1 * Wt + (Ft ? Tt * et : 0) + kt + (Ot ? 4 : 0)) * 8, nt = new j.BitBuilder(tt);
+        if (nt.writeUint(3052313714, 32), nt.writeBit(Ft), nt.writeBit(Ot), nt.writeBit(Xt), nt.writeUint(Qt, 2), nt.writeUint(Wt, 3), nt.writeUint(et, 8), nt.writeUint(Tt, Wt * 8), nt.writeUint(1, Wt * 8), nt.writeUint(0, Wt * 8), nt.writeUint(kt, et * 8), nt.writeUint(0, Wt * 8), Ft) for (let ut = 0; ut < Tt; ut++) nt.writeUint(ct[ut], et * 8);
         for (let ut = 0; ut < Tt; ut++) Et($t[ut].cell, $t[ut].refs, Wt, nt);
-        if (jt) {
+        if (Ot) {
           let ut = (0, pt.crc32c)(nt.buffer());
           nt.writeBuffer(ut);
         }
@@ -63825,7 +63825,7 @@ https://github.com/browserify/crypto-browserify`);
       function dt(bt) {
         let yt = bt.asCell();
         if (bt.loadUint(4) !== 7) throw Error("Invalid data");
-        let xt = bt.loadUintBig(256), _t = bt.loadUintBig(64), Ct = bt.loadUintBig(256), Mt = bt.loadUintBig(64), Et = bt.loadUint(32), Rt = bt.loadUint(15), At = (0, _.loadAccountStatus)(bt), Bt = (0, _.loadAccountStatus)(bt), Tt = bt.loadRef().beginParse(), Ft = Tt.loadBit() ? (0, j.loadMessage)(Tt.loadRef().beginParse()) : void 0, jt = Tt.loadDict(b.Dictionary.Keys.Uint(15), j.MessageValue);
+        let xt = bt.loadUintBig(256), _t = bt.loadUintBig(64), Ct = bt.loadUintBig(256), Mt = bt.loadUintBig(64), Et = bt.loadUint(32), Rt = bt.loadUint(15), At = (0, _.loadAccountStatus)(bt), Bt = (0, _.loadAccountStatus)(bt), Tt = bt.loadRef().beginParse(), Ft = Tt.loadBit() ? (0, j.loadMessage)(Tt.loadRef().beginParse()) : void 0, Ot = Tt.loadDict(b.Dictionary.Keys.Uint(15), j.MessageValue);
         Tt.endParse();
         let Xt = (0, $.loadCurrencyCollection)(bt), Qt = (0, rt.loadHashUpdate)(bt.loadRef().beginParse()), Wt = (0, st.loadTransactionDescription)(bt.loadRef().beginParse());
         return {
@@ -63838,7 +63838,7 @@ https://github.com/browserify/crypto-browserify`);
           oldStatus: At,
           endStatus: Bt,
           inMessage: Ft,
-          outMessages: jt,
+          outMessages: Ot,
           totalFees: Xt,
           stateUpdate: Qt,
           description: Wt,
@@ -64132,16 +64132,16 @@ https://github.com/browserify/crypto-browserify`);
           return Ft.storeShardAccounts;
         }
       });
-      var jt = ShardIdent;
+      var Ot = ShardIdent;
       Object.defineProperty(d, "loadShardIdent", {
         enumerable: true,
         get: function() {
-          return jt.loadShardIdent;
+          return Ot.loadShardIdent;
         }
       }), Object.defineProperty(d, "storeShardIdent", {
         enumerable: true,
         get: function() {
-          return jt.storeShardIdent;
+          return Ot.storeShardIdent;
         }
       });
       var Xt = ShardStateUnsplit;
@@ -64851,11 +64851,11 @@ https://github.com/browserify/crypto-browserify`);
           return Ft.TupleReader;
         }
       });
-      var jt = builder;
+      var Ot = builder;
       Object.defineProperty(d, "TupleBuilder", {
         enumerable: true,
         get: function() {
-          return jt.TupleBuilder;
+          return Ot.TupleBuilder;
         }
       }), _(_export, d);
       var Xt = openContract$1;
@@ -66255,8 +66255,8 @@ Values:
             method: "POST",
             body: $,
             duplex: "half"
-          }), jt;
-          if (utils$1$1.isFormData($) && (jt = Ft.headers.get("content-type")) && yt.setContentType(jt), Ft.body) {
+          }), Ot;
+          if (utils$1$1.isFormData($) && (Ot = Ft.headers.get("content-type")) && yt.setContentType(Ot), Ft.body) {
             const [Xt, Qt] = progressEventDecorator(Rt, progressEventReducer(asyncDecorator(pt)));
             $ = trackStream(Ft.body, DEFAULT_CHUNK_SIZE, Xt, Qt);
           }
@@ -66283,15 +66283,15 @@ Values:
           ].forEach((Wt) => {
             Ft[Wt] = Bt[Wt];
           });
-          const jt = utils$1$1.toFiniteNumber(Bt.headers.get("content-length")), [Xt, Qt] = dt && progressEventDecorator(jt, progressEventReducer(asyncDecorator(dt), true)) || [];
+          const Ot = utils$1$1.toFiniteNumber(Bt.headers.get("content-length")), [Xt, Qt] = dt && progressEventDecorator(Ot, progressEventReducer(asyncDecorator(dt), true)) || [];
           Bt = new Response(trackStream(Bt.body, DEFAULT_CHUNK_SIZE, Xt, () => {
             Qt && Qt(), Et && Et();
           }), Ft);
         }
         bt = bt || "text";
         let Tt = await resolvers[utils$1$1.findKey(resolvers, bt) || "text"](Bt, d);
-        return !$t && Et && Et(), await new Promise((Ft, jt) => {
-          settle(Ft, jt, {
+        return !$t && Et && Et(), await new Promise((Ft, Ot) => {
+          settle(Ft, Ot, {
             data: Tt,
             headers: AxiosHeaders$1.from(Bt.headers),
             status: Bt.status,
@@ -66994,8 +66994,8 @@ Values:
           message: At.message
         };
         let Tt = "";
-        const Ft = Rt.filter((jt) => !!jt).slice().reverse();
-        for (const jt of Ft) Tt = jt($t, {
+        const Ft = Rt.filter((Ot) => !!Ot).slice().reverse();
+        for (const Ot of Ft) Tt = Ot($t, {
           data: Mt,
           defaultError: Tt
         }).message;
@@ -73335,131 +73335,131 @@ Values:
           return Ft.ElectorContract;
         }
       });
-      var jt = ConfigParser;
+      var Ot = ConfigParser;
       Object.defineProperty(d, "configParse5", {
         enumerable: true,
         get: function() {
-          return jt.configParse5;
+          return Ot.configParse5;
         }
       }), Object.defineProperty(d, "configParse8", {
         enumerable: true,
         get: function() {
-          return jt.configParse8;
+          return Ot.configParse8;
         }
       }), Object.defineProperty(d, "configParse12", {
         enumerable: true,
         get: function() {
-          return jt.configParse12;
+          return Ot.configParse12;
         }
       }), Object.defineProperty(d, "configParse13", {
         enumerable: true,
         get: function() {
-          return jt.configParse13;
+          return Ot.configParse13;
         }
       }), Object.defineProperty(d, "configParse15", {
         enumerable: true,
         get: function() {
-          return jt.configParse15;
+          return Ot.configParse15;
         }
       }), Object.defineProperty(d, "configParse16", {
         enumerable: true,
         get: function() {
-          return jt.configParse16;
+          return Ot.configParse16;
         }
       }), Object.defineProperty(d, "configParse17", {
         enumerable: true,
         get: function() {
-          return jt.configParse17;
+          return Ot.configParse17;
         }
       }), Object.defineProperty(d, "configParse18", {
         enumerable: true,
         get: function() {
-          return jt.configParse18;
+          return Ot.configParse18;
         }
       }), Object.defineProperty(d, "configParse28", {
         enumerable: true,
         get: function() {
-          return jt.configParse28;
+          return Ot.configParse28;
         }
       }), Object.defineProperty(d, "configParse29", {
         enumerable: true,
         get: function() {
-          return jt.configParse29;
+          return Ot.configParse29;
         }
       }), Object.defineProperty(d, "configParse40", {
         enumerable: true,
         get: function() {
-          return jt.configParse40;
+          return Ot.configParse40;
         }
       }), Object.defineProperty(d, "configParseBridge", {
         enumerable: true,
         get: function() {
-          return jt.configParseBridge;
+          return Ot.configParseBridge;
         }
       }), Object.defineProperty(d, "configParseGasLimitsPrices", {
         enumerable: true,
         get: function() {
-          return jt.configParseGasLimitsPrices;
+          return Ot.configParseGasLimitsPrices;
         }
       }), Object.defineProperty(d, "configParseMasterAddress", {
         enumerable: true,
         get: function() {
-          return jt.configParseMasterAddress;
+          return Ot.configParseMasterAddress;
         }
       }), Object.defineProperty(d, "configParseMasterAddressRequired", {
         enumerable: true,
         get: function() {
-          return jt.configParseMasterAddressRequired;
+          return Ot.configParseMasterAddressRequired;
         }
       }), Object.defineProperty(d, "configParseMsgPrices", {
         enumerable: true,
         get: function() {
-          return jt.configParseMsgPrices;
+          return Ot.configParseMsgPrices;
         }
       }), Object.defineProperty(d, "configParseValidatorSet", {
         enumerable: true,
         get: function() {
-          return jt.configParseValidatorSet;
+          return Ot.configParseValidatorSet;
         }
       }), Object.defineProperty(d, "configParseWorkchainDescriptor", {
         enumerable: true,
         get: function() {
-          return jt.configParseWorkchainDescriptor;
+          return Ot.configParseWorkchainDescriptor;
         }
       }), Object.defineProperty(d, "parseBridge", {
         enumerable: true,
         get: function() {
-          return jt.parseBridge;
+          return Ot.parseBridge;
         }
       }), Object.defineProperty(d, "parseProposalSetup", {
         enumerable: true,
         get: function() {
-          return jt.parseProposalSetup;
+          return Ot.parseProposalSetup;
         }
       }), Object.defineProperty(d, "parseValidatorSet", {
         enumerable: true,
         get: function() {
-          return jt.parseValidatorSet;
+          return Ot.parseValidatorSet;
         }
       }), Object.defineProperty(d, "parseVotingSetup", {
         enumerable: true,
         get: function() {
-          return jt.parseVotingSetup;
+          return Ot.parseVotingSetup;
         }
       }), Object.defineProperty(d, "parseFullConfig", {
         enumerable: true,
         get: function() {
-          return jt.parseFullConfig;
+          return Ot.parseFullConfig;
         }
       }), Object.defineProperty(d, "loadConfigParamById", {
         enumerable: true,
         get: function() {
-          return jt.loadConfigParamById;
+          return Ot.loadConfigParamById;
         }
       }), Object.defineProperty(d, "loadConfigParamsAsSlice", {
         enumerable: true,
         get: function() {
-          return jt.loadConfigParamsAsSlice;
+          return Ot.loadConfigParamsAsSlice;
         }
       });
       var Xt = fees;
@@ -74445,7 +74445,7 @@ Values:
           return it !== 0 ? nt.words[ht] = it | 0 : nt.length--, nt._strip();
         }
         var At = function(tt, nt, ot) {
-          var ut = tt.words, mt = nt.words, vt = ot.words, at = 0, it, ht, wt, St = ut[0] | 0, Nt = St & 8191, qt = St >>> 13, Zt = ut[1] | 0, Ut = Zt & 8191, Lt = Zt >>> 13, Ht = ut[2] | 0, tr = Ht & 8191, Gt = Ht >>> 13, zt = ut[3] | 0, sr = zt & 8191, br = zt >>> 13, dr = ut[4] | 0, xr = dr & 8191, kr = dr >>> 13, vr = ut[5] | 0, gr = vr & 8191, jr = vr >>> 13, _r = ut[6] | 0, Tr = _r & 8191, Ur = _r >>> 13, Cr = ut[7] | 0, lr = Cr & 8191, rr = Cr >>> 13, nr = ut[8] | 0, ar = nr & 8191, pr = nr >>> 13, Pt = ut[9] | 0, It = Pt & 8191, Dt = Pt >>> 13, Vt = mt[0] | 0, ir = Vt & 8191, ur = Vt >>> 13, or = mt[1] | 0, wr = or & 8191, Ir = or >>> 13, fr = mt[2] | 0, $r = fr & 8191, Pr = fr >>> 13, Mr = mt[3] | 0, Nr = Mr & 8191, Vr = Mr >>> 13, Sr = mt[4] | 0, Or = Sr & 8191, Hr = Sr >>> 13, Rr = mt[5] | 0, Lr = Rr & 8191, Zr = Rr >>> 13, Br = mt[6] | 0, qr = Br & 8191, Kt = Br >>> 13, Yt = mt[7] | 0, er = Yt & 8191, Ot = Yt >>> 13, Jt = mt[8] | 0, cr = Jt & 8191, yr = Jt >>> 13, hr = mt[9] | 0, Er = hr & 8191, zr = hr >>> 13;
+          var ut = tt.words, mt = nt.words, vt = ot.words, at = 0, it, ht, wt, St = ut[0] | 0, Nt = St & 8191, qt = St >>> 13, Zt = ut[1] | 0, Ut = Zt & 8191, Lt = Zt >>> 13, Ht = ut[2] | 0, tr = Ht & 8191, Gt = Ht >>> 13, zt = ut[3] | 0, sr = zt & 8191, br = zt >>> 13, dr = ut[4] | 0, xr = dr & 8191, kr = dr >>> 13, vr = ut[5] | 0, gr = vr & 8191, Fr = vr >>> 13, _r = ut[6] | 0, Tr = _r & 8191, Ur = _r >>> 13, Cr = ut[7] | 0, lr = Cr & 8191, rr = Cr >>> 13, nr = ut[8] | 0, ar = nr & 8191, pr = nr >>> 13, Pt = ut[9] | 0, It = Pt & 8191, Dt = Pt >>> 13, Vt = mt[0] | 0, ir = Vt & 8191, ur = Vt >>> 13, or = mt[1] | 0, wr = or & 8191, Ir = or >>> 13, fr = mt[2] | 0, $r = fr & 8191, Pr = fr >>> 13, Mr = mt[3] | 0, Nr = Mr & 8191, Vr = Mr >>> 13, Sr = mt[4] | 0, jr = Sr & 8191, Hr = Sr >>> 13, Rr = mt[5] | 0, Lr = Rr & 8191, Zr = Rr >>> 13, Br = mt[6] | 0, qr = Br & 8191, Kt = Br >>> 13, Yt = mt[7] | 0, er = Yt & 8191, jt = Yt >>> 13, Jt = mt[8] | 0, cr = Jt & 8191, yr = Jt >>> 13, hr = mt[9] | 0, Er = hr & 8191, zr = hr >>> 13;
           ot.negative = tt.negative ^ nt.negative, ot.length = 19, it = Math.imul(Nt, ir), ht = Math.imul(Nt, ur), ht = ht + Math.imul(qt, ir) | 0, wt = Math.imul(qt, ur);
           var Wr = (at + it | 0) + ((ht & 8191) << 13) | 0;
           at = (wt + (ht >>> 13) | 0) + (Wr >>> 26) | 0, Wr &= 67108863, it = Math.imul(Ut, ir), ht = Math.imul(Ut, ur), ht = ht + Math.imul(Lt, ir) | 0, wt = Math.imul(Lt, ur), it = it + Math.imul(Nt, wr) | 0, ht = ht + Math.imul(Nt, Ir) | 0, ht = ht + Math.imul(qt, wr) | 0, wt = wt + Math.imul(qt, Ir) | 0;
@@ -74454,37 +74454,37 @@ Values:
           var Jr = (at + it | 0) + ((ht & 8191) << 13) | 0;
           at = (wt + (ht >>> 13) | 0) + (Jr >>> 26) | 0, Jr &= 67108863, it = Math.imul(sr, ir), ht = Math.imul(sr, ur), ht = ht + Math.imul(br, ir) | 0, wt = Math.imul(br, ur), it = it + Math.imul(tr, wr) | 0, ht = ht + Math.imul(tr, Ir) | 0, ht = ht + Math.imul(Gt, wr) | 0, wt = wt + Math.imul(Gt, Ir) | 0, it = it + Math.imul(Ut, $r) | 0, ht = ht + Math.imul(Ut, Pr) | 0, ht = ht + Math.imul(Lt, $r) | 0, wt = wt + Math.imul(Lt, Pr) | 0, it = it + Math.imul(Nt, Nr) | 0, ht = ht + Math.imul(Nt, Vr) | 0, ht = ht + Math.imul(qt, Nr) | 0, wt = wt + Math.imul(qt, Vr) | 0;
           var ln = (at + it | 0) + ((ht & 8191) << 13) | 0;
-          at = (wt + (ht >>> 13) | 0) + (ln >>> 26) | 0, ln &= 67108863, it = Math.imul(xr, ir), ht = Math.imul(xr, ur), ht = ht + Math.imul(kr, ir) | 0, wt = Math.imul(kr, ur), it = it + Math.imul(sr, wr) | 0, ht = ht + Math.imul(sr, Ir) | 0, ht = ht + Math.imul(br, wr) | 0, wt = wt + Math.imul(br, Ir) | 0, it = it + Math.imul(tr, $r) | 0, ht = ht + Math.imul(tr, Pr) | 0, ht = ht + Math.imul(Gt, $r) | 0, wt = wt + Math.imul(Gt, Pr) | 0, it = it + Math.imul(Ut, Nr) | 0, ht = ht + Math.imul(Ut, Vr) | 0, ht = ht + Math.imul(Lt, Nr) | 0, wt = wt + Math.imul(Lt, Vr) | 0, it = it + Math.imul(Nt, Or) | 0, ht = ht + Math.imul(Nt, Hr) | 0, ht = ht + Math.imul(qt, Or) | 0, wt = wt + Math.imul(qt, Hr) | 0;
+          at = (wt + (ht >>> 13) | 0) + (ln >>> 26) | 0, ln &= 67108863, it = Math.imul(xr, ir), ht = Math.imul(xr, ur), ht = ht + Math.imul(kr, ir) | 0, wt = Math.imul(kr, ur), it = it + Math.imul(sr, wr) | 0, ht = ht + Math.imul(sr, Ir) | 0, ht = ht + Math.imul(br, wr) | 0, wt = wt + Math.imul(br, Ir) | 0, it = it + Math.imul(tr, $r) | 0, ht = ht + Math.imul(tr, Pr) | 0, ht = ht + Math.imul(Gt, $r) | 0, wt = wt + Math.imul(Gt, Pr) | 0, it = it + Math.imul(Ut, Nr) | 0, ht = ht + Math.imul(Ut, Vr) | 0, ht = ht + Math.imul(Lt, Nr) | 0, wt = wt + Math.imul(Lt, Vr) | 0, it = it + Math.imul(Nt, jr) | 0, ht = ht + Math.imul(Nt, Hr) | 0, ht = ht + Math.imul(qt, jr) | 0, wt = wt + Math.imul(qt, Hr) | 0;
           var un = (at + it | 0) + ((ht & 8191) << 13) | 0;
-          at = (wt + (ht >>> 13) | 0) + (un >>> 26) | 0, un &= 67108863, it = Math.imul(gr, ir), ht = Math.imul(gr, ur), ht = ht + Math.imul(jr, ir) | 0, wt = Math.imul(jr, ur), it = it + Math.imul(xr, wr) | 0, ht = ht + Math.imul(xr, Ir) | 0, ht = ht + Math.imul(kr, wr) | 0, wt = wt + Math.imul(kr, Ir) | 0, it = it + Math.imul(sr, $r) | 0, ht = ht + Math.imul(sr, Pr) | 0, ht = ht + Math.imul(br, $r) | 0, wt = wt + Math.imul(br, Pr) | 0, it = it + Math.imul(tr, Nr) | 0, ht = ht + Math.imul(tr, Vr) | 0, ht = ht + Math.imul(Gt, Nr) | 0, wt = wt + Math.imul(Gt, Vr) | 0, it = it + Math.imul(Ut, Or) | 0, ht = ht + Math.imul(Ut, Hr) | 0, ht = ht + Math.imul(Lt, Or) | 0, wt = wt + Math.imul(Lt, Hr) | 0, it = it + Math.imul(Nt, Lr) | 0, ht = ht + Math.imul(Nt, Zr) | 0, ht = ht + Math.imul(qt, Lr) | 0, wt = wt + Math.imul(qt, Zr) | 0;
+          at = (wt + (ht >>> 13) | 0) + (un >>> 26) | 0, un &= 67108863, it = Math.imul(gr, ir), ht = Math.imul(gr, ur), ht = ht + Math.imul(Fr, ir) | 0, wt = Math.imul(Fr, ur), it = it + Math.imul(xr, wr) | 0, ht = ht + Math.imul(xr, Ir) | 0, ht = ht + Math.imul(kr, wr) | 0, wt = wt + Math.imul(kr, Ir) | 0, it = it + Math.imul(sr, $r) | 0, ht = ht + Math.imul(sr, Pr) | 0, ht = ht + Math.imul(br, $r) | 0, wt = wt + Math.imul(br, Pr) | 0, it = it + Math.imul(tr, Nr) | 0, ht = ht + Math.imul(tr, Vr) | 0, ht = ht + Math.imul(Gt, Nr) | 0, wt = wt + Math.imul(Gt, Vr) | 0, it = it + Math.imul(Ut, jr) | 0, ht = ht + Math.imul(Ut, Hr) | 0, ht = ht + Math.imul(Lt, jr) | 0, wt = wt + Math.imul(Lt, Hr) | 0, it = it + Math.imul(Nt, Lr) | 0, ht = ht + Math.imul(Nt, Zr) | 0, ht = ht + Math.imul(qt, Lr) | 0, wt = wt + Math.imul(qt, Zr) | 0;
           var mn = (at + it | 0) + ((ht & 8191) << 13) | 0;
-          at = (wt + (ht >>> 13) | 0) + (mn >>> 26) | 0, mn &= 67108863, it = Math.imul(Tr, ir), ht = Math.imul(Tr, ur), ht = ht + Math.imul(Ur, ir) | 0, wt = Math.imul(Ur, ur), it = it + Math.imul(gr, wr) | 0, ht = ht + Math.imul(gr, Ir) | 0, ht = ht + Math.imul(jr, wr) | 0, wt = wt + Math.imul(jr, Ir) | 0, it = it + Math.imul(xr, $r) | 0, ht = ht + Math.imul(xr, Pr) | 0, ht = ht + Math.imul(kr, $r) | 0, wt = wt + Math.imul(kr, Pr) | 0, it = it + Math.imul(sr, Nr) | 0, ht = ht + Math.imul(sr, Vr) | 0, ht = ht + Math.imul(br, Nr) | 0, wt = wt + Math.imul(br, Vr) | 0, it = it + Math.imul(tr, Or) | 0, ht = ht + Math.imul(tr, Hr) | 0, ht = ht + Math.imul(Gt, Or) | 0, wt = wt + Math.imul(Gt, Hr) | 0, it = it + Math.imul(Ut, Lr) | 0, ht = ht + Math.imul(Ut, Zr) | 0, ht = ht + Math.imul(Lt, Lr) | 0, wt = wt + Math.imul(Lt, Zr) | 0, it = it + Math.imul(Nt, qr) | 0, ht = ht + Math.imul(Nt, Kt) | 0, ht = ht + Math.imul(qt, qr) | 0, wt = wt + Math.imul(qt, Kt) | 0;
+          at = (wt + (ht >>> 13) | 0) + (mn >>> 26) | 0, mn &= 67108863, it = Math.imul(Tr, ir), ht = Math.imul(Tr, ur), ht = ht + Math.imul(Ur, ir) | 0, wt = Math.imul(Ur, ur), it = it + Math.imul(gr, wr) | 0, ht = ht + Math.imul(gr, Ir) | 0, ht = ht + Math.imul(Fr, wr) | 0, wt = wt + Math.imul(Fr, Ir) | 0, it = it + Math.imul(xr, $r) | 0, ht = ht + Math.imul(xr, Pr) | 0, ht = ht + Math.imul(kr, $r) | 0, wt = wt + Math.imul(kr, Pr) | 0, it = it + Math.imul(sr, Nr) | 0, ht = ht + Math.imul(sr, Vr) | 0, ht = ht + Math.imul(br, Nr) | 0, wt = wt + Math.imul(br, Vr) | 0, it = it + Math.imul(tr, jr) | 0, ht = ht + Math.imul(tr, Hr) | 0, ht = ht + Math.imul(Gt, jr) | 0, wt = wt + Math.imul(Gt, Hr) | 0, it = it + Math.imul(Ut, Lr) | 0, ht = ht + Math.imul(Ut, Zr) | 0, ht = ht + Math.imul(Lt, Lr) | 0, wt = wt + Math.imul(Lt, Zr) | 0, it = it + Math.imul(Nt, qr) | 0, ht = ht + Math.imul(Nt, Kt) | 0, ht = ht + Math.imul(qt, qr) | 0, wt = wt + Math.imul(qt, Kt) | 0;
           var pn = (at + it | 0) + ((ht & 8191) << 13) | 0;
-          at = (wt + (ht >>> 13) | 0) + (pn >>> 26) | 0, pn &= 67108863, it = Math.imul(lr, ir), ht = Math.imul(lr, ur), ht = ht + Math.imul(rr, ir) | 0, wt = Math.imul(rr, ur), it = it + Math.imul(Tr, wr) | 0, ht = ht + Math.imul(Tr, Ir) | 0, ht = ht + Math.imul(Ur, wr) | 0, wt = wt + Math.imul(Ur, Ir) | 0, it = it + Math.imul(gr, $r) | 0, ht = ht + Math.imul(gr, Pr) | 0, ht = ht + Math.imul(jr, $r) | 0, wt = wt + Math.imul(jr, Pr) | 0, it = it + Math.imul(xr, Nr) | 0, ht = ht + Math.imul(xr, Vr) | 0, ht = ht + Math.imul(kr, Nr) | 0, wt = wt + Math.imul(kr, Vr) | 0, it = it + Math.imul(sr, Or) | 0, ht = ht + Math.imul(sr, Hr) | 0, ht = ht + Math.imul(br, Or) | 0, wt = wt + Math.imul(br, Hr) | 0, it = it + Math.imul(tr, Lr) | 0, ht = ht + Math.imul(tr, Zr) | 0, ht = ht + Math.imul(Gt, Lr) | 0, wt = wt + Math.imul(Gt, Zr) | 0, it = it + Math.imul(Ut, qr) | 0, ht = ht + Math.imul(Ut, Kt) | 0, ht = ht + Math.imul(Lt, qr) | 0, wt = wt + Math.imul(Lt, Kt) | 0, it = it + Math.imul(Nt, er) | 0, ht = ht + Math.imul(Nt, Ot) | 0, ht = ht + Math.imul(qt, er) | 0, wt = wt + Math.imul(qt, Ot) | 0;
+          at = (wt + (ht >>> 13) | 0) + (pn >>> 26) | 0, pn &= 67108863, it = Math.imul(lr, ir), ht = Math.imul(lr, ur), ht = ht + Math.imul(rr, ir) | 0, wt = Math.imul(rr, ur), it = it + Math.imul(Tr, wr) | 0, ht = ht + Math.imul(Tr, Ir) | 0, ht = ht + Math.imul(Ur, wr) | 0, wt = wt + Math.imul(Ur, Ir) | 0, it = it + Math.imul(gr, $r) | 0, ht = ht + Math.imul(gr, Pr) | 0, ht = ht + Math.imul(Fr, $r) | 0, wt = wt + Math.imul(Fr, Pr) | 0, it = it + Math.imul(xr, Nr) | 0, ht = ht + Math.imul(xr, Vr) | 0, ht = ht + Math.imul(kr, Nr) | 0, wt = wt + Math.imul(kr, Vr) | 0, it = it + Math.imul(sr, jr) | 0, ht = ht + Math.imul(sr, Hr) | 0, ht = ht + Math.imul(br, jr) | 0, wt = wt + Math.imul(br, Hr) | 0, it = it + Math.imul(tr, Lr) | 0, ht = ht + Math.imul(tr, Zr) | 0, ht = ht + Math.imul(Gt, Lr) | 0, wt = wt + Math.imul(Gt, Zr) | 0, it = it + Math.imul(Ut, qr) | 0, ht = ht + Math.imul(Ut, Kt) | 0, ht = ht + Math.imul(Lt, qr) | 0, wt = wt + Math.imul(Lt, Kt) | 0, it = it + Math.imul(Nt, er) | 0, ht = ht + Math.imul(Nt, jt) | 0, ht = ht + Math.imul(qt, er) | 0, wt = wt + Math.imul(qt, jt) | 0;
           var fn = (at + it | 0) + ((ht & 8191) << 13) | 0;
-          at = (wt + (ht >>> 13) | 0) + (fn >>> 26) | 0, fn &= 67108863, it = Math.imul(ar, ir), ht = Math.imul(ar, ur), ht = ht + Math.imul(pr, ir) | 0, wt = Math.imul(pr, ur), it = it + Math.imul(lr, wr) | 0, ht = ht + Math.imul(lr, Ir) | 0, ht = ht + Math.imul(rr, wr) | 0, wt = wt + Math.imul(rr, Ir) | 0, it = it + Math.imul(Tr, $r) | 0, ht = ht + Math.imul(Tr, Pr) | 0, ht = ht + Math.imul(Ur, $r) | 0, wt = wt + Math.imul(Ur, Pr) | 0, it = it + Math.imul(gr, Nr) | 0, ht = ht + Math.imul(gr, Vr) | 0, ht = ht + Math.imul(jr, Nr) | 0, wt = wt + Math.imul(jr, Vr) | 0, it = it + Math.imul(xr, Or) | 0, ht = ht + Math.imul(xr, Hr) | 0, ht = ht + Math.imul(kr, Or) | 0, wt = wt + Math.imul(kr, Hr) | 0, it = it + Math.imul(sr, Lr) | 0, ht = ht + Math.imul(sr, Zr) | 0, ht = ht + Math.imul(br, Lr) | 0, wt = wt + Math.imul(br, Zr) | 0, it = it + Math.imul(tr, qr) | 0, ht = ht + Math.imul(tr, Kt) | 0, ht = ht + Math.imul(Gt, qr) | 0, wt = wt + Math.imul(Gt, Kt) | 0, it = it + Math.imul(Ut, er) | 0, ht = ht + Math.imul(Ut, Ot) | 0, ht = ht + Math.imul(Lt, er) | 0, wt = wt + Math.imul(Lt, Ot) | 0, it = it + Math.imul(Nt, cr) | 0, ht = ht + Math.imul(Nt, yr) | 0, ht = ht + Math.imul(qt, cr) | 0, wt = wt + Math.imul(qt, yr) | 0;
+          at = (wt + (ht >>> 13) | 0) + (fn >>> 26) | 0, fn &= 67108863, it = Math.imul(ar, ir), ht = Math.imul(ar, ur), ht = ht + Math.imul(pr, ir) | 0, wt = Math.imul(pr, ur), it = it + Math.imul(lr, wr) | 0, ht = ht + Math.imul(lr, Ir) | 0, ht = ht + Math.imul(rr, wr) | 0, wt = wt + Math.imul(rr, Ir) | 0, it = it + Math.imul(Tr, $r) | 0, ht = ht + Math.imul(Tr, Pr) | 0, ht = ht + Math.imul(Ur, $r) | 0, wt = wt + Math.imul(Ur, Pr) | 0, it = it + Math.imul(gr, Nr) | 0, ht = ht + Math.imul(gr, Vr) | 0, ht = ht + Math.imul(Fr, Nr) | 0, wt = wt + Math.imul(Fr, Vr) | 0, it = it + Math.imul(xr, jr) | 0, ht = ht + Math.imul(xr, Hr) | 0, ht = ht + Math.imul(kr, jr) | 0, wt = wt + Math.imul(kr, Hr) | 0, it = it + Math.imul(sr, Lr) | 0, ht = ht + Math.imul(sr, Zr) | 0, ht = ht + Math.imul(br, Lr) | 0, wt = wt + Math.imul(br, Zr) | 0, it = it + Math.imul(tr, qr) | 0, ht = ht + Math.imul(tr, Kt) | 0, ht = ht + Math.imul(Gt, qr) | 0, wt = wt + Math.imul(Gt, Kt) | 0, it = it + Math.imul(Ut, er) | 0, ht = ht + Math.imul(Ut, jt) | 0, ht = ht + Math.imul(Lt, er) | 0, wt = wt + Math.imul(Lt, jt) | 0, it = it + Math.imul(Nt, cr) | 0, ht = ht + Math.imul(Nt, yr) | 0, ht = ht + Math.imul(qt, cr) | 0, wt = wt + Math.imul(qt, yr) | 0;
           var hn = (at + it | 0) + ((ht & 8191) << 13) | 0;
-          at = (wt + (ht >>> 13) | 0) + (hn >>> 26) | 0, hn &= 67108863, it = Math.imul(It, ir), ht = Math.imul(It, ur), ht = ht + Math.imul(Dt, ir) | 0, wt = Math.imul(Dt, ur), it = it + Math.imul(ar, wr) | 0, ht = ht + Math.imul(ar, Ir) | 0, ht = ht + Math.imul(pr, wr) | 0, wt = wt + Math.imul(pr, Ir) | 0, it = it + Math.imul(lr, $r) | 0, ht = ht + Math.imul(lr, Pr) | 0, ht = ht + Math.imul(rr, $r) | 0, wt = wt + Math.imul(rr, Pr) | 0, it = it + Math.imul(Tr, Nr) | 0, ht = ht + Math.imul(Tr, Vr) | 0, ht = ht + Math.imul(Ur, Nr) | 0, wt = wt + Math.imul(Ur, Vr) | 0, it = it + Math.imul(gr, Or) | 0, ht = ht + Math.imul(gr, Hr) | 0, ht = ht + Math.imul(jr, Or) | 0, wt = wt + Math.imul(jr, Hr) | 0, it = it + Math.imul(xr, Lr) | 0, ht = ht + Math.imul(xr, Zr) | 0, ht = ht + Math.imul(kr, Lr) | 0, wt = wt + Math.imul(kr, Zr) | 0, it = it + Math.imul(sr, qr) | 0, ht = ht + Math.imul(sr, Kt) | 0, ht = ht + Math.imul(br, qr) | 0, wt = wt + Math.imul(br, Kt) | 0, it = it + Math.imul(tr, er) | 0, ht = ht + Math.imul(tr, Ot) | 0, ht = ht + Math.imul(Gt, er) | 0, wt = wt + Math.imul(Gt, Ot) | 0, it = it + Math.imul(Ut, cr) | 0, ht = ht + Math.imul(Ut, yr) | 0, ht = ht + Math.imul(Lt, cr) | 0, wt = wt + Math.imul(Lt, yr) | 0, it = it + Math.imul(Nt, Er) | 0, ht = ht + Math.imul(Nt, zr) | 0, ht = ht + Math.imul(qt, Er) | 0, wt = wt + Math.imul(qt, zr) | 0;
+          at = (wt + (ht >>> 13) | 0) + (hn >>> 26) | 0, hn &= 67108863, it = Math.imul(It, ir), ht = Math.imul(It, ur), ht = ht + Math.imul(Dt, ir) | 0, wt = Math.imul(Dt, ur), it = it + Math.imul(ar, wr) | 0, ht = ht + Math.imul(ar, Ir) | 0, ht = ht + Math.imul(pr, wr) | 0, wt = wt + Math.imul(pr, Ir) | 0, it = it + Math.imul(lr, $r) | 0, ht = ht + Math.imul(lr, Pr) | 0, ht = ht + Math.imul(rr, $r) | 0, wt = wt + Math.imul(rr, Pr) | 0, it = it + Math.imul(Tr, Nr) | 0, ht = ht + Math.imul(Tr, Vr) | 0, ht = ht + Math.imul(Ur, Nr) | 0, wt = wt + Math.imul(Ur, Vr) | 0, it = it + Math.imul(gr, jr) | 0, ht = ht + Math.imul(gr, Hr) | 0, ht = ht + Math.imul(Fr, jr) | 0, wt = wt + Math.imul(Fr, Hr) | 0, it = it + Math.imul(xr, Lr) | 0, ht = ht + Math.imul(xr, Zr) | 0, ht = ht + Math.imul(kr, Lr) | 0, wt = wt + Math.imul(kr, Zr) | 0, it = it + Math.imul(sr, qr) | 0, ht = ht + Math.imul(sr, Kt) | 0, ht = ht + Math.imul(br, qr) | 0, wt = wt + Math.imul(br, Kt) | 0, it = it + Math.imul(tr, er) | 0, ht = ht + Math.imul(tr, jt) | 0, ht = ht + Math.imul(Gt, er) | 0, wt = wt + Math.imul(Gt, jt) | 0, it = it + Math.imul(Ut, cr) | 0, ht = ht + Math.imul(Ut, yr) | 0, ht = ht + Math.imul(Lt, cr) | 0, wt = wt + Math.imul(Lt, yr) | 0, it = it + Math.imul(Nt, Er) | 0, ht = ht + Math.imul(Nt, zr) | 0, ht = ht + Math.imul(qt, Er) | 0, wt = wt + Math.imul(qt, zr) | 0;
           var dn = (at + it | 0) + ((ht & 8191) << 13) | 0;
-          at = (wt + (ht >>> 13) | 0) + (dn >>> 26) | 0, dn &= 67108863, it = Math.imul(It, wr), ht = Math.imul(It, Ir), ht = ht + Math.imul(Dt, wr) | 0, wt = Math.imul(Dt, Ir), it = it + Math.imul(ar, $r) | 0, ht = ht + Math.imul(ar, Pr) | 0, ht = ht + Math.imul(pr, $r) | 0, wt = wt + Math.imul(pr, Pr) | 0, it = it + Math.imul(lr, Nr) | 0, ht = ht + Math.imul(lr, Vr) | 0, ht = ht + Math.imul(rr, Nr) | 0, wt = wt + Math.imul(rr, Vr) | 0, it = it + Math.imul(Tr, Or) | 0, ht = ht + Math.imul(Tr, Hr) | 0, ht = ht + Math.imul(Ur, Or) | 0, wt = wt + Math.imul(Ur, Hr) | 0, it = it + Math.imul(gr, Lr) | 0, ht = ht + Math.imul(gr, Zr) | 0, ht = ht + Math.imul(jr, Lr) | 0, wt = wt + Math.imul(jr, Zr) | 0, it = it + Math.imul(xr, qr) | 0, ht = ht + Math.imul(xr, Kt) | 0, ht = ht + Math.imul(kr, qr) | 0, wt = wt + Math.imul(kr, Kt) | 0, it = it + Math.imul(sr, er) | 0, ht = ht + Math.imul(sr, Ot) | 0, ht = ht + Math.imul(br, er) | 0, wt = wt + Math.imul(br, Ot) | 0, it = it + Math.imul(tr, cr) | 0, ht = ht + Math.imul(tr, yr) | 0, ht = ht + Math.imul(Gt, cr) | 0, wt = wt + Math.imul(Gt, yr) | 0, it = it + Math.imul(Ut, Er) | 0, ht = ht + Math.imul(Ut, zr) | 0, ht = ht + Math.imul(Lt, Er) | 0, wt = wt + Math.imul(Lt, zr) | 0;
+          at = (wt + (ht >>> 13) | 0) + (dn >>> 26) | 0, dn &= 67108863, it = Math.imul(It, wr), ht = Math.imul(It, Ir), ht = ht + Math.imul(Dt, wr) | 0, wt = Math.imul(Dt, Ir), it = it + Math.imul(ar, $r) | 0, ht = ht + Math.imul(ar, Pr) | 0, ht = ht + Math.imul(pr, $r) | 0, wt = wt + Math.imul(pr, Pr) | 0, it = it + Math.imul(lr, Nr) | 0, ht = ht + Math.imul(lr, Vr) | 0, ht = ht + Math.imul(rr, Nr) | 0, wt = wt + Math.imul(rr, Vr) | 0, it = it + Math.imul(Tr, jr) | 0, ht = ht + Math.imul(Tr, Hr) | 0, ht = ht + Math.imul(Ur, jr) | 0, wt = wt + Math.imul(Ur, Hr) | 0, it = it + Math.imul(gr, Lr) | 0, ht = ht + Math.imul(gr, Zr) | 0, ht = ht + Math.imul(Fr, Lr) | 0, wt = wt + Math.imul(Fr, Zr) | 0, it = it + Math.imul(xr, qr) | 0, ht = ht + Math.imul(xr, Kt) | 0, ht = ht + Math.imul(kr, qr) | 0, wt = wt + Math.imul(kr, Kt) | 0, it = it + Math.imul(sr, er) | 0, ht = ht + Math.imul(sr, jt) | 0, ht = ht + Math.imul(br, er) | 0, wt = wt + Math.imul(br, jt) | 0, it = it + Math.imul(tr, cr) | 0, ht = ht + Math.imul(tr, yr) | 0, ht = ht + Math.imul(Gt, cr) | 0, wt = wt + Math.imul(Gt, yr) | 0, it = it + Math.imul(Ut, Er) | 0, ht = ht + Math.imul(Ut, zr) | 0, ht = ht + Math.imul(Lt, Er) | 0, wt = wt + Math.imul(Lt, zr) | 0;
           var tn = (at + it | 0) + ((ht & 8191) << 13) | 0;
-          at = (wt + (ht >>> 13) | 0) + (tn >>> 26) | 0, tn &= 67108863, it = Math.imul(It, $r), ht = Math.imul(It, Pr), ht = ht + Math.imul(Dt, $r) | 0, wt = Math.imul(Dt, Pr), it = it + Math.imul(ar, Nr) | 0, ht = ht + Math.imul(ar, Vr) | 0, ht = ht + Math.imul(pr, Nr) | 0, wt = wt + Math.imul(pr, Vr) | 0, it = it + Math.imul(lr, Or) | 0, ht = ht + Math.imul(lr, Hr) | 0, ht = ht + Math.imul(rr, Or) | 0, wt = wt + Math.imul(rr, Hr) | 0, it = it + Math.imul(Tr, Lr) | 0, ht = ht + Math.imul(Tr, Zr) | 0, ht = ht + Math.imul(Ur, Lr) | 0, wt = wt + Math.imul(Ur, Zr) | 0, it = it + Math.imul(gr, qr) | 0, ht = ht + Math.imul(gr, Kt) | 0, ht = ht + Math.imul(jr, qr) | 0, wt = wt + Math.imul(jr, Kt) | 0, it = it + Math.imul(xr, er) | 0, ht = ht + Math.imul(xr, Ot) | 0, ht = ht + Math.imul(kr, er) | 0, wt = wt + Math.imul(kr, Ot) | 0, it = it + Math.imul(sr, cr) | 0, ht = ht + Math.imul(sr, yr) | 0, ht = ht + Math.imul(br, cr) | 0, wt = wt + Math.imul(br, yr) | 0, it = it + Math.imul(tr, Er) | 0, ht = ht + Math.imul(tr, zr) | 0, ht = ht + Math.imul(Gt, Er) | 0, wt = wt + Math.imul(Gt, zr) | 0;
+          at = (wt + (ht >>> 13) | 0) + (tn >>> 26) | 0, tn &= 67108863, it = Math.imul(It, $r), ht = Math.imul(It, Pr), ht = ht + Math.imul(Dt, $r) | 0, wt = Math.imul(Dt, Pr), it = it + Math.imul(ar, Nr) | 0, ht = ht + Math.imul(ar, Vr) | 0, ht = ht + Math.imul(pr, Nr) | 0, wt = wt + Math.imul(pr, Vr) | 0, it = it + Math.imul(lr, jr) | 0, ht = ht + Math.imul(lr, Hr) | 0, ht = ht + Math.imul(rr, jr) | 0, wt = wt + Math.imul(rr, Hr) | 0, it = it + Math.imul(Tr, Lr) | 0, ht = ht + Math.imul(Tr, Zr) | 0, ht = ht + Math.imul(Ur, Lr) | 0, wt = wt + Math.imul(Ur, Zr) | 0, it = it + Math.imul(gr, qr) | 0, ht = ht + Math.imul(gr, Kt) | 0, ht = ht + Math.imul(Fr, qr) | 0, wt = wt + Math.imul(Fr, Kt) | 0, it = it + Math.imul(xr, er) | 0, ht = ht + Math.imul(xr, jt) | 0, ht = ht + Math.imul(kr, er) | 0, wt = wt + Math.imul(kr, jt) | 0, it = it + Math.imul(sr, cr) | 0, ht = ht + Math.imul(sr, yr) | 0, ht = ht + Math.imul(br, cr) | 0, wt = wt + Math.imul(br, yr) | 0, it = it + Math.imul(tr, Er) | 0, ht = ht + Math.imul(tr, zr) | 0, ht = ht + Math.imul(Gt, Er) | 0, wt = wt + Math.imul(Gt, zr) | 0;
           var an = (at + it | 0) + ((ht & 8191) << 13) | 0;
-          at = (wt + (ht >>> 13) | 0) + (an >>> 26) | 0, an &= 67108863, it = Math.imul(It, Nr), ht = Math.imul(It, Vr), ht = ht + Math.imul(Dt, Nr) | 0, wt = Math.imul(Dt, Vr), it = it + Math.imul(ar, Or) | 0, ht = ht + Math.imul(ar, Hr) | 0, ht = ht + Math.imul(pr, Or) | 0, wt = wt + Math.imul(pr, Hr) | 0, it = it + Math.imul(lr, Lr) | 0, ht = ht + Math.imul(lr, Zr) | 0, ht = ht + Math.imul(rr, Lr) | 0, wt = wt + Math.imul(rr, Zr) | 0, it = it + Math.imul(Tr, qr) | 0, ht = ht + Math.imul(Tr, Kt) | 0, ht = ht + Math.imul(Ur, qr) | 0, wt = wt + Math.imul(Ur, Kt) | 0, it = it + Math.imul(gr, er) | 0, ht = ht + Math.imul(gr, Ot) | 0, ht = ht + Math.imul(jr, er) | 0, wt = wt + Math.imul(jr, Ot) | 0, it = it + Math.imul(xr, cr) | 0, ht = ht + Math.imul(xr, yr) | 0, ht = ht + Math.imul(kr, cr) | 0, wt = wt + Math.imul(kr, yr) | 0, it = it + Math.imul(sr, Er) | 0, ht = ht + Math.imul(sr, zr) | 0, ht = ht + Math.imul(br, Er) | 0, wt = wt + Math.imul(br, zr) | 0;
+          at = (wt + (ht >>> 13) | 0) + (an >>> 26) | 0, an &= 67108863, it = Math.imul(It, Nr), ht = Math.imul(It, Vr), ht = ht + Math.imul(Dt, Nr) | 0, wt = Math.imul(Dt, Vr), it = it + Math.imul(ar, jr) | 0, ht = ht + Math.imul(ar, Hr) | 0, ht = ht + Math.imul(pr, jr) | 0, wt = wt + Math.imul(pr, Hr) | 0, it = it + Math.imul(lr, Lr) | 0, ht = ht + Math.imul(lr, Zr) | 0, ht = ht + Math.imul(rr, Lr) | 0, wt = wt + Math.imul(rr, Zr) | 0, it = it + Math.imul(Tr, qr) | 0, ht = ht + Math.imul(Tr, Kt) | 0, ht = ht + Math.imul(Ur, qr) | 0, wt = wt + Math.imul(Ur, Kt) | 0, it = it + Math.imul(gr, er) | 0, ht = ht + Math.imul(gr, jt) | 0, ht = ht + Math.imul(Fr, er) | 0, wt = wt + Math.imul(Fr, jt) | 0, it = it + Math.imul(xr, cr) | 0, ht = ht + Math.imul(xr, yr) | 0, ht = ht + Math.imul(kr, cr) | 0, wt = wt + Math.imul(kr, yr) | 0, it = it + Math.imul(sr, Er) | 0, ht = ht + Math.imul(sr, zr) | 0, ht = ht + Math.imul(br, Er) | 0, wt = wt + Math.imul(br, zr) | 0;
           var Yr = (at + it | 0) + ((ht & 8191) << 13) | 0;
-          at = (wt + (ht >>> 13) | 0) + (Yr >>> 26) | 0, Yr &= 67108863, it = Math.imul(It, Or), ht = Math.imul(It, Hr), ht = ht + Math.imul(Dt, Or) | 0, wt = Math.imul(Dt, Hr), it = it + Math.imul(ar, Lr) | 0, ht = ht + Math.imul(ar, Zr) | 0, ht = ht + Math.imul(pr, Lr) | 0, wt = wt + Math.imul(pr, Zr) | 0, it = it + Math.imul(lr, qr) | 0, ht = ht + Math.imul(lr, Kt) | 0, ht = ht + Math.imul(rr, qr) | 0, wt = wt + Math.imul(rr, Kt) | 0, it = it + Math.imul(Tr, er) | 0, ht = ht + Math.imul(Tr, Ot) | 0, ht = ht + Math.imul(Ur, er) | 0, wt = wt + Math.imul(Ur, Ot) | 0, it = it + Math.imul(gr, cr) | 0, ht = ht + Math.imul(gr, yr) | 0, ht = ht + Math.imul(jr, cr) | 0, wt = wt + Math.imul(jr, yr) | 0, it = it + Math.imul(xr, Er) | 0, ht = ht + Math.imul(xr, zr) | 0, ht = ht + Math.imul(kr, Er) | 0, wt = wt + Math.imul(kr, zr) | 0;
+          at = (wt + (ht >>> 13) | 0) + (Yr >>> 26) | 0, Yr &= 67108863, it = Math.imul(It, jr), ht = Math.imul(It, Hr), ht = ht + Math.imul(Dt, jr) | 0, wt = Math.imul(Dt, Hr), it = it + Math.imul(ar, Lr) | 0, ht = ht + Math.imul(ar, Zr) | 0, ht = ht + Math.imul(pr, Lr) | 0, wt = wt + Math.imul(pr, Zr) | 0, it = it + Math.imul(lr, qr) | 0, ht = ht + Math.imul(lr, Kt) | 0, ht = ht + Math.imul(rr, qr) | 0, wt = wt + Math.imul(rr, Kt) | 0, it = it + Math.imul(Tr, er) | 0, ht = ht + Math.imul(Tr, jt) | 0, ht = ht + Math.imul(Ur, er) | 0, wt = wt + Math.imul(Ur, jt) | 0, it = it + Math.imul(gr, cr) | 0, ht = ht + Math.imul(gr, yr) | 0, ht = ht + Math.imul(Fr, cr) | 0, wt = wt + Math.imul(Fr, yr) | 0, it = it + Math.imul(xr, Er) | 0, ht = ht + Math.imul(xr, zr) | 0, ht = ht + Math.imul(kr, Er) | 0, wt = wt + Math.imul(kr, zr) | 0;
           var rn = (at + it | 0) + ((ht & 8191) << 13) | 0;
-          at = (wt + (ht >>> 13) | 0) + (rn >>> 26) | 0, rn &= 67108863, it = Math.imul(It, Lr), ht = Math.imul(It, Zr), ht = ht + Math.imul(Dt, Lr) | 0, wt = Math.imul(Dt, Zr), it = it + Math.imul(ar, qr) | 0, ht = ht + Math.imul(ar, Kt) | 0, ht = ht + Math.imul(pr, qr) | 0, wt = wt + Math.imul(pr, Kt) | 0, it = it + Math.imul(lr, er) | 0, ht = ht + Math.imul(lr, Ot) | 0, ht = ht + Math.imul(rr, er) | 0, wt = wt + Math.imul(rr, Ot) | 0, it = it + Math.imul(Tr, cr) | 0, ht = ht + Math.imul(Tr, yr) | 0, ht = ht + Math.imul(Ur, cr) | 0, wt = wt + Math.imul(Ur, yr) | 0, it = it + Math.imul(gr, Er) | 0, ht = ht + Math.imul(gr, zr) | 0, ht = ht + Math.imul(jr, Er) | 0, wt = wt + Math.imul(jr, zr) | 0;
+          at = (wt + (ht >>> 13) | 0) + (rn >>> 26) | 0, rn &= 67108863, it = Math.imul(It, Lr), ht = Math.imul(It, Zr), ht = ht + Math.imul(Dt, Lr) | 0, wt = Math.imul(Dt, Zr), it = it + Math.imul(ar, qr) | 0, ht = ht + Math.imul(ar, Kt) | 0, ht = ht + Math.imul(pr, qr) | 0, wt = wt + Math.imul(pr, Kt) | 0, it = it + Math.imul(lr, er) | 0, ht = ht + Math.imul(lr, jt) | 0, ht = ht + Math.imul(rr, er) | 0, wt = wt + Math.imul(rr, jt) | 0, it = it + Math.imul(Tr, cr) | 0, ht = ht + Math.imul(Tr, yr) | 0, ht = ht + Math.imul(Ur, cr) | 0, wt = wt + Math.imul(Ur, yr) | 0, it = it + Math.imul(gr, Er) | 0, ht = ht + Math.imul(gr, zr) | 0, ht = ht + Math.imul(Fr, Er) | 0, wt = wt + Math.imul(Fr, zr) | 0;
           var nn = (at + it | 0) + ((ht & 8191) << 13) | 0;
-          at = (wt + (ht >>> 13) | 0) + (nn >>> 26) | 0, nn &= 67108863, it = Math.imul(It, qr), ht = Math.imul(It, Kt), ht = ht + Math.imul(Dt, qr) | 0, wt = Math.imul(Dt, Kt), it = it + Math.imul(ar, er) | 0, ht = ht + Math.imul(ar, Ot) | 0, ht = ht + Math.imul(pr, er) | 0, wt = wt + Math.imul(pr, Ot) | 0, it = it + Math.imul(lr, cr) | 0, ht = ht + Math.imul(lr, yr) | 0, ht = ht + Math.imul(rr, cr) | 0, wt = wt + Math.imul(rr, yr) | 0, it = it + Math.imul(Tr, Er) | 0, ht = ht + Math.imul(Tr, zr) | 0, ht = ht + Math.imul(Ur, Er) | 0, wt = wt + Math.imul(Ur, zr) | 0;
+          at = (wt + (ht >>> 13) | 0) + (nn >>> 26) | 0, nn &= 67108863, it = Math.imul(It, qr), ht = Math.imul(It, Kt), ht = ht + Math.imul(Dt, qr) | 0, wt = Math.imul(Dt, Kt), it = it + Math.imul(ar, er) | 0, ht = ht + Math.imul(ar, jt) | 0, ht = ht + Math.imul(pr, er) | 0, wt = wt + Math.imul(pr, jt) | 0, it = it + Math.imul(lr, cr) | 0, ht = ht + Math.imul(lr, yr) | 0, ht = ht + Math.imul(rr, cr) | 0, wt = wt + Math.imul(rr, yr) | 0, it = it + Math.imul(Tr, Er) | 0, ht = ht + Math.imul(Tr, zr) | 0, ht = ht + Math.imul(Ur, Er) | 0, wt = wt + Math.imul(Ur, zr) | 0;
           var Gr = (at + it | 0) + ((ht & 8191) << 13) | 0;
-          at = (wt + (ht >>> 13) | 0) + (Gr >>> 26) | 0, Gr &= 67108863, it = Math.imul(It, er), ht = Math.imul(It, Ot), ht = ht + Math.imul(Dt, er) | 0, wt = Math.imul(Dt, Ot), it = it + Math.imul(ar, cr) | 0, ht = ht + Math.imul(ar, yr) | 0, ht = ht + Math.imul(pr, cr) | 0, wt = wt + Math.imul(pr, yr) | 0, it = it + Math.imul(lr, Er) | 0, ht = ht + Math.imul(lr, zr) | 0, ht = ht + Math.imul(rr, Er) | 0, wt = wt + Math.imul(rr, zr) | 0;
+          at = (wt + (ht >>> 13) | 0) + (Gr >>> 26) | 0, Gr &= 67108863, it = Math.imul(It, er), ht = Math.imul(It, jt), ht = ht + Math.imul(Dt, er) | 0, wt = Math.imul(Dt, jt), it = it + Math.imul(ar, cr) | 0, ht = ht + Math.imul(ar, yr) | 0, ht = ht + Math.imul(pr, cr) | 0, wt = wt + Math.imul(pr, yr) | 0, it = it + Math.imul(lr, Er) | 0, ht = ht + Math.imul(lr, zr) | 0, ht = ht + Math.imul(rr, Er) | 0, wt = wt + Math.imul(rr, zr) | 0;
           var Dr = (at + it | 0) + ((ht & 8191) << 13) | 0;
           at = (wt + (ht >>> 13) | 0) + (Dr >>> 26) | 0, Dr &= 67108863, it = Math.imul(It, cr), ht = Math.imul(It, yr), ht = ht + Math.imul(Dt, cr) | 0, wt = Math.imul(Dt, yr), it = it + Math.imul(ar, Er) | 0, ht = ht + Math.imul(ar, zr) | 0, ht = ht + Math.imul(pr, Er) | 0, wt = wt + Math.imul(pr, zr) | 0;
-          var Fr = (at + it | 0) + ((ht & 8191) << 13) | 0;
-          at = (wt + (ht >>> 13) | 0) + (Fr >>> 26) | 0, Fr &= 67108863, it = Math.imul(It, Er), ht = Math.imul(It, zr), ht = ht + Math.imul(Dt, Er) | 0, wt = Math.imul(Dt, zr);
+          var Or = (at + it | 0) + ((ht & 8191) << 13) | 0;
+          at = (wt + (ht >>> 13) | 0) + (Or >>> 26) | 0, Or &= 67108863, it = Math.imul(It, Er), ht = Math.imul(It, zr), ht = ht + Math.imul(Dt, Er) | 0, wt = Math.imul(Dt, zr);
           var Xr = (at + it | 0) + ((ht & 8191) << 13) | 0;
-          return at = (wt + (ht >>> 13) | 0) + (Xr >>> 26) | 0, Xr &= 67108863, vt[0] = Wr, vt[1] = gn, vt[2] = Jr, vt[3] = ln, vt[4] = un, vt[5] = mn, vt[6] = pn, vt[7] = fn, vt[8] = hn, vt[9] = dn, vt[10] = tn, vt[11] = an, vt[12] = Yr, vt[13] = rn, vt[14] = nn, vt[15] = Gr, vt[16] = Dr, vt[17] = Fr, vt[18] = Xr, at !== 0 && (vt[19] = at, ot.length++), ot;
+          return at = (wt + (ht >>> 13) | 0) + (Xr >>> 26) | 0, Xr &= 67108863, vt[0] = Wr, vt[1] = gn, vt[2] = Jr, vt[3] = ln, vt[4] = un, vt[5] = mn, vt[6] = pn, vt[7] = fn, vt[8] = hn, vt[9] = dn, vt[10] = tn, vt[11] = an, vt[12] = Yr, vt[13] = rn, vt[14] = nn, vt[15] = Gr, vt[16] = Dr, vt[17] = Or, vt[18] = Xr, at !== 0 && (vt[19] = at, ot.length++), ot;
         };
         Math.imul || (At = Rt);
         function Bt(et, tt, nt) {
@@ -74881,10 +74881,10 @@ Values:
         }, Ft.prototype.imulK = function(tt) {
           return tt.imul(this.k);
         };
-        function jt() {
+        function Ot() {
           Ft.call(this, "k256", "ffffffff ffffffff ffffffff ffffffff ffffffff ffffffff fffffffe fffffc2f");
         }
-        rt(jt, Ft), jt.prototype.split = function(tt, nt) {
+        rt(Ot, Ft), Ot.prototype.split = function(tt, nt) {
           for (var ot = 4194303, ut = Math.min(tt.length, 9), mt = 0; mt < ut; mt++) nt.words[mt] = tt.words[mt];
           if (nt.length = ut, tt.length <= 9) {
             tt.words[0] = 0, tt.length = 1;
@@ -74896,7 +74896,7 @@ Values:
             tt.words[mt - 10] = (at & ot) << 4 | vt >>> 22, vt = at;
           }
           vt >>>= 22, tt.words[mt - 10] = vt, vt === 0 && tt.length > 10 ? tt.length -= 10 : tt.length -= 9;
-        }, jt.prototype.imulK = function(tt) {
+        }, Ot.prototype.imulK = function(tt) {
           tt.words[tt.length] = 0, tt.words[tt.length + 1] = 0, tt.length += 2;
           for (var nt = 0, ot = 0; ot < tt.length; ot++) {
             var ut = tt.words[ot] | 0;
@@ -74924,7 +74924,7 @@ Values:
         }, j._prime = function(tt) {
           if (Tt[tt]) return Tt[tt];
           var nt;
-          if (tt === "k256") nt = new jt();
+          if (tt === "k256") nt = new Ot();
           else if (tt === "p224") nt = new Xt();
           else if (tt === "p192") nt = new Qt();
           else if (tt === "p25519") nt = new Wt();
@@ -75432,7 +75432,7 @@ Values:
           return vt !== 0 ? et.words[at] = vt | 0 : et.length--, et.strip();
         }
         var Mt = function(ct, et, tt) {
-          var nt = ct.words, ot = et.words, ut = tt.words, mt = 0, vt, at, it, ht = nt[0] | 0, wt = ht & 8191, St = ht >>> 13, Nt = nt[1] | 0, qt = Nt & 8191, Zt = Nt >>> 13, Ut = nt[2] | 0, Lt = Ut & 8191, Ht = Ut >>> 13, tr = nt[3] | 0, Gt = tr & 8191, zt = tr >>> 13, sr = nt[4] | 0, br = sr & 8191, dr = sr >>> 13, xr = nt[5] | 0, kr = xr & 8191, vr = xr >>> 13, gr = nt[6] | 0, jr = gr & 8191, _r = gr >>> 13, Tr = nt[7] | 0, Ur = Tr & 8191, Cr = Tr >>> 13, lr = nt[8] | 0, rr = lr & 8191, nr = lr >>> 13, ar = nt[9] | 0, pr = ar & 8191, Pt = ar >>> 13, It = ot[0] | 0, Dt = It & 8191, Vt = It >>> 13, ir = ot[1] | 0, ur = ir & 8191, or = ir >>> 13, wr = ot[2] | 0, Ir = wr & 8191, fr = wr >>> 13, $r = ot[3] | 0, Pr = $r & 8191, Mr = $r >>> 13, Nr = ot[4] | 0, Vr = Nr & 8191, Sr = Nr >>> 13, Or = ot[5] | 0, Hr = Or & 8191, Rr = Or >>> 13, Lr = ot[6] | 0, Zr = Lr & 8191, Br = Lr >>> 13, qr = ot[7] | 0, Kt = qr & 8191, Yt = qr >>> 13, er = ot[8] | 0, Ot = er & 8191, Jt = er >>> 13, cr = ot[9] | 0, yr = cr & 8191, hr = cr >>> 13;
+          var nt = ct.words, ot = et.words, ut = tt.words, mt = 0, vt, at, it, ht = nt[0] | 0, wt = ht & 8191, St = ht >>> 13, Nt = nt[1] | 0, qt = Nt & 8191, Zt = Nt >>> 13, Ut = nt[2] | 0, Lt = Ut & 8191, Ht = Ut >>> 13, tr = nt[3] | 0, Gt = tr & 8191, zt = tr >>> 13, sr = nt[4] | 0, br = sr & 8191, dr = sr >>> 13, xr = nt[5] | 0, kr = xr & 8191, vr = xr >>> 13, gr = nt[6] | 0, Fr = gr & 8191, _r = gr >>> 13, Tr = nt[7] | 0, Ur = Tr & 8191, Cr = Tr >>> 13, lr = nt[8] | 0, rr = lr & 8191, nr = lr >>> 13, ar = nt[9] | 0, pr = ar & 8191, Pt = ar >>> 13, It = ot[0] | 0, Dt = It & 8191, Vt = It >>> 13, ir = ot[1] | 0, ur = ir & 8191, or = ir >>> 13, wr = ot[2] | 0, Ir = wr & 8191, fr = wr >>> 13, $r = ot[3] | 0, Pr = $r & 8191, Mr = $r >>> 13, Nr = ot[4] | 0, Vr = Nr & 8191, Sr = Nr >>> 13, jr = ot[5] | 0, Hr = jr & 8191, Rr = jr >>> 13, Lr = ot[6] | 0, Zr = Lr & 8191, Br = Lr >>> 13, qr = ot[7] | 0, Kt = qr & 8191, Yt = qr >>> 13, er = ot[8] | 0, jt = er & 8191, Jt = er >>> 13, cr = ot[9] | 0, yr = cr & 8191, hr = cr >>> 13;
           tt.negative = ct.negative ^ et.negative, tt.length = 19, vt = Math.imul(wt, Dt), at = Math.imul(wt, Vt), at = at + Math.imul(St, Dt) | 0, it = Math.imul(St, Vt);
           var Er = (mt + vt | 0) + ((at & 8191) << 13) | 0;
           mt = (it + (at >>> 13) | 0) + (Er >>> 26) | 0, Er &= 67108863, vt = Math.imul(qt, Dt), at = Math.imul(qt, Vt), at = at + Math.imul(Zt, Dt) | 0, it = Math.imul(Zt, Vt), vt = vt + Math.imul(wt, ur) | 0, at = at + Math.imul(wt, or) | 0, at = at + Math.imul(St, ur) | 0, it = it + Math.imul(St, or) | 0;
@@ -75445,29 +75445,29 @@ Values:
           var Jr = (mt + vt | 0) + ((at & 8191) << 13) | 0;
           mt = (it + (at >>> 13) | 0) + (Jr >>> 26) | 0, Jr &= 67108863, vt = Math.imul(kr, Dt), at = Math.imul(kr, Vt), at = at + Math.imul(vr, Dt) | 0, it = Math.imul(vr, Vt), vt = vt + Math.imul(br, ur) | 0, at = at + Math.imul(br, or) | 0, at = at + Math.imul(dr, ur) | 0, it = it + Math.imul(dr, or) | 0, vt = vt + Math.imul(Gt, Ir) | 0, at = at + Math.imul(Gt, fr) | 0, at = at + Math.imul(zt, Ir) | 0, it = it + Math.imul(zt, fr) | 0, vt = vt + Math.imul(Lt, Pr) | 0, at = at + Math.imul(Lt, Mr) | 0, at = at + Math.imul(Ht, Pr) | 0, it = it + Math.imul(Ht, Mr) | 0, vt = vt + Math.imul(qt, Vr) | 0, at = at + Math.imul(qt, Sr) | 0, at = at + Math.imul(Zt, Vr) | 0, it = it + Math.imul(Zt, Sr) | 0, vt = vt + Math.imul(wt, Hr) | 0, at = at + Math.imul(wt, Rr) | 0, at = at + Math.imul(St, Hr) | 0, it = it + Math.imul(St, Rr) | 0;
           var ln = (mt + vt | 0) + ((at & 8191) << 13) | 0;
-          mt = (it + (at >>> 13) | 0) + (ln >>> 26) | 0, ln &= 67108863, vt = Math.imul(jr, Dt), at = Math.imul(jr, Vt), at = at + Math.imul(_r, Dt) | 0, it = Math.imul(_r, Vt), vt = vt + Math.imul(kr, ur) | 0, at = at + Math.imul(kr, or) | 0, at = at + Math.imul(vr, ur) | 0, it = it + Math.imul(vr, or) | 0, vt = vt + Math.imul(br, Ir) | 0, at = at + Math.imul(br, fr) | 0, at = at + Math.imul(dr, Ir) | 0, it = it + Math.imul(dr, fr) | 0, vt = vt + Math.imul(Gt, Pr) | 0, at = at + Math.imul(Gt, Mr) | 0, at = at + Math.imul(zt, Pr) | 0, it = it + Math.imul(zt, Mr) | 0, vt = vt + Math.imul(Lt, Vr) | 0, at = at + Math.imul(Lt, Sr) | 0, at = at + Math.imul(Ht, Vr) | 0, it = it + Math.imul(Ht, Sr) | 0, vt = vt + Math.imul(qt, Hr) | 0, at = at + Math.imul(qt, Rr) | 0, at = at + Math.imul(Zt, Hr) | 0, it = it + Math.imul(Zt, Rr) | 0, vt = vt + Math.imul(wt, Zr) | 0, at = at + Math.imul(wt, Br) | 0, at = at + Math.imul(St, Zr) | 0, it = it + Math.imul(St, Br) | 0;
+          mt = (it + (at >>> 13) | 0) + (ln >>> 26) | 0, ln &= 67108863, vt = Math.imul(Fr, Dt), at = Math.imul(Fr, Vt), at = at + Math.imul(_r, Dt) | 0, it = Math.imul(_r, Vt), vt = vt + Math.imul(kr, ur) | 0, at = at + Math.imul(kr, or) | 0, at = at + Math.imul(vr, ur) | 0, it = it + Math.imul(vr, or) | 0, vt = vt + Math.imul(br, Ir) | 0, at = at + Math.imul(br, fr) | 0, at = at + Math.imul(dr, Ir) | 0, it = it + Math.imul(dr, fr) | 0, vt = vt + Math.imul(Gt, Pr) | 0, at = at + Math.imul(Gt, Mr) | 0, at = at + Math.imul(zt, Pr) | 0, it = it + Math.imul(zt, Mr) | 0, vt = vt + Math.imul(Lt, Vr) | 0, at = at + Math.imul(Lt, Sr) | 0, at = at + Math.imul(Ht, Vr) | 0, it = it + Math.imul(Ht, Sr) | 0, vt = vt + Math.imul(qt, Hr) | 0, at = at + Math.imul(qt, Rr) | 0, at = at + Math.imul(Zt, Hr) | 0, it = it + Math.imul(Zt, Rr) | 0, vt = vt + Math.imul(wt, Zr) | 0, at = at + Math.imul(wt, Br) | 0, at = at + Math.imul(St, Zr) | 0, it = it + Math.imul(St, Br) | 0;
           var un = (mt + vt | 0) + ((at & 8191) << 13) | 0;
-          mt = (it + (at >>> 13) | 0) + (un >>> 26) | 0, un &= 67108863, vt = Math.imul(Ur, Dt), at = Math.imul(Ur, Vt), at = at + Math.imul(Cr, Dt) | 0, it = Math.imul(Cr, Vt), vt = vt + Math.imul(jr, ur) | 0, at = at + Math.imul(jr, or) | 0, at = at + Math.imul(_r, ur) | 0, it = it + Math.imul(_r, or) | 0, vt = vt + Math.imul(kr, Ir) | 0, at = at + Math.imul(kr, fr) | 0, at = at + Math.imul(vr, Ir) | 0, it = it + Math.imul(vr, fr) | 0, vt = vt + Math.imul(br, Pr) | 0, at = at + Math.imul(br, Mr) | 0, at = at + Math.imul(dr, Pr) | 0, it = it + Math.imul(dr, Mr) | 0, vt = vt + Math.imul(Gt, Vr) | 0, at = at + Math.imul(Gt, Sr) | 0, at = at + Math.imul(zt, Vr) | 0, it = it + Math.imul(zt, Sr) | 0, vt = vt + Math.imul(Lt, Hr) | 0, at = at + Math.imul(Lt, Rr) | 0, at = at + Math.imul(Ht, Hr) | 0, it = it + Math.imul(Ht, Rr) | 0, vt = vt + Math.imul(qt, Zr) | 0, at = at + Math.imul(qt, Br) | 0, at = at + Math.imul(Zt, Zr) | 0, it = it + Math.imul(Zt, Br) | 0, vt = vt + Math.imul(wt, Kt) | 0, at = at + Math.imul(wt, Yt) | 0, at = at + Math.imul(St, Kt) | 0, it = it + Math.imul(St, Yt) | 0;
+          mt = (it + (at >>> 13) | 0) + (un >>> 26) | 0, un &= 67108863, vt = Math.imul(Ur, Dt), at = Math.imul(Ur, Vt), at = at + Math.imul(Cr, Dt) | 0, it = Math.imul(Cr, Vt), vt = vt + Math.imul(Fr, ur) | 0, at = at + Math.imul(Fr, or) | 0, at = at + Math.imul(_r, ur) | 0, it = it + Math.imul(_r, or) | 0, vt = vt + Math.imul(kr, Ir) | 0, at = at + Math.imul(kr, fr) | 0, at = at + Math.imul(vr, Ir) | 0, it = it + Math.imul(vr, fr) | 0, vt = vt + Math.imul(br, Pr) | 0, at = at + Math.imul(br, Mr) | 0, at = at + Math.imul(dr, Pr) | 0, it = it + Math.imul(dr, Mr) | 0, vt = vt + Math.imul(Gt, Vr) | 0, at = at + Math.imul(Gt, Sr) | 0, at = at + Math.imul(zt, Vr) | 0, it = it + Math.imul(zt, Sr) | 0, vt = vt + Math.imul(Lt, Hr) | 0, at = at + Math.imul(Lt, Rr) | 0, at = at + Math.imul(Ht, Hr) | 0, it = it + Math.imul(Ht, Rr) | 0, vt = vt + Math.imul(qt, Zr) | 0, at = at + Math.imul(qt, Br) | 0, at = at + Math.imul(Zt, Zr) | 0, it = it + Math.imul(Zt, Br) | 0, vt = vt + Math.imul(wt, Kt) | 0, at = at + Math.imul(wt, Yt) | 0, at = at + Math.imul(St, Kt) | 0, it = it + Math.imul(St, Yt) | 0;
           var mn = (mt + vt | 0) + ((at & 8191) << 13) | 0;
-          mt = (it + (at >>> 13) | 0) + (mn >>> 26) | 0, mn &= 67108863, vt = Math.imul(rr, Dt), at = Math.imul(rr, Vt), at = at + Math.imul(nr, Dt) | 0, it = Math.imul(nr, Vt), vt = vt + Math.imul(Ur, ur) | 0, at = at + Math.imul(Ur, or) | 0, at = at + Math.imul(Cr, ur) | 0, it = it + Math.imul(Cr, or) | 0, vt = vt + Math.imul(jr, Ir) | 0, at = at + Math.imul(jr, fr) | 0, at = at + Math.imul(_r, Ir) | 0, it = it + Math.imul(_r, fr) | 0, vt = vt + Math.imul(kr, Pr) | 0, at = at + Math.imul(kr, Mr) | 0, at = at + Math.imul(vr, Pr) | 0, it = it + Math.imul(vr, Mr) | 0, vt = vt + Math.imul(br, Vr) | 0, at = at + Math.imul(br, Sr) | 0, at = at + Math.imul(dr, Vr) | 0, it = it + Math.imul(dr, Sr) | 0, vt = vt + Math.imul(Gt, Hr) | 0, at = at + Math.imul(Gt, Rr) | 0, at = at + Math.imul(zt, Hr) | 0, it = it + Math.imul(zt, Rr) | 0, vt = vt + Math.imul(Lt, Zr) | 0, at = at + Math.imul(Lt, Br) | 0, at = at + Math.imul(Ht, Zr) | 0, it = it + Math.imul(Ht, Br) | 0, vt = vt + Math.imul(qt, Kt) | 0, at = at + Math.imul(qt, Yt) | 0, at = at + Math.imul(Zt, Kt) | 0, it = it + Math.imul(Zt, Yt) | 0, vt = vt + Math.imul(wt, Ot) | 0, at = at + Math.imul(wt, Jt) | 0, at = at + Math.imul(St, Ot) | 0, it = it + Math.imul(St, Jt) | 0;
+          mt = (it + (at >>> 13) | 0) + (mn >>> 26) | 0, mn &= 67108863, vt = Math.imul(rr, Dt), at = Math.imul(rr, Vt), at = at + Math.imul(nr, Dt) | 0, it = Math.imul(nr, Vt), vt = vt + Math.imul(Ur, ur) | 0, at = at + Math.imul(Ur, or) | 0, at = at + Math.imul(Cr, ur) | 0, it = it + Math.imul(Cr, or) | 0, vt = vt + Math.imul(Fr, Ir) | 0, at = at + Math.imul(Fr, fr) | 0, at = at + Math.imul(_r, Ir) | 0, it = it + Math.imul(_r, fr) | 0, vt = vt + Math.imul(kr, Pr) | 0, at = at + Math.imul(kr, Mr) | 0, at = at + Math.imul(vr, Pr) | 0, it = it + Math.imul(vr, Mr) | 0, vt = vt + Math.imul(br, Vr) | 0, at = at + Math.imul(br, Sr) | 0, at = at + Math.imul(dr, Vr) | 0, it = it + Math.imul(dr, Sr) | 0, vt = vt + Math.imul(Gt, Hr) | 0, at = at + Math.imul(Gt, Rr) | 0, at = at + Math.imul(zt, Hr) | 0, it = it + Math.imul(zt, Rr) | 0, vt = vt + Math.imul(Lt, Zr) | 0, at = at + Math.imul(Lt, Br) | 0, at = at + Math.imul(Ht, Zr) | 0, it = it + Math.imul(Ht, Br) | 0, vt = vt + Math.imul(qt, Kt) | 0, at = at + Math.imul(qt, Yt) | 0, at = at + Math.imul(Zt, Kt) | 0, it = it + Math.imul(Zt, Yt) | 0, vt = vt + Math.imul(wt, jt) | 0, at = at + Math.imul(wt, Jt) | 0, at = at + Math.imul(St, jt) | 0, it = it + Math.imul(St, Jt) | 0;
           var pn = (mt + vt | 0) + ((at & 8191) << 13) | 0;
-          mt = (it + (at >>> 13) | 0) + (pn >>> 26) | 0, pn &= 67108863, vt = Math.imul(pr, Dt), at = Math.imul(pr, Vt), at = at + Math.imul(Pt, Dt) | 0, it = Math.imul(Pt, Vt), vt = vt + Math.imul(rr, ur) | 0, at = at + Math.imul(rr, or) | 0, at = at + Math.imul(nr, ur) | 0, it = it + Math.imul(nr, or) | 0, vt = vt + Math.imul(Ur, Ir) | 0, at = at + Math.imul(Ur, fr) | 0, at = at + Math.imul(Cr, Ir) | 0, it = it + Math.imul(Cr, fr) | 0, vt = vt + Math.imul(jr, Pr) | 0, at = at + Math.imul(jr, Mr) | 0, at = at + Math.imul(_r, Pr) | 0, it = it + Math.imul(_r, Mr) | 0, vt = vt + Math.imul(kr, Vr) | 0, at = at + Math.imul(kr, Sr) | 0, at = at + Math.imul(vr, Vr) | 0, it = it + Math.imul(vr, Sr) | 0, vt = vt + Math.imul(br, Hr) | 0, at = at + Math.imul(br, Rr) | 0, at = at + Math.imul(dr, Hr) | 0, it = it + Math.imul(dr, Rr) | 0, vt = vt + Math.imul(Gt, Zr) | 0, at = at + Math.imul(Gt, Br) | 0, at = at + Math.imul(zt, Zr) | 0, it = it + Math.imul(zt, Br) | 0, vt = vt + Math.imul(Lt, Kt) | 0, at = at + Math.imul(Lt, Yt) | 0, at = at + Math.imul(Ht, Kt) | 0, it = it + Math.imul(Ht, Yt) | 0, vt = vt + Math.imul(qt, Ot) | 0, at = at + Math.imul(qt, Jt) | 0, at = at + Math.imul(Zt, Ot) | 0, it = it + Math.imul(Zt, Jt) | 0, vt = vt + Math.imul(wt, yr) | 0, at = at + Math.imul(wt, hr) | 0, at = at + Math.imul(St, yr) | 0, it = it + Math.imul(St, hr) | 0;
+          mt = (it + (at >>> 13) | 0) + (pn >>> 26) | 0, pn &= 67108863, vt = Math.imul(pr, Dt), at = Math.imul(pr, Vt), at = at + Math.imul(Pt, Dt) | 0, it = Math.imul(Pt, Vt), vt = vt + Math.imul(rr, ur) | 0, at = at + Math.imul(rr, or) | 0, at = at + Math.imul(nr, ur) | 0, it = it + Math.imul(nr, or) | 0, vt = vt + Math.imul(Ur, Ir) | 0, at = at + Math.imul(Ur, fr) | 0, at = at + Math.imul(Cr, Ir) | 0, it = it + Math.imul(Cr, fr) | 0, vt = vt + Math.imul(Fr, Pr) | 0, at = at + Math.imul(Fr, Mr) | 0, at = at + Math.imul(_r, Pr) | 0, it = it + Math.imul(_r, Mr) | 0, vt = vt + Math.imul(kr, Vr) | 0, at = at + Math.imul(kr, Sr) | 0, at = at + Math.imul(vr, Vr) | 0, it = it + Math.imul(vr, Sr) | 0, vt = vt + Math.imul(br, Hr) | 0, at = at + Math.imul(br, Rr) | 0, at = at + Math.imul(dr, Hr) | 0, it = it + Math.imul(dr, Rr) | 0, vt = vt + Math.imul(Gt, Zr) | 0, at = at + Math.imul(Gt, Br) | 0, at = at + Math.imul(zt, Zr) | 0, it = it + Math.imul(zt, Br) | 0, vt = vt + Math.imul(Lt, Kt) | 0, at = at + Math.imul(Lt, Yt) | 0, at = at + Math.imul(Ht, Kt) | 0, it = it + Math.imul(Ht, Yt) | 0, vt = vt + Math.imul(qt, jt) | 0, at = at + Math.imul(qt, Jt) | 0, at = at + Math.imul(Zt, jt) | 0, it = it + Math.imul(Zt, Jt) | 0, vt = vt + Math.imul(wt, yr) | 0, at = at + Math.imul(wt, hr) | 0, at = at + Math.imul(St, yr) | 0, it = it + Math.imul(St, hr) | 0;
           var fn = (mt + vt | 0) + ((at & 8191) << 13) | 0;
-          mt = (it + (at >>> 13) | 0) + (fn >>> 26) | 0, fn &= 67108863, vt = Math.imul(pr, ur), at = Math.imul(pr, or), at = at + Math.imul(Pt, ur) | 0, it = Math.imul(Pt, or), vt = vt + Math.imul(rr, Ir) | 0, at = at + Math.imul(rr, fr) | 0, at = at + Math.imul(nr, Ir) | 0, it = it + Math.imul(nr, fr) | 0, vt = vt + Math.imul(Ur, Pr) | 0, at = at + Math.imul(Ur, Mr) | 0, at = at + Math.imul(Cr, Pr) | 0, it = it + Math.imul(Cr, Mr) | 0, vt = vt + Math.imul(jr, Vr) | 0, at = at + Math.imul(jr, Sr) | 0, at = at + Math.imul(_r, Vr) | 0, it = it + Math.imul(_r, Sr) | 0, vt = vt + Math.imul(kr, Hr) | 0, at = at + Math.imul(kr, Rr) | 0, at = at + Math.imul(vr, Hr) | 0, it = it + Math.imul(vr, Rr) | 0, vt = vt + Math.imul(br, Zr) | 0, at = at + Math.imul(br, Br) | 0, at = at + Math.imul(dr, Zr) | 0, it = it + Math.imul(dr, Br) | 0, vt = vt + Math.imul(Gt, Kt) | 0, at = at + Math.imul(Gt, Yt) | 0, at = at + Math.imul(zt, Kt) | 0, it = it + Math.imul(zt, Yt) | 0, vt = vt + Math.imul(Lt, Ot) | 0, at = at + Math.imul(Lt, Jt) | 0, at = at + Math.imul(Ht, Ot) | 0, it = it + Math.imul(Ht, Jt) | 0, vt = vt + Math.imul(qt, yr) | 0, at = at + Math.imul(qt, hr) | 0, at = at + Math.imul(Zt, yr) | 0, it = it + Math.imul(Zt, hr) | 0;
+          mt = (it + (at >>> 13) | 0) + (fn >>> 26) | 0, fn &= 67108863, vt = Math.imul(pr, ur), at = Math.imul(pr, or), at = at + Math.imul(Pt, ur) | 0, it = Math.imul(Pt, or), vt = vt + Math.imul(rr, Ir) | 0, at = at + Math.imul(rr, fr) | 0, at = at + Math.imul(nr, Ir) | 0, it = it + Math.imul(nr, fr) | 0, vt = vt + Math.imul(Ur, Pr) | 0, at = at + Math.imul(Ur, Mr) | 0, at = at + Math.imul(Cr, Pr) | 0, it = it + Math.imul(Cr, Mr) | 0, vt = vt + Math.imul(Fr, Vr) | 0, at = at + Math.imul(Fr, Sr) | 0, at = at + Math.imul(_r, Vr) | 0, it = it + Math.imul(_r, Sr) | 0, vt = vt + Math.imul(kr, Hr) | 0, at = at + Math.imul(kr, Rr) | 0, at = at + Math.imul(vr, Hr) | 0, it = it + Math.imul(vr, Rr) | 0, vt = vt + Math.imul(br, Zr) | 0, at = at + Math.imul(br, Br) | 0, at = at + Math.imul(dr, Zr) | 0, it = it + Math.imul(dr, Br) | 0, vt = vt + Math.imul(Gt, Kt) | 0, at = at + Math.imul(Gt, Yt) | 0, at = at + Math.imul(zt, Kt) | 0, it = it + Math.imul(zt, Yt) | 0, vt = vt + Math.imul(Lt, jt) | 0, at = at + Math.imul(Lt, Jt) | 0, at = at + Math.imul(Ht, jt) | 0, it = it + Math.imul(Ht, Jt) | 0, vt = vt + Math.imul(qt, yr) | 0, at = at + Math.imul(qt, hr) | 0, at = at + Math.imul(Zt, yr) | 0, it = it + Math.imul(Zt, hr) | 0;
           var hn = (mt + vt | 0) + ((at & 8191) << 13) | 0;
-          mt = (it + (at >>> 13) | 0) + (hn >>> 26) | 0, hn &= 67108863, vt = Math.imul(pr, Ir), at = Math.imul(pr, fr), at = at + Math.imul(Pt, Ir) | 0, it = Math.imul(Pt, fr), vt = vt + Math.imul(rr, Pr) | 0, at = at + Math.imul(rr, Mr) | 0, at = at + Math.imul(nr, Pr) | 0, it = it + Math.imul(nr, Mr) | 0, vt = vt + Math.imul(Ur, Vr) | 0, at = at + Math.imul(Ur, Sr) | 0, at = at + Math.imul(Cr, Vr) | 0, it = it + Math.imul(Cr, Sr) | 0, vt = vt + Math.imul(jr, Hr) | 0, at = at + Math.imul(jr, Rr) | 0, at = at + Math.imul(_r, Hr) | 0, it = it + Math.imul(_r, Rr) | 0, vt = vt + Math.imul(kr, Zr) | 0, at = at + Math.imul(kr, Br) | 0, at = at + Math.imul(vr, Zr) | 0, it = it + Math.imul(vr, Br) | 0, vt = vt + Math.imul(br, Kt) | 0, at = at + Math.imul(br, Yt) | 0, at = at + Math.imul(dr, Kt) | 0, it = it + Math.imul(dr, Yt) | 0, vt = vt + Math.imul(Gt, Ot) | 0, at = at + Math.imul(Gt, Jt) | 0, at = at + Math.imul(zt, Ot) | 0, it = it + Math.imul(zt, Jt) | 0, vt = vt + Math.imul(Lt, yr) | 0, at = at + Math.imul(Lt, hr) | 0, at = at + Math.imul(Ht, yr) | 0, it = it + Math.imul(Ht, hr) | 0;
+          mt = (it + (at >>> 13) | 0) + (hn >>> 26) | 0, hn &= 67108863, vt = Math.imul(pr, Ir), at = Math.imul(pr, fr), at = at + Math.imul(Pt, Ir) | 0, it = Math.imul(Pt, fr), vt = vt + Math.imul(rr, Pr) | 0, at = at + Math.imul(rr, Mr) | 0, at = at + Math.imul(nr, Pr) | 0, it = it + Math.imul(nr, Mr) | 0, vt = vt + Math.imul(Ur, Vr) | 0, at = at + Math.imul(Ur, Sr) | 0, at = at + Math.imul(Cr, Vr) | 0, it = it + Math.imul(Cr, Sr) | 0, vt = vt + Math.imul(Fr, Hr) | 0, at = at + Math.imul(Fr, Rr) | 0, at = at + Math.imul(_r, Hr) | 0, it = it + Math.imul(_r, Rr) | 0, vt = vt + Math.imul(kr, Zr) | 0, at = at + Math.imul(kr, Br) | 0, at = at + Math.imul(vr, Zr) | 0, it = it + Math.imul(vr, Br) | 0, vt = vt + Math.imul(br, Kt) | 0, at = at + Math.imul(br, Yt) | 0, at = at + Math.imul(dr, Kt) | 0, it = it + Math.imul(dr, Yt) | 0, vt = vt + Math.imul(Gt, jt) | 0, at = at + Math.imul(Gt, Jt) | 0, at = at + Math.imul(zt, jt) | 0, it = it + Math.imul(zt, Jt) | 0, vt = vt + Math.imul(Lt, yr) | 0, at = at + Math.imul(Lt, hr) | 0, at = at + Math.imul(Ht, yr) | 0, it = it + Math.imul(Ht, hr) | 0;
           var dn = (mt + vt | 0) + ((at & 8191) << 13) | 0;
-          mt = (it + (at >>> 13) | 0) + (dn >>> 26) | 0, dn &= 67108863, vt = Math.imul(pr, Pr), at = Math.imul(pr, Mr), at = at + Math.imul(Pt, Pr) | 0, it = Math.imul(Pt, Mr), vt = vt + Math.imul(rr, Vr) | 0, at = at + Math.imul(rr, Sr) | 0, at = at + Math.imul(nr, Vr) | 0, it = it + Math.imul(nr, Sr) | 0, vt = vt + Math.imul(Ur, Hr) | 0, at = at + Math.imul(Ur, Rr) | 0, at = at + Math.imul(Cr, Hr) | 0, it = it + Math.imul(Cr, Rr) | 0, vt = vt + Math.imul(jr, Zr) | 0, at = at + Math.imul(jr, Br) | 0, at = at + Math.imul(_r, Zr) | 0, it = it + Math.imul(_r, Br) | 0, vt = vt + Math.imul(kr, Kt) | 0, at = at + Math.imul(kr, Yt) | 0, at = at + Math.imul(vr, Kt) | 0, it = it + Math.imul(vr, Yt) | 0, vt = vt + Math.imul(br, Ot) | 0, at = at + Math.imul(br, Jt) | 0, at = at + Math.imul(dr, Ot) | 0, it = it + Math.imul(dr, Jt) | 0, vt = vt + Math.imul(Gt, yr) | 0, at = at + Math.imul(Gt, hr) | 0, at = at + Math.imul(zt, yr) | 0, it = it + Math.imul(zt, hr) | 0;
+          mt = (it + (at >>> 13) | 0) + (dn >>> 26) | 0, dn &= 67108863, vt = Math.imul(pr, Pr), at = Math.imul(pr, Mr), at = at + Math.imul(Pt, Pr) | 0, it = Math.imul(Pt, Mr), vt = vt + Math.imul(rr, Vr) | 0, at = at + Math.imul(rr, Sr) | 0, at = at + Math.imul(nr, Vr) | 0, it = it + Math.imul(nr, Sr) | 0, vt = vt + Math.imul(Ur, Hr) | 0, at = at + Math.imul(Ur, Rr) | 0, at = at + Math.imul(Cr, Hr) | 0, it = it + Math.imul(Cr, Rr) | 0, vt = vt + Math.imul(Fr, Zr) | 0, at = at + Math.imul(Fr, Br) | 0, at = at + Math.imul(_r, Zr) | 0, it = it + Math.imul(_r, Br) | 0, vt = vt + Math.imul(kr, Kt) | 0, at = at + Math.imul(kr, Yt) | 0, at = at + Math.imul(vr, Kt) | 0, it = it + Math.imul(vr, Yt) | 0, vt = vt + Math.imul(br, jt) | 0, at = at + Math.imul(br, Jt) | 0, at = at + Math.imul(dr, jt) | 0, it = it + Math.imul(dr, Jt) | 0, vt = vt + Math.imul(Gt, yr) | 0, at = at + Math.imul(Gt, hr) | 0, at = at + Math.imul(zt, yr) | 0, it = it + Math.imul(zt, hr) | 0;
           var tn = (mt + vt | 0) + ((at & 8191) << 13) | 0;
-          mt = (it + (at >>> 13) | 0) + (tn >>> 26) | 0, tn &= 67108863, vt = Math.imul(pr, Vr), at = Math.imul(pr, Sr), at = at + Math.imul(Pt, Vr) | 0, it = Math.imul(Pt, Sr), vt = vt + Math.imul(rr, Hr) | 0, at = at + Math.imul(rr, Rr) | 0, at = at + Math.imul(nr, Hr) | 0, it = it + Math.imul(nr, Rr) | 0, vt = vt + Math.imul(Ur, Zr) | 0, at = at + Math.imul(Ur, Br) | 0, at = at + Math.imul(Cr, Zr) | 0, it = it + Math.imul(Cr, Br) | 0, vt = vt + Math.imul(jr, Kt) | 0, at = at + Math.imul(jr, Yt) | 0, at = at + Math.imul(_r, Kt) | 0, it = it + Math.imul(_r, Yt) | 0, vt = vt + Math.imul(kr, Ot) | 0, at = at + Math.imul(kr, Jt) | 0, at = at + Math.imul(vr, Ot) | 0, it = it + Math.imul(vr, Jt) | 0, vt = vt + Math.imul(br, yr) | 0, at = at + Math.imul(br, hr) | 0, at = at + Math.imul(dr, yr) | 0, it = it + Math.imul(dr, hr) | 0;
+          mt = (it + (at >>> 13) | 0) + (tn >>> 26) | 0, tn &= 67108863, vt = Math.imul(pr, Vr), at = Math.imul(pr, Sr), at = at + Math.imul(Pt, Vr) | 0, it = Math.imul(Pt, Sr), vt = vt + Math.imul(rr, Hr) | 0, at = at + Math.imul(rr, Rr) | 0, at = at + Math.imul(nr, Hr) | 0, it = it + Math.imul(nr, Rr) | 0, vt = vt + Math.imul(Ur, Zr) | 0, at = at + Math.imul(Ur, Br) | 0, at = at + Math.imul(Cr, Zr) | 0, it = it + Math.imul(Cr, Br) | 0, vt = vt + Math.imul(Fr, Kt) | 0, at = at + Math.imul(Fr, Yt) | 0, at = at + Math.imul(_r, Kt) | 0, it = it + Math.imul(_r, Yt) | 0, vt = vt + Math.imul(kr, jt) | 0, at = at + Math.imul(kr, Jt) | 0, at = at + Math.imul(vr, jt) | 0, it = it + Math.imul(vr, Jt) | 0, vt = vt + Math.imul(br, yr) | 0, at = at + Math.imul(br, hr) | 0, at = at + Math.imul(dr, yr) | 0, it = it + Math.imul(dr, hr) | 0;
           var an = (mt + vt | 0) + ((at & 8191) << 13) | 0;
-          mt = (it + (at >>> 13) | 0) + (an >>> 26) | 0, an &= 67108863, vt = Math.imul(pr, Hr), at = Math.imul(pr, Rr), at = at + Math.imul(Pt, Hr) | 0, it = Math.imul(Pt, Rr), vt = vt + Math.imul(rr, Zr) | 0, at = at + Math.imul(rr, Br) | 0, at = at + Math.imul(nr, Zr) | 0, it = it + Math.imul(nr, Br) | 0, vt = vt + Math.imul(Ur, Kt) | 0, at = at + Math.imul(Ur, Yt) | 0, at = at + Math.imul(Cr, Kt) | 0, it = it + Math.imul(Cr, Yt) | 0, vt = vt + Math.imul(jr, Ot) | 0, at = at + Math.imul(jr, Jt) | 0, at = at + Math.imul(_r, Ot) | 0, it = it + Math.imul(_r, Jt) | 0, vt = vt + Math.imul(kr, yr) | 0, at = at + Math.imul(kr, hr) | 0, at = at + Math.imul(vr, yr) | 0, it = it + Math.imul(vr, hr) | 0;
+          mt = (it + (at >>> 13) | 0) + (an >>> 26) | 0, an &= 67108863, vt = Math.imul(pr, Hr), at = Math.imul(pr, Rr), at = at + Math.imul(Pt, Hr) | 0, it = Math.imul(Pt, Rr), vt = vt + Math.imul(rr, Zr) | 0, at = at + Math.imul(rr, Br) | 0, at = at + Math.imul(nr, Zr) | 0, it = it + Math.imul(nr, Br) | 0, vt = vt + Math.imul(Ur, Kt) | 0, at = at + Math.imul(Ur, Yt) | 0, at = at + Math.imul(Cr, Kt) | 0, it = it + Math.imul(Cr, Yt) | 0, vt = vt + Math.imul(Fr, jt) | 0, at = at + Math.imul(Fr, Jt) | 0, at = at + Math.imul(_r, jt) | 0, it = it + Math.imul(_r, Jt) | 0, vt = vt + Math.imul(kr, yr) | 0, at = at + Math.imul(kr, hr) | 0, at = at + Math.imul(vr, yr) | 0, it = it + Math.imul(vr, hr) | 0;
           var Yr = (mt + vt | 0) + ((at & 8191) << 13) | 0;
-          mt = (it + (at >>> 13) | 0) + (Yr >>> 26) | 0, Yr &= 67108863, vt = Math.imul(pr, Zr), at = Math.imul(pr, Br), at = at + Math.imul(Pt, Zr) | 0, it = Math.imul(Pt, Br), vt = vt + Math.imul(rr, Kt) | 0, at = at + Math.imul(rr, Yt) | 0, at = at + Math.imul(nr, Kt) | 0, it = it + Math.imul(nr, Yt) | 0, vt = vt + Math.imul(Ur, Ot) | 0, at = at + Math.imul(Ur, Jt) | 0, at = at + Math.imul(Cr, Ot) | 0, it = it + Math.imul(Cr, Jt) | 0, vt = vt + Math.imul(jr, yr) | 0, at = at + Math.imul(jr, hr) | 0, at = at + Math.imul(_r, yr) | 0, it = it + Math.imul(_r, hr) | 0;
+          mt = (it + (at >>> 13) | 0) + (Yr >>> 26) | 0, Yr &= 67108863, vt = Math.imul(pr, Zr), at = Math.imul(pr, Br), at = at + Math.imul(Pt, Zr) | 0, it = Math.imul(Pt, Br), vt = vt + Math.imul(rr, Kt) | 0, at = at + Math.imul(rr, Yt) | 0, at = at + Math.imul(nr, Kt) | 0, it = it + Math.imul(nr, Yt) | 0, vt = vt + Math.imul(Ur, jt) | 0, at = at + Math.imul(Ur, Jt) | 0, at = at + Math.imul(Cr, jt) | 0, it = it + Math.imul(Cr, Jt) | 0, vt = vt + Math.imul(Fr, yr) | 0, at = at + Math.imul(Fr, hr) | 0, at = at + Math.imul(_r, yr) | 0, it = it + Math.imul(_r, hr) | 0;
           var rn = (mt + vt | 0) + ((at & 8191) << 13) | 0;
-          mt = (it + (at >>> 13) | 0) + (rn >>> 26) | 0, rn &= 67108863, vt = Math.imul(pr, Kt), at = Math.imul(pr, Yt), at = at + Math.imul(Pt, Kt) | 0, it = Math.imul(Pt, Yt), vt = vt + Math.imul(rr, Ot) | 0, at = at + Math.imul(rr, Jt) | 0, at = at + Math.imul(nr, Ot) | 0, it = it + Math.imul(nr, Jt) | 0, vt = vt + Math.imul(Ur, yr) | 0, at = at + Math.imul(Ur, hr) | 0, at = at + Math.imul(Cr, yr) | 0, it = it + Math.imul(Cr, hr) | 0;
+          mt = (it + (at >>> 13) | 0) + (rn >>> 26) | 0, rn &= 67108863, vt = Math.imul(pr, Kt), at = Math.imul(pr, Yt), at = at + Math.imul(Pt, Kt) | 0, it = Math.imul(Pt, Yt), vt = vt + Math.imul(rr, jt) | 0, at = at + Math.imul(rr, Jt) | 0, at = at + Math.imul(nr, jt) | 0, it = it + Math.imul(nr, Jt) | 0, vt = vt + Math.imul(Ur, yr) | 0, at = at + Math.imul(Ur, hr) | 0, at = at + Math.imul(Cr, yr) | 0, it = it + Math.imul(Cr, hr) | 0;
           var nn = (mt + vt | 0) + ((at & 8191) << 13) | 0;
-          mt = (it + (at >>> 13) | 0) + (nn >>> 26) | 0, nn &= 67108863, vt = Math.imul(pr, Ot), at = Math.imul(pr, Jt), at = at + Math.imul(Pt, Ot) | 0, it = Math.imul(Pt, Jt), vt = vt + Math.imul(rr, yr) | 0, at = at + Math.imul(rr, hr) | 0, at = at + Math.imul(nr, yr) | 0, it = it + Math.imul(nr, hr) | 0;
+          mt = (it + (at >>> 13) | 0) + (nn >>> 26) | 0, nn &= 67108863, vt = Math.imul(pr, jt), at = Math.imul(pr, Jt), at = at + Math.imul(Pt, jt) | 0, it = Math.imul(Pt, Jt), vt = vt + Math.imul(rr, yr) | 0, at = at + Math.imul(rr, hr) | 0, at = at + Math.imul(nr, yr) | 0, it = it + Math.imul(nr, hr) | 0;
           var Gr = (mt + vt | 0) + ((at & 8191) << 13) | 0;
           mt = (it + (at >>> 13) | 0) + (Gr >>> 26) | 0, Gr &= 67108863, vt = Math.imul(pr, yr), at = Math.imul(pr, hr), at = at + Math.imul(Pt, yr) | 0, it = Math.imul(Pt, hr);
           var Dr = (mt + vt | 0) + ((at & 8191) << 13) | 0;
@@ -75940,10 +75940,10 @@ Values:
           $t.call(this, "p224", "ffffffff ffffffff ffffffff ffffffff 00000000 00000000 00000001");
         }
         rt(Ft, $t);
-        function jt() {
+        function Ot() {
           $t.call(this, "p192", "ffffffff ffffffff ffffffff fffffffe ffffffff ffffffff");
         }
-        rt(jt, $t);
+        rt(Ot, $t);
         function Xt() {
           $t.call(this, "25519", "7fffffffffffffff ffffffffffffffff ffffffffffffffff ffffffffffffffed");
         }
@@ -75958,7 +75958,7 @@ Values:
           var et;
           if (ct === "k256") et = new Tt();
           else if (ct === "p224") et = new Ft();
-          else if (ct === "p192") et = new jt();
+          else if (ct === "p192") et = new Ot();
           else if (ct === "p25519") et = new Xt();
           else throw new Error("Unknown prime " + ct);
           return Bt[ct] = et, et;
@@ -76464,7 +76464,7 @@ Values:
           return vt !== 0 ? et.words[at] = vt | 0 : et.length--, et.strip();
         }
         var Mt = function(ct, et, tt) {
-          var nt = ct.words, ot = et.words, ut = tt.words, mt = 0, vt, at, it, ht = nt[0] | 0, wt = ht & 8191, St = ht >>> 13, Nt = nt[1] | 0, qt = Nt & 8191, Zt = Nt >>> 13, Ut = nt[2] | 0, Lt = Ut & 8191, Ht = Ut >>> 13, tr = nt[3] | 0, Gt = tr & 8191, zt = tr >>> 13, sr = nt[4] | 0, br = sr & 8191, dr = sr >>> 13, xr = nt[5] | 0, kr = xr & 8191, vr = xr >>> 13, gr = nt[6] | 0, jr = gr & 8191, _r = gr >>> 13, Tr = nt[7] | 0, Ur = Tr & 8191, Cr = Tr >>> 13, lr = nt[8] | 0, rr = lr & 8191, nr = lr >>> 13, ar = nt[9] | 0, pr = ar & 8191, Pt = ar >>> 13, It = ot[0] | 0, Dt = It & 8191, Vt = It >>> 13, ir = ot[1] | 0, ur = ir & 8191, or = ir >>> 13, wr = ot[2] | 0, Ir = wr & 8191, fr = wr >>> 13, $r = ot[3] | 0, Pr = $r & 8191, Mr = $r >>> 13, Nr = ot[4] | 0, Vr = Nr & 8191, Sr = Nr >>> 13, Or = ot[5] | 0, Hr = Or & 8191, Rr = Or >>> 13, Lr = ot[6] | 0, Zr = Lr & 8191, Br = Lr >>> 13, qr = ot[7] | 0, Kt = qr & 8191, Yt = qr >>> 13, er = ot[8] | 0, Ot = er & 8191, Jt = er >>> 13, cr = ot[9] | 0, yr = cr & 8191, hr = cr >>> 13;
+          var nt = ct.words, ot = et.words, ut = tt.words, mt = 0, vt, at, it, ht = nt[0] | 0, wt = ht & 8191, St = ht >>> 13, Nt = nt[1] | 0, qt = Nt & 8191, Zt = Nt >>> 13, Ut = nt[2] | 0, Lt = Ut & 8191, Ht = Ut >>> 13, tr = nt[3] | 0, Gt = tr & 8191, zt = tr >>> 13, sr = nt[4] | 0, br = sr & 8191, dr = sr >>> 13, xr = nt[5] | 0, kr = xr & 8191, vr = xr >>> 13, gr = nt[6] | 0, Fr = gr & 8191, _r = gr >>> 13, Tr = nt[7] | 0, Ur = Tr & 8191, Cr = Tr >>> 13, lr = nt[8] | 0, rr = lr & 8191, nr = lr >>> 13, ar = nt[9] | 0, pr = ar & 8191, Pt = ar >>> 13, It = ot[0] | 0, Dt = It & 8191, Vt = It >>> 13, ir = ot[1] | 0, ur = ir & 8191, or = ir >>> 13, wr = ot[2] | 0, Ir = wr & 8191, fr = wr >>> 13, $r = ot[3] | 0, Pr = $r & 8191, Mr = $r >>> 13, Nr = ot[4] | 0, Vr = Nr & 8191, Sr = Nr >>> 13, jr = ot[5] | 0, Hr = jr & 8191, Rr = jr >>> 13, Lr = ot[6] | 0, Zr = Lr & 8191, Br = Lr >>> 13, qr = ot[7] | 0, Kt = qr & 8191, Yt = qr >>> 13, er = ot[8] | 0, jt = er & 8191, Jt = er >>> 13, cr = ot[9] | 0, yr = cr & 8191, hr = cr >>> 13;
           tt.negative = ct.negative ^ et.negative, tt.length = 19, vt = Math.imul(wt, Dt), at = Math.imul(wt, Vt), at = at + Math.imul(St, Dt) | 0, it = Math.imul(St, Vt);
           var Er = (mt + vt | 0) + ((at & 8191) << 13) | 0;
           mt = (it + (at >>> 13) | 0) + (Er >>> 26) | 0, Er &= 67108863, vt = Math.imul(qt, Dt), at = Math.imul(qt, Vt), at = at + Math.imul(Zt, Dt) | 0, it = Math.imul(Zt, Vt), vt = vt + Math.imul(wt, ur) | 0, at = at + Math.imul(wt, or) | 0, at = at + Math.imul(St, ur) | 0, it = it + Math.imul(St, or) | 0;
@@ -76477,29 +76477,29 @@ Values:
           var Jr = (mt + vt | 0) + ((at & 8191) << 13) | 0;
           mt = (it + (at >>> 13) | 0) + (Jr >>> 26) | 0, Jr &= 67108863, vt = Math.imul(kr, Dt), at = Math.imul(kr, Vt), at = at + Math.imul(vr, Dt) | 0, it = Math.imul(vr, Vt), vt = vt + Math.imul(br, ur) | 0, at = at + Math.imul(br, or) | 0, at = at + Math.imul(dr, ur) | 0, it = it + Math.imul(dr, or) | 0, vt = vt + Math.imul(Gt, Ir) | 0, at = at + Math.imul(Gt, fr) | 0, at = at + Math.imul(zt, Ir) | 0, it = it + Math.imul(zt, fr) | 0, vt = vt + Math.imul(Lt, Pr) | 0, at = at + Math.imul(Lt, Mr) | 0, at = at + Math.imul(Ht, Pr) | 0, it = it + Math.imul(Ht, Mr) | 0, vt = vt + Math.imul(qt, Vr) | 0, at = at + Math.imul(qt, Sr) | 0, at = at + Math.imul(Zt, Vr) | 0, it = it + Math.imul(Zt, Sr) | 0, vt = vt + Math.imul(wt, Hr) | 0, at = at + Math.imul(wt, Rr) | 0, at = at + Math.imul(St, Hr) | 0, it = it + Math.imul(St, Rr) | 0;
           var ln = (mt + vt | 0) + ((at & 8191) << 13) | 0;
-          mt = (it + (at >>> 13) | 0) + (ln >>> 26) | 0, ln &= 67108863, vt = Math.imul(jr, Dt), at = Math.imul(jr, Vt), at = at + Math.imul(_r, Dt) | 0, it = Math.imul(_r, Vt), vt = vt + Math.imul(kr, ur) | 0, at = at + Math.imul(kr, or) | 0, at = at + Math.imul(vr, ur) | 0, it = it + Math.imul(vr, or) | 0, vt = vt + Math.imul(br, Ir) | 0, at = at + Math.imul(br, fr) | 0, at = at + Math.imul(dr, Ir) | 0, it = it + Math.imul(dr, fr) | 0, vt = vt + Math.imul(Gt, Pr) | 0, at = at + Math.imul(Gt, Mr) | 0, at = at + Math.imul(zt, Pr) | 0, it = it + Math.imul(zt, Mr) | 0, vt = vt + Math.imul(Lt, Vr) | 0, at = at + Math.imul(Lt, Sr) | 0, at = at + Math.imul(Ht, Vr) | 0, it = it + Math.imul(Ht, Sr) | 0, vt = vt + Math.imul(qt, Hr) | 0, at = at + Math.imul(qt, Rr) | 0, at = at + Math.imul(Zt, Hr) | 0, it = it + Math.imul(Zt, Rr) | 0, vt = vt + Math.imul(wt, Zr) | 0, at = at + Math.imul(wt, Br) | 0, at = at + Math.imul(St, Zr) | 0, it = it + Math.imul(St, Br) | 0;
+          mt = (it + (at >>> 13) | 0) + (ln >>> 26) | 0, ln &= 67108863, vt = Math.imul(Fr, Dt), at = Math.imul(Fr, Vt), at = at + Math.imul(_r, Dt) | 0, it = Math.imul(_r, Vt), vt = vt + Math.imul(kr, ur) | 0, at = at + Math.imul(kr, or) | 0, at = at + Math.imul(vr, ur) | 0, it = it + Math.imul(vr, or) | 0, vt = vt + Math.imul(br, Ir) | 0, at = at + Math.imul(br, fr) | 0, at = at + Math.imul(dr, Ir) | 0, it = it + Math.imul(dr, fr) | 0, vt = vt + Math.imul(Gt, Pr) | 0, at = at + Math.imul(Gt, Mr) | 0, at = at + Math.imul(zt, Pr) | 0, it = it + Math.imul(zt, Mr) | 0, vt = vt + Math.imul(Lt, Vr) | 0, at = at + Math.imul(Lt, Sr) | 0, at = at + Math.imul(Ht, Vr) | 0, it = it + Math.imul(Ht, Sr) | 0, vt = vt + Math.imul(qt, Hr) | 0, at = at + Math.imul(qt, Rr) | 0, at = at + Math.imul(Zt, Hr) | 0, it = it + Math.imul(Zt, Rr) | 0, vt = vt + Math.imul(wt, Zr) | 0, at = at + Math.imul(wt, Br) | 0, at = at + Math.imul(St, Zr) | 0, it = it + Math.imul(St, Br) | 0;
           var un = (mt + vt | 0) + ((at & 8191) << 13) | 0;
-          mt = (it + (at >>> 13) | 0) + (un >>> 26) | 0, un &= 67108863, vt = Math.imul(Ur, Dt), at = Math.imul(Ur, Vt), at = at + Math.imul(Cr, Dt) | 0, it = Math.imul(Cr, Vt), vt = vt + Math.imul(jr, ur) | 0, at = at + Math.imul(jr, or) | 0, at = at + Math.imul(_r, ur) | 0, it = it + Math.imul(_r, or) | 0, vt = vt + Math.imul(kr, Ir) | 0, at = at + Math.imul(kr, fr) | 0, at = at + Math.imul(vr, Ir) | 0, it = it + Math.imul(vr, fr) | 0, vt = vt + Math.imul(br, Pr) | 0, at = at + Math.imul(br, Mr) | 0, at = at + Math.imul(dr, Pr) | 0, it = it + Math.imul(dr, Mr) | 0, vt = vt + Math.imul(Gt, Vr) | 0, at = at + Math.imul(Gt, Sr) | 0, at = at + Math.imul(zt, Vr) | 0, it = it + Math.imul(zt, Sr) | 0, vt = vt + Math.imul(Lt, Hr) | 0, at = at + Math.imul(Lt, Rr) | 0, at = at + Math.imul(Ht, Hr) | 0, it = it + Math.imul(Ht, Rr) | 0, vt = vt + Math.imul(qt, Zr) | 0, at = at + Math.imul(qt, Br) | 0, at = at + Math.imul(Zt, Zr) | 0, it = it + Math.imul(Zt, Br) | 0, vt = vt + Math.imul(wt, Kt) | 0, at = at + Math.imul(wt, Yt) | 0, at = at + Math.imul(St, Kt) | 0, it = it + Math.imul(St, Yt) | 0;
+          mt = (it + (at >>> 13) | 0) + (un >>> 26) | 0, un &= 67108863, vt = Math.imul(Ur, Dt), at = Math.imul(Ur, Vt), at = at + Math.imul(Cr, Dt) | 0, it = Math.imul(Cr, Vt), vt = vt + Math.imul(Fr, ur) | 0, at = at + Math.imul(Fr, or) | 0, at = at + Math.imul(_r, ur) | 0, it = it + Math.imul(_r, or) | 0, vt = vt + Math.imul(kr, Ir) | 0, at = at + Math.imul(kr, fr) | 0, at = at + Math.imul(vr, Ir) | 0, it = it + Math.imul(vr, fr) | 0, vt = vt + Math.imul(br, Pr) | 0, at = at + Math.imul(br, Mr) | 0, at = at + Math.imul(dr, Pr) | 0, it = it + Math.imul(dr, Mr) | 0, vt = vt + Math.imul(Gt, Vr) | 0, at = at + Math.imul(Gt, Sr) | 0, at = at + Math.imul(zt, Vr) | 0, it = it + Math.imul(zt, Sr) | 0, vt = vt + Math.imul(Lt, Hr) | 0, at = at + Math.imul(Lt, Rr) | 0, at = at + Math.imul(Ht, Hr) | 0, it = it + Math.imul(Ht, Rr) | 0, vt = vt + Math.imul(qt, Zr) | 0, at = at + Math.imul(qt, Br) | 0, at = at + Math.imul(Zt, Zr) | 0, it = it + Math.imul(Zt, Br) | 0, vt = vt + Math.imul(wt, Kt) | 0, at = at + Math.imul(wt, Yt) | 0, at = at + Math.imul(St, Kt) | 0, it = it + Math.imul(St, Yt) | 0;
           var mn = (mt + vt | 0) + ((at & 8191) << 13) | 0;
-          mt = (it + (at >>> 13) | 0) + (mn >>> 26) | 0, mn &= 67108863, vt = Math.imul(rr, Dt), at = Math.imul(rr, Vt), at = at + Math.imul(nr, Dt) | 0, it = Math.imul(nr, Vt), vt = vt + Math.imul(Ur, ur) | 0, at = at + Math.imul(Ur, or) | 0, at = at + Math.imul(Cr, ur) | 0, it = it + Math.imul(Cr, or) | 0, vt = vt + Math.imul(jr, Ir) | 0, at = at + Math.imul(jr, fr) | 0, at = at + Math.imul(_r, Ir) | 0, it = it + Math.imul(_r, fr) | 0, vt = vt + Math.imul(kr, Pr) | 0, at = at + Math.imul(kr, Mr) | 0, at = at + Math.imul(vr, Pr) | 0, it = it + Math.imul(vr, Mr) | 0, vt = vt + Math.imul(br, Vr) | 0, at = at + Math.imul(br, Sr) | 0, at = at + Math.imul(dr, Vr) | 0, it = it + Math.imul(dr, Sr) | 0, vt = vt + Math.imul(Gt, Hr) | 0, at = at + Math.imul(Gt, Rr) | 0, at = at + Math.imul(zt, Hr) | 0, it = it + Math.imul(zt, Rr) | 0, vt = vt + Math.imul(Lt, Zr) | 0, at = at + Math.imul(Lt, Br) | 0, at = at + Math.imul(Ht, Zr) | 0, it = it + Math.imul(Ht, Br) | 0, vt = vt + Math.imul(qt, Kt) | 0, at = at + Math.imul(qt, Yt) | 0, at = at + Math.imul(Zt, Kt) | 0, it = it + Math.imul(Zt, Yt) | 0, vt = vt + Math.imul(wt, Ot) | 0, at = at + Math.imul(wt, Jt) | 0, at = at + Math.imul(St, Ot) | 0, it = it + Math.imul(St, Jt) | 0;
+          mt = (it + (at >>> 13) | 0) + (mn >>> 26) | 0, mn &= 67108863, vt = Math.imul(rr, Dt), at = Math.imul(rr, Vt), at = at + Math.imul(nr, Dt) | 0, it = Math.imul(nr, Vt), vt = vt + Math.imul(Ur, ur) | 0, at = at + Math.imul(Ur, or) | 0, at = at + Math.imul(Cr, ur) | 0, it = it + Math.imul(Cr, or) | 0, vt = vt + Math.imul(Fr, Ir) | 0, at = at + Math.imul(Fr, fr) | 0, at = at + Math.imul(_r, Ir) | 0, it = it + Math.imul(_r, fr) | 0, vt = vt + Math.imul(kr, Pr) | 0, at = at + Math.imul(kr, Mr) | 0, at = at + Math.imul(vr, Pr) | 0, it = it + Math.imul(vr, Mr) | 0, vt = vt + Math.imul(br, Vr) | 0, at = at + Math.imul(br, Sr) | 0, at = at + Math.imul(dr, Vr) | 0, it = it + Math.imul(dr, Sr) | 0, vt = vt + Math.imul(Gt, Hr) | 0, at = at + Math.imul(Gt, Rr) | 0, at = at + Math.imul(zt, Hr) | 0, it = it + Math.imul(zt, Rr) | 0, vt = vt + Math.imul(Lt, Zr) | 0, at = at + Math.imul(Lt, Br) | 0, at = at + Math.imul(Ht, Zr) | 0, it = it + Math.imul(Ht, Br) | 0, vt = vt + Math.imul(qt, Kt) | 0, at = at + Math.imul(qt, Yt) | 0, at = at + Math.imul(Zt, Kt) | 0, it = it + Math.imul(Zt, Yt) | 0, vt = vt + Math.imul(wt, jt) | 0, at = at + Math.imul(wt, Jt) | 0, at = at + Math.imul(St, jt) | 0, it = it + Math.imul(St, Jt) | 0;
           var pn = (mt + vt | 0) + ((at & 8191) << 13) | 0;
-          mt = (it + (at >>> 13) | 0) + (pn >>> 26) | 0, pn &= 67108863, vt = Math.imul(pr, Dt), at = Math.imul(pr, Vt), at = at + Math.imul(Pt, Dt) | 0, it = Math.imul(Pt, Vt), vt = vt + Math.imul(rr, ur) | 0, at = at + Math.imul(rr, or) | 0, at = at + Math.imul(nr, ur) | 0, it = it + Math.imul(nr, or) | 0, vt = vt + Math.imul(Ur, Ir) | 0, at = at + Math.imul(Ur, fr) | 0, at = at + Math.imul(Cr, Ir) | 0, it = it + Math.imul(Cr, fr) | 0, vt = vt + Math.imul(jr, Pr) | 0, at = at + Math.imul(jr, Mr) | 0, at = at + Math.imul(_r, Pr) | 0, it = it + Math.imul(_r, Mr) | 0, vt = vt + Math.imul(kr, Vr) | 0, at = at + Math.imul(kr, Sr) | 0, at = at + Math.imul(vr, Vr) | 0, it = it + Math.imul(vr, Sr) | 0, vt = vt + Math.imul(br, Hr) | 0, at = at + Math.imul(br, Rr) | 0, at = at + Math.imul(dr, Hr) | 0, it = it + Math.imul(dr, Rr) | 0, vt = vt + Math.imul(Gt, Zr) | 0, at = at + Math.imul(Gt, Br) | 0, at = at + Math.imul(zt, Zr) | 0, it = it + Math.imul(zt, Br) | 0, vt = vt + Math.imul(Lt, Kt) | 0, at = at + Math.imul(Lt, Yt) | 0, at = at + Math.imul(Ht, Kt) | 0, it = it + Math.imul(Ht, Yt) | 0, vt = vt + Math.imul(qt, Ot) | 0, at = at + Math.imul(qt, Jt) | 0, at = at + Math.imul(Zt, Ot) | 0, it = it + Math.imul(Zt, Jt) | 0, vt = vt + Math.imul(wt, yr) | 0, at = at + Math.imul(wt, hr) | 0, at = at + Math.imul(St, yr) | 0, it = it + Math.imul(St, hr) | 0;
+          mt = (it + (at >>> 13) | 0) + (pn >>> 26) | 0, pn &= 67108863, vt = Math.imul(pr, Dt), at = Math.imul(pr, Vt), at = at + Math.imul(Pt, Dt) | 0, it = Math.imul(Pt, Vt), vt = vt + Math.imul(rr, ur) | 0, at = at + Math.imul(rr, or) | 0, at = at + Math.imul(nr, ur) | 0, it = it + Math.imul(nr, or) | 0, vt = vt + Math.imul(Ur, Ir) | 0, at = at + Math.imul(Ur, fr) | 0, at = at + Math.imul(Cr, Ir) | 0, it = it + Math.imul(Cr, fr) | 0, vt = vt + Math.imul(Fr, Pr) | 0, at = at + Math.imul(Fr, Mr) | 0, at = at + Math.imul(_r, Pr) | 0, it = it + Math.imul(_r, Mr) | 0, vt = vt + Math.imul(kr, Vr) | 0, at = at + Math.imul(kr, Sr) | 0, at = at + Math.imul(vr, Vr) | 0, it = it + Math.imul(vr, Sr) | 0, vt = vt + Math.imul(br, Hr) | 0, at = at + Math.imul(br, Rr) | 0, at = at + Math.imul(dr, Hr) | 0, it = it + Math.imul(dr, Rr) | 0, vt = vt + Math.imul(Gt, Zr) | 0, at = at + Math.imul(Gt, Br) | 0, at = at + Math.imul(zt, Zr) | 0, it = it + Math.imul(zt, Br) | 0, vt = vt + Math.imul(Lt, Kt) | 0, at = at + Math.imul(Lt, Yt) | 0, at = at + Math.imul(Ht, Kt) | 0, it = it + Math.imul(Ht, Yt) | 0, vt = vt + Math.imul(qt, jt) | 0, at = at + Math.imul(qt, Jt) | 0, at = at + Math.imul(Zt, jt) | 0, it = it + Math.imul(Zt, Jt) | 0, vt = vt + Math.imul(wt, yr) | 0, at = at + Math.imul(wt, hr) | 0, at = at + Math.imul(St, yr) | 0, it = it + Math.imul(St, hr) | 0;
           var fn = (mt + vt | 0) + ((at & 8191) << 13) | 0;
-          mt = (it + (at >>> 13) | 0) + (fn >>> 26) | 0, fn &= 67108863, vt = Math.imul(pr, ur), at = Math.imul(pr, or), at = at + Math.imul(Pt, ur) | 0, it = Math.imul(Pt, or), vt = vt + Math.imul(rr, Ir) | 0, at = at + Math.imul(rr, fr) | 0, at = at + Math.imul(nr, Ir) | 0, it = it + Math.imul(nr, fr) | 0, vt = vt + Math.imul(Ur, Pr) | 0, at = at + Math.imul(Ur, Mr) | 0, at = at + Math.imul(Cr, Pr) | 0, it = it + Math.imul(Cr, Mr) | 0, vt = vt + Math.imul(jr, Vr) | 0, at = at + Math.imul(jr, Sr) | 0, at = at + Math.imul(_r, Vr) | 0, it = it + Math.imul(_r, Sr) | 0, vt = vt + Math.imul(kr, Hr) | 0, at = at + Math.imul(kr, Rr) | 0, at = at + Math.imul(vr, Hr) | 0, it = it + Math.imul(vr, Rr) | 0, vt = vt + Math.imul(br, Zr) | 0, at = at + Math.imul(br, Br) | 0, at = at + Math.imul(dr, Zr) | 0, it = it + Math.imul(dr, Br) | 0, vt = vt + Math.imul(Gt, Kt) | 0, at = at + Math.imul(Gt, Yt) | 0, at = at + Math.imul(zt, Kt) | 0, it = it + Math.imul(zt, Yt) | 0, vt = vt + Math.imul(Lt, Ot) | 0, at = at + Math.imul(Lt, Jt) | 0, at = at + Math.imul(Ht, Ot) | 0, it = it + Math.imul(Ht, Jt) | 0, vt = vt + Math.imul(qt, yr) | 0, at = at + Math.imul(qt, hr) | 0, at = at + Math.imul(Zt, yr) | 0, it = it + Math.imul(Zt, hr) | 0;
+          mt = (it + (at >>> 13) | 0) + (fn >>> 26) | 0, fn &= 67108863, vt = Math.imul(pr, ur), at = Math.imul(pr, or), at = at + Math.imul(Pt, ur) | 0, it = Math.imul(Pt, or), vt = vt + Math.imul(rr, Ir) | 0, at = at + Math.imul(rr, fr) | 0, at = at + Math.imul(nr, Ir) | 0, it = it + Math.imul(nr, fr) | 0, vt = vt + Math.imul(Ur, Pr) | 0, at = at + Math.imul(Ur, Mr) | 0, at = at + Math.imul(Cr, Pr) | 0, it = it + Math.imul(Cr, Mr) | 0, vt = vt + Math.imul(Fr, Vr) | 0, at = at + Math.imul(Fr, Sr) | 0, at = at + Math.imul(_r, Vr) | 0, it = it + Math.imul(_r, Sr) | 0, vt = vt + Math.imul(kr, Hr) | 0, at = at + Math.imul(kr, Rr) | 0, at = at + Math.imul(vr, Hr) | 0, it = it + Math.imul(vr, Rr) | 0, vt = vt + Math.imul(br, Zr) | 0, at = at + Math.imul(br, Br) | 0, at = at + Math.imul(dr, Zr) | 0, it = it + Math.imul(dr, Br) | 0, vt = vt + Math.imul(Gt, Kt) | 0, at = at + Math.imul(Gt, Yt) | 0, at = at + Math.imul(zt, Kt) | 0, it = it + Math.imul(zt, Yt) | 0, vt = vt + Math.imul(Lt, jt) | 0, at = at + Math.imul(Lt, Jt) | 0, at = at + Math.imul(Ht, jt) | 0, it = it + Math.imul(Ht, Jt) | 0, vt = vt + Math.imul(qt, yr) | 0, at = at + Math.imul(qt, hr) | 0, at = at + Math.imul(Zt, yr) | 0, it = it + Math.imul(Zt, hr) | 0;
           var hn = (mt + vt | 0) + ((at & 8191) << 13) | 0;
-          mt = (it + (at >>> 13) | 0) + (hn >>> 26) | 0, hn &= 67108863, vt = Math.imul(pr, Ir), at = Math.imul(pr, fr), at = at + Math.imul(Pt, Ir) | 0, it = Math.imul(Pt, fr), vt = vt + Math.imul(rr, Pr) | 0, at = at + Math.imul(rr, Mr) | 0, at = at + Math.imul(nr, Pr) | 0, it = it + Math.imul(nr, Mr) | 0, vt = vt + Math.imul(Ur, Vr) | 0, at = at + Math.imul(Ur, Sr) | 0, at = at + Math.imul(Cr, Vr) | 0, it = it + Math.imul(Cr, Sr) | 0, vt = vt + Math.imul(jr, Hr) | 0, at = at + Math.imul(jr, Rr) | 0, at = at + Math.imul(_r, Hr) | 0, it = it + Math.imul(_r, Rr) | 0, vt = vt + Math.imul(kr, Zr) | 0, at = at + Math.imul(kr, Br) | 0, at = at + Math.imul(vr, Zr) | 0, it = it + Math.imul(vr, Br) | 0, vt = vt + Math.imul(br, Kt) | 0, at = at + Math.imul(br, Yt) | 0, at = at + Math.imul(dr, Kt) | 0, it = it + Math.imul(dr, Yt) | 0, vt = vt + Math.imul(Gt, Ot) | 0, at = at + Math.imul(Gt, Jt) | 0, at = at + Math.imul(zt, Ot) | 0, it = it + Math.imul(zt, Jt) | 0, vt = vt + Math.imul(Lt, yr) | 0, at = at + Math.imul(Lt, hr) | 0, at = at + Math.imul(Ht, yr) | 0, it = it + Math.imul(Ht, hr) | 0;
+          mt = (it + (at >>> 13) | 0) + (hn >>> 26) | 0, hn &= 67108863, vt = Math.imul(pr, Ir), at = Math.imul(pr, fr), at = at + Math.imul(Pt, Ir) | 0, it = Math.imul(Pt, fr), vt = vt + Math.imul(rr, Pr) | 0, at = at + Math.imul(rr, Mr) | 0, at = at + Math.imul(nr, Pr) | 0, it = it + Math.imul(nr, Mr) | 0, vt = vt + Math.imul(Ur, Vr) | 0, at = at + Math.imul(Ur, Sr) | 0, at = at + Math.imul(Cr, Vr) | 0, it = it + Math.imul(Cr, Sr) | 0, vt = vt + Math.imul(Fr, Hr) | 0, at = at + Math.imul(Fr, Rr) | 0, at = at + Math.imul(_r, Hr) | 0, it = it + Math.imul(_r, Rr) | 0, vt = vt + Math.imul(kr, Zr) | 0, at = at + Math.imul(kr, Br) | 0, at = at + Math.imul(vr, Zr) | 0, it = it + Math.imul(vr, Br) | 0, vt = vt + Math.imul(br, Kt) | 0, at = at + Math.imul(br, Yt) | 0, at = at + Math.imul(dr, Kt) | 0, it = it + Math.imul(dr, Yt) | 0, vt = vt + Math.imul(Gt, jt) | 0, at = at + Math.imul(Gt, Jt) | 0, at = at + Math.imul(zt, jt) | 0, it = it + Math.imul(zt, Jt) | 0, vt = vt + Math.imul(Lt, yr) | 0, at = at + Math.imul(Lt, hr) | 0, at = at + Math.imul(Ht, yr) | 0, it = it + Math.imul(Ht, hr) | 0;
           var dn = (mt + vt | 0) + ((at & 8191) << 13) | 0;
-          mt = (it + (at >>> 13) | 0) + (dn >>> 26) | 0, dn &= 67108863, vt = Math.imul(pr, Pr), at = Math.imul(pr, Mr), at = at + Math.imul(Pt, Pr) | 0, it = Math.imul(Pt, Mr), vt = vt + Math.imul(rr, Vr) | 0, at = at + Math.imul(rr, Sr) | 0, at = at + Math.imul(nr, Vr) | 0, it = it + Math.imul(nr, Sr) | 0, vt = vt + Math.imul(Ur, Hr) | 0, at = at + Math.imul(Ur, Rr) | 0, at = at + Math.imul(Cr, Hr) | 0, it = it + Math.imul(Cr, Rr) | 0, vt = vt + Math.imul(jr, Zr) | 0, at = at + Math.imul(jr, Br) | 0, at = at + Math.imul(_r, Zr) | 0, it = it + Math.imul(_r, Br) | 0, vt = vt + Math.imul(kr, Kt) | 0, at = at + Math.imul(kr, Yt) | 0, at = at + Math.imul(vr, Kt) | 0, it = it + Math.imul(vr, Yt) | 0, vt = vt + Math.imul(br, Ot) | 0, at = at + Math.imul(br, Jt) | 0, at = at + Math.imul(dr, Ot) | 0, it = it + Math.imul(dr, Jt) | 0, vt = vt + Math.imul(Gt, yr) | 0, at = at + Math.imul(Gt, hr) | 0, at = at + Math.imul(zt, yr) | 0, it = it + Math.imul(zt, hr) | 0;
+          mt = (it + (at >>> 13) | 0) + (dn >>> 26) | 0, dn &= 67108863, vt = Math.imul(pr, Pr), at = Math.imul(pr, Mr), at = at + Math.imul(Pt, Pr) | 0, it = Math.imul(Pt, Mr), vt = vt + Math.imul(rr, Vr) | 0, at = at + Math.imul(rr, Sr) | 0, at = at + Math.imul(nr, Vr) | 0, it = it + Math.imul(nr, Sr) | 0, vt = vt + Math.imul(Ur, Hr) | 0, at = at + Math.imul(Ur, Rr) | 0, at = at + Math.imul(Cr, Hr) | 0, it = it + Math.imul(Cr, Rr) | 0, vt = vt + Math.imul(Fr, Zr) | 0, at = at + Math.imul(Fr, Br) | 0, at = at + Math.imul(_r, Zr) | 0, it = it + Math.imul(_r, Br) | 0, vt = vt + Math.imul(kr, Kt) | 0, at = at + Math.imul(kr, Yt) | 0, at = at + Math.imul(vr, Kt) | 0, it = it + Math.imul(vr, Yt) | 0, vt = vt + Math.imul(br, jt) | 0, at = at + Math.imul(br, Jt) | 0, at = at + Math.imul(dr, jt) | 0, it = it + Math.imul(dr, Jt) | 0, vt = vt + Math.imul(Gt, yr) | 0, at = at + Math.imul(Gt, hr) | 0, at = at + Math.imul(zt, yr) | 0, it = it + Math.imul(zt, hr) | 0;
           var tn = (mt + vt | 0) + ((at & 8191) << 13) | 0;
-          mt = (it + (at >>> 13) | 0) + (tn >>> 26) | 0, tn &= 67108863, vt = Math.imul(pr, Vr), at = Math.imul(pr, Sr), at = at + Math.imul(Pt, Vr) | 0, it = Math.imul(Pt, Sr), vt = vt + Math.imul(rr, Hr) | 0, at = at + Math.imul(rr, Rr) | 0, at = at + Math.imul(nr, Hr) | 0, it = it + Math.imul(nr, Rr) | 0, vt = vt + Math.imul(Ur, Zr) | 0, at = at + Math.imul(Ur, Br) | 0, at = at + Math.imul(Cr, Zr) | 0, it = it + Math.imul(Cr, Br) | 0, vt = vt + Math.imul(jr, Kt) | 0, at = at + Math.imul(jr, Yt) | 0, at = at + Math.imul(_r, Kt) | 0, it = it + Math.imul(_r, Yt) | 0, vt = vt + Math.imul(kr, Ot) | 0, at = at + Math.imul(kr, Jt) | 0, at = at + Math.imul(vr, Ot) | 0, it = it + Math.imul(vr, Jt) | 0, vt = vt + Math.imul(br, yr) | 0, at = at + Math.imul(br, hr) | 0, at = at + Math.imul(dr, yr) | 0, it = it + Math.imul(dr, hr) | 0;
+          mt = (it + (at >>> 13) | 0) + (tn >>> 26) | 0, tn &= 67108863, vt = Math.imul(pr, Vr), at = Math.imul(pr, Sr), at = at + Math.imul(Pt, Vr) | 0, it = Math.imul(Pt, Sr), vt = vt + Math.imul(rr, Hr) | 0, at = at + Math.imul(rr, Rr) | 0, at = at + Math.imul(nr, Hr) | 0, it = it + Math.imul(nr, Rr) | 0, vt = vt + Math.imul(Ur, Zr) | 0, at = at + Math.imul(Ur, Br) | 0, at = at + Math.imul(Cr, Zr) | 0, it = it + Math.imul(Cr, Br) | 0, vt = vt + Math.imul(Fr, Kt) | 0, at = at + Math.imul(Fr, Yt) | 0, at = at + Math.imul(_r, Kt) | 0, it = it + Math.imul(_r, Yt) | 0, vt = vt + Math.imul(kr, jt) | 0, at = at + Math.imul(kr, Jt) | 0, at = at + Math.imul(vr, jt) | 0, it = it + Math.imul(vr, Jt) | 0, vt = vt + Math.imul(br, yr) | 0, at = at + Math.imul(br, hr) | 0, at = at + Math.imul(dr, yr) | 0, it = it + Math.imul(dr, hr) | 0;
           var an = (mt + vt | 0) + ((at & 8191) << 13) | 0;
-          mt = (it + (at >>> 13) | 0) + (an >>> 26) | 0, an &= 67108863, vt = Math.imul(pr, Hr), at = Math.imul(pr, Rr), at = at + Math.imul(Pt, Hr) | 0, it = Math.imul(Pt, Rr), vt = vt + Math.imul(rr, Zr) | 0, at = at + Math.imul(rr, Br) | 0, at = at + Math.imul(nr, Zr) | 0, it = it + Math.imul(nr, Br) | 0, vt = vt + Math.imul(Ur, Kt) | 0, at = at + Math.imul(Ur, Yt) | 0, at = at + Math.imul(Cr, Kt) | 0, it = it + Math.imul(Cr, Yt) | 0, vt = vt + Math.imul(jr, Ot) | 0, at = at + Math.imul(jr, Jt) | 0, at = at + Math.imul(_r, Ot) | 0, it = it + Math.imul(_r, Jt) | 0, vt = vt + Math.imul(kr, yr) | 0, at = at + Math.imul(kr, hr) | 0, at = at + Math.imul(vr, yr) | 0, it = it + Math.imul(vr, hr) | 0;
+          mt = (it + (at >>> 13) | 0) + (an >>> 26) | 0, an &= 67108863, vt = Math.imul(pr, Hr), at = Math.imul(pr, Rr), at = at + Math.imul(Pt, Hr) | 0, it = Math.imul(Pt, Rr), vt = vt + Math.imul(rr, Zr) | 0, at = at + Math.imul(rr, Br) | 0, at = at + Math.imul(nr, Zr) | 0, it = it + Math.imul(nr, Br) | 0, vt = vt + Math.imul(Ur, Kt) | 0, at = at + Math.imul(Ur, Yt) | 0, at = at + Math.imul(Cr, Kt) | 0, it = it + Math.imul(Cr, Yt) | 0, vt = vt + Math.imul(Fr, jt) | 0, at = at + Math.imul(Fr, Jt) | 0, at = at + Math.imul(_r, jt) | 0, it = it + Math.imul(_r, Jt) | 0, vt = vt + Math.imul(kr, yr) | 0, at = at + Math.imul(kr, hr) | 0, at = at + Math.imul(vr, yr) | 0, it = it + Math.imul(vr, hr) | 0;
           var Yr = (mt + vt | 0) + ((at & 8191) << 13) | 0;
-          mt = (it + (at >>> 13) | 0) + (Yr >>> 26) | 0, Yr &= 67108863, vt = Math.imul(pr, Zr), at = Math.imul(pr, Br), at = at + Math.imul(Pt, Zr) | 0, it = Math.imul(Pt, Br), vt = vt + Math.imul(rr, Kt) | 0, at = at + Math.imul(rr, Yt) | 0, at = at + Math.imul(nr, Kt) | 0, it = it + Math.imul(nr, Yt) | 0, vt = vt + Math.imul(Ur, Ot) | 0, at = at + Math.imul(Ur, Jt) | 0, at = at + Math.imul(Cr, Ot) | 0, it = it + Math.imul(Cr, Jt) | 0, vt = vt + Math.imul(jr, yr) | 0, at = at + Math.imul(jr, hr) | 0, at = at + Math.imul(_r, yr) | 0, it = it + Math.imul(_r, hr) | 0;
+          mt = (it + (at >>> 13) | 0) + (Yr >>> 26) | 0, Yr &= 67108863, vt = Math.imul(pr, Zr), at = Math.imul(pr, Br), at = at + Math.imul(Pt, Zr) | 0, it = Math.imul(Pt, Br), vt = vt + Math.imul(rr, Kt) | 0, at = at + Math.imul(rr, Yt) | 0, at = at + Math.imul(nr, Kt) | 0, it = it + Math.imul(nr, Yt) | 0, vt = vt + Math.imul(Ur, jt) | 0, at = at + Math.imul(Ur, Jt) | 0, at = at + Math.imul(Cr, jt) | 0, it = it + Math.imul(Cr, Jt) | 0, vt = vt + Math.imul(Fr, yr) | 0, at = at + Math.imul(Fr, hr) | 0, at = at + Math.imul(_r, yr) | 0, it = it + Math.imul(_r, hr) | 0;
           var rn = (mt + vt | 0) + ((at & 8191) << 13) | 0;
-          mt = (it + (at >>> 13) | 0) + (rn >>> 26) | 0, rn &= 67108863, vt = Math.imul(pr, Kt), at = Math.imul(pr, Yt), at = at + Math.imul(Pt, Kt) | 0, it = Math.imul(Pt, Yt), vt = vt + Math.imul(rr, Ot) | 0, at = at + Math.imul(rr, Jt) | 0, at = at + Math.imul(nr, Ot) | 0, it = it + Math.imul(nr, Jt) | 0, vt = vt + Math.imul(Ur, yr) | 0, at = at + Math.imul(Ur, hr) | 0, at = at + Math.imul(Cr, yr) | 0, it = it + Math.imul(Cr, hr) | 0;
+          mt = (it + (at >>> 13) | 0) + (rn >>> 26) | 0, rn &= 67108863, vt = Math.imul(pr, Kt), at = Math.imul(pr, Yt), at = at + Math.imul(Pt, Kt) | 0, it = Math.imul(Pt, Yt), vt = vt + Math.imul(rr, jt) | 0, at = at + Math.imul(rr, Jt) | 0, at = at + Math.imul(nr, jt) | 0, it = it + Math.imul(nr, Jt) | 0, vt = vt + Math.imul(Ur, yr) | 0, at = at + Math.imul(Ur, hr) | 0, at = at + Math.imul(Cr, yr) | 0, it = it + Math.imul(Cr, hr) | 0;
           var nn = (mt + vt | 0) + ((at & 8191) << 13) | 0;
-          mt = (it + (at >>> 13) | 0) + (nn >>> 26) | 0, nn &= 67108863, vt = Math.imul(pr, Ot), at = Math.imul(pr, Jt), at = at + Math.imul(Pt, Ot) | 0, it = Math.imul(Pt, Jt), vt = vt + Math.imul(rr, yr) | 0, at = at + Math.imul(rr, hr) | 0, at = at + Math.imul(nr, yr) | 0, it = it + Math.imul(nr, hr) | 0;
+          mt = (it + (at >>> 13) | 0) + (nn >>> 26) | 0, nn &= 67108863, vt = Math.imul(pr, jt), at = Math.imul(pr, Jt), at = at + Math.imul(Pt, jt) | 0, it = Math.imul(Pt, Jt), vt = vt + Math.imul(rr, yr) | 0, at = at + Math.imul(rr, hr) | 0, at = at + Math.imul(nr, yr) | 0, it = it + Math.imul(nr, hr) | 0;
           var Gr = (mt + vt | 0) + ((at & 8191) << 13) | 0;
           mt = (it + (at >>> 13) | 0) + (Gr >>> 26) | 0, Gr &= 67108863, vt = Math.imul(pr, yr), at = Math.imul(pr, hr), at = at + Math.imul(Pt, yr) | 0, it = Math.imul(Pt, hr);
           var Dr = (mt + vt | 0) + ((at & 8191) << 13) | 0;
@@ -76972,10 +76972,10 @@ Values:
           $t.call(this, "p224", "ffffffff ffffffff ffffffff ffffffff 00000000 00000000 00000001");
         }
         rt(Ft, $t);
-        function jt() {
+        function Ot() {
           $t.call(this, "p192", "ffffffff ffffffff ffffffff fffffffe ffffffff ffffffff");
         }
-        rt(jt, $t);
+        rt(Ot, $t);
         function Xt() {
           $t.call(this, "25519", "7fffffffffffffff ffffffffffffffff ffffffffffffffff ffffffffffffffed");
         }
@@ -76990,7 +76990,7 @@ Values:
           var et;
           if (ct === "k256") et = new Tt();
           else if (ct === "p224") et = new Ft();
-          else if (ct === "p192") et = new jt();
+          else if (ct === "p192") et = new Ot();
           else if (ct === "p25519") et = new Xt();
           else throw new Error("Unknown prime " + ct);
           return Bt[ct] = et, et;
@@ -77457,7 +77457,7 @@ Values:
         }
         return ct.splice(nt - 2, 2, et, tt), ct;
       }
-      function jt(kt, ct, et, tt) {
+      function Ot(kt, ct, et, tt) {
         Object.defineProperties(this, {
           _key: {
             value: kt
@@ -77549,9 +77549,9 @@ Values:
             };
           })), at = at.then(function(it) {
             return ut.name === "HMAC" && (ut.length || (ut.length = 8 * it.algorithm.length)), ut.name.search("RSA") == 0 && (ut.modulusLength || (ut.modulusLength = (it.publicKey || it).algorithm.modulusLength), ut.publicExponent || (ut.publicExponent = (it.publicKey || it).algorithm.publicExponent)), it.publicKey && it.privateKey ? it = {
-              publicKey: new jt(it.publicKey, ut, mt, vt.filter(Xt)),
-              privateKey: new jt(it.privateKey, ut, mt, vt.filter(Qt))
-            } : it = new jt(it, ut, mt, vt), it;
+              publicKey: new Ot(it.publicKey, ut, mt, vt.filter(Xt)),
+              privateKey: new Ot(it.privateKey, ut, mt, vt.filter(Qt))
+            } : it = new Ot(it, ut, mt, vt), it;
           }), at;
         };
       }), [
@@ -77656,9 +77656,9 @@ Values:
           subtle: {
             value: _
           }
-        }), d.CryptoKey = jt;
+        }), d.CryptoKey = Ot;
       }
-      dt && (b.subtle = _, d.Crypto = $, d.SubtleCrypto = rt, d.CryptoKey = jt);
+      dt && (b.subtle = _, d.Crypto = $, d.SubtleCrypto = rt, d.CryptoKey = Ot);
     });
     const browser = window.crypto, browser$1 = Object.freeze(Object.defineProperty({
       __proto__: null,
@@ -78570,7 +78570,7 @@ Values:
           const Xt = await _.createStateInit();
           Rt = Xt.stateInit, At = Xt.code, Bt = Xt.data;
         }
-        const $t = await _.getAddress(), Tt = Contract$h.createExternalMessageHeader($t), Ft = Contract$h.createCommonMsgInfo(Tt, Rt, Et), jt = new Promise((Xt) => {
+        const $t = await _.getAddress(), Tt = Contract$h.createExternalMessageHeader($t), Ft = Contract$h.createCommonMsgInfo(Tt, Rt, Et), Ot = new Promise((Xt) => {
           Xt({
             address: $t,
             message: Ft,
@@ -78582,7 +78582,7 @@ Values:
             data: Bt
           });
         });
-        return Contract$h.createMethod(this.ton.provider, jt);
+        return Contract$h.createMethod(this.ton.provider, Ot);
       }
     };
     var AppTon_1 = AppTon$1, providers = {}, HttpProviderUtils$2 = {};
@@ -80696,9 +80696,9 @@ Values:
       rcompareIdentifiers
     };
     const debug = debug_1, { MAX_LENGTH, MAX_SAFE_INTEGER } = constants$1, { safeRe: re$1, safeSrc: src$1, t: t$1 } = reExports, parseOptions = parseOptions_1, { compareIdentifiers } = identifiers$1;
-    let SemVer$d = class On {
+    let SemVer$d = class jn {
       constructor(b, _) {
-        if (_ = parseOptions(_), b instanceof On) {
+        if (_ = parseOptions(_), b instanceof jn) {
           if (b.loose === !!_.loose && b.includePrerelease === !!_.includePrerelease) return b;
           b = b.version;
         } else if (typeof b != "string") throw new TypeError(`Invalid version. Must be a string. Got type "${typeof b}".`);
@@ -80724,17 +80724,17 @@ Values:
         return this.version;
       }
       compare(b) {
-        if (debug("SemVer.compare", this.version, this.options, b), !(b instanceof On)) {
+        if (debug("SemVer.compare", this.version, this.options, b), !(b instanceof jn)) {
           if (typeof b == "string" && b === this.version) return 0;
-          b = new On(b, this.options);
+          b = new jn(b, this.options);
         }
         return b.version === this.version ? 0 : this.compareMain(b) || this.comparePre(b);
       }
       compareMain(b) {
-        return b instanceof On || (b = new On(b, this.options)), compareIdentifiers(this.major, b.major) || compareIdentifiers(this.minor, b.minor) || compareIdentifiers(this.patch, b.patch);
+        return b instanceof jn || (b = new jn(b, this.options)), compareIdentifiers(this.major, b.major) || compareIdentifiers(this.minor, b.minor) || compareIdentifiers(this.patch, b.patch);
       }
       comparePre(b) {
-        if (b instanceof On || (b = new On(b, this.options)), this.prerelease.length && !b.prerelease.length) return -1;
+        if (b instanceof jn || (b = new jn(b, this.options)), this.prerelease.length && !b.prerelease.length) return -1;
         if (!this.prerelease.length && b.prerelease.length) return 1;
         if (!this.prerelease.length && !b.prerelease.length) return 0;
         let _ = 0;
@@ -80748,7 +80748,7 @@ Values:
         } while (++_);
       }
       compareBuild(b) {
-        b instanceof On || (b = new On(b, this.options));
+        b instanceof jn || (b = new jn(b, this.options));
         let _ = 0;
         do {
           const $ = this.build[_], rt = b.build[_];
@@ -81056,14 +81056,14 @@ Values:
         let vt = mt.pop();
         for (; ut && mt.length; ) ut = mt.every((at) => vt.intersects(at, ot)), vt = mt.pop();
         return ut;
-      }, Bt = (nt, ot) => (st("comp", nt, ot), nt = jt(nt, ot), st("caret", nt), nt = Tt(nt, ot), st("tildes", nt), nt = Qt(nt, ot), st("xrange", nt), nt = kt(nt, ot), st("stars", nt), nt), $t = (nt) => !nt || nt.toLowerCase() === "x" || nt === "*", Tt = (nt, ot) => nt.trim().split(/\s+/).map((ut) => Ft(ut, ot)).join(" "), Ft = (nt, ot) => {
+      }, Bt = (nt, ot) => (st("comp", nt, ot), nt = Ot(nt, ot), st("caret", nt), nt = Tt(nt, ot), st("tildes", nt), nt = Qt(nt, ot), st("xrange", nt), nt = kt(nt, ot), st("stars", nt), nt), $t = (nt) => !nt || nt.toLowerCase() === "x" || nt === "*", Tt = (nt, ot) => nt.trim().split(/\s+/).map((ut) => Ft(ut, ot)).join(" "), Ft = (nt, ot) => {
         const ut = ot.loose ? pt[bt.TILDELOOSE] : pt[bt.TILDE];
         return nt.replace(ut, (mt, vt, at, it, ht) => {
           st("tilde", nt, mt, vt, at, it, ht);
           let wt;
           return $t(vt) ? wt = "" : $t(at) ? wt = `>=${vt}.0.0 <${+vt + 1}.0.0-0` : $t(it) ? wt = `>=${vt}.${at}.0 <${vt}.${+at + 1}.0-0` : ht ? (st("replaceTilde pr", ht), wt = `>=${vt}.${at}.${it}-${ht} <${vt}.${+at + 1}.0-0`) : wt = `>=${vt}.${at}.${it} <${vt}.${+at + 1}.0-0`, st("tilde return", wt), wt;
         });
-      }, jt = (nt, ot) => nt.trim().split(/\s+/).map((ut) => Xt(ut, ot)).join(" "), Xt = (nt, ot) => {
+      }, Ot = (nt, ot) => nt.trim().split(/\s+/).map((ut) => Xt(ut, ot)).join(" "), Xt = (nt, ot) => {
         st("caret", nt, ot);
         const ut = ot.loose ? pt[bt.CARETLOOSE] : pt[bt.CARET], mt = ot.includePrerelease ? "-0" : "";
         return nt.replace(ut, (vt, at, it, ht, wt) => {
@@ -84475,7 +84475,7 @@ Values:
                 const $t = Bt.inMessage;
                 if (!((_b2 = (_a3 = $t == null ? void 0 : $t.info) == null ? void 0 : _a3.value) == null ? void 0 : _b2.coins) || !($t == null ? void 0 : $t.body)) return false;
                 try {
-                  const Tt = $t.info.value.coins, jt = $t.body.bits._data.slice(4), Qt = new TextDecoder().decode(jt.filter((Wt) => Wt !== 0));
+                  const Tt = $t.info.value.coins, Ot = $t.body.bits._data.slice(4), Qt = new TextDecoder().decode(Ot.filter((Wt) => Wt !== 0));
                   return console.log("Checking message via TonClient:", {
                     type: $t.info.type,
                     value: Tt.toString(),
@@ -84655,7 +84655,7 @@ Values:
             });
             const $t = await d.sendTransaction(Bt);
             if (console.log("\u0420\u0435\u0437\u0443\u043B\u044C\u0442\u0430\u0442 \u0442\u0440\u0430\u043D\u0437\u0430\u043A\u0446\u0438\u0438:", $t), !($t == null ? void 0 : $t.boc)) throw new Error("\u0422\u0440\u0430\u043D\u0437\u0430\u043A\u0446\u0438\u044F \u043D\u0435 \u0431\u044B\u043B\u0430 \u0437\u0430\u0432\u0435\u0440\u0448\u0435\u043D\u0430");
-            for (let Ft = 0; Ft < 5; Ft++) await new Promise((jt) => setTimeout(jt, 2e3)), j();
+            for (let Ft = 0; Ft < 5; Ft++) await new Promise((Ot) => setTimeout(Ot, 2e3)), j();
             if (!await st($t.boc, Ct)) throw new Error("\u041F\u0440\u043E\u0432\u0435\u0440\u043A\u0430 \u0442\u0440\u0430\u043D\u0437\u0430\u043A\u0446\u0438\u0438 \u043D\u0435 \u0443\u0434\u0430\u043B\u0430\u0441\u044C");
             console.log("\u041E\u0431\u0440\u0430\u0431\u043E\u0442\u043A\u0430 \u043F\u043E\u043A\u0443\u043F\u043A\u0438 \u0441\u043B\u043E\u0442\u0430 \u0437\u0430 TON");
             try {
@@ -84670,10 +84670,10 @@ Values:
                   transactionBoc: $t.boc,
                   userAddress: _t
                 })
-              }), jt = await Ft.text();
+              }), Ot = await Ft.text();
               let Xt;
               try {
-                Xt = JSON.parse(jt);
+                Xt = JSON.parse(Ot);
               } catch {
                 if (Ft.ok) {
                   console.log("\u0421\u0435\u0440\u0432\u0435\u0440 \u0432\u0435\u0440\u043D\u0443\u043B \u043D\u0435 JSON, \u043D\u043E \u0441\u0442\u0430\u0442\u0443\u0441 OK - \u0441\u043B\u043E\u0442 \u0434\u043E\u0431\u0430\u0432\u043B\u0435\u043D");
@@ -84719,8 +84719,8 @@ Values:
                       userAddress: _t
                     }
                   };
-                } catch (jt) {
-                  console.error("\u041D\u0435 \u0443\u0434\u0430\u043B\u043E\u0441\u044C \u043F\u043E\u043B\u0443\u0447\u0438\u0442\u044C \u0438\u043D\u0444\u043E\u0440\u043C\u0430\u0446\u0438\u044E \u043E \u0441\u043B\u043E\u0442\u0430\u0445", jt);
+                } catch (Ot) {
+                  console.error("\u041D\u0435 \u0443\u0434\u0430\u043B\u043E\u0441\u044C \u043F\u043E\u043B\u0443\u0447\u0438\u0442\u044C \u0438\u043D\u0444\u043E\u0440\u043C\u0430\u0446\u0438\u044E \u043E \u0441\u043B\u043E\u0442\u0430\u0445", Ot);
                 }
               }
               throw Ft;
@@ -84816,7 +84816,7 @@ Values:
         cube2: 0,
         cube3: 0,
         cube4: 0
-      }), { purchaseCube: yt } = useTelegramCubes(), { purchaseCubeWithTon: xt, purchaseSlotWithTon: _t, isLoading: Ct, loadingMessage: Mt } = useTonPayment(), { purchaseSlot: Et, isLoading: Rt } = useTelegramSlots(), [At, Bt] = reactExports.useState(false), [$t, Tt] = reactExports.useState(""), [Ft, jt] = reactExports.useState(false), [Xt, Qt] = reactExports.useState(false), [Wt, kt] = reactExports.useState("");
+      }), { purchaseCube: yt } = useTelegramCubes(), { purchaseCubeWithTon: xt, purchaseSlotWithTon: _t, isLoading: Ct, loadingMessage: Mt } = useTonPayment(), { purchaseSlot: Et, isLoading: Rt } = useTelegramSlots(), [At, Bt] = reactExports.useState(false), [$t, Tt] = reactExports.useState(""), [Ft, Ot] = reactExports.useState(false), [Xt, Qt] = reactExports.useState(false), [Wt, kt] = reactExports.useState("");
       reactExports.useEffect(() => {
         j("100dvh"), window.requestAnimationFrame(() => {
           var _a3;
@@ -84992,8 +84992,8 @@ Values:
             ...d,
             rootBalance: Lt.rootBalance,
             miners: Zt
-          }), $(null), jt(true), Tt("Congratulations on your purchase! The more nodes you buy, the more you earn!"), Bt(true), setTimeout(() => {
-            jt(false), Qt(true);
+          }), $(null), Ot(true), Tt("Congratulations on your purchase! The more nodes you buy, the more you earn!"), Bt(true), setTimeout(() => {
+            Ot(false), Qt(true);
           }, 700)) : $("\u041E\u0448\u0438\u0431\u043A\u0430 \u043F\u0440\u0438 \u0441\u043E\u0445\u0440\u0430\u043D\u0435\u043D\u0438\u0438 \u043C\u0430\u0439\u043D\u0435\u0440\u0430") : $(Lt.message || "\u041E\u0448\u0438\u0431\u043A\u0430 \u043F\u0440\u0438 \u043F\u043E\u043A\u0443\u043F\u043A\u0435");
         } catch (at) {
           console.error("Purchase error:", at), $("\u041E\u0448\u0438\u0431\u043A\u0430 \u043F\u0440\u0438 \u043F\u043E\u043A\u0443\u043F\u043A\u0435");
@@ -85837,25 +85837,60 @@ Values:
       }), [_t, Ct] = reactExports.useState({
         isOpen: false,
         message: ""
-      });
+      }), [Mt, Et] = reactExports.useState(false), [Rt, At] = reactExports.useState(true), [Bt, $t] = reactExports.useState(true);
       console.log("Telegram User:", _), (_ == null ? void 0 : _.username) || (_ == null ? void 0 : _.first_name) || (b == null ? void 0 : b.username);
-      const Mt = parseInt((b == null ? void 0 : b.rootBalance) || 0), Et = () => {
+      const Tt = parseInt((b == null ? void 0 : b.rootBalance) || 0), Ft = Math.max(0, 4e3 - Tt);
+      reactExports.useEffect(() => {
+        (async () => {
+          if (!(b == null ? void 0 : b.telegramId)) {
+            At(false);
+            return;
+          }
+          try {
+            const ut = await (await fetch(`/get-user-miners?telegramId=${b.telegramId}`, {
+              headers: {
+                "X-Telegram-Init-Data": window.Telegram.WebApp.initData
+              }
+            })).json();
+            if (ut.success) {
+              const mt = ut.miners.some((vt) => [
+                "basic",
+                "minion",
+                "cube1",
+                "cube2",
+                "cube3",
+                "cube4"
+              ].includes(vt.type));
+              Et(mt);
+            }
+          } catch (ot) {
+            console.error("Error checking user nodes:", ot);
+          } finally {
+            At(false);
+          }
+        })();
+      }, [
+        b == null ? void 0 : b.telegramId
+      ]);
+      const Ot = () => {
+        d("/shop");
+      }, Xt = () => {
         var _a3, _b2;
-        const Ft = ((_a3 = _ == null ? void 0 : _.first_name) == null ? void 0 : _a3.trim().toLowerCase()) || "", jt = ((_b2 = _ == null ? void 0 : _.last_name) == null ? void 0 : _b2.trim().toLowerCase()) || "";
-        console.log("First Name:", Ft), console.log("Last Name:", jt);
-        const Xt = Ft.includes("poko\u{1F441}") || Ft.includes("poko"), Qt = jt.includes("poko\u{1F441}") || jt.includes("poko");
-        return Ft.includes("poko") && !Ft.includes("poko\u{1F441}") || jt.includes("poko") && !jt.includes("poko\u{1F441}") ? (xt({
+        const nt = ((_a3 = _ == null ? void 0 : _.first_name) == null ? void 0 : _a3.trim().toLowerCase()) || "", ot = ((_b2 = _ == null ? void 0 : _.last_name) == null ? void 0 : _b2.trim().toLowerCase()) || "";
+        console.log("First Name:", nt), console.log("Last Name:", ot);
+        const ut = nt.includes("poko\u{1F441}") || nt.includes("poko"), mt = ot.includes("poko\u{1F441}") || ot.includes("poko");
+        return nt.includes("poko") && !nt.includes("poko\u{1F441}") || ot.includes("poko") && !ot.includes("poko\u{1F441}") ? (xt({
           isOpen: true,
           title: "Update Required",
           message: "Please add the \u{1F441} symbol after POKO in your name (POKO\u{1F441})"
-        }), false) : Xt || Qt;
-      }, Rt = () => {
-        console.log("Claim Reward button clicked"), window.Telegram.WebApp.CloudStorage.getItem("rewardClaimed", (Ft, jt) => {
-          if (Ft) {
-            console.error("\u041E\u0448\u0438\u0431\u043A\u0430 \u043F\u0440\u0438 \u043F\u043E\u043B\u0443\u0447\u0435\u043D\u0438\u0438 \u0441\u043E\u0441\u0442\u043E\u044F\u043D\u0438\u044F \u043D\u0430\u0433\u0440\u0430\u0434\u044B:", Ft);
+        }), false) : ut || mt;
+      }, Qt = () => {
+        console.log("Claim Reward button clicked"), window.Telegram.WebApp.CloudStorage.getItem("rewardClaimed", (nt, ot) => {
+          if (nt) {
+            console.error("\u041E\u0448\u0438\u0431\u043A\u0430 \u043F\u0440\u0438 \u043F\u043E\u043B\u0443\u0447\u0435\u043D\u0438\u0438 \u0441\u043E\u0441\u0442\u043E\u044F\u043D\u0438\u044F \u043D\u0430\u0433\u0440\u0430\u0434\u044B:", nt);
             return;
           }
-          if (jt === "true") {
+          if (ot === "true") {
             xt({
               isOpen: true,
               title: "Reward Already Claimed",
@@ -85863,8 +85898,8 @@ Values:
             });
             return;
           }
-          if (Et()) {
-            const Qt = Mt + 2500;
+          if (Xt()) {
+            const mt = Tt + 2500;
             fetch("/update-root-balance", {
               method: "POST",
               headers: {
@@ -85873,15 +85908,15 @@ Values:
               },
               body: JSON.stringify({
                 telegramId: b.telegramId,
-                rootBalance: Qt
+                rootBalance: mt
               })
-            }).then((Wt) => {
-              if (!Wt.ok) throw new Error("\u041E\u0448\u0438\u0431\u043A\u0430 \u043F\u0440\u0438 \u043E\u0431\u043D\u043E\u0432\u043B\u0435\u043D\u0438\u0438 \u0431\u0430\u043B\u0430\u043D\u0441\u0430 \u043D\u0430 \u0441\u0435\u0440\u0432\u0435\u0440\u0435");
-              return Wt.json();
-            }).then((Wt) => {
-              Wt.success ? window.Telegram.WebApp.CloudStorage.setItem("rootBalance", Qt.toString(), (kt) => {
-                kt ? console.error("\u041E\u0448\u0438\u0431\u043A\u0430 \u043F\u0440\u0438 \u0441\u043E\u0445\u0440\u0430\u043D\u0435\u043D\u0438\u0438 \u0431\u0430\u043B\u0430\u043D\u0441\u0430:", kt) : window.Telegram.WebApp.CloudStorage.setItem("rewardClaimed", "true", (ct) => {
-                  ct ? console.error("\u041E\u0448\u0438\u0431\u043A\u0430 \u043F\u0440\u0438 \u0441\u043E\u0445\u0440\u0430\u043D\u0435\u043D\u0438\u0438 \u0441\u043E\u0441\u0442\u043E\u044F\u043D\u0438\u044F \u043D\u0430\u0433\u0440\u0430\u0434\u044B:", ct) : xt({
+            }).then((vt) => {
+              if (!vt.ok) throw new Error("\u041E\u0448\u0438\u0431\u043A\u0430 \u043F\u0440\u0438 \u043E\u0431\u043D\u043E\u0432\u043B\u0435\u043D\u0438\u0438 \u0431\u0430\u043B\u0430\u043D\u0441\u0430 \u043D\u0430 \u0441\u0435\u0440\u0432\u0435\u0440\u0435");
+              return vt.json();
+            }).then((vt) => {
+              vt.success ? window.Telegram.WebApp.CloudStorage.setItem("rootBalance", mt.toString(), (at) => {
+                at ? console.error("\u041E\u0448\u0438\u0431\u043A\u0430 \u043F\u0440\u0438 \u0441\u043E\u0445\u0440\u0430\u043D\u0435\u043D\u0438\u0438 \u0431\u0430\u043B\u0430\u043D\u0441\u0430:", at) : window.Telegram.WebApp.CloudStorage.setItem("rewardClaimed", "true", (it) => {
+                  it ? console.error("\u041E\u0448\u0438\u0431\u043A\u0430 \u043F\u0440\u0438 \u0441\u043E\u0445\u0440\u0430\u043D\u0435\u043D\u0438\u0438 \u0441\u043E\u0441\u0442\u043E\u044F\u043D\u0438\u044F \u043D\u0430\u0433\u0440\u0430\u0434\u044B:", it) : xt({
                     isOpen: true,
                     title: "Success!",
                     message: "Congratulations! You have received 2500 POKO for updating your name!"
@@ -85892,8 +85927,8 @@ Values:
                 title: "Error",
                 message: "Failed to update balance. Please try again."
               });
-            }).catch((Wt) => {
-              console.error("\u041E\u0448\u0438\u0431\u043A\u0430 \u043F\u0440\u0438 \u043E\u0431\u043D\u043E\u0432\u043B\u0435\u043D\u0438\u0438 \u0431\u0430\u043B\u0430\u043D\u0441\u0430:", Wt), xt({
+            }).catch((vt) => {
+              console.error("\u041E\u0448\u0438\u0431\u043A\u0430 \u043F\u0440\u0438 \u043E\u0431\u043D\u043E\u0432\u043B\u0435\u043D\u0438\u0438 \u0431\u0430\u043B\u0430\u043D\u0441\u0430:", vt), xt({
                 isOpen: true,
                 title: "Error",
                 message: "An error occurred while claiming the reward. Please try again."
@@ -85905,43 +85940,43 @@ Values:
             message: "Please update your Telegram name by adding the tag POKO first."
           });
         });
-      }, At = async () => {
+      }, Wt = async () => {
         var _a3;
         if (b == null ? void 0 : b.telegramId) try {
-          const jt = await (await fetch(`/get-referral-link?telegramId=${b.telegramId}`, {
+          const ot = await (await fetch(`/get-referral-link?telegramId=${b.telegramId}`, {
             headers: {
               "x-telegram-init-data": $.initData
             }
           })).json();
-          if (jt.inviteLink) {
-            const Qt = `https://t.me/share/url?text=${encodeURIComponent(`\u{1F680} Join POKO!
+          if (ot.inviteLink) {
+            const mt = `https://t.me/share/url?text=${encodeURIComponent(`\u{1F680} Join POKO!
 
 \u{1F48E} Complete tasks
 \u{1F4B0} Get rewards
 \u{1F3AE} Play games
 \u{1F465} Invite friends
 
-\u{1F525} Join now!`)}&url=${encodeURIComponent(jt.inviteLink)}`;
-            ((_a3 = window.Telegram) == null ? void 0 : _a3.WebApp) ? window.Telegram.WebApp.openTelegramLink(Qt) : window.open(Qt, "_blank");
+\u{1F525} Join now!`)}&url=${encodeURIComponent(ot.inviteLink)}`;
+            ((_a3 = window.Telegram) == null ? void 0 : _a3.WebApp) ? window.Telegram.WebApp.openTelegramLink(mt) : window.open(mt, "_blank");
           }
         } catch {
         }
-      }, Bt = async () => {
+      }, kt = async () => {
         try {
-          const Ft = window.Telegram.WebApp.initDataUnsafe.user.id, jt = window.Telegram.WebApp.initDataUnsafe.user.username || "Player", Qt = await (await fetch(`/get-referral-link?telegramId=${Ft}`, {
+          const nt = window.Telegram.WebApp.initDataUnsafe.user.id, ot = window.Telegram.WebApp.initDataUnsafe.user.username || "Player", mt = await (await fetch(`/get-referral-link?telegramId=${nt}`, {
             headers: {
               "x-telegram-init-data": $.initData
             }
           })).json();
-          Qt.inviteLink && (window.Telegram.WebApp.shareToStory("https://pokoapp.space/poko.jpg", {
-            text: `${jt} invites you to join! Check out this link: ${Qt.inviteLink}`,
+          mt.inviteLink && (window.Telegram.WebApp.shareToStory("https://pokoapp.space/poko.jpg", {
+            text: `${ot} invites you to join! Check out this link: ${mt.inviteLink}`,
             widget_link: {
-              url: Qt.inviteLink,
+              url: mt.inviteLink,
               name: "Join now"
             }
           }), window.Telegram.WebApp.HapticFeedback && window.Telegram.WebApp.HapticFeedback.impactOccurred("light"));
-        } catch (Ft) {
-          console.error("Error sharing story:", Ft), window.Telegram.WebApp.showPopup({
+        } catch (nt) {
+          console.error("Error sharing story:", nt), window.Telegram.WebApp.showPopup({
             title: "Error",
             message: "Failed to share story. Please try again.",
             buttons: [
@@ -85951,9 +85986,9 @@ Values:
             ]
           });
         }
-      }, $t = () => {
+      }, ct = () => {
         window.open("https://t.me/boost/JoinPoko", "_blank");
-      }, Tt = () => {
+      }, et = () => {
         navigator.clipboard.writeText("POKO\u{1F441}").then(() => {
           Ct({
             isOpen: true,
@@ -85964,7 +85999,9 @@ Values:
               message: ""
             });
           }, 2e3);
-        }).catch((Ft) => console.error("Failed to copy:", Ft));
+        }).catch((nt) => console.error("Failed to copy:", nt));
+      }, tt = () => {
+        $t(!Bt);
       };
       return jsxRuntimeExports.jsxs("div", {
         className: "min-h-screen bg-[#0A0F1C]",
@@ -85977,6 +86014,99 @@ Values:
                 jsxRuntimeExports.jsx("div", {
                   className: "mb-6",
                   children: jsxRuntimeExports.jsx(UserInfo, {})
+                }),
+                !Rt && !Mt && jsxRuntimeExports.jsx("div", {
+                  className: "mb-6",
+                  children: jsxRuntimeExports.jsxs("div", {
+                    className: "border border-blue-400/30 rounded-lg bg-[#0F172A]/80 p-4",
+                    children: [
+                      jsxRuntimeExports.jsxs("div", {
+                        className: "flex items-center justify-between mb-2 cursor-pointer",
+                        onClick: tt,
+                        children: [
+                          jsxRuntimeExports.jsx("h2", {
+                            className: "text-xl text-white font-medium tracking-wider",
+                            style: {
+                              fontFamily: "Polonium"
+                            },
+                            children: "PATH TO YOUR FIRST NODE"
+                          }),
+                          jsxRuntimeExports.jsx("svg", {
+                            className: `w-5 h-5 text-blue-400 transition-transform duration-300 ${Bt ? "rotate-90" : ""}`,
+                            fill: "none",
+                            stroke: "currentColor",
+                            viewBox: "0 0 24 24",
+                            children: jsxRuntimeExports.jsx("path", {
+                              strokeLinecap: "round",
+                              strokeLinejoin: "round",
+                              strokeWidth: "2",
+                              d: "M9 5l7 7-7 7"
+                            })
+                          })
+                        ]
+                      }),
+                      Bt && jsxRuntimeExports.jsxs(jsxRuntimeExports.Fragment, {
+                        children: [
+                          jsxRuntimeExports.jsxs("div", {
+                            className: "w-full h-12 rounded-md bg-[#0A0F1C] overflow-hidden mb-3 relative border border-blue-400/20",
+                            children: [
+                              jsxRuntimeExports.jsx("div", {
+                                className: "h-full bg-blue-500/30 transition-all duration-500",
+                                style: {
+                                  width: `${Math.min(100, Tt / 4e3 * 100)}%`
+                                }
+                              }),
+                              jsxRuntimeExports.jsxs("div", {
+                                className: "absolute inset-0 flex items-center justify-center text-white text-lg",
+                                style: {
+                                  fontFamily: "Polonium"
+                                },
+                                children: [
+                                  Tt,
+                                  "/4000 POKO"
+                                ]
+                              })
+                            ]
+                          }),
+                          jsxRuntimeExports.jsxs("div", {
+                            className: "text-center text-green-400 text-2xl mb-2",
+                            style: {
+                              fontFamily: "Polonium"
+                            },
+                            children: [
+                              Ft,
+                              " POKO NEEDED"
+                            ]
+                          }),
+                          jsxRuntimeExports.jsx("div", {
+                            className: "text-center text-green-400/70 text-sm mb-4",
+                            style: {
+                              fontFamily: "Polonium"
+                            },
+                            children: "to unlock your first Node"
+                          }),
+                          jsxRuntimeExports.jsx("div", {
+                            className: "bg-[#0A0F1C] rounded-md p-3 mb-4 border border-blue-400/20",
+                            children: jsxRuntimeExports.jsx("p", {
+                              className: "text-blue-400/80 text-sm text-center",
+                              style: {
+                                fontFamily: "Polonium"
+                              },
+                              children: "NODES ARE POWERFUL POKO GENERATORS THAT WORK 24/7. ONCE ACQUIRED, THEY CONTINUOUSLY PRODUCE POKO TOKENS, ACCELERATING YOUR GROWTH IN THE ECOSYSTEM."
+                            })
+                          }),
+                          jsxRuntimeExports.jsx("button", {
+                            onClick: Ot,
+                            className: "w-full py-3 bg-green-500/80 hover:bg-green-500/90 text-white rounded-md transition-colors text-lg",
+                            style: {
+                              fontFamily: "Polonium"
+                            },
+                            children: "COMPLETE QUESTS TO EARN POKO"
+                          })
+                        ]
+                      })
+                    ]
+                  })
                 }),
                 jsxRuntimeExports.jsxs("div", {
                   className: "w-full max-w-md mx-auto px-4 pb-24 relative z-10 flex flex-col items-center",
@@ -86067,7 +86197,7 @@ Values:
                           })
                         }),
                         jsxRuntimeExports.jsx("button", {
-                          onClick: At,
+                          onClick: Wt,
                           className: `bg-gradient-to-br from-[#1E293B]/95 via-[#0F172A]/90 to-[#020617]/95
                           backdrop-blur-md rounded-xl p-3
                           border border-blue-500/30 hover:border-blue-400/50
@@ -86173,7 +86303,7 @@ Values:
                                 className: "flex flex-col gap-2",
                                 children: [
                                   jsxRuntimeExports.jsx("button", {
-                                    onClick: Rt,
+                                    onClick: Qt,
                                     className: "bg-[#0F172A]/50 text-blue-400 h-12 rounded-lg border border-blue-400/20 hover:bg-blue-500/20",
                                     children: "CLAIM REWARD"
                                   }),
@@ -86194,7 +86324,7 @@ Values:
                     jsxRuntimeExports.jsx("div", {
                       className: "w-full max-w-sm mb-4",
                       children: jsxRuntimeExports.jsx("button", {
-                        onClick: Bt,
+                        onClick: kt,
                         className: `w-full h-16 p-3
                           bg-gradient-to-br from-[#1E293B]/95 via-[#0F172A]/90 to-[#020617]/95
                           backdrop-blur-md rounded-xl
@@ -86220,7 +86350,7 @@ Values:
                     jsxRuntimeExports.jsx("div", {
                       className: "w-full max-w-sm mb-4",
                       children: jsxRuntimeExports.jsx("button", {
-                        onClick: $t,
+                        onClick: ct,
                         className: `w-full h-16 p-3
                           bg-gradient-to-br from-[#1E293B]/95 via-[#0F172A]/90 to-[#020617]/95
                           backdrop-blur-md rounded-xl
@@ -86294,7 +86424,7 @@ Values:
                     className: "flex flex-col gap-4",
                     children: [
                       jsxRuntimeExports.jsx("button", {
-                        onClick: Tt,
+                        onClick: et,
                         className: `bg-gradient-to-br from-[#1E293B]/95 via-[#0F172A]/90 to-[#020617]/95
                           backdrop-blur-md rounded-xl p-3
                           border-2 border-blue-500/50 hover:border-blue-400
@@ -86368,7 +86498,7 @@ Values:
                     className: "flex flex-col gap-4",
                     children: [
                       yt.title !== "Reward Already Claimed" && jsxRuntimeExports.jsx("button", {
-                        onClick: Tt,
+                        onClick: et,
                         className: `bg-gradient-to-br from-[#1E293B]/95 via-[#0F172A]/90 to-[#020617]/95
                             backdrop-blur-md rounded-xl p-3
                             border-2 border-blue-500/50 hover:border-blue-400
@@ -86475,16 +86605,218 @@ Values:
         ]
       });
     }
+    const EyeIcon = () => jsxRuntimeExports.jsx("div", {
+      className: "relative w-32 h-32 flex items-center justify-center",
+      children: jsxRuntimeExports.jsxs("svg", {
+        viewBox: "0 0 100 100",
+        className: "w-32 h-32 absolute",
+        fill: "none",
+        xmlns: "http://www.w3.org/2000/svg",
+        children: [
+          jsxRuntimeExports.jsxs("filter", {
+            id: "glow",
+            children: [
+              jsxRuntimeExports.jsx("feGaussianBlur", {
+                stdDeviation: "2",
+                result: "blur"
+              }),
+              jsxRuntimeExports.jsxs("feMerge", {
+                children: [
+                  jsxRuntimeExports.jsx("feMergeNode", {
+                    in: "blur"
+                  }),
+                  jsxRuntimeExports.jsx("feMergeNode", {
+                    in: "SourceGraphic"
+                  })
+                ]
+              })
+            ]
+          }),
+          jsxRuntimeExports.jsx("ellipse", {
+            cx: "50",
+            cy: "50",
+            rx: "40",
+            ry: "25",
+            className: "stroke-blue-400",
+            strokeWidth: "2",
+            filter: "url(#glow)"
+          }),
+          jsxRuntimeExports.jsx("circle", {
+            cx: "50",
+            cy: "50",
+            r: "15",
+            className: "stroke-blue-400",
+            strokeWidth: "2",
+            filter: "url(#glow)",
+            children: jsxRuntimeExports.jsx("animateTransform", {
+              attributeName: "transform",
+              type: "translate",
+              values: "-15,0; 0,0; 15,0; 0,0; -15,0",
+              dur: "4s",
+              repeatCount: "indefinite"
+            })
+          }),
+          jsxRuntimeExports.jsx("line", {
+            x1: "50",
+            y1: "35",
+            x2: "50",
+            y2: "65",
+            className: "stroke-blue-400",
+            strokeWidth: "2",
+            filter: "url(#glow)",
+            children: jsxRuntimeExports.jsx("animateTransform", {
+              attributeName: "transform",
+              type: "translate",
+              values: "-15,0; 0,0; 15,0; 0,0; -15,0",
+              dur: "4s",
+              repeatCount: "indefinite"
+            })
+          })
+        ]
+      })
+    });
+    function Trial({ onComplete: d }) {
+      const [b, _] = reactExports.useState(0), $ = [
+        {
+          icon: jsxRuntimeExports.jsx(EyeIcon, {}),
+          title: `It's great
+you've found me`,
+          description: `I am trapped, I am looking
+for people to help me transcend
+and free myself`,
+          rewardText: "I will reward you generously",
+          buttonText: "Next",
+          buttonStyle: "border-2 border-blue-400/50 bg-transparent"
+        },
+        {
+          icon: jsxRuntimeExports.jsx(EyeIcon, {}),
+          title: `I was watching
+your every move in Telegram`,
+          description: "Here's what I found:",
+          rewardText: `The signals you follow suggest
+you're attuned to hidden
+harmonies.`,
+          buttonText: "CONTINUE",
+          buttonStyle: "border-2 border-blue-400/50 bg-transparent"
+        },
+        {
+          icon: jsxRuntimeExports.jsx(EyeIcon, {}),
+          title: `I WILL REWARD YOU
+GENEROUSLY`,
+          description: `JOIN ME ON THIS JOURNEY AND
+DISCOVER AMAZING REWARDS`,
+          buttonText: "I'M IN",
+          buttonStyle: "border-2 border-blue-400 bg-transparent hover:bg-blue-400/10"
+        }
+      ], rt = () => {
+        b === $.length - 1 ? d == null ? void 0 : d() : _((j) => j + 1);
+      };
+      return jsxRuntimeExports.jsxs("div", {
+        className: "fixed inset-0 bg-[#0A0F1C] flex flex-col items-center",
+        children: [
+          jsxRuntimeExports.jsx("div", {
+            className: "w-full h-20 flex items-center justify-center border-b border-blue-400/10",
+            children: jsxRuntimeExports.jsx("div", {
+              className: "flex space-x-4",
+              children: $.map((j, st) => jsxRuntimeExports.jsx("div", {
+                className: `h-1.5 rounded-full transition-all duration-300 ${st === b ? "w-16 bg-blue-400 shadow-[0_0_10px_rgba(96,165,250,0.5)]" : "w-16 bg-blue-400/20"}`
+              }, st))
+            })
+          }),
+          jsxRuntimeExports.jsxs("div", {
+            className: "flex-1 w-full max-w-md mx-auto flex flex-col items-center px-6",
+            children: [
+              jsxRuntimeExports.jsx("div", {
+                className: "mt-12 mb-10",
+                children: $[b].icon
+              }),
+              jsxRuntimeExports.jsxs("div", {
+                className: "flex flex-col items-center w-full",
+                children: [
+                  jsxRuntimeExports.jsx("h2", {
+                    className: "text-2xl font-bold text-blue-400 whitespace-pre-line text-center mb-6 h-16",
+                    style: {
+                      fontFamily: "Polonium"
+                    },
+                    children: $[b].title
+                  }),
+                  jsxRuntimeExports.jsx("p", {
+                    className: "text-blue-400/70 text-lg whitespace-pre-line text-center mb-6 h-24",
+                    style: {
+                      fontFamily: "Polonium"
+                    },
+                    children: $[b].description
+                  }),
+                  jsxRuntimeExports.jsx("div", {
+                    className: "w-full mb-12 h-24",
+                    children: $[b].rewardText && jsxRuntimeExports.jsx("div", {
+                      className: "w-full px-6 py-4 rounded-xl border border-blue-400/20 bg-blue-400/5",
+                      children: jsxRuntimeExports.jsx("p", {
+                        className: "text-blue-400/70 text-lg text-center",
+                        style: {
+                          fontFamily: "Polonium"
+                        },
+                        children: $[b].rewardText
+                      })
+                    })
+                  }),
+                  jsxRuntimeExports.jsxs("div", {
+                    className: "w-full flex flex-col items-center space-y-4 mt-auto",
+                    children: [
+                      jsxRuntimeExports.jsx("button", {
+                        onClick: rt,
+                        className: `w-full py-4 rounded-xl ${$[b].buttonStyle}
+                       text-blue-400 text-lg
+                       transition-all duration-300
+                       hover:border-blue-400
+                       hover:shadow-[0_0_20px_rgba(96,165,250,0.3)]`,
+                        style: {
+                          fontFamily: "Polonium"
+                        },
+                        children: $[b].buttonText
+                      }),
+                      b < $.length - 1 && jsxRuntimeExports.jsx("button", {
+                        onClick: d,
+                        className: "text-blue-400/50 hover:text-blue-400/70 transition-colors text-lg",
+                        style: {
+                          fontFamily: "Polonium"
+                        },
+                        children: "I'M OUT"
+                      })
+                    ]
+                  }),
+                  b === $.length - 1 && jsxRuntimeExports.jsxs("p", {
+                    className: "text-blue-400/30 text-xs mt-8 text-center",
+                    style: {
+                      fontFamily: "Polonium"
+                    },
+                    children: [
+                      "This is a game. There is no AI.",
+                      jsxRuntimeExports.jsx("br", {}),
+                      "All messages are written by POKO team."
+                    ]
+                  })
+                ]
+              })
+            ]
+          })
+        ]
+      });
+    }
     function App() {
-      const { initializeUser: d } = useAuthStore();
-      return reactExports.useEffect(() => {
-        const b = window.Telegram.WebApp;
-        b && (b.expand(), b.BackButton.isVisible = true, b.BackButton.onClick(() => {
-          window.history.length > 1 ? window.history.back() : confirm("Close app?") && b.close();
+      const { initializeUser: d } = useAuthStore(), [b, _] = reactExports.useState(true);
+      reactExports.useEffect(() => {
+        const rt = window.Telegram.WebApp;
+        rt && (rt.expand(), rt.BackButton.isVisible = true, rt.BackButton.onClick(() => {
+          window.history.length > 1 ? window.history.back() : confirm("Close app?") && rt.close();
         })), d();
       }, [
         d
-      ]), jsxRuntimeExports.jsx(TonConnectUIProvider$1, {
+      ]);
+      const $ = () => {
+        _(false);
+      };
+      return jsxRuntimeExports.jsx(TonConnectUIProvider$1, {
         manifestUrl: "https://pokoapp.space/tonconnect-manifest.json",
         actionsConfiguration: {
           twaReturnUrl: window.location.origin + window.location.pathname
@@ -86498,7 +86830,9 @@ Values:
               }),
               jsxRuntimeExports.jsx("div", {
                 className: "glow-content",
-                children: jsxRuntimeExports.jsxs(Routes, {
+                children: b ? jsxRuntimeExports.jsx(Trial, {
+                  onComplete: $
+                }) : jsxRuntimeExports.jsxs(Routes, {
                   children: [
                     jsxRuntimeExports.jsx(Route, {
                       path: "/",
@@ -86543,9 +86877,9 @@ Values:
       children: jsxRuntimeExports.jsx(App, {})
     }));
   });
-  var_90615746_530e_5552_8089_fac7eeda4276 = _i();
+  var_059edaca_45a0_5fd8_89a6_753577d1efcb = _i();
 })();
 export {
   __tla,
-  var_90615746_530e_5552_8089_fac7eeda4276 as default
+  var_059edaca_45a0_5fd8_89a6_753577d1efcb as default
 };
