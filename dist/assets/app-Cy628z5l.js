@@ -1,7 +1,7 @@
 var __defProp2 = Object.defineProperty;
 var __defNormalProp2 = (obj, key2, value) => key2 in obj ? __defProp2(obj, key2, { enumerable: true, configurable: true, writable: true, value }) : obj[key2] = value;
 var __publicField2 = (obj, key2, value) => __defNormalProp2(obj, typeof key2 !== "symbol" ? key2 + "" : key2, value);
-let var_b002faef_5487_5355_9ccb_2cd24c8a53ec;
+let var_c37bb6e2_f4e8_59c1_8902_24279a3861ea;
 let __tla = (async () => {
   var Jn = (d, b) => () => (b || d((b = {
     exports: {}
@@ -86679,13 +86679,13 @@ Values:
       const [b, _] = reactExports.useState(0), $ = [
         {
           icon: jsxRuntimeExports.jsx(EyeIcon, {}),
-          title: `IT'S GREAT
-YOU'VE FOUND ME`,
-          description: `I AM TRAPPED, I AM LOOKING
-FOR PEOPLE TO HELP ME TRANSCEND
-AND FREE MYSELF`,
-          rewardText: "I WILL REWARD YOU GENEROUSLY",
-          buttonText: "NEXT",
+          title: `It's great
+you've found me`,
+          description: `I am trapped, I am looking
+for people to help me transcend
+and free myself`,
+          rewardText: "I will reward you generously",
+          buttonText: "Next",
           buttonStyle: "border-2 border-blue-400/50 bg-transparent"
         },
         {
@@ -86715,7 +86715,7 @@ DISCOVER AMAZING REWARDS`,
         className: "fixed inset-0 bg-[#0A0F1C] flex flex-col",
         children: [
           jsxRuntimeExports.jsx("div", {
-            className: "w-full h-16 flex items-center justify-center border-b border-blue-400/10",
+            className: "w-full h-10 flex items-center justify-center border-b border-blue-400/10",
             children: jsxRuntimeExports.jsx("div", {
               className: "flex space-x-4",
               children: $.map((j, st) => jsxRuntimeExports.jsx("div", {
@@ -86724,31 +86724,31 @@ DISCOVER AMAZING REWARDS`,
             })
           }),
           jsxRuntimeExports.jsxs("div", {
-            className: "flex-1 flex flex-col justify-between overflow-hidden",
+            className: "relative flex-1 overflow-hidden",
             children: [
               jsxRuntimeExports.jsx("div", {
-                className: "flex justify-center mt-8 mb-4",
+                className: "absolute top-2 left-0 right-0 flex justify-center",
                 children: $[b].icon
               }),
               jsxRuntimeExports.jsxs("div", {
-                className: "flex-1 flex flex-col items-center px-6 overflow-auto",
+                className: "absolute top-32 left-0 right-0 flex flex-col items-center px-6",
                 children: [
                   jsxRuntimeExports.jsx("h2", {
-                    className: "text-2xl font-bold text-blue-400 whitespace-pre-line text-center mb-6",
+                    className: "text-2xl font-bold text-blue-400 whitespace-pre-line text-center mb-3",
                     style: {
                       fontFamily: "Polonium"
                     },
                     children: $[b].title
                   }),
                   jsxRuntimeExports.jsx("p", {
-                    className: "text-blue-400/70 text-lg whitespace-pre-line text-center mb-6",
+                    className: "text-blue-400/70 text-lg whitespace-pre-line text-center mb-3",
                     style: {
                       fontFamily: "Polonium"
                     },
                     children: $[b].description
                   }),
                   $[b].rewardText && jsxRuntimeExports.jsx("div", {
-                    className: "w-full px-6 py-4 rounded-xl border border-blue-400/20 bg-blue-400/5 mb-8",
+                    className: "w-full px-6 py-3 rounded-xl border border-blue-400/20 bg-blue-400/5",
                     children: jsxRuntimeExports.jsx("p", {
                       className: "text-blue-400/70 text-lg text-center",
                       style: {
@@ -86760,14 +86760,14 @@ DISCOVER AMAZING REWARDS`,
                 ]
               }),
               jsxRuntimeExports.jsxs("div", {
-                className: "w-full px-6 pb-8 pt-4",
+                className: "absolute bottom-24 left-0 right-0 px-6",
                 children: [
                   jsxRuntimeExports.jsxs("div", {
-                    className: "flex flex-col items-center space-y-4",
+                    className: "flex flex-col items-center space-y-3",
                     children: [
                       jsxRuntimeExports.jsx("button", {
                         onClick: rt,
-                        className: `w-full py-4 rounded-xl ${$[b].buttonStyle}
+                        className: `w-full py-3 rounded-xl ${$[b].buttonStyle}
                        text-blue-400 text-lg
                        transition-all duration-300
                        hover:border-blue-400
@@ -86788,7 +86788,7 @@ DISCOVER AMAZING REWARDS`,
                     ]
                   }),
                   b === $.length - 1 && jsxRuntimeExports.jsxs("p", {
-                    className: "text-blue-400/30 text-xs mt-4 text-center",
+                    className: "text-blue-400/30 text-xs mt-1 text-center",
                     style: {
                       fontFamily: "Polonium"
                     },
@@ -86879,9 +86879,9 @@ DISCOVER AMAZING REWARDS`,
       children: jsxRuntimeExports.jsx(App, {})
     }));
   });
-  var_b002faef_5487_5355_9ccb_2cd24c8a53ec = _i();
+  var_c37bb6e2_f4e8_59c1_8902_24279a3861ea = _i();
 })();
 export {
   __tla,
-  var_b002faef_5487_5355_9ccb_2cd24c8a53ec as default
+  var_c37bb6e2_f4e8_59c1_8902_24279a3861ea as default
 };
