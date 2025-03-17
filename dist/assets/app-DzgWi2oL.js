@@ -1,7 +1,7 @@
 var __defProp2 = Object.defineProperty;
 var __defNormalProp2 = (obj, key2, value) => key2 in obj ? __defProp2(obj, key2, { enumerable: true, configurable: true, writable: true, value }) : obj[key2] = value;
 var __publicField2 = (obj, key2, value) => __defNormalProp2(obj, typeof key2 !== "symbol" ? key2 + "" : key2, value);
-let var_c37bb6e2_f4e8_59c1_8902_24279a3861ea;
+let var_4bb905e2_74d7_5efa_940f_89c64a418b9e;
 let __tla = (async () => {
   var Jn = (d, b) => () => (b || d((b = {
     exports: {}
@@ -86760,7 +86760,7 @@ DISCOVER AMAZING REWARDS`,
                 ]
               }),
               jsxRuntimeExports.jsxs("div", {
-                className: "absolute bottom-24 left-0 right-0 px-6",
+                className: "absolute bottom-20 left-0 right-0 px-6",
                 children: [
                   jsxRuntimeExports.jsxs("div", {
                     className: "flex flex-col items-center space-y-3",
@@ -86879,9 +86879,9 @@ DISCOVER AMAZING REWARDS`,
       children: jsxRuntimeExports.jsx(App, {})
     }));
   });
-  var_c37bb6e2_f4e8_59c1_8902_24279a3861ea = _i();
+  var_4bb905e2_74d7_5efa_940f_89c64a418b9e = _i();
 })();
 export {
   __tla,
-  var_c37bb6e2_f4e8_59c1_8902_24279a3861ea as default
+  var_4bb905e2_74d7_5efa_940f_89c64a418b9e as default
 };
