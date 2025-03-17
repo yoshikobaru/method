@@ -1,7 +1,7 @@
 var __defProp2 = Object.defineProperty;
 var __defNormalProp2 = (obj, key2, value) => key2 in obj ? __defProp2(obj, key2, { enumerable: true, configurable: true, writable: true, value }) : obj[key2] = value;
 var __publicField2 = (obj, key2, value) => __defNormalProp2(obj, typeof key2 !== "symbol" ? key2 + "" : key2, value);
-let var_059edaca_45a0_5fd8_89a6_753577d1efcb;
+let var_88e5acd3_ba84_57c0_a82a_b4455ad8e004;
 let __tla = (async () => {
   var Jn = (d, b) => () => (b || d((b = {
     exports: {}
@@ -86025,14 +86025,14 @@ Values:
                         onClick: tt,
                         children: [
                           jsxRuntimeExports.jsx("h2", {
-                            className: "text-xl text-white font-medium tracking-wider",
+                            className: "text-lg text-white font-medium tracking-tight whitespace-nowrap",
                             style: {
                               fontFamily: "Polonium"
                             },
                             children: "PATH TO YOUR FIRST NODE"
                           }),
                           jsxRuntimeExports.jsx("svg", {
-                            className: `w-5 h-5 text-blue-400 transition-transform duration-300 ${Bt ? "rotate-90" : ""}`,
+                            className: `w-5 h-5 text-blue-400 transition-transform duration-300 ${Bt ? "rotate-180" : ""}`,
                             fill: "none",
                             stroke: "currentColor",
                             viewBox: "0 0 24 24",
@@ -86040,7 +86040,7 @@ Values:
                               strokeLinecap: "round",
                               strokeLinejoin: "round",
                               strokeWidth: "2",
-                              d: "M9 5l7 7-7 7"
+                              d: "M19 9l-7 7-7-7"
                             })
                           })
                         ]
@@ -86069,7 +86069,7 @@ Values:
                             ]
                           }),
                           jsxRuntimeExports.jsxs("div", {
-                            className: "text-center text-green-400 text-2xl mb-2",
+                            className: "text-center text-blue-400 text-2xl mb-2",
                             style: {
                               fontFamily: "Polonium"
                             },
@@ -86079,7 +86079,7 @@ Values:
                             ]
                           }),
                           jsxRuntimeExports.jsx("div", {
-                            className: "text-center text-green-400/70 text-sm mb-4",
+                            className: "text-center text-blue-400/70 text-sm mb-4",
                             style: {
                               fontFamily: "Polonium"
                             },
@@ -86097,7 +86097,7 @@ Values:
                           }),
                           jsxRuntimeExports.jsx("button", {
                             onClick: Ot,
-                            className: "w-full py-3 bg-green-500/80 hover:bg-green-500/90 text-white rounded-md transition-colors text-lg",
+                            className: "w-full py-3 bg-blue-500/20 hover:bg-blue-500/30 text-white rounded-md transition-colors text-lg border border-blue-400/30",
                             style: {
                               fontFamily: "Polonium"
                             },
@@ -86877,9 +86877,9 @@ DISCOVER AMAZING REWARDS`,
       children: jsxRuntimeExports.jsx(App, {})
     }));
   });
-  var_059edaca_45a0_5fd8_89a6_753577d1efcb = _i();
+  var_88e5acd3_ba84_57c0_a82a_b4455ad8e004 = _i();
 })();
 export {
   __tla,
-  var_059edaca_45a0_5fd8_89a6_753577d1efcb as default
+  var_88e5acd3_ba84_57c0_a82a_b4455ad8e004 as default
 };
