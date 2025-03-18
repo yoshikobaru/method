@@ -551,68 +551,51 @@ const routes = {
       const authError = await authMiddleware(req, res);
       if (authError) return authError;
 
-      console.log('Request query:', query);
-      console.log('Request URL:', req.url);
-      
-      const telegramId = query?.telegramId;
+      const { telegramId } = query;
       
       if (!telegramId) {
-        console.error('No telegramId provided in request');
         return { 
           status: 400, 
-          body: { 
-            success: false, 
-            error: 'Telegram ID is required' 
-          } 
+          body: { error: 'Telegram ID is required' } 
         };
       }
 
       try {
-        const user = await User.findOne({ where: { telegramId } });
-        console.log('Found user:', user);
-
+        const user = await User.findOne({ 
+          where: { telegramId },
+          raw: true 
+        });
+        
         if (!user) {
           return { 
             status: 404, 
-            body: { 
-              success: false, 
-              error: 'User not found' 
-            } 
+            body: { error: 'User not found' } 
           };
         }
-
-        // Получаем список рефералов
+        
         const referrals = await User.findAll({
           where: { referredBy: user.referralCode },
           attributes: ['telegramId', 'username', 'createdAt'],
           raw: true
         });
-
-        console.log('Found referrals:', referrals);
-
-        // Форматируем данные для фронтенда
-        const formattedReferrals = referrals.map(ref => ({
-          id: ref.telegramId,
-          username: ref.username || `User_${ref.telegramId}`,
-          joinDate: ref.createdAt
-        }));
-
-        return {
-          status: 200,
-          body: {
+        
+        return { 
+          status: 200, 
+          body: { 
             success: true,
-            count: referrals.length,
-            referrals: formattedReferrals
-          }
+            referralCount: referrals.length,
+            referrals: referrals.map(ref => ({
+              telegramId: ref.telegramId,
+              username: ref.username,
+              date: ref.createdAt
+            }))
+          } 
         };
       } catch (error) {
-        console.error('Error in get-referral-count:', error);
+        console.error('Error getting referral count:', error);
         return { 
           status: 500, 
-          body: { 
-            success: false, 
-            error: 'Server error' 
-          } 
+          body: { error: 'Failed to get referral count' } 
         };
       }
     },
@@ -1559,15 +1542,6 @@ const server = https.createServer(options, async (req, res) => {
   const parsedUrl = url.parse(req.url, true);
   const pathname = parsedUrl.pathname;
   const method = req.method;
-
-  // Логируем только не-статические запросы
-  if (!pathname.startsWith('/assets/') && !pathname.includes('.jpg')) {
-    console.log('Incoming request:', { 
-      method, 
-      pathname,
-      query: parsedUrl.query 
-    });
-  }
 
   // Проверяем существование роута в routes
   if (routes[method]?.[pathname]) {
