@@ -1518,6 +1518,7 @@ const serveStaticFile = (filePath, res) => {
     '.json': 'application/json',
     '.png': 'image/png',
     '.jpg': 'image/jpg',
+    '.webp': 'image/webp',
     '.gif': 'image/gif',
     '.svg': 'image/svg+xml',
   }[extname] || 'application/octet-stream';
@@ -1540,7 +1541,17 @@ const serveStaticFile = (filePath, res) => {
         res.end('Ошибка сервера: ' + error.code);
       }
     } else {
-      res.writeHead(200, { 'Content-Type': contentType });
+      // Добавляем заголовки кеширования для изображений
+      const headers = { 'Content-Type': contentType };
+      
+      // Если это изображение, добавляем заголовки кеширования
+      if (['.png', '.jpg', '.webp', '.gif', '.svg'].includes(extname)) {
+        // Кешировать на 1 неделю (604800 секунд)
+        headers['Cache-Control'] = 'public, max-age=604800, immutable';
+        headers['Expires'] = new Date(Date.now() + 604800000).toUTCString();
+      }
+      
+      res.writeHead(200, headers);
       res.end(content, 'utf-8');
     }
   });

@@ -1,7 +1,7 @@
 var __defProp2 = Object.defineProperty;
 var __defNormalProp2 = (obj, key2, value) => key2 in obj ? __defProp2(obj, key2, { enumerable: true, configurable: true, writable: true, value }) : obj[key2] = value;
 var __publicField2 = (obj, key2, value) => __defNormalProp2(obj, typeof key2 !== "symbol" ? key2 + "" : key2, value);
-let var_74012607_7c1f_5ad5_ba1f_09bf01006a6f;
+let var_f85581e1_2a75_5c98_ae7f_2de4974a8e32;
 let __tla = (async () => {
   var Jn = (d, b) => () => (b || d((b = {
     exports: {}
@@ -10017,13 +10017,38 @@ Please change the parent <Route path="${Bt}"> to <Route path="${Bt === "/" ? "*"
         ]
       });
     }
-    const images$1 = {
-      basic: "/assets/power.webp",
-      minion: "/assets/poowerr.webp",
-      cube1: "/assets/purpule1.webp",
-      cube2: "/assets/purpule2.webp",
-      cube3: "/assets/red1.webp",
-      cube4: "/assets/red2.webp"
+    const imageCache = {}, imagesToPreload = [
+      "/assets/power.webp",
+      "/assets/poowerr.webp",
+      "/assets/purpule1.webp",
+      "/assets/purpule2.webp",
+      "/assets/red1.webp",
+      "/assets/red2.webp",
+      "/assets/egg1.webp",
+      "/assets/basic.webp",
+      "/assets/minion.webp",
+      "/assets/cube1.webp",
+      "/assets/cube2.webp",
+      "/assets/cube3.webp",
+      "/assets/cube4.webp"
+    ], preloadImage = (d) => new Promise((b, _) => {
+      if (imageCache[d]) {
+        b(imageCache[d]);
+        return;
+      }
+      const $ = new Image();
+      $.src = d, $.onload = () => {
+        imageCache[d] = d, b(d);
+      }, $.onerror = (rt) => {
+        console.error(`\u041E\u0448\u0438\u0431\u043A\u0430 \u0437\u0430\u0433\u0440\u0443\u0437\u043A\u0438 \u0438\u0437\u043E\u0431\u0440\u0430\u0436\u0435\u043D\u0438\u044F: ${d}`, rt), _(rt);
+      };
+    }), preloadAllImages = () => Promise.all(imagesToPreload.map((d) => preloadImage(d))), getImageFromCache = (d) => imageCache[d] || d, images$1 = {
+      basic: getImageFromCache("/assets/power.webp"),
+      minion: getImageFromCache("/assets/poowerr.webp"),
+      cube1: getImageFromCache("/assets/purpule1.webp"),
+      cube2: getImageFromCache("/assets/purpule2.webp"),
+      cube3: getImageFromCache("/assets/red1.webp"),
+      cube4: getImageFromCache("/assets/red2.webp")
     };
     function BagPage() {
       const { user: d, updateUser: b } = useAuthStore(), [_, $] = reactExports.useState(null), [rt, j] = reactExports.useState(true), [st, dt] = reactExports.useState([]), [pt, bt] = reactExports.useState({
@@ -40399,7 +40424,7 @@ https://github.com/browserify/crypto-browserify`);
     }
     const ImagePlaceholder = styled.div`
     background-color: ${(d) => d.theme.colors.background.secondary};
-`, Image = (d) => {
+`, Image$1 = (d) => {
       let b;
       const [_, $] = createSignal(null);
       return createEffect(() => {
@@ -41384,7 +41409,7 @@ https://github.com/browserify/crypto-browserify`);
     display: flex;
     align-items: center;
     justify-content: center;
-`, ImageStyled$3 = styled(Image)`
+`, ImageStyled$3 = styled(Image$1)`
     width: ${(d) => toPx(d.size)};
     height: ${(d) => toPx(d.size)};
     border-radius: ${(d) => imageBorders[d.theme.borderRadius]};
@@ -43761,7 +43786,7 @@ https://github.com/browserify/crypto-browserify`);
         border: 0.5px solid rgba(0, 0, 0, 0.08);
         border-radius: inherit;
     }
-`, ImageStyled$2 = styled(Image)`
+`, ImageStyled$2 = styled(Image$1)`
     width: 100%;
     height: 100%;
     border-radius: inherit;
@@ -43848,7 +43873,7 @@ https://github.com/browserify/crypto-browserify`);
     border-radius: ${(d) => borders$3[d.theme.borderRadius]};
     margin-bottom: 8px;
     position: relative;
-`, BadgeStyled = styled(Image)`
+`, BadgeStyled = styled(Image$1)`
     position: absolute;
     right: -6px;
     bottom: -6px;
@@ -45822,7 +45847,7 @@ https://github.com/browserify/crypto-browserify`);
     border-radius: ${(d) => tgButtonBorders[d.theme.borderRadius]};
     font-size: 16px;
     line-height: 20px;
-`, TgImageStyled = styled(Image)`
+`, TgImageStyled = styled(Image$1)`
     width: 32px;
     height: 32px;
     border-radius: ${(d) => tgIconBorders[d.theme.borderRadius]};
@@ -46531,7 +46556,7 @@ https://github.com/browserify/crypto-browserify`);
     align-items: center;
     gap: 12px;
     border-top: 0.5px solid ${(d) => rgba(d.theme.colors.icon.secondary, 0.2)};
-`, ImageStyled = styled(Image)`
+`, ImageStyled = styled(Image$1)`
     width: 36px;
     height: 36px;
     border-radius: 10px;
@@ -46973,7 +46998,7 @@ https://github.com/browserify/crypto-browserify`);
         margin: 0 16px 24px;
         width: calc(100% - 32px);
     }
-`, TGImageStyled = styled(Image)`
+`, TGImageStyled = styled(Image$1)`
     background-color: transparent;
     border-radius: ${(d) => tgBorders[d.theme.borderRadius]};
     width: 24px;
@@ -47312,7 +47337,7 @@ https://github.com/browserify/crypto-browserify`);
         transform: scale(0.96);
     }
 `;
-    styled(Image)`
+    styled(Image$1)`
     width: 24px;
     height: 24px;
 
@@ -84732,12 +84757,12 @@ Values:
         }
       };
     }, images = {
-      basic: "/assets/power.webp",
-      minion: "/assets/poowerr.webp",
-      cube1: "/assets/purpule1.webp",
-      cube2: "/assets/purpule2.webp",
-      cube3: "/assets/red1.webp",
-      cube4: "/assets/red2.webp"
+      basic: getImageFromCache("/assets/power.webp"),
+      minion: getImageFromCache("/assets/poowerr.webp"),
+      cube1: getImageFromCache("/assets/purpule1.webp"),
+      cube2: getImageFromCache("/assets/purpule2.webp"),
+      cube3: getImageFromCache("/assets/red1.webp"),
+      cube4: getImageFromCache("/assets/red2.webp")
     }, ErrorPopup = ({ message: d, onClose: b }) => jsxRuntimeExports.jsxs("div", {
       className: "error-popup",
       onClick: b,
@@ -86083,7 +86108,7 @@ Values:
                             before:bg-[radial-gradient(circle_at_50%_50%,rgba(29,78,216,0.1),transparent_70%)]`
                         }),
                         jsxRuntimeExports.jsx("img", {
-                          src: "/assets/egg1.webp",
+                          src: getImageFromCache("/assets/egg1.webp"),
                           alt: "Roko",
                           className: "w-full h-[250px] object-contain rounded-xl mix-blend-screen relative z-10"
                         }),
@@ -86751,6 +86776,24 @@ DISCOVER AMAZING REWARDS`,
         ]
       });
     }
+    function ImagePreloader({ children: d, onLoaded: b }) {
+      const [_, $] = reactExports.useState(false);
+      return reactExports.useEffect(() => {
+        preloadAllImages().then(() => {
+          $(true), b && b();
+        }).catch((rt) => {
+          console.error("\u041E\u0448\u0438\u0431\u043A\u0430 \u043F\u0440\u0438 \u043F\u0440\u0435\u0434\u0437\u0430\u0433\u0440\u0443\u0437\u043A\u0435 \u0438\u0437\u043E\u0431\u0440\u0430\u0436\u0435\u043D\u0438\u0439:", rt), $(true), b && b();
+        });
+      }, [
+        b
+      ]), _ ? d : jsxRuntimeExports.jsx("div", {
+        className: "glow-background flex items-center justify-center h-screen",
+        children: jsxRuntimeExports.jsx("div", {
+          className: "text-blue-400 text-xl",
+          children: "\u0417\u0430\u0433\u0440\u0443\u0437\u043A\u0430..."
+        })
+      });
+    }
     function App() {
       const { initializeUser: d } = useAuthStore(), [b, _] = reactExports.useState(true), [$, rt] = reactExports.useState(true);
       reactExports.useEffect(() => {
@@ -86763,7 +86806,7 @@ DISCOVER AMAZING REWARDS`,
             return;
           }
           pt === "true" && _(false), rt(false);
-        })) : rt(false), d();
+        })) : rt(false), d(), rt(false);
       }, [
         d
       ]);
@@ -86779,59 +86822,61 @@ DISCOVER AMAZING REWARDS`,
           className: "text-blue-400 text-xl",
           children: "\u0417\u0430\u0433\u0440\u0443\u0437\u043A\u0430..."
         })
-      }) : jsxRuntimeExports.jsx(TonConnectUIProvider$1, {
-        manifestUrl: "https://pokoapp.space/tonconnect-manifest.json",
-        actionsConfiguration: {
-          twaReturnUrl: window.location.origin + window.location.pathname
-        },
-        children: jsxRuntimeExports.jsx(BrowserRouter, {
-          children: jsxRuntimeExports.jsxs("div", {
-            className: "glow-background",
-            children: [
-              jsxRuntimeExports.jsx("div", {
-                className: "scanlines"
-              }),
-              jsxRuntimeExports.jsx("div", {
-                className: "glow-content",
-                children: b ? jsxRuntimeExports.jsx(Trial, {
-                  onComplete: j
-                }) : jsxRuntimeExports.jsxs(Routes, {
-                  children: [
-                    jsxRuntimeExports.jsx(Route, {
-                      path: "/",
-                      element: jsxRuntimeExports.jsx(Navigate, {
-                        to: "/method",
-                        replace: true
+      }) : jsxRuntimeExports.jsx(ImagePreloader, {
+        children: jsxRuntimeExports.jsx(TonConnectUIProvider$1, {
+          manifestUrl: "https://pokoapp.space/tonconnect-manifest.json",
+          actionsConfiguration: {
+            twaReturnUrl: window.location.origin + window.location.pathname
+          },
+          children: jsxRuntimeExports.jsx(BrowserRouter, {
+            children: jsxRuntimeExports.jsxs("div", {
+              className: "glow-background",
+              children: [
+                jsxRuntimeExports.jsx("div", {
+                  className: "scanlines"
+                }),
+                jsxRuntimeExports.jsx("div", {
+                  className: "glow-content",
+                  children: b ? jsxRuntimeExports.jsx(Trial, {
+                    onComplete: j
+                  }) : jsxRuntimeExports.jsxs(Routes, {
+                    children: [
+                      jsxRuntimeExports.jsx(Route, {
+                        path: "/",
+                        element: jsxRuntimeExports.jsx(Navigate, {
+                          to: "/method",
+                          replace: true
+                        })
+                      }),
+                      jsxRuntimeExports.jsx(Route, {
+                        path: "/method",
+                        element: jsxRuntimeExports.jsx(MethodPage, {})
+                      }),
+                      jsxRuntimeExports.jsx(Route, {
+                        path: "/tasks",
+                        element: jsxRuntimeExports.jsx(TasksPage, {})
+                      }),
+                      jsxRuntimeExports.jsx(Route, {
+                        path: "/main",
+                        element: jsxRuntimeExports.jsx(MainPage, {})
+                      }),
+                      jsxRuntimeExports.jsx(Route, {
+                        path: "/bag",
+                        element: jsxRuntimeExports.jsx(BagPage, {})
+                      }),
+                      jsxRuntimeExports.jsx(Route, {
+                        path: "/shop",
+                        element: jsxRuntimeExports.jsx(ShopPage, {})
+                      }),
+                      jsxRuntimeExports.jsx(Route, {
+                        path: "/top",
+                        element: jsxRuntimeExports.jsx(TopPage, {})
                       })
-                    }),
-                    jsxRuntimeExports.jsx(Route, {
-                      path: "/method",
-                      element: jsxRuntimeExports.jsx(MethodPage, {})
-                    }),
-                    jsxRuntimeExports.jsx(Route, {
-                      path: "/tasks",
-                      element: jsxRuntimeExports.jsx(TasksPage, {})
-                    }),
-                    jsxRuntimeExports.jsx(Route, {
-                      path: "/main",
-                      element: jsxRuntimeExports.jsx(MainPage, {})
-                    }),
-                    jsxRuntimeExports.jsx(Route, {
-                      path: "/bag",
-                      element: jsxRuntimeExports.jsx(BagPage, {})
-                    }),
-                    jsxRuntimeExports.jsx(Route, {
-                      path: "/shop",
-                      element: jsxRuntimeExports.jsx(ShopPage, {})
-                    }),
-                    jsxRuntimeExports.jsx(Route, {
-                      path: "/top",
-                      element: jsxRuntimeExports.jsx(TopPage, {})
-                    })
-                  ]
+                    ]
+                  })
                 })
-              })
-            ]
+              ]
+            })
           })
         })
       });
@@ -86840,9 +86885,9 @@ DISCOVER AMAZING REWARDS`,
       children: jsxRuntimeExports.jsx(App, {})
     }));
   });
-  var_74012607_7c1f_5ad5_ba1f_09bf01006a6f = _i();
+  var_f85581e1_2a75_5c98_ae7f_2de4974a8e32 = _i();
 })();
 export {
   __tla,
-  var_74012607_7c1f_5ad5_ba1f_09bf01006a6f as default
+  var_f85581e1_2a75_5c98_ae7f_2de4974a8e32 as default
 };
