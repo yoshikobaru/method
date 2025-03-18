@@ -897,9 +897,6 @@ const routes = {
       return acc;
     }, {});
 
-    // Оставляем только краткую информацию
-    console.log(`User ${telegramId} has ${user.miners?.length || 0} miners (${Object.entries(minerCounts).map(([type, count]) => `${type}: ${count}`).join(', ')})`);
-
     return { 
       status: 200, 
       body: { 
