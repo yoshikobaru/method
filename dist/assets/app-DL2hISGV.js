@@ -1,7 +1,7 @@
 var __defProp2 = Object.defineProperty;
 var __defNormalProp2 = (obj, key2, value) => key2 in obj ? __defProp2(obj, key2, { enumerable: true, configurable: true, writable: true, value }) : obj[key2] = value;
 var __publicField2 = (obj, key2, value) => __defNormalProp2(obj, typeof key2 !== "symbol" ? key2 + "" : key2, value);
-let var_f85581e1_2a75_5c98_ae7f_2de4974a8e32;
+let var_4fe6a7d4_053c_5ddd_86b3_1b31fcfc77d1;
 let __tla = (async () => {
   var Jn = (d, b) => () => (b || d((b = {
     exports: {}
@@ -10188,9 +10188,31 @@ Please change the parent <Route path="${Bt}"> to <Route path="${Bt === "/" ? "*"
       };
       return rt ? jsxRuntimeExports.jsx("div", {
         className: "min-h-screen bg-[#0A0F1C] flex items-center justify-center",
-        children: jsxRuntimeExports.jsx("div", {
-          className: "text-emerald-400",
-          children: "Loading..."
+        children: jsxRuntimeExports.jsxs("div", {
+          className: "flex flex-col items-center",
+          children: [
+            jsxRuntimeExports.jsxs("div", {
+              className: "w-16 h-16 relative",
+              children: [
+                jsxRuntimeExports.jsx("div", {
+                  className: "absolute inset-0 rounded-full bg-blue-500/20 animate-ping"
+                }),
+                jsxRuntimeExports.jsx("div", {
+                  className: `absolute inset-2 rounded-full bg-gradient-to-br from-blue-400 to-blue-600 
+                           shadow-[0_0_15px_rgba(59,130,246,0.5)] animate-pulse`
+                }),
+                jsxRuntimeExports.jsx("div", {
+                  className: `absolute inset-[30%] rounded-full bg-blue-300 
+                           shadow-[0_0_10px_rgba(147,197,253,0.8)]`
+                })
+              ]
+            }),
+            jsxRuntimeExports.jsx("div", {
+              className: `mt-4 text-blue-400 text-lg font-mono 
+                        drop-shadow-[0_0_8px_rgba(96,165,250,0.5)]`,
+              children: "\u0417\u0430\u0433\u0440\u0443\u0437\u043A\u0430..."
+            })
+          ]
         })
       }) : jsxRuntimeExports.jsxs("div", {
         className: "min-h-screen bg-[#0A0F1C]",
@@ -86885,9 +86907,9 @@ DISCOVER AMAZING REWARDS`,
       children: jsxRuntimeExports.jsx(App, {})
     }));
   });
-  var_f85581e1_2a75_5c98_ae7f_2de4974a8e32 = _i();
+  var_4fe6a7d4_053c_5ddd_86b3_1b31fcfc77d1 = _i();
 })();
 export {
   __tla,
-  var_f85581e1_2a75_5c98_ae7f_2de4974a8e32 as default
+  var_4fe6a7d4_053c_5ddd_86b3_1b31fcfc77d1 as default
 };
