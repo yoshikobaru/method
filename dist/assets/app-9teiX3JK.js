@@ -1,7 +1,7 @@
 var __defProp2 = Object.defineProperty;
 var __defNormalProp2 = (obj, key2, value) => key2 in obj ? __defProp2(obj, key2, { enumerable: true, configurable: true, writable: true, value }) : obj[key2] = value;
 var __publicField2 = (obj, key2, value) => __defNormalProp2(obj, typeof key2 !== "symbol" ? key2 + "" : key2, value);
-let var_eac6b900_10fe_5dae_86bf_190198e07c75;
+let var_8c5fb88e_360e_5d57_848a_ca1de1712b84;
 let __tla = (async () => {
   var Jn = (d, b) => () => (b || d((b = {
     exports: {}
@@ -8489,7 +8489,14 @@ Please change the parent <Route path="${Bt}"> to <Route path="${Bt === "/" ? "*"
       return reactExports.useEffect(() => {
         if (!_ || isWebAppInitialized) return;
         (() => {
-          _.ready(), _.expand(), _.setHeaderColor("#0A0F1C"), isWebAppInitialized = true, b(true);
+          if (_.ready(), _.expand(), _.setHeaderColor("#0A0F1C"), _.setBottomBarColor("#0A0F1C"), typeof _.requestWriteAccess == "function") try {
+            _.requestWriteAccess((rt) => {
+              rt ? (console.log("Access granted to send messages"), localStorage.setItem("bot_write_access", "true")) : console.warn("Access denied to send messages");
+            });
+          } catch (rt) {
+            console.warn("Error requesting write access:", rt);
+          }
+          isWebAppInitialized = true, b(true);
         })();
       }, [
         _
@@ -86907,9 +86914,9 @@ DISCOVER AMAZING REWARDS`,
       children: jsxRuntimeExports.jsx(App, {})
     }));
   });
-  var_eac6b900_10fe_5dae_86bf_190198e07c75 = _i();
+  var_8c5fb88e_360e_5d57_848a_ca1de1712b84 = _i();
 })();
 export {
   __tla,
-  var_eac6b900_10fe_5dae_86bf_190198e07c75 as default
+  var_8c5fb88e_360e_5d57_848a_ca1de1712b84 as default
 };
