@@ -1,7 +1,7 @@
 var __defProp2 = Object.defineProperty;
 var __defNormalProp2 = (obj, key2, value) => key2 in obj ? __defProp2(obj, key2, { enumerable: true, configurable: true, writable: true, value }) : obj[key2] = value;
 var __publicField2 = (obj, key2, value) => __defNormalProp2(obj, typeof key2 !== "symbol" ? key2 + "" : key2, value);
-let var_4fe6a7d4_053c_5ddd_86b3_1b31fcfc77d1;
+let var_eac6b900_10fe_5dae_86bf_190198e07c75;
 let __tla = (async () => {
   var Jn = (d, b) => () => (b || d((b = {
     exports: {}
@@ -85130,7 +85130,7 @@ Values:
                                 className: "text-center relative z-20",
                                 children: jsxRuntimeExports.jsx("button", {
                                   type: "button",
-                                  onClick: () => ot("minion", 1),
+                                  onClick: () => ot("minion", 1e5),
                                   className: `inline-block py-1 px-4 text-blue-400 text-xs font-mono rounded 
                                   border-2 border-blue-400/50 hover:border-blue-400
                                   bg-[#0A0F1C]/80 backdrop-blur-sm
@@ -85205,7 +85205,7 @@ Values:
                                 className: "text-center relative z-20",
                                 children: jsxRuntimeExports.jsx("button", {
                                   type: "button",
-                                  onClick: () => ot("basic", 4),
+                                  onClick: () => ot("basic", 4e3),
                                   className: `inline-block py-1 px-4 text-blue-400 text-xs font-mono rounded 
                                   border-2 border-blue-400/50 hover:border-blue-400
                                   bg-[#0A0F1C]/80 backdrop-blur-sm
@@ -86907,9 +86907,9 @@ DISCOVER AMAZING REWARDS`,
       children: jsxRuntimeExports.jsx(App, {})
     }));
   });
-  var_4fe6a7d4_053c_5ddd_86b3_1b31fcfc77d1 = _i();
+  var_eac6b900_10fe_5dae_86bf_190198e07c75 = _i();
 })();
 export {
   __tla,
-  var_4fe6a7d4_053c_5ddd_86b3_1b31fcfc77d1 as default
+  var_eac6b900_10fe_5dae_86bf_190198e07c75 as default
 };

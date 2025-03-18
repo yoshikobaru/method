@@ -10,7 +10,7 @@ const url = require('url');
 
 // Константа с ценами в звездах (нужна только для создания инвойса)
 const CUBE_PRICES = {
-  'cube1': 149,
+  'cube1': 50,
   'cube2': 97,
   'cube3': 497,
   'cube4': 5000
