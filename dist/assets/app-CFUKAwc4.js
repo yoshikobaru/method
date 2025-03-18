@@ -1,7 +1,7 @@
 var __defProp2 = Object.defineProperty;
 var __defNormalProp2 = (obj, key2, value) => key2 in obj ? __defProp2(obj, key2, { enumerable: true, configurable: true, writable: true, value }) : obj[key2] = value;
 var __publicField2 = (obj, key2, value) => __defNormalProp2(obj, typeof key2 !== "symbol" ? key2 + "" : key2, value);
-let var_8c5fb88e_360e_5d57_848a_ca1de1712b84;
+let var_b14c8193_ba29_517d_ab2b_de74b6cf402c;
 let __tla = (async () => {
   var Jn = (d, b) => () => (b || d((b = {
     exports: {}
@@ -7907,7 +7907,17 @@ Please change the parent <Route path="${Bt}"> to <Route path="${Bt === "/" ? "*"
           if (!((_d2 = (_c2 = (_b2 = (_a3 = window.Telegram) == null ? void 0 : _a3.WebApp) == null ? void 0 : _b2.initDataUnsafe) == null ? void 0 : _c2.user) == null ? void 0 : _d2.id)) return console.error("Telegram WebApp \u043D\u0435 \u0438\u043D\u0438\u0446\u0438\u0430\u043B\u0438\u0437\u0438\u0440\u043E\u0432\u0430\u043D"), d({
             isLoading: false
           }), false;
-          const _ = window.Telegram.WebApp.initDataUnsafe.user.id, $ = window.Telegram.WebApp.initDataUnsafe.user.username || window.Telegram.WebApp.initDataUnsafe.user.first_name || `user${_}`, j = new URLSearchParams(window.location.search).get("ref");
+          const _ = window.Telegram.WebApp.initDataUnsafe.user.id, $ = window.Telegram.WebApp.initDataUnsafe.user.username || window.Telegram.WebApp.initDataUnsafe.user.first_name || `user${_}`;
+          console.log(`
+      \u2554\u2550\u2550\u2550\u2550\u2550\u2550\u2550\u2550\u2550\u2550\u2550\u2550\u2550\u2550\u2550\u2550\u2550\u2550\u2550\u2550\u2550\u2550\u2550\u2550\u2550\u2550\u2550\u2550\u2550\u2550\u2550\u2550\u2550\u2550\u2550\u2550\u2550\u2550\u2550\u2550\u2557
+      \u2551 \u{1F680} POKO APP - USER LOGIN               \u2551
+      \u2560\u2550\u2550\u2550\u2550\u2550\u2550\u2550\u2550\u2550\u2550\u2550\u2550\u2550\u2550\u2550\u2550\u2550\u2550\u2550\u2550\u2550\u2550\u2550\u2550\u2550\u2550\u2550\u2550\u2550\u2550\u2550\u2550\u2550\u2550\u2550\u2550\u2550\u2550\u2550\u2550\u2563
+      \u2551 \u{1F464} Username: ${$.padEnd(27)} \u2551
+      \u2551 \u{1F194} Telegram ID: ${_.toString().padEnd(23)} \u2551
+      \u2551 \u23F0 Time: ${(/* @__PURE__ */ new Date()).toLocaleTimeString().padEnd(29)} \u2551
+      \u255A\u2550\u2550\u2550\u2550\u2550\u2550\u2550\u2550\u2550\u2550\u2550\u2550\u2550\u2550\u2550\u2550\u2550\u2550\u2550\u2550\u2550\u2550\u2550\u2550\u2550\u2550\u2550\u2550\u2550\u2550\u2550\u2550\u2550\u2550\u2550\u2550\u2550\u2550\u2550\u2550\u255D
+      `);
+          const j = new URLSearchParams(window.location.search).get("ref");
           try {
             console.log("Checking for existing user...");
             const st = await fetch(`/get-user?telegramId=${_}`, {
@@ -84924,11 +84934,11 @@ Values:
       }, ot = async (mt, vt) => {
         try {
           if (!(d == null ? void 0 : d.telegramId)) {
-            $("\u041E\u0448\u0438\u0431\u043A\u0430 \u0430\u0432\u0442\u043E\u0440\u0438\u0437\u0430\u0446\u0438\u0438");
+            $("Authorization error");
             return;
           }
           if (d.rootBalance < vt) {
-            $("\u041D\u0435\u0434\u043E\u0441\u0442\u0430\u0442\u043E\u0447\u043D\u043E \u0441\u0440\u0435\u0434\u0441\u0442\u0432");
+            $("Insufficient funds");
             return;
           }
           const it = await (await fetch(`/get-user-miners?telegramId=${d.telegramId}`, {
@@ -86914,9 +86924,9 @@ DISCOVER AMAZING REWARDS`,
       children: jsxRuntimeExports.jsx(App, {})
     }));
   });
-  var_8c5fb88e_360e_5d57_848a_ca1de1712b84 = _i();
+  var_b14c8193_ba29_517d_ab2b_de74b6cf402c = _i();
 })();
 export {
   __tla,
-  var_8c5fb88e_360e_5d57_848a_ca1de1712b84 as default
+  var_b14c8193_ba29_517d_ab2b_de74b6cf402c as default
 };
