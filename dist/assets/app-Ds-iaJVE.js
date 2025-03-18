@@ -1,7 +1,7 @@
 var __defProp2 = Object.defineProperty;
 var __defNormalProp2 = (obj, key2, value) => key2 in obj ? __defProp2(obj, key2, { enumerable: true, configurable: true, writable: true, value }) : obj[key2] = value;
 var __publicField2 = (obj, key2, value) => __defNormalProp2(obj, typeof key2 !== "symbol" ? key2 + "" : key2, value);
-let var_b14c8193_ba29_517d_ab2b_de74b6cf402c;
+let var_d772bbc0_1461_52dd_b013_196ed001a1e5;
 let __tla = (async () => {
   var Jn = (d, b) => () => (b || d((b = {
     exports: {}
@@ -8699,7 +8699,7 @@ Please change the parent <Route path="${Bt}"> to <Route path="${Bt === "/" ? "*"
             }
           })).json();
           if (bt.inviteLink) {
-            const xt = `https://t.me/share/url?text=${encodeURIComponent(`\u{1F680} Join Method!
+            const xt = `https://t.me/share/url?text=${encodeURIComponent(`\u{1F680} Join POKO!
 
 \u{1F48E} Complete tasks
 \u{1F4B0} Get rewards
@@ -86924,9 +86924,9 @@ DISCOVER AMAZING REWARDS`,
       children: jsxRuntimeExports.jsx(App, {})
     }));
   });
-  var_b14c8193_ba29_517d_ab2b_de74b6cf402c = _i();
+  var_d772bbc0_1461_52dd_b013_196ed001a1e5 = _i();
 })();
 export {
   __tla,
-  var_b14c8193_ba29_517d_ab2b_de74b6cf402c as default
+  var_d772bbc0_1461_52dd_b013_196ed001a1e5 as default
 };

@@ -445,15 +445,7 @@ const routes = {
         user = await User.findOne({ where: { telegramId } }); // Получаем обновленного пользователя
       }
 
-      console.log(`
-╔════════════════════════════════════════╗
-║ 🚀 POKO APP - USER LOGIN               ║
-╠════════════════════════════════════════╣
-║ 👤 Username: ${user.username.padEnd(27)} ║
-║ 🆔 Telegram ID: ${user.telegramId.toString().padEnd(23)} ║
-║ ⏰ Time: ${new Date().toLocaleTimeString().padEnd(29)} ║
-╚════════════════════════════════════════╝
-`);
+      console.log(`🚀 POKO APP - USER LOGIN | 👤 Username: ${user.username} | 🆔 Telegram ID: ${user.telegramId} | ⏰ Time: ${new Date().toLocaleTimeString()}`);
 
       return { 
         status: 200, 
@@ -1054,15 +1046,7 @@ const routes = {
           referralRewardsCount: 0
         });
 
-        console.log(`
-╔════════════════════════════════════════╗
-║ 🚀 POKO APP - USER LOGIN               ║
-╠════════════════════════════════════════╣
-║ 👤 Username: ${user.username.padEnd(27)} ║
-║ 🆔 Telegram ID: ${user.telegramId.toString().padEnd(23)} ║
-║ ⏰ Time: ${new Date().toLocaleTimeString().padEnd(29)} ║
-╚════════════════════════════════════════╝
-`);
+        console.log(`🚀 POKO APP - USER LOGIN | 👤 Username: ${user.username} | 🆔 Telegram ID: ${user.telegramId} | ⏰ Time: ${new Date().toLocaleTimeString()}`);
 
         resolve({
           status: 200,
