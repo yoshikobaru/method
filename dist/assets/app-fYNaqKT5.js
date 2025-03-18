@@ -1,7 +1,7 @@
 var __defProp2 = Object.defineProperty;
 var __defNormalProp2 = (obj, key2, value) => key2 in obj ? __defProp2(obj, key2, { enumerable: true, configurable: true, writable: true, value }) : obj[key2] = value;
 var __publicField2 = (obj, key2, value) => __defNormalProp2(obj, typeof key2 !== "symbol" ? key2 + "" : key2, value);
-let var_c0dcde30_65c8_53aa_a717_e9b14176e2ea;
+let var_74012607_7c1f_5ad5_ba1f_09bf01006a6f;
 let __tla = (async () => {
   var Jn = (d, b) => () => (b || d((b = {
     exports: {}
@@ -10996,25 +10996,25 @@ Please change the parent <Route path="${Bt}"> to <Route path="${Bt === "/" ? "*"
     }
     const PRICES = {
       SLOTS: {
-        stars: 1,
-        ton: 0.01
+        stars: 149,
+        ton: 0.9
       },
       CUBES: {
         cube1: {
-          stars: 1,
-          ton: 1e-3
+          stars: 50,
+          ton: 0.2
         },
         cube2: {
           stars: 97,
-          ton: 25e-4
+          ton: 0.4
         },
         cube3: {
           stars: 497,
-          ton: 7e-3
+          ton: 1.6
         },
         cube4: {
           stars: 5e3,
-          ton: 0.02
+          ton: 16
         }
       }
     }, CUBE_PRICES = {
@@ -84376,7 +84376,7 @@ Values:
       cube2: PRICES.CUBES.cube2.ton,
       cube3: PRICES.CUBES.cube3.ton,
       cube4: PRICES.CUBES.cube4.ton
-    }, RECEIVER_ADDRESS = "UQA1vA2bxiZinSSAVLXObmjWiDwMlkZx7kDmHQdypYMUqquT", LoadingOverlay = ({ message: d }) => React.createElement("div", {
+    }, RECEIVER_ADDRESS = "UQCc-TCL5o7qrQiZ_GlDn0VU4q55vxqG5tDL6U1ETOr0J9EX", LoadingOverlay = ({ message: d }) => React.createElement("div", {
       className: "fixed inset-0 flex items-center justify-center bg-black/50 backdrop-blur-sm z-[100]"
     }, React.createElement("div", {
       className: "flex flex-col items-center justify-center bg-[#1A1F35] p-8 rounded-xl border border-emerald-400/30"
@@ -86840,9 +86840,9 @@ DISCOVER AMAZING REWARDS`,
       children: jsxRuntimeExports.jsx(App, {})
     }));
   });
-  var_c0dcde30_65c8_53aa_a717_e9b14176e2ea = _i();
+  var_74012607_7c1f_5ad5_ba1f_09bf01006a6f = _i();
 })();
 export {
   __tla,
-  var_c0dcde30_65c8_53aa_a717_e9b14176e2ea as default
+  var_74012607_7c1f_5ad5_ba1f_09bf01006a6f as default
 };

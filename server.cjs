@@ -10,15 +10,15 @@ const url = require('url');
 
 // Константа с ценами в звездах (нужна только для создания инвойса)
 const CUBE_PRICES = {
-  'cube1': 1,
+  'cube1': 149,
   'cube2': 97,
   'cube3': 497,
   'cube4': 5000
 };
 // slot price
 const SLOT_PRICES = {
-  stars: 1,
-  ton: 0.001
+  stars: 149,
+  ton: 0.90
 };
 
 const MIME_TYPES = {
