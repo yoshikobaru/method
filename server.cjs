@@ -872,7 +872,6 @@ const routes = {
   if (authError) return authError;
 
   const { telegramId } = query;
-  console.log(`Getting miners for user ${telegramId}`);
   
   if (!telegramId) {
     console.log('No telegramId provided');
@@ -898,11 +897,8 @@ const routes = {
       return acc;
     }, {});
 
-    console.log('Miners in bag:', {
-      totalMiners: user.miners?.length || 0,
-      minerTypes: minerCounts,
-      details: user.miners
-    });
+    // Оставляем только краткую информацию
+    console.log(`User ${telegramId} has ${user.miners?.length || 0} miners (${Object.entries(minerCounts).map(([type, count]) => `${type}: ${count}`).join(', ')})`);
 
     return { 
       status: 200, 
