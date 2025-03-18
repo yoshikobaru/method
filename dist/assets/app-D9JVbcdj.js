@@ -1,7 +1,7 @@
 var __defProp2 = Object.defineProperty;
 var __defNormalProp2 = (obj, key2, value) => key2 in obj ? __defProp2(obj, key2, { enumerable: true, configurable: true, writable: true, value }) : obj[key2] = value;
 var __publicField2 = (obj, key2, value) => __defNormalProp2(obj, typeof key2 !== "symbol" ? key2 + "" : key2, value);
-let var_4bb905e2_74d7_5efa_940f_89c64a418b9e;
+let var_a1aad800_94ef_53eb_8ee1_7d93c3f809a3;
 let __tla = (async () => {
   var Jn = (d, b) => () => (b || d((b = {
     exports: {}
@@ -86676,7 +86676,20 @@ Values:
       })
     });
     function Trial({ onComplete: d }) {
-      const [b, _] = reactExports.useState(0), $ = [
+      const [b, _] = reactExports.useState(0), { tg: $ } = useTelegram();
+      reactExports.useEffect(() => {
+        (async () => {
+          try {
+            await $.CloudStorage.getItem("trialViewed") === "true" && (d == null ? void 0 : d());
+          } catch (pt) {
+            console.error("Error checking trial viewed status:", pt);
+          }
+        })();
+      }, [
+        $.CloudStorage,
+        d
+      ]);
+      const rt = [
         {
           icon: jsxRuntimeExports.jsx(EyeIcon, {}),
           title: `It's great
@@ -86708,8 +86721,19 @@ DISCOVER AMAZING REWARDS`,
           buttonText: "I'M IN",
           buttonStyle: "border-2 border-blue-400 bg-transparent hover:bg-blue-400/10"
         }
-      ], rt = () => {
-        b === $.length - 1 ? d == null ? void 0 : d() : _((j) => j + 1);
+      ], j = async () => {
+        if (b === rt.length - 1) try {
+          await $.CloudStorage.setItem("trialViewed", "true"), d == null ? void 0 : d();
+        } catch (dt) {
+          console.error("Error saving trial viewed status:", dt), d == null ? void 0 : d();
+        }
+        else _((dt) => dt + 1);
+      }, st = async () => {
+        try {
+          await $.CloudStorage.setItem("trialViewed", "true"), d == null ? void 0 : d();
+        } catch (dt) {
+          console.error("Error saving trial viewed status:", dt), d == null ? void 0 : d();
+        }
       };
       return jsxRuntimeExports.jsxs("div", {
         className: "fixed inset-0 bg-[#0A0F1C] flex flex-col",
@@ -86718,9 +86742,9 @@ DISCOVER AMAZING REWARDS`,
             className: "w-full h-10 flex items-center justify-center border-b border-blue-400/10",
             children: jsxRuntimeExports.jsx("div", {
               className: "flex space-x-4",
-              children: $.map((j, st) => jsxRuntimeExports.jsx("div", {
-                className: `h-1.5 rounded-full transition-all duration-300 ${st === b ? "w-16 bg-blue-400 shadow-[0_0_10px_rgba(96,165,250,0.5)]" : "w-16 bg-blue-400/20"}`
-              }, st))
+              children: rt.map((dt, pt) => jsxRuntimeExports.jsx("div", {
+                className: `h-1.5 rounded-full transition-all duration-300 ${pt === b ? "w-16 bg-blue-400 shadow-[0_0_10px_rgba(96,165,250,0.5)]" : "w-16 bg-blue-400/20"}`
+              }, pt))
             })
           }),
           jsxRuntimeExports.jsxs("div", {
@@ -86728,7 +86752,7 @@ DISCOVER AMAZING REWARDS`,
             children: [
               jsxRuntimeExports.jsx("div", {
                 className: "absolute top-2 left-0 right-0 flex justify-center",
-                children: $[b].icon
+                children: rt[b].icon
               }),
               jsxRuntimeExports.jsxs("div", {
                 className: "absolute top-32 left-0 right-0 flex flex-col items-center px-6",
@@ -86738,23 +86762,23 @@ DISCOVER AMAZING REWARDS`,
                     style: {
                       fontFamily: "Polonium"
                     },
-                    children: $[b].title
+                    children: rt[b].title
                   }),
                   jsxRuntimeExports.jsx("p", {
                     className: "text-blue-400/70 text-lg whitespace-pre-line text-center mb-3",
                     style: {
                       fontFamily: "Polonium"
                     },
-                    children: $[b].description
+                    children: rt[b].description
                   }),
-                  $[b].rewardText && jsxRuntimeExports.jsx("div", {
+                  rt[b].rewardText && jsxRuntimeExports.jsx("div", {
                     className: "w-full px-6 py-3 rounded-xl border border-blue-400/20 bg-blue-400/5",
                     children: jsxRuntimeExports.jsx("p", {
                       className: "text-blue-400/70 text-lg text-center",
                       style: {
                         fontFamily: "Polonium"
                       },
-                      children: $[b].rewardText
+                      children: rt[b].rewardText
                     })
                   })
                 ]
@@ -86766,8 +86790,8 @@ DISCOVER AMAZING REWARDS`,
                     className: "flex flex-col items-center space-y-3",
                     children: [
                       jsxRuntimeExports.jsx("button", {
-                        onClick: rt,
-                        className: `w-full py-3 rounded-xl ${$[b].buttonStyle}
+                        onClick: j,
+                        className: `w-full py-3 rounded-xl ${rt[b].buttonStyle}
                        text-blue-400 text-lg
                        transition-all duration-300
                        hover:border-blue-400
@@ -86775,10 +86799,10 @@ DISCOVER AMAZING REWARDS`,
                         style: {
                           fontFamily: "Polonium"
                         },
-                        children: $[b].buttonText
+                        children: rt[b].buttonText
                       }),
-                      b < $.length - 1 && jsxRuntimeExports.jsx("button", {
-                        onClick: d,
+                      b < rt.length - 1 && jsxRuntimeExports.jsx("button", {
+                        onClick: st,
                         className: "text-blue-400/50 hover:text-blue-400/70 transition-colors text-lg",
                         style: {
                           fontFamily: "Polonium"
@@ -86787,7 +86811,7 @@ DISCOVER AMAZING REWARDS`,
                       })
                     ]
                   }),
-                  b === $.length - 1 && jsxRuntimeExports.jsxs("p", {
+                  b === rt.length - 1 && jsxRuntimeExports.jsxs("p", {
                     className: "text-blue-400/30 text-xs mt-1 text-center",
                     style: {
                       fontFamily: "Polonium"
@@ -86879,9 +86903,9 @@ DISCOVER AMAZING REWARDS`,
       children: jsxRuntimeExports.jsx(App, {})
     }));
   });
-  var_4bb905e2_74d7_5efa_940f_89c64a418b9e = _i();
+  var_a1aad800_94ef_53eb_8ee1_7d93c3f809a3 = _i();
 })();
 export {
   __tla,
-  var_4bb905e2_74d7_5efa_940f_89c64a418b9e as default
+  var_a1aad800_94ef_53eb_8ee1_7d93c3f809a3 as default
 };
