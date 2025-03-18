@@ -1,7 +1,7 @@
 var __defProp2 = Object.defineProperty;
 var __defNormalProp2 = (obj, key2, value) => key2 in obj ? __defProp2(obj, key2, { enumerable: true, configurable: true, writable: true, value }) : obj[key2] = value;
 var __publicField2 = (obj, key2, value) => __defNormalProp2(obj, typeof key2 !== "symbol" ? key2 + "" : key2, value);
-let var_a1aad800_94ef_53eb_8ee1_7d93c3f809a3;
+let var_685d265a_b843_5823_ba7b_b8d3664d8876;
 let __tla = (async () => {
   var Jn = (d, b) => () => (b || d((b = {
     exports: {}
@@ -86723,14 +86723,14 @@ DISCOVER AMAZING REWARDS`,
         }
       ], j = async () => {
         if (b === rt.length - 1) try {
-          await $.CloudStorage.setItem("trialViewed", "true"), d == null ? void 0 : d();
+          await $.CloudStorage.setItem("trialViewed", "true"), console.log("Trial viewed status saved successfully"), d == null ? void 0 : d();
         } catch (dt) {
           console.error("Error saving trial viewed status:", dt), d == null ? void 0 : d();
         }
         else _((dt) => dt + 1);
       }, st = async () => {
         try {
-          await $.CloudStorage.setItem("trialViewed", "true"), d == null ? void 0 : d();
+          await $.CloudStorage.setItem("trialViewed", "true"), console.log("Trial viewed status saved successfully (skipped)"), d == null ? void 0 : d();
         } catch (dt) {
           console.error("Error saving trial viewed status:", dt), d == null ? void 0 : d();
         }
@@ -86830,19 +86830,37 @@ DISCOVER AMAZING REWARDS`,
       });
     }
     function App() {
-      const { initializeUser: d } = useAuthStore(), [b, _] = reactExports.useState(true);
+      const { initializeUser: d } = useAuthStore(), [b, _] = reactExports.useState(true), [$, rt] = reactExports.useState(true), { tg: j } = useTelegram();
       reactExports.useEffect(() => {
-        const rt = window.Telegram.WebApp;
-        rt && (rt.expand(), rt.BackButton.isVisible = true, rt.BackButton.onClick(() => {
-          window.history.length > 1 ? window.history.back() : confirm("Close app?") && rt.close();
-        })), d();
+        const dt = async () => {
+          try {
+            await j.CloudStorage.getItem("trialViewed") === "true" && _(false);
+          } catch (bt) {
+            console.error("Error checking trial viewed status:", bt);
+          } finally {
+            rt(false);
+          }
+        };
+        (() => {
+          const bt = window.Telegram.WebApp;
+          bt && (bt.expand(), bt.BackButton.isVisible = true, bt.BackButton.onClick(() => {
+            window.history.length > 1 ? window.history.back() : confirm("Close app?") && bt.close();
+          }));
+        })(), dt(), d();
       }, [
-        d
+        d,
+        j.CloudStorage
       ]);
-      const $ = () => {
+      const st = () => {
         _(false);
       };
-      return jsxRuntimeExports.jsx(TonConnectUIProvider$1, {
+      return $ ? jsxRuntimeExports.jsx("div", {
+        className: "fixed inset-0 bg-[#0A0F1C] flex items-center justify-center",
+        children: jsxRuntimeExports.jsx("div", {
+          className: "text-blue-400 text-xl",
+          children: "Loading..."
+        })
+      }) : jsxRuntimeExports.jsx(TonConnectUIProvider$1, {
         manifestUrl: "https://pokoapp.space/tonconnect-manifest.json",
         actionsConfiguration: {
           twaReturnUrl: window.location.origin + window.location.pathname
@@ -86857,7 +86875,7 @@ DISCOVER AMAZING REWARDS`,
               jsxRuntimeExports.jsx("div", {
                 className: "glow-content",
                 children: b ? jsxRuntimeExports.jsx(Trial, {
-                  onComplete: $
+                  onComplete: st
                 }) : jsxRuntimeExports.jsxs(Routes, {
                   children: [
                     jsxRuntimeExports.jsx(Route, {
@@ -86903,9 +86921,9 @@ DISCOVER AMAZING REWARDS`,
       children: jsxRuntimeExports.jsx(App, {})
     }));
   });
-  var_a1aad800_94ef_53eb_8ee1_7d93c3f809a3 = _i();
+  var_685d265a_b843_5823_ba7b_b8d3664d8876 = _i();
 })();
 export {
   __tla,
-  var_a1aad800_94ef_53eb_8ee1_7d93c3f809a3 as default
+  var_685d265a_b843_5823_ba7b_b8d3664d8876 as default
 };
