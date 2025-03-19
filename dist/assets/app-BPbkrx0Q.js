@@ -1,7 +1,7 @@
 var __defProp2 = Object.defineProperty;
 var __defNormalProp2 = (obj, key2, value) => key2 in obj ? __defProp2(obj, key2, { enumerable: true, configurable: true, writable: true, value }) : obj[key2] = value;
 var __publicField2 = (obj, key2, value) => __defNormalProp2(obj, typeof key2 !== "symbol" ? key2 + "" : key2, value);
-let var_5735d6b0_c5d0_51fc_b937_cddf7db8bbe6;
+let var_67921b35_566e_50d6_9a86_f8efcf415447;
 let __tla = (async () => {
   var so = (d, _) => () => (_ || d((_ = {
     exports: {}
@@ -89010,16 +89010,16 @@ DISCOVER AMAZING REWARDS`,
       init
     };
     index.init({
-      token: "eyJhcHBfbmFtZSI6InBva28iLCJhcHBfdXJsIjoiaHR0cHM6Ly90Lm1lL1RoZVBva29Cb3QiLCJhcHBfZG9tYWluIjoiaHR0cHM6Ly9wb2tvYXBwLnNwYWNlLyJ9!JaOTorxSryI4JLNfkNHheaz4IGI4l7/T6Y6xS+cZrWg=",
+      token: "eyJhcHBfbmFtZSI6InBva28iLCJhcHBfdXJsIjoiaHR0cHM6Ly90Lm1lL1RoZVBva29Cb3QiLCJhcHBfZG9tYWluIjoiaHR0cHM6Ly9wb2tvYXBwLnNwYWNlIn0=!O1k7a6VLUKzuVUKxgP1xdIMj7lDetWeJ0bwvJnoB1g0=",
       appName: "poko"
     });
     client.createRoot(document.getElementById("root")).render(jsxRuntimeExports.jsx(React.StrictMode, {
       children: jsxRuntimeExports.jsx(App$1, {})
     }));
   });
-  var_5735d6b0_c5d0_51fc_b937_cddf7db8bbe6 = lo();
+  var_67921b35_566e_50d6_9a86_f8efcf415447 = lo();
 })();
 export {
   __tla,
-  var_5735d6b0_c5d0_51fc_b937_cddf7db8bbe6 as default
+  var_67921b35_566e_50d6_9a86_f8efcf415447 as default
 };
